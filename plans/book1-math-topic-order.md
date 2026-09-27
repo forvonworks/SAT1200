@@ -6,6 +6,11 @@ only uses skills taught in earlier lessons.
 Book 1 is the foundation book ("SAT 0-1"). It takes a student from basic arithmetic
 to linear equations and systems. Harder SAT topics go into Book 2 (see the end of this plan).
 
+> **Decision (update):** Lessons 1-5 stay as they are, with no renumbering. New lessons
+> are added after Lesson 5. **Factors and Multiples is Lesson 6** (draft:
+> `lessons/lesson-06-factors-and-multiples.md`). The order below shows where each topic
+> fits by difficulty; the new topics still need to be placed in Lessons 7 onward.
+
 ---
 
 ## 1. What the book has now (Canva, 35 pages)

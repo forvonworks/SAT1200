@@ -1,14 +1,14 @@
-# Lesson 2: Factors and Multiples (Bo'luvchilar va karralilar)
+# Lesson 6: Factors and Multiples (Bo'luvchilar va karralilar)
 
 > **Status: DRAFT, not added to the Canva book yet.** Waiting for approval.
 >
-> Where it goes: new Lesson 2, between Lesson 1 (Basic Arithmetic) and the current
-> Lesson 2 (Fractions). Fractions tells students to find EKUB/EKUK; this lesson
-> teaches how.
+> Where it goes: Lesson 6, after Lesson 5 (Exponents and Radicals). Lessons 1-5 stay
+> as they are. Lesson 2 (Fractions) already uses EKUB/EKUK; this lesson teaches them
+> fully and links back to fractions.
 >
 > Format: same as Lessons 3-5 (Concepts, SAT phrases, Vocabulary, Sets 1-7, where
 > Set 7 is the Challenge).
-> Preview images: `lessons/previews/lesson-02/page1-6.png` (the page style is approximate; the real
+> Preview images: `lessons/previews/lesson-06/page1-6.png` (the page style is approximate; the real
 > pages will use the book's Canva styles).
 >
 > Language: explanations are in Uzbek. English is used only for the terms and
@@ -61,6 +61,10 @@ ex: 4: 4, 8, 12, 16, ...;  6: 6, 12, 18, ...  →  EKUK(4, 6) = 12
 **Remainder - Qoldiq:** bo'lishdan keyin ortib qolgan son. Qoldiq har doim bo'luvchidan kichik.
 *Remainder: the amount left over after dividing.*
 ex: 17 ÷ 5 = 3, qoldiq 2   (5 × 3 + 2 = 17)
+
+**EKUB and EKUK in Fractions - Kasrlarda EKUB va EKUK:** EKUB kasrni qisqartirish uchun, EKUK esa umumiy maxraj topish uchun ishlatiladi (2-dars).
+*Simplify with the GCF; find a common denominator with the LCM.*
+ex: 12/18 → EKUB = 6 → 2/3;   1/4 + 1/6 → EKUK = 12 → 3/12 + 2/12 = 5/12
 
 ### SAT Phrases
 
