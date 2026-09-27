@@ -1,0 +1,138 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  :root { --or:#f46530; --band:#ffeee8; --salmon:#ffbda5; }
+  body { margin:0; background:#ccc; font-family:"Liberation Sans", Arial, sans-serif; }
+  .page { position:relative; width:794px; height:1123px; background:#fff; overflow:hidden; margin:0 0 20px 0; }
+  .band { position:absolute; top:0; left:0; right:0; height:37px; background:var(--band); }
+  .band span { position:absolute; top:10px; font-weight:bold; font-size:17px; letter-spacing:2.4px; color:var(--or); text-transform:uppercase; }
+  .band .l { left:18px; } .band .r { right:18px; }
+  .wm1 { position:absolute; top:330px; left:95px; width:600px; text-align:center; font-weight:bold; font-size:108px; line-height:1.1;
+         color:#2a2e30; opacity:.07; transform:rotate(12deg); letter-spacing:12px; }
+  .wm2 { position:absolute; top:470px; left:0; width:794px; text-align:center; font-family:"DejaVu Serif", serif; font-style:italic;
+         font-size:120px; color:var(--or); opacity:.14; }
+  .foot { position:absolute; top:1083px; left:14px; width:764px; border-top:1px solid var(--or); }
+  .foot .h { position:absolute; top:8px; left:10px; font-family:"DejaVu Serif",serif; font-style:italic; color:var(--or); font-size:16px; letter-spacing:2px; }
+  .foot .n { position:absolute; top:8px; right:6px; color:var(--or); font-size:16px; font-family:"DejaVu Serif",serif; }
+  .badge { position:absolute; top:40px; left:-49px; width:238px; height:47px; background:var(--salmon); }
+  .badge-c { position:absolute; top:40px; left:168px; width:46px; height:46px; border-radius:50%; background:var(--salmon); }
+  .badge-t { position:absolute; top:42px; left:-66px; width:345px; text-align:center; color:#fff; font-weight:bold; font-size:37px; }
+  .ttl { position:absolute; top:43px; left:266px; width:500px; text-align:center; color:var(--or); font-weight:bold; font-size:26px; }
+  .sub { position:absolute; top:74px; left:266px; width:500px; text-align:center; color:var(--salmon); font-weight:bold; font-size:19px; }
+  .content { position:absolute; left:59px; width:680px; }
+  h3 { text-align:center; font-style:italic; font-size:25px; margin:0 0 14px; }
+  h4 { text-align:center; font-style:italic; font-size:22px; margin:18px 0 10px; }
+  .c { font-size:17px; line-height:1.4; margin:0 0 3px; }
+  .en { font-size:15px; line-height:1.35; color:#555; font-style:italic; margin:0 0 3px; }
+  .ex { font-size:17px; line-height:1.4; color:var(--or); margin:0 0 17px; }
+  .rules { font-size:17px; line-height:1.45; margin:0 0 3px 18px; }
+  table.ph { width:100%; border-collapse:collapse; font-size:16px; }
+  table.ph td { padding:3px 4px; vertical-align:top; }
+  table.ph td:first-child { width:52%; }
+  .voc { display:grid; grid-template-columns:1fr 1fr; column-gap:30px; row-gap:6px; font-size:18px; padding-left:41px; }
+  .set { position:absolute; left:0; width:794px; text-align:center; }
+  .set .t { font-weight:bold; font-style:italic; font-size:25px; }
+  .set .i { font-style:italic; font-size:24px; margin-top:3px; }
+  .item { position:absolute; font-size:24px; }
+  .chf { min-height:86px; padding-bottom:12px; box-sizing:border-box; font-size:18px; line-height:1.3; }
+  .ch { position:absolute; font-size:18px; line-height:1.3; width:350px; }
+</style></head>
+<body>
+<div id="pages"></div>
+<script>
+const LESSON = "Lesson 2", TOPIC = "factors and multiples";
+const startPage = 9;
+function shell(n, inner, title) {
+  return `<div class="page">
+    <div class="wm1">SAT<br>1200+</div><div class="wm2">math</div>
+    <div class="band"><span class="l">${LESSON}</span><span class="r">${TOPIC}</span></div>
+    ${title ? `<div class="badge"></div><div class="badge-c"></div><div class="badge-t">${LESSON}</div>
+      <div class="ttl">${TOPIC}</div><div class="sub">Bo'luvchilar va karralilar</div>` : ""}
+    ${inner}
+    <div class="foot"><span class="h">@sat1200plus</span><span class="n">${n}</span></div></div>`;
+}
+const C = (term, uz, en, ex) => `<p class="c">${term} - ${uz}</p><p class="en">${en}</p><p class="ex">ex: ${ex}</p>`;
+
+const p1 = `<div class="content" style="top:122px">
+  <h3>Concepts:</h3>
+  ${C("Factor","Bo'luvchi: agar a soni b soniga qoldiqsiz bo'linsa, b soni a ning bo'luvchisi bo'ladi.",
+     "Factor: a number that divides another number with no remainder.",
+     "12 ning bo'luvchilari: 1, 2, 3, 4, 6, 12")}
+  ${C("Multiple","Karrali: sonni 1, 2, 3, 4, ... ga ko'paytirganda hosil bo'lgan sonlar. Karralilar cheksiz ko'p.",
+     "Multiple: the number you get when you multiply a number by 1, 2, 3, ...",
+     "5 ning karralilari: 5, 10, 15, 20, 25, ...")}
+  ${C("Prime Number","Tub son: faqat ikkita bo'luvchisi bor son: 1 va o'zi. 2 yagona juft tub son.",
+     "Prime number: a whole number greater than 1 whose only factors are 1 and itself.",
+     "2, 3, 5, 7, 11, 13, 17, 19")}
+  ${C("Composite Number","Murakkab son: ikkitadan ko'p bo'luvchisi bor son. 1 soni na tub, na murakkab.",
+     "Composite number: a whole number greater than 1 that has more than two factors.",
+     "4, 6, 8, 9, 10, 12, 15")}
+  <p class="c">Divisibility Rules - Bo'linish belgilari:</p>
+  <p class="rules">2 ga: oxirgi raqami juft (0, 2, 4, 6, 8)<br>5 ga: oxirgi raqami 0 yoki 5<br>10 ga: oxirgi raqami 0<br>
+     3 ga: raqamlari yig'indisi 3 ga bo'linadi<br>9 ga: raqamlari yig'indisi 9 ga bo'linadi</p>
+  <p class="en">Divisible by: can be divided by a number with no remainder.</p>
+  <p class="ex">ex: 522 → 5 + 2 + 2 = 9 → 522 soni 2 ga, 3 ga va 9 ga bo'linadi.</p>
+  ${C("Prime Factorization","Tub ko'paytuvchilarga ajratish: sonni faqat tub sonlarning ko'paytmasi shaklida yozish. Sonni eng kichik tub sonlarga (2, 3, 5, ...) ketma-ket bo'lib boring.",
+     "Prime factorization: writing a number as a product of prime numbers.",
+     "60 = 2 × 2 × 3 × 5 = 2² × 3 × 5")}
+</div>`;
+
+const p2 = `<div class="content" style="top:58px">
+  <h3>Concepts (continued):</h3>
+  ${C("Greatest Common Factor (GCF)","EKUB: berilgan sonlarning har birini qoldiqsiz bo'ladigan eng katta son.",
+     "GCF: the largest number that divides all the given numbers.",
+     "12: 1, 2, 3, 4, 6, 12;  18: 1, 2, 3, 6, 9, 18  →  EKUB(12, 18) = 6")}
+  ${C("Least Common Multiple (LCM)","EKUK: berilgan sonlarning har biriga qoldiqsiz bo'linadigan eng kichik son.",
+     "LCM: the smallest number that is a multiple of all the given numbers.",
+     "4: 4, 8, 12, 16, ...;  6: 6, 12, 18, ...  →  EKUK(4, 6) = 12")}
+  ${C("Remainder","Qoldiq: bo'lishdan keyin ortib qolgan son. Qoldiq har doim bo'luvchidan kichik.",
+     "Remainder: the amount left over after dividing.",
+     "17 ÷ 5 = 3, qoldiq 2   (5 × 3 + 2 = 17)")}
+  <h4>SAT Phrases:</h4>
+  <table class="ph">
+    <tr><td>4 is a factor of 12</td><td>4 soni 12 ning bo'luvchisi</td></tr>
+    <tr><td>12 is a multiple of 4</td><td>12 soni 4 ning karralisi</td></tr>
+    <tr><td>12 is divisible by 4</td><td>12 soni 4 ga qoldiqsiz bo'linadi</td></tr>
+    <tr><td>divides evenly</td><td>qoldiqsiz bo'linadi</td></tr>
+    <tr><td>What is the remainder when 17 is divided by 5?</td><td>17 ni 5 ga bo'lganda qoldiq nechaga teng?</td></tr>
+    <tr><td>the greatest common factor of 12 and 18</td><td>12 va 18 ning EKUBi</td></tr>
+  </table>
+  <h4>Vocabulary:</h4>
+  <div class="voc">
+    <div>Factor - Bo'luvchi</div><div>Multiple - Karrali</div>
+    <div>Prime Number - Tub son</div><div>Composite Number - Murakkab son</div>
+    <div>Divisible - Bo'linadigan</div><div>Remainder - Qoldiq</div>
+    <div>Even Number - Juft son</div><div>Odd Number - Toq son</div>
+    <div>GCF - EKUB</div><div>LCM - EKUK</div>
+  </div>
+</div>`;
+
+function setBlock(top, n, instr, left, right) {
+  let h = `<div class="set" style="top:${top}px"><div class="t">Set ${n}</div><div class="i">${instr}</div></div>`;
+  left.forEach((t,i)=> h += `<div class="item" style="top:${top+72+i*95}px;left:63px">${t}</div>`);
+  right.forEach((t,i)=> h += `<div class="item" style="top:${top+72+i*95}px;left:421px">${t}</div>`);
+  return h;
+}
+const p3 = setBlock(58,1,"List All the Factors:",["6:","10:","12:","15:"],["18:","20:","24:","36:"])
+         + setBlock(560,2,"Write the First Five Multiples:",["3:","4:","6:","7:"],["8:","9:","11:","12:"]);
+const p4 = setBlock(58,3,"Prime or Composite?",["7","9","13","21"],["29","33","41","51"])
+         + setBlock(560,4,"Divisible by 2, 3, 5, 9 or 10?",["30","45","72","84"],["105","126","240","315"]);
+const p5 = setBlock(58,5,"Write the Prime Factorization:",["12 =","18 =","28 =","45 ="],["50 =","72 =","84 =","120 ="])
+         + setBlock(560,6,"Find the GCF and LCM:",["4 and 6","6 and 8","8 and 12","9 and 15"],["10 and 15","12 and 18","14 and 21","16 and 24"]);
+const ch = ["GCF(24, 36) =","LCM(12, 15) =","GCF(18, 30, 42) =","LCM(4, 6, 10) =","Prime factorization of 180 =",
+  "Prime factorization of 225 =","The remainder of 47 ÷ 6 =","The remainder of 100 ÷ 7 =","GCF(48, 72) =","LCM(8, 14) =",
+  "Is 2718 divisible by 9?","Is 4125 divisible by 3?","How many factors does 36 have?","The smallest prime number greater than 50 =",
+  "The sum of all prime numbers less than 20 =","Which is a factor of 84: 5, 8, or 12?","Which is a multiple of 6: 34, 42, or 58?",
+  "The number 3▢5 is divisible by 9. What digit is ▢?",
+  "Two buses leave at 8:00. One leaves every 12 minutes, the other every 18 minutes. When do they next leave together?",
+  "24 pens and 36 pencils are shared into equal groups with nothing left over. What is the greatest number of groups?"];
+let p6 = `<div class="set" style="top:58px"><div class="t">Set 7</div><div class="i">Challenge:</div></div>`;
+[0,1].forEach(col=>{
+  p6 += `<div style="position:absolute;top:132px;left:${col?418:48}px;width:350px">`;
+  ch.slice(col*10,col*10+10).forEach((t,j)=> p6 += `<div class="chf">${col*10+j+1}. ${t}</div>`);
+  p6 += `</div>`; });
+
+document.getElementById("pages").innerHTML =
+  [shell(startPage,p1,true), shell(startPage+1,p2), shell(startPage+2,p3), shell(startPage+3,p4), shell(startPage+4,p5), shell(startPage+5,p6)].join("");
+</script>
+</body></html>
