@@ -141,7 +141,27 @@ hurts learning).
   necessarily Book 1's actual Lesson 2 — see annotated TOC for real lesson
   order). Both were reviewed and approved as the direction to build on.
 
-## 8. What's still open
+## 8. Known gotcha — multi-page documents with `textpos`
+
+**`\usepackage[absolute,overlay]{textpos}` silently merges every page onto
+page 1 in a multi-page document.** The `overlay` option makes textblocks
+contribute zero real content to the page, so when a lesson's content is
+*entirely* absolute-positioned boxes (as every page here is), TeX never
+finds a real breakpoint and dumps everything into one final shipout —
+`\newpage`/`\clearpage` between pages gets silently ignored, with no error.
+
+**Fix, both required:**
+1. Drop `overlay` from the package options — use `\usepackage[absolute]{textpos}` only.
+2. Put `\mbox{}` as the first thing after each page's `\pageheader{...}{...}`
+   call, before any `textblock*` content — this gives TeX one real (invisible)
+   box per page so `\clearpage` has actual material to break on.
+
+Without both of these, a multi-page lesson compiles cleanly (no LaTeX errors)
+but silently produces a 1-page PDF with every page's content stacked
+illegibly on top of each other — always render and visually check page count
+after adding pages, don't just check for compile errors.
+
+## 9. What's still open
 
 - Practice-set page layout (problems file → typeset page) is not yet
   specified — only the concepts page pattern above has a built prototype.
