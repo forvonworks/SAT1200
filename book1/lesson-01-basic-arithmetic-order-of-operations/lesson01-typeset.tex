@@ -14,56 +14,84 @@
 \setmathfont{Libertinus Math}
 
 \definecolor{accent}{HTML}{F46530}
-\definecolor{accentlight}{HTML}{FFEEE8}
+\definecolor{badge}{HTML}{FFBDA5}
 \definecolor{ink}{HTML}{2A2E30}
 
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{1mm}
 \pagestyle{empty}
 
-\newcommand{\pageheader}[2]{%
-\begin{textblock*}{210mm}(0mm,0mm)
-  \begin{tikzpicture}[remember picture,overlay]
-    \fill[accentlight] (0,0) rectangle (210mm,14mm);
+% ---- Watermark: two rotated "sat/1200+" blocks + centered "math", pixel-matched ----
+% Positioned via textblock* (page-absolute, y-down from top) for reliability --
+% a bare tikzpicture's own coordinate system is NOT page-absolute without
+% explicit "current page" anchoring, so textblock* is used as the anchor and
+% a small tikzpicture inside it only handles the rotation.
+\newcommand{\watermark}{%
+\begin{textblock*}{150.37mm}(37.67mm,74.48mm)
+\begin{tikzpicture}
+\node[rotate=12.16, font=\sffamily\bfseries\fontsize{81}{85}\selectfont, text=ink!7, align=center] at (75.19mm,-37.42mm) {sat\\1200+};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{150.37mm}(21.9mm,147.6mm)
+\begin{tikzpicture}
+\node[rotate=-167.84, font=\sffamily\bfseries\fontsize{81}{85}\selectfont, text=ink!7, align=center] at (75.19mm,-37.42mm) {sat\\1200+};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{68.87mm}(70.52mm,124.4mm)
+\begin{tikzpicture}
+\node[font=\sffamily\bfseries\fontsize{114}{118}\selectfont, text=accent!14] at (34.4mm,-24.1mm) {math};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+% ---- Header: pill badge "Lesson N" + title + Uzbek subtitle ----
+\newcommand{\pageheader}[3]{%
+\watermark
+\begin{textblock*}{70mm}(-12.89mm,10.54mm)
+  \begin{tikzpicture}
+    \fill[badge,rounded corners=6mm] (0,0) rectangle (69.6mm,12.47mm);
   \end{tikzpicture}
 \end{textblock*}
-\begin{textblock*}{60mm}(12mm,4mm)
-  {\sffamily\bfseries\color{accent}\large #1}
+\begin{textblock*}{91.2mm}(-17.48mm,13.0mm)
+  \centering{\sffamily\bfseries\color{white}\fontsize{28}{30}\selectfont #1}
 \end{textblock*}
-\begin{textblock*}{110mm}(98mm,4mm)
-  \raggedleft{\sffamily\bfseries\color{accent}\large #2}
+\begin{textblock*}{128.86mm}(71.96mm,11.47mm)
+  \centering{\sffamily\bfseries\color{accent}\fontsize{19}{21}\selectfont #2}
+\end{textblock*}
+\begin{textblock*}{59.81mm}(109.49mm,19.28mm)
+  \centering{\sffamily\bfseries\color{badge}\fontsize{14.5}{16}\selectfont #3}
 \end{textblock*}
 }
 
 \newcommand{\pagefooter}[1]{%
-\begin{textblock*}{186mm}(12mm,280mm)
-  \begin{tikzpicture}[remember picture,overlay]
-    \draw[accent,line width=0.4pt] (0,0) -- (186mm,0);
+\begin{textblock*}{202.13mm}(4mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (202.13mm,0.6mm);
   \end{tikzpicture}
 \end{textblock*}
-\begin{textblock*}{60mm}(12mm,283mm)
-  {\sffamily\itshape\color{accent}\small @sat1200plus}
+\begin{textblock*}{63.59mm}(-5.81mm,288.27mm)
+  \centering{\sffamily\itshape\color{accent}\fontsize{14}{16}\selectfont @sat1200plus}
 \end{textblock*}
-\begin{textblock*}{20mm}(178mm,283mm)
-  \raggedleft{\sffamily\color{accent}\small #1}
+\begin{textblock*}{10mm}(198.61mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
 \end{textblock*}
 }
 
 \newcommand{\sectionlabel}[1]{%
-\begin{textblock*}{170mm}(20mm,20mm)
-{\sffamily\bfseries\itshape\Large\centering #1\par}
+\begin{textblock*}{170mm}(20mm,34.93mm)
+{\bfseries\itshape\fontsize{19}{21}\selectfont\centering #1\par}
 \end{textblock*}
 }
 
 \begin{document}
 
 % ================= PAGE 1: CONCEPTS - Concept 1 + Concept 2 intro =================
-\pageheader{LESSON 1}{ARITHMETIC \& ORDER OF OPERATIONS}
-\mbox{}%
+\pageheader{Lesson 1}{ARITHMETIC \& ORDER OF OPERATIONS}{Amallar bajarish tartibi}
 \pagefooter{1}
-\sectionlabel{Concepts}
+\mbox{}%
+\sectionlabel{Concepts:}
 
-\begin{textblock*}{170mm}(20mm,32mm)
+\begin{textblock*}{199mm}(5.5mm,48.6mm)
 {\fontsize{11}{15}\selectfont
 
 {\sffamily\bfseries\color{accent} 1. Arifmetik Amallar va Ularning Nomlari}
@@ -72,7 +100,7 @@
 \emph{Qo'shish, ayirish, ko'paytirish va bo'lish kabi sonlar ustida bajariladigan harakatlar arifmetik amallar deb ataladi. Har bir amalning natijasi ham o'z nomiga ega: qo'shishning natijasi \textemdash\ yig'indi, ayirishniki \textemdash\ ayirma, ko'paytirishniki \textemdash\ ko'paytma, bo'lishniki \textemdash\ bo'linma deb ataladi.}
 
 \vspace{1mm}
-{\color{ink!70}\small Addition, subtraction, multiplication, and division are called arithmetic operations. Each result also has its own name: a sum, a difference, a product, a quotient.}
+{\color{black!70}\small Addition, subtraction, multiplication, and division are called arithmetic operations. Each result also has its own name: a sum, a difference, a product, a quotient.}
 
 \vspace{2mm}
 {\small\textbf{SAT uchun nega muhim:} bu natija-nomlari aynan SAT so'z masalalarida ishlatiladigan so'zlar \textemdash\ "the sum of $x$ and 7," "the product of two consecutive integers" \textemdash\ shuning uchun bu shunchaki atama emas, ingliz tilidan tenglamaga o'tishning birinchi qadami.}
@@ -100,7 +128,7 @@ Bo'lish & $\dfrac{a}{b}$ & Bo'linma & Quotient \\
 
 \vspace{2mm}
 \begin{center}
-{\sffamily\bfseries\color{ink} Qavs $\;\to\;$ Daraja/ildiz $\;\to\;$ II bosqich ($\times,\div$) $\;\to\;$ I bosqich ($+,-$)}
+{\sffamily\bfseries\color{black} Qavs $\;\to\;$ Daraja/ildiz $\;\to\;$ II bosqich ($\times,\div$) $\;\to\;$ I bosqich ($+,-$)}
 \end{center}
 
 \vspace{2mm}
@@ -112,18 +140,18 @@ Bo'lish & $\dfrac{a}{b}$ & Bo'linma & Quotient \\
 \clearpage
 
 % ================= PAGE 2: CONCEPTS - grouping rule, model, your-turn, mistakes, vocab =================
-\pageheader{LESSON 1}{ARITHMETIC \& ORDER OF OPERATIONS}
-\mbox{}%
+\pageheader{Lesson 1}{ARITHMETIC \& ORDER OF OPERATIONS}{Amallar bajarish tartibi}
 \pagefooter{2}
+\mbox{}%
 
-\begin{textblock*}{170mm}(20mm,18mm)
+\begin{textblock*}{199mm}(5.5mm,16mm)
 {\fontsize{11}{15}\selectfont
 
 {\small\textbf{E'tibor bering:} "qavs" bosqichi faqat ko'zga ko'ringan qavslarni emas, \textbf{kasr chizig'ini} (hammasi tepada va hammasi pastda guruhlangandek) va \textbf{modul belgisini} ($|\ |$, ichidagi amal avval bajariladi) ham o'z ichiga oladi \textemdash\ bu eng muhim SAT-ga xos kengaytma.}
 
 \vspace{3mm}
 \begin{tikzpicture}
-\node[draw=accent,line width=0.6pt,rounded corners=1pt,inner sep=4mm,text width=160mm,align=left] {%
+\node[draw=accent,line width=0.6pt,rounded corners=1pt,inner sep=4mm,text width=188mm,align=left] {%
 {\sffamily\bfseries\color{accent} 1-misol}\\[1mm]
 $5 + 2 \times (8-3)^2 \div 5 = ?$\\[2mm]
 \textbf{Yechish:} Avval qavs: $8-3=5$. Ifoda: $5+2\times5^2\div5$. Keyin daraja: $5^2=25$. Ifoda: $5+2\times25\div5$. Endi II bosqich chapdan o'ngga: $2\times25=50$, so'ng $50\div5=10$. Ifoda: $5+10$. Eng oxirida I bosqich: $5+10=15$.\\[2mm]
@@ -133,15 +161,15 @@ $5 + 2 \times (8-3)^2 \div 5 = ?$\\[2mm]
 
 \vspace{3mm}
 \begin{tikzpicture}
-\node[draw=ink!40,line width=0.5pt,dashed,rounded corners=1pt,inner sep=4mm,text width=160mm,align=left] {%
-{\sffamily\bfseries\color{ink!70} O'zingiz bajaring}\\[1mm]
+\node[draw=black!40,line width=0.5pt,dashed,rounded corners=1pt,inner sep=4mm,text width=188mm,align=left] {%
+{\sffamily\bfseries\color{black!70} O'zingiz bajaring}\\[1mm]
 $12 - 3\times(1+3)^2 \div 6 = \makebox[30mm]{\dotfill}$
 };
 \end{tikzpicture}
 
 \vspace{3mm}
 \begin{tikzpicture}
-\node[draw=ink!60,line width=0.6pt,rounded corners=1pt,inner sep=4mm,text width=160mm,align=left,fill=accentlight] {%
+\node[draw=black!60,line width=0.6pt,rounded corners=1pt,inner sep=4mm,text width=188mm,align=left,fill=badge!35] {%
 {\sffamily\bfseries\color{accent} Keng tarqalgan xato}\\[1mm]
 \textbf{Noto'g'ri:} ko'paytirish har doim bo'lishdan oldin, qo'shish har doim ayirishdan oldin bajariladi deb o'ylash.\\[1mm]
 \textbf{To'g'ri:} $\times$ va $\div$ bir xil bosqich \textemdash\ ifodada qaysi tartibda uchrasa, shu tartibda, chapdan o'ngga. $20\div4\times5$: avval $20\div4=5$ (chunki u chapda), so'ng $5\times5=25$ \textemdash\ $25$, \emph{emas} $1$.
@@ -157,14 +185,14 @@ $\dfrac{10-4}{2\times3} \;\ne\; 10-\dfrac{4}{2}\times3 \qquad(1 \ne 4)$
 {\sffamily\bfseries\small\color{accent} Vocabulary}
 \vspace{1mm}
 
-\begin{minipage}[t]{80mm}
+\begin{minipage}[t]{94mm}
 \small
 Arithmetic operation \textemdash\ Arifmetik amal\\
 Sum / Difference \textemdash\ Yig'indi / Ayirma\\
 Product / Quotient \textemdash\ Ko'paytma / Bo'linma\\
 Order of operations \textemdash\ Amallar bajarish tartibi
 \end{minipage}%
-\begin{minipage}[t]{80mm}
+\begin{minipage}[t]{94mm}
 \small
 Parentheses / Exponent \textemdash\ Qavs / Daraja\\
 Fraction bar \textemdash\ Kasr chizig'i\\
@@ -177,122 +205,116 @@ Left to right \textemdash\ Chapdan o'ngga
 
 \clearpage
 
-% ================= PAGE 3: PROBLEMS - Sets 1-2 =================
-\pageheader{LESSON 1}{PRACTICE}
-\mbox{}%
+% ================= PAGE 3: PROBLEMS - Sets 1-4, two-column, tight =================
+\pageheader{Lesson 1}{PRACTICE}{Mashqlar}
 \pagefooter{3}
-\sectionlabel{Practice Sets}
+\mbox{}%
 
-\begin{textblock*}{170mm}(20mm,32mm)
-{\fontsize{11}{15}\selectfont
-
-{\sffamily\bfseries\color{accent} Set 1 \textemdash\ Pure Numeric Drill}
-
+\begin{textblock*}{199mm}(5.5mm,30mm)
+{\fontsize{13}{16}\selectfont
+\begin{center}
+{\itshape\bfseries\fontsize{15}{17}\selectfont Set 1}\\[0.5mm]
+{\itshape Pure Numeric Drill}
+\end{center}
 \vspace{2mm}
-\begin{enumerate}[leftmargin=10mm,itemsep=2mm]
-\item $3+4\times2$
-\item $(3+4)\times2$
-\item $20-6\div3$
-\item $(18-6)\div3$
-\item $2\times3^2$
-\item $(2\times3)^2$
-\item $18\div3\times2$
-\item $10-2\times3+4$
-\end{enumerate}
+\begin{center}
+\begin{tabular}{@{}p{85mm}|p{85mm}@{}}
+1.\ $3+4\times2$ & 5.\ $2\times3^2$ \\[7mm]
+2.\ $(3+4)\times2$ & 6.\ $(2\times3)^2$ \\[7mm]
+3.\ $20-6\div3$ & 7.\ $18\div3\times2$ \\[7mm]
+4.\ $(18-6)\div3$ & 8.\ $10-2\times3+4$ \\[7mm]
+\end{tabular}
+\end{center}
 
 \vspace{4mm}
-{\sffamily\bfseries\color{accent} Set 2 \textemdash\ Negative Numbers Present}
-
+\begin{center}
+{\itshape\bfseries\fontsize{15}{17}\selectfont Set 2}\\[0.5mm]
+{\itshape Negative Numbers Present}
+\end{center}
 \vspace{2mm}
-\begin{enumerate}[leftmargin=10mm,itemsep=2mm]
-\item $-3+4\times2$
-\item $(-3+4)\times2$
-\item $5-(-2)\times3$
-\item $(-2)^2\times3$
-\item $-2^2\times3$
-\item $10+(-4)\div2$
-\item $(10+(-4))\div2$
-\item $-5\times(-3)+2$
-\end{enumerate}
+\begin{center}
+\begin{tabular}{@{}p{85mm}|p{85mm}@{}}
+1.\ $-3+4\times2$ & 5.\ $-2^2\times3$ \\[7mm]
+2.\ $(-3+4)\times2$ & 6.\ $10+(-4)\div2$ \\[7mm]
+3.\ $5-(-2)\times3$ & 7.\ $(10+(-4))\div2$ \\[7mm]
+4.\ $(-2)^2\times3$ & 8.\ $-5\times(-3)+2$ \\[7mm]
+\end{tabular}
+\end{center}
+
+\vspace{4mm}
+\begin{center}
+{\itshape\bfseries\fontsize{15}{17}\selectfont Set 3}\\[0.5mm]
+{\itshape Fraction Bar as a Grouping Symbol}
+\end{center}
+\vspace{2mm}
+\begin{center}
+\begin{tabular}{@{}p{85mm}|p{85mm}@{}}
+1.\ $\dfrac{3+5}{2\times2}$ & 5.\ $\dfrac{6+2}{2+2}$ \\[9mm]
+2.\ $\dfrac{12-4}{2\times2}$ & 6.\ $\dfrac{20}{2+3}-1$ \\[9mm]
+3.\ $\dfrac{2+3\times4}{7}$ & 7.\ $\dfrac{18-6}{3\times(1+1)}$ \\[9mm]
+4.\ $\dfrac{5^2-1}{3\times2}$ & 8.\ $\dfrac{7+9}{4^2-12}$ \\[9mm]
+\end{tabular}
+\end{center}
 
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: PROBLEMS - Sets 3-4 =================
-\pageheader{LESSON 1}{PRACTICE}
-\mbox{}%
+% ================= PAGE 4: PROBLEMS - Set 4-6 + Set 7 + Answer Key =================
+\pageheader{Lesson 1}{PRACTICE}{Mashqlar}
 \pagefooter{4}
+\mbox{}%
 
-\begin{textblock*}{170mm}(20mm,18mm)
-{\fontsize{11}{15}\selectfont
-
-{\sffamily\bfseries\color{accent} Set 3 \textemdash\ Fraction Bar as a Grouping Symbol}
-
+\begin{textblock*}{199mm}(5.5mm,30mm)
+{\fontsize{13}{16}\selectfont
+\begin{center}
+{\itshape\bfseries\fontsize{15}{17}\selectfont Set 4}\\[0.5mm]
+{\itshape Absolute Value Bars as a Grouping Symbol}
+\end{center}
 \vspace{2mm}
-\begin{enumerate}[leftmargin=10mm,itemsep=2mm]
-\item $\dfrac{3+5}{2\times2}$
-\item $\dfrac{12-4}{2\times2}$
-\item $\dfrac{2+3\times4}{7}$
-\item $\dfrac{5^2-1}{3\times2}$
-\item $\dfrac{6+2}{2+2}$
-\item $\dfrac{20}{2+3}-1$
-\item $\dfrac{18-6}{3\times(1+1)}$
-\item $\dfrac{7+9}{4^2-12}$
-\end{enumerate}
+\begin{center}
+\begin{tabular}{@{}p{85mm}|p{85mm}@{}}
+1.\ $|5-9|$ & 5.\ $|-3\times4|$ \\[7mm]
+2.\ $|5-9|+3$ & 6.\ $|6-10|-|2-5|$ \\[7mm]
+3.\ $-|5-9|$ & 7.\ $10-|4-12|$ \\[7mm]
+4.\ $|3-7|\times2$ & 8.\ $|(-2)^2-9|$ \\[7mm]
+\end{tabular}
+\end{center}
 
 \vspace{4mm}
-{\sffamily\bfseries\color{accent} Set 4 \textemdash\ Absolute Value Bars as a Grouping Symbol}
-
+\begin{center}
+{\itshape\bfseries\fontsize{15}{17}\selectfont Set 5}\\[0.5mm]
+{\itshape Mixed, Real-Test Density}
+\end{center}
 \vspace{2mm}
-\begin{enumerate}[leftmargin=10mm,itemsep=2mm]
-\item $|5-9|$
-\item $|5-9|+3$
-\item $-|5-9|$
-\item $|3-7|\times2$
-\item $|-3\times4|$
-\item $|6-10|-|2-5|$
-\item $10-|4-12|$
-\item $|(-2)^2-9|$
-\end{enumerate}
-
+\begin{center}
+\begin{tabular}{@{}p{85mm}|p{85mm}@{}}
+1.\ $\dfrac{2^3+4}{6-4}-1$ & 5.\ $\dfrac{5^2-3\times5}{2+3}$ \\[9mm]
+2.\ $5+\dfrac{(6-2)^2}{4}$ & 6.\ $2+3\times(7-2^2)$ \\[9mm]
+3.\ $\dfrac{10-2\times3}{2^2}$ & 7.\ $\dfrac{8+|3-7|}{2\times2}$ \\[9mm]
+4.\ $3\times(4+2^2)-\dfrac{10}{2}$ & 8.\ $(-3)^2+2\times(5-8)$ \\[9mm]
+\end{tabular}
+\end{center}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: PROBLEMS - Set 5 + Set 6 =================
-\pageheader{LESSON 1}{PRACTICE}
-\mbox{}%
+% ================= PAGE 5: PROBLEMS - Set 6-7 + Answer Key =================
+\pageheader{Lesson 1}{PRACTICE}{Mashqlar}
 \pagefooter{5}
+\mbox{}%
 
-\begin{textblock*}{170mm}(20mm,18mm)
-{\fontsize{11}{15}\selectfont
-
-{\sffamily\bfseries\color{accent} Set 5 \textemdash\ Mixed, Real-Test Density}
-
+\begin{textblock*}{199mm}(5.5mm,30mm)
+{\fontsize{13}{16}\selectfont
+\begin{center}
+{\itshape\bfseries\fontsize{15}{17}\selectfont Set 6}\\[0.5mm]
+{\itshape Spot the Error \textemdash\ name the broken step, give the correct answer}
+\end{center}
 \vspace{2mm}
-\begin{enumerate}[leftmargin=10mm,itemsep=2mm]
-\item $\dfrac{2^3+4}{6-4}-1$
-\item $5+\dfrac{(6-2)^2}{4}$
-\item $\dfrac{10-2\times3}{2^2}$
-\item $3\times(4+2^2)-\dfrac{10}{2}$
-\item $\dfrac{5^2-3\times5}{2+3}$
-\item $2+3\times(7-2^2)$
-\item $\dfrac{8+|3-7|}{2\times2}$
-\item $(-3)^2+2\times(5-8)$
-\end{enumerate}
-
-\vspace{4mm}
-{\sffamily\bfseries\color{accent} Set 6 \textemdash\ Spot the Error}
-
-\vspace{1mm}
-{\small Har bir misolda aynan bitta xato qadam bor. Qaysi qadam xato va nega, ayting, so'ng to'g'ri javobni toping.}
-
-\vspace{2mm}
-\begin{enumerate}[leftmargin=10mm,itemsep=2mm]
 \small
+\begin{enumerate}[leftmargin=8mm,itemsep=2mm]
 \item $20\div4\times5$ \textemdash\ \emph{"1-qadam: $4\times5=20$. 2-qadam: $20\div20=1$."}
 \item $15-3+4$ \textemdash\ \emph{"1-qadam: $3+4=7$. 2-qadam: $15-7=8$."}
 \item $\dfrac{10+2}{2\times3}$ \textemdash\ \emph{"Avval $2\times3=6$, so'ng $2\div6=\frac13$, so'ng $10+\frac13$."}
@@ -300,42 +322,34 @@ Left to right \textemdash\ Chapdan o'ngga
 \item $3-|5-9|$ \textemdash\ \emph{"$3-5-9=-11$."}
 \end{enumerate}
 
-}
-\end{textblock*}
-
-\clearpage
-
-% ================= PAGE 6: PROBLEMS - Set 7 + Answer Key =================
-\pageheader{LESSON 1}{PRACTICE}
-\mbox{}%
-\pagefooter{6}
-
-\begin{textblock*}{170mm}(20mm,18mm)
-{\fontsize{11}{15}\selectfont
-
-{\sffamily\bfseries\color{accent} Set 7 \textemdash\ Bonus / Challenge (\textasciitilde90 sec each)}
-
+\vspace{3mm}
+\begin{center}
+{\itshape\bfseries\fontsize{15}{17}\selectfont Set 7}\\[0.5mm]
+{\itshape Bonus / Challenge (\textasciitilde90 sec each)}
+\end{center}
 \vspace{2mm}
-\begin{enumerate}[leftmargin=10mm,itemsep=2mm]
-\item $|(-3)^2-2\times(5-8)|\div3$
-\item $\dfrac{4+|2-6|^2}{3\times2-2}$
-\item $2\times\left[(10-4)^2\div3+1\right]-5$
-\item $\dfrac{|-12|+3^2}{7-4}$
-\item $1+2\times\left[|4-10|-(3-1)^2\right]$
-\end{enumerate}
+\begin{center}
+\begin{tabular}{@{}p{60mm}|p{60mm}|p{60mm}@{}}
+1.\ $|(-3)^2-2\times(5-8)|\div3$ & 2.\ $\dfrac{4+|2-6|^2}{3\times2-2}$ & 3.\ $2\times\!\left[(10-4)^2\div3+1\right]-5$ \\[9mm]
+4.\ $\dfrac{|-12|+3^2}{7-4}$ & 5.\ $1+2\times\!\left[|4-10|-(3-1)^2\right]$ & \\[9mm]
+\end{tabular}
+\end{center}
 
-\vspace{5mm}
+\vspace{4mm}
 {\sffamily\bfseries\small\color{accent} Answer Key}
 \vspace{1mm}
 
-\begin{minipage}[t]{80mm}
+\begin{minipage}[t]{63mm}
 \small
-\textbf{Set 1:} 11, 14, 18, 4, 18, 36, 12, 8\\[1mm]
-\textbf{Set 2:} 5, 2, 11, 12, $-12$, 8, 3, 17\\[1mm]
+\textbf{Set 1:} 11, 14, 18, 4,\\ 18, 36, 12, 8\\[1mm]
+\textbf{Set 2:} 5, 2, 11, 12,\\ $-12$, 8, 3, 17
+\end{minipage}%
+\begin{minipage}[t]{63mm}
+\small
 \textbf{Set 3:} 2, 2, 2, 4, 2, 3, 2, 4\\[1mm]
 \textbf{Set 4:} 4, 7, $-4$, 8, 12, 1, 2, 5
 \end{minipage}%
-\begin{minipage}[t]{80mm}
+\begin{minipage}[t]{63mm}
 \small
 \textbf{Set 5:} 5, 9, 1, 19, 2, 11, 3, 3\\[1mm]
 \textbf{Set 6:} 25, 16, 2, $-16$, $-1$\\[1mm]

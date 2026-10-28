@@ -1,14 +1,25 @@
 # Book Design Spec — Fonts, Sizes, Colors, Page Structure
 
-**Status: locked baseline.** This is the single source of truth for how every book
-page is typeset. Every Book 1/2/3 lesson page should follow this spec exactly —
-that consistency is the whole point of moving off Canva. If something here needs
-to change, change it here first, then re-derive the pages — never drift a single
-page off-spec by hand.
+**Status: locked baseline, v2 — corrected against the real book.** §§2-5 and 9
+below were originally guessed from a from-scratch prototype and were **wrong**
+— they didn't match the actual existing Canva book (`White and Black Modern
+Book Cover A4`, design ID `DAHSYbGKTZo`). This version replaces those sections
+with values pulled directly from that design's element data (exact hex colors,
+positions, and font sizes, converted from Canva's 794×1123px page canvas to
+real mm/pt via a 210mm/794px position scale and a 0.75pt/px font scale — Canva
+canvas is 96dpi, print is 72dpi, hence the 0.75 factor). Treat §§2-5 and 9 as
+ground truth; don't re-guess from thumbnails again.
 
-Derived from: `01-official-sat-math-spec.md`, `06-concept-explanation-pedagogy.md`,
-`08-concept-explanation-style-guide.md`, plus two compiled prototypes built and
-reviewed earlier in this project (font comparison sheet + full mockup page).
+Fonts (§6 Libertinus Serif/Sans/Math) and the content-block pattern (§10 —
+Definition → Model → Your-turn → Common Mistake → Vocabulary) are a
+**deliberate upgrade** over the old book's plain bullet-list format, grounded
+in the worked-example/split-attention pedagogy research, and were not part of
+the user's complaint — kept as-is. Everything about brand chrome (colors,
+header, watermark, footer) is now pixel-matched to the real book instead.
+
+Derived from: live element-data read of design `DAHSYbGKTZo` pages 1 (cover)
+and 5-7 (Lesson 1 content + practice), `06-concept-explanation-pedagogy.md`,
+`08-concept-explanation-style-guide.md`.
 
 ---
 
@@ -50,57 +61,87 @@ companion in the same family for headers — avoids the mismatched-pairing look.
 **Do not substitute fonts per-page.** One family, three roles (serif body / sans
 chrome / math), everywhere.
 
-## 3. Type sizes
+## 3. Type sizes (corrected, matches real book)
 
-Body text: **11pt / 15pt leading** (`\fontsize{11}{15}\selectfont`). Tested
-9/10/11/12pt at matching leading on a full A4 page with real Uzbek+English+math
-content; 11pt was the chosen balance — 9–10pt read cramped at normal reading
-distance for a dense bilingual page, 12pt wasted space given how much every
-concept page needs to hold (native definition, English gloss, worked example,
-practice prompt, vocabulary). This matches typical printed-textbook body size
-(most printed A4 textbooks run 10–12pt body).
+Body/bullet text: **18pt** (`fontSize: 24` in Canva's px-equivalent units ×
+0.75pt/px). This is much larger than our original 11pt guess — the real book
+is written at this size throughout. Concept pages built with the boxed
+Model/Your-turn pattern (denser than the old plain-bullet format) should use
+11-12pt within those boxes to actually fit the extra pedagogical content on
+one page — bullet-style content (vocabulary, short definitions, practice
+numbers) should use the true 18pt to match.
 
-| Role | Size | Leading | Style |
-|---|---|---|---|
-| Page header lesson label ("LESSON 2") | sans, `\large`, bold | — | accent color |
-| Page header topic title ("FRACTIONS") | sans, `\large`, bold | — | accent color, right-aligned |
-| Section label ("Concepts") | sans, `\Large`, bold italic | — | ink, centered |
-| Body text (definitions, prose) | serif, 11pt | 15pt | ink |
-| Secondary/gloss text (English translation line) | serif, `\small`, 70% ink | — | ink!70 |
-| Box titles ("1-misol", "O'zingiz bajaring") | sans, bold | — | accent / ink!70 |
-| Vocabulary list | serif, `\small` | — | ink |
-| Footer handle / page number | sans, italic/`\small` | — | accent |
+| Role | Size | Style |
+|---|---|---|
+| Header "Lesson N" badge text | sans, 28pt, bold | white, on `badge`-fill pill |
+| Header topic title | sans, 19pt, bold | `accent`, centered |
+| Header Uzbek subtitle | sans, 14.5pt, bold | `badge` color, centered |
+| Section label ("Concepts:") | serif, 19pt, bold italic | black, centered |
+| Body bullet text | serif, 18pt | black (`#000000`, not `ink`) |
+| Example/"ex:" lines within bullets | serif, 18pt | `accent` |
+| Vocabulary list | serif, 18pt (or smaller if tight) | black |
+| Practice set heading ("Set N") | serif, italic, centered | black |
+| Footer handle / page number | sans, italic, 14pt | `accent` |
 
-## 4. Colors
-
-Brand palette, fixed:
+## 4. Colors (corrected — one color added)
 
 | Token | Hex | Use |
 |---|---|---|
-| `accent` | `#F46530` | Headers, box titles, footer rule, emphasis |
-| `accentlight` | `#FFEEE8` | Header bar background (full-bleed band) |
-| `ink` | `#2A2E30` | Body text (near-black, not pure black) |
+| `accent` | `#F46530` | Title text, example lines, footer, dividers, emphasis |
+| `badge` | `#FFBDA5` | Header pill/circle fill, Uzbek subtitle text — **new, was missing entirely from v1** |
+| `ink` | `#2A2E30` | Watermark text color only (not body text) |
+| black | `#000000` | Body bullet text, "Concepts:" label — real book uses pure black here, not `ink` |
 
-No other colors. Tints of `ink` (e.g. `ink!70`, `ink!40`) are allowed for
-secondary text and muted borders — no new hues.
+`accentlight` (`#FFEEE8`) from v1 is **not used anywhere in the real book** —
+drop it. No full-bleed colored header band exists; the header is white with a
+pill badge on it, not a colored band.
 
-## 5. Page geometry
+## 5. Page geometry (corrected — pixel-matched)
 
-- **A4, zero page margin** (`geometry: margin=0mm`) — all layout is done via
-  absolute-positioned `textblock*` blocks (`textpos` package), not LaTeX's normal
-  flowing margins. This gives exact, repeatable pixel-level placement instead of
-  "roughly consistent" flow layout.
-- **Header band:** full-bleed `accentlight` rectangle, 0–14mm from top. Lesson
-  label at left (12mm from left edge), topic title at right, both 4mm from top,
-  sans bold accent.
-- **Footer:** thin `accent` rule at 186mm width, 12mm from left edge, y=280mm.
-  Below it: handle (`@sat1200plus`) at left, page number at right, both sans,
-  accent color, 283mm from top.
-- **Content area:** 170mm wide, starting 20mm from left, 22mm from top (section
-  label), body content starts ~34mm from top. Effective content column leaves
-  ~20mm margin left/right within the un-printed header/footer bands.
-- **Page style:** `\pagestyle{empty}` — no running LaTeX page numbers; header/
-  footer are hand-drawn via the macros above, same on every page.
+All positions below are converted from the real Canva design (`DAHSYbGKTZo`,
+pages 1/5-7) at 210mm/794px for positions and 0.75pt/px for font sizes (Canva
+canvas is 96dpi, print is 72dpi).
+
+- **A4, zero page margin**, absolute-positioned `textblock*` (`textpos`),
+  same as v1 — this part was right.
+- **Background: white**, not a colored band. The "light red" the user saw is
+  the header pill + subtitle color (`badge`), not a page band.
+- **Watermark** (every page, behind content): two large bold "sat / 1200+"
+  text blocks, serif... no — **sans**, bold, 81pt, color `ink` tinted to ~7%
+  opacity (approximate with `ink!7` — mixing with white, since true alpha
+  isn't needed against a white background), centered at (112.8mm, 111.9mm)
+  rotated 12.16°, and a second copy centered at (97.1mm, 185.0mm) rotated
+  -167.84° (i.e. the same block mirrored/flipped to the opposite corner —
+  together they form a diamond-ish watermark, not true circular text as the
+  thumbnail suggested). Plus "math" centered at (105.0mm, 148.4mm), 114pt,
+  bold, `accent` tinted to ~14% opacity (`accent!14`), no rotation.
+- **Header pill badge:** rounded rectangle, fill `badge`, from
+  roughly x=-12.9mm to x=56.7mm (bleeds off the left page edge), y=10.5mm,
+  height=12.5mm, rounded corners on the visible (right) end only — achieved
+  in the original via a rectangle + overlapping circle, but a plain
+  `rounded corners` rect reproduces the same look. Contains "Lesson N" in
+  white 28pt bold, centered in that pill.
+- **Header title:** "LESSON TOPIC NAME" in `accent`, 19pt bold, centered,
+  box starting x=72.0mm, y=11.5mm, width=128.9mm.
+- **Header subtitle:** Uzbek translation of the topic, `badge` color, 14.5pt
+  bold, centered, box starting x=109.5mm, y=19.3mm, width=59.8mm (sits
+  directly under the title, narrower, right-of-center).
+- **"Concepts:" section label:** bold italic serif, 19pt, **black** (not
+  accent), centered, at roughly x=92.7mm, y=34.9mm.
+- **Body content area:** starts x=5.5mm, y=48.6mm, width=199mm (nearly full
+  page width minus small margins), bullet-point format.
+- **Footer:** solid `accent` bar, full width (202mm), at y=286.4mm. Below it:
+  `@sat1200plus` handle at x=-5.8mm (bleeds slightly off left edge, text
+  box is wide enough that visible text starts near the true margin),
+  page number at x=198.6mm (right edge) — both y=288.3mm, 14pt italic accent.
+- **Page style:** `\pagestyle{empty}`, header/footer/watermark drawn by
+  macros on every page, same as v1.
+
+**Simplification kept from v1, not from the real book:** the real header also
+has two small decorative accent-colored "elbowed" swoosh lines near the pill
+badge and a thin accent divider line specific to one lesson's diagram layout.
+These are minor and content-specific — not reproduced. Flag to the user if an
+exact match including these becomes important later.
 
 ## 6. Content block pattern (per concept page)
 
@@ -161,12 +202,31 @@ but silently produces a 1-page PDF with every page's content stacked
 illegibly on top of each other — always render and visually check page count
 after adding pages, don't just check for compile errors.
 
-## 9. What's still open
+## 9. Practice-set page layout (corrected — matches real book)
 
-- Practice-set page layout (problems file → typeset page) is not yet
-  specified — only the concepts page pattern above has a built prototype.
-  Will design this when the first lesson's problems file is written.
+v1 used a single-column numbered list, 11pt, minimal spacing — wrong on two
+counts the user flagged directly: wasted space (cost matters, these get
+printed and sold) and wrong column structure. Real book pattern:
+
+- **Two columns**, divided by a single thin vertical rule down the page
+  center — not two independent blocks, one shared rule between them.
+- **"Set N" heading**, italic serif, centered, directly above the two
+  columns, with a one-line italic instruction below it ("Add the Positive
+  Integers:", etc.).
+- **Each problem is terse** ("3+4=") with **generous vertical space after
+  it** for the student to write the answer by hand directly on the page —
+  this is deliberate blank space *for writing*, not wasted space; the v1
+  mistake was leaving blank space from under-filling the page, not from
+  write-in room.
+- Fill the page: pack as many sets/problems as fit using the write-in
+  spacing above, rather than one short set per page. Cost-per-page is real
+  money once printed — density matters.
+
+## 10. What's still open
+
 - Multi-page concept lessons (when one topic needs more than one page) —
   pattern not yet tested at scale.
 - Cover/front-matter/table-of-contents page design — out of scope until Book 1
   content is further along.
+- The decorative elbow-swoosh lines and content-specific dividers noted in
+  §5 — not reproduced, revisit if the user wants an exact match.
