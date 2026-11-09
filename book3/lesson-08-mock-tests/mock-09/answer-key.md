@@ -92,7 +92,10 @@ yo'qoladi, demak $11\times4=44$ soat.
 
 **7. Javob: B ($7x^3+10$).** $(8x^3+8)-(x^3-2)=8x^3+8-x^3+2=7x^3+10$.
 
-**8. Javob: $-4$.** $g(x)=x^2+4x$. $g(-2)=(-2)^2+4(-2)=4-8=-4$.
+**8. Javob: B ($-4$).** $g(x)=x^2+4x$. $g(-2)=(-2)^2+4(-2)=4-8=-4$.
+*(Keng tarqalgan xato: $(-2)^2$ ni $-4$ deb hisoblash — bu A variantiga olib keladi; yoki
+$4(-2)=-8$ hadining ishorasini $+8$ deb noto'g'ri o'qib, $4+8=12$ olish — bu D variantiga
+olib keladi.)*
 
 **9. Javob: C ($4x^2-12x+9$).** $(2x-3)^2=(2x)^2-2(2x)(3)+3^2=4x^2-12x+9$.
 

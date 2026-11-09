@@ -64,6 +64,11 @@ D. $7x^3 + 6$
 
 **8.** If $g(x) = x^2 + 4x$, what is the value of $g(-2)$?
 
+A. $-12$
+B. $-4$
+C. $4$
+D. $12$
+
 **9.** Which expression is equivalent to $(2x - 3)^2$?
 
 A. $4x^2 - 9$

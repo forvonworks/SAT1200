@@ -26,11 +26,9 @@ To'g'ri to'rtburchak yuzasi $=$ uzunlik $\times$ kenglik $=12\times5=60$.
 
 Jami shar $=8+12=20$. Qizil shar ehtimoli $=\frac{8}{20}=\frac{2}{5}$.
 
-**5. Javob: C) 8**
+**5. Javob: B) 3**
 
-$f(x)=2x-5$. $f(4)=2(4)-5=8-5=3$... *(tekshirib ko'ring: to'g'ri javob $3$, B band)*
-
-**Javobni tuzatish: B) 3.** $f(4)=2(4)-5=3$.
+$f(x)=2x-5$. $f(4)=2(4)-5=8-5=3$.
 
 **6. Javob: C) $3x^2+12x+12$**
 
