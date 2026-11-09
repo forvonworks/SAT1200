@@ -237,7 +237,8 @@ $30$ ga bo'lamiz: $7=1+\dfrac{p}{100}$, bundan $\dfrac{p}{100}=6$, $p=600$.
 Agar $\angle A=\angle F$ bo'lsa (I), $\angle B=\angle G$ bilan birga ikkita mos burchak
 teng — AA mezoni bo'yicha uchburchaklar o'xshash, demak I **yetarli**. Xuddi shunday,
 agar $\angle C=\angle H$ bo'lsa (II), yana ikkita mos burchak teng — II ham **yetarli**.
-III uchun: $FH=3\times AC$ bo'lsa, $FG/AB=18/6=3$ bilan bir xil nisbat — ammo $\angle B$
-($AB$ va $BC$ orasida emas, $AB$ va... aslida $\angle B$ — $AB$ bilan $BC$ orasida, $AC$
-bilan emas) berilgan burchak $AB$ va $AC$ orasida **emas** (u $AB$ va $BC$ orasida), demak
-SAS mezonini qo'llash uchun burchak noto'g'ri joyda — III **yetarli emas**.
+III uchun: agar $FH=3\times AC$ bo'lsa, bu nisbat $FG/AB=18/6=3$ bilan bir xil — ammo
+berilgan burchak ($\angle B$ va $\angle G$) aynan shu ikki tomon ($AC$ va $FH$) orasida
+joylashgan burchak **emas**: $\angle B$ — $AB$ bilan $BC$ orasida joylashgan, $AC$ bilan
+emas. SAS mezonini qo'llash uchun berilgan burchak aynan taqqoslanayotgan ikki tomon
+orasida bo'lishi shart, bu yerda esa bu shart bajarilmaydi — demak III **yetarli emas**.
