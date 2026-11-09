@@ -127,7 +127,54 @@ questions too, so students aren't left without a strategy for them.
 **Option B:** add an 8th lesson, "Geometry & Trigonometry — Hard Applications," to give this
 pool the same dedicated treatment as Lessons 3 and 6.
 
-Flagged to the user; proceeding on Option A unless redirected.
+**Decision: Option B.** User's call: "do the best option, that leaves nothing important."
+Book 3 is now **8 lessons**, renumbered:
+
+1. Multi-Step & Disguised Word Problems (Challenge)
+2. Function Composition & Transformation — Deep Dive
+3. No-Real-Solution Quadratics & Discriminant Edge Cases
+4. Speed Techniques (Vieta's, completing-the-square fluency, factoring mastery)
+5. Bonus Insight — Logarithms & Unit Circle
+6. Data-Analysis Edge Cases & Study-Design Critique (Hard)
+7. **Geometry & Trigonometry — Hard Applications** (new) — right triangles/trig, circles,
+   area/volume, lines/angles/triangles at the hard tier, drawing on the real 152-question
+   Hard pool (the single largest proportional Hard-tier concentration in the whole bank)
+8. Full-Length Mock Tests + Module 1 Pacing Strategy (was Lesson 7; renumbered)
+
+The Annotated TOC Claude Doc has been updated to reflect this.
+
+---
+
+## 4b. Extraction limitation discovered, and the fix
+
+**`pdftotext` cannot recover the actual numbers inside questions or rationales.** The three
+Question Bank PDFs render every embedded formula/number through a custom Type 3 font with
+no Unicode mapping (`pdffonts` confirms: `Type 3, Custom encoding, no ToUnicode`) — this is
+a rendering artifact of whatever tool exported these PDFs from the live Question Bank web
+app, not a flag/mode issue (`-layout`, `-raw`, and plain mode were all tried; none recover
+it). Surrounding prose extracts perfectly; only the math itself comes out as blank space.
+Example (`983412ea`, p.1691 of `SAT MATH.pdf`): extracted text reads *"A right square prism
+has a height of       units. The volume of the prism is         cubic units..."* — the
+actual numbers (14, 2016) are simply absent from the text layer.
+
+**Fix: render + read, not extract.** `pdftoppm -png -f <page> -l <page> -r 150 "<pdf>"
+<out>` rasterizes the exact page as an image; reading that image (vision) recovers the full
+question, answer, and rationale with real numbers perfectly — verified on the sample above.
+This means every real question pulled from the bank for the book needs one page-render +
+one image-read, not a bulk text-scrape.
+
+**Made this practical at scale:** built a Question-ID → exact-page-number index across all
+5,215 questions in all three PDFs (`qbank_page_index.json`, derived from pdftotext's
+`\x0c` page-break markers, which align 1:1 with PDF pages) — so pulling any specific real
+question by ID is one direct page-render away, no searching. Combined with the structured
+metadata parse (`qbank_parsed.jsonl` — Domain/Skill/Difficulty/rationale-length, all clean,
+only the math-bearing text has gaps), this gives a full pipeline: **filter candidates by
+real tags → rank by rationale length as a first complexity pass → render the exact page →
+read it to get the real numbers → write/adapt into the book.**
+
+Both derived files live in the session scratchpad (not committed — they're a processing
+index over copyrighted source material already present in `Materials/`, not new research
+content in their own right).
 
 ---
 
