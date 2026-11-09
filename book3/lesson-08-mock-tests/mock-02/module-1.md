@@ -38,7 +38,7 @@ A) 6  B) 8  C) 9  D) 18
 
 **6.** Line $t$ crosses two parallel horizontal lines, $m$ (upper) and $n$ (lower), running from upper-left to lower-right. At the point where $t$ crosses $m$, the angle between $t$ and $m$ that opens toward the lower-left is marked $170°$. At the point where $t$ crosses $n$, the angle in the same relative position (between $t$ and $n$, opening toward the lower-left) is marked $w°$. What is the value of $w$?
 
-A) 10  B) 70  C) 80  D) 170
+A) 17  B) 30  C) 70  D) 170
 
 **7.** The function $f$ is defined by $f(x) = 3x + 5$. What is the value of $f(4)$?
 
