@@ -168,7 +168,7 @@ bo'lgan joyni toping:
 
 | Module 1 | Domain | Module 2 | Domain |
 |---|---|---|---|
-| 1, 5, 9, 12, 15, 16, 20 | Algebra | 3, 6, 9, 12, 13, 17, 18, 19 | Algebra |
+| 1, 5, 8, 9, 12, 15, 16, 20 | Algebra | 3, 6, 9, 12, 13, 17, 18, 19 | Algebra |
 | 2, 6, 7, 10, 14, 17, 21 | Advanced Math | 4, 7, 10, 11, 14, 20, 21, 22 | Advanced Math |
 | 4, 13, 22 | Problem-Solving & Data Analysis | 2, 8, 16 | Problem-Solving & Data Analysis |
 | 3, 11, 18, 19 | Geometry & Trigonometry | 1, 5, 15 | Geometry & Trigonometry |
