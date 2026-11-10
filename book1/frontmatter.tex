@@ -1,0 +1,54 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage[absolute]{textpos}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+
+\definecolor{accent}{HTML}{F46530}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\begin{document}
+
+% Page 2 -- fully blank leaf after the cover, no footer, no number.
+\mbox{}
+\clearpage
+
+% Pages 3-6 -- blank (reserved for TOC/half-title/copyright later), but numbered.
+\pagefooter{3}
+\mbox{}
+\clearpage
+
+\pagefooter{4}
+\mbox{}
+\clearpage
+
+\pagefooter{5}
+\mbox{}
+\clearpage
+
+\pagefooter{6}
+\mbox{}
+
+\end{document}
