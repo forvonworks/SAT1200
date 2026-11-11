@@ -87,29 +87,28 @@
 \pagefooter{104}
 \mbox{}%
 
-% ================= CARD 1: Koordinatalar tekisligi (y: 33-93) =================
-\cardbg{16}{33}{178}{60}
+% ================= CARD 1: Koordinatalar tekisligi (y: 33-103) =================
+\cardbg{16}{33}{178}{70}
 \pill{26}{36}{Koordinatalar tekisligi}
 
-\begin{textblock*}{80mm}(44mm,52mm)
+\begin{textblock*}{158mm}(26mm,50mm)
 \begin{tikzpicture}
+\path (0,0) rectangle (158mm,-46mm);
+\begin{scope}[shift={(38mm,-23mm)}]
 \draw[ink,line width=0.8pt,->] (-20mm,0) -- (20mm,0) node[right,font=\fontsize{9}{9}\selectfont] {$x$};
-\draw[ink,line width=0.8pt,->] (0,-16mm) -- (0,16mm) node[above,font=\fontsize{9}{9}\selectfont] {$y$};
+\draw[ink,line width=0.8pt,->] (0,-14mm) -- (0,14mm) node[above,font=\fontsize{9}{9}\selectfont] {$y$};
 \node[font=\fontsize{8}{8}\selectfont,text=black!55] at (-2.5mm,-3mm) {$O$};
-
-\node[font=\sffamily\bfseries\fontsize{11}{11}\selectfont,text=accent] at (10mm,8mm) {I};
+\node[font=\sffamily\bfseries\fontsize{11}{11}\selectfont,text=accent] at (16mm,3mm) {I};
 \node[font=\sffamily\bfseries\fontsize{11}{11}\selectfont,text=accent] at (-10mm,8mm) {II};
 \node[font=\sffamily\bfseries\fontsize{11}{11}\selectfont,text=accent] at (-10mm,-8mm) {III};
 \node[font=\sffamily\bfseries\fontsize{11}{11}\selectfont,text=accent] at (10mm,-8mm) {IV};
-
-\filldraw[accent] (12mm,12mm) circle (0.6mm);
-\node[font=\fontsize{9}{9}\selectfont,anchor=west] at (13mm,12mm) {$(3,\,5)$};
-\draw[accent,dashed,line width=0.5pt] (12mm,0) -- (12mm,12mm) -- (0,12mm);
-\end{tikzpicture}
-\end{textblock*}
-
-\begin{textblock*}{50mm}(128mm,54mm)
-{\fontsize{10.5}{14}\selectfont
+\filldraw[accent] (12mm,10mm) circle (0.6mm);
+\node[font=\fontsize{9}{9}\selectfont,anchor=west] at (13mm,10mm) {$(3,\,5)$};
+\draw[accent,dashed,line width=0.5pt] (12mm,0) -- (12mm,10mm) -- (0,10mm);
+\end{scope}
+\begin{scope}[shift={(100mm,-4mm)}]
+\node[anchor=north west,inner sep=0pt] {%
+\fontsize{10.5}{14}\selectfont
 \begin{tabular}{|>{\centering\arraybackslash}p{13mm}|>{\centering\arraybackslash}p{13mm}|>{\centering\arraybackslash}p{13mm}|}
 \hline
 \rowcolor{accent}
@@ -118,50 +117,55 @@ I & $+$ & $+$ \\ \hline
 II & $-$ & $+$ \\ \hline
 III & $-$ & $-$ \\ \hline
 IV & $+$ & $-$ \\ \hline
-\end{tabular}}
-\end{textblock*}
-
-% ================= CARD 2: y = kx + b (y: 99-154) =================
-\cardbg{16}{99}{178}{55}
-\pill{26}{102}{$y=kx+b$}
-
-\begin{textblock*}{158mm}(70mm,120mm)
-\begin{tikzpicture}
-\node[font=\fontsize{18}{18}\selectfont] (eq) at (0,0) {$y=-3x+5$};
-\node[font=\sffamily\bfseries\fontsize{10}{10}\selectfont,text=accent] at (-18mm,10mm) {$k=-3$ (qiyalik/slope)};
-\node[font=\sffamily\bfseries\fontsize{10}{10}\selectfont,text=accent] at (20mm,-10mm) {$b=5$ (Oy-kesma)};
-\draw[accent,->,line width=0.8pt] (-13mm,7.5mm) -- (-5mm,2.5mm);
-\draw[accent,->,line width=0.8pt] (16mm,-7.5mm) -- (10mm,-2.5mm);
+\end{tabular}};
+\end{scope}
 \end{tikzpicture}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,147mm)
+% ================= CARD 2: y = kx + b (y: 109-178) =================
+\cardbg{16}{109}{178}{69}
+\pill{26}{112}{$y=kx+b$}
+
+\begin{textblock*}{158mm}(26mm,128mm)
+\begin{tikzpicture}
+\path (0,0) rectangle (158mm,-30mm);
+\node[font=\fontsize{18}{18}\selectfont] (eq) at (79mm,-15mm) {$y=-3x+5$};
+\node[font=\sffamily\bfseries\fontsize{10}{10}\selectfont,text=accent] at (62mm,-6mm) {$k=-3$ (qiyalik/slope)};
+\node[font=\sffamily\bfseries\fontsize{10}{10}\selectfont,text=accent] at (97mm,-24mm) {$b=5$ (Oy-kesma)};
+\draw[accent,->,line width=0.8pt] (65mm,-9mm) -- (72mm,-13mm);
+\draw[accent,->,line width=0.8pt] (94mm,-21mm) -- (88mm,-16mm);
+\end{tikzpicture}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,164mm)
 {\fontsize{9}{11}\selectfont\color{black!55}\itshape SAT'da $k$ o'rniga $m$ harfi va "slope" so'zi ishlatiladi: $y=mx+b$. $k=m$ -- faqat nom boshqa.}
 \end{textblock*}
 
-% ================= CARD 3: f(x) yozuvi (y: 160-265) =================
-\cardbg{16}{160}{178}{105}
-\pill{26}{163}{$f(x)$ yozuvi}
+% ================= CARD 3: f(x) yozuvi (y: 184-282) =================
+\cardbg{16}{184}{178}{98}
+\pill{26}{187}{$f(x)$ yozuvi}
 
-\begin{textblock*}{158mm}(26mm,177mm)
+\begin{textblock*}{158mm}(26mm,198mm)
 {\fontsize{11}{14}\selectfont\color{ink}
 $f(x)$ -- bu shunchaki $y$ ning boshqa nomi. $x$ o'rniga son qo'yib, ifodani hisoblang:}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,190mm)
+\begin{textblock*}{158mm}(26mm,208mm)
 \begin{tikzpicture}[every node/.style={font=\fontsize{14}{14}\selectfont}]
+\path (0,0) rectangle (158mm,-40mm);
 \node[anchor=west] (a0) at (0,0) {$f(x)=2x+3$};
-\node[anchor=west] (a1) at (0,-12mm) {$f(4)=2(4)+3$};
-\node[anchor=west] (a2) at (0,-24mm) {$=8+3$};
-\node[anchor=west,font=\sffamily\bfseries\fontsize{15}{15}\selectfont,text=accent] (a3) at (0,-36mm) {$f(4)=11$};
-\foreach \y in {-3,-15,-27}{
+\node[anchor=west] (a1) at (0,-11mm) {$f(4)=2(4)+3$};
+\node[anchor=west] (a2) at (0,-22mm) {$=8+3$};
+\node[anchor=west,font=\sffamily\bfseries\fontsize{15}{15}\selectfont,text=accent] (a3) at (0,-33mm) {$f(4)=11$};
+\foreach \y in {-3,-14,-25}{
   \draw[accent,->,line width=1pt] (6mm,\y mm) -- (6mm,\y mm -6mm);
 }
 \end{tikzpicture}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,243mm)
+\begin{textblock*}{158mm}(26mm,250mm)
 \begin{tikzpicture}[every node/.style={font=\fontsize{14}{14}\selectfont}]
+\path (0,0) rectangle (158mm,-14mm);
 \node[anchor=west] (b0) at (0,0) {$f(x)=x^2-2x$};
 \node[anchor=west] (b1) at (70mm,0) {$f(-3)=\underline{(-3)}^2-2\underline{(-3)}$};
 \node[anchor=west,font=\sffamily\bfseries\fontsize{14}{14}\selectfont,text=accent] (b2) at (70mm,-11mm) {$=9+6=15$};
