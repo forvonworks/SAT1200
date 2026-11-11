@@ -90,7 +90,7 @@ For each expression below, give the equivalent polynomial in standard form (or, 
 
 **Set 3:** 1) $x^2+4x+4$  2) $4x^2-4x+1$  3) $x^3+7x^2+10x-8$  4) $x^3-1$  5) $3x^3-5x^2+13x+5$  6) $x^3+x^2-4x-4$
 
-**Set 4:** 1) $2x^2-3x+1$  2) $2x+3$  3) $2x^2-x+3$  4) $x+3$ (qoldiqsiz)  5) $x+3$ (qoldiqsiz)  6) $x+3$ (qoldiqsiz)
+**Set 4:** 1) $2x^2-3x+1$  2) $2x+3$  3) $2x^2-x+3$  4) $x+3$ (no remainder)  5) $x+3$ (no remainder)  6) $x+3$ (no remainder)
 
 **Set 5:** 1) $x-1$  2) $3x^2+10x-4$  3) $10x+15$  4) $2x^2-3x+3$  5) $3x^2-5$  6) $x^2+6$
 
@@ -106,4 +106,4 @@ For each expression below, give the equivalent polynomial in standard form (or, 
 5. Error — only the first term was divided by $4x$; the second term must be
    divided too. Correct: $2x+1$.
 
-**Set 7:** 1) $x^3+6x^2+11x+6$  2) $x+1$ (qoldiqsiz)  3) $5x^2+6x-4$  4) $16x$  5) $x-1$ (qoldiqsiz)
+**Set 7:** 1) $x^3+6x^2+11x+6$  2) $x+1$ (no remainder)  3) $5x^2+6x-4$  4) $16x$  5) $x-1$ (no remainder)

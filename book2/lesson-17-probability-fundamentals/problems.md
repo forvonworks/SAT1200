@@ -11,18 +11,28 @@ not hand-computed.
 
 ## Set 1 — Basic Probability (Favorable / Total)
 
-1. A bag has 7 red and 3 blue marbles. Find $P(\text{red})$.
-2. A jar has 5 green, 4 yellow, and 3 purple marbles. Find $P(\text{yellow})$.
-3. A class of 25 students has 15 who play chess. Find $P(\text{plays chess})$.
-4. A spinner has 8 equal sections numbered 1–8. Find $P(\text{lands on a
-   number greater than 5})$.
-5. A set of cards is numbered 1 through 20. Find $P(\text{card is a
-   multiple of 4})$.
-6. A box has 6 red pens and 9 blue pens. Find $P(\text{blue})$.
+1. A bag contains $7$ red marbles and $3$ blue marbles. If one marble is
+   selected at random from the bag, what is the probability that the
+   marble selected is red?
+2. A jar contains $5$ green marbles, $4$ yellow marbles, and $3$ purple
+   marbles. If one marble is selected at random from the jar, what is the
+   probability that the marble selected is yellow?
+3. A class consists of $25$ students, of whom $15$ play chess. If one
+   student is selected at random from the class, what is the probability
+   that the student selected plays chess?
+4. A spinner is divided into $8$ equal sections numbered $1$ through $8$.
+   If the spinner is spun once, what is the probability that it lands on
+   a number greater than $5$?
+5. A set of cards is numbered $1$ through $20$. If one card is selected at
+   random from the set, what is the probability that the number on the
+   card selected is a multiple of $4$?
+6. A box contains $6$ red pens and $9$ blue pens. If one pen is selected
+   at random from the box, what is the probability that the pen selected
+   is blue?
 
 ## Set 2 — Probability From a Table
 
-A survey of 60 students gives:
+The table below summarizes the results of a survey of $60$ students.
 
 | | Likes Math | Doesn't Like Math | Total |
 |---|---|---|---|
@@ -30,103 +40,145 @@ A survey of 60 students gives:
 | Girls | 22 | 8 | 30 |
 | **Total** | **40** | **20** | **60** |
 
-1. $P(\text{randomly chosen student likes math})$
-2. $P(\text{randomly chosen student is a girl})$
-3. $P(\text{student is a boy AND likes math})$
-4. $P(\text{student is a girl who doesn't like math})$
-5. $P(\text{likes math} \mid \text{student is a boy})$ — restrict the total
-   to just the boys' row first.
-6. $P(\text{is a girl} \mid \text{student likes math})$ — restrict the
-   total to just the "Likes Math" column first.
+1. Based on the table, if one student from the survey is selected at
+   random, what is the probability that the student selected likes math?
+2. Based on the table, if one student from the survey is selected at
+   random, what is the probability that the student selected is a girl?
+3. Based on the table, if one student from the survey is selected at
+   random, what is the probability that the student selected is a boy who
+   likes math?
+4. Based on the table, if one student from the survey is selected at
+   random, what is the probability that the student selected is a girl
+   who does not like math?
+5. Based on the table, if one boy from the survey is selected at random,
+   what is the probability that the boy selected likes math? (Restrict
+   the total to the boys' row only.)
+6. Based on the table, if one student who likes math is selected at
+   random from the survey, what is the probability that the student
+   selected is a girl? (Restrict the total to the "Likes Math" column
+   only.)
 
 ## Set 3 — Mutually Exclusive Events & the Addition Rule
 
 Check overlap before choosing the simple or general form of the rule.
 
-1. A die is rolled. Find $P(\text{rolling a 2 or a 5})$.
-2. A card is drawn from a standard 52-card deck. Find $P(\text{King or
-   Queen})$.
-3. A die is rolled. Find $P(\text{even number or a number greater than 4})$.
-4. A spinner has 10 equal sections numbered 1–10. Find $P(\text{multiple of
-   3 or multiple of 5})$.
-5. A bag has 4 red, 5 blue, and 3 green marbles. Find $P(\text{red or
-   green})$.
-6. A die is rolled. Find $P(\text{number less than 3 or an odd number})$.
+1. A fair six-sided die is rolled once. What is the probability that the
+   die shows a $2$ or a $5$?
+2. A card is selected at random from a standard deck of $52$ playing
+   cards. What is the probability that the card selected is a king or a
+   queen?
+3. A fair six-sided die is rolled once. What is the probability that the
+   die shows an even number or a number greater than $4$?
+4. A spinner is divided into $10$ equal sections numbered $1$ through
+   $10$. If the spinner is spun once, what is the probability that it
+   lands on a multiple of $3$ or a multiple of $5$?
+5. A bag contains $4$ red marbles, $5$ blue marbles, and $3$ green
+   marbles. If one marble is selected at random from the bag, what is the
+   probability that the marble selected is red or green?
+6. A fair six-sided die is rolled once. What is the probability that the
+   die shows a number less than $3$ or an odd number?
 
 ## Set 4 — Independent Events & the Multiplication Rule
 
-1. A coin is flipped twice. Find $P(\text{heads, then heads})$.
-2. A die is rolled twice. Find $P(\text{first roll is 6 AND second roll is
-   even})$.
-3. One card is drawn from each of two separate full decks. Find
-   $P(\text{both are Aces})$.
-4. A spinner with 4 equal sections numbered 1–4 is spun twice. Find
-   $P(\text{first spin is odd AND second spin is 4})$.
-5. Bag A has 3 red and 2 blue marbles. Bag B has 4 red and 6 blue marbles.
-   One marble is drawn from each bag. Find $P(\text{both red})$.
-6. A weighted coin lands heads with probability $0.6$ on every flip,
-   flips independent of each other. Find $P(\text{heads on both of two
-   flips})$.
+1. A fair coin is flipped twice. What is the probability that the coin
+   shows heads on both flips?
+2. A fair six-sided die is rolled twice. What is the probability that the
+   first roll is a $6$ and the second roll is an even number?
+3. One card is selected at random from each of two separate, standard
+   $52$-card decks. What is the probability that both cards selected are
+   aces?
+4. A spinner divided into $4$ equal sections numbered $1$ through $4$ is
+   spun twice. What is the probability that the first spin results in an
+   odd number and the second spin results in a $4$?
+5. Bag A contains $3$ red marbles and $2$ blue marbles. Bag B contains
+   $4$ red marbles and $6$ blue marbles. If one marble is selected at
+   random from each bag, what is the probability that both marbles
+   selected are red?
+6. A weighted coin lands on heads with probability $0.6$ on each flip, and
+   the outcomes of different flips are independent of each other. What is
+   the probability that the coin lands on heads on both of two flips?
 
 ## Set 5 — Classify the Relationship
 
-For each pair of events, decide: **mutually exclusive only**,
-**independent only**, **neither**, or **both** — and justify with the
-actual probabilities, not intuition. (Hint for #6: check what happens when
-one event has probability $0$.)
+For each pair of events below, determine whether the events are
+**mutually exclusive only**, **independent only**, **neither**, or
+**both** — and justify your answer using the actual probabilities, not
+intuition. (Hint for item 6: consider what happens when one event has
+probability $0$.)
 
-1. A die is rolled once. $A$ = "rolling an even number." $B$ = "rolling an
-   odd number."
-2. Two separate coins are flipped. $A$ = "first coin shows heads." $B$ =
-   "second coin shows tails."
-3. One card is drawn from a deck. $A$ = "card is a heart." $B$ = "card is
-   red."
-4. A red die and a blue die are rolled together. $A$ = "red die shows 1."
-   $B$ = "blue die shows 6."
-5. One card is drawn from a deck. $A$ = "card is a spade." $B$ = "card is a
-   heart."
-6. A die is rolled once. $A$ = "rolling a 7" (note: a standard die has no
-   7). $B$ = "rolling an even number."
+1. A fair six-sided die is rolled once. Let $A$ be the event that the die
+   shows an even number, and let $B$ be the event that the die shows an
+   odd number.
+2. Two separate coins are flipped. Let $A$ be the event that the first
+   coin shows heads, and let $B$ be the event that the second coin shows
+   tails.
+3. One card is selected at random from a standard deck of $52$ playing
+   cards. Let $A$ be the event that the card is a heart, and let $B$ be
+   the event that the card is red.
+4. A red die and a blue die are rolled together. Let $A$ be the event
+   that the red die shows a $1$, and let $B$ be the event that the blue
+   die shows a $6$.
+5. One card is selected at random from a standard deck of $52$ playing
+   cards. Let $A$ be the event that the card is a spade, and let $B$ be
+   the event that the card is a heart.
+6. A fair six-sided die is rolled once. Let $A$ be the event that the die
+   shows a $7$ (note that a standard die has no face showing $7$), and
+   let $B$ be the event that the die shows an even number.
 
 ## Set 6 — Spot the Error
 
 Each item shows a solution that conflates independence with mutual
-exclusivity (or vice versa) — exactly the gap this lesson targets. Name the
-error and give the correct answer (or corrected reasoning for #5).
+exclusivity (or vice versa) — exactly the gap this lesson targets. Name
+the error and give the correct answer (or corrected reasoning for item 5).
 
-1. Bir zar tashlanganda, $A$ = juft son tushishi, $B$ = $4$ dan katta son
-   tushishi. *"Bu ikki hodisa bog'liq emas, shuning uchun
-   $P(A \text{ yoki } B) = P(A)+P(B) = \frac36+\frac26=\frac56$."*
-2. Tanga ikki marta tashlanadi. $A$ = birinchi tashlashda gerb, $B$ =
-   ikkinchi tashlashda gerb. *"Ikkalasi ham gerb bo'lishi "g'alati"
-   tuyuladi, shuning uchun bular birgalikda bo'lmaydi, demak
-   $P(A \text{ va } B) = 0$."*
-3. Zar tashlanadi. $A$ = $2$ tushishi, $B$ = $5$ tushishi. *"Bular
-   birgalikda bo'lmaydi, demak ular mustaqil ham — shuning uchun
-   $P(A \text{ va } B) = P(A)\times P(B) = \frac16\times\frac16=\frac{1}{36}$."*
-4. Standart 52 ta kartadan bitta tortiladi. $A$ = karta qizil, $B$ = karta
-   yurak (heart) turkumidan. *"Bular ikki xil xossa, demak mustaqil —
-   shuning uchun $P(A \text{ va } B) = \frac12\times\frac14=\frac18$."*
-5. Ikki xaltadan (A va B) bittadan shar tortiladi. *"Bu ikki tortish
-   bog'liq emas (chunki ikki xil xalta), shuning uchun bu hodisalar bir
-   vaqtda sodir bo'lolmaydi, ya'ni ular birgalikda bo'lmaydi."*
+1. A fair six-sided die is rolled once. Let $A$ be the event that the die
+   shows an even number, and let $B$ be the event that the die shows a
+   number greater than $4$. A student reasons: *"These two events don't
+   affect each other, so $P(A \text{ or } B) = P(A)+P(B) =
+   \frac36+\frac26=\frac56$."*
+2. A fair coin is flipped twice. Let $A$ be the event that the first flip
+   shows heads, and let $B$ be the event that the second flip shows
+   heads. A student reasons: *"Both flips landing on heads seems
+   unlikely, so these two events can't happen together, meaning
+   $P(A \text{ and } B) = 0$."*
+3. A fair six-sided die is rolled once. Let $A$ be the event that the die
+   shows a $2$, and let $B$ be the event that the die shows a $5$. A
+   student reasons: *"These two outcomes can't happen on the same roll,
+   so they must also be independent — therefore
+   $P(A \text{ and } B) = P(A)\times P(B) = \frac16\times\frac16=
+   \frac{1}{36}$."*
+4. One card is selected at random from a standard deck of $52$ playing
+   cards. Let $A$ be the event that the card is red, and let $B$ be the
+   event that the card is a heart. A student reasons: *"These describe
+   two different properties of the card, so the events must be
+   independent — therefore $P(A \text{ and } B) = \frac12\times\frac14=
+   \frac18$."*
+5. One marble is selected at random from each of two separate bags, Bag
+   A and Bag B. A student reasons: *"These two draws are independent of
+   each other, since they come from different bags — so the two events
+   can't happen at the same time, meaning they are mutually exclusive."*
 
 ## Set 7 — Bonus / Challenge
 
-1. A survey of 100 people finds 55 like coffee, 40 like tea, and 20 like
-   both. Find $P(\text{likes coffee or tea})$.
-2. $A$ and $B$ are independent events with $P(A)=0.3$ and $P(B)=0.5$. Find
-   $P(A \text{ or } B)$. (First find $P(A \text{ and } B)$ using
+1. A survey of $100$ people finds that $55$ like coffee, $40$ like tea,
+   and $20$ like both coffee and tea. If one person from the survey is
+   selected at random, what is the probability that the person selected
+   likes coffee or tea?
+2. Events $A$ and $B$ are independent, with $P(A)=0.3$ and $P(B)=0.5$.
+   What is $P(A \text{ or } B)$? (First find $P(A \text{ and } B)$ using
    independence, then apply the general addition rule.)
-3. A box has 3 red and 7 blue balls. Two balls are drawn **without
-   replacement**. Find $P(\text{both red})$. (These draws are *not*
-   independent — the first draw changes what's left for the second.)
-4. A die is rolled once. $A$ = "rolling a number $\le 3$." $B$ = "rolling a
-   number $\ge 4$." Are $A$ and $B$ mutually exclusive? Independent? Find
-   $P(A \text{ or } B)$.
-5. Two spinners, each with 5 equal sections numbered 1–5, are spun
-   independently. Find the probability that the sum of the two spins is
-   $8$.
+3. A box contains $3$ red balls and $7$ blue balls. Two balls are
+   selected at random, **without replacement**. What is the probability
+   that both balls selected are red? (These draws are *not* independent
+   — the first draw changes what remains for the second.)
+4. A fair six-sided die is rolled once. Let $A$ be the event that the die
+   shows a number less than or equal to $3$, and let $B$ be the event
+   that the die shows a number greater than or equal to $4$. Are $A$ and
+   $B$ mutually exclusive? Are they independent? What is
+   $P(A \text{ or } B)$?
+5. Two spinners, each divided into $5$ equal sections numbered $1$
+   through $5$, are spun independently. What is the probability that the
+   sum of the two spins is $8$?
 
 ---
 
@@ -145,22 +197,22 @@ error and give the correct answer (or corrected reasoning for #5).
 5) $\frac{6}{25}$  6) $\frac{9}{25}$
 
 **Set 5:**
-1. $P(A \text{ va } B)=0$ (even and odd can't both happen) → mutually
+1. $P(A \text{ and } B)=0$ (even and odd can't both happen) → mutually
    exclusive. $P(A)\times P(B)=\frac14\ne0$ → not independent. **Mutually
    exclusive only.**
-2. HT is a valid outcome, so not mutually exclusive. $P(A \text{ va } B)=
+2. HT is a valid outcome, so not mutually exclusive. $P(A \text{ and } B)=
    \frac12\times\frac12=\frac14=P(A)\times P(B)$ → independent.
    **Independent only.**
 3. Every heart is red, so overlap is nonzero ($\frac{13}{52}$) — not
    mutually exclusive. $P(A)\times P(B)=\frac14\times\frac12=\frac18
    \ne\frac{13}{52}=\frac14$ — not independent either. **Neither.**
-4. Different dice — can both happen (not ME). $P(A \text{ va } B)=
+4. Different dice — can both happen (not ME). $P(A \text{ and } B)=
    \frac16\times\frac16=P(A)\times P(B)$ → independent. **Independent
    only.**
-5. Can't be both suits at once → mutually exclusive, $P(A\text{ va }B)=0$.
+5. Can't be both suits at once → mutually exclusive, $P(A\text{ and }B)=0$.
    $P(A)\times P(B)=\frac{1}{16}\ne0$ → not independent. **Mutually
    exclusive only.**
-6. $P(A)=0$ (impossible event). $P(A \text{ va } B)=0$, which matches
+6. $P(A)=0$ (impossible event). $P(A \text{ and } B)=0$, which matches
    *both* the mutually-exclusive condition ($=0$) and the independence
    condition ($P(A)\times P(B)=0\times\frac12=0$). **Both** — this only
    happens because $P(A)=0$; it's the edge case that proves the rule
@@ -174,19 +226,20 @@ error and give the correct answer (or corrected reasoning for #5).
 2. Error — assumed mutually exclusive based on intuition ("feels
    unusual") instead of checking; HH is in fact a perfectly valid outcome,
    so these events are independent, not mutually exclusive. Correct:
-   $P(A \text{ va } B)=\frac12\times\frac12=\frac14$.
+   $P(A \text{ and } B)=\frac12\times\frac12=\frac14$.
 3. Error — the exact backwards rule: concluded mutually exclusive implies
    independent, when it's the opposite (nonzero-probability mutually
    exclusive events are never independent). Since rolling a 2 and rolling
-   a 5 can never happen together, $P(A \text{ va } B)=0$, not $\frac{1}{36}$.
+   a 5 can never happen together, $P(A \text{ and } B)=0$, not
+   $\frac{1}{36}$.
 4. Error — assumed independence without checking the actual overlap;
    every heart is automatically red, so knowing the card is a heart
    completely determines it's also red. Correct:
-   $P(A \text{ va } B)=P(\text{heart})=\frac14$, not $\frac18$.
+   $P(A \text{ and } B)=P(\text{heart})=\frac14$, not $\frac18$.
 5. Error — confusing independence with mutual exclusivity in the other
    direction: separate bags make the two draws *independent*, but
    independent events absolutely *can* happen together — that's exactly
-   what $P(A \text{ va } B)=P(A)\times P(B)$ computes (a positive number,
+   what $P(A \text{ and } B)=P(A)\times P(B)$ computes (a positive number,
    not zero). Independent does not mean "can't happen together"; it means
    "one doesn't affect the other's probability."
 

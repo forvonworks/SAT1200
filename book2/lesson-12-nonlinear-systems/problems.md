@@ -8,7 +8,7 @@ questions, computing $b^2-4ac$ directly) — not hand-checked.
 
 ## Set 1 — Linear-Quadratic Drill (clean, two solutions each)
 
-Solve each system for both $(x,y)$ pairs.
+For each system of equations below, what are the solutions $(x,y)$?
 
 1. $y=x+1$, $\quad y=x^2-1$
 2. $y=2x$, $\quad y=x^2-3$
@@ -19,6 +19,8 @@ Solve each system for both $(x,y)$ pairs.
 
 ## Set 2 — Linear-Quadratic, Harder Coefficients
 
+For each system of equations below, what are the solutions $(x,y)$?
+
 1. $y=2x-5$, $\quad y=x^2-3x+1$
 2. $y=2x+4$, $\quad y=x^2+x-2$
 3. $y=-3x+11$, $\quad y=x^2-x+3$
@@ -27,8 +29,7 @@ Solve each system for both $(x,y)$ pairs.
 
 ## Set 3 — No Real Solution
 
-Compute the discriminant of the resulting equation and state how many real
-solutions the system has.
+For each system of equations below, how many real solutions does the system have? Use the discriminant of the resulting equation to support your answer.
 
 1. $y=x$, $\quad y=x^2+5$
 2. $y=2x-1$, $\quad y=x^2+4$
@@ -37,7 +38,7 @@ solutions the system has.
 
 ## Set 4 — Quadratic-Quadratic Systems
 
-Each pair shares the same leading coefficient — subtract to eliminate $x^2$.
+Each system of equations below consists of two quadratics with the same leading coefficient, so subtracting one equation from the other eliminates the $x^2$-term. What is the solution $(x,y)$ to each system?
 
 1. $y=x^2+3x+2$, $\quad y=x^2-x+10$
 2. $y=x^2+5x-1$, $\quad y=x^2+x+7$
@@ -47,30 +48,30 @@ Each pair shares the same leading coefficient — subtract to eliminate $x^2$.
 
 ## Set 5 — What's Actually Being Asked?
 
-Solve the system, but give only the requested quantity — not the raw pairs.
+Solve each system of equations below, but give only the value requested — not the full solution pairs $(x,y)$.
 
-1. $y=x+1$, $y=x^2-1$ — find the **sum of the $y$-coordinates** of all solutions.
-2. $y=2x$, $y=x^2-3$ — find the **product of the $x$-coordinates** of all solutions.
-3. $y=2x-5$, $y=x^2-3x+1$ — find $x_1+x_2+y_1+y_2$ across both solutions.
-4. $y=4x-3$, $y=x^2$ — find the **positive difference** between the two $y$-values.
-5. $y=x+2$, $y=x^2$ — find $x+y$ for the solution with the **larger** $x$-value.
+1. $y=x+1$, $y=x^2-1$ — What is the **sum of the $y$-coordinates** of all solutions to the system?
+2. $y=2x$, $y=x^2-3$ — What is the **product of the $x$-coordinates** of all solutions to the system?
+3. $y=2x-5$, $y=x^2-3x+1$ — What is $x_1+x_2+y_1+y_2$ across both solutions to the system?
+4. $y=4x-3$, $y=x^2$ — What is the **positive difference** between the two $y$-values of the solutions to the system?
+5. $y=x+2$, $y=x^2$ — What is $x+y$ for the solution to the system with the **larger** $x$-value?
 
 ## Set 6 — Spot the Error
 
 Each item has exactly one broken step. Name the error and give the correct answer.
 
-1. $y=x+1$, $y=x^2-1$ — *"$x^2-x-2=0 \Rightarrow (x-2)(x+1)=0 \Rightarrow x=2 \Rightarrow y=3$. Javob: $(2,3)$."*
-2. $y=2x$, $y=x^2-3$ — *"$x^2-2x-3=0 \Rightarrow x=3$ yoki $x=-1$. Javob: $x=3$, $x=-1$."*
-3. $y=x^2+3x+2$, $y=x^2-x+10$ — *"$x^2$ hadlarini olib tashlab: $(3x+2)+(-x+10)=0 \Rightarrow 2x+12=0 \Rightarrow x=-6$."*
-4. $y=x$, $y=x^2+5$ — *"$x^2-x+5=0$ ni yechamiz: $D=1-20=-19$. $D$ manfiy bo'lsa ham, $x=\frac{1\pm\sqrt{19}}{2}$ — ikkita yechim topamiz."*
+1. $y=x+1$, $y=x^2-1$ — *"$x^2-x-2=0 \Rightarrow (x-2)(x+1)=0 \Rightarrow x=2 \Rightarrow y=3$. The solution is $(2,3)$."*
+2. $y=2x$, $y=x^2-3$ — *"$x^2-2x-3=0 \Rightarrow x=3$ or $x=-1$. The solutions are $x=3$ and $x=-1$."*
+3. $y=x^2+3x+2$, $y=x^2-x+10$ — *"Removing the $x^2$ terms: $(3x+2)+(-x+10)=0 \Rightarrow 2x+12=0 \Rightarrow x=-6$."*
+4. $y=x$, $y=x^2+5$ — *"Solving $x^2-x+5=0$: $D=1-20=-19$. Even though $D$ is negative, we still find two solutions, $x=\frac{1\pm\sqrt{19}}{2}$."*
 
 ## Set 7 — Bonus / Challenge
 
-1. $y=x^2-4x+1$, $\quad y=x^2+2x-11$ (quadratic-quadratic)
-2. $y=\dfrac{1}{2}x+1$, $\quad y=x^2-x$ (fraction coefficient)
-3. $y=2x+7$, $\quad y=x^2+4x+10$ — how many intersection points does the line have with the parabola?
-4. $y=4x-4$, $\quad y=x^2$ — find the point of tangency.
-5. $y=-2x+5$, $\quad y=x^2-3x-1$ — find the **positive difference** between the two $y$-values.
+1. For the system of equations $y=x^2-4x+1$ and $y=x^2+2x-11$, what is the solution $(x,y)$?
+2. For the system of equations $y=\dfrac{1}{2}x+1$ and $y=x^2-x$, what are the solutions $(x,y)$?
+3. In the $xy$-plane, how many points of intersection does the line $y=2x+7$ have with the parabola $y=x^2+4x+10$?
+4. In the $xy$-plane, the line $y=4x-4$ is tangent to the parabola $y=x^2$. What is the point of tangency?
+5. For the system of equations $y=-2x+5$ and $y=x^2-3x-1$, what is the **positive difference** between the two $y$-values of the solutions?
 
 ---
 
