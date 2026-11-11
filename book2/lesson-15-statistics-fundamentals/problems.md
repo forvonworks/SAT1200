@@ -6,115 +6,140 @@ for the unknown-value/unknown-group-size problems), not hand-computed.
 
 ---
 
-## Set 1 — Mean/Median/Mode Drill
+## Set 1 — Mean, Median, and Mode
 
-Each data set below has either an odd or even count — sort first, then find
-all three measures. (One item has no mode; say so if that's the case.)
+Each item below gives a data set with either an odd or even number of
+values. For each data set, find the mean, the median, and the mode. (If a
+data set has no mode, state that.)
 
-1. $4, 8, 6, 8, 2$
-2. $10, 12, 10, 15, 13$
-3. $7, 9, 7, 9, 7, 2$
-4. $1, 3, 5, 7$
-5. $20, 22, 19, 22, 18, 25$
-6. $6, 2, 9, 2, 11$
+1. Data set: $4, 8, 6, 8, 2$
+2. Data set: $10, 12, 10, 15, 13$
+3. Data set: $7, 9, 7, 9, 7, 2$
+4. Data set: $1, 3, 5, 7$
+5. Data set: $20, 22, 19, 22, 18, 25$
+6. Data set: $6, 2, 9, 2, 11$
 
-## Set 2 — Harder Variant (Frequency Tables & Reverse Problems)
+## Set 2 — Frequency Tables and Reverse Mean Problems
 
-1. A data set has the value $3$ twice, $5$ three times, and $8$ once. Find
-   the mean, median, and mode.
-2. Find $x$ if the mean of $4, 7, x, 10$ is $8$.
-3. Find $x$ if the mean of $2, 5, 9, x, 14$ is $9$.
-4. $12, 15, 12, 18, 20, 15, 12$ — find the mean, median, and mode.
-5. A set of $5$ numbers has mean $20$. Four of them are $18, 22, 19, 23$.
-   Find the fifth number.
-6. Find $x$ if the median of $3, 7, x, 12, 15$ (with $x$ fitting between $7$
-   and $12$ once sorted) is $9$.
+1. A data set consists of the value $3$ appearing twice, the value $5$
+   appearing three times, and the value $8$ appearing once. What are the
+   mean, median, and mode of the data set?
+2. The mean of the data set $4, 7, x, 10$ is $8$. What is the value of $x$?
+3. The mean of the data set $2, 5, 9, x, 14$ is $9$. What is the value of
+   $x$?
+4. A data set consists of the values $12, 15, 12, 18, 20, 15, 12$. What are
+   the mean, median, and mode of the data set?
+5. A data set of $5$ numbers has a mean of $20$. Four of the numbers are
+   $18, 22, 19,$ and $23$. What is the fifth number in the data set?
+6. The median of the data set $3, 7, x, 12, 15$ is $9$, where $x$ falls
+   between $7$ and $12$ once the data set is sorted. What is the value of
+   $x$?
 
 ## Set 3 — Combining Groups Correctly
 
-For each, find the **true combined mean** (weighted, not a simple average
-of the group means).
+For each item, find the mean of the combined group. (The combined mean is
+a weighted average of the group means — not a simple average of the two
+means.)
 
-1. Group A: $10$ people, mean $75$. Group B: $10$ people, mean $85$.
-2. Group A: $8$ people, mean $70$. Group B: $12$ people, mean $90$.
-3. Group A: $5$ items, mean $12$. Group B: $20$ items, mean $20$.
-4. Group A: $4$ people, mean $60$. Group B: $6$ people, mean $70$. Group C:
-   $10$ people, mean $80$.
-5. A combined group of $30$ students has mean $50$. Group A within it has
-   $10$ students with mean $40$. Find the mean of the remaining $20$
-   students (Group B).
-6. Group A has $6$ students with mean $80$. Group B has $n$ students with
-   mean $95$. The combined mean of all $6+n$ students is $90$. Find $n$.
+1. Group A consists of $10$ people with a mean of $75$. Group B consists
+   of $10$ people with a mean of $85$. What is the mean of the combined
+   group?
+2. Group A consists of $8$ people with a mean of $70$. Group B consists of
+   $12$ people with a mean of $90$. What is the mean of the combined
+   group?
+3. Group A consists of $5$ items with a mean of $12$. Group B consists of
+   $20$ items with a mean of $20$. What is the mean of the combined group?
+4. Group A consists of $4$ people with a mean of $60$, Group B consists of
+   $6$ people with a mean of $70$, and Group C consists of $10$ people
+   with a mean of $80$. What is the mean of the combined group of all
+   $20$ people?
+5. A group of $30$ students has a mean score of $50$. Within this group,
+   Group A consists of $10$ students with a mean score of $40$. What is
+   the mean score of the remaining $20$ students, Group B?
+6. Group A has $6$ students with a mean score of $80$, and Group B has
+   $n$ students with a mean score of $95$. The combined mean score of all
+   $6+n$ students is $90$. What is the value of $n$?
 
-## Set 4 — Outlier Effect Identification
+## Set 4 — The Effect of an Outlier on Mean and Median
 
-1. Data set: $4, 5, 6, 7, 8$. Find the mean and median. Then find the new
-   mean and median after $50$ is added. Which measure changed more?
-2. Data set: $10, 12, 14, 16, 18$. Find the mean and median. Then find the
-   new mean and median after $-40$ is added. Which measure changed more?
-3. Find the range of $23, 45, 12, 67, 34, 8$.
-4. Set P: $10, 12, 14, 16, 18$. Set Q: $10, 12, 14, 16, 100$. Find the range
-   of each. Which set has more spread?
-5. If one value in a data set is changed to a much larger number, which
-   measure of center is more likely to change significantly — the mean or
-   the median? Explain why in one sentence.
-6. Data set: $15, 18, 20, 19, 95, 17$. Find the mean with the outlier $95$
-   included, then find the mean after removing it.
+1. A data set consists of the values $4, 5, 6, 7, 8$. What are the mean
+   and median of the data set? The value $50$ is then added to the data
+   set. What are the new mean and median, and which measure changed more?
+2. A data set consists of the values $10, 12, 14, 16, 18$. What are the
+   mean and median of the data set? The value $-40$ is then added to the
+   data set. What are the new mean and median, and which measure changed
+   more?
+3. What is the range of the data set $23, 45, 12, 67, 34, 8$?
+4. Data set P consists of the values $10, 12, 14, 16, 18$, and data set Q
+   consists of the values $10, 12, 14, 16, 100$. What is the range of
+   each data set, and which data set has greater spread?
+5. If one value in a data set is replaced with a much larger number,
+   which measure of center — the mean or the median — is more likely to
+   change significantly? Explain your reasoning in one sentence.
+6. A data set consists of the values $15, 18, 20, 19, 95, 17$. What is the
+   mean of the data set with the value $95$ included? What is the mean
+   after $95$ is removed?
 
 ## Set 5 — Mixed Practice
 
-1. Group A: $15$ students, mean $70$. Group B: $10$ students, mean $x$. The
-   combined mean of all $25$ students is $76$. Find $x$.
-2. Data set: $8, 10, 12, 14$. Find the median. Then find the new median
-   after $50$ is added.
-3. A set of test scores: $70$ (three students), $80$ (five students), $90$
-   (two students). Find the mean and the mode.
-4. **Nima So'ralmoqda? check:** Group A has $8$ students with a *total score
-   sum* of $640$. Group B has $12$ students with mean $90$. Find the
-   **total score sum** of the combined group of $20$ students — not the
-   combined mean.
-5. **Nima So'ralmoqda? check:** $22$ students have a mean score of $64$.
-   Find the **total sum** of their scores — not the mean (which is already
-   given).
-6. Group A has $10$ students with a *total score sum* of $820$. Group B has
-   $15$ students with mean $88$. Find the combined mean of all $25$
-   students. (Watch the trap: Group A's number is a sum, not a mean —
-   convert it before combining.)
+1. Group A has $15$ students with a mean score of $70$, and Group B has
+   $10$ students with a mean score of $x$. The combined mean score of all
+   $25$ students is $76$. What is the value of $x$?
+2. A data set consists of the values $8, 10, 12, 14$. What is the median
+   of the data set? The value $50$ is then added to the data set. What is
+   the new median?
+3. On a test, three students scored $70$, five students scored $80$, and
+   two students scored $90$. What are the mean and the mode of the
+   scores?
+4. **"What's Actually Asked" check:** Group A has $8$ students with a
+   total score sum of $640$, and Group B has $12$ students with a mean
+   score of $90$. What is the total score sum of the combined group of
+   $20$ students? (The question asks for the total sum — not the combined
+   mean.)
+5. **"What's Actually Asked" check:** A group of $22$ students has a mean
+   score of $64$. What is the total sum of their scores? (The mean is
+   already given — the question asks for the total.)
+6. Group A has $10$ students with a total score sum of $820$, and Group B
+   has $15$ students with a mean score of $88$. What is the combined mean
+   score of all $25$ students? (Group A's value is a total sum, not a
+   mean — convert it before combining.)
 
 ## Set 6 — Spot the Error
 
 Each item shows a solution with exactly one broken step. Name the error,
 say which rule it breaks, and give the correct final answer.
 
-1. Guruh A ning o'rtachasi $60$ ($10$ kishi), Guruh B ning o'rtachasi $80$
-   ($30$ kishi). *Noto'g'ri yechim:* "Birlashtirilgan o'rtacha
-   $=\dfrac{60+80}{2}=70$."
-2. Ma'lumotlar: $9, 2, 7, 4$. *Noto'g'ri yechim:* "Mediana — bu qatordagi
-   ikkinchi va uchinchi qiymat, ya'ni $2$ va $7$, demak mediana
-   $=\dfrac{2+7}{2}=4.5$." (tizilmagan holda hisoblangan)
-3. Ma'lumotlar: $3, 5, 9, 11$. *Noto'g'ri yechim:* "To'rt qiymat bor, demak
-   mediana — ikkinchi qiymat, ya'ni $5$."
-4. Ma'lumotlar: $4, 4, 6, 7, 7, 7, 9$. *Noto'g'ri yechim:* "Moda $=4$,
-   chunki u birinchi takrorlangan qiymat."
-5. Ma'lumotlar: $12, 45, 8, 30$. *Noto'g'ri yechim:* "O'zgarish kengligi
-   $= 45+8=53$."
+1. Group A has a mean of $60$ ($10$ people), and Group B has a mean of
+   $80$ ($30$ people). *Incorrect solution:* "The combined mean is
+   $\dfrac{60+80}{2}=70$."
+2. Data set: $9, 2, 7, 4$. *Incorrect solution:* "The median is the
+   second and third values in the list, $2$ and $7$, so the median is
+   $\dfrac{2+7}{2}=4.5$." (computed without sorting first)
+3. Data set: $3, 5, 9, 11$. *Incorrect solution:* "There are four values,
+   so the median is the second value, $5$."
+4. Data set: $4, 4, 6, 7, 7, 7, 9$. *Incorrect solution:* "The mode is
+   $4$, because it's the first value that repeats."
+5. Data set: $12, 45, 8, 30$. *Incorrect solution:* "The range is
+   $45+8=53$."
 
 ## Set 7 — Bonus / Mastery Check (timed, hardest — multi-step)
 
-1. Group A has $n$ students with mean $70$. Group B has $20$ students with
-   mean $85$. The combined mean of all students is $80$. Find $n$.
-2. A data set of $7$ values has mean $20$. An $8$th value is added, making
-   the new mean $22$. Find the $8$th value.
-3. A class of $19$ students has a total score sum of $1425$. A new student
-   joins with score $s$, making the new mean of all $20$ students equal to
-   $73$. Find $s$.
-4. The data set $5, 9, x, 20, 24$ has median $15$, with $x$ taking the
-   middle (3rd) position once sorted. Confirm $x=15$ is consistent (i.e.,
-   that it actually falls between $9$ and $20$), and state why this
-   confirmation step matters.
-5. Group A: $10$ students, mean $60$. Group B: $n$ students, mean $90$.
-   Group C: $6$ students, mean $70$. The combined mean of all
-   $10+n+6$ students is $78$. Find $n$.
+1. Group A has $n$ students with a mean score of $70$, and Group B has
+   $20$ students with a mean score of $85$. The combined mean score of
+   all the students is $80$. What is the value of $n$?
+2. A data set of $7$ values has a mean of $20$. An $8$th value is added
+   to the data set, making the new mean $22$. What is the $8$th value?
+3. A class of $19$ students has a total score sum of $1425$. A new
+   student joins the class with a score of $s$, making the mean score of
+   all $20$ students equal to $73$. What is the value of $s$?
+4. The data set $5, 9, x, 20, 24$ has a median of $15$, with $x$ taking
+   the middle (3rd) position once the data set is sorted. Confirm that
+   $x=15$ is consistent with this setup — that is, that it actually falls
+   between $9$ and $20$ — and explain why this confirmation step matters.
+5. Group A has $10$ students with a mean score of $60$, Group B has $n$
+   students with a mean score of $90$, and Group C has $6$ students with
+   a mean score of $70$. The combined mean score of all $10+n+6$ students
+   is $78$. What is the value of $n$?
 
 ---
 

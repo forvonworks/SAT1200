@@ -10,102 +10,79 @@ Python script (`sympy`), not hand-computed.
 ## Set 1 — Basic Pythagorean Theorem (right angle always given)
 
 Each triangle below has a right angle explicitly between the two legs
-named. Find the missing side.
+named.
 
-1. Legs $3$ and $4$. Find the hypotenuse.
-2. Legs $6$ and $8$. Find the hypotenuse.
-3. Legs $5$ and $12$. Find the hypotenuse.
-4. Hypotenuse $10$, one leg $6$. Find the other leg.
-5. Hypotenuse $13$, one leg $5$. Find the other leg.
-6. Hypotenuse $17$, one leg $8$. Find the other leg.
+1. A right triangle has legs of length $3$ and $4$. What is the length of the hypotenuse?
+2. A right triangle has legs of length $6$ and $8$. What is the length of the hypotenuse?
+3. A right triangle has legs of length $5$ and $12$. What is the length of the hypotenuse?
+4. A right triangle has a hypotenuse of length $10$ and one leg of length $6$. What is the length of the other leg?
+5. A right triangle has a hypotenuse of length $13$ and one leg of length $5$. What is the length of the other leg?
+6. A right triangle has a hypotenuse of length $17$ and one leg of length $8$. What is the length of the other leg?
 
 ## Set 2 — Apply or Don't Apply? (the core skill of this lesson)
 
 For each item, first decide: *does the Pythagorean theorem apply here?*
 Only compute if it does.
 
-1. A right angle is marked between two legs measuring $9$ and $12$. Find
-   the hypotenuse.
-2. A triangle has sides $7$, $8$, and $10$. No right angle is marked or
-   stated anywhere. Can the Pythagorean theorem be used to check or find a
-   side here? Explain.
-3. A triangle has sides $8$, $15$, and $17$, with no right angle marked.
-   Using the converse check, is this a right triangle? If so, which side
-   is the hypotenuse?
-4. A triangle has sides $6$, $8$, and $11$, with no right angle marked.
-   Using the converse check, is this a right triangle?
-5. A right angle is marked between two legs measuring $7$ and $24$. Find
-   the hypotenuse.
-6. An isosceles triangle has two sides of $10$ and a base of $12$, with no
-   right angle marked anywhere. Is this a right triangle?
+1. In a right triangle, a right angle is marked between two legs measuring $9$ and $12$. What is the length of the hypotenuse?
+2. A triangle has sides of length $7$, $8$, and $10$, with no right angle marked or stated anywhere. Can the Pythagorean theorem be used to find or confirm a side of this triangle? Explain why or why not.
+3. A triangle has sides of length $8$, $15$, and $17$, with no right angle marked. Using the converse of the Pythagorean theorem, is this a right triangle? If so, which side is the hypotenuse?
+4. A triangle has sides of length $6$, $8$, and $11$, with no right angle marked. Using the converse of the Pythagorean theorem, is this a right triangle?
+5. In a right triangle, a right angle is marked between two legs measuring $7$ and $24$. What is the length of the hypotenuse?
+6. An isosceles triangle has two sides of length $10$ and a base of length $12$, with no right angle marked anywhere. Is this a right triangle?
 
 ## Set 3 — Distance Formula Drill
 
-Find the distance between each pair of points.
-
-1. $(0,0)$ and $(3,4)$
-2. $(2,3)$ and $(7,15)$
-3. $(-4,1)$ and $(4,7)$
-4. $(1,1)$ and $(1,9)$
-5. $(-2,-3)$ and $(3,-3)$
-6. $(0,0)$ and $(1,1)$
+1. What is the distance between the points $(0,0)$ and $(3,4)$ in the xy-plane?
+2. What is the distance between the points $(2,3)$ and $(7,15)$ in the xy-plane?
+3. What is the distance between the points $(-4,1)$ and $(4,7)$ in the xy-plane?
+4. What is the distance between the points $(1,1)$ and $(1,9)$ in the xy-plane?
+5. What is the distance between the points $(-2,-3)$ and $(3,-3)$ in the xy-plane?
+6. What is the distance between the points $(0,0)$ and $(1,1)$ in the xy-plane?
 
 ## Set 4 — Pythagorean Triples Speed Set (recognize, don't compute from scratch)
 
-1. Legs $9$ and $12$. Hypotenuse?
-2. Legs $8$ and $15$. Hypotenuse?
-3. Legs $20$ and $21$. Hypotenuse?
-4. Hypotenuse $25$, one leg $7$. Other leg?
-5. Legs $9$ and $40$. Hypotenuse?
-6. Legs $10$ and $24$. Hypotenuse?
+1. A right triangle has legs of length $9$ and $12$. What is the length of the hypotenuse?
+2. A right triangle has legs of length $8$ and $15$. What is the length of the hypotenuse?
+3. A right triangle has legs of length $20$ and $21$. What is the length of the hypotenuse?
+4. A right triangle has a hypotenuse of length $25$ and one leg of length $7$. What is the length of the other leg?
+5. A right triangle has legs of length $9$ and $40$. What is the length of the hypotenuse?
+6. A right triangle has legs of length $10$ and $24$. What is the length of the hypotenuse?
 
 ## Set 5 — Mixed Real-World Word Problems
 
-1. A ladder's base is $5$ m from a wall, and it reaches $12$ m up the
-   wall. How long is the ladder?
-2. A TV screen measures $24$ in wide and $10$ in tall. Find the length of
-   its diagonal.
-3. A ship sails $9$ km east, then $12$ km north. How far is it from its
-   starting point in a straight line?
-4. Two cities are located at coordinates $(0,0)$ and $(8,15)$ (in km).
-   Find the straight-line distance between them.
-5. A rectangular park is $16$ m by $30$ m. Find the length of a diagonal
-   path cutting across it.
-6. A baseball diamond is a square with each side $90$ ft. Find the exact
-   distance from home plate to second base (the diagonal).
+1. A ladder is positioned so that its base is $5$ meters from a wall and the ladder reaches $12$ meters up the wall. What is the length of the ladder, in meters?
+2. A television screen measures $24$ inches wide and $10$ inches tall. What is the length of the screen's diagonal, in inches?
+3. A ship sails $9$ kilometers east and then $12$ kilometers north. What is the straight-line distance from the ship's final position to its starting point, in kilometers?
+4. In a coordinate system where distances are measured in kilometers, two cities are located at the points $(0,0)$ and $(8,15)$. What is the straight-line distance between the two cities, in kilometers?
+5. A rectangular park measures $16$ meters by $30$ meters. What is the length of a diagonal path that cuts across the park, in meters?
+6. A baseball diamond is a square with each side measuring $90$ feet. What is the exact distance from home plate to second base, which lies along the diagonal of the square, in feet?
 
 ## Set 6 — Spot the Error
 
 Each item shows a flawed solution. Name the error and give the correct
 answer.
 
-1. Sides $6$, $10$, $11$ are given, no right angle marked. *"Yechim:
-   $6^2+10^2=136$, va $11^2=121$ — bular juda yaqin, demak bu amalda
-   to'g'ri burchakli uchburchak, xatoni e'tiborsiz qoldiramiz."*
-2. Hypotenuse $25$, one leg $7$, find the other leg. *"Yechim:
+1. Sides $6$, $10$, $11$ are given, with no right angle marked. *"Solution:
+   $6^2+10^2=136$, and $11^2=121$ — these are close enough, so this is
+   effectively a right triangle; we can ignore the small discrepancy."*
+2. The hypotenuse is $25$ and one leg is $7$; find the other leg. *"Solution:
    $x=\sqrt{7^2+25^2}=\sqrt{674}\approx25.96$."*
-3. Find the distance between $(1,5)$ and $(4,1)$. *"Yechim:
+3. What is the distance between $(1,5)$ and $(4,1)$? *"Solution:
    $\sqrt{3^2+(-4)}=\sqrt{9-4}=\sqrt5$."*
-4. Sides $5$, $6$, $10$ are given, no right angle marked. *"Yechim: eng
-   uzun tomon $10$ ekan, demak u gipotenuza, va $5^2+6^2=10^2$ deb
-   hisoblab, bu to'g'ri burchakli uchburchak deb e'lon qilamiz."*
-5. Legs $9$ and $12$. *"Yechim: $9^2+12^2=81+144=225$. Javob: $225$."*
+4. Sides $5$, $6$, $10$ are given, with no right angle marked. *"Solution: the
+   longest side is $10$, so it must be the hypotenuse, and since
+   $5^2+6^2=10^2$, this must be a right triangle."*
+5. A right triangle has legs $9$ and $12$. *"Solution: $9^2+12^2=81+144=225$.
+   The hypotenuse is $225$."*
 
 ## Set 7 — Bonus / Capstone (combines with Lessons 1 and 3 — closes Book 2)
 
-1. Points $A(1,2)$ and $B(7,10)$. Find the distance $AB$ and the slope of
-   segment $AB$.
-2. A line $y=3x$ passes through the origin. A point $P=(x,9)$ lies on this
-   line, with $x>0$. Find $x$, then find the distance $OP$ (from the
-   origin to $P$).
-3. A triangle has vertices $(0,0)$, $(4,0)$, and $(4,3)$. Find its
-   perimeter (two sides are given directly; find the third with the
-   distance formula).
-4. Two points are $13$ units apart. The horizontal distance between them
-   is $5$ units. Find the vertical distance between them.
-5. A triangle has vertices $(1,1)$, $(9,7)$, and $(9,1)$. Confirm this is
-   a right triangle (two of its sides are perfectly horizontal/vertical),
-   then find its area.
+1. In the xy-plane, points $A(1,2)$ and $B(7,10)$ are given. What is the distance $AB$, and what is the slope of segment $AB$?
+2. In the xy-plane, the line $y=3x$ passes through the origin. A point $P=(x,9)$ lies on this line, where $x>0$. What is the value of $x$, and what is the distance $OP$ from the origin to point $P$?
+3. In the xy-plane, a triangle has vertices at $(0,0)$, $(4,0)$, and $(4,3)$. What is the perimeter of the triangle? (Two sides can be found directly; find the third using the distance formula.)
+4. Two points in the xy-plane are $13$ units apart, and the horizontal distance between them is $5$ units. What is the vertical distance between the two points?
+5. In the xy-plane, a triangle has vertices at $(1,1)$, $(9,7)$, and $(9,1)$. Confirm that this is a right triangle (two of its sides are horizontal and vertical), and then find its area.
 
 ---
 

@@ -17,68 +17,71 @@ purpose, so the opposite/adjacent swap is unavoidable to notice.
 
 Right triangle $ABC$, right angle at $C$.
 
-1. For angle $A$: name the opposite leg, adjacent leg, and hypotenuse.
-2. For angle $B$ (same triangle): name the opposite leg, adjacent leg, and hypotenuse.
+1. For angle $A$: what is the opposite leg, the adjacent leg, and the hypotenuse?
+2. For angle $B$ (the same triangle): what is the opposite leg, the adjacent leg, and the hypotenuse?
 
 Right triangle $PQR$, right angle at $Q$.
 
-3. For angle $P$: name the opposite leg, adjacent leg, and hypotenuse.
-4. For angle $R$ (same triangle): name the opposite leg, adjacent leg, and hypotenuse.
+3. For angle $P$: what is the opposite leg, the adjacent leg, and the hypotenuse?
+4. For angle $R$ (the same triangle): what is the opposite leg, the adjacent leg, and the hypotenuse?
 
 Right triangle $XYZ$, right angle at $Y$, hypotenuse $XZ$.
 
-5. For angle $X$: name the opposite leg, adjacent leg, and hypotenuse.
-6. For angle $Z$ (same triangle): name the opposite leg, adjacent leg, and hypotenuse.
+5. For angle $X$: what is the opposite leg, the adjacent leg, and the hypotenuse?
+6. For angle $Z$ (the same triangle): what is the opposite leg, the adjacent leg, and the hypotenuse?
 
 ## Set 2 — Compute the Three Ratios (Exact Fractions)
 
-For each right triangle, find $\sin\theta$, $\cos\theta$, $\tan\theta$ for
-the specified angle. Reduce fractions to simplest form.
+For each right triangle below, find $\sin\theta$, $\cos\theta$, and $\tan\theta$
+for the specified angle. Reduce each fraction to simplest form.
 
-1. Legs $3$ and $4$, hypotenuse $5$. $\theta$ is opposite the leg of length $3$.
-2. Same triangle as #1. $\theta$ is opposite the leg of length $4$.
-3. Legs $5$ and $12$, hypotenuse $13$. $\theta$ is opposite the leg of length $5$.
-4. Same triangle as #3. $\theta$ is opposite the leg of length $12$.
-5. Legs $8$ and $15$, hypotenuse $17$. $\theta$ is opposite the leg of length $8$.
-6. Legs $7$ and $24$, hypotenuse $25$. $\theta$ is opposite the leg of length $24$.
+1. In right triangle $ABC$, the right angle is at $C$. If $AC=3$, $BC=4$, and the hypotenuse $AB=5$, what are $\sin B$, $\cos B$, and $\tan B$?
+2. In the same triangle as item 1, what are $\sin A$, $\cos A$, and $\tan A$?
+3. In right triangle $PQR$, the right angle is at $Q$. If $QR=5$, $PQ=12$, and the hypotenuse $PR=13$, what are $\sin P$, $\cos P$, and $\tan P$?
+4. In the same triangle as item 3, what are $\sin R$, $\cos R$, and $\tan R$?
+5. In right triangle $XYZ$, the right angle is at $Y$. If $YZ=8$, $XY=15$, and the hypotenuse $XZ=17$, what are $\sin X$, $\cos X$, and $\tan X$?
+6. In right triangle $DEF$, the right angle is at $F$. If $EF=24$, $DF=7$, and the hypotenuse $DE=25$, what are $\sin D$, $\cos D$, and $\tan D$?
 
 ## Set 3 — Solve for a Missing Side
 
-Round to the nearest hundredth.
+Round each answer to the nearest hundredth. In each item, right triangle
+$ABC$ has its right angle at $C$.
 
-1. Hypotenuse $=12$, angle $=25°$. Find the opposite side.
-2. Hypotenuse $=18$, angle $=40°$. Find the adjacent side.
-3. Adjacent $=10$, angle $=55°$. Find the opposite side.
-4. Opposite $=9$, angle $=32°$. Find the hypotenuse.
-5. Hypotenuse $=22$, angle $=63°$. Find the adjacent side.
-6. Adjacent $=14$, angle $=47°$. Find the hypotenuse.
+1. The measure of angle $A$ is $25°$ and the length of the hypotenuse is $12$. What is the length of the side opposite angle $A$?
+2. The measure of angle $A$ is $40°$ and the length of the hypotenuse is $18$. What is the length of the side adjacent to angle $A$?
+3. The measure of angle $A$ is $55°$ and the length of the side adjacent to angle $A$ is $10$. What is the length of the side opposite angle $A$?
+4. The measure of angle $A$ is $32°$ and the length of the side opposite angle $A$ is $9$. What is the length of the hypotenuse?
+5. The measure of angle $A$ is $63°$ and the length of the hypotenuse is $22$. What is the length of the side adjacent to angle $A$?
+6. The measure of angle $A$ is $47°$ and the length of the side adjacent to angle $A$ is $14$. What is the length of the hypotenuse?
 
 ## Set 4 — Solve for a Missing Angle
 
-Round to the nearest tenth of a degree.
+Round each answer to the nearest tenth of a degree. In each item, right
+triangle $ABC$ has its right angle at $C$, and the angle in question is
+angle $A$.
 
-1. Opposite $=6$, hypotenuse $=14$. Find the angle.
-2. Adjacent $=9$, hypotenuse $=20$. Find the angle.
-3. Opposite $=11$, adjacent $=15$. Find the angle.
-4. Opposite $=18$, hypotenuse $=30$. Find the angle.
-5. Adjacent $=21$, opposite $=25$ (relative to the same angle). Find the angle.
-6. Adjacent $=13$, hypotenuse $=37$. Find the angle.
+1. The side opposite angle $A$ has length $6$ and the hypotenuse has length $14$. What is the measure of angle $A$?
+2. The side adjacent to angle $A$ has length $9$ and the hypotenuse has length $20$. What is the measure of angle $A$?
+3. The side opposite angle $A$ has length $11$ and the side adjacent to angle $A$ has length $15$. What is the measure of angle $A$?
+4. The side opposite angle $A$ has length $18$ and the hypotenuse has length $30$. What is the measure of angle $A$?
+5. The side adjacent to angle $A$ has length $21$ and the side opposite angle $A$ has length $25$. What is the measure of angle $A$?
+6. The side adjacent to angle $A$ has length $13$ and the hypotenuse has length $37$. What is the measure of angle $A$?
 
 ## Set 5 — Mixed Applied Problems
 
-Round to the nearest hundredth unless stated otherwise.
+Round each answer to the nearest hundredth unless stated otherwise.
 
 1. A ladder $12$ ft long leans against a wall, making a $68°$ angle with
-   the ground. How high up the wall does it reach?
+   the ground. How high up the wall does the ladder reach?
 2. A ramp rises over a horizontal distance of $40$ ft at an angle of $10°$.
-   How long is the ramp itself (the hypotenuse)?
+   What is the length of the ramp itself (the hypotenuse)?
 3. From a point $100$ m from the base of a tower, the angle of elevation
-   to the top of the tower is $38°$. Find the tower's height.
+   to the top of the tower is $38°$. What is the height of the tower?
 4. A kite string is $65$ m long and makes a $50°$ angle with the ground.
-   How far horizontally is the kite from the person holding the string?
-5. A right triangle has legs $9$ and $12$. First find the hypotenuse, then
-   find the angle opposite the leg of length $9$ (round the angle to the
-   nearest hundredth of a degree).
+   What is the horizontal distance from the kite to the person holding the string?
+5. A right triangle has legs of length $9$ and $12$. What is the length of
+   the hypotenuse, and what is the measure of the angle opposite the leg
+   of length $9$ (rounded to the nearest hundredth of a degree)?
 6. An airplane descends at an angle of depression of $6°$ while covering
    $2000$ m of horizontal distance. By how many meters does its altitude
    decrease?
@@ -88,37 +91,41 @@ Round to the nearest hundredth unless stated otherwise.
 Each item mixes a real setup with exactly one broken step. Name the
 error, say which rule it breaks, and give the correct answer.
 
-1. Right triangle, right angle at $C$, opposite-to-$A$ leg $BC=5$,
-   adjacent-to-$A$ leg $AC=12$, hypotenuse $AB=13$. Find $\sin A$.
-   *Noto'g'ri yechim:* "$\sin A = \dfrac{12}{13}$, chunki $12$ — uzunroq
-   katet."
-2. Same triangle as #1. Find $\cos B$ (the angle at vertex $B$, not $A$).
-   *Noto'g'ri yechim:* "Burchak $A$ uchun qo'shni katet $AC=12$ edi, shuning
-   uchun $\cos B = \dfrac{12}{13}$ ham."
-3. Find $\sin 30°$.
-   *Noto'g'ri yechim:* "Kalkulyatorga $30$ ni kiritib, $\sin 30 \approx
-   -0.988$ chiqdi, demak javob $-0.988$."
-4. Given $\sin\theta = 0.6$, find $\theta$.
-   *Noto'g'ri yechim:* "$\sin\theta=0.6$, shuning uchun $\theta = 0.6°$."
-5. A right triangle has hypotenuse $10$ and one leg $6$. Find the other leg.
-   *Noto'g'ri yechim:* "$10^2 + 6^2 = \text{boshqa katet}^2$, demak boshqa
-   katet $= \sqrt{136} \approx 11.66$."
+1. In right triangle $ABC$, the right angle is at $C$. The leg opposite
+   angle $A$ is $BC=5$, the leg adjacent to angle $A$ is $AC=12$, and the
+   hypotenuse is $AB=13$. What is the value of $\sin A$?
+   *Incorrect solution:* "$\sin A = \dfrac{12}{13}$, because $12$ is the
+   longer leg."
+2. In the same triangle as item 1, what is the value of $\cos B$ (the
+   angle at vertex $B$, not $A$)?
+   *Incorrect solution:* "Since $AC=12$ was the leg adjacent to angle $A$,
+   $\cos B = \dfrac{12}{13}$ as well."
+3. What is the value of $\sin 30°$?
+   *Incorrect solution:* "Entering $30$ into the calculator gives
+   $\sin 30 \approx -0.988$, so the answer is $-0.988$."
+4. If $\sin\theta = 0.6$, what is the value of $\theta$?
+   *Incorrect solution:* "$\sin\theta=0.6$, so $\theta = 0.6°$."
+5. A right triangle has a hypotenuse of length $10$ and one leg of length
+   $6$. What is the length of the other leg?
+   *Incorrect solution:* "$10^2 + 6^2 = \text{other leg}^2$, so the other
+   leg $= \sqrt{136} \approx 11.66$."
 
 ## Set 7 — Bonus / Challenge
 
-1. Given $\sin 23° \approx 0.3907$, find $\cos 67°$ without recomputing
-   from scratch — use the complementary-angle identity.
-2. A right triangle has an acute angle of $34°$. Find the other acute
-   angle, and state the relationship between $\sin 34°$ and that angle's
-   cosine.
-3. A right triangle has hypotenuse $26$ and one acute angle of $42°$. Find
-   both legs (round each to the nearest hundredth).
-4. A $20$-ft ladder reaches $16$ ft up a wall. Find (a) the angle the
+1. If $\sin 23° \approx 0.3907$, what is the value of $\cos 67°$? Use the
+   complementary-angle identity rather than recomputing from scratch.
+2. A right triangle has an acute angle measuring $34°$. What is the
+   measure of the other acute angle, and what is the relationship between
+   $\sin 34°$ and that angle's cosine?
+3. A right triangle has a hypotenuse of length $26$ and one acute angle
+   measuring $42°$. What are the lengths of both legs, each rounded to the
+   nearest hundredth?
+4. A $20$-ft ladder reaches $16$ ft up a wall. What is (a) the angle the
    ladder makes with the ground, (b) the angle it makes with the wall, and
-   (c) confirm the two angles are complementary.
+   (c) the sum of those two angles, confirming they are complementary?
 5. A plane climbs at a constant angle of $15°$ along a flight path of
-   $5000$ m. Find the horizontal distance covered and the altitude gained
-   (each rounded to the nearest hundredth).
+   length $5000$ m. What is the horizontal distance covered and the
+   altitude gained, each rounded to the nearest hundredth?
 
 ---
 
