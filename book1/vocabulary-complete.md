@@ -1,6 +1,6 @@
-# Book 2 -- Complete Vocabulary (English - O'zbekcha)
+# Book 1 -- Complete Vocabulary (English - O'zbekcha)
 
-**Master glossary.** Every word in this list was mined by frequency from the official SAT/PSAT question-bank corpus (College Board question stems and answer rationales) used to research this series. Each per-lesson Vocabulary page draws a relevant subset (~20-30 words) from this pool; this section is the complete reference, alphabetical by English term.
+**Master glossary, end-of-book section.** Every word in this list was mined by frequency from the official SAT/PSAT question-bank corpus (College Board question stems and answer rationales) used to research this series -- the real English vocabulary a student will meet once Book 2 (fully English) begins. Each of Book 1's 9 lessons draws a relevant ~20-30 word subset from this same pool for its own lesson-vocabulary page; this section is the complete reference, alphabetical by English term, meant to be typeset as a run of tables (roughly 40-50 words per page/table) at the end of Book 1.
 
 ---
 

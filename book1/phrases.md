@@ -1,4 +1,4 @@
-# Book 2 -- Common SAT Phrases (English - O'zbekcha)
+# Book 1 -- Common SAT Phrases (English - O'zbekcha)
 
 **Phrase glossary.** These are recurring multi-word expressions mined by frequency from the official SAT/PSAT question-bank corpus (College Board question stems and answer rationales) -- the fixed turns of phrase that show up again and again in real problems, independent of topic. Ordered by how often each one actually appears in that corpus (most common first). The "..." in a phrase marks where a specific quantity, variable, or expression slots in.
 
