@@ -7,6 +7,8 @@ a `sympy.expand`/`sympy.div` script, not hand-computed.
 
 ## Set 1 — Add/Subtract (the subtraction-sign trap is the headline skill)
 
+Each expression below is the sum or difference of two polynomials. Which polynomial, written in standard form, is equivalent to each expression?
+
 1. $(3x^2+2x-5)+(x^2-4x+7)$
 2. $(5x^3-2x+1)-(2x^3+3x-4)$
 3. $(-2x^2+6x-3)+(4x^2-6x+8)$
@@ -15,6 +17,8 @@ a `sympy.expand`/`sympy.div` script, not hand-computed.
 6. $(4x^2+7)-(x^2-2x+7)$
 
 ## Set 2 — Multiply Binomials (FOIL)
+
+Which polynomial, written in standard form, is equivalent to each product below?
 
 1. $(x+3)(x+5)$
 2. $(x-2)(x+7)$
@@ -25,6 +29,8 @@ a `sympy.expand`/`sympy.div` script, not hand-computed.
 
 ## Set 3 — Harder Multiply (squares, binomial×trinomial, three factors)
 
+For each expression below, which polynomial in standard form is equivalent to it?
+
 1. $(x+2)^2$
 2. $(2x-1)^2$
 3. $(x^2+3x-2)(x+4)$
@@ -33,6 +39,8 @@ a `sympy.expand`/`sympy.div` script, not hand-computed.
 6. $(x+2)(x-2)(x+1)$
 
 ## Set 4 — Division
+
+What is the quotient when each polynomial below is divided by the given divisor? State whether the division is exact (no remainder).
 
 1. $(6x^3-9x^2+3x) \div 3x$
 2. $(8x^2+12x) \div 4x$
@@ -43,6 +51,8 @@ a `sympy.expand`/`sympy.div` script, not hand-computed.
 
 ## Set 5 — Mixed (combine operations in one problem — real test density)
 
+Each expression below combines more than one operation. Which polynomial in standard form is equivalent to each expression?
+
 1. $(x+3)(x-2) - (x^2-5)$
 2. $(2x-1)(x+4) + (x^2+3x)$
 3. $(x+5)^2 - (x^2+10)$
@@ -52,6 +62,8 @@ a `sympy.expand`/`sympy.div` script, not hand-computed.
 
 ## Set 6 — Spot the Error
 
+Each item below contains exactly one computational error in simplifying the given expression. Identify the error, then state the correct equivalent expression.
+
 1. $(x^2+3x) - (x^2-2x+5)$ — *"$x^2+3x-x^2-2x+5=x+5$."*
 2. $(x+3)(x-4)$ — *"$x\times x + 3\times(-4) = x^2-12$."*
 3. $3x\times(-5x)$ — *"$=+15x^2$."*
@@ -59,6 +71,8 @@ a `sympy.expand`/`sympy.div` script, not hand-computed.
 5. $(8x^2+4x)\div4x$ — *"$8x^2\div4x=2x$, so the answer is $2x+4x=6x$."*
 
 ## Set 7 — Bonus / Challenge
+
+For each expression below, give the equivalent polynomial in standard form (or, for a division, the quotient in simplest form).
 
 1. $(x+1)(x+2)(x+3)$
 2. $(x^2+2x+1) \div (x+1)$

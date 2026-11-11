@@ -8,7 +8,8 @@ hand-computed.
 
 ## Set 1 — Complete the Square → Vertex Form
 
-Convert each to $a(x-h)^2+k$ form.
+For each equation, which equation is equivalent to the given equation when
+written in vertex form, $a(x-h)^2+k$?
 
 1. $y = x^2-4x+3$
 2. $y = x^2+2x-5$
@@ -19,7 +20,7 @@ Convert each to $a(x-h)^2+k$ form.
 
 ## Set 2 — Quadratic Formula Drill (clean discriminants)
 
-Solve using the quadratic formula.
+What are the solutions to each equation below?
 
 1. $x^2-5x+6=0$
 2. $x^2+x-6=0$
@@ -30,6 +31,8 @@ Solve using the quadratic formula.
 
 ## Set 3 — Quadratic Formula, Irrational Roots
 
+What are the solutions to each equation below?
+
 1. $x^2-4x+1=0$
 2. $x^2+2x-4=0$
 3. $2x^2-4x-1=0$
@@ -39,6 +42,8 @@ Solve using the quadratic formula.
 
 ## Set 4 — Mixed (choose completing-the-square or the formula)
 
+What are the solutions to each equation below?
+
 1. $x^2+8x+15=0$
 2. $x^2-2x-5=0$
 3. $4x^2-4x-3=0$
@@ -46,8 +51,8 @@ Solve using the quadratic formula.
 
 ## Set 5 — Two-Root Verification
 
-Find **both** roots, then substitute each back into the original equation to
-confirm it equals zero.
+What are the two solutions to each equation below? Confirm each solution by
+substituting it back into the original equation.
 
 1. $x^2-x-12=0$
 2. $x^2+3x-10=0$
@@ -55,11 +60,16 @@ confirm it equals zero.
 
 ## Set 6 — Spot the Error
 
+Each solution below contains exactly one error. What is the error, and what
+is the correct solution?
+
 1. $x^2-6x+4=0$ — *"$x=\dfrac{-6\pm\sqrt{36-16}}{2}$" (used $b$ instead of $-b$)*
-2. $x^2+2x-2=0$ — *"Diskriminant $=4-8=-4$, formula $x=\dfrac{-2\pm\sqrt{-4}}{2}$" (arithmetic slip: $4-4(1)(-2)=4+8=12$, not $-4$)*
-3. $x^2-4x-1=0$ — *"$x=\dfrac{4+\sqrt{20}}{2}=2+\sqrt5$. Javob: $x=2+\sqrt5$." (stopped after one root)*
+2. $x^2+2x-2=0$ — *"Discriminant $=4-8=-4$, so $x=\dfrac{-2\pm\sqrt{-4}}{2}$" (arithmetic slip: $4-4(1)(-2)=4+8=12$, not $-4$)*
+3. $x^2-4x-1=0$ — *"$x=\dfrac{4+\sqrt{20}}{2}=2+\sqrt5$. The solution is $x=2+\sqrt5$." (stopped after one root)*
 
 ## Set 7 — Bonus / Challenge ($a\ne1$)
+
+What are the solutions to each equation below?
 
 1. $2x^2+6x+3=0$
 2. $3x^2-2x-2=0$

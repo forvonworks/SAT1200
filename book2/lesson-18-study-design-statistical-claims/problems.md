@@ -12,8 +12,8 @@ so this reasoning check stands in for the script-verification used elsewhere.
 
 ## Set 1 — Random Sample or Convenience Sample?
 
-For each scenario, state whether the sample is random or a convenience/self-selected
-sample, and say what that means for generalizing the result.
+For each scenario, identify the sampling method as random or convenience/self-selected,
+and state the population (if any) to which the results can be generalized.
 
 1. A phone manufacturer emails a survey to 2,000 customers chosen by a computer at
    random from its complete list of 400,000 registered owners.
@@ -28,9 +28,9 @@ sample, and say what that means for generalizing the result.
 
 ## Set 2 — Experiment or Observational Study?
 
-For each scenario, state whether it is an experiment (random assignment) or an
-observational study, and say whether the conclusion can claim causation or only
-correlation/association.
+For each scenario, classify the study as an experiment (random assignment) or an
+observational study, and state whether a cause-and-effect relationship can be concluded
+or only a correlation.
 
 1. Researchers randomly assign 80 plants to receive either a new fertilizer or plain
    water, then measure growth after 3 weeks.
@@ -46,8 +46,9 @@ correlation/association.
 
 ## Set 3 — Mixed: Sample AND Assignment Together
 
-Using the four-row table from Concept 3, identify both (a) whether the sample was
-random and (b) whether assignment was random, then state exactly what can be concluded.
+Using the four-row table from Concept 3, determine whether the sample was random and
+whether assignment was random, then state the most appropriate conclusion the study
+design supports.
 
 1. A university randomly selects 500 students from its full enrollment to participate,
    then randomly assigns half to a new 15-minute daily study technique and half to
@@ -66,8 +67,8 @@ random and (b) whether assignment was random, then state exactly what can be con
 ## Set 4 — Spot the Overreach
 
 Each item gives a conclusion that goes further than the study's design can support.
-Name exactly which rule is broken (sampling, assignment, or both) and restate a
-properly-scoped conclusion.
+Identify which rule is broken (sampling, assignment, or both), and state the most
+appropriate, properly-scoped conclusion.
 
 1. A cooking website surveys 90 people who voluntarily signed up for its newsletter
    about a new recipe, finds 70 liked it, and claims: *"This recipe is a hit with home
@@ -91,9 +92,10 @@ properly-scoped conclusion.
 
 ## Set 5 — Write the Correct Conclusion
 
-Given each study design, write in your own words exactly what the study *can* support
-and what it *cannot* — there is no single fixed answer format, but your reasoning must
-match the sample/assignment rules from Concept 3.
+For each study design, state the conclusion the results most appropriately support, and
+explain why a stronger conclusion (full generalization, causation, or both) is not
+justified — there is no single fixed answer format, but your reasoning must match the
+sample/assignment rules from Concept 3.
 
 1. A random sample of 600 adults nationwide is surveyed (no groups assigned) about
    coffee consumption and self-reported alertness; those who drink 2+ cups daily report

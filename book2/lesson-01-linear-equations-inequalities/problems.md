@@ -9,14 +9,12 @@ set), not hand-computed.
 
 ## Set 1 — Multi-Step Equations (Book 2 Depth)
 
-Solve for $x$:
-
-1. $\dfrac{1}{2}(x+4) = x - 1$
-2. $3(x-2) = 2(x+1)$
-3. $\dfrac{2}{3}x + 1 = \dfrac{1}{3}x + 5$
-4. $5 - 2(x-3) = x + 1$
-5. $\dfrac{3}{4}(x-4) = 2x - 7$
-6. $4(x+1) - 3 = 2(x+5)$
+1. What is the solution to the equation $\dfrac{1}{2}(x+4) = x - 1$?
+2. What is the value of $x$ in the equation $3(x-2) = 2(x+1)$?
+3. What value of $x$ satisfies the equation $\dfrac{2}{3}x + 1 = \dfrac{1}{3}x + 5$?
+4. In the equation $5 - 2(x-3) = x + 1$, what is the value of $x$?
+5. What is the solution to the equation $\dfrac{3}{4}(x-4) = 2x - 7$?
+6. If $4(x+1) - 3 = 2(x+5)$, what is the value of $x$?
 
 ## Set 2 — "What's Actually Asked" Trap Set
 
@@ -32,40 +30,34 @@ the value of $x$.
 
 ## Set 3 — Inequalities (Sign-Flip Awareness)
 
-Solve for $x$:
-
-1. $2x+3<11$
-2. $-4x+1 \ge 13$
-3. $5-x \le 8$
-4. $\dfrac{1}{2}x-3>1$
-5. $-3(x-2)<9$
-6. $7-3x \ge -5$
+1. What is the solution set of the inequality $2x+3<11$?
+2. What is the solution set of the inequality $-4x+1 \ge 13$?
+3. What is the solution set of the inequality $5-x \le 8$?
+4. What is the solution set of the inequality $\dfrac{1}{2}x-3>1$?
+5. What is the solution set of the inequality $-3(x-2)<9$?
+6. What is the solution set of the inequality $7-3x \ge -5$?
 
 ## Set 4 — Compound Inequalities
 
-Solve for $x$:
-
-1. $-2 < x+3 \le 7$
-2. $3x-1<-4$ or $3x-1>8$
-3. $-5 \le 2x+1 < 9$
-4. $x-4<-6$ or $x-4>2$
-5. $-1 < \dfrac{x+1}{2} \le 3$
-6. $2x+3<1$ or $2x+3>9$
+1. What is the solution set of $-2 < x+3 \le 7$?
+2. What is the solution set of $3x-1<-4$ or $3x-1>8$?
+3. What is the solution set of $-5 \le 2x+1 < 9$?
+4. What is the solution set of $x-4<-6$ or $x-4>2$?
+5. What is the solution set of $-1 < \dfrac{x+1}{2} \le 3$?
+6. What is the solution set of $2x+3<1$ or $2x+3>9$?
 
 ## Set 5 — Word-Phrase Translation
 
-Translate into an inequality, then solve:
-
-1. A number increased by 5 is at least 12. (Find the number.)
-2. Three times a number is no more than 21.
-3. A number decreased by 4 is less than 10.
-4. Twice a number, decreased by 3, is at least 7.
-5. A number is at least $-1$ and at most $5$. (Just write the compound inequality — no solving needed.)
+1. A number increased by 5 is at least 12. Write and solve an inequality to find the number.
+2. Three times a number is no more than 21. Write and solve an inequality to find the number.
+3. A number decreased by 4 is less than 10. Write and solve an inequality to find the number.
+4. Twice a number, decreased by 3, is at least 7. Write and solve an inequality to find the number.
+5. A number is at least $-1$ and at most $5$. Which compound inequality represents this statement? (No solving needed.)
 6. Five less than twice a number is no more than 15. What is the **largest possible integer** value of the number?
 
 ## Set 6 — Spot the Error
 
-Each item has exactly one broken step. Name the error and give the correct answer.
+Each item below shows one step of a student's work, which contains exactly one error. Identify the error and give the correct answer.
 
 1. $-2x>8$ — *"Divide both sides by $-2$: $x>-4$."*
 2. $x-5>2$ — *"There's a negative number, so flip the sign: $x<7$."*
@@ -75,11 +67,11 @@ Each item has exactly one broken step. Name the error and give the correct answe
 
 ## Set 7 — Bonus / Challenge (timed, hardest)
 
-1. If $\dfrac{2}{3}(x-3)=x-5$, find $x$, then find $3x$.
-2. Solve $-5 < 3x+1 \le 10$. State the compound inequality, then give the **smallest integer** value of $x$ that satisfies it.
+1. If $\dfrac{2}{3}(x-3)=x-5$, what is the value of $x$? What is the value of $3x$?
+2. Solve $-5 < 3x+1 \le 10$. What is the resulting compound inequality, and what is the **smallest integer** value of $x$ that satisfies it?
 3. Seven minus twice a number is at least $-3$. What is the **largest possible value** of the number?
-4. Solve $4(x-1)-2x = 3(x+2)-10$ for $x$, then find $x+2$.
-5. Solve $-6 \le -2(x-1) < 4$.
+4. If $4(x-1)-2x = 3(x+2)-10$, what is the value of $x$? What is the value of $x+2$?
+5. What is the solution set of $-6 \le -2(x-1) < 4$?
 
 ---
 

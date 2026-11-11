@@ -11,109 +11,82 @@ labeled numbers.
 
 ## Set 1 — Basic Area Formulas
 
-1. To'g'ri to'rtburchakning uzunligi $12$ sm, kengligi $5$ sm. Maydonini toping.
-2. Uchburchakning asosi $14$ sm, balandligi $6$ sm. Maydonini toping.
-3. Parallelogrammning asosi $9$ sm, balandligi $7$ sm. Maydonini toping.
-4. Trapetsiyaning ikki asosi $5$ sm va $11$ sm, balandligi $8$ sm. Maydonini toping.
-5. Doiraning radiusi $7$ sm. Maydonini toping.
-6. Doiraning diametri $20$ sm. Maydonini toping.
+1. A rectangle has a length of $12$ cm and a width of $5$ cm. What is the area of the rectangle, in square centimeters?
+2. A triangle has a base of $14$ cm and a height of $6$ cm. What is the area of the triangle, in square centimeters?
+3. A parallelogram has a base of $9$ cm and a height of $7$ cm. What is the area of the parallelogram, in square centimeters?
+4. A trapezoid has bases of $5$ cm and $11$ cm and a height of $8$ cm. What is the area of the trapezoid, in square centimeters?
+5. A circle has a radius of $7$ cm. What is the area of the circle, in square centimeters?
+6. A circle has a diameter of $20$ cm. What is the area of the circle, in square centimeters?
 
 ## Set 2 — Basic Volume Formulas
 
-1. To'g'ri burchakli prizmaning o'lchamlari $8$ sm, $5$ sm, $3$ sm. Hajmini toping.
-2. Silindrning radiusi $4$ sm, balandligi $10$ sm. Hajmini toping.
-3. Konusning radiusi $6$ sm, balandligi $9$ sm. Hajmini toping.
-4. Sharning radiusi $3$ sm. Hajmini toping.
-5. Silindrning diametri $10$ sm, balandligi $7$ sm. Hajmini toping.
-6. Konusning diametri $8$ sm, balandligi $15$ sm. Hajmini toping.
+1. A rectangular prism has dimensions $8$ cm, $5$ cm, and $3$ cm. What is the volume of the prism, in cubic centimeters?
+2. A cylinder has a radius of $4$ cm and a height of $10$ cm. What is the volume of the cylinder, in cubic centimeters?
+3. A cone has a radius of $6$ cm and a height of $9$ cm. What is the volume of the cone, in cubic centimeters?
+4. A sphere has a radius of $3$ cm. What is the volume of the sphere, in cubic centimeters?
+5. A cylinder has a diameter of $10$ cm and a height of $7$ cm. What is the volume of the cylinder, in cubic centimeters?
+6. A cone has a diameter of $8$ cm and a height of $15$ cm. What is the volume of the cone, in cubic centimeters?
 
-## Set 3 — Composite Figures: Qo'shish (Addition)
+## Set 3 — Composite Figures: Addition
 
-Har bir figura ikki (yoki undan ortiq) standart shakldan **birlashtirilgan**
-— hech qanday qism olib tashlanmagan.
+Each figure below is formed by combining two or more standard shapes — no
+piece has been removed.
 
-1. "L" shaklidagi figura ikki to'g'ri to'rtburchakdan iborat: $10$ sm $\times$ $6$ sm
-   va unga yopishtirilgan $4$ sm $\times$ $3$ sm. Umumiy maydonni toping.
-2. To'g'ri to'rtburchak $8$ sm $\times$ $5$ sm, uning tepasiga asosi $8$ sm,
-   balandligi $4$ sm bo'lgan uchburchak qo'shilgan (uy tomi shaklida). Umumiy
-   maydonni toping.
-3. To'g'ri to'rtburchak $10$ sm $\times$ $6$ sm, uning uzun tomoniga radiusi
-   $5$ sm bo'lgan yarim doira (semicircle) qo'shilgan. Umumiy maydonni toping.
-4. Ikki to'g'ri burchakli prizma birlashtirilgan: birinchisi $10\times4\times3$ sm,
-   ikkinchisi $4\times4\times6$ sm. Umumiy hajmni toping.
-5. Tomoni $9$ sm bo'lgan kvadratga, kateti $6$ sm va $8$ sm bo'lgan to'g'ri
-   burchakli uchburchak qo'shilgan. Umumiy maydonni toping.
-6. Radiusi $3$ sm, balandligi $10$ sm bo'lgan silindrning ustiga xuddi shu
-   radiusli, balandligi $4$ sm bo'lgan konus qo'yilgan (muzqaymoq shaklida).
-   Umumiy hajmni toping.
+1. An L-shaped figure is formed from two rectangles: one measuring $10$ cm by $6$ cm, with a second rectangle measuring $4$ cm by $3$ cm attached to it. What is the total area of the figure, in square centimeters?
+2. A rectangle measuring $8$ cm by $5$ cm has a triangle with a base of $8$ cm and a height of $4$ cm attached on top, forming a shape like a house with a roof. What is the total area of the figure, in square centimeters?
+3. A rectangle measuring $10$ cm by $6$ cm has a semicircle with a radius of $5$ cm attached to one of its long sides. What is the total area of the figure, in square centimeters?
+4. Two rectangular prisms are joined together: one measuring $10 \times 4 \times 3$ cm and the other measuring $4 \times 4 \times 6$ cm. What is the total volume of the combined solid, in cubic centimeters?
+5. A right triangle with legs of $6$ cm and $8$ cm is attached to a square with a side length of $9$ cm. What is the total area of the figure, in square centimeters?
+6. A cone with a radius of $3$ cm and a height of $4$ cm sits on top of a cylinder with the same radius and a height of $10$ cm, forming a shape like an ice cream cone. What is the total volume of the combined solid, in cubic centimeters?
 
-## Set 4 — Composite Figures: Ayirish (Subtraction)
+## Set 4 — Composite Figures: Subtraction
 
-Har bir figurada bir qism ikkinchisidan **kesib olingan/teshilgan** — demak
-ayirish kerak.
+In each figure below, one part has been cut out of, or removed from, another
+— so subtraction is required.
 
-1. Tomoni $10$ sm bo'lgan kvadratning ichidan radiusi $3$ sm bo'lgan doira
-   shaklida teshik kesib olingan. Qolgan maydonni toping.
-2. To'g'ri to'rtburchak $12$ sm $\times$ $8$ sm. Uning ichidan tomoni $3$ sm
-   bo'lgan kvadrat kesib olingan. Qolgan maydonni toping.
-3. Radiusi $10$ sm bo'lgan katta doiraning ichida, xuddi shu markazda radiusi
-   $4$ sm bo'lgan kichik doira teshik qilib olingan (halqa/annulus shakli).
-   Qolgan maydonni toping.
-4. To'g'ri burchakli prizma $10\times8\times5$ sm. Uning ichidan $4\times3\times5$ sm
-   o'lchamli to'g'ri burchakli bo'shliq (tunnel) kesib olingan. Qolgan hajmni
-   toping.
-5. Ikki asosi $10$ sm va $16$ sm, balandligi $8$ sm bo'lgan trapetsiyadan,
-   asosi $4$ sm va balandligi $6$ sm bo'lgan uchburchak kesib olingan. Qolgan
-   maydonni toping.
-6. Radiusi $5$ sm, balandligi $12$ sm bo'lgan silindrning ichidan, xuddi shu
-   radius va balandlikka ega konus shaklidagi bo'shliq o'yib olingan. Qolgan
-   hajmni toping.
+1. A circular hole with a radius of $3$ cm has been cut out of a square with a side length of $10$ cm. What is the area of the remaining figure, in square centimeters?
+2. A rectangle measures $12$ cm by $8$ cm. A square with a side length of $3$ cm has been cut out of it. What is the area of the remaining figure, in square centimeters?
+3. A small circle with a radius of $4$ cm has been cut out of the center of a large circle with a radius of $10$ cm, forming a ring (an annulus). What is the area of the remaining figure, in square centimeters?
+4. A rectangular prism measures $10 \times 8 \times 5$ cm. A rectangular tunnel measuring $4 \times 3 \times 5$ cm has been cut straight through it. What is the volume of the remaining solid, in cubic centimeters?
+5. A triangle with a base of $4$ cm and a height of $6$ cm has been cut out of a trapezoid with bases of $10$ cm and $16$ cm and a height of $8$ cm. What is the area of the remaining figure, in square centimeters?
+6. A cone-shaped cavity with the same radius and height has been carved out of a cylinder with a radius of $5$ cm and a height of $12$ cm. What is the volume of the remaining solid, in cubic centimeters?
 
-## Set 5 — Teskari Yo'nalish (Find the Missing Dimension)
+## Set 5 — Working Backward: Find the Missing Dimension
 
-Bu safar maydon/hajm **berilgan**, o'lcham **topilishi kerak** — formulani
-teskari tomondan qo'llang.
+This time, the area or volume is given and a dimension must be found — apply
+the formula in reverse.
 
-1. To'g'ri to'rtburchakning maydoni $72$ sm², kengligi $8$ sm. Uzunligini toping.
-2. Uchburchakning maydoni $35$ sm², asosi $10$ sm. Balandligini toping.
-3. Doiraning maydoni $81\pi$ sm². Doiraning diametrini toping.
-4. To'g'ri burchakli prizmaning hajmi $200$ sm³, uzunligi $10$ sm, kengligi
-   $4$ sm. Balandligini toping.
-5. Silindrning hajmi $250\pi$ sm³, radiusi $5$ sm. Balandligini toping.
-6. Sharning hajmi $288\pi$ sm³. Sharning radiusini toping.
+1. A rectangle has an area of $72$ cm$^2$ and a width of $8$ cm. What is the length of the rectangle, in centimeters?
+2. A triangle has an area of $35$ cm$^2$ and a base of $10$ cm. What is the height of the triangle, in centimeters?
+3. A circle has an area of $81\pi$ cm$^2$. What is the diameter of the circle, in centimeters?
+4. A rectangular prism has a volume of $200$ cm$^3$, a length of $10$ cm, and a width of $4$ cm. What is the height of the prism, in centimeters?
+5. A cylinder has a volume of $250\pi$ cm$^3$ and a radius of $5$ cm. What is the height of the cylinder, in centimeters?
+6. A sphere has a volume of $288\pi$ cm$^3$. What is the radius of the sphere, in centimeters?
 
 ## Set 6 — Spot the Error
 
-Har bir topshiriqda yechimda bitta xato bor. Xatoni toping, qaysi qoida
-buzilganini ayting, to'g'ri javobni keltiring.
+Each item below contains a solution with exactly one error. Identify the
+error, state which rule was broken, and give the correct answer.
 
-1. "Doiraning diametri $10$ sm. Maydonini toping." *Noto'g'ri yechim:*
+1. "A circle has a diameter of $10$ cm. What is its area?" *Incorrect solution:*
    $A=\pi(10)^2=100\pi$.
-2. "Tomoni $8$ sm bo'lgan kvadratning ichida radiusi $2$ sm bo'lgan doira
-   teshik bor. Qolgan maydonni toping." *Noto'g'ri yechim:* $64+4\pi$.
-3. "Konusning radiusi $3$ sm, balandligi $10$ sm. Hajmini toping."
-   *Noto'g'ri yechim:* $V=\pi(3)^2(10)=90\pi$.
-4. "Sharning radiusi $5$ sm. Hajmini toping." *Noto'g'ri yechim:*
+2. "A square with a side length of $8$ cm has a circular hole with a radius of
+   $2$ cm cut out of it. What is the area of the remaining figure?" *Incorrect
+   solution:* $64+4\pi$.
+3. "A cone has a radius of $3$ cm and a height of $10$ cm. What is its volume?"
+   *Incorrect solution:* $V=\pi(3)^2(10)=90\pi$.
+4. "A sphere has a radius of $5$ cm. What is its volume?" *Incorrect solution:*
    $V=\pi(5)^3=125\pi$.
-5. "Silindrning diametri $6$ sm, balandligi $10$ sm. Hajmini toping."
-   *Noto'g'ri yechim:* $V=\pi(6)^2(10)=360\pi$.
+5. "A cylinder has a diameter of $6$ cm and a height of $10$ cm. What is its
+   volume?" *Incorrect solution:* $V=\pi(6)^2(10)=360\pi$.
 
 ## Set 7 — Bonus / Mastery Check (multi-step, hardest)
 
-1. To'g'ri burchakli prizma $10\times10\times20$ sm. Uning ichidan, baland­ligi
-   bo'ylab o'tadigan radiusi $2$ sm bo'lgan silindrik teshik kesib olingan.
-   Qolgan hajmni toping.
-2. Tomoni $14$ sm bo'lgan kvadratdan, radiusi $7$ sm bo'lgan bitta to'liq
-   doira shaklida qism kesib olingan. Qolgan maydonni toping.
-3. Radiusi $4$ sm, balandligi $10$ sm bo'lgan silindrning ustiga, xuddi shu
-   radiusli yarim shar (hemisphere) joylashtirilgan (silos shaklida). Umumiy
-   hajmni toping.
-4. Ko'ndalang kesimi trapetsiya shaklida bo'lgan prizma: trapetsiyaning
-   asoslari $6$ sm va $10$ sm, balandligi $4$ sm; prizmaning chuqurligi
-   (uzunligi) $15$ sm. Prizmaning hajmini toping.
-5. Radiusi $6$ sm, balandligi $15$ sm bo'lgan silindrning ichidan, xuddi shu
-   radius va balandlikka ega konus shaklidagi bo'shliq olib tashlangan.
-   Qolgan hajmni toping.
+1. A rectangular prism measures $10 \times 10 \times 20$ cm. A cylindrical hole with a radius of $2$ cm has been drilled all the way through it along its height. What is the volume of the remaining solid, in cubic centimeters?
+2. A full circle with a radius of $7$ cm has been cut out of a square with a side length of $14$ cm. What is the area of the remaining figure, in square centimeters?
+3. A hemisphere with the same radius sits on top of a cylinder with a radius of $4$ cm and a height of $10$ cm, forming a shape like a silo. What is the total volume of the combined solid, in cubic centimeters?
+4. A prism has a trapezoidal cross section with bases of $6$ cm and $10$ cm and a height of $4$ cm; the prism's depth (length) is $15$ cm. What is the volume of the prism, in cubic centimeters?
+5. A cone-shaped cavity with the same radius and height has been removed from a cylinder with a radius of $6$ cm and a height of $15$ cm. What is the volume of the remaining solid, in cubic centimeters?
 
 ---
 

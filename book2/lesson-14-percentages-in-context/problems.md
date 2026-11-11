@@ -10,80 +10,79 @@ answers verified by Python script before finalizing — no hand computation.
 
 ## Set 1 — Basic Percent Change
 
-Find the percent increase or decrease. State whether it's an increase or
-decrease.
+For each item below, find the percent increase or decrease described.
 
-1. A shirt's price rises from $\$40$ to $\$52$.
-2. A town's population falls from $2{,}500$ to $2{,}125$.
-3. A test score rises from $60$ to $75$.
-4. Monthly rent rises from $\$800$ to $\$880$.
-5. A stock's price falls from $\$120$ to $\$90$.
-6. A number rises from $45$ to $54$.
+1. A shirt's price increases from $\$40$ to $\$52$. By what percent does the price increase?
+2. A town's population decreases from $2{,}500$ to $2{,}125$. By what percent does the population decrease?
+3. A student's test score increases from $60$ to $75$. By what percent does the score increase?
+4. Monthly rent increases from $\$800$ to $\$880$. By what percent does the rent increase?
+5. A stock's price decreases from $\$120$ to $\$90$. By what percent does the price decrease?
+6. A number increases from $45$ to $54$. By what percent does the number increase?
 
 ## Set 2 — The Multiplier Method
 
-Find the new value. Use the multiplier method ($\times(1+r)$ or
-$\times(1-r)$), not the farq-then-add approach.
+For each item, use the multiplier method ($\times(1+r)$ or $\times(1-r)$) —
+not the difference-then-add approach — to find the new value.
 
-1. $\$250$ increased by $12\%$.
-2. $\$360$ decreased by $25\%$.
-3. $80$ increased by $35\%$.
-4. $500$ decreased by $8\%$.
-5. $150$ increased by $60\%$.
-6. $720$ decreased by $45\%$.
+1. If $\$250$ is increased by $12\%$, what is the new value, in dollars?
+2. If $\$360$ is decreased by $25\%$, what is the new value, in dollars?
+3. If $80$ is increased by $35\%$, what is the new value?
+4. If $500$ is decreased by $8\%$, what is the new value?
+5. If $150$ is increased by $60\%$, what is the new value?
+6. If $720$ is decreased by $45\%$, what is the new value?
 
 ## Set 3 — Successive Changes, Same Percent
 
-For each, find the final value **and** the net percent change from the
-original. (None of these should come out to $0\%$ net change unless you
-show exactly why — watch Items 1, 3, and 5 closely.)
+For each item, find the final value **and** the net percent change from
+the original. (None of these should come out to $0\%$ net change unless
+you show exactly why — watch Items 1, 3, and 5 closely.)
 
-1. $\$200$ increases by $10\%$, then decreases by $10\%$.
-2. $\$400$ increases by $25\%$, then decreases by $25\%$.
-3. $150$ decreases by $20\%$, then increases by $20\%$.
-4. $\$600$ increases by $50\%$, then decreases by $50\%$.
-5. $1{,}000$ decreases by $10\%$, then increases by $10\%$.
-6. $240$ increases by $30\%$, then decreases by $30\%$.
+1. If $\$200$ increases by $10\%$ and then decreases by $10\%$, what is the final value, and what is the net percent change from the original value?
+2. If $\$400$ increases by $25\%$ and then decreases by $25\%$, what is the final value, and what is the net percent change from the original value?
+3. If $150$ decreases by $20\%$ and then increases by $20\%$, what is the final value, and what is the net percent change from the original value?
+4. If $\$600$ increases by $50\%$ and then decreases by $50\%$, what is the final value, and what is the net percent change from the original value?
+5. If $1{,}000$ decreases by $10\%$ and then increases by $10\%$, what is the final value, and what is the net percent change from the original value?
+6. If $240$ increases by $30\%$ and then decreases by $30\%$, what is the final value, and what is the net percent change from the original value?
 
 ## Set 4 — Successive Changes, Different Percents
 
-Find the final value and the net percent change.
+For each item, find the final value and the net percent change from the
+original.
 
-1. $\$300$ increases by $20\%$, then increases by $10\%$.
-2. $\$500$ increases by $20\%$, then decreases by $10\%$. (This is the
+1. If $\$300$ increases by $20\%$ and then increases by $10\%$, what is the final value, and what is the net percent change?
+2. If $\$500$ increases by $20\%$ and then decreases by $10\%$, what is the final value, and what is the net percent change? (This is the
    Model Example from `concepts.md` — confirm you get the same answer.)
-3. $\$800$ decreases by $25\%$, then increases by $20\%$.
-4. $\$150$ increases by $40\%$, then decreases by $30\%$.
-5. $\$400$ decreases by $15\%$, then increases by $25\%$.
-6. $\$600$ increases by $15\%$, then increases by another $15\%$ (two equal
-   compounding steps — not the same as a single $30\%$ increase; show why).
+3. If $\$800$ decreases by $25\%$ and then increases by $20\%$, what is the final value, and what is the net percent change?
+4. If $\$150$ increases by $40\%$ and then decreases by $30\%$, what is the final value, and what is the net percent change?
+5. If $\$400$ decreases by $15\%$ and then increases by $25\%$, what is the final value, and what is the net percent change?
+6. If $\$600$ increases by $15\%$ and then increases by another $15\%$, what is the final value, and what is the net percent change? (These are two equal
+   compounding steps — not the same as a single $30\%$ increase; show why.)
 
 ## Set 5 — Mixed Word Problems
 
 1. A $\$120$ jacket is discounted $25\%$, and then an $8\%$ sales tax is
-   added to the *discounted* price. Find the final price (round to the
-   nearest cent if needed).
+   added to the *discounted* price. What is the final price of the jacket,
+   in dollars, rounded to the nearest cent if necessary?
 2. A town's population of $10{,}000$ grows $8\%$ in year one, then shrinks
-   $5\%$ in year two. Find the population after two years.
+   $5\%$ in year two. What is the population after two years?
 3. A $\$2{,}000$ monthly salary is raised $10\%$ one year, then cut $10\%$
-   the next year due to budget cuts. Find the new salary and the net
-   percent change from the original salary.
+   the next year due to budget cuts. What is the new monthly salary, and
+   what is the net percent change from the original salary?
 4. A $\$50$ item is marked up $40\%$ for retail, then marked down $30\%$
-   during a clearance sale. Find the sale price.
+   during a clearance sale. What is the sale price of the item, in dollars?
 5. $\$5{,}000$ in a savings account earns $4\%$ interest in year one and
    $4\%$ interest in year two, compounded annually (each year's interest is
    calculated on the *previous year's* balance, not the original deposit).
-   Find the balance after two years.
+   What is the balance in the account after two years, in dollars?
 6. A company's revenue drops $30\%$ during a recession, then rises $30\%$
-   the following year as the economy recovers. Find the net percent change
-   from the original revenue, and explain in one sentence why it is not
-   $0\%$.
+   the following year as the economy recovers. What is the net percent
+   change from the original revenue, and why is it not $0\%$?
 
 ## Set 6 — Spot the Error
 
-Each item shows a solution using the additive/subtractive shortcut instead
-of the multiplier method. Name the error and give the correct net percent
-change.
+Each item below shows a solution that uses the additive/subtractive
+shortcut instead of the multiplier method. What is the error, and what is
+the correct net percent change?
 
 1. *"A price rises $30\%$, then falls $20\%$. Net change is
    $30\%-20\%=10\%$ increase."*
@@ -97,17 +96,18 @@ change.
 
 ## Set 7 — Bonus / Challenge
 
-1. A price rises $10\%$, then rises another $10\%$, then falls $20\%$. Find
-   the net percent change.
-2. After a $20\%$ discount, a shirt costs $\$64$. Find the original price
-   (work backward from the final value).
+1. A price rises $10\%$, then rises another $10\%$, then falls $20\%$. What
+   is the net percent change?
+2. After a $20\%$ discount, a shirt costs $\$64$. What was the original
+   price of the shirt, in dollars? (Work backward from the final value.)
 3. After two years of $10\%$ annual population growth, a town has
-   $12{,}100$ people. Find the original population.
+   $12{,}100$ people. What was the original population?
 4. A price increases by $r\%$, then decreases by that same $r\%$, and ends
-   up $4\%$ below the original price. Find $r$. (Hint: $(1+r)(1-r)=1-r^2$,
-   where $r$ is written as a decimal here — set this equal to $0.96$.)
-5. After three successive $10\%$ increases, a value is $1{,}331$. Find the
-   original value.
+   up $4\%$ below the original price. What is the value of $r$? (Hint:
+   $(1+r)(1-r)=1-r^2$, where $r$ is written as a decimal here — set this
+   equal to $0.96$.)
+5. After three successive $10\%$ increases, a value is $1{,}331$. What was
+   the original value?
 
 ---
 

@@ -8,8 +8,9 @@
 
 ## Set 1 — Vertex, Axis, Direction, Width (from vertex form)
 
-State the vertex, axis of symmetry, direction of opening, and whether the
-parabola is narrower or wider than $y=x^2$.
+Each equation represents a parabola in the xy-plane. For each one, what is
+the vertex and the axis of symmetry, which way does the parabola open, and
+is it narrower or wider than the graph of $y=x^2$?
 
 1. $y=3(x-1)^2+4$
 2. $y=-2(x+3)^2-1$
@@ -20,7 +21,7 @@ parabola is narrower or wider than $y=x^2$.
 
 ## Set 2 — Discriminant & Solution Count
 
-Compute $D=b^2-4ac$ and state how many real solutions each equation has.
+How many real solutions does each equation have?
 
 1. $x^2+5x+6=0$
 2. $x^2-4x+4=0$
@@ -31,6 +32,9 @@ Compute $D=b^2-4ac$ and state how many real solutions each equation has.
 
 ## Set 3 — Finding x-Intercepts
 
+Each equation represents a parabola in the xy-plane. What are the
+$x$-intercepts of the graph of each equation?
+
 1. $x^2-7x+10=0$
 2. $x^2+x-12=0$
 3. $2x^2-x-3=0$
@@ -40,7 +44,9 @@ Compute $D=b^2-4ac$ and state how many real solutions each equation has.
 
 ## Set 4 — Mixed: Vertex + Discriminant + Roots Together
 
-For each, find the vertex, the discriminant, and the real roots (if any).
+Each equation represents a parabola in the xy-plane. For each one, what is
+the vertex of the graph, the value of the discriminant, and the real
+root(s), if any?
 
 1. $y=x^2-4x+3$
 2. $y=-x^2+4x-5$

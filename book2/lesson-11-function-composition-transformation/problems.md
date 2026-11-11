@@ -4,82 +4,84 @@
 verified by Python script (`sympy` for symbolic composition; direct
 evaluation for transformations), not hand-checked.
 
-Functions used throughout unless a problem states otherwise:
+Unless an item states otherwise, every question in this lesson uses the
+functions
 $f(x)=3x-2$, $g(x)=x^2+1$, $h(x)=2x+5$.
 
 ---
 
-## Set 1 — Evaluate Composition at a Point
+## Set 1 — Composite Function Values
 
-1. $f(g(2))$
-2. $g(f(1))$
-3. $f(h(0))$
-4. $h(g(1))$
-5. $g(g(1))$
-6. $f(f(2))$
+Using the functions above, answer each question.
 
-## Set 2 — Build/Simplify Composition Algebraically
+1. What is the value of $f(g(2))$?
+2. What is the value of $g(f(1))$?
+3. What is the value of $f(h(0))$?
+4. What is the value of $h(g(1))$?
+5. What is the value of $g(g(1))$?
+6. What is the value of $f(f(2))$?
 
-Simplify fully:
+## Set 2 — Simplifying Composite Functions
 
-1. $f(g(x))$
-2. $g(f(x))$
-3. $f(h(x))$
-4. $h(f(x))$
-5. $g(h(x))$
-6. $h(g(x))$
+Using the functions above, answer each question.
+
+1. What is $f(g(x))$ when fully simplified?
+2. What is $g(f(x))$ when fully simplified?
+3. What is $f(h(x))$ when fully simplified?
+4. What is $h(f(x))$ when fully simplified?
+5. What is $g(h(x))$ when fully simplified?
+6. What is $h(g(x))$ when fully simplified?
 
 ## Set 3 — Vertical Transformation
 
-$f(x) = x^2-4$ for all items.
+For every item in this set, $f(x) = x^2-4$.
 
-1. $f(3)+5$
-2. $f(1)-3$
-3. $-f(2)$
-4. $2f(1)$
-5. $-f(0)+1$
-6. Compute $f(4)$ and $f(4)+2$. By how much did the output shift?
+1. What is the value of $f(3)+5$?
+2. What is the value of $f(1)-3$?
+3. What is the value of $-f(2)$?
+4. What is the value of $2f(1)$?
+5. What is the value of $-f(0)+1$?
+6. What is the value of $f(4)$? By how much does that output shift when $2$ is added, as in $f(4)+2$?
 
 ## Set 4 — Horizontal Transformation (the sign trap)
 
-$f(x) = x^2-4$ for all items.
+For every item in this set, $f(x) = x^2-4$.
 
-1. $f(x-3)$ at $x=5$
-2. $f(x+2)$ at $x=1$
-3. $f(-x)$ at $x=3$
-4. $f(x-1)$ at $x=0$
-5. Compute $f(x-2)$ at $x=6$ and $f(x)$ at $x=4$. What do you notice?
-6. $f(-x)$ at $x=-2$
+1. What is the value of $f(x-3)$ when $x=5$?
+2. What is the value of $f(x+2)$ when $x=1$?
+3. What is the value of $f(-x)$ when $x=3$?
+4. What is the value of $f(x-1)$ when $x=0$?
+5. What is the value of $f(x-2)$ when $x=6$? How does it compare to the value of $f(x)$ when $x=4$?
+6. What is the value of $f(-x)$ when $x=-2$?
 
-## Set 5 — Mixed (composition + transformation)
+## Set 5 — Mixed: Composition and Transformation
 
-1. $f(x)=x^2+1$, $g(x)=x-3$. Simplify $f(g(x))$, then evaluate at $x=5$.
-2. $f(x)=2x+3$. Evaluate $f(x-1)$ at $x=4$.
-3. $g(x)=x^2-2x$. Simplify $g(-x)$.
-4. $f(x)=x^2+1$, $g(x)=x+2$. Evaluate $g(f(2))$.
-5. $f(x)=x^2-5$. Evaluate $-f(x-1)$ at $x=3$.
-6. $f(x)=3x$. Evaluate $f(f(2))$.
+1. If $f(x)=x^2+1$ and $g(x)=x-3$, what is $f(g(x))$ in simplified form, and what is its value when $x=5$?
+2. If $f(x)=2x+3$, what is the value of $f(x-1)$ when $x=4$?
+3. If $g(x)=x^2-2x$, what is $g(-x)$ in simplified form?
+4. If $f(x)=x^2+1$ and $g(x)=x+2$, what is the value of $g(f(2))$?
+5. If $f(x)=x^2-5$, what is the value of $-f(x-1)$ when $x=3$?
+6. If $f(x)=3x$, what is the value of $f(f(2))$?
 
-## Set 6 — Spot the Error
+## Set 6 — Identify the Error
 
-Each item mixes two ideas from this lesson and has exactly one broken step.
-Name the error, say which rule it breaks, and give the correct answer.
+Each item below mixes two ideas from this lesson, and the work shown contains
+exactly one incorrect step. Identify the error, state which rule it violates,
+and give the correct answer.
 
-1. $f(x)=x^2+1$, $g(x)=2x$. Find $f(g(3))$ — *"$f(3)=10$, so'ngra $g(10)=20$."*
-2. $f(x)=x^2-4$. Find $f(3)+2$ — *"$f(x+2)$ ni hisoblaymiz: $f(5)=21$."*
-3. $f(x)=x^2+3x$. Find $f(x-2)$ at $x=5$ — *"Chapga siljiydi, shuning uchun
-   $f(x+2)=f(7)=70$."*
-4. $f(x)=x^2-1$. Find $f(-x)$ at $x=2$ — *"$f(-x)=-f(x)$, shuning uchun
-   $-f(2)=-3$."*
-5. $f(x)=2x+1$, $g(x)=x-4$. Find $g(f(x))$ — *"$f(g(x))=2(x-4)+1=2x-7$."*
+1. If $f(x)=x^2+1$ and $g(x)=2x$, what is $f(g(3))$? — *"$f(3)=10$, then $g(10)=20$."*
+2. If $f(x)=x^2-4$, what is $f(3)+2$? — *"We compute $f(x+2)$: $f(5)=21$."*
+3. If $f(x)=x^2+3x$, what is $f(x-2)$ when $x=5$? — *"It shifts left, so $f(x+2)=f(7)=70$."*
+4. If $f(x)=x^2-1$, what is $f(-x)$ when $x=2$? — *"$f(-x)=-f(x)$, so $-f(2)=-3$."*
+5. If $f(x)=2x+1$ and $g(x)=x-4$, what is $g(f(x))$? — *"$f(g(x))=2(x-4)+1=2x-7$."*
 
 ## Set 7 — Bonus / Challenge
 
-1. $f(x)=x^2-2x+1$, $g(x)=x+3$. Simplify $f(g(x))$ fully.
-2. $f(x)=x^2-4$. Evaluate $-f(x-1)$ at $x=0$.
-3. $f(x)=2x-5$, $g(x)=x^2+1$. Find $g(f(2))$ and $f(g(2))$ — are they equal?
-4. $f(x)=x^2+1$. If $h(x)=f(x-3)+2$, find $h(5)$.
-5. $f(x)=3x+2$. Simplify $f(f(x))$.
+1. If $f(x)=x^2-2x+1$ and $g(x)=x+3$, what is $f(g(x))$ in fully simplified form?
+2. If $f(x)=x^2-4$, what is the value of $-f(x-1)$ when $x=0$?
+3. If $f(x)=2x-5$ and $g(x)=x^2+1$, what are the values of $g(f(2))$ and $f(g(2))$? Are the two values equal?
+4. If $f(x)=x^2+1$ and $h(x)=f(x-3)+2$, what is the value of $h(5)$?
+5. If $f(x)=3x+2$, what is $f(f(x))$ in simplified form?
 
 ---
 

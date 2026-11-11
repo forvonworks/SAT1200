@@ -6,72 +6,81 @@ explicit excluded-value checks), not hand-computed.
 
 ---
 
-## Set 1 — Simplify (Factor, Then Cancel Factors Only)
+## Set 1 — Which Expression Is Equivalent?
 
-1. $\dfrac{x^2-9}{x+3}$
-2. $\dfrac{x^2+5x+6}{x+2}$
-3. $\dfrac{x^2-5x+6}{x^2-4}$
-4. $\dfrac{2x^2+4x}{x^2-4}$
-5. $\dfrac{x^2-1}{x^2+2x+1}$
-6. $\dfrac{x^2-7x+10}{x^2-25}$
+1. Which of the following is equivalent to $\dfrac{x^2-9}{x+3}$ for $x\ne-3$?
+2. Which of the following is equivalent to $\dfrac{x^2+5x+6}{x+2}$ for $x\ne-2$?
+3. Which of the following is equivalent to $\dfrac{x^2-5x+6}{x^2-4}$ for $x\ne2$ and $x\ne-2$?
+4. Which of the following is equivalent to $\dfrac{2x^2+4x}{x^2-4}$ for $x\ne-2$ and $x\ne2$?
+5. Which of the following is equivalent to $\dfrac{x^2-1}{x^2+2x+1}$ for $x\ne-1$?
+6. Which of the following is equivalent to $\dfrac{x^2-7x+10}{x^2-25}$ for $x\ne5$ and $x\ne-5$?
 
-## Set 2 — Multiply / Divide
+## Set 2 — Products and Quotients
 
-1. $\dfrac{x+4}{x-3}\times\dfrac{x-3}{x+1}$
-2. $\dfrac{x^2-16}{3x}\times\dfrac{x}{x+4}$
-3. $\dfrac{x-2}{x+5}\times\dfrac{x+5}{x-2}$
-4. $\dfrac{x^2-9}{x+2}\div\dfrac{x+3}{x+2}$
-5. $\dfrac{x+1}{x-5}\div\dfrac{x+1}{2x-10}$
-6. $\dfrac{x^2-4}{5}\div\dfrac{x-2}{10}$
+1. What is the product $\dfrac{x+4}{x-3}\times\dfrac{x-3}{x+1}$?
+2. What is the product $\dfrac{x^2-16}{3x}\times\dfrac{x}{x+4}$?
+3. What is the product $\dfrac{x-2}{x+5}\times\dfrac{x+5}{x-2}$?
+4. What is the quotient $\dfrac{x^2-9}{x+2}\div\dfrac{x+3}{x+2}$?
+5. What is the quotient $\dfrac{x+1}{x-5}\div\dfrac{x+1}{2x-10}$?
+6. What is the quotient $\dfrac{x^2-4}{5}\div\dfrac{x-2}{10}$?
 
-## Set 3 — Solve (No Extraneous Case Yet)
+## Set 3 — Solving Rational Equations
 
-1. $\dfrac{x}{3}+1=\dfrac{x+4}{6}$
-2. $\dfrac{2}{x}+1=3$
-3. $\dfrac{x+1}{x+4}=\dfrac{1}{2}$
-4. $\dfrac{3}{x-1}=\dfrac{2}{x+2}$
-5. $\dfrac{x}{5}+\dfrac{1}{5}=\dfrac{6}{x}$ *(two answers)*
+1. What is the solution to the equation $\dfrac{x}{3}+1=\dfrac{x+4}{6}$?
+2. What is the solution to the equation $\dfrac{2}{x}+1=3$?
+3. What is the solution to the equation $\dfrac{x+1}{x+4}=\dfrac{1}{2}$?
+4. What is the solution to the equation $\dfrac{3}{x-1}=\dfrac{2}{x+2}$?
+5. What are the solutions to the equation $\dfrac{x}{5}+\dfrac{1}{5}=\dfrac{6}{x}$? *(there are two)*
 
-## Set 4 — Solve and CHECK (Some Candidates Must Be Rejected — Some Must Not)
+## Set 4 — Extraneous Solutions
 
-For each, solve, then check the candidate against the original equation.
-State clearly whether the final answer is a number or "no solution."
+Each equation below produces a candidate solution when cleared of fractions.
+Determine whether that candidate is a valid solution or an extraneous
+solution that must be rejected.
 
-1. $\dfrac{x}{x-3}=\dfrac{3}{x-3}-2$
-2. $\dfrac{x+1}{x-4}=\dfrac{5}{x-4}$
-3. $\dfrac{2x}{x-5}=\dfrac{10}{x-5}+1$
-4. $\dfrac{x+2}{x-1}=3$ *(this one is NOT a trap — confirm it)*
+1. What is the solution to the equation $\dfrac{x}{x-3}=\dfrac{3}{x-3}-2$, or does the equation have no solution?
+2. What is the solution to the equation $\dfrac{x+1}{x-4}=\dfrac{5}{x-4}$, or does the equation have no solution?
+3. What is the solution to the equation $\dfrac{2x}{x-5}=\dfrac{10}{x-5}+1$, or does the equation have no solution?
+4. What is the solution to the equation $\dfrac{x+2}{x-1}=3$? *(this one is not a trap — confirm the candidate is valid)*
 
-## Set 5 — Mixed
+## Set 5 — Mixed Practice
 
-1. Simplify: $\dfrac{2x^2-8}{x^2-4}$ *(watch what's left after everything
-   else cancels — it isn't automatically 0 or 1)*
-2. Solve: $\dfrac{4}{x+1}=\dfrac{2}{x-1}$
-3. Multiply: $\dfrac{x-5}{x+3}\times\dfrac{x+3}{2x}$
-4. Solve and check: $\dfrac{1}{x-2}+\dfrac{1}{x+2}=\dfrac{4}{x^2-4}$
-5. Simplify: $\dfrac{x^2-6x+9}{x^2-9}$
+1. Which of the following is equivalent to $\dfrac{2x^2-8}{x^2-4}$? *(watch
+   what's left after everything else cancels — it isn't automatically $0$
+   or $1$)*
+2. What is the solution to the equation $\dfrac{4}{x+1}=\dfrac{2}{x-1}$?
+3. What is the product $\dfrac{x-5}{x+3}\times\dfrac{x+3}{2x}$?
+4. What is the solution to the equation $\dfrac{1}{x-2}+\dfrac{1}{x+2}=\dfrac{4}{x^2-4}$, or does the equation have no solution?
+5. Which of the following is equivalent to $\dfrac{x^2-6x+9}{x^2-9}$?
 
-## Set 6 — Spot the Error
+## Set 6 — Identify the Error
 
-Each item has exactly one broken step. Name the error and give the
-correct answer.
+Each item below shows a student's work with exactly one incorrect step.
+Identify the error and give the correct value.
 
-1. Simplify $\dfrac{x+5}{x}$ — *"Cancel the $x$'s: answer is $5$."*
-2. Simplify $\dfrac{x^2-4}{x+2}$ — *"Everything cancels, so the answer is
-   $0$."*
-3. Solve $\dfrac{3x}{x-2}=\dfrac{6}{x-2}+x$ — *"Clearing gives
-   $x^2-5x+6=0$, so $x=2$ or $x=3$ — both are solutions."*
-4. Simplify $\dfrac{3x+6}{3x}$ — *"Cancel the $3$'s and the $x$'s: answer
-   is $6$."*
-5. Multiply $\dfrac{x-2}{x+3}\times\dfrac{x+3}{x-2}$ — *"Everything
-   cancels, so the answer is $0$."*
+1. A student simplified $\dfrac{x+5}{x}$ by canceling the $x$'s and reported
+   the answer as $5$. What error did the student make, and what is the
+   correct simplified form?
+2. A student simplified $\dfrac{x^2-4}{x+2}$ and concluded that everything
+   cancels, giving an answer of $0$. What error did the student make, and
+   what is the correct simplified form?
+3. A student solved $\dfrac{3x}{x-2}=\dfrac{6}{x-2}+x$, cleared the
+   fractions to get $x^2-5x+6=0$, and reported both $x=2$ and $x=3$ as
+   solutions. What error did the student make, and what is the actual
+   solution set?
+4. A student simplified $\dfrac{3x+6}{3x}$ by canceling the $3$'s and the
+   $x$'s and reported the answer as $6$. What error did the student make,
+   and what is the correct simplified form?
+5. A student multiplied $\dfrac{x-2}{x+3}\times\dfrac{x+3}{x-2}$ and
+   concluded that everything cancels, giving an answer of $0$. What error
+   did the student make, and what is the correct value?
 
-## Set 7 — Bonus / Challenge
+## Set 7 — Extended Thinking
 
-1. Solve: $\dfrac{2}{x-1}-\dfrac{3}{x+1}=1$ *(two answers)*
-2. Simplify: $\dfrac{x^3-x}{x^2-1}$
-3. Solve: $\dfrac{x+1}{x-3}=\dfrac{x-1}{x+3}$
-4. Solve: $\dfrac{1}{x}+\dfrac{1}{x+2}=\dfrac{3}{4}$ *(two answers)*
+1. What are the solutions to the equation $\dfrac{2}{x-1}-\dfrac{3}{x+1}=1$? *(there are two)*
+2. Which of the following is equivalent to $\dfrac{x^3-x}{x^2-1}$?
+3. What is the solution to the equation $\dfrac{x+1}{x-3}=\dfrac{x-1}{x+3}$?
+4. What are the solutions to the equation $\dfrac{1}{x}+\dfrac{1}{x+2}=\dfrac{3}{4}$? *(there are two)*
 
 ---
 
