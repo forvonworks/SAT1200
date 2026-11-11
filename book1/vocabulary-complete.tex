@@ -1,0 +1,2062 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{F46530}
+\definecolor{badge}{HTML}{FFBDA5}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{11}{11}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{150mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+\renewcommand{\arraystretch}{1.55}
+
+\begin{document}
+
+\topicheader{A}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{290}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+about & \textit{taxminan} \\ \hline
+\rowcolor{badge!18}
+absolute & \textit{mutlaq} \\ \hline
+according & \textit{ga ko'ra} \\ \hline
+\rowcolor{badge!18}
+account & \textit{hisob} \\ \hline
+activity & \textit{faoliyat} \\ \hline
+\rowcolor{badge!18}
+actual & \textit{haqiqiy} \\ \hline
+acute & \textit{o'tkir} \\ \hline
+\rowcolor{badge!18}
+added & \textit{qo'shilgan} \\ \hline
+adding & \textit{qo'shish} \\ \hline
+\rowcolor{badge!18}
+additional & \textit{qo'shimcha} \\ \hline
+additionally & \textit{bundan tashqari} \\ \hline
+\rowcolor{badge!18}
+adjacent & \textit{qo'shni} \\ \hline
+adult & \textit{katta yoshli} \\ \hline
+\rowcolor{badge!18}
+adults & \textit{kattalar} \\ \hline
+advanced & \textit{ilg'or} \\ \hline
+\rowcolor{badge!18}
+against & \textit{qarshi} \\ \hline
+age & \textit{yosh} \\ \hline
+\rowcolor{badge!18}
+air & \textit{havo} \\ \hline
+algebra & \textit{algebra} \\ \hline
+\rowcolor{badge!18}
+already & \textit{allaqachon} \\ \hline
+alternate & \textit{almashinuvchi} \\ \hline
+\rowcolor{badge!18}
+altitude & \textit{balandlik} \\ \hline
+amount & \textit{miqdor} \\ \hline
+\rowcolor{badge!18}
+analysis & \textit{tahlil} \\ \hline
+angle & \textit{burchak} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+angles & \textit{burchaklar} \\ \hline
+\rowcolor{badge!18}
+animal & \textit{hayvon} \\ \hline
+animals & \textit{hayvonlar} \\ \hline
+\rowcolor{badge!18}
+annual & \textit{yillik} \\ \hline
+answer & \textit{javob} \\ \hline
+\rowcolor{badge!18}
+appears & \textit{ko'rinadi} \\ \hline
+applied & \textit{qo'llanildi} \\ \hline
+\rowcolor{badge!18}
+applying & \textit{qo'llash} \\ \hline
+approach & \textit{yondashuv} \\ \hline
+\rowcolor{badge!18}
+appropriate & \textit{mos} \\ \hline
+approximate & \textit{taxminiy} \\ \hline
+\rowcolor{badge!18}
+approximately & \textit{taxminan} \\ \hline
+april & \textit{aprel} \\ \hline
+\rowcolor{badge!18}
+arc & \textit{yoy} \\ \hline
+area & \textit{yuza} \\ \hline
+\rowcolor{badge!18}
+areas & \textit{yuzalar} \\ \hline
+article & \textit{maqola} \\ \hline
+\rowcolor{badge!18}
+ascending & \textit{o'suvchi (tartib)} \\ \hline
+asked & \textit{so'ralgan} \\ \hline
+\rowcolor{badge!18}
+assigned & \textit{tayinlangan} \\ \hline
+associated & \textit{bog'liq} \\ \hline
+\rowcolor{badge!18}
+assuming & \textit{faraz qilib} \\ \hline
+attended & \textit{qatnashgan} \\ \hline
+\rowcolor{badge!18}
+attendee & \textit{ishtirokchi} \\ \hline
+attendees & \textit{ishtirokchilar} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{A-B}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{291}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+auger & \textit{parma} \\ \hline
+\rowcolor{badge!18}
+august & \textit{avgust} \\ \hline
+average & \textit{o'rtacha} \\ \hline
+\rowcolor{badge!18}
+away & \textit{uzoqlikda} \\ \hline
+axis & \textit{o'q} \\ \hline
+\rowcolor{badge!18}
+azaleas & \textit{azaliya} \\ \hline
+bacteria & \textit{bakteriyalar} \\ \hline
+\rowcolor{badge!18}
+bag & \textit{xalta} \\ \hline
+bags & \textit{sumkalar} \\ \hline
+\rowcolor{badge!18}
+balance & \textit{balans} \\ \hline
+ball & \textit{to'p} \\ \hline
+\rowcolor{badge!18}
+bank & \textit{bank} \\ \hline
+bar & \textit{ustun} \\ \hline
+\rowcolor{badge!18}
+base & \textit{asos} \\ \hline
+based & \textit{asoslangan} \\ \hline
+\rowcolor{badge!18}
+batch & \textit{partiya} \\ \hline
+beach & \textit{plyaj} \\ \hline
+\rowcolor{badge!18}
+beads & \textit{munchoqlar} \\ \hline
+beetle & \textit{qo'ng'iz} \\ \hline
+\rowcolor{badge!18}
+began & \textit{boshlamoq} \\ \hline
+best & \textit{eng yaxshi} \\ \hline
+\rowcolor{badge!18}
+bicycle & \textit{velosiped} \\ \hline
+biked & \textit{velosipedda yurdi} \\ \hline
+\rowcolor{badge!18}
+biking & \textit{velosiped haydash} \\ \hline
+bill & \textit{hisob (to'lov)} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+bin & \textit{quti} \\ \hline
+\rowcolor{badge!18}
+birch & \textit{qayin} \\ \hline
+bird & \textit{qush} \\ \hline
+\rowcolor{badge!18}
+black & \textit{qora} \\ \hline
+blackberries & \textit{yejevika} \\ \hline
+\rowcolor{badge!18}
+blood & \textit{qon} \\ \hline
+blue & \textit{ko'k} \\ \hline
+\rowcolor{badge!18}
+board & \textit{taxta} \\ \hline
+boards & \textit{taxtalar} \\ \hline
+\rowcolor{badge!18}
+boat & \textit{qayiq} \\ \hline
+body & \textit{tana} \\ \hline
+\rowcolor{badge!18}
+boiling & \textit{qaynash} \\ \hline
+book & \textit{kitob} \\ \hline
+\rowcolor{badge!18}
+books & \textit{kitoblar} \\ \hline
+born & \textit{tug'ilgan} \\ \hline
+\rowcolor{badge!18}
+bottles & \textit{shishalar} \\ \hline
+bottom & \textit{tag} \\ \hline
+\rowcolor{badge!18}
+bought & \textit{sotib oldi} \\ \hline
+boundary & \textit{chegara} \\ \hline
+\rowcolor{badge!18}
+bowl & \textit{kosa} \\ \hline
+box & \textit{quti} \\ \hline
+\rowcolor{badge!18}
+boxes & \textit{qutilar} \\ \hline
+boxwoods & \textit{buksus} \\ \hline
+\rowcolor{badge!18}
+brakes & \textit{tormozlar} \\ \hline
+budget & \textit{byudjet} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{B-C}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{292}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+buildings & \textit{binolar} \\ \hline
+\rowcolor{badge!18}
+bursts & \textit{yoriladi} \\ \hline
+bus & \textit{avtobus} \\ \hline
+\rowcolor{badge!18}
+bushels & \textit{bushel} \\ \hline
+business & \textit{biznes} \\ \hline
+\rowcolor{badge!18}
+button & \textit{tugma} \\ \hline
+buttons & \textit{tugmalar} \\ \hline
+\rowcolor{badge!18}
+buy & \textit{sotib olmoq} \\ \hline
+buys & \textit{sotib oladi} \\ \hline
+\rowcolor{badge!18}
+calcium & \textit{kaltsiy} \\ \hline
+calculated & \textit{hisoblangan} \\ \hline
+\rowcolor{badge!18}
+calculating & \textit{hisoblash} \\ \hline
+calculation & \textit{hisoblash} \\ \hline
+\rowcolor{badge!18}
+calories & \textit{kaloriyalar} \\ \hline
+camping & \textit{kemping} \\ \hline
+\rowcolor{badge!18}
+candle & \textit{sham} \\ \hline
+candles & \textit{shamlar} \\ \hline
+\rowcolor{badge!18}
+cannot & \textit{mumkin emas} \\ \hline
+capacity & \textit{sig'im} \\ \hline
+\rowcolor{badge!18}
+car & \textit{avtomobil} \\ \hline
+card & \textit{karta} \\ \hline
+\rowcolor{badge!18}
+cards & \textit{kartalar} \\ \hline
+cargo & \textit{yuk} \\ \hline
+\rowcolor{badge!18}
+cars & \textit{mashina} \\ \hline
+cell & \textit{katak} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+cells & \textit{katakcha} \\ \hline
+\rowcolor{badge!18}
+celsius & \textit{selsiy} \\ \hline
+center & \textit{markaz} \\ \hline
+\rowcolor{badge!18}
+centimeter & \textit{santimetr} \\ \hline
+centimeters & \textit{santimetr} \\ \hline
+\rowcolor{badge!18}
+cereal & \textit{donli taom} \\ \hline
+certain & \textit{ma'lum (bir)} \\ \hline
+\rowcolor{badge!18}
+change & \textit{o'zgarish} \\ \hline
+charge & \textit{to'lov} \\ \hline
+\rowcolor{badge!18}
+charged & \textit{to'lov olingan} \\ \hline
+charges & \textit{to'lovlar} \\ \hline
+\rowcolor{badge!18}
+cheese & \textit{pishloq} \\ \hline
+child & \textit{bola} \\ \hline
+\rowcolor{badge!18}
+children & \textit{bolalar} \\ \hline
+chips & \textit{chipslar} \\ \hline
+\rowcolor{badge!18}
+chocolate & \textit{shokolad} \\ \hline
+chose & \textit{tanladi} \\ \hline
+\rowcolor{badge!18}
+chosen & \textit{tanlangan} \\ \hline
+circle & \textit{doira} \\ \hline
+\rowcolor{badge!18}
+circular & \textit{doiraviy} \\ \hline
+circumference & \textit{aylana uzunligi} \\ \hline
+\rowcolor{badge!18}
+city & \textit{shahar} \\ \hline
+class & \textit{sinf} \\ \hline
+\rowcolor{badge!18}
+classes & \textit{toifalar} \\ \hline
+clients & \textit{mijozlar} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{C}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{293}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+closest & \textit{eng yaqin} \\ \hline
+\rowcolor{badge!18}
+club & \textit{to'garak} \\ \hline
+cluster & \textit{klaster} \\ \hline
+\rowcolor{badge!18}
+coefficient & \textit{koeffitsient} \\ \hline
+coefficients & \textit{koeffitsientlar} \\ \hline
+\rowcolor{badge!18}
+coin & \textit{tanga} \\ \hline
+coins & \textit{tangalar} \\ \hline
+\rowcolor{badge!18}
+collect & \textit{to'plamoq} \\ \hline
+collected & \textit{to'plandi} \\ \hline
+\rowcolor{badge!18}
+collection & \textit{to'plam} \\ \hline
+colony & \textit{koloniya} \\ \hline
+\rowcolor{badge!18}
+color & \textit{rang} \\ \hline
+colored & \textit{rangli} \\ \hline
+\rowcolor{badge!18}
+combinations & \textit{kombinatsiyalar} \\ \hline
+combined & \textit{qo'shilgan} \\ \hline
+\rowcolor{badge!18}
+combining & \textit{birlashtirish} \\ \hline
+comic & \textit{komiks} \\ \hline
+\rowcolor{badge!18}
+comments & \textit{sharhlar} \\ \hline
+common & \textit{umumiy} \\ \hline
+\rowcolor{badge!18}
+company & \textit{kompaniya} \\ \hline
+compare & \textit{solishtirmoq} \\ \hline
+\rowcolor{badge!18}
+compares & \textit{solishtiradi} \\ \hline
+complete & \textit{to'ldirmoq} \\ \hline
+\rowcolor{badge!18}
+completed & \textit{bajarilgan} \\ \hline
+computational & \textit{hisoblash} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+computer & \textit{kompyuter} \\ \hline
+\rowcolor{badge!18}
+conceptual & \textit{tushunchaviy} \\ \hline
+conclusion & \textit{xulosa} \\ \hline
+\rowcolor{badge!18}
+concrete & \textit{beton} \\ \hline
+condition & \textit{shart} \\ \hline
+\rowcolor{badge!18}
+conditional & \textit{shartli} \\ \hline
+cone & \textit{konus} \\ \hline
+\rowcolor{badge!18}
+congruent & \textit{teng (kongruent)} \\ \hline
+consecutive & \textit{ketma-ket} \\ \hline
+\rowcolor{badge!18}
+consisting & \textit{...dan iborat} \\ \hline
+consists & \textit{iborat} \\ \hline
+\rowcolor{badge!18}
+constant & \textit{doimiy} \\ \hline
+constants & \textit{o'zgarmaslar} \\ \hline
+\rowcolor{badge!18}
+constructed & \textit{qurilgan} \\ \hline
+contain & \textit{o'z ichiga olmoq} \\ \hline
+\rowcolor{badge!18}
+container & \textit{idish} \\ \hline
+containers & \textit{idishlar} \\ \hline
+\rowcolor{badge!18}
+containing & \textit{o'z ichiga olgan} \\ \hline
+contains & \textit{o'z ichiga oladi} \\ \hline
+\rowcolor{badge!18}
+context & \textit{kontekst} \\ \hline
+cookies & \textit{pechenye} \\ \hline
+\rowcolor{badge!18}
+coordinate & \textit{koordinata} \\ \hline
+coordinates & \textit{koordinatalar} \\ \hline
+\rowcolor{badge!18}
+corn & \textit{makkajo'xori} \\ \hline
+correctly & \textit{to'g'ri} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{C-D}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{294}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+correspond & \textit{mos kelmoq} \\ \hline
+\rowcolor{badge!18}
+corresponding & \textit{mos} \\ \hline
+corresponds & \textit{mos keladi} \\ \hline
+\rowcolor{badge!18}
+cosine & \textit{kosinus} \\ \hline
+cost & \textit{narx} \\ \hline
+\rowcolor{badge!18}
+costs & \textit{turadi (narxi ... bo'ladi)} \\ \hline
+country & \textit{mamlakat} \\ \hline
+\rowcolor{badge!18}
+courses & \textit{kurs} \\ \hline
+crackers & \textit{krekerlar} \\ \hline
+\rowcolor{badge!18}
+crates & \textit{yashiklar} \\ \hline
+cream & \textit{qaymoq} \\ \hline
+\rowcolor{badge!18}
+create & \textit{yaratmoq} \\ \hline
+created & \textit{yaratilgan} \\ \hline
+\rowcolor{badge!18}
+crosses & \textit{kesib o'tadi} \\ \hline
+cube & \textit{kub} \\ \hline
+\rowcolor{badge!18}
+cubes & \textit{kub} \\ \hline
+cubic & \textit{kubik} \\ \hline
+\rowcolor{badge!18}
+cup & \textit{stakan} \\ \hline
+cups & \textit{stakanlar} \\ \hline
+\rowcolor{badge!18}
+customer & \textit{mijoz} \\ \hline
+customers & \textit{mijozlar} \\ \hline
+\rowcolor{badge!18}
+cutting & \textit{kesish} \\ \hline
+cylinder & \textit{silindr} \\ \hline
+\rowcolor{badge!18}
+daily & \textit{kunlik} \\ \hline
+dance & \textit{raqs} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+data & \textit{ma'lumotlar} \\ \hline
+\rowcolor{badge!18}
+day & \textit{kun} \\ \hline
+daylight & \textit{kun yorug'ligi} \\ \hline
+\rowcolor{badge!18}
+days & \textit{kunlar} \\ \hline
+dealer & \textit{sotuvchi} \\ \hline
+\rowcolor{badge!18}
+decay & \textit{kamayish} \\ \hline
+decimal & \textit{o'nlik} \\ \hline
+\rowcolor{badge!18}
+decrease & \textit{kamayish} \\ \hline
+decreased & \textit{kamaymoq} \\ \hline
+\rowcolor{badge!18}
+decreases & \textit{kamayadi} \\ \hline
+decreasing & \textit{kamayuvchi} \\ \hline
+\rowcolor{badge!18}
+defective & \textit{nuqsonli} \\ \hline
+define & \textit{ta'riflamoq} \\ \hline
+\rowcolor{badge!18}
+defined & \textit{aniqlangan} \\ \hline
+defines & \textit{aniqlaydi} \\ \hline
+\rowcolor{badge!18}
+defining & \textit{aniqlovchi} \\ \hline
+definition & \textit{ta'rif} \\ \hline
+\rowcolor{badge!18}
+degree & \textit{gradus} \\ \hline
+degrees & \textit{gradus} \\ \hline
+\rowcolor{badge!18}
+deliveries & \textit{yetkazib berishlar} \\ \hline
+denominator & \textit{maxraj} \\ \hline
+\rowcolor{badge!18}
+density & \textit{zichlik} \\ \hline
+department & \textit{bo'lim} \\ \hline
+\rowcolor{badge!18}
+deposit & \textit{depozit} \\ \hline
+deposits & \textit{depozitlar} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{D-E}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{295}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+depth & \textit{chuqurlik} \\ \hline
+\rowcolor{badge!18}
+descending & \textit{kamayish tartibida} \\ \hline
+describes & \textit{tasvirlamoq} \\ \hline
+\rowcolor{badge!18}
+designer & \textit{dizayner} \\ \hline
+determine & \textit{aniqlamoq} \\ \hline
+\rowcolor{badge!18}
+determined & \textit{aniqlangan} \\ \hline
+determining & \textit{aniqlash} \\ \hline
+\rowcolor{badge!18}
+deviation & \textit{chetlanish} \\ \hline
+device & \textit{qurilma} \\ \hline
+\rowcolor{badge!18}
+diagonal & \textit{diagonal} \\ \hline
+diameter & \textit{diametr} \\ \hline
+\rowcolor{badge!18}
+difference & \textit{ayirma} \\ \hline
+different & \textit{turli} \\ \hline
+\rowcolor{badge!18}
+discount & \textit{chegirma} \\ \hline
+discounted & \textit{chegirma qilingan} \\ \hline
+\rowcolor{badge!18}
+discriminant & \textit{diskriminant} \\ \hline
+dispenser & \textit{tarqatgich} \\ \hline
+\rowcolor{badge!18}
+displays & \textit{ko'rsatadi} \\ \hline
+distance & \textit{masofa} \\ \hline
+\rowcolor{badge!18}
+distinct & \textit{farqli} \\ \hline
+distributing & \textit{qavsni ochish} \\ \hline
+\rowcolor{badge!18}
+distribution & \textit{taqsimot} \\ \hline
+distributions & \textit{taqsimotlar} \\ \hline
+\rowcolor{badge!18}
+distributive & \textit{taqsimot} \\ \hline
+diver & \textit{sho'ng'uvchi} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+divided & \textit{bo'lingan} \\ \hline
+\rowcolor{badge!18}
+dividing & \textit{bo'lish} \\ \hline
+doesn't & \textit{...emas (qilmaydi)} \\ \hline
+\rowcolor{badge!18}
+dollars & \textit{dollar} \\ \hline
+dot & \textit{nuqta} \\ \hline
+\rowcolor{badge!18}
+double & \textit{ikki baravar} \\ \hline
+doubles & \textit{ikki baravar ko'payadi} \\ \hline
+\rowcolor{badge!18}
+dragonflies & \textit{ninachilar} \\ \hline
+drawing & \textit{chizma} \\ \hline
+\rowcolor{badge!18}
+driven & \textit{haydalgan} \\ \hline
+dropped & \textit{tashlangan} \\ \hline
+\rowcolor{badge!18}
+drove & \textit{haydadi} \\ \hline
+earn & \textit{ishlab topmoq} \\ \hline
+\rowcolor{badge!18}
+earned & \textit{ishlab topdi} \\ \hline
+earnings & \textit{daromad} \\ \hline
+\rowcolor{badge!18}
+earns & \textit{ishlab topadi} \\ \hline
+edge & \textit{qirra} \\ \hline
+\rowcolor{badge!18}
+egg & \textit{tuxum} \\ \hline
+eggs & \textit{tuxumlar} \\ \hline
+\rowcolor{badge!18}
+eighth & \textit{sakkizinchi} \\ \hline
+electric & \textit{elektr} \\ \hline
+\rowcolor{badge!18}
+elements & \textit{elementlar} \\ \hline
+elevation & \textit{balandlik} \\ \hline
+\rowcolor{badge!18}
+employee & \textit{xodim} \\ \hline
+employees & \textit{xodimlar} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{E-F}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{296}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+end & \textit{oxiri} \\ \hline
+\rowcolor{badge!18}
+energy & \textit{energiya} \\ \hline
+enrolled & \textit{ro'yxatdan o'tmoq} \\ \hline
+\rowcolor{badge!18}
+enter & \textit{kiritish} \\ \hline
+entire & \textit{butun} \\ \hline
+\rowcolor{badge!18}
+equal & \textit{teng} \\ \hline
+equation & \textit{tenglama} \\ \hline
+\rowcolor{badge!18}
+equations & \textit{tenglamalar} \\ \hline
+equilateral & \textit{teng tomonli} \\ \hline
+\rowcolor{badge!18}
+equipment & \textit{jihozlar} \\ \hline
+equivalent & \textit{teng kuchli} \\ \hline
+\rowcolor{badge!18}
+error & \textit{xato} \\ \hline
+errors & \textit{xatolar} \\ \hline
+\rowcolor{badge!18}
+essay & \textit{insho} \\ \hline
+estimate & \textit{baholamoq (taxmin qilish)} \\ \hline
+\rowcolor{badge!18}
+estimated & \textit{taxmin qilingan} \\ \hline
+estimates & \textit{baholaydi} \\ \hline
+\rowcolor{badge!18}
+evaluating & \textit{hisoblash} \\ \hline
+even & \textit{juft} \\ \hline
+\rowcolor{badge!18}
+event & \textit{hodisa} \\ \hline
+exactly & \textit{aynan} \\ \hline
+\rowcolor{badge!18}
+example & \textit{misol} \\ \hline
+examples & \textit{misollar} \\ \hline
+\rowcolor{badge!18}
+exerted & \textit{qo'llangan (kuch)} \\ \hline
+expanding & \textit{yoyish} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+expected & \textit{kutilgan} \\ \hline
+\rowcolor{badge!18}
+expenses & \textit{xarajatlar} \\ \hline
+experiment & \textit{tajriba} \\ \hline
+\rowcolor{badge!18}
+exponent & \textit{daraja} \\ \hline
+exponential & \textit{ko'rsatkichli} \\ \hline
+\rowcolor{badge!18}
+exponents & \textit{daraja} \\ \hline
+express & \textit{ifodalamoq} \\ \hline
+\rowcolor{badge!18}
+expressed & \textit{ifodalangan} \\ \hline
+expresses & \textit{ifodalaydi} \\ \hline
+\rowcolor{badge!18}
+expression & \textit{ifoda} \\ \hline
+expressions & \textit{ifodalar} \\ \hline
+\rowcolor{badge!18}
+exterior & \textit{tashqi} \\ \hline
+fabric & \textit{mato} \\ \hline
+\rowcolor{badge!18}
+face & \textit{yoq} \\ \hline
+faces & \textit{yoqlar} \\ \hline
+\rowcolor{badge!18}
+factor & \textit{ko'paytuvchi} \\ \hline
+factored & \textit{ko'paytuvchilarga ajratilgan} \\ \hline
+\rowcolor{badge!18}
+factoring & \textit{ko'paytuvchilarga ajratish} \\ \hline
+factors & \textit{ko'paytuvchilar} \\ \hline
+\rowcolor{badge!18}
+fahrenheit & \textit{farengeyt} \\ \hline
+false & \textit{noto'g'ri} \\ \hline
+\rowcolor{badge!18}
+fee & \textit{to'lov} \\ \hline
+feet & \textit{fut} \\ \hline
+\rowcolor{badge!18}
+female & \textit{ayol} \\ \hline
+fertilizer & \textit{o'g'it} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{F-G}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{297}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+fewer & \textit{kamroq} \\ \hline
+\rowcolor{badge!18}
+field & \textit{maydon} \\ \hline
+figure & \textit{shakl} \\ \hline
+\rowcolor{badge!18}
+filled & \textit{to'ldirilgan} \\ \hline
+filler & \textit{to'ldiruvchi} \\ \hline
+\rowcolor{badge!18}
+film & \textit{film} \\ \hline
+find & \textit{topish} \\ \hline
+\rowcolor{badge!18}
+finding & \textit{topish} \\ \hline
+first & \textit{birinchi} \\ \hline
+\rowcolor{badge!18}
+fish & \textit{baliq} \\ \hline
+fit & \textit{mos kelish} \\ \hline
+\rowcolor{badge!18}
+fixed & \textit{o'zgarmas} \\ \hline
+flags & \textit{bayroqlar} \\ \hline
+\rowcolor{badge!18}
+flight & \textit{parvoz} \\ \hline
+floor & \textit{pol} \\ \hline
+\rowcolor{badge!18}
+fluid & \textit{suyuqlik} \\ \hline
+fly & \textit{uchmoq} \\ \hline
+\rowcolor{badge!18}
+following & \textit{quyidagi} \\ \hline
+follows & \textit{kelib chiqadi} \\ \hline
+\rowcolor{badge!18}
+food & \textit{oziq-ovqat} \\ \hline
+foot & \textit{fut} \\ \hline
+\rowcolor{badge!18}
+forest & \textit{o'rmon} \\ \hline
+form & \textit{ko'rinish} \\ \hline
+\rowcolor{badge!18}
+formed & \textit{hosil bo'lgan} \\ \hline
+formula & \textit{formula} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+found & \textit{topilgan} \\ \hline
+\rowcolor{badge!18}
+fourth & \textit{to'rtinchi} \\ \hline
+fraction & \textit{kasr} \\ \hline
+\rowcolor{badge!18}
+free & \textit{bepul} \\ \hline
+frequency & \textit{chastota} \\ \hline
+\rowcolor{badge!18}
+fruit & \textit{meva} \\ \hline
+frying & \textit{qovurish} \\ \hline
+\rowcolor{badge!18}
+full & \textit{to'liq} \\ \hline
+function & \textit{funksiya} \\ \hline
+\rowcolor{badge!18}
+functions & \textit{funksiyalar} \\ \hline
+gallon & \textit{gallon} \\ \hline
+\rowcolor{badge!18}
+gallons & \textit{gallonlar} \\ \hline
+game & \textit{o'yin} \\ \hline
+\rowcolor{badge!18}
+games & \textit{o'yinlar} \\ \hline
+garden & \textit{bog'} \\ \hline
+\rowcolor{badge!18}
+gas & \textit{gaz} \\ \hline
+gasoline & \textit{benzin} \\ \hline
+\rowcolor{badge!18}
+geologist & \textit{geolog} \\ \hline
+geometry & \textit{geometriya} \\ \hline
+\rowcolor{badge!18}
+get & \textit{olmoq} \\ \hline
+gift & \textit{sovg'a} \\ \hline
+\rowcolor{badge!18}
+give & \textit{bermoq} \\ \hline
+given & \textit{berilgan} \\ \hline
+\rowcolor{badge!18}
+gives & \textit{beradi} \\ \hline
+goal & \textit{maqsad} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{G-I}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{298}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+grade & \textit{sinf} \\ \hline
+\rowcolor{badge!18}
+gram & \textit{gramm} \\ \hline
+grams & \textit{gramm} \\ \hline
+\rowcolor{badge!18}
+graph & \textit{grafik} \\ \hline
+graphed & \textit{grafikka tushirilgan} \\ \hline
+\rowcolor{badge!18}
+graphs & \textit{grafiklar} \\ \hline
+gray & \textit{kulrang} \\ \hline
+\rowcolor{badge!18}
+greater & \textit{katta} \\ \hline
+greatest & \textit{eng katta} \\ \hline
+\rowcolor{badge!18}
+green & \textit{yashil} \\ \hline
+ground & \textit{yer} \\ \hline
+\rowcolor{badge!18}
+group & \textit{guruh} \\ \hline
+growth & \textit{o'sish} \\ \hline
+\rowcolor{badge!18}
+gym & \textit{sportzal} \\ \hline
+habitat & \textit{yashash muhiti} \\ \hline
+\rowcolor{badge!18}
+half & \textit{yarim} \\ \hline
+halfway & \textit{yarim yo'lda} \\ \hline
+\rowcolor{badge!18}
+hand & \textit{qo'l} \\ \hline
+haul & \textit{tashimoq} \\ \hline
+\rowcolor{badge!18}
+hectare & \textit{gektar} \\ \hline
+height & \textit{balandlik} \\ \hline
+\rowcolor{badge!18}
+heights & \textit{balandliklar} \\ \hline
+high & \textit{yuqori} \\ \hline
+\rowcolor{badge!18}
+highest & \textit{eng yuqori} \\ \hline
+histogram & \textit{gistogramma} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+hits & \textit{tegadi (uriladi)} \\ \hline
+\rowcolor{badge!18}
+home & \textit{uy} \\ \hline
+horizontal & \textit{gorizontal} \\ \hline
+\rowcolor{badge!18}
+hour & \textit{soat} \\ \hline
+hourly & \textit{soatlik} \\ \hline
+\rowcolor{badge!18}
+hours & \textit{soat} \\ \hline
+house & \textit{uy} \\ \hline
+\rowcolor{badge!18}
+houses & \textit{uylar} \\ \hline
+however & \textit{ammo} \\ \hline
+\rowcolor{badge!18}
+hypotenuse & \textit{gipotenuza} \\ \hline
+ice & \textit{muz} \\ \hline
+\rowcolor{badge!18}
+iceland & \textit{Islandiya} \\ \hline
+identical & \textit{aynan bir xil} \\ \hline
+\rowcolor{badge!18}
+igneous & \textit{otqin} \\ \hline
+inch & \textit{dyuym} \\ \hline
+\rowcolor{badge!18}
+inches & \textit{dyuym} \\ \hline
+include & \textit{o'z ichiga olmoq} \\ \hline
+\rowcolor{badge!18}
+included & \textit{kiritilgan} \\ \hline
+includes & \textit{o'z ichiga oladi} \\ \hline
+\rowcolor{badge!18}
+incorrectly & \textit{noto'g'ri} \\ \hline
+increase & \textit{oshish} \\ \hline
+\rowcolor{badge!18}
+increased & \textit{ortdi} \\ \hline
+increases & \textit{ortadi} \\ \hline
+\rowcolor{badge!18}
+increasing & \textit{o'suvchi} \\ \hline
+indicates & \textit{ko'rsatadi} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{I-L}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{299}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+inequalities & \textit{tengsizliklar} \\ \hline
+\rowcolor{badge!18}
+inequality & \textit{tengsizlik} \\ \hline
+infinitely & \textit{cheksiz} \\ \hline
+\rowcolor{badge!18}
+information & \textit{ma'lumot} \\ \hline
+initial & \textit{boshlang'ich} \\ \hline
+\rowcolor{badge!18}
+inside & \textit{ichida} \\ \hline
+installation & \textit{o'rnatish} \\ \hline
+\rowcolor{badge!18}
+instead & \textit{o'rniga} \\ \hline
+integer & \textit{butun son} \\ \hline
+\rowcolor{badge!18}
+integers & \textit{butun sonlar} \\ \hline
+intercept & \textit{kesma} \\ \hline
+\rowcolor{badge!18}
+intercepts & \textit{kesishish nuqtalari} \\ \hline
+interior & \textit{ichki} \\ \hline
+\rowcolor{badge!18}
+intermediate & \textit{oraliq} \\ \hline
+internet & \textit{internet} \\ \hline
+\rowcolor{badge!18}
+internships & \textit{stajirovka} \\ \hline
+interpretation & \textit{talqin} \\ \hline
+\rowcolor{badge!18}
+intersect & \textit{kesishmoq} \\ \hline
+intersected & \textit{kesishgan} \\ \hline
+\rowcolor{badge!18}
+intersection & \textit{kesishish} \\ \hline
+intersects & \textit{kesishadi} \\ \hline
+\rowcolor{badge!18}
+interval & \textit{oraliq} \\ \hline
+isn't & \textit{emas} \\ \hline
+\rowcolor{badge!18}
+isosceles & \textit{teng yonli} \\ \hline
+items & \textit{buyumlar} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+january & \textit{yanvar} \\ \hline
+\rowcolor{badge!18}
+jars & \textit{bankalar} \\ \hline
+job & \textit{ish} \\ \hline
+\rowcolor{badge!18}
+join & \textit{qo'shilmoq} \\ \hline
+joules & \textit{joul} \\ \hline
+\rowcolor{badge!18}
+juice & \textit{sharbat} \\ \hline
+july & \textit{iyul} \\ \hline
+\rowcolor{badge!18}
+kelvins & \textit{kelvinlar} \\ \hline
+kilograms & \textit{kilogramm} \\ \hline
+\rowcolor{badge!18}
+kilometer & \textit{kilometr} \\ \hline
+kilometers & \textit{kilometr} \\ \hline
+\rowcolor{badge!18}
+kinetic & \textit{kinetik} \\ \hline
+labeled & \textit{belgilangan} \\ \hline
+\rowcolor{badge!18}
+lake & \textit{ko'l} \\ \hline
+land & \textit{yer} \\ \hline
+\rowcolor{badge!18}
+large & \textit{katta} \\ \hline
+larger & \textit{kattaroq} \\ \hline
+\rowcolor{badge!18}
+largest & \textit{eng katta} \\ \hline
+last & \textit{oxirgi} \\ \hline
+\rowcolor{badge!18}
+lateral & \textit{yon (yon sirt)} \\ \hline
+launch & \textit{uchirish} \\ \hline
+\rowcolor{badge!18}
+launched & \textit{uchirildi} \\ \hline
+left & \textit{chap} \\ \hline
+\rowcolor{badge!18}
+leg & \textit{katet} \\ \hline
+legs & \textit{katetlar} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{L-M}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{300}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+lemons & \textit{limonlar} \\ \hline
+\rowcolor{badge!18}
+length & \textit{uzunlik} \\ \hline
+lengths & \textit{uzunliklar} \\ \hline
+\rowcolor{badge!18}
+let & \textit{faraz qilaylik} \\ \hline
+level & \textit{saviya} \\ \hline
+\rowcolor{badge!18}
+lie & \textit{yotmoq} \\ \hline
+lies & \textit{yotadi} \\ \hline
+\rowcolor{badge!18}
+like & \textit{o'xshash} \\ \hline
+likely & \textit{ehtimol} \\ \hline
+\rowcolor{badge!18}
+line & \textit{chiziq} \\ \hline
+linear & \textit{chiziqli} \\ \hline
+\rowcolor{badge!18}
+lines & \textit{chiziqlar} \\ \hline
+liquid & \textit{suyuqlik} \\ \hline
+\rowcolor{badge!18}
+list & \textit{ro'yxat} \\ \hline
+listed & \textit{ro'yxatda keltirilgan} \\ \hline
+\rowcolor{badge!18}
+liter & \textit{litr} \\ \hline
+liters & \textit{litr} \\ \hline
+\rowcolor{badge!18}
+local & \textit{mahalliy} \\ \hline
+located & \textit{joylashgan} \\ \hline
+\rowcolor{badge!18}
+locations & \textit{joylashuv} \\ \hline
+long & \textit{uzun} \\ \hline
+\rowcolor{badge!18}
+longer & \textit{uzunroq} \\ \hline
+longest & \textit{eng uzun} \\ \hline
+\rowcolor{badge!18}
+low & \textit{past} \\ \hline
+lowest & \textit{eng past} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+machine & \textit{mashina} \\ \hline
+\rowcolor{badge!18}
+made & \textit{qilingan} \\ \hline
+magazines & \textit{jurnallar} \\ \hline
+\rowcolor{badge!18}
+maintain & \textit{saqlab turish} \\ \hline
+make & \textit{yasamoq} \\ \hline
+\rowcolor{badge!18}
+makes & \textit{qilmoq} \\ \hline
+making & \textit{hosil qilish} \\ \hline
+\rowcolor{badge!18}
+maple & \textit{klyon} \\ \hline
+marble & \textit{sharcha} \\ \hline
+\rowcolor{badge!18}
+marbles & \textit{sharchalar} \\ \hline
+margin & \textit{chegara} \\ \hline
+\rowcolor{badge!18}
+marked & \textit{belgilamoq} \\ \hline
+mass & \textit{massa} \\ \hline
+\rowcolor{badge!18}
+materials & \textit{materiallar} \\ \hline
+maximum & \textit{maksimum} \\ \hline
+\rowcolor{badge!18}
+mean & \textit{o'rtacha} \\ \hline
+means & \textit{anglatadi} \\ \hline
+\rowcolor{badge!18}
+measure & \textit{o'lchov} \\ \hline
+measured & \textit{o'lchangan} \\ \hline
+\rowcolor{badge!18}
+measures & \textit{o'lchovlari} \\ \hline
+measuring & \textit{o'lchash} \\ \hline
+\rowcolor{badge!18}
+median & \textit{mediana} \\ \hline
+medians & \textit{medianalar} \\ \hline
+\rowcolor{badge!18}
+meet & \textit{uchrashmoq} \\ \hline
+member & \textit{a'zo} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{M-N}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{301}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+members & \textit{a'zolar} \\ \hline
+\rowcolor{badge!18}
+metal & \textit{metall} \\ \hline
+meter & \textit{metr} \\ \hline
+\rowcolor{badge!18}
+meters & \textit{metr} \\ \hline
+method & \textit{usul} \\ \hline
+\rowcolor{badge!18}
+middle & \textit{o'rta} \\ \hline
+midpoint & \textit{o'rta nuqta} \\ \hline
+\rowcolor{badge!18}
+mile & \textit{milya} \\ \hline
+miles & \textit{milya} \\ \hline
+\rowcolor{badge!18}
+milliliter & \textit{millilitr} \\ \hline
+millimeters & \textit{millimetr} \\ \hline
+\rowcolor{badge!18}
+million & \textit{million} \\ \hline
+minimum & \textit{minimum} \\ \hline
+\rowcolor{badge!18}
+minus & \textit{minus} \\ \hline
+minute & \textit{daqiqa} \\ \hline
+\rowcolor{badge!18}
+minutes & \textit{daqiqa} \\ \hline
+mirror & \textit{ko'zgu} \\ \hline
+\rowcolor{badge!18}
+misidentifying & \textit{noto'g'ri aniqlash} \\ \hline
+misinterpreting & \textit{noto'g'ri talqin qilish} \\ \hline
+\rowcolor{badge!18}
+mixture & \textit{aralashma} \\ \hline
+mode & \textit{moda} \\ \hline
+\rowcolor{badge!18}
+model & \textit{model} \\ \hline
+modeled & \textit{modellashtirildi} \\ \hline
+\rowcolor{badge!18}
+models & \textit{modellar} \\ \hline
+monarch & \textit{monarx (kapalak turi)} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+money & \textit{pul} \\ \hline
+\rowcolor{badge!18}
+month & \textit{oy} \\ \hline
+monthly & \textit{oylik} \\ \hline
+\rowcolor{badge!18}
+months & \textit{oylar} \\ \hline
+moon & \textit{oy} \\ \hline
+\rowcolor{badge!18}
+movie & \textit{kino} \\ \hline
+movies & \textit{filmlar} \\ \hline
+\rowcolor{badge!18}
+moving & \textit{harakatlanayotgan} \\ \hline
+muffins & \textit{maffin} \\ \hline
+\rowcolor{badge!18}
+multiplied & \textit{ko'paytirildi} \\ \hline
+multiply & \textit{ko'paytirmoq} \\ \hline
+\rowcolor{badge!18}
+multiplying & \textit{ko'paytirish} \\ \hline
+museum & \textit{muzey} \\ \hline
+\rowcolor{badge!18}
+nearest & \textit{eng yaqin} \\ \hline
+need & \textit{kerak} \\ \hline
+\rowcolor{badge!18}
+needed & \textit{kerakli} \\ \hline
+needs & \textit{kerak bo'ladi} \\ \hline
+\rowcolor{badge!18}
+negative & \textit{manfiy} \\ \hline
+never & \textit{hech qachon} \\ \hline
+\rowcolor{badge!18}
+new & \textit{yangi} \\ \hline
+next & \textit{keyingi} \\ \hline
+\rowcolor{badge!18}
+nonlinear & \textit{nochiziqli} \\ \hline
+normal & \textit{normal} \\ \hline
+\rowcolor{badge!18}
+note & \textit{eslatma} \\ \hline
+novels & \textit{romanlar} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{N-P}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{302}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+number & \textit{son} \\ \hline
+\rowcolor{badge!18}
+numbers & \textit{sonlar} \\ \hline
+numerator & \textit{surat} \\ \hline
+\rowcolor{badge!18}
+object & \textit{jism} \\ \hline
+objects & \textit{narsalar} \\ \hline
+\rowcolor{badge!18}
+observation & \textit{kuzatish} \\ \hline
+obtuse & \textit{o'tmas (burchak)} \\ \hline
+\rowcolor{badge!18}
+occurs & \textit{ro'y beradi} \\ \hline
+ocean & \textit{okean} \\ \hline
+\rowcolor{badge!18}
+odd & \textit{toq} \\ \hline
+office & \textit{ofis} \\ \hline
+\rowcolor{badge!18}
+old & \textit{eski} \\ \hline
+onetime & \textit{bir martalik} \\ \hline
+\rowcolor{badge!18}
+online & \textit{onlayn} \\ \hline
+opened & \textit{ochildi} \\ \hline
+\rowcolor{badge!18}
+opens & \textit{ochadi} \\ \hline
+opposite & \textit{qarama-qarshi} \\ \hline
+\rowcolor{badge!18}
+oranges & \textit{apelsinlar} \\ \hline
+order & \textit{tartib} \\ \hline
+\rowcolor{badge!18}
+ordered & \textit{tartiblangan} \\ \hline
+original & \textit{dastlabki} \\ \hline
+\rowcolor{badge!18}
+ounces & \textit{unsiya} \\ \hline
+outcomes & \textit{natijalar} \\ \hline
+\rowcolor{badge!18}
+outfits & \textit{kiyimlar} \\ \hline
+output & \textit{chiqish (natija)} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+owner & \textit{egasi} \\ \hline
+\rowcolor{badge!18}
+packages & \textit{paketlar} \\ \hline
+paid & \textit{to'lamoq} \\ \hline
+\rowcolor{badge!18}
+paint & \textit{bo'yoq} \\ \hline
+pair & \textit{juft} \\ \hline
+\rowcolor{badge!18}
+pairs & \textit{juftlar} \\ \hline
+pans & \textit{tovalar} \\ \hline
+\rowcolor{badge!18}
+pants & \textit{shim} \\ \hline
+paper & \textit{qog'oz} \\ \hline
+\rowcolor{badge!18}
+parabola & \textit{parabola} \\ \hline
+parallel & \textit{parallel} \\ \hline
+\rowcolor{badge!18}
+parallelogram & \textit{parallelogramm} \\ \hline
+parentheses & \textit{qavs} \\ \hline
+\rowcolor{badge!18}
+park & \textit{park} \\ \hline
+parking & \textit{avtoturargoh} \\ \hline
+\rowcolor{badge!18}
+part & \textit{qism} \\ \hline
+participant & \textit{ishtirokchi} \\ \hline
+\rowcolor{badge!18}
+participants & \textit{ishtirokchilar} \\ \hline
+particular & \textit{muayyan} \\ \hline
+\rowcolor{badge!18}
+parts & \textit{qismlar} \\ \hline
+party & \textit{ziyofat} \\ \hline
+\rowcolor{badge!18}
+pass & \textit{o'tmoq} \\ \hline
+passes & \textit{o'tmoq} \\ \hline
+\rowcolor{badge!18}
+passing & \textit{o'tish} \\ \hline
+payment & \textit{to'lov} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{P}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{303}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+pens & \textit{ruchkalar} \\ \hline
+\rowcolor{badge!18}
+people & \textit{odamlar} \\ \hline
+per & \textit{har biriga} \\ \hline
+\rowcolor{badge!18}
+percent & \textit{foiz} \\ \hline
+percentage & \textit{foiz} \\ \hline
+\rowcolor{badge!18}
+percentages & \textit{foizlar} \\ \hline
+perimeter & \textit{perimetr} \\ \hline
+\rowcolor{badge!18}
+perimeters & \textit{perimetr} \\ \hline
+period & \textit{davr} \\ \hline
+\rowcolor{badge!18}
+periods & \textit{davrlar} \\ \hline
+perpendicular & \textit{perpendikulyar} \\ \hline
+\rowcolor{badge!18}
+person & \textit{odam} \\ \hline
+phone & \textit{telefon} \\ \hline
+\rowcolor{badge!18}
+piece & \textit{bo'lak} \\ \hline
+pieces & \textit{donalar} \\ \hline
+\rowcolor{badge!18}
+placed & \textit{joylashtirilgan} \\ \hline
+plan & \textit{reja} \\ \hline
+\rowcolor{badge!18}
+plane & \textit{tekislik} \\ \hline
+planet & \textit{sayyora} \\ \hline
+\rowcolor{badge!18}
+plans & \textit{rejalar} \\ \hline
+plant & \textit{o'simlik} \\ \hline
+\rowcolor{badge!18}
+planted & \textit{ekildi} \\ \hline
+plants & \textit{o'simliklar} \\ \hline
+\rowcolor{badge!18}
+platform & \textit{platforma} \\ \hline
+plausible & \textit{asosli} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+play & \textit{o'ynamoq} \\ \hline
+\rowcolor{badge!18}
+played & \textit{o'ynagan} \\ \hline
+player & \textit{o'yinchi} \\ \hline
+\rowcolor{badge!18}
+players & \textit{o'yinchilar} \\ \hline
+plot & \textit{belgilash} \\ \hline
+\rowcolor{badge!18}
+plus & \textit{plyus} \\ \hline
+point & \textit{nuqta} \\ \hline
+\rowcolor{badge!18}
+points & \textit{nuqtalar} \\ \hline
+polynomial & \textit{ko'phad} \\ \hline
+\rowcolor{badge!18}
+population & \textit{aholi} \\ \hline
+positive & \textit{musbat} \\ \hline
+\rowcolor{badge!18}
+possible & \textit{mumkin bo'lgan} \\ \hline
+poster & \textit{plakat} \\ \hline
+\rowcolor{badge!18}
+posters & \textit{plakatlar} \\ \hline
+potatoes & \textit{kartoshka} \\ \hline
+\rowcolor{badge!18}
+pound & \textit{funt} \\ \hline
+pounds & \textit{funt} \\ \hline
+\rowcolor{badge!18}
+predicted & \textit{bashorat qilingan} \\ \hline
+predicts & \textit{bashorat qiladi} \\ \hline
+\rowcolor{badge!18}
+premium & \textit{sug'urta badali} \\ \hline
+prepare & \textit{tayyorlash} \\ \hline
+\rowcolor{badge!18}
+preserve & \textit{saqlamoq} \\ \hline
+pressure & \textit{bosim} \\ \hline
+\rowcolor{badge!18}
+previous & \textit{oldingi} \\ \hline
+price & \textit{narx} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{P-R}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{304}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+prism & \textit{prizma} \\ \hline
+\rowcolor{badge!18}
+probability & \textit{ehtimollik} \\ \hline
+problem & \textit{masala} \\ \hline
+\rowcolor{badge!18}
+produce & \textit{ishlab chiqarmoq} \\ \hline
+produced & \textit{ishlab chiqardi} \\ \hline
+\rowcolor{badge!18}
+produces & \textit{ishlab chiqaradi} \\ \hline
+product & \textit{ko'paytma} \\ \hline
+\rowcolor{badge!18}
+production & \textit{ishlab chiqarish} \\ \hline
+profit & \textit{foyda} \\ \hline
+\rowcolor{badge!18}
+program & \textit{dastur} \\ \hline
+project & \textit{loyiha} \\ \hline
+\rowcolor{badge!18}
+projectile & \textit{otilgan jism} \\ \hline
+propellant & \textit{yonilg'i} \\ \hline
+\rowcolor{badge!18}
+properties & \textit{xossalar} \\ \hline
+property & \textit{xossa} \\ \hline
+\rowcolor{badge!18}
+proportion & \textit{proportsiya} \\ \hline
+proportional & \textit{proporsional} \\ \hline
+\rowcolor{badge!18}
+proposal & \textit{taklif} \\ \hline
+protein & \textit{oqsil} \\ \hline
+\rowcolor{badge!18}
+prove & \textit{isbotlamoq} \\ \hline
+purchase & \textit{xarid} \\ \hline
+\rowcolor{badge!18}
+purchased & \textit{sotib olingan} \\ \hline
+pyramid & \textit{piramida} \\ \hline
+\rowcolor{badge!18}
+pythagorean & \textit{pifagor} \\ \hline
+quadratic & \textit{kvadrat} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+quantity & \textit{miqdor} \\ \hline
+\rowcolor{badge!18}
+rabbit & \textit{quyon} \\ \hline
+radians & \textit{radian} \\ \hline
+\rowcolor{badge!18}
+radius & \textit{radius} \\ \hline
+ran & \textit{yugurdi} \\ \hline
+\rowcolor{badge!18}
+random & \textit{tasodifiy} \\ \hline
+randomly & \textit{tasodifiy ravishda} \\ \hline
+\rowcolor{badge!18}
+range & \textit{diapazon} \\ \hline
+raspberries & \textit{malina} \\ \hline
+\rowcolor{badge!18}
+rate & \textit{tezlik} \\ \hline
+rates & \textit{tezliklar} \\ \hline
+\rowcolor{badge!18}
+rather & \textit{aksincha} \\ \hline
+ratio & \textit{nisbat} \\ \hline
+\rowcolor{badge!18}
+ratios & \textit{nisbatlar} \\ \hline
+reach & \textit{yetmoq} \\ \hline
+\rowcolor{badge!18}
+reached & \textit{yetdi} \\ \hline
+reaches & \textit{yetadi} \\ \hline
+\rowcolor{badge!18}
+read & \textit{o'qimoq} \\ \hline
+real & \textit{haqiqiy} \\ \hline
+\rowcolor{badge!18}
+received & \textit{oldi} \\ \hline
+reciprocal & \textit{teskari son/ifoda} \\ \hline
+\rowcolor{badge!18}
+recorded & \textit{qayd qilindi} \\ \hline
+rectangle & \textit{to'g'ri to'rtburchak} \\ \hline
+\rowcolor{badge!18}
+rectangles & \textit{to'g'ri to'rtburchaklar} \\ \hline
+rectangular & \textit{to'g'ri burchakli} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{R-S}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{305}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+red & \textit{qizil} \\ \hline
+\rowcolor{badge!18}
+reduced & \textit{qisqartirilgan} \\ \hline
+region & \textit{soha} \\ \hline
+\rowcolor{badge!18}
+registered & \textit{ro'yxatdan o'tgan} \\ \hline
+regular & \textit{muntazam} \\ \hline
+\rowcolor{badge!18}
+relates & \textit{bog'liq} \\ \hline
+relationship & \textit{bog'liqlik} \\ \hline
+\rowcolor{badge!18}
+relationships & \textit{munosabatlar} \\ \hline
+released & \textit{chiqarilgan} \\ \hline
+\rowcolor{badge!18}
+remain & \textit{qolish} \\ \hline
+remaining & \textit{qolgan} \\ \hline
+\rowcolor{badge!18}
+remains & \textit{o'zgarmay qoladi} \\ \hline
+removed & \textit{olib tashlangan} \\ \hline
+\rowcolor{badge!18}
+rent & \textit{ijara haqi} \\ \hline
+rental & \textit{ijara} \\ \hline
+\rowcolor{badge!18}
+renting & \textit{ijaraga olish} \\ \hline
+repair & \textit{ta'mirlash} \\ \hline
+\rowcolor{badge!18}
+reported & \textit{qayd etilgan} \\ \hline
+represent & \textit{ifodalamoq} \\ \hline
+\rowcolor{badge!18}
+represented & \textit{ifodalangan} \\ \hline
+representing & \textit{ifodalovchi} \\ \hline
+\rowcolor{badge!18}
+represents & \textit{ifodalaydi} \\ \hline
+residents & \textit{aholi} \\ \hline
+\rowcolor{badge!18}
+respectively & \textit{mos ravishda} \\ \hline
+responded & \textit{javob berdi} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+rest & \textit{qolgan qism} \\ \hline
+\rowcolor{badge!18}
+restaurant & \textit{restoran} \\ \hline
+restaurants & \textit{restoranlar} \\ \hline
+\rowcolor{badge!18}
+result & \textit{natija} \\ \hline
+resulting & \textit{natijada hosil bo'lgan} \\ \hline
+\rowcolor{badge!18}
+results & \textit{natijalar} \\ \hline
+retail & \textit{chakana} \\ \hline
+\rowcolor{badge!18}
+revenue & \textit{daromad} \\ \hline
+rewriting & \textit{qayta yozish} \\ \hline
+\rowcolor{badge!18}
+rewritten & \textit{qayta yozilgan} \\ \hline
+ride & \textit{minmoq} \\ \hline
+\rowcolor{badge!18}
+right & \textit{to'g'ri} \\ \hline
+rocket & \textit{raketa} \\ \hline
+\rowcolor{badge!18}
+rocks & \textit{toshlar} \\ \hline
+rolls & \textit{nonchalar} \\ \hline
+\rowcolor{badge!18}
+room & \textit{xona} \\ \hline
+root & \textit{ildiz} \\ \hline
+\rowcolor{badge!18}
+round & \textit{yaxlitlamoq} \\ \hline
+rows & \textit{qatorlar} \\ \hline
+\rowcolor{badge!18}
+running & \textit{yugurish} \\ \hline
+salads & \textit{salatlar} \\ \hline
+\rowcolor{badge!18}
+salary & \textit{maosh} \\ \hline
+sale & \textit{sotuv} \\ \hline
+\rowcolor{badge!18}
+sales & \textit{sotuv} \\ \hline
+salt & \textit{tuz} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{S}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{306}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+sample & \textit{tanlanma} \\ \hline
+\rowcolor{badge!18}
+samples & \textit{namunalar} \\ \hline
+sandwich & \textit{sendvich} \\ \hline
+\rowcolor{badge!18}
+satisfies & \textit{qanoatlantiradi} \\ \hline
+satisfy & \textit{qanoatlantiradi} \\ \hline
+\rowcolor{badge!18}
+save & \textit{jamg'arish} \\ \hline
+savings & \textit{jamg'arma} \\ \hline
+\rowcolor{badge!18}
+scale & \textit{masshtab} \\ \hline
+scatterplot & \textit{sochilma diagramma} \\ \hline
+\rowcolor{badge!18}
+scatterplots & \textit{sochilish diagrammalari} \\ \hline
+school & \textit{maktab} \\ \hline
+\rowcolor{badge!18}
+scientist & \textit{olim} \\ \hline
+screws & \textit{vintlar} \\ \hline
+\rowcolor{badge!18}
+scuba & \textit{skuba} \\ \hline
+sea & \textit{dengiz} \\ \hline
+\rowcolor{badge!18}
+seals & \textit{tyulenlar} \\ \hline
+seating & \textit{o'tirish joylari} \\ \hline
+\rowcolor{badge!18}
+seats & \textit{o'rindiqlar} \\ \hline
+second & \textit{ikkinchi} \\ \hline
+\rowcolor{badge!18}
+seconds & \textit{soniya} \\ \hline
+seeds & \textit{urug'lar} \\ \hline
+\rowcolor{badge!18}
+segment & \textit{kesma} \\ \hline
+segments & \textit{kesmalar} \\ \hline
+\rowcolor{badge!18}
+selected & \textit{tanlangan} \\ \hline
+selecting & \textit{tanlash} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+selling & \textit{sotish} \\ \hline
+\rowcolor{badge!18}
+sells & \textit{sotmoq} \\ \hline
+sent & \textit{yubormoq} \\ \hline
+\rowcolor{badge!18}
+september & \textit{sentyabr} \\ \hline
+service & \textit{xizmat} \\ \hline
+\rowcolor{badge!18}
+session & \textit{mashg'ulot} \\ \hline
+sessions & \textit{mashg'ulotlar} \\ \hline
+\rowcolor{badge!18}
+set & \textit{to'plam} \\ \hline
+sets & \textit{to'plamlar} \\ \hline
+\rowcolor{badge!18}
+setting & \textit{o'rnatish} \\ \hline
+shaded & \textit{bo'yalgan} \\ \hline
+\rowcolor{badge!18}
+shape & \textit{shakl} \\ \hline
+shifting & \textit{siljish} \\ \hline
+\rowcolor{badge!18}
+shipment & \textit{yuk jo'natmasi} \\ \hline
+shirt & \textit{ko'ylak} \\ \hline
+\rowcolor{badge!18}
+shirts & \textit{ko'ylaklar} \\ \hline
+shorter & \textit{qisqaroq} \\ \hline
+\rowcolor{badge!18}
+shortest & \textit{eng qisqa} \\ \hline
+show & \textit{ko'rsatish} \\ \hline
+\rowcolor{badge!18}
+shown & \textit{ko'rsatilgan} \\ \hline
+shows & \textit{ko'rsatadi} \\ \hline
+\rowcolor{badge!18}
+side & \textit{tomon} \\ \hline
+sides & \textit{tomonlar} \\ \hline
+\rowcolor{badge!18}
+sign & \textit{ishora} \\ \hline
+silicon & \textit{kremniy} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{S}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{307}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+similar & \textit{o'xshash} \\ \hline
+\rowcolor{badge!18}
+similarly & \textit{xuddi shunday} \\ \hline
+simplifies & \textit{soddalashtiradi} \\ \hline
+\rowcolor{badge!18}
+simplifying & \textit{soddalashtirish} \\ \hline
+sine & \textit{sinus} \\ \hline
+\rowcolor{badge!18}
+site & \textit{joy (maydon)} \\ \hline
+situation & \textit{vaziyat} \\ \hline
+\rowcolor{badge!18}
+size & \textit{o'lcham} \\ \hline
+slope & \textit{qiyalik} \\ \hline
+\rowcolor{badge!18}
+slopes & \textit{qiyaliklar} \\ \hline
+small & \textit{kichik} \\ \hline
+\rowcolor{badge!18}
+smaller & \textit{kichikroq} \\ \hline
+smallest & \textit{eng kichik} \\ \hline
+\rowcolor{badge!18}
+snails & \textit{shilliqqurtlar} \\ \hline
+snow & \textit{qor} \\ \hline
+\rowcolor{badge!18}
+snowfall & \textit{qor yog'ishi} \\ \hline
+sold & \textit{sotildi} \\ \hline
+\rowcolor{badge!18}
+solution & \textit{yechim} \\ \hline
+solutions & \textit{yechimlar} \\ \hline
+\rowcolor{badge!18}
+solve & \textit{yechmoq} \\ \hline
+solved & \textit{yechmoq} \\ \hline
+\rowcolor{badge!18}
+solving & \textit{yechish} \\ \hline
+space & \textit{bo'shliq} \\ \hline
+\rowcolor{badge!18}
+species & \textit{turlar} \\ \hline
+speed & \textit{tezlik} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+spend & \textit{sarflamoq} \\ \hline
+\rowcolor{badge!18}
+spends & \textit{sarflaydi} \\ \hline
+spent & \textit{sarflagan} \\ \hline
+\rowcolor{badge!18}
+sphere & \textit{shar} \\ \hline
+spoons & \textit{qoshiqlar} \\ \hline
+\rowcolor{badge!18}
+sport & \textit{sport} \\ \hline
+spread & \textit{yoyilish} \\ \hline
+\rowcolor{badge!18}
+spring & \textit{bahor} \\ \hline
+square & \textit{kvadrat} \\ \hline
+\rowcolor{badge!18}
+squared & \textit{kvadratga ko'tarilgan} \\ \hline
+squares & \textit{kvadratlar} \\ \hline
+\rowcolor{badge!18}
+squaring & \textit{kvadratga ko'tarish} \\ \hline
+standard & \textit{standart} \\ \hline
+\rowcolor{badge!18}
+star & \textit{yulduz} \\ \hline
+stars & \textit{yulduzlar} \\ \hline
+\rowcolor{badge!18}
+start & \textit{boshlanish} \\ \hline
+started & \textit{boshlandi} \\ \hline
+\rowcolor{badge!18}
+starts & \textit{boshlanadi} \\ \hline
+state & \textit{shtat} \\ \hline
+\rowcolor{badge!18}
+statement & \textit{tasdiq} \\ \hline
+statements & \textit{tasdiqlar} \\ \hline
+\rowcolor{badge!18}
+states & \textit{shtatlar} \\ \hline
+station & \textit{bekat} \\ \hline
+\rowcolor{badge!18}
+statistics & \textit{statistika} \\ \hline
+storage & \textit{saqlash} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{S-T}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{308}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+store & \textit{do'kon} \\ \hline
+\rowcolor{badge!18}
+straight & \textit{to'g'ri} \\ \hline
+student & \textit{o'quvchi} \\ \hline
+\rowcolor{badge!18}
+students & \textit{o'quvchilar} \\ \hline
+study & \textit{tadqiqot} \\ \hline
+\rowcolor{badge!18}
+subscribed & \textit{obuna bo'ldi} \\ \hline
+subscribers & \textit{obunachilar} \\ \hline
+\rowcolor{badge!18}
+substance & \textit{modda} \\ \hline
+substituted & \textit{o'rniga qo'ymoq} \\ \hline
+\rowcolor{badge!18}
+substituting & \textit{o'rniga qo'yish} \\ \hline
+substitution & \textit{o'rniga qo'yish} \\ \hline
+\rowcolor{badge!18}
+subtracting & \textit{ayirish} \\ \hline
+sufficient & \textit{yetarli} \\ \hline
+\rowcolor{badge!18}
+suits & \textit{kostyumlar} \\ \hline
+sum & \textit{yig'indi} \\ \hline
+\rowcolor{badge!18}
+summarizes & \textit{umumlashtirmoq} \\ \hline
+summer & \textit{yoz} \\ \hline
+\rowcolor{badge!18}
+supplementary & \textit{to'ldiruvchi} \\ \hline
+support & \textit{qo'llab-quvvatlamoq} \\ \hline
+\rowcolor{badge!18}
+surface & \textit{sirt} \\ \hline
+survey & \textit{so'rovnoma} \\ \hline
+\rowcolor{badge!18}
+surveyed & \textit{so'rov o'tkazilgan} \\ \hline
+swimmers & \textit{suzuvchilar} \\ \hline
+\rowcolor{badge!18}
+switching & \textit{almashtirish} \\ \hline
+symmetric & \textit{simmetrik} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+system & \textit{sistema} \\ \hline
+\rowcolor{badge!18}
+systems & \textit{sistemalar} \\ \hline
+table & \textit{jadval} \\ \hline
+\rowcolor{badge!18}
+tables & \textit{jadvallar} \\ \hline
+tablet & \textit{planshet} \\ \hline
+\rowcolor{badge!18}
+take & \textit{olish} \\ \hline
+takes & \textit{oladi} \\ \hline
+\rowcolor{badge!18}
+taking & \textit{olish} \\ \hline
+tall & \textit{baland} \\ \hline
+\rowcolor{badge!18}
+taller & \textit{balandroq} \\ \hline
+tangent & \textit{urinma} \\ \hline
+\rowcolor{badge!18}
+tank & \textit{bak} \\ \hline
+tape & \textit{lenta} \\ \hline
+\rowcolor{badge!18}
+tax & \textit{soliq} \\ \hline
+teacher & \textit{o'qituvchi} \\ \hline
+\rowcolor{badge!18}
+team & \textit{jamoa} \\ \hline
+teaspoons & \textit{choy qoshiq} \\ \hline
+\rowcolor{badge!18}
+teens & \textit{o'smirlar} \\ \hline
+televisions & \textit{televizor} \\ \hline
+\rowcolor{badge!18}
+temperature & \textit{harorat} \\ \hline
+temperatures & \textit{haroratlar} \\ \hline
+\rowcolor{badge!18}
+tent & \textit{chodir} \\ \hline
+tenth & \textit{o'ninchi} \\ \hline
+\rowcolor{badge!18}
+tents & \textit{chodirlar} \\ \hline
+term & \textit{had} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{T-U}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{309}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+terms & \textit{hadlar} \\ \hline
+\rowcolor{badge!18}
+theater & \textit{teatr} \\ \hline
+theorem & \textit{teorema} \\ \hline
+\rowcolor{badge!18}
+therefore & \textit{demak} \\ \hline
+third & \textit{uchinchi} \\ \hline
+\rowcolor{badge!18}
+thousand & \textit{ming} \\ \hline
+through & \textit{orqali} \\ \hline
+\rowcolor{badge!18}
+thrown & \textit{otilgan} \\ \hline
+thus & \textit{demak} \\ \hline
+\rowcolor{badge!18}
+ticket & \textit{chipta} \\ \hline
+tickets & \textit{chiptalar} \\ \hline
+\rowcolor{badge!18}
+tiles & \textit{plitka} \\ \hline
+time & \textit{vaqt} \\ \hline
+\rowcolor{badge!18}
+times & \textit{marta} \\ \hline
+together & \textit{birgalikda} \\ \hline
+\rowcolor{badge!18}
+token & \textit{jeton} \\ \hline
+tokens & \textit{jetonlar} \\ \hline
+\rowcolor{badge!18}
+took & \textit{olmoq} \\ \hline
+total & \textit{jami} \\ \hline
+\rowcolor{badge!18}
+town & \textit{shaharcha} \\ \hline
+trail & \textit{yo'lka} \\ \hline
+\rowcolor{badge!18}
+trailer & \textit{tirkama} \\ \hline
+train & \textit{poyezd} \\ \hline
+\rowcolor{badge!18}
+training & \textit{mashg'ulot} \\ \hline
+translating & \textit{tarjima qilish} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+transversal & \textit{kesuvchi} \\ \hline
+\rowcolor{badge!18}
+trapezoid & \textit{trapetsiya} \\ \hline
+travel & \textit{harakatlanish} \\ \hline
+\rowcolor{badge!18}
+traveled & \textit{bosib o'tdi} \\ \hline
+traveling & \textit{harakatlanmoq} \\ \hline
+\rowcolor{badge!18}
+travels & \textit{harakatlanadi} \\ \hline
+tree & \textit{daraxt} \\ \hline
+\rowcolor{badge!18}
+trees & \textit{daraxtlar} \\ \hline
+triangle & \textit{uchburchak} \\ \hline
+\rowcolor{badge!18}
+triangles & \textit{uchburchaklar} \\ \hline
+trigonometry & \textit{trigonometriya} \\ \hline
+\rowcolor{badge!18}
+trip & \textit{sayohat} \\ \hline
+truck & \textit{yuk mashinasi} \\ \hline
+\rowcolor{badge!18}
+true & \textit{to'g'ri} \\ \hline
+twice & \textit{ikki marta} \\ \hline
+\rowcolor{badge!18}
+type & \textit{tur} \\ \hline
+types & \textit{turlari} \\ \hline
+\rowcolor{badge!18}
+unit & \textit{birlik} \\ \hline
+united & \textit{birlashgan} \\ \hline
+\rowcolor{badge!18}
+units & \textit{birliklar} \\ \hline
+upward & \textit{yuqoriga} \\ \hline
+\rowcolor{badge!18}
+use & \textit{foydalanish} \\ \hline
+used & \textit{qo'llaniladi} \\ \hline
+\rowcolor{badge!18}
+uses & \textit{foydalanadi} \\ \hline
+using & \textit{yordamida} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{U-Z}{To'liq lug'at}
+\pagekicker{Vocabulary -- Complete Glossary}
+\pagefooter{310}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{@{}p{82mm}@{\hspace{6mm}}p{82mm}@{}}
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+utility & \textit{kommunal xizmat} \\ \hline
+\rowcolor{badge!18}
+valley & \textit{vodiy} \\ \hline
+value & \textit{qiymat} \\ \hline
+\rowcolor{badge!18}
+values & \textit{qiymatlar} \\ \hline
+variable & \textit{o'zgaruvchi} \\ \hline
+\rowcolor{badge!18}
+variables & \textit{o'zgaruvchilar} \\ \hline
+vase & \textit{vaza} \\ \hline
+\rowcolor{badge!18}
+vehicle & \textit{transport vositasi} \\ \hline
+vertex & \textit{cho'qqi} \\ \hline
+\rowcolor{badge!18}
+vertical & \textit{vertikal} \\ \hline
+video & \textit{video} \\ \hline
+\rowcolor{badge!18}
+views & \textit{ko'rishlar} \\ \hline
+vine & \textit{tok} \\ \hline
+\rowcolor{badge!18}
+visitors & \textit{tashrif buyuruvchilar} \\ \hline
+volume & \textit{hajm} \\ \hline
+\rowcolor{badge!18}
+vote & \textit{ovoz} \\ \hline
+voted & \textit{ovoz bermoq} \\ \hline
+\rowcolor{badge!18}
+votes & \textit{ovozlar} \\ \hline
+wage & \textit{ish haqi} \\ \hline
+\rowcolor{badge!18}
+walk & \textit{yurish} \\ \hline
+walnuts & \textit{yong'oq} \\ \hline
+\rowcolor{badge!18}
+water & \textit{suv} \\ \hline
+wax & \textit{mum} \\ \hline
+\rowcolor{badge!18}
+ways & \textit{usullar} \\ \hline
+week & \textit{hafta} \\ \hline
+\end{tabular} &
+\begin{tabular}{p{33mm}|p{40mm}}
+\arrayrulecolor{accent}\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+weighs & \textit{tortadi (og'irligi)} \\ \hline
+\rowcolor{badge!18}
+weight & \textit{og'irlik} \\ \hline
+weights & \textit{og'irliklar} \\ \hline
+\rowcolor{badge!18}
+whale & \textit{kit} \\ \hline
+white & \textit{oq} \\ \hline
+\rowcolor{badge!18}
+whole & \textit{butun} \\ \hline
+width & \textit{kenglik} \\ \hline
+\rowcolor{badge!18}
+within & \textit{ichida} \\ \hline
+won & \textit{yutgan} \\ \hline
+\rowcolor{badge!18}
+words & \textit{so'zlar} \\ \hline
+work & \textit{ish} \\ \hline
+\rowcolor{badge!18}
+worked & \textit{ishlamoq} \\ \hline
+worker & \textit{ishchi} \\ \hline
+\rowcolor{badge!18}
+working & \textit{ishlash} \\ \hline
+works & \textit{ishlaydi} \\ \hline
+\rowcolor{badge!18}
+worth & \textit{qiymat} \\ \hline
+written & \textit{yozilgan} \\ \hline
+\rowcolor{badge!18}
+yards & \textit{yard} \\ \hline
+year & \textit{yil} \\ \hline
+\rowcolor{badge!18}
+years & \textit{yillar} \\ \hline
+yellow & \textit{sariq} \\ \hline
+\rowcolor{badge!18}
+yield & \textit{bermoq} \\ \hline
+yields & \textit{beradi} \\ \hline
+\rowcolor{badge!18}
+zebras & \textit{zebralar} \\ \hline
+zero & \textit{nol} \\ \hline
+\end{tabular}
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\end{document}

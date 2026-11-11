@@ -1,0 +1,117 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+\usepackage{longtable}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{F46530}
+\definecolor{badge}{HTML}{FFBDA5}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{100mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+
+\begin{document}
+\topicheader{2}{Kasrlar}
+\pagekicker{Vocabulary -- Lug'at}
+\pagefooter{14}
+\mbox{}%
+\renewcommand{\arraystretch}{1.64}
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{11.5}{13.5}\selectfont
+\begin{tabular}{|>{\centering\arraybackslash}p{22mm}|p{68mm}|p{72mm}|}
+\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries Belgi} & {\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+$\frac{a}{b}$ & \textbf{fraction} & \textit{kasr} \\ \hline
+\rowcolor{badge!18}
+-- & \textbf{numerator / denominator} & \textit{surat / maxraj} \\ \hline
+-- & \textbf{simplify / reduce} & \textit{soddalashtirish / qisqartirish} \\ \hline
+\rowcolor{badge!18}
+-- & \textbf{common denominator} & \textit{umumiy maxraj} \\ \hline
+-- & \textbf{LCM (least common multiple)} & \textit{EKUK (eng kichik umumiy karrali)} \\ \hline
+\rowcolor{badge!18}
+-- & \textbf{GCD (greatest common divisor)} & \textit{EKUB (eng katta umumiy bo'luvchi)} \\ \hline
+$\frac{b}{a}$ & \textbf{reciprocal} & \textit{teskari son} \\ \hline
+\rowcolor{badge!18}
+$2\tfrac{1}{2}$ & \textbf{mixed number} & \textit{aralash son} \\ \hline
+$\frac{17}{5}$ & \textbf{improper fraction} & \textit{noto'g'ri kasr} \\ \hline
+\rowcolor{badge!18}
+$\times$ & \textbf{multiply} & \textit{ko'paytirish} \\ \hline
+$\div$ & \textbf{divide} & \textit{bo'lish} \\ \hline
+\rowcolor{badge!18}
+$=$ & \textbf{equal} & \textit{teng} \\ \hline
+$=$ & \textbf{equivalent} & \textit{teng kuchli} \\ \hline
+\rowcolor{badge!18}
+-- & \textbf{whole} & \textit{butun} \\ \hline
+$+$ & \textbf{sum} & \textit{yig'indi} \\ \hline
+\rowcolor{badge!18}
+$-$ & \textbf{difference} & \textit{ayirma} \\ \hline
+$\times$ & \textbf{product} & \textit{ko'paytma} \\ \hline
+\rowcolor{badge!18}
+$\div$ & \textbf{quotient} & \textit{bo'linma} \\ \hline
+$>$ & \textbf{greater} & \textit{katta} \\ \hline
+\rowcolor{badge!18}
+-- & \textbf{value} & \textit{qiymat} \\ \hline
+-- & \textbf{total} & \textit{jami} \\ \hline
+\rowcolor{badge!18}
+$\frac{1}{2}$ & \textbf{half} & \textit{yarim} \\ \hline
+-- & \textbf{remaining} & \textit{qolgan} \\ \hline
+\rowcolor{badge!18}
+-- & \textbf{result} & \textit{natija} \\ \hline
+-- & \textbf{common} & \textit{umumiy} \\ \hline
+\end{tabular}
+}
+\end{textblock*}
+\end{document}

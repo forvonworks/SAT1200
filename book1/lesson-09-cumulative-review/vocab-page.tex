@@ -1,0 +1,125 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+\usepackage{longtable}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{F46530}
+\definecolor{badge}{HTML}{FFBDA5}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{100mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+
+\begin{document}
+\topicheader{9}{Umumlashtiruvchi takrorlash}
+\pagekicker{Vocabulary -- Lug'at}
+\pagefooter{63}
+\mbox{}%
+\renewcommand{\arraystretch}{1.37}
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{11.5}{13.5}\selectfont
+\begin{tabular}{|>{\centering\arraybackslash}p{22mm}|p{68mm}|p{72mm}|}
+\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries Belgi} & {\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+$=$ & \textbf{equation} & \textit{tenglama} \\ \hline
+\rowcolor{badge!18}
+$=$ & \textbf{equations} & \textit{tenglamalar} \\ \hline
+-- & \textbf{expression} & \textit{ifoda} \\ \hline
+\rowcolor{badge!18}
+-- & \textbf{expressions} & \textit{ifodalar} \\ \hline
+$x$ & \textbf{variable} & \textit{o'zgaruvchi} \\ \hline
+\rowcolor{badge!18}
+$x, y$ & \textbf{variables} & \textit{o'zgaruvchilar} \\ \hline
+$a$ & \textbf{constant} & \textit{doimiy} \\ \hline
+\rowcolor{badge!18}
+$a, b$ & \textbf{constants} & \textit{o'zgarmaslar} \\ \hline
+-- & \textbf{term} & \textit{had} \\ \hline
+\rowcolor{badge!18}
+-- & \textbf{terms} & \textit{hadlar} \\ \hline
+$\frac{a}{b}$ & \textbf{fraction} & \textit{kasr} \\ \hline
+\rowcolor{badge!18}
+$0.5$ & \textbf{decimal} & \textit{o'nlik} \\ \hline
+$a$ (in $\frac{a}{b}$) & \textbf{numerator} & \textit{surat} \\ \hline
+\rowcolor{badge!18}
+$b$ (in $\frac{a}{b}$) & \textbf{denominator} & \textit{maxraj} \\ \hline
+$\%$ & \textbf{percent} & \textit{foiz} \\ \hline
+\rowcolor{badge!18}
+$\%$ & \textbf{percentage} & \textit{foiz} \\ \hline
+$-$ & \textbf{negative} & \textit{manfiy} \\ \hline
+\rowcolor{badge!18}
+$+$ & \textbf{positive} & \textit{musbat} \\ \hline
+$x^2$ & \textbf{exponent} & \textit{daraja} \\ \hline
+\rowcolor{badge!18}
+$x^n$ & \textbf{exponents} & \textit{daraja} \\ \hline
+$\sqrt{x}$ & \textbf{root} & \textit{ildiz} \\ \hline
+\rowcolor{badge!18}
+$f(x)$ & \textbf{function} & \textit{funksiya} \\ \hline
+$f(x), g(x)$ & \textbf{functions} & \textit{funksiyalar} \\ \hline
+\rowcolor{badge!18}
+-- & \textbf{solve} & \textit{yechmoq} \\ \hline
+-- & \textbf{solving} & \textit{yechish} \\ \hline
+\rowcolor{badge!18}
+-- & \textbf{solution} & \textit{yechim} \\ \hline
+-- & \textbf{solutions} & \textit{yechimlar} \\ \hline
+\rowcolor{badge!18}
+-- & \textbf{value} & \textit{qiymat} \\ \hline
+-- & \textbf{order} & \textit{tartib} \\ \hline
+\rowcolor{badge!18}
+-- & \textbf{error} & \textit{xato} \\ \hline
+\end{tabular}
+}
+\end{textblock*}
+\end{document}
