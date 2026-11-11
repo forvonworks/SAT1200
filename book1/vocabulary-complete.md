@@ -4,6 +4,8 @@
 
 ---
 
+## Table 1 (A)
+
 | English | O'zbekcha |
 |---|---|
 | about | taxminan |
@@ -56,6 +58,11 @@
 | attended | qatnashgan |
 | attendee | ishtirokchi |
 | attendees | ishtirokchilar |
+
+## Table 2 (A-B)
+
+| English | O'zbekcha |
+|---|---|
 | auger | parma |
 | august | avgust |
 | average | o'rtacha |
@@ -106,6 +113,11 @@
 | boxwoods | buksus |
 | brakes | tormozlar |
 | budget | byudjet |
+
+## Table 3 (B-C)
+
+| English | O'zbekcha |
+|---|---|
 | buildings | binolar |
 | bursts | yoriladi |
 | bus | avtobus |
@@ -156,6 +168,11 @@
 | class | sinf |
 | classes | toifalar |
 | clients | mijozlar |
+
+## Table 4 (C)
+
+| English | O'zbekcha |
+|---|---|
 | closest | eng yaqin |
 | club | to'garak |
 | cluster | klaster |
@@ -206,6 +223,11 @@
 | coordinates | koordinatalar |
 | corn | makkajo'xori |
 | correctly | to'g'ri |
+
+## Table 5 (C-D)
+
+| English | O'zbekcha |
+|---|---|
 | correspond | mos kelmoq |
 | corresponding | mos |
 | corresponds | mos keladi |
@@ -256,6 +278,11 @@
 | department | bo'lim |
 | deposit | depozit |
 | deposits | depozitlar |
+
+## Table 6 (D-E)
+
+| English | O'zbekcha |
+|---|---|
 | depth | chuqurlik |
 | descending | kamayish tartibida |
 | describes | tasvirlamoq |
@@ -306,6 +333,11 @@
 | elevation | balandlik |
 | employee | xodim |
 | employees | xodimlar |
+
+## Table 7 (E-F)
+
+| English | O'zbekcha |
+|---|---|
 | end | oxiri |
 | energy | energiya |
 | enrolled | ro'yxatdan o'tmoq |
@@ -356,6 +388,11 @@
 | feet | fut |
 | female | ayol |
 | fertilizer | o'g'it |
+
+## Table 8 (F-G)
+
+| English | O'zbekcha |
+|---|---|
 | fewer | kamroq |
 | field | maydon |
 | figure | shakl |
@@ -406,6 +443,11 @@
 | given | berilgan |
 | gives | beradi |
 | goal | maqsad |
+
+## Table 9 (G-I)
+
+| English | O'zbekcha |
+|---|---|
 | grade | sinf |
 | gram | gramm |
 | grams | gramm |
@@ -456,6 +498,11 @@
 | increases | ortadi |
 | increasing | o'suvchi |
 | indicates | ko'rsatadi |
+
+## Table 10 (I-L)
+
+| English | O'zbekcha |
+|---|---|
 | inequalities | tengsizliklar |
 | inequality | tengsizlik |
 | infinitely | cheksiz |
@@ -506,6 +553,11 @@
 | left | chap |
 | leg | katet |
 | legs | katetlar |
+
+## Table 11 (L-M)
+
+| English | O'zbekcha |
+|---|---|
 | lemons | limonlar |
 | length | uzunlik |
 | lengths | uzunliklar |
@@ -556,6 +608,11 @@
 | medians | medianalar |
 | meet | uchrashmoq |
 | member | a'zo |
+
+## Table 12 (M-N)
+
+| English | O'zbekcha |
+|---|---|
 | members | a'zolar |
 | metal | metall |
 | meter | metr |
@@ -606,6 +663,11 @@
 | normal | normal |
 | note | eslatma |
 | novels | romanlar |
+
+## Table 13 (N-P)
+
+| English | O'zbekcha |
+|---|---|
 | number | son |
 | numbers | sonlar |
 | numerator | surat |
@@ -656,6 +718,11 @@
 | passes | o'tmoq |
 | passing | o'tish |
 | payment | to'lov |
+
+## Table 14 (P)
+
+| English | O'zbekcha |
+|---|---|
 | pens | ruchkalar |
 | people | odamlar |
 | per | har biriga |
@@ -706,6 +773,11 @@
 | pressure | bosim |
 | previous | oldingi |
 | price | narx |
+
+## Table 15 (P-R)
+
+| English | O'zbekcha |
+|---|---|
 | prism | prizma |
 | probability | ehtimollik |
 | problem | masala |
@@ -756,6 +828,11 @@
 | rectangle | to'g'ri to'rtburchak |
 | rectangles | to'g'ri to'rtburchaklar |
 | rectangular | to'g'ri burchakli |
+
+## Table 16 (R-S)
+
+| English | O'zbekcha |
+|---|---|
 | red | qizil |
 | reduced | qisqartirilgan |
 | region | soha |
@@ -806,6 +883,11 @@
 | sale | sotuv |
 | sales | sotuv |
 | salt | tuz |
+
+## Table 17 (S)
+
+| English | O'zbekcha |
+|---|---|
 | sample | tanlanma |
 | samples | namunalar |
 | sandwich | sendvich |
@@ -856,6 +938,11 @@
 | sides | tomonlar |
 | sign | ishora |
 | silicon | kremniy |
+
+## Table 18 (S)
+
+| English | O'zbekcha |
+|---|---|
 | similar | o'xshash |
 | similarly | xuddi shunday |
 | simplifies | soddalashtiradi |
@@ -906,6 +993,11 @@
 | station | bekat |
 | statistics | statistika |
 | storage | saqlash |
+
+## Table 19 (S-T)
+
+| English | O'zbekcha |
+|---|---|
 | store | do'kon |
 | straight | to'g'ri |
 | student | o'quvchi |
@@ -956,6 +1048,11 @@
 | tenth | o'ninchi |
 | tents | chodirlar |
 | term | had |
+
+## Table 20 (T-U)
+
+| English | O'zbekcha |
+|---|---|
 | terms | hadlar |
 | theater | teatr |
 | theorem | teorema |
@@ -1006,6 +1103,11 @@
 | used | qo'llaniladi |
 | uses | foydalanadi |
 | using | yordamida |
+
+## Table 21 (U-Z)
+
+| English | O'zbekcha |
+|---|---|
 | utility | kommunal xizmat |
 | valley | vodiy |
 | value | qiymat |
@@ -1056,3 +1158,4 @@
 | yields | beradi |
 | zebras | zebralar |
 | zero | nol |
+
