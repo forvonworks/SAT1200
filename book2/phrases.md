@@ -1,3 +1,9 @@
+# Book 2 -- Common SAT Phrases (English - O'zbekcha)
+
+**Phrase glossary.** These are recurring multi-word expressions mined by frequency from the official SAT/PSAT question-bank corpus (College Board question stems and answer rationales) -- the fixed turns of phrase that show up again and again in real problems, independent of topic. Ordered by how often each one actually appears in that corpus (most common first). The "..." in a phrase marks where a specific quantity, variable, or expression slots in.
+
+---
+
 | English | O'zbekcha |
 |---|---|
 | the value of | ...ning qiymati |
@@ -10,7 +16,7 @@
 | the length of | ...ning uzunligi |
 | represents the | ...ni ifodalaydi |
 | in the xy-plane | xy-tekislikda |
-| the correct answer is | to'g'ri javob — bu |
+| the correct answer is | to'g'ri javob -- bu |
 | each side of | har bir tomoni |
 | which of the following | quyidagilardan qaysi biri |
 | dividing both sides | ikkala tomonni bo'lish |
@@ -23,7 +29,7 @@
 | rather than | ...o'rniga |
 | the total number of | jami soni |
 | there are | mavjud |
-| can be represented by | ... bilan ifodalanishi mumkin |
+| can be represented by | ...bilan ifodalanishi mumkin |
 | in the form | ...ko'rinishida |
 | per hour | soatiga |
 | at least | kamida |
@@ -33,7 +39,7 @@
 | passes through the point | ...nuqtadan o'tadi |
 | the slope of the line | to'g'ri chiziqning qiyaligi |
 | corresponds to | ...ga mos keladi |
-| in terms of | ... orqali (ifodalangan) |
+| in terms of | ...orqali (ifodalangan) |
 | a solution to | ...ning yechimi |
 | the ratio of | ...nisbati |
 | according to the | ...ga ko'ra |
