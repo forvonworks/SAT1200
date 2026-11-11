@@ -151,45 +151,21 @@ Har bir amal o'z bosqichiga ega. Bitta misolda barcha to'rt bosqich ketma-ket qa
 {\fontsize{8.5}{10}\selectfont\color{black!55}\itshape 1-rasm.\ Bitta ifodaning to'rtala bosqich bo'yicha ketma-ket soddalashuvi.}
 \end{textblock*}
 
-% ================= CARD 3: Kasr chizig'i = qavs (y: 214-272, left half) =================
-\cardbg{16}{214}{85}{58}
-\pill{22}{217}{Kasr = qavs}
+% ================= CARD 3: Qavs ochish qoidalari (y: 214-280, full width) =================
+\cardbg{16}{214}{178}{66}
+\pill{26}{217}{Qavs ochish qoidalari}
 
-\begin{textblock*}{85mm}(16mm,230mm)
-\begin{center}
-\begin{tikzpicture}
-\node[font=\fontsize{14}{14}\selectfont] (num) at (0,0) {$3+5$};
-\node[font=\fontsize{14}{14}\selectfont] (den) at (0,-9mm) {$2\times2$};
-\draw[ink,line width=0.7pt] (-9mm,-4.5mm) -- (9mm,-4.5mm);
-\node[draw=accent,dashed,line width=0.9pt,rounded corners=1pt,fit=(num),inner sep=1.3mm] {};
-\node[draw=accent,dashed,line width=0.9pt,rounded corners=1pt,fit=(den),inner sep=1.3mm] {};
-\node[font=\sffamily\bfseries\fontsize{12}{12}\selectfont,text=accent] at (0,-17mm) {$=\dfrac{8}{4}=2$};
-\end{tikzpicture}
-\end{center}
-\end{textblock*}
-
-\begin{textblock*}{75mm}(20mm,260mm)
-{\fontsize{8.5}{10}\selectfont\color{black!60}\itshape Yuqori va pastki qism -- har biri alohida qavsdagidek hisoblanadi.}
-\end{textblock*}
-
-% ================= CARD 4: Modul belgisi = qavs (y: 214-272, right half) =================
-\cardbg{109}{214}{85}{58}
-\pill{115}{217}{Modul = qavs}
-
-\begin{textblock*}{85mm}(109mm,230mm)
-\begin{center}
-\begin{tikzpicture}
-\node[font=\fontsize{14}{14}\selectfont] (bar1) at (0,0) {$|$};
-\node[font=\fontsize{14}{14}\selectfont,right=1.2mm of bar1] (mid) {$-3+5$};
-\node[font=\fontsize{14}{14}\selectfont,right=1.2mm of mid] (bar2) {$|$};
-\node[draw=accent,dashed,line width=0.9pt,rounded corners=1pt,fit=(mid),inner sep=1.3mm] {};
-\node[font=\sffamily\bfseries\fontsize{12}{12}\selectfont,text=accent] at ($(mid)+(0,-13mm)$) {$=|2|=2$};
-\end{tikzpicture}
-\end{center}
-\end{textblock*}
-
-\begin{textblock*}{75mm}(113mm,260mm)
-{\fontsize{8.5}{10}\selectfont\color{black!60}\itshape Ichidagi amal avval, keyin natija musbat qilinadi.}
+\begin{textblock*}{158mm}(26mm,229mm)
+{\fontsize{12}{16}\selectfont
+\begin{tabular}{|>{\centering\arraybackslash}p{70mm}|>{\centering\arraybackslash}p{70mm}|}
+\hline
+\rowcolor{accent}
+{\color{white}\textbf{Qoida}} & {\color{white}\textbf{Misol}} \\ \hline
+$-(+a)=-a$ & $-(+5)=-5$ \\ \hline
+$-(-a)=+a$ & $-(-53)=+53$ \\ \hline
+$+(-a)=-a$ & $+(-22)=-22$ \\ \hline
+$+(+a)=+a$ & $+(+52)=+52$ \\ \hline
+\end{tabular}}
 \end{textblock*}
 
 \end{document}
