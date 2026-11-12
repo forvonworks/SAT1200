@@ -114,6 +114,53 @@ one expression.
 4. $\dfrac{|-12| + 3^2}{7-4}$
 5. $1 + 2\times\left[|4-10| - (3-1)^2\right]$
 
+## Set 8 — SAT'da Qanday Uchraydi (SAT-Style Application)
+
+Real Digital-SAT-format questions (multiple choice, A–D) built around formula
+evaluation and substitution — order of operations is never tested on its own
+on the real test, it's buried inside almost every question as a required
+sub-step. Mostly easy/medium, matching real test density.
+
+1. What is the value of $4 + 2 \times (9 - 5)^2$?
+   A) 24  B) 36  C) 48  D) 68
+
+2. If $x = 3$, what is the value of $5x^2 - 2(x+1)$?
+   A) 25  B) 37  C) 43  D) 47
+
+3. What is the value of $\dfrac{18 + 2\times3}{4^2 - 4}$?
+   A) 1.5  B) 2  C) 3  D) 6
+
+4. The expression $2(3+5)^2 \div 4$ is equal to:
+   A) 8  B) 16  C) 32  D) 68
+
+5. What is the value of $-3^2 + 4\times 2$?
+   A) $-17$  B) $-1$  C) 1  D) 17
+
+6. What is the value of $\dfrac{10 - 2^2}{3} + 1$?
+   A) 2  B) 3  C) 6  D) 11
+
+7. A rectangle has length $l$ and width $w$. A second rectangle has length
+   $2l$ and width $w+3$. If $l = 4$ and $w = 5$, what is the area of the
+   second rectangle?
+   A) 32  B) 40  C) 46  D) 64
+
+8. The cost, in dollars, to rent a bike for $h$ hours is $C = 8h + 3$. What
+   is the cost to rent the bike for 5 hours?
+   A) 35  B) 41  C) 43  D) 55
+
+9. What is the value of $|4 - 9| + (-2)^3$?
+   A) $-13$  B) $-3$  C) 3  D) 13
+
+10. If $y = \dfrac{x^2 - 1}{x+1}$, what is the value of $y$ when $x = 4$?
+    A) 3  B) 4  C) 5  D) 15
+
+11. What is the value of $6 + 2\times(5-3)^2 - 4$?
+    A) 6  B) 10  C) 14  D) 18
+
+12. A phone plan costs a flat \$20 plus \$0.10 per minute. What is the total
+    cost, in dollars, for 50 minutes?
+    A) 15  B) 25  C) 45  D) 70
+
 ---
 
 ## Answer Key
@@ -145,3 +192,5 @@ one expression.
    of computing inside them first. Correct: $5-9=-4$, $|-4|=4$, $3-4=-1$.
 
 **Set 7:** 1) 5  2) 5  3) 21  4) 7  5) 5
+
+**Set 8:** 1) C  2) B  3) B  4) C  5) B  6) B  7) D  8) C  9) B  10) A  11) B  12) B

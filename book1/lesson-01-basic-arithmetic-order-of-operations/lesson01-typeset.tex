@@ -88,6 +88,15 @@
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
 % ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
@@ -241,9 +250,43 @@
 
 \clearpage
 
-% ================= PAGE 5: Javoblar -- full-page answer tables, own page always =================
+% ================= PAGE 5: Set 8 (SAT-style application, MC) -- own page =================
 \topicheader{1}{Asosiy arifmetika va amallar tartibi}
 \pagefooter{7}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.5}{13}\selectfont
+\setkicker{8-to'plam}{SAT'da qanday uchraydi -- formula va o'rniga qo'yish.}
+
+\satq{1}{$4+2\times(9-5)^2$ ifodaning qiymati nechaga teng?}{24}{36}{48}{68}
+\satq{2}{Agar $x=3$ bo'lsa, $5x^2-2(x+1)$ ifodaning qiymati nechaga teng?}{25}{37}{43}{47}
+\satq{3}{$\dfrac{18+2\times3}{4^2-4}$ ifodaning qiymati nechaga teng?}{1.5}{2}{3}{6}
+\satq{4}{$2(3+5)^2\div4$ ifodasi nechaga teng?}{8}{16}{32}{68}
+\satq{5}{$-3^2+4\times2$ ifodaning qiymati nechaga teng?}{$-17$}{$-1$}{1}{17}
+\satq{6}{$\dfrac{10-2^2}{3}+1$ ifodaning qiymati nechaga teng?}{2}{3}{6}{11}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.5}{13}\selectfont
+\vspace{9mm}
+
+\satq{7}{To'rtburchakning uzunligi $l$, eni $w$. Ikkinchi to'rtburchakning uzunligi $2l$, eni $w+3$. Agar $l=4$, $w=5$ bo'lsa, ikkinchi to'rtburchakning yuzi nechaga teng?}{32}{40}{46}{64}
+\satq{8}{Velosiped ijarasi $h$ soat uchun $C=8h+3$ (dollarda) formula bilan hisoblanadi. 5 soat uchun narx nechaga teng?}{35}{41}{43}{55}
+\satq{9}{$|4-9|+(-2)^3$ ifodaning qiymati nechaga teng?}{$-13$}{$-3$}{3}{13}
+\satq{10}{Agar $y=\dfrac{x^2-1}{x+1}$ va $x=4$ bo'lsa, $y$ nechaga teng?}{3}{4}{5}{15}
+\satq{11}{$6+2\times(5-3)^2-4$ ifodaning qiymati nechaga teng?}{6}{10}{14}{18}
+\satq{12}{Telefon tarifi $\$20$ + daqiqasiga $\$0.10$. 50 daqiqa uchun jami narx (dollarda) nechaga teng?}{15}{25}{45}{70}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6: Javoblar -- full-page answer tables, own page always =================
+\topicheader{1}{Asosiy arifmetika va amallar tartibi}
+\pagefooter{8}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
@@ -281,6 +324,12 @@
 \multirow{3}{26mm}{\centering 7-to'plam} & 1 & 5 & 2 & 5\\\cline{2-5}
  & 3 & 21 & 4 & 7\\\cline{2-5}
  & 5 & 5 & -- & --\\\hline
+\multirow{6}{26mm}{\centering 8-to'plam} & 1 & C & 2 & B\\\cline{2-5}
+ & 3 & B & 4 & C\\\cline{2-5}
+ & 5 & B & 6 & B\\\cline{2-5}
+ & 7 & D & 8 & C\\\cline{2-5}
+ & 9 & B & 10 & A\\\cline{2-5}
+ & 11 & B & 12 & B\\\hline
 \multirow{5}{26mm}{\centering 6-to'plam} & \multicolumn{4}{p{76mm}|}{1.\ Xato 1-qadamda -- bo'lish chapda, lekin ko'paytirish avval bajarilgan. To'g'ri: $20\div4=5$, so'ng $5\times5=25$.}\\\cline{2-5}
  & \multicolumn{4}{p{76mm}|}{2.\ Xato 1-qadamda -- ayirish chapda, lekin qo'shish avval bajarilgan. To'g'ri: $15-3=12$, so'ng $12+4=16$.}\\\cline{2-5}
  & \multicolumn{4}{p{76mm}|}{3.\ Kasr chizig'i suratni ham guruhlaydi. To'g'ri: $\frac{12}{6}=2$.}\\\cline{2-5}
