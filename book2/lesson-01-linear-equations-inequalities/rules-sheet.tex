@@ -15,8 +15,7 @@
 \definecolor{accent}{HTML}{602785}
 \definecolor{badge}{HTML}{B8A0C8}
 \definecolor{ink}{HTML}{2A2E30}
-\definecolor{warn}{HTML}{B33A3A}
-\definecolor{warnbg}{HTML}{F3D9D9}
+\definecolor{warn}{HTML}{3D1856}
 
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{1mm}
@@ -73,7 +72,8 @@
 \newcommand{\warnbgbox}[4]{%
 \begin{textblock*}{#3mm}(#1mm,#2mm)
 \begin{tikzpicture}
-\fill[warnbg,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\fill[badge!38,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\draw[warn,line width=1pt,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
 \end{tikzpicture}
 \end{textblock*}%
 }
