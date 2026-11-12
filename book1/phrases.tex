@@ -1,0 +1,360 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{F46530}
+\definecolor{badge}{HTML}{FFBDA5}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{11}{11}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{150mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+
+\begin{document}
+
+\topicheader{P}{SAT iboralari}
+\pagekicker{Phrases -- Tez-tez uchraydigan iboralar}
+\pagefooter{85}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{10}{13}\selectfont\color{ink}
+Quyidagi iboralar College Board'ning rasmiy savollar bazasida eng ko'p uchraydigan, mavzudan qat'i nazar takrorlanadigan tayyor so'z birikmalaridir. Chiziqcha (\textit{...}) o'rniga aniq son, o'zgaruvchi yoki ifoda qo'yiladi. Chastotasi bo'yicha tartiblangan -- eng ko'p uchraydigani birinchi.
+}
+\end{textblock*}
+\begin{textblock*}{178mm}(16mm,46mm)
+{\fontsize{11}{15}\selectfont
+\begin{tabular}{>{\centering\arraybackslash}p{8mm}|p{89mm}|p{67mm}}
+\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries \#} & {\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+1 & the value of & \textit{...ning qiymati} \\ \hline
+\rowcolor{badge!18}
+2 & given that & \textit{...berilgan bo'lsa} \\ \hline
+3 & the number of & \textit{...soni} \\ \hline
+\rowcolor{badge!18}
+4 & both sides of & \textit{...ning ikkala tomoni} \\ \hline
+5 & it follows that & \textit{bundan kelib chiqadiki} \\ \hline
+\rowcolor{badge!18}
+6 & is equivalent to & \textit{...ga teng (ekvivalent)} \\ \hline
+7 & the graph of & \textit{...ning grafigi} \\ \hline
+\rowcolor{badge!18}
+8 & the length of & \textit{...ning uzunligi} \\ \hline
+9 & represents the & \textit{...ni ifodalaydi} \\ \hline
+\rowcolor{badge!18}
+10 & in the xy-plane & \textit{xy-tekislikda} \\ \hline
+11 & the correct answer is & \textit{to'g'ri javob -- bu} \\ \hline
+\rowcolor{badge!18}
+12 & each side of & \textit{har bir tomoni} \\ \hline
+13 & which of the following & \textit{quyidagilardan qaysi biri} \\ \hline
+\rowcolor{badge!18}
+14 & dividing both sides & \textit{ikkala tomonni bo'lish} \\ \hline
+15 & the measure of & \textit{...ning o'lchami} \\ \hline
+\rowcolor{badge!18}
+16 & subtracting from both sides & \textit{ikkala tomondan ayirish} \\ \hline
+17 & the y-intercept & \textit{Y o'qidagi kesilgan nuqta} \\ \hline
+\rowcolor{badge!18}
+18 & the sum of & \textit{...yig'indisi} \\ \hline
+19 & greater than & \textit{...dan katta} \\ \hline
+\rowcolor{badge!18}
+20 & less than & \textit{...dan kichik} \\ \hline
+21 & rather than & \textit{...o'rniga} \\ \hline
+\rowcolor{badge!18}
+22 & the total number of & \textit{jami soni} \\ \hline
+23 & there are & \textit{mavjud} \\ \hline
+\rowcolor{badge!18}
+24 & can be represented by & \textit{...bilan ifodalanishi mumkin} \\ \hline
+25 & in the form & \textit{...ko'rinishida} \\ \hline
+\rowcolor{badge!18}
+26 & per hour & \textit{soatiga} \\ \hline
+27 & at least & \textit{kamida} \\ \hline
+\rowcolor{badge!18}
+28 & adding to both sides & \textit{ikkala tomonga qo'shish} \\ \hline
+29 & more than & \textit{...dan ortiq} \\ \hline
+\rowcolor{badge!18}
+30 & is approximately & \textit{taxminan ...ga teng} \\ \hline
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{P}{SAT iboralari}
+\pagekicker{Phrases -- Tez-tez uchraydigan iboralar}
+\pagefooter{86}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{11}{15}\selectfont
+\begin{tabular}{>{\centering\arraybackslash}p{8mm}|p{89mm}|p{67mm}}
+\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries \#} & {\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+31 & passes through the point & \textit{...nuqtadan o'tadi} \\ \hline
+\rowcolor{badge!18}
+32 & the slope of the line & \textit{to'g'ri chiziqning qiyaligi} \\ \hline
+33 & corresponds to & \textit{...ga mos keladi} \\ \hline
+\rowcolor{badge!18}
+34 & in terms of & \textit{...orqali (ifodalangan)} \\ \hline
+35 & a solution to & \textit{...ning yechimi} \\ \hline
+\rowcolor{badge!18}
+36 & the ratio of & \textit{...nisbati} \\ \hline
+37 & according to the & \textit{...ga ko'ra} \\ \hline
+\rowcolor{badge!18}
+38 & divided by & \textit{...ga bo'lingan} \\ \hline
+39 & can be written as & \textit{...shaklida yozilishi mumkin} \\ \hline
+\rowcolor{badge!18}
+40 & increased by & \textit{...ga oshirilgan} \\ \hline
+41 & is represented by & \textit{...bilan ifodalanadi} \\ \hline
+\rowcolor{badge!18}
+42 & is closest to & \textit{...ga eng yaqin} \\ \hline
+43 & intersects the & \textit{...ni kesib o'tadi} \\ \hline
+\rowcolor{badge!18}
+44 & results in & \textit{natijasida ...kelib chiqadi} \\ \hline
+45 & based on the & \textit{...asosida} \\ \hline
+\rowcolor{badge!18}
+46 & is given by & \textit{...orqali beriladi} \\ \hline
+47 & the sum of the measures & \textit{o'lchamlar yig'indisi} \\ \hline
+\rowcolor{badge!18}
+48 & for which & \textit{qaysi ...uchun} \\ \hline
+49 & consists of & \textit{...dan iborat} \\ \hline
+\rowcolor{badge!18}
+50 & instead of & \textit{...o'rniga} \\ \hline
+51 & the x-intercept & \textit{X o'qidagi kesilgan nuqta} \\ \hline
+\rowcolor{badge!18}
+52 & the ratio of the & \textit{...ning nisbati} \\ \hline
+53 & the product of & \textit{...ko'paytmasi} \\ \hline
+\rowcolor{badge!18}
+54 & is parallel to & \textit{...ga parallel} \\ \hline
+55 & has no solution & \textit{yechimga ega emas} \\ \hline
+\rowcolor{badge!18}
+56 & to the nearest & \textit{...gacha yaxlitlab} \\ \hline
+57 & at most & \textit{ko'pi bilan} \\ \hline
+\rowcolor{badge!18}
+58 & the difference between & \textit{...orasidagi farq} \\ \hline
+59 & there is & \textit{mavjud} \\ \hline
+\rowcolor{badge!18}
+60 & multiplied by & \textit{...ga ko'paytirilgan} \\ \hline
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{P}{SAT iboralari}
+\pagekicker{Phrases -- Tez-tez uchraydigan iboralar}
+\pagefooter{87}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{11}{15}\selectfont
+\begin{tabular}{>{\centering\arraybackslash}p{8mm}|p{89mm}|p{67mm}}
+\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries \#} & {\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+61 & corresponding angles & \textit{mos burchaklar} \\ \hline
+\rowcolor{badge!18}
+62 & such that & \textit{shundayki} \\ \hline
+63 & the range of & \textit{...ning qiymatlar sohasi} \\ \hline
+\rowcolor{badge!18}
+64 & has infinitely many solutions & \textit{cheksiz ko'p yechimga ega} \\ \hline
+65 & less than or equal to & \textit{...dan kichik yoki teng} \\ \hline
+\rowcolor{badge!18}
+66 & is perpendicular to & \textit{...ga perpendikulyar} \\ \hline
+67 & per day & \textit{kuniga} \\ \hline
+\rowcolor{badge!18}
+68 & must be true & \textit{albatta to'g'ri bo'lishi kerak} \\ \hline
+69 & no more than & \textit{ko'pi bilan / ...dan oshmaydi} \\ \hline
+\rowcolor{badge!18}
+70 & data shown & \textit{keltirilgan ma'lumotlar} \\ \hline
+71 & vertical angles & \textit{vertikal burchaklar} \\ \hline
+\rowcolor{badge!18}
+72 & if and only if & \textit{faqat va faqat ...bo'lgandagina} \\ \hline
+73 & which of the following could be & \textit{quyidagilardan qaysi biri ...bo'lishi mumkin} \\ \hline
+\rowcolor{badge!18}
+74 & is defined as & \textit{...deb ataladi} \\ \hline
+75 & shown in the table & \textit{jadvalda ko'rsatilgan} \\ \hline
+\rowcolor{badge!18}
+76 & at a constant rate & \textit{doimiy sur'atda} \\ \hline
+77 & the quadratic formula & \textit{kvadrat tenglama ildizlari formulasi} \\ \hline
+\rowcolor{badge!18}
+78 & has exactly one solution & \textit{aynan bitta yechimga ega} \\ \hline
+79 & per year & \textit{yiliga} \\ \hline
+\rowcolor{badge!18}
+80 & not equal to & \textit{...ga teng emas} \\ \hline
+81 & greater than or equal to & \textit{...dan katta yoki teng} \\ \hline
+\rowcolor{badge!18}
+82 & decreased by & \textit{...ga kamaytirilgan} \\ \hline
+83 & a system of equations & \textit{tenglamalar sistemasi} \\ \hline
+\rowcolor{badge!18}
+84 & in order to & \textit{...uchun} \\ \hline
+85 & to the nearest whole number & \textit{eng yaqin butun songacha} \\ \hline
+\rowcolor{badge!18}
+86 & is a factor of & \textit{...ning ko'paytuvchisi} \\ \hline
+87 & solve for & \textit{...ni toping} \\ \hline
+\rowcolor{badge!18}
+88 & on average & \textit{o'rtacha hisobda} \\ \hline
+89 & for all values & \textit{barcha qiymatlar uchun} \\ \hline
+\rowcolor{badge!18}
+90 & as shown & \textit{ko'rsatilganidek} \\ \hline
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{P}{SAT iboralari}
+\pagekicker{Phrases -- Tez-tez uchraydigan iboralar}
+\pagefooter{88}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{11}{15}\selectfont
+\begin{tabular}{>{\centering\arraybackslash}p{8mm}|p{89mm}|p{67mm}}
+\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries \#} & {\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+91 & alternate interior angles & \textit{almashinuvchi ichki burchaklar} \\ \hline
+\rowcolor{badge!18}
+92 & satisfies the equation & \textit{tenglamani qanoatlantiradi} \\ \hline
+93 & is decreasing & \textit{kamayib bormoqda (kamayuvchi funksiya)} \\ \hline
+\rowcolor{badge!18}
+94 & rounded to the nearest & \textit{...gacha yaxlitlangan} \\ \hline
+95 & the difference of & \textit{...ayirmasi} \\ \hline
+\rowcolor{badge!18}
+96 & complete the square & \textit{to'liq kvadratga keltirish} \\ \hline
+97 & is a linear function & \textit{chiziqli funksiya} \\ \hline
+\rowcolor{badge!18}
+98 & as well as & \textit{shuningdek} \\ \hline
+99 & is one of the & \textit{...lardan biri} \\ \hline
+\rowcolor{badge!18}
+100 & at a rate of & \textit{...sur'atda} \\ \hline
+101 & is increasing & \textit{ortib bormoqda (o'suvchi funksiya)} \\ \hline
+\rowcolor{badge!18}
+102 & is a quadratic function & \textit{kvadrat funksiya} \\ \hline
+103 & could be the value & \textit{qiymati bo'lishi mumkin} \\ \hline
+\rowcolor{badge!18}
+104 & shown in the graph & \textit{grafikda ko'rsatilgan} \\ \hline
+105 & over time & \textit{vaqt o'tishi bilan} \\ \hline
+\rowcolor{badge!18}
+106 & is exactly & \textit{aynan ...ga teng} \\ \hline
+107 & as a function of & \textit{...ning funksiyasi sifatida} \\ \hline
+\rowcolor{badge!18}
+108 & reaches a maximum & \textit{maksimumga erishadi} \\ \hline
+109 & changes by & \textit{...ga o'zgaradi} \\ \hline
+\rowcolor{badge!18}
+110 & is a solution of & \textit{...ning yechimi hisoblanadi} \\ \hline
+111 & with respect to & \textit{...ga nisbatan} \\ \hline
+\rowcolor{badge!18}
+112 & the discriminant of & \textit{...ning diskriminanti} \\ \hline
+113 & in addition to & \textit{...dan tashqari} \\ \hline
+\rowcolor{badge!18}
+114 & lies on the line & \textit{chiziq ustida yotadi} \\ \hline
+115 & is a multiple of & \textit{...ning karralisi} \\ \hline
+\rowcolor{badge!18}
+116 & distribute the & \textit{...ni taqsimlang (distributivlik qoidasini qo'llang)} \\ \hline
+117 & depends on & \textit{...ga bog'liq} \\ \hline
+\rowcolor{badge!18}
+118 & combine like terms & \textit{o'xshash hadlarni birlashtiring} \\ \hline
+119 & which of the following best describes & \textit{quyidagilardan qaysi biri eng yaxshi ifodalaydi} \\ \hline
+\rowcolor{badge!18}
+120 & regardless of & \textit{...dan qat'i nazar} \\ \hline
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\topicheader{P}{SAT iboralari}
+\pagekicker{Phrases -- Tez-tez uchraydigan iboralar}
+\pagefooter{89}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{11}{15}\selectfont
+\begin{tabular}{>{\centering\arraybackslash}p{8mm}|p{89mm}|p{67mm}}
+\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries \#} & {\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+121 & is tangent to & \textit{...ga urinadi} \\ \hline
+\rowcolor{badge!18}
+122 & is an exponential function & \textit{ko'rsatkichli funksiya} \\ \hline
+123 & is undefined & \textit{aniqlanmagan} \\ \hline
+\rowcolor{badge!18}
+124 & in a given & \textit{berilgan ...da} \\ \hline
+125 & for some value & \textit{qandaydir qiymat uchun} \\ \hline
+\rowcolor{badge!18}
+126 & expressed in terms of & \textit{...orqali ifodalangan} \\ \hline
+127 & due to & \textit{...sababli} \\ \hline
+\rowcolor{badge!18}
+128 & made up of & \textit{...dan tashkil topgan} \\ \hline
+129 & factor the expression & \textit{ifodani ko'paytuvchilarga ajrating} \\ \hline
+\rowcolor{badge!18}
+130 & written in terms of & \textit{...orqali yozilgan} \\ \hline
+131 & the domain of & \textit{...ning aniqlanish sohasi} \\ \hline
+\rowcolor{badge!18}
+132 & substitute the value & \textit{qiymatni o'rniga qo'ying} \\ \hline
+133 & simplify the expression & \textit{ifodani soddalashtiring} \\ \hline
+\rowcolor{badge!18}
+134 & remains constant & \textit{o'zgarmas qoladi} \\ \hline
+135 & real number solutions & \textit{haqiqiy sonli yechimlar} \\ \hline
+\rowcolor{badge!18}
+136 & reaches a minimum & \textit{minimumga erishadi} \\ \hline
+137 & on the interval & \textit{oraliqda} \\ \hline
+\rowcolor{badge!18}
+138 & none of the above & \textit{yuqoridagilarning hech biri} \\ \hline
+139 & is proportional to & \textit{...ga proporsional} \\ \hline
+\rowcolor{badge!18}
+140 & inversely proportional to & \textit{...ga teskari proporsional} \\ \hline
+141 & in common & \textit{umumiy} \\ \hline
+\rowcolor{badge!18}
+142 & exists such that & \textit{shunday ...mavjudki} \\ \hline
+143 & evaluate the expression & \textit{ifodaning qiymatini hisoblang} \\ \hline
+\rowcolor{badge!18}
+144 & directly proportional to & \textit{...ga to'g'ri proporsional} \\ \hline
+145 & complex solutions & \textit{kompleks yechimlar} \\ \hline
+\rowcolor{badge!18}
+146 & as represented & \textit{ifodalanganidek} \\ \hline
+\end{tabular}
+}
+\end{textblock*}
+\newpage
+\end{document}
