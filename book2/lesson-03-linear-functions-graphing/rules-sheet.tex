@@ -1,0 +1,280 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usetikzlibrary{fit,calc,positioning,arrows.meta}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{602785}
+\definecolor{badge}{HTML}{B8A0C8}
+\definecolor{ink}{HTML}{2A2E30}
+\definecolor{warn}{HTML}{3D1856}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{100mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\newcommand{\cardbg}[4]{%
+\begin{textblock*}{#3mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\fill[badge!22,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\warnbgbox}[4]{%
+\begin{textblock*}{#3mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\fill[badge!38,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\draw[warn,line width=1pt,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pill}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {QOIDA ~\textperiodcentered~ #3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pillwarn}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=warn,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {DIQQAT ~\textperiodcentered~ #3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+
+% ======================================================================
+% PAGE 1
+% ======================================================================
+\topicheader{3}{Chiziqli funksiyalar va grafiklar}
+\pagekicker{Qoidalar varag'i -- 1/2}
+\pagefooter{17}
+\mbox{}%
+
+% ---- CARD 1: Burchak koeffitsienti (slope) ----
+\cardbg{16}{33}{178}{90}
+\pill{26}{36}{Burchak koeffitsienti (slope)}
+
+\begin{textblock*}{158mm}(26mm,49mm)
+{\fontsize{13}{15}\selectfont $m=\dfrac{y_2-y_1}{x_2-x_1}$}
+\end{textblock*}
+
+\begin{textblock*}{100mm}(26mm,66mm)
+{\fontsize{10}{13}\selectfont\color{ink}
+\textbf{Atama ko'prigi:} an'anaviy darslikda bu $k$ (va $y=kx+b$), SAT'da esa
+\textbf{slope} va $m$ (va $y=mx+b$) deyiladi -- bir xil narsa.\\[2mm]
+\textbf{Misol:} $(3,2)$ va $(7,10)$ orqali:\\
+$m=\dfrac{10-2}{7-3}=\dfrac{8}{4}=2$}
+\end{textblock*}
+
+\begin{textblock*}{60mm}(128mm,66mm)
+\begin{tikzpicture}
+\draw[ink!40,->] (0,0) -- (38mm,0) node[right,font=\tiny]{$x$};
+\draw[ink!40,->] (0,-3mm) -- (0,22mm) node[above,font=\tiny]{$y$};
+\draw[accent,line width=1.2pt] (4mm,0) -- (32mm,18mm);
+\filldraw[ink] (4mm,0) circle (0.8mm);
+\filldraw[ink] (32mm,18mm) circle (0.8mm);
+\draw[ink!55,dashed,line width=0.6pt] (4mm,0) -- (32mm,0) -- (32mm,18mm);
+\node[font=\sffamily\tiny,text=ink!70] at (18mm,-3mm) {$\Delta x=4$};
+\node[font=\sffamily\tiny,text=ink!70,anchor=west] at (33mm,9mm) {$\Delta y=8$};
+\end{tikzpicture}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,108mm)
+{\fontsize{10.5}{13}\selectfont\color{ink}
+\textbf{$y=mx+b$ da:} $m$ -- qiyalik, $b$ -- kesilgan nuqta. Ularni
+chalkashtirmang: $y=5x-3$ da qiyalik $5$, kesilgan nuqta esa $-3$.}
+\end{textblock*}
+
+% ---- CARD 2: DIQQAT -- inverted formula ----
+\warnbgbox{16}{127}{178}{44}
+\pillwarn{26}{130}{Formulani teskari qo'llamang}
+
+\begin{textblock*}{158mm}(26mm,142mm)
+{\fontsize{10.5}{13}\selectfont\color{ink}
+Har doim \textbf{tepaga (y) o'zgarish -- pastga (x) o'zgarish} tartibida:
+$m=\dfrac{y_2-y_1}{x_2-x_1}$, \textbf{hech qachon} $\dfrac{x_2-x_1}{y_2-y_1}$ emas.}
+\end{textblock*}
+
+% ---- CARD 3: Nuqta-qiyalik shakli ----
+\cardbg{16}{177}{178}{100}
+\pill{26}{180}{To'g'ri chiziq tenglamasini yozish}
+
+\begin{textblock*}{158mm}(26mm,193mm)
+{\fontsize{12}{14}\selectfont Nuqta-qiyalik shakli: $y-y_1=m(x-x_1)$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,204mm)
+{\fontsize{10}{13}\selectfont\color{ink}
+\textbf{Qiyalik $4$, nuqta $(1,3)$:}\\
+$y-3=4(x-1)\ \Rightarrow\ y-3=4x-4\ \Rightarrow\ y=4x-1$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,222mm)
+{\fontsize{10}{13}\selectfont\color{ink}
+\textbf{Ikki nuqta $(2,1)$ va $(4,7)$:} avval $m$ topiladi:
+$m=\dfrac{7-1}{4-2}=3$; so'ng $(2,1)$ bilan:\\
+$y-1=3(x-2)\ \Rightarrow\ y-1=3x-6\ \Rightarrow\ y=3x-5$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,261mm)
+{\fontsize{9.5}{12}\selectfont\color{black!55}\itshape
+Slope-intercept shakl ($y=mx+b$) -- grafik chizish va qiyalikni o'qish
+uchun qulay; nuqta-qiyalik shakli -- tenglama yozishni boshlash uchun qulay.}
+\end{textblock*}
+
+\clearpage
+
+% ======================================================================
+% PAGE 2
+% ======================================================================
+\topicheader{3}{Chiziqli funksiyalar va grafiklar}
+\pagekicker{Qoidalar varag'i -- 2/2}
+\pagefooter{18}
+\mbox{}%
+
+% ---- CARD 4: Parallel va perpendikulyar ----
+\cardbg{16}{33}{178}{98}
+\pill{26}{36}{Parallel va perpendikulyar chiziqlar}
+
+\begin{textblock*}{158mm}(26mm,49mm)
+{\fontsize{12}{14}\selectfont
+$m_1=m_2$ (parallel) \hspace{10mm} $m_1\times m_2=-1$ (perpendikulyar)}
+\end{textblock*}
+
+\begin{textblock*}{95mm}(26mm,62mm)
+{\fontsize{10}{13}\selectfont\color{ink}
+\textbf{$y=2x-5$ ga perpendikulyar, $(4,1)$ dan o'tuvchi:}\\
+Qiyalik $2$ ning manfiy teskarisi: $-\dfrac12$.\\
+$y-1=-\dfrac12(x-4)\ \Rightarrow\ y=-\dfrac12x+3$}
+\end{textblock*}
+
+\begin{textblock*}{55mm}(125mm,63mm)
+\begin{tikzpicture}
+\draw[ink!40,->] (0,0) -- (38mm,0); \draw[ink!40,->] (0,-18mm) -- (0,18mm);
+\draw[accent,line width=1.2pt] (3mm,-10mm) -- (30mm,18mm);
+\draw[accent!55,line width=1.2pt] (0,-3mm) -- (36mm,13mm);
+\node[font=\sffamily\tiny,text=accent] at (31mm,16mm) {$m=2$};
+\node[font=\sffamily\tiny,text=accent!70] at (36mm,10mm) {$m=-\frac12$};
+\end{tikzpicture}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,98mm)
+{\fontsize{10.5}{13}\selectfont\color{ink}
+\textbf{Parallel chiziqlar} -- bir xil qiyalik, boshqa kesilgan nuqta (hech
+qachon kesishmaydi). \textbf{Perpendikulyar} -- to'g'ri burchak ostida
+kesishadi.}
+\end{textblock*}
+
+\begin{textblock*}{50mm}(26mm,112mm)
+{\centering\fontsize{9}{9}\selectfont\textbf{Parallel}\par}
+\begin{tikzpicture}
+\draw[ink!40,->] (0,0) -- (32mm,0); \draw[ink!40,->] (0,-10mm) -- (0,10mm);
+\draw[accent,line width=1pt] (2mm,-7mm) -- (28mm,7mm);
+\draw[accent!55,line width=1pt] (2mm,-2mm) -- (28mm,9mm);
+\end{tikzpicture}
+\end{textblock*}
+
+\begin{textblock*}{50mm}(110mm,112mm)
+{\centering\fontsize{9}{9}\selectfont\textbf{Perpendikulyar}\par}
+\begin{tikzpicture}
+\draw[ink!40,->] (0,0) -- (32mm,0); \draw[ink!40,->] (0,-10mm) -- (0,10mm);
+\draw[accent,line width=1pt] (3mm,-8mm) -- (27mm,8mm);
+\draw[accent!55,line width=1pt] (3mm,8mm) -- (27mm,-8mm);
+\end{tikzpicture}
+\end{textblock*}
+
+% ---- CARD 5: DIQQAT -- negative reciprocal ----
+\warnbgbox{16}{137}{178}{42}
+\pillwarn{26}{140}{Manfiy teskarini to'liq bajaring}
+
+\begin{textblock*}{158mm}(26mm,152mm)
+{\fontsize{10.5}{13}\selectfont\color{ink}
+Perpendikulyar qiyalik ham teskari, ham ishorasi qarama-qarshi bo'ladi:
+$\dfrac23 \to -\dfrac32$ -- faqat teskarisini olib, ishorani unutmang.}
+\end{textblock*}
+
+% ---- CARD 6: Amaliy ma'no ----
+\cardbg{16}{185}{178}{95}
+\pill{26}{188}{Qiyalik va kesilgan nuqtaning amaliy ma'nosi}
+
+\begin{textblock*}{158mm}(26mm,201mm)
+{\fontsize{10.5}{13}\selectfont\color{ink}
+Amaliy masalada: \textbf{qiyalik} = o'zgarish tezligi (har birlik uchun),
+\textbf{kesilgan nuqta} = boshlang'ich ($x=0$ dagi) qiymat.\\[2mm]
+\textbf{Misol:} $C(x)=2000x+5000$ (taksi, $x$=km). $C(10)=2000(10)+5000=25000$
+so'm. ($2000$ -- 1 km narxi; $5000$ -- boshlang'ich to'lov.)}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,236mm)
+{\fontsize{10}{13}\selectfont\color{warn}\sffamily\bfseries DIQQAT:}
+{\fontsize{10}{13}\selectfont\color{ink}
+savolni oxirigacha o'qing -- qiyalikning o'zi so'ralyaptimi, ma'lum $x$ dagi
+qiymatmi, yoki $x$ ning o'zi so'ralyaptimi? Uchalasi ham boshqa-boshqa amal.}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,262mm)
+{\fontsize{9.5}{12}\selectfont\color{black!55}\itshape
+Ishora ham ma'noga ega: manfiy qiyalik -- kamayish (masalan, suv bakdan
+chiqib ketayotgan suv), musbat qiyalik -- o'sish.}
+\end{textblock*}
+
+\end{document}
