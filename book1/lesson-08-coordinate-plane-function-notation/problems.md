@@ -96,6 +96,50 @@ answer.
    toping.
 5. $f(x) = 3x + c$. Agar $f(2) = 10$ bo'lsa, $c$ ni toping.
 
+## Set 8 — SAT'da Qanday Uchraydi (SAT-Style Application)
+
+Real Digital-SAT-format questions (multiple choice, A–D). Quadrant ID,
+reading $k$/$b$ from $y=kx+b$, and evaluating $f(a)$ are among the most
+common real SAT item types — these are the exact skills tested, just dressed
+in official SAT phrasing. Mostly easy/medium.
+
+1. $(-5,\ 3)$ nuqtasi qaysi chorakda joylashgan?
+   A) II  B) I  C) III  D) IV
+
+2. $y=-2x+9$ to'g'ri chizig'ining qiyaligi ($k$) nechaga teng?
+   A) 2  B) $-2$  C) 9  D) $-9$
+
+3. $y=7x-4$ to'g'ri chizig'ining erkin hadi ($b$) nechaga teng?
+   A) 7  B) 4  C) $-4$  D) $-7$
+
+4. Agar $f(x)=3x-5$ bo'lsa, $f(4)$ nechaga teng?
+   A) 12  B) 17  C) $-5$  D) 7
+
+5. Agar $f(x)=x^2+2$ bo'lsa, $f(-3)$ nechaga teng?
+   A) 11  B) $-7$  C) 7  D) $-11$
+
+6. $(0,\ -6)$ nuqtadan o'tuvchi va qiyaligi $4$ ga teng bo'lgan to'g'ri
+   chiziq tenglamasi qaysi?
+   A) $y=-6x+4$  B) $y=4x-6$  C) $y=4x+6$  D) $y=-4x-6$
+
+7. $(6,\ -2)$ nuqtasi qaysi chorakda joylashgan?
+   A) I  B) II  C) IV  D) III
+
+8. $y=-x+3$ to'g'ri chizig'i Oy o'qini qaysi nuqtada kesib o'tadi?
+   A) $(3,0)$  B) $(0,-1)$  C) $(-1,0)$  D) $(0,3)$
+
+9. Agar $g(x)=2x+1$ bo'lsa, $g(5)-g(1)$ nechaga teng?
+   A) 8  B) 4  C) 14  D) 2
+
+10. $y=\dfrac{1}{2}x-4$ to'g'ri chizig'ining qiyaligi ($k$) nechaga teng?
+    A) $-4$  B) $\frac12$  C) 2  D) $-\frac12$
+
+11. Agar $h(x)=-x^2+4$ bo'lsa, $h(-2)$ nechaga teng?
+    A) 8  B) $-4$  C) 0  D) 4
+
+12. $y=3x-2$ to'g'ri chizig'ida qaysi nuqta yotadi?
+    A) $(2,6)$  B) $(4,2)$  C) $(2,-4)$  D) $(2,4)$
+
 ---
 
 ## Answer Key
@@ -131,3 +175,5 @@ answer.
 5. Error: dropped parentheses again. Correct: $f(-2)=(-2)^2+3=7$.
 
 **Set 7:** 1) 15  2) −9  3) $f(x)=-4x+11$; $x=2$  4) $a=-2$  5) $c=4$
+
+**Set 8:** 1) A  2) B  3) C  4) D  5) A  6) B  7) C  8) D  9) A  10) B  11) C  12) D

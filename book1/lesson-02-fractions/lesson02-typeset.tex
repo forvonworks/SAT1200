@@ -81,6 +81,15 @@
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
@@ -233,9 +242,43 @@
 
 \clearpage
 
-% ================= PAGE 5: Javoblar -- unified answer table =================
+% ================= PAGE 5: Set 8 (SAT-style application, MC) -- own page =================
 \topicheader{2}{KASRLAR}
 \pagefooter{14}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.5}{13}\selectfont
+\setkicker{8-to'plam}{SAT'da qanday uchraydi -- kasrlar amaliy masalalarda.}
+
+\satq{1}{Retsept $\frac{2}{3}$ stakan shakar talab qiladi. Agar retseptning $\frac{1}{2}$ qismini tayyorlasangiz, qancha shakar kerak bo'ladi?}{$\frac{1}{3}$}{$\frac{1}{2}$}{$\frac{2}{3}$}{$\frac{4}{3}$}
+\satq{2}{Pitsa 8 ta teng bo'lakka bo'lingan. 5 bo'lak yeyilgan bo'lsa, pitsaning qaysi qismi qoldi?}{$\frac{3}{8}$}{$\frac{5}{8}$}{$\frac{1}{8}$}{$\frac{3}{5}$}
+\satq{3}{$\dfrac{3}{4}+\dfrac{1}{6}$ ifodaning qiymati nechaga teng?}{$\frac{4}{10}$}{$\frac{7}{12}$}{$\frac{5}{6}$}{$\frac{11}{12}$}
+\satq{4}{Suv ombori $\frac{2}{5}$ qismi to'la. Hajmining yana $\frac{1}{4}$ qismi qo'shilsa, ombor qaysi qismi to'la bo'ladi?}{$\frac{3}{9}$}{$\frac{3}{20}$}{$\frac{13}{20}$}{$\frac{9}{10}$}
+\satq{5}{$\dfrac{5}{6}-\dfrac{1}{3}$ ifodaning qiymati nechaga teng?}{$\frac{1}{3}$}{$\frac{1}{2}$}{$\frac{2}{3}$}{$\frac{4}{9}$}
+\satq{6}{Sinfdagi 30 o'quvchidan $\frac{2}{5}$ qismi sport bilan shug'ullanadi. Nechta o'quvchi sport bilan shug'ullanadi?}{10}{12}{15}{18}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.5}{13}\selectfont
+\vspace{9mm}
+
+\satq{7}{$\dfrac{2}{3}\times\dfrac{9}{10}$ ifodaning qiymati nechaga teng?}{$\frac{3}{5}$}{$\frac{2}{5}$}{$\frac{4}{5}$}{$\frac{11}{15}$}
+\satq{8}{$\frac{7}{8}$ fut uzunlikdagi taxta har biri $\frac{1}{4}$ futdan bo'laklarga kesiladi. Nechta \emph{to'liq} bo'lak chiqadi?}{3}{3.5}{4}{7}
+\satq{9}{Quyidagilardan qaysi biri $\dfrac{5}{4}$ ga teng?}{$1\frac{1}{4}$}{$1\frac{1}{2}$}{$\frac{4}{5}$}{$2\frac{1}{4}$}
+\satq{10}{Agar sonning $\frac{3}{5}$ qismi 24 ga teng bo'lsa, son nechaga teng?}{14.4}{40}{72}{8}
+\satq{11}{$2\tfrac{1}{3}-1\tfrac{1}{2}$ ifodaning qiymati nechaga teng?}{$\frac{5}{6}$}{$\frac{1}{2}$}{$1\frac{1}{6}$}{$\frac{3}{5}$}
+\satq{12}{Rassom $\frac{3}{4}$ gallon ko'k bo'yoqni $\frac{1}{3}$ gallon oq bo'yoq bilan aralashtiradi. Jami bo'yoq miqdori (gallonda) nechaga teng?}{$1\frac{1}{12}$}{$\frac{4}{7}$}{$1\frac{1}{4}$}{$\frac{13}{7}$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6: Javoblar -- unified answer table =================
+\topicheader{2}{KASRLAR}
+\pagefooter{15}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
@@ -273,6 +316,12 @@
 \multirow{3}{26mm}{\centering 7-to'plam} & 1 & $\frac{1}{3}$ & 2 & $7$\\\cline{2-5}
  & 3 & $\frac{5}{8}$ & 4 & $\frac{5}{8}$\\\cline{2-5}
  & 5 & $\frac{7}{6}$ & -- & --\\\hline
+\multirow{6}{26mm}{\centering 8-to'plam} & 1 & A & 2 & A\\\cline{2-5}
+ & 3 & D & 4 & C\\\cline{2-5}
+ & 5 & B & 6 & B\\\cline{2-5}
+ & 7 & A & 8 & A\\\cline{2-5}
+ & 9 & A & 10 & B\\\cline{2-5}
+ & 11 & A & 12 & A\\\hline
 \multirow{5}{26mm}{\centering 6-to'plam} & \multicolumn{4}{p{76mm}|}{1.\ Surat/maxraj mustaqil qo'shilgan, umumiy maxraj topilmagan. To'g'ri: $\frac{1}{3}=\frac{4}{12}$, $\frac{1}{4}=\frac{3}{12}$, yig'indi $\frac{7}{12}$.}\\\cline{2-5}
  & \multicolumn{4}{p{76mm}|}{2.\ Maxrajlar teng bo'lsa, faqat suratlar qo'shiladi. To'g'ri: $\frac{2}{5}+\frac{2}{5}=\frac{4}{5}$.}\\\cline{2-5}
  & \multicolumn{4}{p{76mm}|}{3.\ Teskari kasr ikkinchi (bo'luvchi) kasrga qo'llanishi kerak edi. To'g'ri: $\frac{3}{4}\times\frac{5}{2}=\frac{15}{8}$.}\\\cline{2-5}

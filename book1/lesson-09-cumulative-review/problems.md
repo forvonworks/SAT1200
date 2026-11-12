@@ -87,6 +87,51 @@ error, say which lesson's rule it breaks, and give the correct answer.
 4. $\dfrac{3}{4}x - (-2)^3 = 11$. Solve for $x$.
 5. $f(x)=kx+b$. $f(-2)=1$ and $f(2)=9$. Find $k$, $b$, then compute $f(0)$.
 
+## Set 9 — SAT'da Qanday Uchraydi (SAT-Style Application)
+
+Real Digital-SAT-format questions (multiple choice, A–D), one drawn from each
+of Lessons 1–8 plus a few that mix two topics at once — a cumulative check
+across the whole book, in the exact format the actual test uses. Mostly
+easy/medium.
+
+1. What is the value of $3 + 2\times(7-4)^2$?
+   A) 15  B) 21  C) 30  D) 45
+
+2. A recipe calls for $\frac34$ cup of sugar. How much sugar, in cups, is
+   needed to make $\frac23$ of the recipe?
+   A) $\frac{5}{12}$  B) $\frac12$  C) $\frac34$  D) $\frac23$
+
+3. A shirt originally costs \$40 and is on sale for 25% off. What is the
+   sale price?
+   A) \$10  B) \$15  C) \$30  D) \$35
+
+4. What is the value of $(-4) + (-3)\times(-2)$?
+   A) $-10$  B) $-2$  C) 2  D) 14
+
+5. Which expression is equivalent to $3(2x-1) - (x+4)$?
+   A) $5x-7$  B) $5x+7$  C) $7x-7$  D) $2x-7$
+
+6. What is the value of $x$ that satisfies $4x-5=2x+9$?
+   A) 2  B) 5  C) 7  D) 9
+
+7. What is the value of $2^3 \times 2^2$?
+   A) 10  B) 16  C) 32  D) 64
+
+8. If $f(x) = 2x-5$, what is the value of $f(4)$?
+   A) $-1$  B) 3  C) 8  D) 13
+
+9. What is the value of $\dfrac{1}{2} + \dfrac{3}{4}\times 2$?
+   A) 1  B) $\frac54$  C) $\frac32$  D) 2
+
+10. What is 50% of the sum of $-20$ and $16$?
+    A) $-18$  B) $-2$  C) 2  D) 18
+
+11. For $x > 0$, what is the value of $x$ that satisfies $x^2 = 49$?
+    A) 7  B) $-7$  C) 24.5  D) 98
+
+12. If $f(x) = -x^2+3$, what is the value of $f(-2)$?
+    A) $-7$  B) $-1$  C) 1  D) 7
+
 ---
 
 ## Answer Key
@@ -116,3 +161,5 @@ error, say which lesson's rule it breaks, and give the correct answer.
    expressions: incomplete distribution). Correct: $2x+2-x=9$, $x=7$.
 
 **Set 8:** 1) $x=\frac{28}{3}$  2) $-5$  3) $x=\frac52$  4) $x=4$  5) $k=2$, $b=5$, $f(0)=5$
+
+**Set 9:** 1) B  2) B  3) C  4) C  5) A  6) C  7) B  8) B  9) D  10) B  11) A  12) B

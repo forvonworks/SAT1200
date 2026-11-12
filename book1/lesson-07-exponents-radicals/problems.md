@@ -91,6 +91,52 @@ what rule it breaks, and give the correct final answer.
 4. $(\sqrt{2})^4$
 5. $1 + \sqrt{5^2 - 3^2}$
 
+## Set 8 — SAT'da Qanday Uchraydi (SAT-Style Application)
+
+Real Digital-SAT-format questions (multiple choice, A–D) built around the
+same-base exponent rules, zero/negative exponents, and simplifying radicals —
+exactly the skills every exponential-growth and polynomial question in later
+books assumes are automatic. Mostly easy/medium, matching real test density.
+
+1. What is the value of $2^3 \times 2^4$?
+   A) 128  B) 64  C) 16  D) 81
+
+2. What is the value of $\dfrac{5^6}{5^2}$?
+   A) 25  B) 625  C) 125  D) 15625
+
+3. Which expression is equivalent to $(x^3)^4$ for all $x$?
+   A) $x^7$  B) $x^{64}$  C) $x^{12}$  D) $x^{81}$
+
+4. What is the value of $7^0 + 3^2$?
+   A) 9  B) 16  C) 19  D) 10
+
+5. What is the value of $4^{-2}$?
+   A) $\dfrac{1}{16}$  B) $-8$  C) $-16$  D) 16
+
+6. If $a = 2^5$ and $b = 2^3$, what is the value of $\dfrac{a}{b}$?
+   A) 2  B) 4  C) 8  D) 16
+
+7. What is $\sqrt{98}$ written in simplest radical form?
+   A) $14\sqrt{2}$  B) $2\sqrt{49}$  C) $7\sqrt{2}$  D) $49\sqrt{2}$
+
+8. A square has an area of 48 square units. What is its side length, in
+   simplest radical form?
+   A) $16\sqrt{3}$  B) $6\sqrt{2}$  C) $2\sqrt{12}$  D) $4\sqrt{3}$
+
+9. What is the value of $3^4 \times 3^{-2}$?
+   A) 9  B) 729  C) $\dfrac{1}{9}$  D) 1
+
+10. Which value of $n$ makes the equation $2^n = \dfrac{1}{8}$ true?
+    A) 3  B) $-3$  C) $-8$  D) 8
+
+11. What is the value of $\sqrt{45} + \sqrt{20}$?
+    A) $5\sqrt{65}$  B) $\sqrt{65}$  C) $5\sqrt{5}$  D) $25\sqrt{5}$
+
+12. Bacteria in a dish double every hour. The population starts at
+    $P_0 = 2^3$. What is the population after 2 more doublings, expressed as
+    a power of 2?
+    A) $2^6$  B) $2^1$  C) $2^9$  D) $2^5$
+
 ---
 
 ## Answer Key
@@ -124,3 +170,5 @@ what rule it breaks, and give the correct final answer.
    $\sqrt{32} = \sqrt{16 \times 2} = \sqrt{16}\times\sqrt{2} = 4\sqrt{2}$.
 
 **Set 7:** 1) 8  2) 6  3) 7  4) 4  5) 5
+
+**Set 8:** 1) A  2) B  3) C  4) D  5) A  6) B  7) C  8) D  9) A  10) B  11) C  12) D

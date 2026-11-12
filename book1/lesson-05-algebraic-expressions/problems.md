@@ -97,6 +97,53 @@ Nested parentheses and two-variable expressions.
 4. $5(a - 2b) - 3(2a - b)$
 5. $-\left[2(x+3) - (x-1)\right] + 4x$
 
+## Set 8 — SAT'da Qanday Uchraydi (SAT-Style Application)
+
+Real Digital-SAT-format questions (multiple choice, A–D): coefficient/term
+identification, "which expression is equivalent to," and short word problems
+translated into an algebraic expression. Mostly easy/medium, matching real
+test density.
+
+1. $7x - 4y + 9$ ifodasida $y$ ning koeffitsienti nechaga teng?
+   A) 4  B) $-4$  C) 7  D) 9
+
+2. $5x + 3 - 2x + 8$ ifodasiga teng ifodani toping.
+   A) $3x+11$  B) $7x+11$  C) $3x+5$  D) $7x+5$
+
+3. $4(2x - 3)$ ifodasiga teng ifodani toping.
+   A) $8x-3$  B) $6x-12$  C) $2x-12$  D) $8x-12$
+
+4. $-3(x - 5)$ ifodasiga teng ifodani toping.
+   A) $-3x-5$  B) $-3x-15$  C) $-3x+15$  D) $3x-15$
+
+5. $6x + 2(x - 3)$ ifodasiga teng ifodani toping.
+   A) $8x-3$  B) $6x+1$  C) $8x+6$  D) $8x-6$
+
+6. To'rtburchakning eni $x$, uzunligi esa enidan ikki baravar ortiq va yana
+   $3$ birlik ko'p. To'rtburchak perimetri uchun qaysi ifoda to'g'ri?
+   A) $3x+3$  B) $6x+6$  C) $6x+3$  D) $3x+6$
+
+7. $2(3x + 4) - (x - 5)$ ifodasiga teng ifodani toping.
+   A) $5x+3$  B) $5x-13$  C) $5x+13$  D) $7x+13$
+
+8. Do'konda daftar narxi \$3, xaridda bir martalik \$5 chegirma beriladi.
+   $n$ ta daftar sotib olish uchun jami narx (dollarda) qanday ifoda bilan
+   beriladi?
+   A) $3n+5$  B) $3(n-5)$  C) $5n-3$  D) $3n-5$
+
+9. $-2(3x - 1) + 4x$ ifodasiga teng ifodani toping.
+   A) $2x+2$  B) $-2x+2$  C) $-2x-2$  D) $10x+2$
+
+10. $8 - 5x + 2x^2$ ifodasida erkin had (constant term) nechaga teng?
+    A) 8  B) $-5x$  C) $2x^2$  D) $-5$
+
+11. $3x + 7 - (x + 7)$ ifodasiga teng ifodani toping.
+    A) $2x+14$  B) $4x$  C) $2x-14$  D) $2x$
+
+12. Telefon tarifi oyiga \$15 + har gigabayt uchun \$2. $g$ gigabayt uchun
+    oylik jami narx (dollarda) qanday ifoda bilan beriladi?
+    A) $15g+2$  B) $2g-15$  C) $2g+15$  D) $17g$
+
 ---
 
 ## Answer Key
@@ -132,3 +179,5 @@ Nested parentheses and two-variable expressions.
    $3(2x+1)-4 = 6x+3-4 = 6x-1$.
 
 **Set 7:** 1) $2x+11$  2) $9-x$  3) $8x+2$  4) $-a-7b$  5) $3x-7$
+
+**Set 8:** 1) B  2) A  3) D  4) C  5) D  6) B  7) C  8) D  9) B  10) A  11) D  12) C

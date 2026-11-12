@@ -86,6 +86,54 @@ ayting, so'ng to'g'ri javobni toping.
 5. $\left(\dfrac{5}{6} \div \dfrac{5}{9}\right) - \left(\dfrac{1}{2} \times
    \dfrac{2}{3}\right)$
 
+## Set 8 — SAT'da Qanday Uchraydi (SAT-Style Application)
+
+Real Digital-SAT-format questions (multiple choice, A–D) — fraction skills
+embedded in word problems the way the real test actually presents them, not
+bare computation. Mostly easy/medium, matching real test density.
+
+1. A recipe calls for $\frac{2}{3}$ cup of sugar. If you make $\frac{1}{2}$
+   of the recipe, how much sugar do you need?
+   A) $\frac{1}{3}$  B) $\frac{1}{2}$  C) $\frac{2}{3}$  D) $\frac{4}{3}$
+
+2. A pizza is cut into 8 equal slices. If 5 slices have been eaten, what
+   fraction of the pizza remains?
+   A) $\frac{3}{8}$  B) $\frac{5}{8}$  C) $\frac{1}{8}$  D) $\frac{3}{5}$
+
+3. What is the value of $\dfrac{3}{4} + \dfrac{1}{6}$?
+   A) $\frac{4}{10}$  B) $\frac{7}{12}$  C) $\frac{5}{6}$  D) $\frac{11}{12}$
+
+4. A water tank is $\frac{2}{5}$ full. After adding $\frac{1}{4}$ of the
+   tank's capacity, what fraction of the tank is full?
+   A) $\frac{3}{9}$  B) $\frac{3}{20}$  C) $\frac{13}{20}$  D) $\frac{9}{10}$
+
+5. What is the value of $\dfrac{5}{6} - \dfrac{1}{3}$?
+   A) $\frac{1}{3}$  B) $\frac{1}{2}$  C) $\frac{2}{3}$  D) $\frac{4}{9}$
+
+6. Of the 30 students in a class, $\frac{2}{5}$ play a sport. How many
+   students play a sport?
+   A) 10  B) 12  C) 15  D) 18
+
+7. What is the value of $\dfrac{2}{3} \times \dfrac{9}{10}$?
+   A) $\frac{3}{5}$  B) $\frac{2}{5}$  C) $\frac{4}{5}$  D) $\frac{11}{15}$
+
+8. A board $\frac{7}{8}$ feet long is cut into pieces each $\frac{1}{4}$ foot
+   long. How many *whole* pieces can be cut?
+   A) 3  B) 3.5  C) 4  D) 7
+
+9. Which of the following is equivalent to $\dfrac{5}{4}$?
+   A) $1\frac{1}{4}$  B) $1\frac{1}{2}$  C) $\frac{4}{5}$  D) $2\frac{1}{4}$
+
+10. If $\frac{3}{5}$ of a number is 24, what is the number?
+    A) 14.4  B) 40  C) 72  D) 8
+
+11. What is the value of $2\tfrac{1}{3} - 1\tfrac{1}{2}$?
+    A) $\frac{5}{6}$  B) $\frac{1}{2}$  C) $1\tfrac{1}{6}$  D) $\frac{3}{5}$
+
+12. A painter mixes $\frac{3}{4}$ gallon of blue paint with $\frac{1}{3}$
+    gallon of white paint. What is the total amount of paint, in gallons?
+    A) $1\tfrac{1}{12}$  B) $\frac{4}{7}$  C) $1\tfrac{1}{4}$  D) $\frac{13}{7}$
+
 ---
 
 ## Answer Key
@@ -130,3 +178,5 @@ $\frac{4}{3}$, $\frac{3}{2}$, $\frac{1}{6}$, $\frac{1}{2}$
    so $2\tfrac{3}{4} = \dfrac{11}{4}$.
 
 **Set 7:** $\frac{1}{3}$, $7$, $\frac{5}{8}$, $\frac{5}{8}$, $\frac{7}{6}$
+
+**Set 8:** 1) A  2) A  3) D  4) C  5) B  6) B  7) A  8) A  9) A  10) B  11) A  12) A

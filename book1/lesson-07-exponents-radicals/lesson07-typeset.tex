@@ -80,6 +80,15 @@
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
@@ -232,9 +241,43 @@
 
 \clearpage
 
-% ================= PAGE 5: Javoblar =================
+% ================= PAGE 5: Set 8 (SAT-style application, MC) -- own page =================
 \topicheader{7}{Daraja va Ildizlar}
 \pagefooter{49}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.5}{13}\selectfont
+\setkicker{8-to'plam}{SAT'da qanday uchraydi -- daraja va ildiz qoidalarini qo'llash.}
+
+\satq{1}{$2^3\times2^4$ ifodaning qiymati nechaga teng?}{128}{64}{16}{81}
+\satq{2}{$\dfrac{5^6}{5^2}$ ifodaning qiymati nechaga teng?}{25}{625}{125}{15625}
+\satq{3}{$(x^3)^4$ ifodasi barcha $x$ uchun qaysi ifodaga teng?}{$x^7$}{$x^{64}$}{$x^{12}$}{$x^{81}$}
+\satq{4}{$7^0+3^2$ ifodaning qiymati nechaga teng?}{9}{16}{19}{10}
+\satq{5}{$4^{-2}$ ifodaning qiymati nechaga teng?}{$\dfrac{1}{16}$}{$-8$}{$-16$}{16}
+\satq{6}{Agar $a=2^5$ va $b=2^3$ bo'lsa, $\dfrac{a}{b}$ nechaga teng?}{2}{4}{8}{16}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.5}{13}\selectfont
+\vspace{9mm}
+
+\satq{7}{$\sqrt{98}$ ni eng oddiy ildiz ko'rinishida yozing.}{$14\sqrt2$}{$2\sqrt{49}$}{$7\sqrt2$}{$49\sqrt2$}
+\satq{8}{Kvadratning yuzi 48 kvadrat birlikka teng. Uning tomoni (eng oddiy ildiz ko'rinishida) nechaga teng?}{$16\sqrt3$}{$6\sqrt2$}{$2\sqrt{12}$}{$4\sqrt3$}
+\satq{9}{$3^4\times3^{-2}$ ifodaning qiymati nechaga teng?}{9}{729}{$\dfrac{1}{9}$}{1}
+\satq{10}{$2^n=\dfrac{1}{8}$ tenglamasini qanoatlantiruvchi $n$ qanday qiymatga ega?}{3}{$-3$}{$-8$}{8}
+\satq{11}{$\sqrt{45}+\sqrt{20}$ ifodaning qiymati nechaga teng?}{$5\sqrt{65}$}{$\sqrt{65}$}{$5\sqrt5$}{$25\sqrt5$}
+\satq{12}{Idishdagi bakteriyalar soni har soatda ikki baravar oshadi. Boshlang'ich son $P_0=2^3$. Yana 2 marta ikki baravar oshgandan keyin, soni (daraja ko'rinishida) nechaga teng?}{$2^6$}{$2^1$}{$2^9$}{$2^5$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6: Javoblar =================
+\topicheader{7}{Daraja va Ildizlar}
+\pagefooter{50}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
@@ -272,6 +315,12 @@
 \multirow{3}{26mm}{\centering 7-to'plam} & 1 & 8 & 2 & 6\\\cline{2-5}
  & 3 & 7 & 4 & 4\\\cline{2-5}
  & 5 & 5 & -- & --\\\hline
+\multirow{6}{26mm}{\centering 8-to'plam} & 1 & A & 2 & B\\\cline{2-5}
+ & 3 & C & 4 & D\\\cline{2-5}
+ & 5 & A & 6 & B\\\cline{2-5}
+ & 7 & C & 8 & D\\\cline{2-5}
+ & 9 & A & 10 & B\\\cline{2-5}
+ & 11 & C & 12 & D\\\hline
 \multirow{5}{26mm}{\centering 6-to'plam} & \multicolumn{4}{p{76mm}|}{1.\ Ko'rsatkichlarni ko'paytirgan, qo'shish kerak edi (ko'paytma qoidasi). To'g'ri: $2^{3+3}=2^6=64$.}\\\cline{2-5}
  & \multicolumn{4}{p{76mm}|}{2.\ Ko'rsatkichlarni qo'shgan, ko'paytirish kerak edi (daraja darajasi). To'g'ri: $2^{2\times3}=2^6=64$.}\\\cline{2-5}
  & \multicolumn{4}{p{76mm}|}{3.\ Manfiy ko'rsatkichni asosni manfiy qiladi deb tushungan. To'g'ri: $2^{-3}=\frac{1}{8}$.}\\\cline{2-5}

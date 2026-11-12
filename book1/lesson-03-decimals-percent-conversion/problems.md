@@ -103,6 +103,56 @@ what rule it breaks, and give the correct final answer.
 4. $1.5$ ni foizga va oddiy kasrga aylantiring.
 5. $(0.25 + 0.5)$ yig'indisining $40\%$ ini toping.
 
+## Set 8 — SAT'da Qanday Uchraydi (SAT-Style Application)
+
+Real Digital-SAT-format questions (multiple choice, A–D) built around
+decimal arithmetic, decimal/fraction/percent conversion, and "percent of a
+number" applications in realistic contexts — exactly the forward-direction
+skills from Concepts 1–4, nothing from Book 2's percent-change territory.
+Mostly easy/medium, matching real test density.
+
+1. A recipe calls for 2.5 cups of flour. If you want to make half the
+   recipe, how many cups of flour do you need?
+   A) 1  B) 1.25  C) 1.5  D) 2
+
+2. What is $0.6$ written as a percent?
+   A) 0.6%  B) 6%  C) 60%  D) 600%
+
+3. A \$40 jacket is on sale for 25% off the original price. What is the
+   discount amount, in dollars?
+   A) 10  B) 15  C) 25  D) 30
+
+4. Which fraction is equivalent to $0.125$?
+   A) 1/4  B) 1/5  C) 1/8  D) 1/2
+
+5. A survey found that $0.45$ of respondents prefer tea. What percent of
+   respondents prefer tea?
+   A) 4.5%  B) 45%  C) 54%  D) 450%
+
+6. What is 18% of 150?
+   A) 15  B) 27  C) 30  D) 132
+
+7. A water bottle holds 1.75 liters. How many liters do 4 identical bottles
+   hold?
+   A) 4.75  B) 6  C) 7  D) 8
+
+8. Which decimal is equivalent to $\dfrac{7}{10}$?
+   A) 0.07  B) 0.7  C) 1.7  D) 7.0
+
+9. A book has 240 pages. If $0.3$ of the pages contain illustrations, how
+   many pages contain illustrations?
+   A) 24  B) 72  C) 80  D) 168
+
+10. What is 125% written as a decimal?
+    A) 0.125  B) 1.025  C) 1.25  D) 12.5
+
+11. A store had 80 items in stock. $0.15$ of the items were sold. How many
+    items were sold?
+    A) 8  B) 12  C) 15  D) 65
+
+12. Which of the following is equal to $\dfrac{3}{4}$ written as a percent?
+    A) 34%  B) 43%  C) 75%  D) 134%
+
 ---
 
 ## Answer Key
@@ -130,3 +180,5 @@ what rule it breaks, and give the correct final answer.
    $150\% = 1.50 = 1.5$.
 
 **Set 7:** 1) 28  2) 37.5%  3) 50%  4) 150% and 3/2  5) 0.3
+
+**Set 8:** 1) B  2) C  3) A  4) C  5) B  6) B  7) C  8) B  9) B  10) C  11) B  12) C
