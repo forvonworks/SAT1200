@@ -1,0 +1,80 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage[absolute]{textpos}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{F46530}
+\definecolor{badge}{HTML}{FFBDA5}
+\definecolor{ink}{HTML}{2A2E30}
+\definecolor{paper}{HTML}{FFF6F4}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{textblock*}{210mm}(0mm,0mm)
+\begin{tikzpicture}
+\fill[paper] (0,0) rectangle (210mm,-297mm);
+\end{tikzpicture}
+\end{textblock*}
+
+\begin{textblock*}{30mm}(20mm,28mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (18mm,1.2mm);
+\end{tikzpicture}
+\end{textblock*}
+
+\begin{textblock*}{170mm}(20mm,38mm)
+{\sffamily\bfseries\fontsize{19}{24}\selectfont\color{ink} Matematikadan qo'rqmang --- uni tushunib yeching.}
+\end{textblock*}
+
+\begin{textblock*}{165mm}(20mm,68mm)
+{\fontsize{11.5}{17}\selectfont\color{ink}
+\textbf{SAT 1200+} seriyasining \textbf{1-kitobi} sizni asosiy arifmetikadan boshlab, algebraik ifodalar va koordinatalar tekisligigacha bo'lgan yo'lni bosqichma-bosqich, aniq va tushunarli tarzda o'tkazadi. Har bir dars --- formula sahifasi, tushuncha, lug'at va mashqlar bilan to'liq mustahkamlanadi.
+}
+\end{textblock*}
+
+\begin{textblock*}{165mm}(20mm,112mm)
+{\fontsize{11.5}{19}\selectfont\color{ink}
+\begin{tabular}{@{}p{5mm}p{150mm}@{}}
+{\color{accent}\Large\textbullet} & 9 ta tizimli dars, har biri o'z \textbf{formula sahifasi} bilan \\[3mm]
+{\color{accent}\Large\textbullet} & \textbf{1000+} so'zdan iborat SAT lug'ati --- darsma-dars va kitob oxirida to'liq ro'yxat \\[3mm]
+{\color{accent}\Large\textbullet} & Haqiqiy SAT savollar bazasi tahliliga asoslangan mashqlar \\[3mm]
+{\color{accent}\Large\textbullet} & O'zbek tilida tushuntirish, ingliz tilida amaliyot --- 2-kitobga tayyor holda o'tasiz \\
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{165mm}(20mm,180mm)
+{\fontsize{10}{14}\selectfont\color{black!55}\itshape
+SAT 1200+ seriyasi: \textbf{1-kitob} (Asoslar) \ $\rightarrow$\ \textbf{2-kitob} (Asosiy mavzular) \ $\rightarrow$\ \textbf{3-kitob} (Yuqori ball strategiyalari)
+}
+\end{textblock*}
+
+\begin{textblock*}{170mm}(20mm,255mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (170mm,0.4mm);
+\end{tikzpicture}
+\end{textblock*}
+
+\begin{textblock*}{170mm}(20mm,261mm)
+{\sffamily\fontsize{10.5}{15}\selectfont\color{ink}
+\textbf{Avazbekov Salohiddin Azamjon o'g'li} \\[1mm]
+{\fontsize{9.5}{14}\selectfont\color{black!55} Telegram: @tripplezet \ \textperiodcentered\ \ +998 94 206 00 19}
+}
+\end{textblock*}
+
+\begin{textblock*}{60mm}(150mm,270mm)
+{\sffamily\bfseries\fontsize{15}{18}\selectfont\color{accent} SAT 1200+}
+\end{textblock*}
+
+\end{document}
