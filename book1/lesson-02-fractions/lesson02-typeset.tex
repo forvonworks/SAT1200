@@ -222,7 +222,7 @@
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) =================
+% ================= PAGE 4: Set 7 (bonus, left) + Set 8 pt.1 (right) -- no dead column =================
 \topicheader{2}{KASRLAR}
 \pagefooter{14}
 \colrule{32}{238}
@@ -240,15 +240,7 @@
 }
 \end{textblock*}
 
-\clearpage
-
-% ================= PAGE 5: Set 8 (SAT-style application, MC) -- own page =================
-\topicheader{2}{KASRLAR}
-\pagefooter{15}
-\colrule{32}{238}
-\mbox{}%
-
-\begin{textblock*}{\COLW}(\LCOL,32mm)
+\begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10.5}{13}\selectfont
 \setkicker{8-to'plam}{SAT'da qanday uchraydi -- kasrlar amaliy masalalarda.}
 
@@ -261,9 +253,17 @@
 }
 \end{textblock*}
 
-\begin{textblock*}{\COLW}(\RCOL,32mm)
+\clearpage
+
+% ================= PAGE 5: Set 8 pt.2 (continues directly, no title page of its own) =================
+\topicheader{2}{KASRLAR}
+\pagefooter{15}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10.5}{13}\selectfont
-\vspace{9mm}
+\setkicker{8-to'plam (davomi)}{SAT'da qanday uchraydi -- kasrlar amaliy masalalarda.}
 
 \satq{7}{$\dfrac{2}{3}\times\dfrac{9}{10}$ ifodaning qiymati nechaga teng?}{$\frac{3}{5}$}{$\frac{2}{5}$}{$\frac{4}{5}$}{$\frac{11}{15}$}
 \satq{8}{$\frac{7}{8}$ fut uzunlikdagi taxta har biri $\frac{1}{4}$ futdan bo'laklarga kesiladi. Nechta \emph{to'liq} bo'lak chiqadi?}{3}{3.5}{4}{7}
@@ -276,9 +276,40 @@
 
 \clearpage
 
-% ================= PAGE 6: Javoblar -- unified answer table =================
+% ================= PAGE 6: Qaydlar (notes) -- ruled writing space + video QR codes =================
 \topicheader{2}{KASRLAR}
 \pagefooter{16}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,34mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Qaydlar uchun\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{11}{14}\selectfont\color{black!65}\centering\itshape Nimalar esingizda qoldi?\par}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,62mm)
+\begin{tikzpicture}
+\foreach \y in {0,13,...,169}{
+  \draw[black!25,line width=0.5pt] (0,-\y mm) -- (178mm,-\y mm);
+}
+\end{tikzpicture}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,240mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
+\hspace{16mm}%
+\begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 7: Javoblar -- unified answer table =================
+\topicheader{2}{KASRLAR}
+\pagefooter{17}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
@@ -329,14 +360,6 @@
  & \multicolumn{4}{p{76mm}|}{5.\ Butun son maxrajga ko'paytirilmagan. To'g'ri: $3\times4=12$, $12+3=15$, ya'ni $\frac{11}{4}$.}\\\hline
 \end{tabular}
 }
-\end{textblock*}
-
-\begin{textblock*}{194mm}(16mm,228mm)
-\centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
-\begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
-\hspace{16mm}%
-\begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}
 \end{textblock*}
 
 \end{document}

@@ -221,7 +221,7 @@
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) =================
+% ================= PAGE 4: Set 7 (bonus, left) + Set 8 pt.1 (right) -- no dead column =================
 \topicheader{7}{Daraja va Ildizlar}
 \pagefooter{54}
 \colrule{32}{238}
@@ -239,15 +239,7 @@
 }
 \end{textblock*}
 
-\clearpage
-
-% ================= PAGE 5: Set 8 (SAT-style application, MC) -- own page =================
-\topicheader{7}{Daraja va Ildizlar}
-\pagefooter{55}
-\colrule{32}{238}
-\mbox{}%
-
-\begin{textblock*}{\COLW}(\LCOL,32mm)
+\begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10.5}{13}\selectfont
 \setkicker{8-to'plam}{SAT'da qanday uchraydi -- daraja va ildiz qoidalarini qo'llash.}
 
@@ -260,9 +252,17 @@
 }
 \end{textblock*}
 
-\begin{textblock*}{\COLW}(\RCOL,32mm)
+\clearpage
+
+% ================= PAGE 5: Set 8 pt.2 (continues directly, no title page of its own) =================
+\topicheader{7}{Daraja va Ildizlar}
+\pagefooter{55}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10.5}{13}\selectfont
-\vspace{9mm}
+\setkicker{8-to'plam (davomi)}{SAT'da qanday uchraydi -- daraja va ildiz qoidalarini qo'llash.}
 
 \satq{7}{$\sqrt{98}$ ni eng oddiy ildiz ko'rinishida yozing.}{$14\sqrt2$}{$2\sqrt{49}$}{$7\sqrt2$}{$49\sqrt2$}
 \satq{8}{Kvadratning yuzi 48 kvadrat birlikka teng. Uning tomoni (eng oddiy ildiz ko'rinishida) nechaga teng?}{$16\sqrt3$}{$6\sqrt2$}{$2\sqrt{12}$}{$4\sqrt3$}
@@ -275,9 +275,40 @@
 
 \clearpage
 
-% ================= PAGE 6: Javoblar =================
+% ================= PAGE 6: Qaydlar (notes) -- ruled writing space + video QR codes =================
 \topicheader{7}{Daraja va Ildizlar}
 \pagefooter{56}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,34mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Qaydlar uchun\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{11}{14}\selectfont\color{black!65}\centering\itshape Nimalar esingizda qoldi?\par}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,62mm)
+\begin{tikzpicture}
+\foreach \y in {0,13,...,169}{
+  \draw[black!25,line width=0.5pt] (0,-\y mm) -- (178mm,-\y mm);
+}
+\end{tikzpicture}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,240mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
+\hspace{16mm}%
+\begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 7: Javoblar =================
+\topicheader{7}{Daraja va Ildizlar}
+\pagefooter{57}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
@@ -328,14 +359,6 @@
  & \multicolumn{4}{p{76mm}|}{5.\ $16$ ni to'g'ri ajratgan, lekin uning ildizini olmagan. To'g'ri: $\sqrt{16\times2}=4\sqrt2$.}\\\hline
 \end{tabular}
 }
-\end{textblock*}
-
-\begin{textblock*}{194mm}(16mm,240mm)
-\centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
-\begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
-\hspace{16mm}%
-\begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}
 \end{textblock*}
 
 \end{document}
