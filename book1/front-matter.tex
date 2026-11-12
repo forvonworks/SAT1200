@@ -34,6 +34,16 @@
 \end{textblock*}
 }
 
+% ---- QR placeholder square + caption below ----
+\newcommand{\qrbox}[1]{%
+\begin{tikzpicture}
+\draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\end{tikzpicture}\\[1.5mm]
+{\sffamily\bfseries\fontsize{9}{11}\selectfont\color{ink} #1}\\[1.5mm]
+{\sffamily\fontsize{8.5}{11}\selectfont\color{black!45} @\makebox[20mm]{\dotfill}}%
+}
+
 \newcommand{\frontheader}[1]{%
 \begin{textblock*}{194mm}(16mm,16mm)
 \begin{tikzpicture}
@@ -143,6 +153,25 @@ Ushbu kitob zamonaviy, ma'lumotlarga asoslangan metodika asosida tuzilgan: har b
 Kitob oxirida esa barcha 9 ta darsda uchragan so'zlarni o'z ichiga olgan \textbf{to'liq lug'at (complete glossary)} berilgan --- bu 2-kitobga o'tishda talaba allaqachon tanish bo'lgan ingliz tilidagi SAT lug'ati bilan qurollangan bo'ladi.
 
 }
+\end{textblock*}
+
+\begin{textblock*}{170mm}(20mm,218mm)
+{\sffamily\bfseries\fontsize{11}{14}\selectfont\color{ink} Bizni kuzating}
+\end{textblock*}
+
+\begin{textblock*}{170mm}(20mm,225mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (170mm,0.4mm);
+\end{tikzpicture}
+\end{textblock*}
+
+\begin{textblock*}{170mm}(20mm,233mm)
+\centering
+\begin{minipage}[t]{30mm}\centering\qrbox{Telegram}\end{minipage}%
+\hspace{20mm}%
+\begin{minipage}[t]{30mm}\centering\qrbox{YouTube}\end{minipage}%
+\hspace{20mm}%
+\begin{minipage}[t]{30mm}\centering\qrbox{Instagram}\end{minipage}
 \end{textblock*}
 
 \end{document}
