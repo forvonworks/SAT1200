@@ -90,6 +90,60 @@ Equations combining fractions and parentheses.
 4. $\dfrac{2x-1}{3} + 1 = 4$
 5. $4(x-2) = 2(x+3) - 6$
 
+## Set 8 — SAT'da Qanday Uchraydi (SAT-Style Application)
+
+Real Digital-SAT-format questions (multiple choice, A–D) — equation-solving
+inside word problems, plus a derived-expression trap item, matching real
+test density. Mostly easy/medium.
+
+1. Aziz yoshi singlisining yoshidan ikki baravar ortig'idan 5 yosh katta.
+   Agar Aziz 17 yoshda bo'lsa, singlisi necha yoshda?
+   A) 11  B) 6  C) 12  D) 22
+
+2. Avtomobil to'xtash joyi uchun boshlang'ich to'lov \$15, har bir
+   qo'shimcha soat uchun esa \$4 olinadi. Agar jami to'lov \$47 bo'lsa,
+   necha soat to'xtalgan?
+   A) 6  B) 11  C) 8  D) 32
+
+3. $4x-7=21$ tenglamada $x$ ning qiymati nechaga teng?
+   A) 7  B) 3  C) 5  D) 9
+
+4. $3(x+4)=30$ tenglamada $x$ ning qiymati nechaga teng?
+   A) 4  B) 8  C) 14  D) 6
+
+5. Ikki firma narxlari: A firma — \$20 + har bir mahsulot uchun \$3; B
+   firma — \$8 + har bir mahsulot uchun \$5. Nechta mahsulot sotib
+   olinganda ikkala firma narxi teng bo'ladi?
+   A) 6  B) 4  C) 8  D) 12
+
+6. $5x+3=28$ bo'lsa, $2x$ ning qiymati nechaga teng?
+   A) 5  B) 14  C) 10  D) 25
+
+7. Malika har oy \$45 jamg'armoqda. 6 oydan so'ng jami pul miqdori
+   (boshlang'ich pul bilan birga) \$320 bo'ldi. U boshida nechta pulga
+   ega bo'lgan?
+   A) 270  B) 320  C) 45  D) 50
+
+8. $-2(x-5)+3x=19$ tenglamada $x$ ning qiymati nechaga teng?
+   A) 3  B) 9  C) 14  D) 19
+
+9. Taksi xizmati boshlang'ich \$3 va har bir km uchun \$1.5 oladi. Agar
+   sayohat narxi \$18 bo'lsa, necha km yo'l bosilgan?
+   A) 10  B) 7  C) 9  D) 12
+
+10. $7x-4=3x+16$ tenglamada $x$ ning qiymati nechaga teng?
+    A) 3  B) 6  C) 20  D) 5
+
+11. Uchta do'st jami \$96 ni teng bo'lib oldi, so'ngra har biri yana \$8
+    qo'shdi. Natijada har biri \$40 ga ega bo'ldi. Boshlang'ich
+    taqsimotda har biriga qancha to'g'ri kelgan?
+    A) 8  B) 40  C) 32  D) 48
+
+12. To'rtburchak shaklidagi bog'ning uzunligi $(x+3)$ metr, eni esa
+    doimiy $4$ metr. Agar perimetri $38$ metr bo'lsa, $x$ ning qiymati
+    nechaga teng?
+    A) 5  B) 12  C) 9  D) 19
+
 ---
 
 ## Answer Key
@@ -119,3 +173,5 @@ Equations combining fractions and parentheses.
    the asked expression $3x$. Correct: $3x = 3(5) = 15$.
 
 **Set 7:** 1) 11  2) 5  3) −2  4) 5  5) 4
+
+**Set 8:** 1) B  2) C  3) A  4) D  5) A  6) C  7) D  8) B  9) A  10) D  11) C  12) B

@@ -80,6 +80,15 @@
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
@@ -232,9 +241,43 @@
 
 \clearpage
 
-% ================= PAGE 5: Javoblar -- unified answer table =================
+% ================= PAGE 5: Set 8 (SAT-style application, MC) -- own page =================
 \topicheader{6}{BIR O'ZGARUVCHILI TENGLAMALAR}
 \pagefooter{42}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.5}{13}\selectfont
+\setkicker{8-to'plam}{SAT'da qanday uchraydi -- haqiqiy kontekstdagi tenglamalar.}
+
+\satq{1}{Aziz yoshi singlisining yoshidan ikki baravar ortig'idan 5 yosh katta. Agar Aziz 17 yoshda bo'lsa, singlisi necha yoshda?}{11}{6}{12}{22}
+\satq{2}{Avtomobil to'xtash joyi uchun boshlang'ich to'lov \$15, har bir qo'shimcha soat uchun esa \$4 olinadi. Agar jami to'lov \$47 bo'lsa, necha soat to'xtalgan?}{6}{11}{8}{32}
+\satq{3}{$4x-7=21$ tenglamada $x$ ning qiymati nechaga teng?}{7}{3}{5}{9}
+\satq{4}{$3(x+4)=30$ tenglamada $x$ ning qiymati nechaga teng?}{4}{8}{14}{6}
+\satq{5}{Ikki firma narxlari: A firma -- \$20 + har bir mahsulot uchun \$3; B firma -- \$8 + har bir mahsulot uchun \$5. Nechta mahsulot sotib olinganda ikkala firma narxi teng bo'ladi?}{6}{4}{8}{12}
+\satq{6}{$5x+3=28$ bo'lsa, $2x$ ning qiymati nechaga teng?}{5}{14}{10}{25}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.5}{13}\selectfont
+\vspace{9mm}
+
+\satq{7}{Malika har oy \$45 jamg'armoqda. 6 oydan so'ng jami pul miqdori (boshlang'ich pul bilan birga) \$320 bo'ldi. U boshida nechta pulga ega bo'lgan?}{270}{320}{45}{50}
+\satq{8}{$-2(x-5)+3x=19$ tenglamada $x$ ning qiymati nechaga teng?}{3}{9}{14}{19}
+\satq{9}{Taksi xizmati boshlang'ich \$3 va har bir km uchun \$1.5 oladi. Agar sayohat narxi \$18 bo'lsa, necha km yo'l bosilgan?}{10}{7}{9}{12}
+\satq{10}{$7x-4=3x+16$ tenglamada $x$ ning qiymati nechaga teng?}{3}{6}{20}{5}
+\satq{11}{Uchta do'st jami \$96 ni teng bo'lib oldi, so'ngra har biri yana \$8 qo'shdi. Natijada har biri \$40 ga ega bo'ldi. Boshlang'ich taqsimotda har biriga qancha to'g'ri kelgan?}{8}{40}{32}{48}
+\satq{12}{To'rtburchak shaklidagi bog'ning uzunligi $(x+3)$ metr, eni esa doimiy $4$ metr. Agar perimetri $38$ metr bo'lsa, $x$ ning qiymati nechaga teng?}{5}{12}{9}{19}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6: Javoblar -- unified answer table =================
+\topicheader{6}{BIR O'ZGARUVCHILI TENGLAMALAR}
+\pagefooter{43}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
@@ -272,6 +315,12 @@
 \multirow{3}{26mm}{\centering 7-to'plam} & 1 & 11 & 2 & 5\\\cline{2-5}
  & 3 & $-2$ & 4 & 5\\\cline{2-5}
  & 5 & 4 & -- & --\\\hline
+\multirow{6}{26mm}{\centering 8-to'plam} & 1 & B & 2 & C\\\cline{2-5}
+ & 3 & A & 4 & D\\\cline{2-5}
+ & 5 & A & 6 & C\\\cline{2-5}
+ & 7 & D & 8 & B\\\cline{2-5}
+ & 9 & A & 10 & D\\\cline{2-5}
+ & 11 & C & 12 & B\\\hline
 \multirow{5}{26mm}{\centering 6-to'plam} & \multicolumn{4}{p{76mm}|}{1.\ 5 faqat o'ng tomonga qo'shilgan -- ikkala tomonga qo'shish kerak. To'g'ri: $x=12+5=17$.}\\\cline{2-5}
  & \multicolumn{4}{p{76mm}|}{2.\ $-5$ ishorasi almashtirilmagan. To'g'ri: $2x=9+5=14$, $x=7$.}\\\cline{2-5}
  & \multicolumn{4}{p{76mm}|}{3.\ $-2$ faqat $x$ ga taqsimlangan, $-3$ ga emas. To'g'ri: $-2x+6=10\Rightarrow x=-2$.}\\\cline{2-5}
