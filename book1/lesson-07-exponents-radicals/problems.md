@@ -93,50 +93,45 @@ what rule it breaks, and give the correct final answer.
 
 ## Set 8 — SAT'da Qanday Uchraydi (SAT-Style Application)
 
-Real Digital-SAT-format questions (multiple choice, A–D) built around the
-same-base exponent rules, zero/negative exponents, and simplifying radicals —
-exactly the skills every exponential-growth and polynomial question in later
-books assumes are automatic. Mostly easy/medium, matching real test density.
+Real Digital-SAT-format questions (multiple choice, A–D) in natural Uzbek,
+matching the actual printed page. Mostly easy/medium, matching real test
+density.
 
-1. What is the value of $2^3 \times 2^4$?
+1. $2^3\times2^4$ ifodaning qiymati nechaga teng?
    A) 128  B) 64  C) 16  D) 81
 
-2. What is the value of $\dfrac{5^6}{5^2}$?
+2. $\dfrac{5^6}{5^2}$ ifodaning qiymati nechaga teng?
    A) 25  B) 625  C) 125  D) 15625
 
-3. Which expression is equivalent to $(x^3)^4$ for all $x$?
+3. $(x^3)^4$ ifodasi barcha $x$ uchun qaysi ifodaga teng?
    A) $x^7$  B) $x^{64}$  C) $x^{12}$  D) $x^{81}$
 
-4. What is the value of $7^0 + 3^2$?
+4. $7^0+3^2$ ifodaning qiymati nechaga teng?
    A) 9  B) 16  C) 19  D) 10
 
-5. What is the value of $4^{-2}$?
+5. $4^{-2}$ ifodaning qiymati nechaga teng?
    A) $\dfrac{1}{16}$  B) $-8$  C) $-16$  D) 16
 
-6. If $a = 2^5$ and $b = 2^3$, what is the value of $\dfrac{a}{b}$?
+6. Agar $a=2^5$ va $b=2^3$ bo'lsa, $\dfrac{a}{b}$ nechaga teng?
    A) 2  B) 4  C) 8  D) 16
 
-7. What is $\sqrt{98}$ written in simplest radical form?
-   A) $14\sqrt{2}$  B) $2\sqrt{49}$  C) $7\sqrt{2}$  D) $49\sqrt{2}$
+7. $\sqrt{98}$ ni eng oddiy ildiz ko'rinishida yozing.
+   A) $14\sqrt2$  B) $2\sqrt{49}$  C) $7\sqrt2$  D) $49\sqrt2$
 
-8. A square has an area of 48 square units. What is its side length, in
-   simplest radical form?
-   A) $16\sqrt{3}$  B) $6\sqrt{2}$  C) $2\sqrt{12}$  D) $4\sqrt{3}$
+8. Kvadratning yuzi 48 kvadrat birlikka teng. Uning tomoni (eng oddiy ildiz ko'rinishida) nechaga teng?
+   A) $16\sqrt3$  B) $6\sqrt2$  C) $2\sqrt{12}$  D) $4\sqrt3$
 
-9. What is the value of $3^4 \times 3^{-2}$?
+9. $3^4\times3^{-2}$ ifodaning qiymati nechaga teng?
    A) 9  B) 729  C) $\dfrac{1}{9}$  D) 1
 
-10. Which value of $n$ makes the equation $2^n = \dfrac{1}{8}$ true?
-    A) 3  B) $-3$  C) $-8$  D) 8
+10. $2^n=\dfrac{1}{8}$ tenglamasini qanoatlantiruvchi $n$ qanday qiymatga ega?
+   A) 3  B) $-3$  C) $-8$  D) 8
 
-11. What is the value of $\sqrt{45} + \sqrt{20}$?
-    A) $5\sqrt{65}$  B) $\sqrt{65}$  C) $5\sqrt{5}$  D) $25\sqrt{5}$
+11. $\sqrt{45}+\sqrt{20}$ ifodaning qiymati nechaga teng?
+   A) $5\sqrt{65}$  B) $\sqrt{65}$  C) $5\sqrt5$  D) $25\sqrt5$
 
-12. Bacteria in a dish double every hour. The population starts at
-    $P_0 = 2^3$. What is the population after 2 more doublings, expressed as
-    a power of 2?
-    A) $2^6$  B) $2^1$  C) $2^9$  D) $2^5$
-
+12. Idishdagi bakteriyalar soni har soatda ikki baravar oshadi. Boshlang'ich son $P_0=2^3$. Yana 2 marta ikki baravar oshgandan keyin, soni (daraja ko'rinishida) nechaga teng?
+   A) $2^6$  B) $2^1$  C) $2^9$  D) $2^5$
 ---
 
 ## Answer Key

@@ -105,54 +105,45 @@ what rule it breaks, and give the correct final answer.
 
 ## Set 8 — SAT'da Qanday Uchraydi (SAT-Style Application)
 
-Real Digital-SAT-format questions (multiple choice, A–D) built around
-decimal arithmetic, decimal/fraction/percent conversion, and "percent of a
-number" applications in realistic contexts — exactly the forward-direction
-skills from Concepts 1–4, nothing from Book 2's percent-change territory.
-Mostly easy/medium, matching real test density.
+Real Digital-SAT-format questions (multiple choice, A–D) in natural Uzbek,
+matching the actual printed page. Mostly easy/medium, matching real test
+density.
 
-1. A recipe calls for 2.5 cups of flour. If you want to make half the
-   recipe, how many cups of flour do you need?
+1. Retseptda 2.5 stakan un kerak. Yarmini tayyorlash uchun necha stakan kerak?
    A) 1  B) 1.25  C) 1.5  D) 2
 
-2. What is $0.6$ written as a percent?
-   A) 0.6%  B) 6%  C) 60%  D) 600%
+2. $0.6$ sonini foiz ko'rinishida yozing.
+   A) 0.6\%  B) 6\%  C) 60\%  D) 600\%
 
-3. A \$40 jacket is on sale for 25% off the original price. What is the
-   discount amount, in dollars?
+3. $\$40$ turgan kurtka narxidan $25\%$ chegirma qilinmoqda. Chegirma summasi (dollarda) nechaga teng?
    A) 10  B) 15  C) 25  D) 30
 
-4. Which fraction is equivalent to $0.125$?
+4. $0.125$ songa teng kasr qaysi?
    A) 1/4  B) 1/5  C) 1/8  D) 1/2
 
-5. A survey found that $0.45$ of respondents prefer tea. What percent of
-   respondents prefer tea?
-   A) 4.5%  B) 45%  C) 54%  D) 450%
+5. So'rovnomada javob beruvchilarning $0.45$ ulushi choyni afzal ko'radi. Necha foizi?
+   A) 4.5\%  B) 45\%  C) 54\%  D) 450\%
 
-6. What is 18% of 150?
+6. $150$ ning $18\%$ i nechaga teng?
    A) 15  B) 27  C) 30  D) 132
 
-7. A water bottle holds 1.75 liters. How many liters do 4 identical bottles
-   hold?
+7. Suv idishi 1.75 litr suv sig'diradi. 4 ta bir xil idishda jami necha litr suv bo'ladi?
    A) 4.75  B) 6  C) 7  D) 8
 
-8. Which decimal is equivalent to $\dfrac{7}{10}$?
+8. $\dfrac{7}{10}$ songa teng o'nli kasr qaysi?
    A) 0.07  B) 0.7  C) 1.7  D) 7.0
 
-9. A book has 240 pages. If $0.3$ of the pages contain illustrations, how
-   many pages contain illustrations?
+9. Kitobda 240 bet bor. Agar betlarning $0.3$ ulushida rasm bo'lsa, rasmli betlar soni nechta?
    A) 24  B) 72  C) 80  D) 168
 
-10. What is 125% written as a decimal?
-    A) 0.125  B) 1.025  C) 1.25  D) 12.5
+10. $125\%$ ni o'nli kasr ko'rinishida yozing.
+   A) 0.125  B) 1.025  C) 1.25  D) 12.5
 
-11. A store had 80 items in stock. $0.15$ of the items were sold. How many
-    items were sold?
-    A) 8  B) 12  C) 15  D) 65
+11. Do'konda 80 ta mahsulot bor edi. Mahsulotlarning $0.15$ ulushi sotildi. Nechta mahsulot sotildi?
+   A) 8  B) 12  C) 15  D) 65
 
-12. Which of the following is equal to $\dfrac{3}{4}$ written as a percent?
-    A) 34%  B) 43%  C) 75%  D) 134%
-
+12. $\dfrac{3}{4}$ ga teng foiz qaysi?
+   A) 34\%  B) 43\%  C) 75\%  D) 134\%
 ---
 
 ## Answer Key

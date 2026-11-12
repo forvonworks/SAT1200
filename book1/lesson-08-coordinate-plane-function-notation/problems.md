@@ -98,10 +98,9 @@ answer.
 
 ## Set 8 — SAT'da Qanday Uchraydi (SAT-Style Application)
 
-Real Digital-SAT-format questions (multiple choice, A–D). Quadrant ID,
-reading $k$/$b$ from $y=kx+b$, and evaluating $f(a)$ are among the most
-common real SAT item types — these are the exact skills tested, just dressed
-in official SAT phrasing. Mostly easy/medium.
+Real Digital-SAT-format questions (multiple choice, A–D) in natural Uzbek,
+matching the actual printed page. Mostly easy/medium, matching real test
+density.
 
 1. $(-5,\ 3)$ nuqtasi qaysi chorakda joylashgan?
    A) II  B) I  C) III  D) IV
@@ -118,9 +117,8 @@ in official SAT phrasing. Mostly easy/medium.
 5. Agar $f(x)=x^2+2$ bo'lsa, $f(-3)$ nechaga teng?
    A) 11  B) $-7$  C) 7  D) $-11$
 
-6. $(0,\ -6)$ nuqtadan o'tuvchi va qiyaligi $4$ ga teng bo'lgan to'g'ri
-   chiziq tenglamasi qaysi?
-   A) $y=-6x+4$  B) $y=4x-6$  C) $y=4x+6$  D) $y=-4x-6$
+6. $(0,\ -6)$ nuqtadan o'tuvchi va qiyaligi $4$ ga teng bo'lgan chiziq tenglamasi qaysi?
+   A) $y{=}{-}6x{+}4$  B) $y{=}4x{-}6$  C) $y{=}4x{+}6$  D) $y{=}{-}4x{-}6$
 
 7. $(6,\ -2)$ nuqtasi qaysi chorakda joylashgan?
    A) I  B) II  C) IV  D) III
@@ -132,14 +130,13 @@ in official SAT phrasing. Mostly easy/medium.
    A) 8  B) 4  C) 14  D) 2
 
 10. $y=\dfrac{1}{2}x-4$ to'g'ri chizig'ining qiyaligi ($k$) nechaga teng?
-    A) $-4$  B) $\frac12$  C) 2  D) $-\frac12$
+   A) $-4$  B) $\frac12$  C) 2  D) $-\frac12$
 
 11. Agar $h(x)=-x^2+4$ bo'lsa, $h(-2)$ nechaga teng?
-    A) 8  B) $-4$  C) 0  D) 4
+   A) 8  B) $-4$  C) 0  D) 4
 
 12. $y=3x-2$ to'g'ri chizig'ida qaysi nuqta yotadi?
-    A) $(2,6)$  B) $(4,2)$  C) $(2,-4)$  D) $(2,4)$
-
+   A) $(2,6)$  B) $(4,2)$  C) $(2,-4)$  D) $(2,4)$
 ---
 
 ## Answer Key

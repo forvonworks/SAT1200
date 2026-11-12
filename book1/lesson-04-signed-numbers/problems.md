@@ -86,58 +86,45 @@ what rule it breaks, and give the correct final answer.
 
 ## Set 8 — SAT'da Qanday Uchraydi (SAT-Style Application)
 
-Real Digital-SAT-format questions (multiple choice, A–D) built around signed
-numbers in context — temperature, elevation, bank balances, and stock price
-changes are the real test's favorite dressing for this skill. Mostly
-easy/medium, matching real test density.
+Real Digital-SAT-format questions (multiple choice, A–D) in natural Uzbek,
+matching the actual printed page. Mostly easy/medium, matching real test
+density.
 
-1. Ertalab soat 6:00 da harorat $-8°C$ edi. Peshin paytigacha harorat
-   $15°C$ ga ko'tarildi. Peshin paytidagi harorat nechaga teng?
+1. Ertalab soat 6:00 da harorat $-8°C$ edi. Peshin paytigacha harorat $15°C$ ga ko'tarildi. Peshin paytidagi harorat nechaga teng?
    A) $-23$  B) $-7$  C) 7  D) 23
 
-2. Lift $-2$-qavatdan (yer osti 2-qavat) harakatni boshlab, 9 qavat
-   yuqoriga ko'tariladi. Lift qaysi qavatda to'xtaydi?
+2. Lift $-2$-qavatdan harakatni boshlab, 9 qavat yuqoriga ko'tariladi. Lift qaysi qavatda to'xtaydi?
    A) $-11$  B) $-7$  C) 7  D) 11
 
-3. Suv osti kemasi dengiz sathidan $-120$ metr balandlikda (120 m
-   chuqurlikda). U yana 45 metrga sho'ng'iydi. Uning yangi balandligi
-   nechaga teng?
+3. Suv osti kemasi dengiz sathidan $-120$ metr balandlikda. U yana 45 metrga sho'ng'iydi. Uning yangi balandligi nechaga teng?
    A) $-165$  B) $-75$  C) 75  D) 165
 
-4. $|{-14}| - |6|$ ifodaning qiymati nechaga teng?
+4. $|{-14}|-|6|$ ifodaning qiymati nechaga teng?
    A) $-20$  B) $-8$  C) 8  D) 20
 
-5. Bank hisobida $-\$45$ balans bor (qarzga ketgan). Hisob egasi $\$60$
-   pul qo'yadi. Yangi balans (dollarda) nechaga teng?
+5. Bank hisobida $-\$45$ balans bor. Hisob egasi $\$60$ pul qo'yadi. Yangi balans (dollarda) nechaga teng?
    A) $-105$  B) $-15$  C) 15  D) 105
 
-6. $(-7) \times (-4) \div (-2)$ ifodaning qiymati nechaga teng?
+6. $(-7)\times(-4)\div(-2)$ ifodaning qiymati nechaga teng?
    A) $-14$  B) $-11$  C) 11  D) 14
 
-7. Aksiya narxi har kuni $\$3$ ga tushib boradi. 5 kun davomida narxning
-   jami o'zgarishi (dollarda) nechaga teng?
+7. Aksiya narxi har kuni $\$3$ ga tushib boradi. 5 kun davomida narxning jami o'zgarishi (dollarda) nechaga teng?
    A) $-15$  B) $-8$  C) 8  D) 15
 
-8. $-(4 - 9) + (-6)$ ifodaning qiymati nechaga teng?
+8. $-(4-9)+(-6)$ ifodaning qiymati nechaga teng?
    A) $-11$  B) $-1$  C) 1  D) 11
 
-9. Suzuvchi dengiz sathidan $-18$ metr chuqurlikda. U yuqoriga ko'tarilib,
-   yangi holati $-18 - (-11)$ ifodasi bilan beriladi. Uning yangi holati
-   nechaga teng?
+9. Suzuvchi dengiz sathidan $-18$ metr chuqurlikda. Uning yangi holati $-18-(-11)$ ifodasi bilan beriladi. Yangi holati nechaga teng?
    A) $-29$  B) $-7$  C) 7  D) 29
 
-10. $x = 3$ bo'lganda, $-2(x - 5)$ ifodaning qiymati nechaga teng?
-    A) $-16$  B) $-4$  C) 4  D) 16
+10. $x=3$ bo'lganda, $-2(x-5)$ ifodaning qiymati nechaga teng?
+   A) $-16$  B) $-4$  C) 4  D) 16
 
 11. To'rtta manfiy sonning ko'paytmasi olinsa, natija har doim:
-    A) musbat bo'ladi  B) manfiy bo'ladi  C) musbat yoki manfiy bo'lishi
-    mumkin  D) nolga teng bo'ladi
+   A) musbat bo'ladi  B) manfiy bo'ladi  C) musbat yoki manfiy bo'lishi mumkin  D) nolga teng bo'ladi
 
-12. Sayyoh $250$ m balandlikdan boshlab, $180$ m pastga, so'ngra yana
-    $95$ m pastga tushadi. Uning hozirgi balandligi (metrda) nechaga
-    teng?
-    A) $-25$  B) $-95$  C) 25  D) 525
-
+12. Sayyoh $250$ m balandlikdan boshlab, $180$ m pastga, so'ngra yana $95$ m pastga tushadi. Uning hozirgi balandligi (metrda) nechaga teng?
+   A) $-25$  B) $-95$  C) 25  D) 525
 ---
 
 ## Answer Key
