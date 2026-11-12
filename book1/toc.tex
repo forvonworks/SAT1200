@@ -1,0 +1,99 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{F46530}
+\definecolor{badge}{HTML}{FFBDA5}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\frontheader}[1]{%
+\begin{textblock*}{194mm}(16mm,16mm)
+\begin{tikzpicture}
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (0,0) {#1};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+% #1=lesson number #2=title #3=page
+\newcommand{\tocrow}[3]{%
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      minimum width=7mm,minimum height=7mm,inner sep=0pt,anchor=west] (n) at (0,0) {#1};
+\node[font=\fontsize{12}{12}\selectfont,text=ink,anchor=west] (t) at (10mm,0) {#2};
+\node[font=\fontsize{11}{11}\selectfont,text=black!45,anchor=east] (p) at (170mm,0) {#3};
+\draw[black!25,dotted,line width=0.8pt] ([xshift=2mm]t.east) -- ([xshift=-2mm]p.west);
+\end{tikzpicture}\\[6.2mm]%
+}
+
+% #1=title #2=page (for the materials section, no number badge)
+\newcommand{\tocrowB}[2]{%
+\begin{tikzpicture}
+\node[font=\fontsize{12}{12}\selectfont,text=ink,anchor=west] (t) at (10mm,0) {#1};
+\node[font=\fontsize{11}{11}\selectfont,text=black!45,anchor=east] (p) at (170mm,0) {#2};
+\draw[black!25,dotted,line width=0.8pt] ([xshift=2mm]t.east) -- ([xshift=-2mm]p.west);
+\end{tikzpicture}\\[6.2mm]%
+}
+
+\begin{document}
+
+\frontheader{Mundarija}
+\pagefooter{iv}
+\mbox{}%
+
+\begin{textblock*}{178mm}(16mm,36mm)
+\tocrow{1}{Asosiy arifmetika va amallar tartibi}{1}
+\tocrow{2}{Kasrlar}{8}
+\tocrow{3}{O'nli kasrlar va foizlar}{15}
+\tocrow{4}{Ishorali sonlar}{22}
+\tocrow{5}{Algebraik ifodalar}{29}
+\tocrow{6}{Bir noma'lumli tenglamalar}{36}
+\tocrow{7}{Darajalar va ildizlar}{43}
+\tocrow{8}{Koordinatalar tekisligi va funksiya belgilanishi}{50}
+\tocrow{9}{Umumlashtiruvchi takrorlash}{57}
+
+\vspace{4mm}
+{\sffamily\bfseries\fontsize{9}{9}\selectfont\color{black!55} QO'SHIMCHA MATERIALLAR}
+
+\vspace{4mm}
+\tocrowB{To'liq lug'at (Complete glossary) --- 1\,050 so'z}{64}
+\tocrowB{SAT iboralari (Common phrases) --- 146 ibora}{85}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,255mm)
+{\fontsize{9}{13}\selectfont\color{black!45}\itshape Har bir dars uchta qismdan iborat: formula sahifasi, lug'at va mashqlar --- yuqoridagi bet raqami darsning formula sahifasidan boshlanadi.}
+\end{textblock*}
+
+\end{document}
