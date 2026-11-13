@@ -1,0 +1,159 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usetikzlibrary{fit,calc,positioning,arrows.meta}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{602785}
+\definecolor{badge}{HTML}{B8A0C8}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{100mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\videobanner}[1]{%
+\begin{textblock*}{178mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (178mm,-10mm);
+\draw[white,line width=0.6pt] (3mm,-1.7mm) rectangle (11.5mm,-8.3mm);
+\node[white,font=\sffamily\fontsize{4}{4.4}\selectfont,align=center] at (7.25mm,-5mm) {QR\\CODE};
+\node[white,font=\sffamily\bfseries\fontsize{9.5}{11}\selectfont,anchor=west] at (16mm,-5.6mm) {WATCH THE VIDEO BEFORE YOU SOLVE};
+\node[white,font=\sffamily\fontsize{7.5}{8}\selectfont,anchor=east] at (174mm,-5.6mm) {YouTube ~\textbullet~ #1};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\newcommand{\cardbg}[4]{%
+\begin{textblock*}{#3mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\fill[badge!22,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pill}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {RULE ~\textperiodcentered~ #3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+
+% ======================================================================
+% PAGE 1
+% ======================================================================
+\topicheader{13}{Ratios, Rates \& Proportions}
+\videobanner{Lesson 13}
+\pagefooter{69}
+\mbox{}%
+
+% ---- CARD 1: Part-to-part vs part-to-whole ----
+\cardbg{16}{40}{178}{50}
+\pill{26}{43}{Ratio (nisbat): part-to-part vs part-to-whole}
+
+\begin{textblock*}{158mm}(26mm,56mm)
+{\fontsize{11}{14}\selectfont\color{ink}
+A $2:3$ ratio has $2+3=5$ total parts. Each share $=\dfrac{\text{its
+number}}{\text{total parts}}$.}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,70mm)
+{\fontsize{13}{16}\selectfont
+$20$ total, ratio $2:3\ \Longrightarrow\ \dfrac{2}{5}(20)=8$ and $\dfrac{3}{5}(20)=12$}
+\end{textblock*}
+
+% ---- CARD 2: Unit rate ----
+\cardbg{16}{98}{178}{45}
+\pill{26}{101}{Unit rate}
+
+\begin{textblock*}{158mm}(26mm,114mm)
+{\fontsize{13}{16}\selectfont
+unit rate $=\dfrac{\text{quantity}}{\text{time (or other unit)}}$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,128mm)
+{\fontsize{11}{14}\selectfont
+$180$ km in $3$ h $\ \Longrightarrow\ 180\div3=60$ km/h}
+\end{textblock*}
+
+% ---- CARD 3: Solving a proportion ----
+\cardbg{16}{151}{178}{80}
+\pill{26}{154}{Solving a proportion (proportsiya)}
+
+\begin{textblock*}{158mm}(26mm,167mm)
+{\fontsize{15}{18}\selectfont
+$\dfrac{a}{b}=\dfrac{c}{d}\ \Longrightarrow\ a\times d=b\times c$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,182mm)
+{\fontsize{12}{15}\selectfont
+$\dfrac{x}{5}=\dfrac{12}{20}\ \Longrightarrow\ 20x=60\ \Longrightarrow\ x=3$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,194mm)
+{\fontsize{12}{15}\selectfont
+Flour:sugar $=3:5$, $18$ cups flour $\ \Longrightarrow\ \dfrac{3}{5}=\dfrac{18}{s}\ \Longrightarrow\ s=30$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,209mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape
+Keep the same quantity on top on both sides, and match units before you
+set up the proportion.}
+\end{textblock*}
+
+\end{document}
