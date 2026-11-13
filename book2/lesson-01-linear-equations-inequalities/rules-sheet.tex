@@ -15,7 +15,6 @@
 \definecolor{accent}{HTML}{602785}
 \definecolor{badge}{HTML}{B8A0C8}
 \definecolor{ink}{HTML}{2A2E30}
-\definecolor{warn}{HTML}{3D1856}
 
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{1mm}
@@ -80,29 +79,11 @@
 \end{textblock*}%
 }
 
-\newcommand{\warnbgbox}[4]{%
-\begin{textblock*}{#3mm}(#1mm,#2mm)
-\begin{tikzpicture}
-\fill[badge!38,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
-\draw[warn,line width=1pt,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
-\end{tikzpicture}
-\end{textblock*}%
-}
-
 \newcommand{\pill}[3]{%
 \begin{textblock*}{160mm}(#1mm,#2mm)
 \begin{tikzpicture}
 \node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
       rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {RULE ~\textperiodcentered~ #3};
-\end{tikzpicture}
-\end{textblock*}%
-}
-
-\newcommand{\pillwarn}[3]{%
-\begin{textblock*}{160mm}(#1mm,#2mm)
-\begin{tikzpicture}
-\node[fill=warn,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
-      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {WARNING ~\textperiodcentered~ #3};
 \end{tikzpicture}
 \end{textblock*}%
 }
@@ -121,65 +102,26 @@
 \pagefooter{7}
 \mbox{}%
 
-% ---- CARD 1: Multi-step equation solving order ----
-\cardbg{16}{40}{178}{82}
+% ---- CARD 1: Multi-step equations ----
+\cardbg{16}{40}{178}{42}
 \pill{26}{43}{Multi-step equations (ko'p qadamli tenglama)}
 
-\begin{textblock*}{158mm}(26mm,55mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
+\begin{textblock*}{158mm}(26mm,56mm)
+{\fontsize{11}{14}\selectfont\color{ink}
 Order: clear fractions $\to$ expand $\to$ collect the variable $\to$ combine
 like terms.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,65mm)
-\begin{tikzpicture}[every node/.style={font=\fontsize{12.5}{12.5}\selectfont}]
-\node[anchor=west] (l0) at (0,0) {$\dfrac{2}{3}(x+3) = x-1$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (78mm,0) {$\leftarrow$ clear the fraction ($\times 3$)};
-
-\node[anchor=west] (l1) at (0,-13mm) {$2(x+3) = 3(x-1)$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (78mm,-13mm) {$\leftarrow$ expand parentheses};
-
-\node[anchor=west] (l2) at (0,-26mm) {$2x+6 = 3x-3$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (78mm,-26mm) {$\leftarrow$ collect the variable};
-
-\node[anchor=west] (l3) at (0,-39mm) {$6+3 = 3x-2x$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (78mm,-39mm) {$\leftarrow$ combine like terms};
-
-\node[anchor=west,font=\sffamily\bfseries\fontsize{14}{14}\selectfont,text=accent] (l4) at (0,-52mm) {$x=9$};
-
-\foreach \y in {-3,-16,-29,-42}{
-  \draw[accent,->,line width=1pt] (4mm,\y mm) -- (4mm,\y mm -5mm);
-}
-\end{tikzpicture}
+\begin{textblock*}{158mm}(26mm,67mm)
+{\fontsize{13}{16}\selectfont
+$\dfrac{2}{3}(x+3)=x-1\ \Longrightarrow\ x=9$}
 \end{textblock*}
 
-% ---- CARD 2: Always check what's being asked ----
-\warnbgbox{16}{127}{178}{48}
-\pillwarn{26}{130}{Check what's actually asked}
+% ---- CARD 2: Sign-flip rule ----
+\cardbg{16}{88}{178}{70}
+\pill{26}{91}{Sign-flip rule (ishora almashish qoidasi)}
 
-\begin{textblock*}{158mm}(26mm,142mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-Most missed SAT point: solving for $x$ correctly, then answering $x$ when a
-different expression is asked.}
-\end{textblock*}
-
-\begin{textblock*}{75mm}(26mm,156mm)
-{\fontsize{10}{13}\selectfont
-$3x+5=20$. Find $6x+10$.\\[1.5mm]
-{\color{warn}\sffamily\bfseries Wrong:} $x=5$, answer "5".}
-\end{textblock*}
-
-\begin{textblock*}{75mm}(107mm,156mm)
-{\fontsize{10}{13}\selectfont
-$x=5 \to 6(5)+10=40$.\\[1.5mm]
-{\color{accent}\sffamily\bfseries Right: $40$, not $x$.}}
-\end{textblock*}
-
-% ---- CARD 3: Sign-flip rule ----
-\cardbg{16}{183}{178}{72}
-\pill{26}{186}{Sign-flip rule (ishora almashish qoidasi)}
-
-\begin{textblock*}{158mm}(26mm,199mm)
+\begin{textblock*}{158mm}(26mm,104mm)
 {\fontsize{11}{14}\selectfont
 \begin{tabular}{|p{80mm}|>{\centering\arraybackslash}p{70mm}|}
 \hline
@@ -191,9 +133,52 @@ Multiply / divide by a positive & No \\ \hline
 \end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,235mm)
+\begin{textblock*}{158mm}(26mm,146mm)
+{\fontsize{13}{16}\selectfont
+$-3x+5\le20\ \Longrightarrow\ x\ge-5$}
+\end{textblock*}
+
+% ---- CARD 3: Graphing the solution ----
+\cardbg{16}{166}{178}{110}
+\pill{26}{169}{Graphing the solution}
+
+\begin{textblock*}{158mm}(26mm,182mm)
 {\fontsize{11}{14}\selectfont
-$-3x+5\le20\ \Rightarrow\ -3x\le15\ \Rightarrow\ x\ge-5$ \quad {\fontsize{9.5}{12}\selectfont\color{accent}($\div(-3)$, sign flips)}}
+\begin{tabular}{|>{\centering\arraybackslash}p{20mm}|p{60mm}|p{58mm}|}
+\hline
+\rowcolor{accent}
+{\color{white}\textbf{Sign}} & {\color{white}\textbf{Circle}} & {\color{white}\textbf{Meaning}} \\ \hline
+$<$ or $>$ & Open circle & Boundary excluded \\ \hline
+$\le$ or $\ge$ & Closed circle & Boundary included \\ \hline
+\end{tabular}}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,211mm)
+\begin{tikzpicture}[every node/.style={font=\fontsize{10}{10}\selectfont}]
+\draw[ink,line width=0.9pt] (0,0) -- (70mm,0);
+\foreach \x/\lbl in {0/{-1},11.67/{0},23.3/{1},35/{2},46.7/{3},58.3/{4},70/{5}}{
+  \draw[ink,line width=0.7pt] (\x mm,-1mm) -- (\x mm,1mm);
+  \node at (\x mm,-5mm) {$\lbl$};
+}
+\draw[accent,line width=1.8pt] (46.7mm,0) -- (70mm,0);
+\draw[accent,line width=1.4pt,-{Stealth[length=2.2mm]}] (68mm,0) -- (76mm,0);
+\draw[accent,line width=1.4pt,fill=white] (46.7mm,0) circle (1.3mm);
+\node[font=\sffamily\bfseries\fontsize{10}{10}\selectfont,text=accent] at (46.7mm,7mm) {$x>3$ (open)};
+\end{tikzpicture}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,236mm)
+\begin{tikzpicture}[every node/.style={font=\fontsize{10}{10}\selectfont}]
+\draw[ink,line width=0.9pt] (0,0) -- (70mm,0);
+\foreach \x/\lbl in {0/{0},11.67/{1},23.3/{2},35/{3},46.7/{4},58.3/{5},70/{6}}{
+  \draw[ink,line width=0.7pt] (\x mm,-1mm) -- (\x mm,1mm);
+  \node at (\x mm,-5mm) {$\lbl$};
+}
+\draw[accent,line width=1.8pt] (0,0) -- (46.7mm,0);
+\draw[accent,line width=1.4pt,-{Stealth[length=2.2mm]}] (2mm,0) -- (-6mm,0);
+\draw[accent,line width=1.4pt,fill=accent] (46.7mm,0) circle (1.3mm);
+\node[font=\sffamily\bfseries\fontsize{10}{10}\selectfont,text=accent] at (46.7mm,7mm) {$x\le4$ (closed)};
+\end{tikzpicture}
 \end{textblock*}
 
 \clearpage
@@ -206,110 +191,70 @@ $-3x+5\le20\ \Rightarrow\ -3x\le15\ \Rightarrow\ x\ge-5$ \quad {\fontsize{9.5}{1
 \pagefooter{8}
 \mbox{}%
 
-% ---- CARD 4: Graphing the solution ----
-\cardbg{16}{33}{178}{68}
-\pill{26}{36}{Graphing the solution}
+% ---- CARD 4: Compound inequalities ----
+\cardbg{16}{33}{178}{130}
+\pill{26}{36}{Compound inequalities (qo'shma tengsizlik)}
 
 \begin{textblock*}{158mm}(26mm,49mm)
-{\fontsize{10.5}{13}\selectfont
-\begin{tabular}{|>{\centering\arraybackslash}p{22mm}|p{56mm}|p{58mm}|}
-\hline
-\rowcolor{accent}
-{\color{white}\textbf{Sign}} & {\color{white}\textbf{Circle}} & {\color{white}\textbf{Meaning}} \\ \hline
-$<$ or $>$ & Open circle & Boundary excluded \\ \hline
-$\le$ or $\ge$ & Closed circle & Boundary included \\ \hline
-\end{tabular}}
+{\fontsize{11}{14}\selectfont\textbf{``And''} -- one operation, all three parts.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,75mm)
-\begin{tikzpicture}[every node/.style={font=\fontsize{9}{9}\selectfont}]
-\draw[ink,line width=0.8pt] (0,0) -- (60mm,0);
-\foreach \x/\lbl in {0/{-1},10/{0},20/{1},30/{2},40/{3},50/{4},60/{5}}{
-  \draw[ink,line width=0.6pt] (\x mm,-0.8mm) -- (\x mm,0.8mm);
-  \node at (\x mm,-4mm) {$\lbl$};
+\begin{textblock*}{158mm}(26mm,59mm)
+{\fontsize{13}{16}\selectfont $-3<x+1\le5\ \Longrightarrow\ -4<x\le4$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,74mm)
+\begin{tikzpicture}[every node/.style={font=\fontsize{10}{10}\selectfont}]
+\draw[ink,line width=0.9pt] (0,0) -- (105mm,0);
+\foreach \x/\lbl in {0/{-6},17.5/{-4},35/{-2},52.5/{0},70/{2},87.5/{4},105/{6}}{
+  \draw[ink,line width=0.7pt] (\x mm,-1mm) -- (\x mm,1mm);
+  \node at (\x mm,-5mm) {$\lbl$};
 }
-\draw[accent,line width=1.6pt] (40mm,0) -- (60mm,0);
-\draw[accent,line width=1.2pt,-{Stealth[length=2mm]}] (58mm,0) -- (65mm,0);
-\draw[accent,line width=1.2pt,fill=white] (40mm,0) circle (1.1mm);
-\node[font=\sffamily\bfseries\fontsize{9}{9}\selectfont,text=accent] at (40mm,6mm) {$x>3$ (open)};
+\draw[accent,line width=1.8pt] (17.5mm,0) -- (87.5mm,0);
+\draw[accent,line width=1.4pt,fill=white] (17.5mm,0) circle (1.3mm);
+\draw[accent,line width=1.4pt,fill=accent] (87.5mm,0) circle (1.3mm);
 \end{tikzpicture}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,91mm)
-\begin{tikzpicture}[every node/.style={font=\fontsize{9}{9}\selectfont}]
-\draw[ink,line width=0.8pt] (0,0) -- (60mm,0);
-\foreach \x/\lbl in {0/{0},10/{1},20/{2},30/{3},40/{4},50/{5},60/{6}}{
-  \draw[ink,line width=0.6pt] (\x mm,-0.8mm) -- (\x mm,0.8mm);
-  \node at (\x mm,-4mm) {$\lbl$};
+\begin{textblock*}{158mm}(26mm,100mm)
+{\fontsize{11}{14}\selectfont\textbf{``Or''} -- each part solved separately.}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,110mm)
+{\fontsize{13}{16}\selectfont $2x+1<-3$ or $2x+1>7\ \Longrightarrow\ x<-2$ or $x>3$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,125mm)
+\begin{tikzpicture}[every node/.style={font=\fontsize{10}{10}\selectfont}]
+\draw[ink,line width=0.9pt] (0,0) -- (105mm,0);
+\foreach \x/\lbl in {0/{-6},17.5/{-4},35/{-2},52.5/{0},70/{2},87.5/{4},105/{6}}{
+  \draw[ink,line width=0.7pt] (\x mm,-1mm) -- (\x mm,1mm);
+  \node at (\x mm,-5mm) {$\lbl$};
 }
-\draw[accent,line width=1.6pt] (0,0) -- (40mm,0);
-\draw[accent,line width=1.2pt,-{Stealth[length=2mm]}] (2mm,0) -- (-5mm,0);
-\draw[accent,line width=1.2pt,fill=accent] (40mm,0) circle (1.1mm);
-\node[font=\sffamily\bfseries\fontsize{9}{9}\selectfont,text=accent] at (40mm,6mm) {$x\le4$ (closed)};
+\draw[accent,line width=1.8pt] (0,0) -- (35mm,0);
+\draw[accent,line width=1.4pt,-{Stealth[length=2.2mm]}] (3mm,0) -- (-5mm,0);
+\draw[accent,line width=1.4pt,fill=white] (35mm,0) circle (1.3mm);
+\draw[accent,line width=1.8pt] (70mm,0) -- (105mm,0);
+\draw[accent,line width=1.4pt,-{Stealth[length=2.2mm]}] (102mm,0) -- (110mm,0);
+\draw[accent,line width=1.4pt,fill=white] (70mm,0) circle (1.3mm);
 \end{tikzpicture}
 \end{textblock*}
 
-% ---- CARD 5: Compound inequalities ----
-\cardbg{16}{105}{178}{100}
-\pill{26}{108}{Compound inequalities (qo'shma tengsizlik)}
-
-\begin{textblock*}{158mm}(26mm,121mm)
-{\fontsize{10.5}{13}\selectfont\textbf{``And''} -- same operation on all three parts:\quad
-$-3<x+1\le5\ \Rightarrow\ -4<x\le4$}
+\begin{textblock*}{158mm}(26mm,150mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape
+Operation applies to all three parts of an ``and'' inequality -- not just one.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,131mm)
-\begin{tikzpicture}[every node/.style={font=\fontsize{9}{9}\selectfont}]
-\draw[ink,line width=0.8pt] (0,0) -- (90mm,0);
-\foreach \x/\lbl in {0/{-6},15/{-4},30/{-2},45/{0},60/{2},75/{4},90/{6}}{
-  \draw[ink,line width=0.6pt] (\x mm,-0.8mm) -- (\x mm,0.8mm);
-  \node at (\x mm,-4mm) {$\lbl$};
-}
-\draw[accent,line width=1.6pt] (15mm,0) -- (75mm,0);
-\draw[accent,line width=1.2pt,fill=white] (15mm,0) circle (1.1mm);
-\draw[accent,line width=1.2pt,fill=accent] (75mm,0) circle (1.1mm);
-\node[font=\sffamily\bfseries\fontsize{9}{9}\selectfont,text=accent] at (45mm,6mm) {$-4<x\le4$};
-\end{tikzpicture}
-\end{textblock*}
+% ---- CARD 5: Interval notation ----
+\cardbg{16}{173}{178}{42}
+\pill{26}{176}{Interval notation (oraliq belgilash)}
 
-\begin{textblock*}{158mm}(26mm,152mm)
-{\fontsize{10.5}{13}\selectfont\textbf{``Or''} -- solve each part separately:\quad
-$2x+1<-3$ or $2x+1>7\ \Rightarrow\ x<-2$ or $x>3$}
-\end{textblock*}
-
-\begin{textblock*}{158mm}(26mm,162mm)
-\begin{tikzpicture}[every node/.style={font=\fontsize{9}{9}\selectfont}]
-\draw[ink,line width=0.8pt] (0,0) -- (90mm,0);
-\foreach \x/\lbl in {0/{-6},15/{-4},30/{-2},45/{0},60/{2},75/{4},90/{6}}{
-  \draw[ink,line width=0.6pt] (\x mm,-0.8mm) -- (\x mm,0.8mm);
-  \node at (\x mm,-4mm) {$\lbl$};
-}
-\draw[accent,line width=1.6pt] (0,0) -- (30mm,0);
-\draw[accent,line width=1.2pt,-{Stealth[length=2mm]}] (5mm,0) -- (-2mm,0);
-\draw[accent,line width=1.2pt,fill=white] (30mm,0) circle (1.1mm);
-\draw[accent,line width=1.6pt] (60mm,0) -- (90mm,0);
-\draw[accent,line width=1.2pt,-{Stealth[length=2mm]}] (85mm,0) -- (92mm,0);
-\draw[accent,line width=1.2pt,fill=white] (60mm,0) circle (1.1mm);
-\node[font=\sffamily\bfseries\fontsize{9}{9}\selectfont,text=accent] at (45mm,6mm) {$x<-2$ or $x>3$};
-\end{tikzpicture}
-\end{textblock*}
-
-\begin{textblock*}{158mm}(26mm,186mm)
-{\fontsize{10}{13}\selectfont\color{warn}\sffamily\bfseries WARNING:} {\fontsize{10}{13}\selectfont
-the operation must apply to \textbf{all three parts} -- not just one.}
-\end{textblock*}
-
-% ---- CARD 6: Notation note ----
-\cardbg{16}{215}{178}{38}
-\pill{26}{218}{Interval notation (oraliq belgilash)}
-
-\begin{textblock*}{158mm}(26mm,231mm)
+\begin{textblock*}{158mm}(26mm,189mm)
 {\fontsize{10.5}{13}\selectfont\color{ink}
-Traditional textbooks use a semicolon; SAT/English sources use a comma --
-same meaning:}
+Traditional textbooks: semicolon. SAT / English sources: comma.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,244mm)
+\begin{textblock*}{158mm}(26mm,200mm)
 {\fontsize{13}{16}\selectfont
 Traditional: $(2;\ 5]$ \hspace{15mm} SAT: $(2,\ 5]$}
 \end{textblock*}
