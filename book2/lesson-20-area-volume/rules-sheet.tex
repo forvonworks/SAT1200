@@ -1,0 +1,192 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usetikzlibrary{fit,calc,positioning,arrows.meta}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{602785}
+\definecolor{badge}{HTML}{B8A0C8}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{100mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\videobanner}[1]{%
+\begin{textblock*}{178mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (178mm,-10mm);
+\draw[white,line width=0.6pt] (3mm,-1.7mm) rectangle (11.5mm,-8.3mm);
+\node[white,font=\sffamily\fontsize{4}{4.4}\selectfont,align=center] at (7.25mm,-5mm) {QR\\CODE};
+\node[white,font=\sffamily\bfseries\fontsize{9.5}{11}\selectfont,anchor=west] at (16mm,-5.6mm) {WATCH THE VIDEO BEFORE YOU SOLVE};
+\node[white,font=\sffamily\fontsize{7.5}{8}\selectfont,anchor=east] at (174mm,-5.6mm) {YouTube ~\textbullet~ #1};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\newcommand{\cardbg}[4]{%
+\begin{textblock*}{#3mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\fill[badge!22,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pill}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {RULE ~\textperiodcentered~ #3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+
+% ======================================================================
+% PAGE 1
+% ======================================================================
+\topicheader{20}{Area \& Volume}
+\videobanner{Lesson 20}
+\pagefooter{108}
+\mbox{}%
+
+% ---- CARD 1: Area formulas ----
+\cardbg{16}{40}{178}{95}
+\pill{26}{43}{Area formulas (maydon)}
+
+\begin{textblock*}{158mm}(26mm,56mm)
+{\fontsize{10.5}{14}\selectfont
+\begin{tabular}{|p{48mm}|p{48mm}|p{49mm}|}
+\hline
+\rowcolor{accent}
+{\color{white}\textbf{Shape}} & {\color{white}\textbf{Formula}} & {\color{white}\textbf{Variables}} \\ \hline
+Rectangle & $A=lw$ & $l$=length, $w$=width \\ \hline
+Triangle & $A=\dfrac12bh$ & $b$=base, $h$=height \\ \hline
+Parallelogram & $A=bh$ & $b$=base, $h$=height \\ \hline
+Trapezoid & $A=\dfrac12(a+b)h$ & $a,b$=parallel sides \\ \hline
+Circle & $A=\pi r^2$ & $r$=radius \\ \hline
+\end{tabular}}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,122mm)
+{\fontsize{10.5}{13}\selectfont\color{ink}
+If given the \textbf{diameter}, halve it first: $r=d/2$. $d=18\ \Rightarrow\ r=9\ \Rightarrow\ A=81\pi$, not $324\pi$.}
+\end{textblock*}
+
+\clearpage
+
+% ======================================================================
+% PAGE 2
+% ======================================================================
+\topicheader{20}{Area \& Volume}
+\pagekicker{Rules sheet -- 2/2}
+\pagefooter{109}
+\mbox{}%
+
+% ---- CARD 2: Volume formulas ----
+\cardbg{16}{33}{178}{98}
+\pill{26}{36}{Volume formulas (hajm)}
+
+\begin{textblock*}{158mm}(26mm,49mm)
+{\fontsize{10.5}{14}\selectfont
+\begin{tabular}{|p{45mm}|p{45mm}|p{55mm}|}
+\hline
+\rowcolor{accent}
+{\color{white}\textbf{Solid}} & {\color{white}\textbf{Formula}} & {\color{white}\textbf{Note}} \\ \hline
+Rectangular prism & $V=lwh$ & product of 3 dimensions \\ \hline
+Cylinder & $V=\pi r^2h$ & base area $\times$ height \\ \hline
+Cone & $V=\dfrac13\pi r^2h$ & one-third of same-$r,h$ cylinder \\ \hline
+Sphere & $V=\dfrac43\pi r^3$ & depends only on $r$ -- no height \\ \hline
+\end{tabular}}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,113mm)
+{\fontsize{10.5}{13}\selectfont\color{ink}
+Never drop the $\frac13$ (cone) or $\frac43$ (sphere) -- a cone is exactly
+one-third of the matching cylinder's volume.}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,124mm)
+{\fontsize{12}{15}\selectfont
+$r=6$: $V=\dfrac43\pi(6)^3=\dfrac43\pi(216)=288\pi$}
+\end{textblock*}
+
+% ---- CARD 3: Composite figures ----
+\cardbg{16}{141}{178}{80}
+\pill{26}{144}{Composite figures: add or subtract}
+
+\begin{textblock*}{158mm}(26mm,157mm)
+{\fontsize{10.5}{13}\selectfont\color{ink}
+Pieces joined together $\to$ \textbf{add}. A piece cut out/a hole $\to$
+\textbf{subtract}.}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,169mm)
+{\fontsize{11}{14}\selectfont
+Joined: $10\times6$ rect. $+\,4\times3$ rect. $=60+12=72$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,181mm)
+{\fontsize{11}{14}\selectfont
+Hole: $10\times10$ square, radius-$3$ hole $=100-9\pi$ (not $100+9\pi$)}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,196mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape
+Sanity check: subtracting a piece must give a result smaller than the
+whole, never larger.}
+\end{textblock*}
+
+\end{document}
