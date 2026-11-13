@@ -15,7 +15,6 @@
 \definecolor{accent}{HTML}{602785}
 \definecolor{badge}{HTML}{B8A0C8}
 \definecolor{ink}{HTML}{2A2E30}
-\definecolor{warn}{HTML}{3D1856}
 
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{1mm}
@@ -80,29 +79,11 @@
 \end{textblock*}%
 }
 
-\newcommand{\warnbgbox}[4]{%
-\begin{textblock*}{#3mm}(#1mm,#2mm)
-\begin{tikzpicture}
-\fill[badge!38,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
-\draw[warn,line width=1pt,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
-\end{tikzpicture}
-\end{textblock*}%
-}
-
 \newcommand{\pill}[3]{%
 \begin{textblock*}{160mm}(#1mm,#2mm)
 \begin{tikzpicture}
 \node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
       rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {RULE ~\textperiodcentered~ #3};
-\end{tikzpicture}
-\end{textblock*}%
-}
-
-\newcommand{\pillwarn}[3]{%
-\begin{textblock*}{160mm}(#1mm,#2mm)
-\begin{tikzpicture}
-\node[fill=warn,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
-      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {WARNING ~\textperiodcentered~ #3};
 \end{tikzpicture}
 \end{textblock*}%
 }
@@ -121,21 +102,21 @@
 \pagefooter{12}
 \mbox{}%
 
-% ---- CARD 1: What a solution is ----
-\cardbg{16}{40}{178}{70}
-\pill{26}{43}{Solution of a system -- the crossing point}
+% ---- CARD 1: Solution of a system ----
+\cardbg{16}{40}{178}{68}
+\pill{26}{43}{Solution of a system}
 
-\begin{textblock*}{110mm}(26mm,56mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-The solution is the $(x,y)$ pair that makes \textbf{both} equations true --
-graphically, where the two lines cross.\\[3mm]
-\textbf{Check:} is $(2,3)$ a solution?\\
-$x+y=5$: \ $2+3=5$ -- true.\\
-$2x-y=1$: \ $2(2)-3=1$ -- true.\\
-{\color{accent}\textbf{Both true -- so yes, it's a solution.}}}
+\begin{textblock*}{100mm}(26mm,56mm)
+{\fontsize{11}{14}\selectfont\color{ink}
+Solution = the point where both lines cross.}
 \end{textblock*}
 
-\begin{textblock*}{55mm}(140mm,59mm)
+\begin{textblock*}{100mm}(26mm,66mm)
+{\fontsize{11}{14}\selectfont
+$(2,3)$: $2+3=5$ and $2(2)-3=1$ -- both true.}
+\end{textblock*}
+
+\begin{textblock*}{55mm}(135mm,52mm)
 \begin{tikzpicture}[scale=1]
 \draw[ink!40,->] (0,0) -- (40mm,0) node[right,font=\tiny] {$x$};
 \draw[ink!40,->] (0,-20mm) -- (0,20mm) node[above,font=\tiny] {$y$};
@@ -147,61 +128,29 @@ $2x-y=1$: \ $2(2)-3=1$ -- true.\\
 \end{textblock*}
 
 % ---- CARD 2: Substitution ----
-\cardbg{16}{115}{178}{78}
-\pill{26}{118}{Substitution method}
+\cardbg{16}{114}{178}{40}
+\pill{26}{117}{Substitution method}
 
-\begin{textblock*}{158mm}(26mm,131mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-If one equation already isolates a variable, plug that expression into the
-other equation.}
+\begin{textblock*}{158mm}(26mm,130mm)
+{\fontsize{11}{14}\selectfont\color{ink}
+Isolate one variable, substitute into the other equation.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,142mm)
-\begin{tikzpicture}[every node/.style={font=\fontsize{11.5}{11.5}\selectfont}]
-\node[anchor=west] (l0) at (0,0) {$y=2x-1,\quad 3x+y=9$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (72mm,0) {$\leftarrow$ $y$ is isolated};
-
-\node[anchor=west] (l1) at (0,-12mm) {$3x+(2x-1)=9$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (72mm,-12mm) {$\leftarrow$ substitute};
-
-\node[anchor=west] (l2) at (0,-24mm) {$5x-1=9\ \Rightarrow\ x=2$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (72mm,-24mm) {$\leftarrow$ solve};
-
-\node[anchor=west,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,text=accent] (l3) at (0,-36mm) {$y=2(2)-1=3\ \Rightarrow\ (x,y)=(2,3)$};
-
-\foreach \y in {-3,-15,-27}{
-  \draw[accent,->,line width=1pt] (4mm,\y mm) -- (4mm,\y mm -5mm);
-}
-\end{tikzpicture}
+\begin{textblock*}{158mm}(26mm,141mm)
+{\fontsize{13}{16}\selectfont $y=2x-1,\ 3x+y=9\ \Longrightarrow\ (x,y)=(2,3)$}
 \end{textblock*}
 
 % ---- CARD 3: Elimination ----
-\cardbg{16}{198}{178}{86}
-\pill{26}{201}{Elimination method}
+\cardbg{16}{160}{178}{40}
+\pill{26}{163}{Elimination method}
 
-\begin{textblock*}{158mm}(26mm,214mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-Multiply one or both equations so matching coefficients cancel, then add or
-subtract.}
+\begin{textblock*}{158mm}(26mm,176mm)
+{\fontsize{11}{14}\selectfont\color{ink}
+Multiply so coefficients match, then add or subtract.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,225mm)
-\begin{tikzpicture}[every node/.style={font=\fontsize{11.5}{11.5}\selectfont}]
-\node[anchor=west] (l0) at (0,0) {$x+2y=11,\quad 3x+y=18$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (72mm,0) {$\leftarrow$ eliminate $y$};
-
-\node[anchor=west] (l1) at (0,-12mm) {$3x+y=18\ \ (\times2)\ \Rightarrow\ 6x+2y=36$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (82mm,-12mm) {$\leftarrow$ multiply eq. 2 by $2$};
-
-\node[anchor=west] (l2) at (0,-24mm) {$(6x+2y)-(x+2y)=36-11\ \Rightarrow\ 5x=25$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (99mm,-24mm) {$\leftarrow$ subtract};
-
-\node[anchor=west,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,text=accent] (l3) at (0,-36mm) {$x=5\ \Rightarrow\ y=3\ \Rightarrow\ (x,y)=(5,3)$};
-
-\foreach \y in {-3,-15,-27}{
-  \draw[accent,->,line width=1pt] (4mm,\y mm) -- (4mm,\y mm -5mm);
-}
-\end{tikzpicture}
+\begin{textblock*}{158mm}(26mm,187mm)
+{\fontsize{13}{16}\selectfont $x+2y=11,\ 3x+y=18\ \Longrightarrow\ (x,y)=(5,3)$}
 \end{textblock*}
 
 \clearpage
@@ -214,84 +163,47 @@ subtract.}
 \pagefooter{13}
 \mbox{}%
 
-% ---- CARD 4: WARNING -- subtract every term ----
-\warnbgbox{16}{33}{178}{44}
-\pillwarn{26}{36}{Subtract EVERY term, not just one}
+% ---- CARD 4: Special cases ----
+\cardbg{16}{33}{178}{130}
+\pill{26}{36}{Special cases}
 
-\begin{textblock*}{158mm}(26mm,48mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-In $(6x+2y)-(x+2y)$, \textbf{every} term in the second parentheses changes
-sign -- not just the first:\\[2mm]
-$6x+2y-x-2y=5x+0y=5x$\quad
-{\color{warn}\textbf{(dropping $2y$ fails to eliminate $y$!)}}}
-\end{textblock*}
-
-% ---- CARD 5: Special cases ----
-\cardbg{16}{83}{178}{112}
-\pill{26}{86}{Special cases: no solution \& infinitely many}
-
-\begin{textblock*}{158mm}(26mm,99mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-Compare the ratio of the $x$ and $y$ coefficients:}
-\end{textblock*}
-
-\begin{textblock*}{158mm}(26mm,108mm)
-{\fontsize{10}{13}\selectfont
+\begin{textblock*}{158mm}(26mm,49mm)
+{\fontsize{11}{14}\selectfont
 \begin{tabular}{|p{54mm}|>{\centering\arraybackslash}p{91mm}|}
 \hline
 \rowcolor{accent}
-{\color{white}\textbf{Ratios}} & {\color{white}\textbf{Result}} \\ \hline
-Coefficient ratios unequal & One solution \\ \hline
-Coefficients equal, constants differ & No solution (parallel lines) \\ \hline
-Coefficients and constants all equal & Infinitely many (same line) \\ \hline
+{\color{white}\textbf{Coefficient ratios}} & {\color{white}\textbf{Result}} \\ \hline
+Unequal & One solution \\ \hline
+Equal, constants differ & No solution \\ \hline
+Equal, constants equal & Infinitely many \\ \hline
 \end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{50mm}(26mm,151mm)
-{\centering\fontsize{9}{9}\selectfont\textbf{One solution}\par}
+\begin{textblock*}{50mm}(26mm,95mm)
+{\centering\fontsize{10}{10}\selectfont\textbf{One solution}\par}
 \begin{tikzpicture}
-\draw[ink!40,->] (0,0) -- (30mm,0); \draw[ink!40,->] (0,-12mm) -- (0,12mm);
-\draw[accent,line width=1pt] (2mm,-9mm) -- (28mm,9mm);
-\draw[accent!55,line width=1pt] (2mm,9mm) -- (28mm,-9mm);
-\filldraw[ink] (15mm,0) circle (0.8mm);
+\draw[ink!40,->] (0,0) -- (36mm,0); \draw[ink!40,->] (0,-14mm) -- (0,14mm);
+\draw[accent,line width=1.2pt] (3mm,-10mm) -- (33mm,10mm);
+\draw[accent!55,line width=1.2pt] (3mm,10mm) -- (33mm,-10mm);
+\filldraw[ink] (18mm,0) circle (1mm);
 \end{tikzpicture}
 \end{textblock*}
 
-\begin{textblock*}{50mm}(82mm,151mm)
-{\centering\fontsize{9}{9}\selectfont\textbf{No solution}\par}
+\begin{textblock*}{50mm}(82mm,95mm)
+{\centering\fontsize{10}{10}\selectfont\textbf{No solution}\par}
 \begin{tikzpicture}
-\draw[ink!40,->] (0,0) -- (30mm,0); \draw[ink!40,->] (0,-12mm) -- (0,12mm);
-\draw[accent,line width=1pt] (2mm,-7mm) -- (28mm,7mm);
-\draw[accent!55,line width=1pt] (2mm,-2mm) -- (28mm,12mm);
+\draw[ink!40,->] (0,0) -- (36mm,0); \draw[ink!40,->] (0,-14mm) -- (0,14mm);
+\draw[accent,line width=1.2pt] (3mm,-8mm) -- (33mm,8mm);
+\draw[accent!55,line width=1.2pt] (3mm,-2mm) -- (33mm,13mm);
 \end{tikzpicture}
 \end{textblock*}
 
-\begin{textblock*}{50mm}(138mm,151mm)
-{\centering\fontsize{9}{9}\selectfont\textbf{Infinitely many}\par}
+\begin{textblock*}{50mm}(138mm,95mm)
+{\centering\fontsize{10}{10}\selectfont\textbf{Infinitely many}\par}
 \begin{tikzpicture}
-\draw[ink!40,->] (0,0) -- (30mm,0); \draw[ink!40,->] (0,-12mm) -- (0,12mm);
-\draw[accent,line width=1.6pt] (2mm,-9mm) -- (28mm,9mm);
-\draw[accent,line width=0.6pt,dashed] (2mm,-9mm) -- (28mm,9mm);
+\draw[ink!40,->] (0,0) -- (36mm,0); \draw[ink!40,->] (0,-14mm) -- (0,14mm);
+\draw[accent,line width=2pt] (3mm,-10mm) -- (33mm,10mm);
 \end{tikzpicture}
-\end{textblock*}
-
-\begin{textblock*}{158mm}(26mm,179mm)
-{\fontsize{10}{13}\selectfont\color{ink}
-\textbf{Sign while solving:} if eliminating a variable makes \textbf{both}
-variables vanish into a false statement ($0=12$) -- \textbf{no solution}; if
-it's always true ($0=0$) -- \textbf{infinitely many}.}
-\end{textblock*}
-
-% ---- CARD 6: Always check what's asked ----
-\warnbgbox{16}{201}{178}{62}
-\pillwarn{26}{204}{Always check what's being asked}
-
-\begin{textblock*}{158mm}(26mm,216mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-$x+y=10$, $x-y=2$. \textbf{Question:} find $xy$. (Not $x$ or $y$!)\\[2mm]
-Solve: $x=6$, $y=4$. The question asked for $xy$, so the last step is to
-multiply: $6\times4=24$.\\[2mm]
-{\color{accent}\textbf{Answer: $xy=24$ -- not $x=6$ or $y=4$.}}}
 \end{textblock*}
 
 \end{document}
