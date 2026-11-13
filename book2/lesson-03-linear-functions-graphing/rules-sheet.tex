@@ -46,6 +46,18 @@
 \end{textblock*}
 }
 
+\newcommand{\videobanner}[1]{%
+\begin{textblock*}{178mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (178mm,-10mm);
+\draw[white,line width=0.6pt] (3mm,-1.7mm) rectangle (11.5mm,-8.3mm);
+\node[white,font=\sffamily\fontsize{4}{4.4}\selectfont,align=center] at (7.25mm,-5mm) {QR\\CODE};
+\node[white,font=\sffamily\bfseries\fontsize{9.5}{11}\selectfont,anchor=west] at (16mm,-5.6mm) {WATCH THE VIDEO BEFORE YOU SOLVE};
+\node[white,font=\sffamily\fontsize{7.5}{8}\selectfont,anchor=east] at (174mm,-5.6mm) {YouTube ~\textbullet~ #1};
+\end{tikzpicture}
+\end{textblock*}
+}
+
 \newcommand{\pagefooter}[1]{%
 \begin{textblock*}{194mm}(8mm,286.41mm)
   \begin{tikzpicture}
@@ -81,7 +93,7 @@
 \begin{textblock*}{160mm}(#1mm,#2mm)
 \begin{tikzpicture}
 \node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
-      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {QOIDA ~\textperiodcentered~ #3};
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {RULE ~\textperiodcentered~ #3};
 \end{tikzpicture}
 \end{textblock*}%
 }
@@ -90,7 +102,7 @@
 \begin{textblock*}{160mm}(#1mm,#2mm)
 \begin{tikzpicture}
 \node[fill=warn,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
-      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {DIQQAT ~\textperiodcentered~ #3};
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {WARNING ~\textperiodcentered~ #3};
 \end{tikzpicture}
 \end{textblock*}%
 }
@@ -104,28 +116,28 @@
 % ======================================================================
 % PAGE 1
 % ======================================================================
-\topicheader{3}{Chiziqli funksiyalar va grafiklar}
-\pagekicker{Qoidalar varag'i -- 1/2}
+\topicheader{3}{Linear Functions \& Graphing}
+\videobanner{Lesson 3}
 \pagefooter{17}
 \mbox{}%
 
-% ---- CARD 1: Burchak koeffitsienti (slope) ----
-\cardbg{16}{33}{178}{90}
-\pill{26}{36}{Burchak koeffitsienti (slope)}
+% ---- CARD 1: Slope ----
+\cardbg{16}{40}{178}{90}
+\pill{26}{43}{Slope (qiyalik)}
 
-\begin{textblock*}{158mm}(26mm,49mm)
+\begin{textblock*}{158mm}(26mm,56mm)
 {\fontsize{13}{15}\selectfont $m=\dfrac{y_2-y_1}{x_2-x_1}$}
 \end{textblock*}
 
-\begin{textblock*}{100mm}(26mm,66mm)
+\begin{textblock*}{100mm}(26mm,73mm)
 {\fontsize{10}{13}\selectfont\color{ink}
-\textbf{Atama ko'prigi:} an'anaviy darslikda bu $k$ (va $y=kx+b$), SAT'da esa
-\textbf{slope} va $m$ (va $y=mx+b$) deyiladi -- bir xil narsa.\\[2mm]
-\textbf{Misol:} $(3,2)$ va $(7,10)$ orqali:\\
+\textbf{Term bridge:} traditional textbooks call this $k$ (and $y=kx+b$);
+the SAT calls it \textbf{slope} and $m$ (and $y=mx+b$) -- same thing.\\[2mm]
+\textbf{Example:} through $(3,2)$ and $(7,10)$:\\
 $m=\dfrac{10-2}{7-3}=\dfrac{8}{4}=2$}
 \end{textblock*}
 
-\begin{textblock*}{60mm}(128mm,66mm)
+\begin{textblock*}{60mm}(128mm,73mm)
 \begin{tikzpicture}
 \draw[ink!40,->] (0,0) -- (38mm,0) node[right,font=\tiny]{$x$};
 \draw[ink!40,->] (0,-3mm) -- (0,22mm) node[above,font=\tiny]{$y$};
@@ -138,47 +150,47 @@ $m=\dfrac{10-2}{7-3}=\dfrac{8}{4}=2$}
 \end{tikzpicture}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,108mm)
+\begin{textblock*}{158mm}(26mm,110mm)
 {\fontsize{10.5}{13}\selectfont\color{ink}
-\textbf{$y=mx+b$ da:} $m$ -- qiyalik, $b$ -- kesilgan nuqta. Ularni
-chalkashtirmang: $y=5x-3$ da qiyalik $5$, kesilgan nuqta esa $-3$.}
+\textbf{In $y=mx+b$:} $m$ is the slope, $b$ is the $y$-intercept. Don't mix
+them up: in $y=5x-3$, slope is $5$, $y$-intercept is $-3$.}
 \end{textblock*}
 
-% ---- CARD 2: DIQQAT -- inverted formula ----
-\warnbgbox{16}{127}{178}{44}
-\pillwarn{26}{130}{Formulani teskari qo'llamang}
+% ---- CARD 2: WARNING -- inverted formula ----
+\warnbgbox{16}{134}{178}{44}
+\pillwarn{26}{137}{Don't invert the formula}
 
-\begin{textblock*}{158mm}(26mm,142mm)
+\begin{textblock*}{158mm}(26mm,149mm)
 {\fontsize{10.5}{13}\selectfont\color{ink}
-Har doim \textbf{tepaga (y) o'zgarish -- pastga (x) o'zgarish} tartibida:
-$m=\dfrac{y_2-y_1}{x_2-x_1}$, \textbf{hech qachon} $\dfrac{x_2-x_1}{y_2-y_1}$ emas.}
+Always \textbf{rise ($y$) over run ($x$)}: $m=\dfrac{y_2-y_1}{x_2-x_1}$ --
+\textbf{never} $\dfrac{x_2-x_1}{y_2-y_1}$.}
 \end{textblock*}
 
-% ---- CARD 3: Nuqta-qiyalik shakli ----
-\cardbg{16}{177}{178}{100}
-\pill{26}{180}{To'g'ri chiziq tenglamasini yozish}
+% ---- CARD 3: Point-slope form ----
+\cardbg{16}{184}{178}{100}
+\pill{26}{187}{Writing a line's equation}
 
-\begin{textblock*}{158mm}(26mm,193mm)
-{\fontsize{12}{14}\selectfont Nuqta-qiyalik shakli: $y-y_1=m(x-x_1)$}
+\begin{textblock*}{158mm}(26mm,200mm)
+{\fontsize{12}{14}\selectfont Point-slope form: $y-y_1=m(x-x_1)$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,204mm)
+\begin{textblock*}{158mm}(26mm,211mm)
 {\fontsize{10}{13}\selectfont\color{ink}
-\textbf{Qiyalik $4$, nuqta $(1,3)$:}\\
+\textbf{Slope $4$, point $(1,3)$:}\\
 $y-3=4(x-1)\ \Rightarrow\ y-3=4x-4\ \Rightarrow\ y=4x-1$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,222mm)
+\begin{textblock*}{158mm}(26mm,229mm)
 {\fontsize{10}{13}\selectfont\color{ink}
-\textbf{Ikki nuqta $(2,1)$ va $(4,7)$:} avval $m$ topiladi:
-$m=\dfrac{7-1}{4-2}=3$; so'ng $(2,1)$ bilan:\\
+\textbf{Two points $(2,1)$ and $(4,7)$:} find $m$ first:
+$m=\dfrac{7-1}{4-2}=3$; then use $(2,1)$:\\
 $y-1=3(x-2)\ \Rightarrow\ y-1=3x-6\ \Rightarrow\ y=3x-5$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,261mm)
+\begin{textblock*}{158mm}(26mm,268mm)
 {\fontsize{9.5}{12}\selectfont\color{black!55}\itshape
-Slope-intercept shakl ($y=mx+b$) -- grafik chizish va qiyalikni o'qish
-uchun qulay; nuqta-qiyalik shakli -- tenglama yozishni boshlash uchun qulay.}
+Slope-intercept form ($y=mx+b$) is best for graphing and reading the slope;
+point-slope form is best for starting from a point and a slope.}
 \end{textblock*}
 
 \clearpage
@@ -186,24 +198,24 @@ uchun qulay; nuqta-qiyalik shakli -- tenglama yozishni boshlash uchun qulay.}
 % ======================================================================
 % PAGE 2
 % ======================================================================
-\topicheader{3}{Chiziqli funksiyalar va grafiklar}
-\pagekicker{Qoidalar varag'i -- 2/2}
+\topicheader{3}{Linear Functions \& Graphing}
+\pagekicker{Rules sheet -- 2/2}
 \pagefooter{18}
 \mbox{}%
 
-% ---- CARD 4: Parallel va perpendikulyar ----
+% ---- CARD 4: Parallel and perpendicular ----
 \cardbg{16}{33}{178}{98}
-\pill{26}{36}{Parallel va perpendikulyar chiziqlar}
+\pill{26}{36}{Parallel \& perpendicular lines}
 
 \begin{textblock*}{158mm}(26mm,49mm)
 {\fontsize{12}{14}\selectfont
-$m_1=m_2$ (parallel) \hspace{10mm} $m_1\times m_2=-1$ (perpendikulyar)}
+$m_1=m_2$ (parallel) \hspace{10mm} $m_1\times m_2=-1$ (perpendicular)}
 \end{textblock*}
 
 \begin{textblock*}{95mm}(26mm,62mm)
 {\fontsize{10}{13}\selectfont\color{ink}
-\textbf{$y=2x-5$ ga perpendikulyar, $(4,1)$ dan o'tuvchi:}\\
-Qiyalik $2$ ning manfiy teskarisi: $-\dfrac12$.\\
+\textbf{Perpendicular to $y=2x-5$, through $(4,1)$:}\\
+Negative reciprocal of slope $2$: $-\dfrac12$.\\
 $y-1=-\dfrac12(x-4)\ \Rightarrow\ y=-\dfrac12x+3$}
 \end{textblock*}
 
@@ -219,9 +231,8 @@ $y-1=-\dfrac12(x-4)\ \Rightarrow\ y=-\dfrac12x+3$}
 
 \begin{textblock*}{158mm}(26mm,98mm)
 {\fontsize{10.5}{13}\selectfont\color{ink}
-\textbf{Parallel chiziqlar} -- bir xil qiyalik, boshqa kesilgan nuqta (hech
-qachon kesishmaydi). \textbf{Perpendikulyar} -- to'g'ri burchak ostida
-kesishadi.}
+\textbf{Parallel lines} -- same slope, different $y$-intercept (never
+cross). \textbf{Perpendicular} -- cross at a right angle.}
 \end{textblock*}
 
 \begin{textblock*}{50mm}(26mm,112mm)
@@ -234,7 +245,7 @@ kesishadi.}
 \end{textblock*}
 
 \begin{textblock*}{50mm}(110mm,112mm)
-{\centering\fontsize{9}{9}\selectfont\textbf{Perpendikulyar}\par}
+{\centering\fontsize{9}{9}\selectfont\textbf{Perpendicular}\par}
 \begin{tikzpicture}
 \draw[ink!40,->] (0,0) -- (32mm,0); \draw[ink!40,->] (0,-10mm) -- (0,10mm);
 \draw[accent,line width=1pt] (3mm,-8mm) -- (27mm,8mm);
@@ -242,39 +253,39 @@ kesishadi.}
 \end{tikzpicture}
 \end{textblock*}
 
-% ---- CARD 5: DIQQAT -- negative reciprocal ----
+% ---- CARD 5: WARNING -- negative reciprocal ----
 \warnbgbox{16}{137}{178}{42}
-\pillwarn{26}{140}{Manfiy teskarini to'liq bajaring}
+\pillwarn{26}{140}{Flip AND negate}
 
 \begin{textblock*}{158mm}(26mm,152mm)
 {\fontsize{10.5}{13}\selectfont\color{ink}
-Perpendikulyar qiyalik ham teskari, ham ishorasi qarama-qarshi bo'ladi:
-$\dfrac23 \to -\dfrac32$ -- faqat teskarisini olib, ishorani unutmang.}
+A perpendicular slope is both flipped and sign-reversed:
+$\dfrac23 \to -\dfrac32$ -- don't just flip and forget the sign.}
 \end{textblock*}
 
-% ---- CARD 6: Amaliy ma'no ----
+% ---- CARD 6: Real-world meaning ----
 \cardbg{16}{185}{178}{95}
-\pill{26}{188}{Qiyalik va kesilgan nuqtaning amaliy ma'nosi}
+\pill{26}{188}{Real-world meaning of slope \& intercept}
 
 \begin{textblock*}{158mm}(26mm,201mm)
 {\fontsize{10.5}{13}\selectfont\color{ink}
-Amaliy masalada: \textbf{qiyalik} = o'zgarish tezligi (har birlik uchun),
-\textbf{kesilgan nuqta} = boshlang'ich ($x=0$ dagi) qiymat.\\[2mm]
-\textbf{Misol:} $C(x)=2000x+5000$ (taksi, $x$=km). $C(10)=2000(10)+5000=25000$
-so'm. ($2000$ -- 1 km narxi; $5000$ -- boshlang'ich to'lov.)}
+In a word problem: \textbf{slope} = rate of change (per unit), \textbf{$y$-intercept}
+= starting value (at $x=0$).\\[2mm]
+\textbf{Example:} $C(x)=2000x+5000$ (taxi fare, $x$ = km). $C(10)=2000(10)+5000=25000$
+som. ($2000$ = price per km; $5000$ = starting fee.)}
 \end{textblock*}
 
 \begin{textblock*}{158mm}(26mm,236mm)
-{\fontsize{10}{13}\selectfont\color{warn}\sffamily\bfseries DIQQAT:}
+{\fontsize{10}{13}\selectfont\color{warn}\sffamily\bfseries WARNING:}
 {\fontsize{10}{13}\selectfont\color{ink}
-savolni oxirigacha o'qing -- qiyalikning o'zi so'ralyaptimi, ma'lum $x$ dagi
-qiymatmi, yoki $x$ ning o'zi so'ralyaptimi? Uchalasi ham boshqa-boshqa amal.}
+read the question fully -- is it asking for the slope itself, the value at
+a given $x$, or $x$ itself? Each needs a different move.}
 \end{textblock*}
 
 \begin{textblock*}{158mm}(26mm,262mm)
 {\fontsize{9.5}{12}\selectfont\color{black!55}\itshape
-Ishora ham ma'noga ega: manfiy qiyalik -- kamayish (masalan, suv bakdan
-chiqib ketayotgan suv), musbat qiyalik -- o'sish.}
+The sign matters too: a negative slope means decrease (e.g. water draining
+from a tank), a positive slope means increase.}
 \end{textblock*}
 
 \end{document}
