@@ -46,6 +46,18 @@
 \end{textblock*}
 }
 
+\newcommand{\videobanner}[1]{%
+\begin{textblock*}{178mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (178mm,-10mm);
+\draw[white,line width=0.6pt] (3mm,-1.7mm) rectangle (11.5mm,-8.3mm);
+\node[white,font=\sffamily\fontsize{4}{4.4}\selectfont,align=center] at (7.25mm,-5mm) {QR\\CODE};
+\node[white,font=\sffamily\bfseries\fontsize{9.5}{11}\selectfont,anchor=west] at (16mm,-5.6mm) {WATCH THE VIDEO BEFORE YOU SOLVE};
+\node[white,font=\sffamily\fontsize{7.5}{8}\selectfont,anchor=east] at (174mm,-5.6mm) {YouTube ~\textbullet~ #1};
+\end{tikzpicture}
+\end{textblock*}
+}
+
 \newcommand{\pagefooter}[1]{%
 \begin{textblock*}{194mm}(8mm,286.41mm)
   \begin{tikzpicture}
@@ -81,7 +93,7 @@
 \begin{textblock*}{160mm}(#1mm,#2mm)
 \begin{tikzpicture}
 \node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
-      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {QOIDA ~\textperiodcentered~ #3};
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {RULE ~\textperiodcentered~ #3};
 \end{tikzpicture}
 \end{textblock*}%
 }
@@ -90,7 +102,7 @@
 \begin{textblock*}{160mm}(#1mm,#2mm)
 \begin{tikzpicture}
 \node[fill=warn,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
-      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {DIQQAT ~\textperiodcentered~ #3};
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {WARNING ~\textperiodcentered~ #3};
 \end{tikzpicture}
 \end{textblock*}%
 }
@@ -104,26 +116,26 @@
 % ======================================================================
 % PAGE 1
 % ======================================================================
-\topicheader{2}{Tenglamalar sistemasi}
-\pagekicker{Qoidalar varag'i -- 1/2}
+\topicheader{2}{System of Equations}
+\videobanner{Lesson 2}
 \pagefooter{12}
 \mbox{}%
 
-% ---- CARD 1: Sistema yechimi nima ----
-\cardbg{16}{33}{178}{70}
-\pill{26}{36}{Sistema yechimi -- bu kesishish nuqtasi}
+% ---- CARD 1: What a solution is ----
+\cardbg{16}{40}{178}{70}
+\pill{26}{43}{Solution of a system -- the crossing point}
 
-\begin{textblock*}{110mm}(26mm,49mm)
+\begin{textblock*}{110mm}(26mm,56mm)
 {\fontsize{10.5}{13}\selectfont\color{ink}
-Yechim -- ikkala tenglamani ham to'g'ri qiladigan $(x,y)$ juftligi. Grafik
-jihatdan bu ikki chiziqning kesishgan nuqtasi.\\[3mm]
-\textbf{Tekshirish:} $(2,3)$ sistemaning yechimimi?\\
-$x+y=5$: \ $2+3=5$ -- to'g'ri.\\
-$2x-y=1$: \ $2(2)-3=1$ -- to'g'ri.\\
-{\color{accent}\textbf{Ikkalasi ham to'g'ri -- demak, yechim.}}}
+The solution is the $(x,y)$ pair that makes \textbf{both} equations true --
+graphically, where the two lines cross.\\[3mm]
+\textbf{Check:} is $(2,3)$ a solution?\\
+$x+y=5$: \ $2+3=5$ -- true.\\
+$2x-y=1$: \ $2(2)-3=1$ -- true.\\
+{\color{accent}\textbf{Both true -- so yes, it's a solution.}}}
 \end{textblock*}
 
-\begin{textblock*}{55mm}(140mm,52mm)
+\begin{textblock*}{55mm}(140mm,59mm)
 \begin{tikzpicture}[scale=1]
 \draw[ink!40,->] (0,0) -- (40mm,0) node[right,font=\tiny] {$x$};
 \draw[ink!40,->] (0,-20mm) -- (0,20mm) node[above,font=\tiny] {$y$};
@@ -134,26 +146,26 @@ $2x-y=1$: \ $2(2)-3=1$ -- to'g'ri.\\
 \end{tikzpicture}
 \end{textblock*}
 
-% ---- CARD 2: O'rniga qo'yish usuli ----
-\cardbg{16}{108}{178}{78}
-\pill{26}{111}{O'rniga qo'yish usuli (substitution)}
+% ---- CARD 2: Substitution ----
+\cardbg{16}{115}{178}{78}
+\pill{26}{118}{Substitution method}
 
-\begin{textblock*}{158mm}(26mm,124mm)
+\begin{textblock*}{158mm}(26mm,131mm)
 {\fontsize{10.5}{13}\selectfont\color{ink}
-Bitta tenglamada o'zgaruvchi ikkinchisi orqali ifodalangan bo'lsa, shuni
-boshqa tenglamaga qo'yamiz.}
+If one equation already isolates a variable, plug that expression into the
+other equation.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,135mm)
+\begin{textblock*}{158mm}(26mm,142mm)
 \begin{tikzpicture}[every node/.style={font=\fontsize{11.5}{11.5}\selectfont}]
 \node[anchor=west] (l0) at (0,0) {$y=2x-1,\quad 3x+y=9$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (72mm,0) {$\leftarrow$ $y$ ifodalangan};
+\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (72mm,0) {$\leftarrow$ $y$ is isolated};
 
 \node[anchor=west] (l1) at (0,-12mm) {$3x+(2x-1)=9$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (72mm,-12mm) {$\leftarrow$ o'rniga qo'yamiz};
+\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (72mm,-12mm) {$\leftarrow$ substitute};
 
 \node[anchor=west] (l2) at (0,-24mm) {$5x-1=9\ \Rightarrow\ x=2$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (72mm,-24mm) {$\leftarrow$ yechamiz};
+\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (72mm,-24mm) {$\leftarrow$ solve};
 
 \node[anchor=west,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,text=accent] (l3) at (0,-36mm) {$y=2(2)-1=3\ \Rightarrow\ (x,y)=(2,3)$};
 
@@ -163,26 +175,26 @@ boshqa tenglamaga qo'yamiz.}
 \end{tikzpicture}
 \end{textblock*}
 
-% ---- CARD 3: Qo'shish-ayirish usuli ----
-\cardbg{16}{191}{178}{86}
-\pill{26}{194}{Qo'shish-ayirish usuli (elimination)}
+% ---- CARD 3: Elimination ----
+\cardbg{16}{198}{178}{86}
+\pill{26}{201}{Elimination method}
 
-\begin{textblock*}{158mm}(26mm,207mm)
+\begin{textblock*}{158mm}(26mm,214mm)
 {\fontsize{10.5}{13}\selectfont\color{ink}
-Mos koeffitsientlar bir-birini yo'qotadigan tarzda ko'paytirib, so'ng
-qo'shamiz yoki ayiramiz.}
+Multiply one or both equations so matching coefficients cancel, then add or
+subtract.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,218mm)
+\begin{textblock*}{158mm}(26mm,225mm)
 \begin{tikzpicture}[every node/.style={font=\fontsize{11.5}{11.5}\selectfont}]
 \node[anchor=west] (l0) at (0,0) {$x+2y=11,\quad 3x+y=18$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (72mm,0) {$\leftarrow$ $y$ ni yo'qotamiz};
+\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (72mm,0) {$\leftarrow$ eliminate $y$};
 
 \node[anchor=west] (l1) at (0,-12mm) {$3x+y=18\ \ (\times2)\ \Rightarrow\ 6x+2y=36$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (82mm,-12mm) {$\leftarrow$ 2-tenglamani $\times2$};
+\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (82mm,-12mm) {$\leftarrow$ multiply eq. 2 by $2$};
 
 \node[anchor=west] (l2) at (0,-24mm) {$(6x+2y)-(x+2y)=36-11\ \Rightarrow\ 5x=25$};
-\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (99mm,-24mm) {$\leftarrow$ ayiramiz};
+\node[anchor=west,font=\sffamily\bfseries\scriptsize,text=accent] at (99mm,-24mm) {$\leftarrow$ subtract};
 
 \node[anchor=west,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,text=accent] (l3) at (0,-36mm) {$x=5\ \Rightarrow\ y=3\ \Rightarrow\ (x,y)=(5,3)$};
 
@@ -197,30 +209,30 @@ qo'shamiz yoki ayiramiz.}
 % ======================================================================
 % PAGE 2
 % ======================================================================
-\topicheader{2}{Tenglamalar sistemasi}
-\pagekicker{Qoidalar varag'i -- 2/2}
+\topicheader{2}{System of Equations}
+\pagekicker{Rules sheet -- 2/2}
 \pagefooter{13}
 \mbox{}%
 
-% ---- CARD 4: DIQQAT -- ayirishda har bir had ----
+% ---- CARD 4: WARNING -- subtract every term ----
 \warnbgbox{16}{33}{178}{44}
-\pillwarn{26}{36}{Ayirishda HAR BIR had ishorasini o'zgartiring}
+\pillwarn{26}{36}{Subtract EVERY term, not just one}
 
 \begin{textblock*}{158mm}(26mm,48mm)
 {\fontsize{10.5}{13}\selectfont\color{ink}
-$(6x+2y)-(x+2y)$ ni hisoblaganda, ikkinchi qavsdagi \textbf{barcha}
-hadlarning ishorasi o'zgaradi -- faqat birinchisi emas:\\[2mm]
+In $(6x+2y)-(x+2y)$, \textbf{every} term in the second parentheses changes
+sign -- not just the first:\\[2mm]
 $6x+2y-x-2y=5x+0y=5x$\quad
-{\color{warn}\textbf{(}$2y$\textbf{ ni unutish }$y$\textbf{ ni yo'qotmay qo'yadi!)}}}
+{\color{warn}\textbf{(dropping $2y$ fails to eliminate $y$!)}}}
 \end{textblock*}
 
-% ---- CARD 5: Maxsus holatlar ----
+% ---- CARD 5: Special cases ----
 \cardbg{16}{83}{178}{112}
-\pill{26}{86}{Maxsus holatlar: yechimsiz va cheksiz ko'p yechim}
+\pill{26}{86}{Special cases: no solution \& infinitely many}
 
 \begin{textblock*}{158mm}(26mm,99mm)
 {\fontsize{10.5}{13}\selectfont\color{ink}
-$x$ va $y$ koeffitsientlari nisbatini solishtiring:}
+Compare the ratio of the $x$ and $y$ coefficients:}
 \end{textblock*}
 
 \begin{textblock*}{158mm}(26mm,108mm)
@@ -228,15 +240,15 @@ $x$ va $y$ koeffitsientlari nisbatini solishtiring:}
 \begin{tabular}{|p{54mm}|>{\centering\arraybackslash}p{91mm}|}
 \hline
 \rowcolor{accent}
-{\color{white}\textbf{Nisbatlar}} & {\color{white}\textbf{Natija}} \\ \hline
-Koeffitsientlar nisbati teng emas & Bitta yechim \\ \hline
-Koeffitsientlar teng, konstanta boshqacha & Yechimsiz (parallel chiziqlar) \\ \hline
-Koeffitsientlar va konstanta hammasi teng & Cheksiz ko'p yechim (bir xil chiziq) \\ \hline
+{\color{white}\textbf{Ratios}} & {\color{white}\textbf{Result}} \\ \hline
+Coefficient ratios unequal & One solution \\ \hline
+Coefficients equal, constants differ & No solution (parallel lines) \\ \hline
+Coefficients and constants all equal & Infinitely many (same line) \\ \hline
 \end{tabular}}
 \end{textblock*}
 
 \begin{textblock*}{50mm}(26mm,151mm)
-{\centering\fontsize{9}{9}\selectfont\textbf{Bitta yechim}\par}
+{\centering\fontsize{9}{9}\selectfont\textbf{One solution}\par}
 \begin{tikzpicture}
 \draw[ink!40,->] (0,0) -- (30mm,0); \draw[ink!40,->] (0,-12mm) -- (0,12mm);
 \draw[accent,line width=1pt] (2mm,-9mm) -- (28mm,9mm);
@@ -246,7 +258,7 @@ Koeffitsientlar va konstanta hammasi teng & Cheksiz ko'p yechim (bir xil chiziq)
 \end{textblock*}
 
 \begin{textblock*}{50mm}(82mm,151mm)
-{\centering\fontsize{9}{9}\selectfont\textbf{Yechimsiz}\par}
+{\centering\fontsize{9}{9}\selectfont\textbf{No solution}\par}
 \begin{tikzpicture}
 \draw[ink!40,->] (0,0) -- (30mm,0); \draw[ink!40,->] (0,-12mm) -- (0,12mm);
 \draw[accent,line width=1pt] (2mm,-7mm) -- (28mm,7mm);
@@ -255,7 +267,7 @@ Koeffitsientlar va konstanta hammasi teng & Cheksiz ko'p yechim (bir xil chiziq)
 \end{textblock*}
 
 \begin{textblock*}{50mm}(138mm,151mm)
-{\centering\fontsize{9}{9}\selectfont\textbf{Cheksiz ko'p yechim}\par}
+{\centering\fontsize{9}{9}\selectfont\textbf{Infinitely many}\par}
 \begin{tikzpicture}
 \draw[ink!40,->] (0,0) -- (30mm,0); \draw[ink!40,->] (0,-12mm) -- (0,12mm);
 \draw[accent,line width=1.6pt] (2mm,-9mm) -- (28mm,9mm);
@@ -265,23 +277,21 @@ Koeffitsientlar va konstanta hammasi teng & Cheksiz ko'p yechim (bir xil chiziq)
 
 \begin{textblock*}{158mm}(26mm,179mm)
 {\fontsize{10}{13}\selectfont\color{ink}
-\textbf{Protsedura ichidan belgi:} o'zgaruvchi yo'qotilayotganda
-\textbf{ikkalasi ham yo'qolib}, noto'g'ri tenglik chiqsa ($0=12$) --
-\textbf{yechimsiz}; har doim to'g'ri tenglik chiqsa ($0=0$) -- \textbf{cheksiz
-ko'p yechim}.}
+\textbf{Sign while solving:} if eliminating a variable makes \textbf{both}
+variables vanish into a false statement ($0=12$) -- \textbf{no solution}; if
+it's always true ($0=0$) -- \textbf{infinitely many}.}
 \end{textblock*}
 
-% ---- CARD 6: DIQQAT -- nima so'ralmoqda ----
+% ---- CARD 6: Always check what's asked ----
 \warnbgbox{16}{201}{178}{62}
-\pillwarn{26}{204}{Doim tekshiring: nima so'ralmoqda?}
+\pillwarn{26}{204}{Always check what's being asked}
 
 \begin{textblock*}{158mm}(26mm,216mm)
 {\fontsize{10.5}{13}\selectfont\color{ink}
-$x+y=10$, $x-y=2$. \textbf{Savol:} $xy$ ning qiymati nechaga teng? ($x$ yoki
-$y$ emas!)\\[2mm]
-Yechamiz: $x=6$, $y=4$. Savol $xy$ ni so'ragan, shuning uchun oxirgi qadam --
-ko'paytirish: $6\times4=24$.\\[2mm]
-{\color{accent}\textbf{Javob: $xy=24$ -- $x=6$ yoki $y=4$ emas.}}}
+$x+y=10$, $x-y=2$. \textbf{Question:} find $xy$. (Not $x$ or $y$!)\\[2mm]
+Solve: $x=6$, $y=4$. The question asked for $xy$, so the last step is to
+multiply: $6\times4=24$.\\[2mm]
+{\color{accent}\textbf{Answer: $xy=24$ -- not $x=6$ or $y=4$.}}}
 \end{textblock*}
 
 \end{document}
