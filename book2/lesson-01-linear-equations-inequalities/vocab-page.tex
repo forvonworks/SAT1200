@@ -3,10 +3,10 @@
 \usepackage{fontspec}
 \usepackage{unicode-math}
 \usepackage{tikz}
-\usetikzlibrary{fit,calc,positioning,arrows.meta}
 \usepackage[table]{xcolor}
 \usepackage[absolute]{textpos}
 \usepackage{array}
+\usepackage{longtable}
 
 \setmainfont{Libertinus Serif}
 \setsansfont{Libertinus Sans}
@@ -36,6 +36,15 @@
 \end{textblock*}
 }
 
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{150mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
 \newcommand{\pagefooter}[1]{%
 \begin{textblock*}{194mm}(8mm,286.41mm)
   \begin{tikzpicture}
@@ -50,80 +59,47 @@
 \end{textblock*}
 }
 
-\newcommand{\cardbg}[4]{%
-\begin{textblock*}{#3mm}(#1mm,#2mm)
-\begin{tikzpicture}
-\fill[badge!22,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
-\end{tikzpicture}
-\end{textblock*}%
-}
-
-\newcommand{\sectionpill}[3]{%
-\begin{textblock*}{160mm}(#1mm,#2mm)
-\begin{tikzpicture}
-\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
-      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {#3};
-\end{tikzpicture}
-\end{textblock*}%
-}
-
 \arrayrulecolor{accent}
-\setlength{\arrayrulewidth}{0.6pt}
-\renewcommand{\arraystretch}{1.55}
+\setlength{\arrayrulewidth}{0.7pt}
 
 \begin{document}
-
 \topicheader{1}{Linear Equations \& Inequalities}
+\pagekicker{Vocabulary for this lesson's problems (Sets 1--8)}
 \pagefooter{6}
 \mbox{}%
-
-\begin{textblock*}{178mm}(16mm,28mm)
-{\fontsize{10.5}{13}\selectfont\color{black!70}\itshape
-Key English terms and phrases used in this lesson's problems (Sets 1--8) --
-not a full glossary, just the words worth checking before you solve.\par}
-\end{textblock*}
-
-% ---- CARD 1: Key Terms ----
-\cardbg{16}{38}{178}{108}
-\sectionpill{26}{41}{KEY TERMS}
-
-\begin{textblock*}{158mm}(26mm,55mm)
-{\fontsize{10.5}{16}\selectfont
-\begin{tabular}{|p{62mm}|p{88mm}|}
+\renewcommand{\arraystretch}{1.37}
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{11.5}{13.5}\selectfont
+\begin{tabular}{|p{80mm}|p{90mm}|}
 \hline
 \rowcolor{accent}
-{\color{white}\textbf{English}} & {\color{white}\textbf{O'zbekcha}} \\ \hline
-solution / root & yechim / ildiz \\ \hline
-solution set & yechimlar to'plami \\ \hline
-constant (noun, as in ``$a$ and $b$ are constants'') & o'zgarmas son (konstanta) \\ \hline
-coefficient & koeffitsient \\ \hline
-infinitely many solutions & cheksiz ko'p yechim \\ \hline
-no solution & yechim yo'q \\ \hline
-inequality / compound inequality & tengsizlik / qo'shma tengsizlik \\ \hline
-perimeter & perimetr \\ \hline
-\end{tabular}}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+\textbf{solution / root} & \textit{yechim / ildiz} \\ \hline
+\rowcolor{badge!18}
+\textbf{solution set} & \textit{yechimlar to'plami} \\ \hline
+\textbf{constant} (noun -- ``$a$ and $b$ are constants'') & \textit{o'zgarmas son (konstanta)} \\ \hline
+\rowcolor{badge!18}
+\textbf{coefficient} & \textit{koeffitsient} \\ \hline
+\textbf{infinitely many solutions} & \textit{cheksiz ko'p yechim} \\ \hline
+\rowcolor{badge!18}
+\textbf{no solution} & \textit{yechim yo'q} \\ \hline
+\textbf{inequality / compound inequality} & \textit{tengsizlik / qo'shma tengsizlik} \\ \hline
+\rowcolor{badge!18}
+\textbf{perimeter} & \textit{perimetr} \\ \hline
+\textbf{at least} & \textit{kamida} \\ \hline
+\rowcolor{badge!18}
+\textbf{at most / no more than} & \textit{ko'pi bilan / dan oshmaydi} \\ \hline
+\textbf{no less than} & \textit{dan kam bo'lmagan} \\ \hline
+\rowcolor{badge!18}
+\textbf{increased by / decreased by} & \textit{ortirilgan / kamaytirilgan} \\ \hline
+\textbf{combined weight} & \textit{umumiy (qo'shilgan) og'irlik} \\ \hline
+\rowcolor{badge!18}
+\textbf{consecutive (even) integers} & \textit{ketma-ket (juft) butun sonlar} \\ \hline
+\textbf{the value of the constant $a$} & \textit{$a$ o'zgarmas sonining qiymati} \\ \hline
+\rowcolor{badge!18}
+\textbf{between which pair of values} & \textit{qaysi juftlik oralig'ida} \\ \hline
+\textbf{budget / fee} & \textit{byudjet / to'lov} \\ \hline
+\end{tabular}
+}
 \end{textblock*}
-
-% ---- CARD 2: Key Phrases ----
-\cardbg{16}{154}{178}{118}
-\sectionpill{26}{157}{KEY PHRASES (WORD PROBLEMS)}
-
-\begin{textblock*}{158mm}(26mm,171mm)
-{\fontsize{10.5}{16}\selectfont
-\begin{tabular}{|p{62mm}|p{88mm}|}
-\hline
-\rowcolor{accent}
-{\color{white}\textbf{English}} & {\color{white}\textbf{O'zbekcha}} \\ \hline
-at least & kamida \\ \hline
-at most / no more than & ko'pi bilan / dan oshmaydi \\ \hline
-no less than & dan kam bo'lmagan \\ \hline
-increased by / decreased by & ortirilgan / kamaytirilgan \\ \hline
-combined weight & umumiy (qo'shilgan) og'irlik \\ \hline
-consecutive (even) integers & ketma-ket (juft) butun sonlar \\ \hline
-the value of the constant $a$ & $a$ o'zgarmas sonining qiymati \\ \hline
-between which pair of values & qaysi juftlik oralig'ida \\ \hline
-budget / fee & byudjet / to'lov \\ \hline
-\end{tabular}}
-\end{textblock*}
-
 \end{document}
