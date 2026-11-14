@@ -1,0 +1,129 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usetikzlibrary{fit,calc,positioning,arrows.meta}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{602785}
+\definecolor{badge}{HTML}{B8A0C8}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\newcommand{\cardbg}[4]{%
+\begin{textblock*}{#3mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\fill[badge!22,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\sectionpill}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {#3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.6pt}
+\renewcommand{\arraystretch}{1.55}
+
+\begin{document}
+
+\topicheader{1}{Linear Equations \& Inequalities}
+\pagefooter{6}
+\mbox{}%
+
+\begin{textblock*}{178mm}(16mm,28mm)
+{\fontsize{10.5}{13}\selectfont\color{black!70}\itshape
+Key English terms and phrases used in this lesson's problems (Sets 1--8) --
+not a full glossary, just the words worth checking before you solve.\par}
+\end{textblock*}
+
+% ---- CARD 1: Key Terms ----
+\cardbg{16}{38}{178}{108}
+\sectionpill{26}{41}{KEY TERMS}
+
+\begin{textblock*}{158mm}(26mm,55mm)
+{\fontsize{10.5}{16}\selectfont
+\begin{tabular}{|p{62mm}|p{88mm}|}
+\hline
+\rowcolor{accent}
+{\color{white}\textbf{English}} & {\color{white}\textbf{O'zbekcha}} \\ \hline
+solution / root & yechim / ildiz \\ \hline
+solution set & yechimlar to'plami \\ \hline
+constant (noun, as in ``$a$ and $b$ are constants'') & o'zgarmas son (konstanta) \\ \hline
+coefficient & koeffitsient \\ \hline
+infinitely many solutions & cheksiz ko'p yechim \\ \hline
+no solution & yechim yo'q \\ \hline
+inequality / compound inequality & tengsizlik / qo'shma tengsizlik \\ \hline
+perimeter & perimetr \\ \hline
+\end{tabular}}
+\end{textblock*}
+
+% ---- CARD 2: Key Phrases ----
+\cardbg{16}{154}{178}{118}
+\sectionpill{26}{157}{KEY PHRASES (WORD PROBLEMS)}
+
+\begin{textblock*}{158mm}(26mm,171mm)
+{\fontsize{10.5}{16}\selectfont
+\begin{tabular}{|p{62mm}|p{88mm}|}
+\hline
+\rowcolor{accent}
+{\color{white}\textbf{English}} & {\color{white}\textbf{O'zbekcha}} \\ \hline
+at least & kamida \\ \hline
+at most / no more than & ko'pi bilan / dan oshmaydi \\ \hline
+no less than & dan kam bo'lmagan \\ \hline
+increased by / decreased by & ortirilgan / kamaytirilgan \\ \hline
+combined weight & umumiy (qo'shilgan) og'irlik \\ \hline
+consecutive (even) integers & ketma-ket (juft) butun sonlar \\ \hline
+the value of the constant $a$ & $a$ o'zgarmas sonining qiymati \\ \hline
+between which pair of values & qaysi juftlik oralig'ida \\ \hline
+budget / fee & byudjet / to'lov \\ \hline
+\end{tabular}}
+\end{textblock*}
+
+\end{document}
