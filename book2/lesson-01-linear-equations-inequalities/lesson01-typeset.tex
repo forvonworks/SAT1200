@@ -83,9 +83,27 @@
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
+}
+
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
 }
 
 % ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
@@ -97,14 +115,14 @@
 \begin{document}
 
 % ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{1}{Chiziqli tenglamalar va tengsizliklar}
+\topicheader{1}{Linear Equations \& Inequalities}
 \pagefooter{7}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{1-to'plam}{Ko'p qadamli tenglamalar (Book 2 darajasida). $x$ ni toping.}
+\setkicker{Set 1}{Multi-step equations (Book 2 depth). Find $x$.}
 
 \noindent\pnum{1} $\dfrac{1}{2}(x+4)=x-1$\\[30mm]
 \noindent\pnum{2} $3(x-2)=2(x+1)$\\[30mm]
@@ -117,28 +135,28 @@
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{2-to'plam}{"Nima so'ralyapti" qopqoni -- tenglamani yeching, lekin aynan so'ralgan qiymatni bering, shunchaki $x$ ni emas.}
+\setkicker{Set 2}{The ``what's actually asked'' trap -- solve the equation, then answer the question actually asked, not just $x$.}
 
-\noindent\pnum{1} Agar $3x+5=20$ bo'lsa, $6x+10$ nechiga teng?\\[22mm]
-\noindent\pnum{2} Agar $2(x-3)=10$ bo'lsa, $x-3$ nechiga teng?\\[22mm]
-\noindent\pnum{3} Agar $4x-7=9$ bo'lsa, $2x$ nechiga teng?\\[22mm]
-\noindent\pnum{4} Agar $\dfrac{x+2}{3}=5$ bo'lsa, $x+2$ nechiga teng?\\[22mm]
-\noindent\pnum{5} Agar $5x+1=26$ bo'lsa, $10x+2$ nechiga teng?\\[22mm]
-\noindent\pnum{6} Agar $3(2x+1)=21$ bo'lsa, $2x+1$ nechiga teng?
+\noindent\pnum{1} If $3x+5=20$, what is $6x+10$?\\[22mm]
+\noindent\pnum{2} If $2(x-3)=10$, what is $x-3$?\\[22mm]
+\noindent\pnum{3} If $4x-7=9$, what is $2x$?\\[22mm]
+\noindent\pnum{4} If $\dfrac{x+2}{3}=5$, what is $x+2$?\\[22mm]
+\noindent\pnum{5} If $5x+1=26$, what is $10x+2$?\\[22mm]
+\noindent\pnum{6} If $3(2x+1)=21$, what is $2x+1$?
 }
 \end{textblock*}
 
 \clearpage
 
 % ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{1}{Chiziqli tenglamalar va tengsizliklar}
+\topicheader{1}{Linear Equations \& Inequalities}
 \pagefooter{8}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{3-to'plam}{Tengsizliklar -- ishora almashinuviga e'tibor bering. $x$ ni toping.}
+\setkicker{Set 3}{Inequalities -- watch for the sign flip. Find $x$.}
 
 \noindent\pnum{1} $2x+3<11$\\[30mm]
 \noindent\pnum{2} $-4x+1\ge13$\\[30mm]
@@ -151,93 +169,265 @@
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{4-to'plam}{Qo'shma tengsizliklar. $x$ ni toping.}
+\setkicker{Set 4}{Compound inequalities. Find $x$.}
 
 \noindent\pnum{1} $-2<x+3\le7$\\[30mm]
-\noindent\pnum{2} $3x-1<-4$ yoki $3x-1>8$\\[30mm]
+\noindent\pnum{2} $3x-1<-4$ or $3x-1>8$\\[30mm]
 \noindent\pnum{3} $-5\le2x+1<9$\\[30mm]
-\noindent\pnum{4} $x-4<-6$ yoki $x-4>2$\\[30mm]
+\noindent\pnum{4} $x-4<-6$ or $x-4>2$\\[30mm]
 \noindent\pnum{5} $-1<\dfrac{x+1}{2}\le3$\\[30mm]
-\noindent\pnum{6} $2x+3<1$ yoki $2x+3>9$
+\noindent\pnum{6} $2x+3<1$ or $2x+3>9$
 }
 \end{textblock*}
 
 \clearpage
 
 % ================= PAGE 3: Set 5 | Set 6 (spot the error) =================
-\topicheader{1}{Chiziqli tenglamalar va tengsizliklar}
+\topicheader{1}{Linear Equations \& Inequalities}
 \pagefooter{9}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11.5}{14.5}\selectfont
-\setkicker{5-to'plam}{So'zlardan tengsizlikka o'tkazing, so'ng yeching.}
+\setkicker{Set 5}{Translate the words into an inequality, then solve.}
 
-\noindent\pnum{1} Biror son 5 ga oshirilsa, natija kamida 12 bo'ladi. (Sonni toping.)\\[20mm]
-\noindent\pnum{2} Biror sonning uch barobari 21 dan oshmaydi.\\[20mm]
-\noindent\pnum{3} Biror son 4 ga kamaytirilsa, natija 10 dan kichik.\\[20mm]
-\noindent\pnum{4} Biror sonning ikki barobari, 3 ga kamaytirilganda, kamida 7.\\[20mm]
-\noindent\pnum{5} Biror son kamida $-1$ va ko'pi bilan $5$. (Faqat qo'shma tengsizlikni yozing -- yechish shart emas.)\\[20mm]
-\noindent\pnum{6} Sonning ikki barobaridan besh kam -- 15 dan oshmaydi. Sonning eng katta butun qiymati nechiga teng?
+\noindent\pnum{1} A number increased by 5 is at least 12. (Find the number.)\\[20mm]
+\noindent\pnum{2} Three times a number is no more than 21.\\[20mm]
+\noindent\pnum{3} A number decreased by 4 is less than 10.\\[20mm]
+\noindent\pnum{4} Twice a number, decreased by 3, is at least 7.\\[20mm]
+\noindent\pnum{5} A number is at least $-1$ and at most $5$. (Just write the compound inequality -- no need to solve.)\\[20mm]
+\noindent\pnum{6} Five less than twice a number is no more than 15. What is the largest possible integer value of the number?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'g'ri javobni bering.}
+\setkicker{Set 6}{Spot the error -- name the mistake, give the correct answer.}
 
-\noindent\pnum{1} $-2x>8$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``Ikkala tomonni $-2$ ga bo'ling: $x>-4$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{1} In solving $-2x>8$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``Divide both sides by $-2$: $x>-4$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{2} $x-5>2$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``Manfiy son bor, shuning uchun ishora almashadi: $x<7$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{2} In solving $x-5>2$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``There's a negative number, so flip the sign: $x<7$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{3} Agar $4x-1=15$ bo'lsa, $4x$ nechiga teng ifodasida xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$x=4$, demak javob $4$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{3} For ``if $4x-1=15$, what is $4x$?'' a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``$x=4$, so the answer is $4$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{4} $-2(x-3)<10$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``Taqsimlang: $-2x-6<10$, demak $x>-8$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{4} In solving $-2(x-3)<10$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``Distribute: $-2x-6<10$, so $x>-8$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{5} $-4<2x<8$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``O'rta va o'ng tomonni 2 ga bo'ling: $-4<x<4$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}
+\noindent\pnum{5} In solving $-4<2x<8$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``Divide the middle and right side by 2: $-4<x<4$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) -- own page; answers follow on a fresh page =================
-\topicheader{1}{Chiziqli tenglamalar va tengsizliklar}
+% ================= PAGE 4: Set 7 (bonus) -- own page; Set 8 follows =================
+\topicheader{1}{Linear Equations \& Inequalities}
 \pagefooter{10}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11.5}{14.5}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin -- eng qiyin topshiriqlar.}
+\setkicker{Set 7}{Bonus / challenge -- the hardest items in this set.}
 
-\noindent\pnum{1} Agar $\dfrac{2}{3}(x-3)=x-5$ bo'lsa, $x$ ni, so'ng $3x$ ni toping.\\[32mm]
-\noindent\pnum{2} $-5<3x+1\le10$ ni yeching. Qo'shma tengsizlikni yozing, so'ng shartni qanoatlantiruvchi eng kichik butun $x$ qiymatini toping.\\[32mm]
-\noindent\pnum{3} Yetti minus sonning ikki barobari kamida $-3$. Sonning eng katta qiymati nechiga teng?\\[32mm]
-\noindent\pnum{4} $4(x-1)-2x=3(x+2)-10$ ni $x$ uchun yeching, so'ng $x+2$ ni toping.\\[32mm]
-\noindent\pnum{5} $-6\le-2(x-1)<4$ ni yeching.
+\noindent\pnum{1} If $\dfrac{2}{3}(x-3)=x-5$, what is the value of $x$? What is the value of $3x$?\\[32mm]
+\noindent\pnum{2} Solve $-5<3x+1\le10$. What is the resulting compound inequality, and what is the smallest integer value of $x$ that satisfies it?\\[32mm]
+\noindent\pnum{3} Seven minus twice a number is at least $-3$. What is the largest possible value of the number?\\[32mm]
+\noindent\pnum{4} If $4(x-1)-2x=3(x+2)-10$, what is the value of $x$? What is the value of $x+2$?\\[32mm]
+\noindent\pnum{5} What is the solution set of $-6\le-2(x-1)<4$?
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{13}\selectfont\color{black!70}
+\setkicker{Set 8}{Official SAT-style application (next 5 pages) -- 45 original, multiple-choice problems written to match the method of real, officially-released SAT Suite Question Bank items for this lesson's two skill categories: Linear equations in one variable, and Linear inequalities in one or two variables. 15 Easy, 15 Medium, 15 Hard -- matching real-test density. No real College Board question is reproduced; see the sourcing note after Set 8's last page.}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar -- full-page answer tables, own page always =================
-\topicheader{1}{Chiziqli tenglamalar va tengsizliklar}
+% ================= PAGE 5: Set 8 -- Easy 1-6 | Easy 7-12 =================
+\topicheader{1}{Linear Equations \& Inequalities}
 \pagefooter{11}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Easy}{Choose the correct answer.}
+
+\satq{1}{If $5x=12$, what is the value of $20x$?}{3}{20}{48}{60}
+\satq{2}{If $4+x=15$, what is the value of $12+3x$?}{33}{41}{45}{48}
+\satq{3}{How many solutions does the equation $3(x+2)=3x+6$ have?}{None}{Exactly one}{Exactly three}{Infinitely many}
+\satq{4}{How many solutions does the equation $x+8=x+3$ have?}{None}{Exactly one}{Exactly three}{Infinitely many}
+\satq{5}{What is the solution to the equation $5x-4=11$?}{1}{3}{5}{15}
+\satqw{6}{A bakery sells muffins for \$3 each and loaves of bread for \$5 each. On Monday, the bakery sold $m$ muffins and 12 loaves of bread, and the total sales were \$111. Which equation represents this situation?}{$3m+5(12)=111$}{$3(12)+5m=111$}{$3m+5m=111$}{$m+12=111$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Easy (cont.)}{Choose the correct answer.}
+
+\satq{7}{What is the solution to the equation $3(x-2)=2x+5$?}{1}{7}{11}{17}
+\satq{8}{What is the solution to the equation $4x-5=19$?}{3}{6}{24}{96}
+\satqw{9}{A charity needs to collect at least 150 canned goods. If the charity has already collected 118 cans, what is the minimum number of additional cans needed?}{268}{118}{32}{0}
+\satq{10}{What is the solution set of the inequality $3x-7\le14$?}{$x\le7$}{$x\ge7$}{$x\le21$}{$x\le-7$}
+\satqw{11}{A food truck sells only tacos and burritos and can prepare at most 80 items per day. If $t$ is the number of tacos and $b$ is the number of burritos prepared in a day, which inequality represents this situation?}{$t+b\le80$}{$t+b\ge80$}{$t-b\le80$}{$t-b\ge80$}
+\satqw{12}{A rental company charges a \$25 delivery fee plus \$2 per chair. Diyora wants to spend no more than \$95 total. What is the maximum number of chairs she can rent?}{30}{33}{35}{60}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6: Set 8 -- Easy 13-15 | Medium 1-5 =================
+\topicheader{1}{Linear Equations \& Inequalities}
+\pagefooter{12}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Easy (cont.)}{Choose the correct answer.}
+
+\satq{13}{What is the solution to the equation $1.5x+3=12$?}{4}{6}{9}{13.5}
+\satq{14}{What is the solution to the equation $\dfrac{x}{4}+2=9$?}{7}{11}{28}{36}
+\satq{15}{If $2x+1\ge15$, what is the smallest possible integer value of $x$?}{6}{7}{14}{15}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Medium}{Choose the correct answer.}
+
+\satq{1}{What is the solution to the equation $5(x-2)=3(x+4)$?}{1}{4}{11}{22}
+\satq{2}{What is the solution to the equation $\dfrac{1}{2}(x-3)-\dfrac{1}{4}(x-3)=5$?}{3}{17}{20}{23}
+\satqw{3}{In the equation $a(x-4)-b=2x-9$, $a$ and $b$ are constants. If the equation has infinitely many solutions, what are the values of $a$ and $b$?}{$a=2,\ b=1$}{$a=2,\ b=-1$}{$a=-2,\ b=1$}{$a=-2,\ b=-1$}
+\satq{4}{A rectangular banner has width $w$ feet; its length is 5 feet more than twice its width. Which expresses the perimeter, in feet, in terms of $w$?}{$3w+5$}{$6w+5$}{$6w+10$}{$2w^2+5w$}
+\satq{5}{If $47=15+4(x-2)$, what is the value of $4(x-2)$?}{8}{15}{32}{47}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 7: Set 8 -- Medium 6-10 | Medium 11-15 =================
+\topicheader{1}{Linear Equations \& Inequalities}
+\pagefooter{13}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Medium (cont.)}{Choose the correct answer.}
+
+\satqw{6}{A delivery van can carry a load if the combined weight of the cargo and the packaging is no more than 3{,}800 pounds. The packaging weighs 200 pounds and each package weighs 85 pounds. What is the maximum number of packages the van can carry?}{42}{43}{45}{47}
+\satq{7}{What is the solution set of $-5<2x+1\le9$?}{$-3<x\le4$}{$-6<x\le8$}{$-2<x\le5$}{$-3\le x<4$}
+\satqw{8}{For which of the following tables are all the values of $x$ and their corresponding values of $y$ solutions to $y<4x+3$?}{$(2,11),\ (4,19),\ (6,27)$}{$(2,10),\ (4,20),\ (6,24)$}{$(2,12),\ (4,16),\ (6,20)$}{$(2,8),\ (4,16),\ (6,24)$}
+\satq{9}{If $\dfrac{x+4}{3}=\dfrac{x+4}{7}$, what is the value of $x+4$?}{$-4$}{$0$}{$4$}{$7$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Medium (cont.)}{Choose the correct answer.}
+
+\satqw{10}{If $11<2n+3\le21$, which of the following gives all possible values of $n$?}{$4<n\le9$}{$4\le n<9$}{$8<n\le18$}{$7<n\le18$}
+\satq{11}{What is the solution to the equation $2.5(x+4)=3x-1$?}{11}{18}{22}{44}
+\satqw{12}{A print shop prints small, medium, and large posters. The number of medium posters is 3 times the number $x$ of small posters, and the number of large posters is 15. The shop printed 95 posters total that day. Which equation represents this situation?}{$x(3)x+15=95$}{$x+3x+15x=95$}{$3x+15=95$}{$4x+15=95$}
+\satqw{13}{A line in the $xy$-plane has a $y$-intercept of $-2$ and a slope of 5. The solution region for a certain inequality is all points above this line. Which inequality represents this region?}{$y>5x-2$}{$y<5x-2$}{$y>-5x-2$}{$y>5x+2$}
+\satq{14}{If $6x-2(x-3)=3(x+1)+1$, what is the value of $2x$?}{$-4$}{$-2$}{$2$}{$4$}
+\satq{15}{For what value of $k$ does $5x+9=kx+9+2x$ have infinitely many solutions?}{2}{3}{5}{7}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 8: Set 8 -- Hard 1-4 | Hard 5-8 =================
+\topicheader{1}{Linear Equations \& Inequalities}
+\pagefooter{14}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard}{Choose the correct answer.}
+
+\satqw{1}{A bakery makes small, medium, and large bread loaves. The number of large loaves made is 6 times the number $n$ of medium loaves, and the number of small loaves made is 18. The bakery makes 150 loaves total that day. Which equation represents this situation?}{$18(6n)+n+18=150$}{$6n+6(18)=150$}{$n+6n+18n=150$}{$7n+18=150$}
+\satqw{2}{If $\dfrac{x+3}{6}=\dfrac{x+3}{10}$, the value of $x+3$ is between which of the following pairs of values?}{$-8$ and $-6$}{$-3$ and $3$}{$5$ and $7$}{$9$ and $12$}
+\satqw{3}{In the given equation, $k$ and $n$ are constants and $n>2$:\\[1.5mm]
+\centerline{$3(kx-n)=-\dfrac{5}{6}x-\dfrac{9}{4}$}\\[1.5mm]
+If the equation has no solution, what is the value of $k$?}{$-\dfrac{5}{18}$}{$\dfrac{5}{18}$}{$-\dfrac{3}{4}$}{$-\dfrac{9}{4}$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard (cont.)}{Choose the correct answer.}
+
+\satqw{4}{A shipping company requires that for boxes shaped like rectangular prisms, the sum of the base's perimeter and the box's height cannot exceed 150 inches. A box has height 50 inches and length 3 times its width. Which inequality shows the allowable width $x$, in inches?}{$0<x\le10$}{$0<x\le12.5$}{$0<x\le25$}{$0<x\le100$}
+\satqw{5}{The solution region for $ry>84$, where $r$ is a constant, consists of all points \emph{below} the horizontal line $y=-6$ in the $xy$-plane (not including the line). What is the value of $r$?}{14}{$-14$}{6}{$-6$}
+\satqw{6}{For which of the following tables are all the values of $x$ and their corresponding values of $y$ solutions to $y\le9x-25$?}{$(3,3),\ (6,25),\ (9,50)$}{$(3,-5),\ (6,30),\ (9,50)$}{$(3,-5),\ (6,20),\ (9,57)$}{$(3,-5),\ (6,20),\ (9,50)$}
+\satqw{7}{Akmal is 3 years more than twice his sister Malika's current age. In 5 years, the sum of their ages will be 37. How old is Akmal right now?}{8}{16}{19}{21}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 9: Set 8 -- Hard 9-12 | Hard 13-15 =================
+\topicheader{1}{Linear Equations \& Inequalities}
+\pagefooter{15}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard (cont.)}{Choose the correct answer.}
+
+\satq{8}{What value of $x$ satisfies $\dfrac{x}{3}-\dfrac{x}{5}=8$?}{8}{15}{24}{60}
+\satq{9}{If $-11\le3(x-2)<16$, what is the greatest possible integer value of $x$?}{6}{7}{8}{22}
+\satqw{10}{In the equation $4x+c=d(x-3)+7$, $c$ and $d$ are constants. If the equation has infinitely many solutions, what is the value of $c+d$?}{$-9$}{$-1$}{3}{11}
+\satqw{11}{The sum of three consecutive even integers is 54 more than twice the smallest of the three integers. What is the largest of the three integers?}{48}{50}{52}{150}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard (cont.)}{Choose the correct answer.}
+
+\satqw{12}{A rectangular garden's length is 7 feet less than 3 times its width. The perimeter of the garden is 106 feet. What is the length, in feet, of the garden?}{15}{23}{38}{45}
+\satq{13}{What value of $x$ satisfies $\dfrac{3}{4}(x+8)=\dfrac{1}{2}x+10$?}{4}{8}{16}{24}
+\satqw{14}{A concert venue sells tickets for \$45 each and charges a one-time \$120 cleaning fee for a private host. The host has a budget of \$3{,}200 for tickets and the fee. What is the maximum number of tickets the host can purchase?}{66}{68}{69}{71}
+\satqw{15}{For what value of the constant $a$ is $a(x+4)=3x+12$ true for every value of $x$?}{1}{3}{4}{12}
+}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original -- written by studying the method
+and structure of real, officially-released SAT Suite Question Bank items in this
+lesson's skill categories, then building a new problem (new numbers, names, and
+context) requiring the same solving method. No real College Board question text
+is reproduced anywhere in this book.\par}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 10: Answers -- Sets 1-7 =================
+\topicheader{1}{Linear Equations \& Inequalities}
+\pagefooter{16}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
 \end{textblock*}
 
 \begin{textblock*}{194mm}(16mm,44mm)
@@ -246,43 +436,114 @@
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|>{\centering\arraybackslash}p{26mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{32mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{32mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{3}{26mm}{\centering 1-to'plam} & 1 & $x=6$ & 2 & $x=8$\\\cline{2-5}
+\multirow{3}{26mm}{\centering Set 1} & 1 & $x=6$ & 2 & $x=8$\\\cline{2-5}
  & 3 & $x=12$ & 4 & $x=\tfrac{10}{3}$\\\cline{2-5}
  & 5 & $x=\tfrac{16}{5}$ & 6 & $x=\tfrac{9}{2}$\\\hline
-\multirow{3}{26mm}{\centering 2-to'plam} & 1 & $40$ & 2 & $5$\\\cline{2-5}
+\multirow{3}{26mm}{\centering Set 2} & 1 & $40$ & 2 & $5$\\\cline{2-5}
  & 3 & $8$ & 4 & $15$\\\cline{2-5}
  & 5 & $52$ & 6 & $7$\\\hline
-\multirow{3}{26mm}{\centering 3-to'plam} & 1 & $x<4$ & 2 & $x\le-3$\\\cline{2-5}
+\multirow{3}{26mm}{\centering Set 3} & 1 & $x<4$ & 2 & $x\le-3$\\\cline{2-5}
  & 3 & $x\ge-3$ & 4 & $x>8$\\\cline{2-5}
  & 5 & $x>-1$ & 6 & $x\le4$\\\hline
-\multirow{3}{26mm}{\centering 4-to'plam} & 1 & $-5<x\le4$ & 2 & $x<-1$ yoki $x>3$\\\cline{2-5}
- & 3 & $-3\le x<4$ & 4 & $x<-2$ yoki $x>6$\\\cline{2-5}
- & 5 & $-3<x\le5$ & 6 & $x<-1$ yoki $x>3$\\\hline
-\multirow{6}{26mm}{\centering 5-to'plam} & \multicolumn{4}{p{84mm}|}{1.\ $x+5\ge12 \Rightarrow x\ge7$}\\\cline{2-5}
+\multirow{3}{26mm}{\centering Set 4} & 1 & $-5<x\le4$ & 2 & $x<-1$ or $x>3$\\\cline{2-5}
+ & 3 & $-3\le x<4$ & 4 & $x<-2$ or $x>6$\\\cline{2-5}
+ & 5 & $-3<x\le5$ & 6 & $x<-1$ or $x>3$\\\hline
+\multirow{6}{26mm}{\centering Set 5} & \multicolumn{4}{p{84mm}|}{1.\ $x+5\ge12 \Rightarrow x\ge7$}\\\cline{2-5}
  & \multicolumn{4}{p{84mm}|}{2.\ $3x\le21 \Rightarrow x\le7$}\\\cline{2-5}
  & \multicolumn{4}{p{84mm}|}{3.\ $x-4<10 \Rightarrow x<14$}\\\cline{2-5}
  & \multicolumn{4}{p{84mm}|}{4.\ $2x-3\ge7 \Rightarrow x\ge5$}\\\cline{2-5}
  & \multicolumn{4}{p{84mm}|}{5.\ $-1\le x\le5$}\\\cline{2-5}
- & \multicolumn{4}{p{84mm}|}{6.\ $2x-5\le15 \Rightarrow x\le10$, eng katta butun $=10$}\\\hline
-\multirow{5}{26mm}{\centering 6-to'plam} & \multicolumn{4}{p{84mm}|}{1.\ Xato -- manfiyga bo'lganda ishora almashishi kerak, lekin yo'nalish teskari ko'rsatilgan. To'g'ri: $x<-4$.}\\\cline{2-5}
- & \multicolumn{4}{p{84mm}|}{2.\ Xato -- manfiyga ko'paytirish/bo'lish bo'lmagan (faqat ayirish), ishora almashmasligi kerak. To'g'ri: $x>7$.}\\\cline{2-5}
- & \multicolumn{4}{p{84mm}|}{3.\ Xato -- $4x$ o'rniga $x$ berilgan. To'g'ri: $x=4$, demak $4x=16$.}\\\cline{2-5}
- & \multicolumn{4}{p{84mm}|}{4.\ Xato -- $-2\times(-3)$ ni $-6$ deb taqsimlagan, $+6$ bo'lishi kerak edi. To'g'ri: $-2x+6<10 \Rightarrow x>-2$.}\\\cline{2-5}
- & \multicolumn{4}{p{84mm}|}{5.\ Xato -- o'rta va o'ng tomon 2 ga bo'lingan, lekin $-4$ bo'linmay qolgan. To'g'ri: $-2<x<4$.}\\\hline
-\multirow{5}{26mm}{\centering 7-to'plam} & \multicolumn{4}{p{84mm}|}{1.\ $x=9$, $3x=27$}\\\cline{2-5}
- & \multicolumn{4}{p{84mm}|}{2.\ $-2<x\le3$, eng kichik butun $=-1$}\\\cline{2-5}
- & \multicolumn{4}{p{84mm}|}{3.\ $x\le5$, eng katta qiymat $=5$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{6.\ $2x-5\le15 \Rightarrow x\le10$, largest integer $=10$}\\\hline
+\multirow{5}{26mm}{\centering Set 6} & \multicolumn{4}{p{84mm}|}{1.\ Error -- dividing by a negative should flip the sign, but the direction shown is backwards. Correct: $x<-4$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ Error -- no multiplication/division by a negative happened (only subtraction); sign should not flip. Correct: $x>7$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ Error -- reported $x$ instead of $4x$. Correct: $x=4$, so $4x=16$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ Error -- distributed $-2\times(-3)$ as $-6$ instead of $+6$. Correct: $-2x+6<10 \Rightarrow x>-2$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ Error -- divided the middle and right side by 2 but left $-4$ un-divided. Correct: $-2<x<4$.}\\\hline
+\multirow{5}{26mm}{\centering Set 7} & \multicolumn{4}{p{84mm}|}{1.\ $x=9$, $3x=27$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ $-2<x\le3$, smallest integer $=-1$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ $x\le5$, largest value $=5$}\\\cline{2-5}
  & \multicolumn{4}{p{84mm}|}{4.\ $x=0$, $x+2=2$}\\\cline{2-5}
  & \multicolumn{4}{p{84mm}|}{5.\ $-1<x\le4$}\\\hline
 \end{tabular}
 }
 \end{textblock*}
 
+\clearpage
+
+% ================= PAGE 11: Answers -- Set 8 =================
+\topicheader{1}{Linear Equations \& Inequalities}
+\pagefooter{17}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&C&D&A&B&A&C&B&C&A\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+A&C&B&C&B\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&D&A&C&C&A&A&D&B&A\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+C&D&A&A&B\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+D&B&A&B&B&D&C&D&B&B\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+C&C&C&B&B\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
 \begin{textblock*}{194mm}(16mm,232mm)
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}
