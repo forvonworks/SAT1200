@@ -138,6 +138,182 @@ best modeled by a linear or an exponential function, then evaluate.
 
 ---
 
+## Set 8 — Official SAT-Style Application
+
+Multiple-choice (A–D), English, matching the real Digital SAT's format,
+pacing, and item design for this lesson's official skill category
+(*Advanced Math — Nonlinear functions*, filtered to exponential growth/
+decay items). Every item below is **original** — written by studying the
+method and structure of real, officially-released SAT Suite Question Bank
+items in this category, then building a new problem (new numbers, names,
+context) requiring the exact same solving method. No real College Board
+question text, numbers, or wording is reproduced here. 15 Easy / 15 Medium
+/ 15 Hard, matching real-test density.
+
+### Easy
+
+1. At the time of posting, a video had $80$ views. Each hour for several hours after it was posted, the number of views doubled from the number the previous hour. Which equation gives the total number of views, $n$, to the video $d$ hours after it was posted?
+   A) $n=80d$  B) $n=80(2)^d$  C) $n=2(80)^d$  D) $n=(80)^2+d$
+
+2. A town's population is modeled by $P(t)=500(1.04)^t$, where $t$ is the number of years since 2020. What is the population in 2020 (when $t=0$)?
+   A) $500$  B) $520$  C) $1.04$  D) $504$
+
+3. A car's value is modeled by $V(t)=24{,}000(0.88)^t$, where $t$ is years since purchase. What is the value, to the nearest dollar, after $2$ years?
+   A) $18{,}200$  B) $18{,}586$  C) $19{,}200$  D) $21{,}120$
+
+4. A substance decreases by $15\%$ each hour. Which value represents the decay factor used in an exponential model of this substance?
+   A) $0.15$  B) $0.85$  C) $1.15$  D) $-0.15$
+
+5. A population is modeled by $P=P_0(1+r)^t$, where $r$ is a constant. If the population is decreasing over time, which of the following must be true?
+   A) $r<-1$  B) $-1<r<0$  C) $0<r<1$  D) $r>1$
+
+6. A $\$300$ investment grows at a constant rate of $5\%$ per year. What is its value after $2$ years?
+   A) $\$315.00$  B) $\$330.00$  C) $\$330.75$  D) $\$345.00$
+
+7. A $60$ mg dose of a medication decreases by $20\%$ each hour. How much remains after $2$ hours?
+   A) $36.00$ mg  B) $38.40$ mg  C) $40.00$ mg  D) $48.00$ mg
+
+8. The population of a village is currently $8{,}000$ and is estimated to increase each year by $2\%$ from the previous year. Which equation can be used to estimate the number of years $t$ it will take for the population to reach $10{,}000$?
+   A) $8000=10000(0.02)^t$  B) $8000=10000(2)^t$  C) $10000=8000(0.02)^t$  D) $10000=8000(1.02)^t$
+
+9. A function is defined by the table of values below, for $x=0,1,2,3$:
+   $$y = 6,\ 12,\ 24,\ 48$$
+   Which equation defines this function?
+   A) $y=6+6x$  B) $y=6(2)^x$  C) $y=2(6)^x$  D) $y=6x^2$
+
+10. A substance has a half-life of $3$ years. If it starts with a mass of $80$ grams, what is the mass remaining after $6$ years?
+    A) $10$ g  B) $20$ g  C) $40$ g  D) $60$ g
+
+11. A city's population decreases by $4\%$ each year. Which value is the growth factor $b$ used in a model $P=P_0\, b^{\,t}$?
+    A) $0.04$  B) $0.96$  C) $1.04$  D) $-0.04$
+
+12. A bacteria culture starts with $25$ bacteria and triples every hour. How many bacteria are there after $3$ hours?
+    A) $75$  B) $225$  C) $675$  D) $2{,}025$
+
+13. A quantity begins at $10$ and doubles every step. Which equation gives the value $y$ after $x$ steps?
+    A) $y=10+2x$  B) $y=10(2)^x$  C) $y=2(10)^x$  D) $y=x^2+10$
+
+14. An item's price increases by $8\%$ each year. What is the growth factor used in an exponential model of the price?
+    A) $0.08$  B) $0.92$  C) $1.08$  D) $8$
+
+15. A $\$5{,}000$ car loses $10\%$ of its value every year. What is its value after $2$ years?
+    A) $\$3{,}800$  B) $\$4{,}000$  C) $\$4{,}050$  D) $\$4{,}500$
+
+### Medium
+
+1. The table below shows the relationship between $t$, the time in years, and $n$, the total amount in an account, where the relationship is exponential.
+
+   | Time (years) | Total amount (dollars) |
+   |---|---|
+   | $0$ | $250.00$ |
+   | $1$ | $260.00$ |
+   | $2$ | $270.40$ |
+
+   If no deposits or withdrawals were made, which equation best represents the relationship between $t$ and $n$?
+   A) $n=(1+250)^t$  B) $n=(1+0.04)^t$  C) $n=250(1+0.04)^t$  D) $n=0.04(1+250)^t$
+
+2. The function $f(t)=20{,}000(2)^{t/650}$ gives the number of bacteria in a population $t$ minutes after an initial observation. How much time, in minutes, does it take for the population to double?
+   A) $2$  B) $325$  C) $650$  D) $20{,}000$
+
+3. $P(t)=500(1.03)^{(4/2)t}$ models a population, in thousands, $t$ years after 2010, where the population increases by $3\%$ every $n$ months. What is the value of $n$?
+   A) $3$  B) $6$  C) $12$  D) $24$
+
+4. The value of a car is currently $\$18{,}000$ and is estimated to decrease each year by $6\%$ from the previous year's value. Which equation can be used to estimate the number of years $t$ it will take for the car's value to reach $\$12{,}000$?
+   A) $18000=12000(0.94)^t$  B) $12000=18000(0.06)^t$  C) $12000=18000(0.94)^t$  D) $18000=12000(1.06)^t$
+
+5. A population modeled by $P=P_0(1+r)^t$ more than doubles every year, where $r$ is a constant. Which of the following must be true?
+   A) $0<r<1$  B) $r>1$  C) $-1<r<0$  D) $r<-1$
+
+6. A function is defined by the table of values below, for $x=0,1,2,3$:
+   $$y = 12,\ 18,\ 27,\ 40.5$$
+   Which equation defines this function?
+   A) $y=12+6x$  B) $y=12(1.5)^x$  C) $y=1.5(12)^x$  D) $y=12(0.5)^x$
+
+7. A $\$2{,}000$ investment grows $5\%$ in the first year and then grows $8\%$ in the second year. What is its value after $2$ years?
+   A) $\$2{,}160$  B) $\$2{,}200$  C) $\$2{,}260$  D) $\$2{,}268$
+
+8. A substance's mass is multiplied by $0.5$ every $8$ days. What fraction of the original mass remains after $24$ days?
+   A) $\dfrac12$  B) $\dfrac14$  C) $\dfrac18$  D) $\dfrac{1}{16}$
+
+9. A company's revenue was $\$50{,}000$ last year and is $\$53{,}000$ this year. If revenue grows at a constant exponential rate, what is the approximate annual percent growth rate?
+   A) $3\%$  B) $5\%$  C) $6\%$  D) $10\%$
+
+10. A radioactive sample has a mass of $90$ grams and loses $15\%$ of its mass every year. What is the mass, to the nearest tenth of a gram, after $3$ years?
+    A) $53.1$ g  B) $54.6$ g  C) $55.3$ g  D) $57.4$ g
+
+11. A population is modeled by $P(t)=1{,}200(1.02)^{3t}$, where $t$ is measured in years. By what percent does the model estimate the population increases every $4$ months?
+    A) $1\%$  B) $2\%$  C) $6\%$  D) $8\%$
+
+12. A jacket's original price is $\$80$. The price increases by $25\%$ for a sale event, then decreases by $20\%$ during a clearance. What is the final price?
+    A) $\$76$  B) $\$78$  C) $\$80$  D) $\$84$
+
+13. A medication's concentration in the bloodstream decreases by $30\%$ every $2$ hours. Which equation gives the concentration $C$ after $t$ hours, if the initial concentration is $80$ mg/L?
+    A) $C=80(0.7)^t$  B) $C=80(0.7)^{t/2}$  C) $C=80(0.3)^{t/2}$  D) $C=80(1.3)^{t/2}$
+
+14. A population is modeled by $P(t)=300(1.15)^t$. For what value of $t$ does $P(t)$ first exceed $600$?
+    A) $3$  B) $4$  C) $5$  D) $6$
+
+15. A substance has a half-life of $5$ hours. Approximately how many hours does it take for the substance to decay to $\dfrac18$ of its original amount?
+    A) $8$  B) $10$  C) $15$  D) $40$
+
+### Hard
+
+1. $P(t)=840(1.06)^{(4/3)t}$ models the population, in thousands, of a city $t$ years after 2015, where the population is predicted to increase by $6\%$ every $n$ months. What is the value of $n$?
+   A) $4$  B) $8$  C) $9$  D) $16$
+
+2. A quantity modeled by $Q=Q_0(1+r)^t$ decreases to less than half its value every year, where $r$ is a constant. Which of the following must be true?
+   A) $r<-1$  B) $-1<r<-0.5$  C) $-0.5<r<0$  D) $r>-0.5$
+
+3. The number of subscribers to a streaming service is currently $85{,}000$ and is projected to increase each month by $2.5\%$ from the previous month. Which equation can be used to estimate the number of months $t$ it will take for the number of subscribers to reach $120{,}000$?
+   A) $85000=120000(0.025)^t$  B) $120000=85000(0.025)^t$  C) $120000=85000(1.025)^t$  D) $85000=120000(1.025)^t$
+
+4. The function $f(t)=18{,}000(3)^{t/504}$ models the number of users of an app $t$ days after launch. How much time, in **weeks**, does it take for the number of users to triple?
+   A) $72$  B) $504$  C) $84$  D) $3$
+
+5. An investment grows from $\$4{,}000$ to $\$5{,}290$ over $2$ years at a constant annual percent rate. What is the annual percent rate of growth?
+   A) $10\%$  B) $12\%$  C) $15\%$  D) $20\%$
+
+6. The value of a boat decreases from $\$60{,}000$ to $\$30{,}720$ over $3$ years at a constant annual percent rate. What is the annual percent rate of depreciation?
+   A) $10\%$  B) $15\%$  C) $20\%$  D) $25\%$
+
+7. A population is modeled by $P(t)=500(1.08)^t$, where $t$ is the number of years since 2010. Which function best models the population $Q(m)$, where $m$ is the number of months since 2010?
+   A) $Q(m)=500(1.08)^{m/12}$  B) $Q(m)=500(1.08)^{12m}$  C) $Q(m)=500\!\left(\dfrac{1.08}{12}\right)^m$  D) $Q(m)=500(1.08)^m-12$
+
+8. A population modeled by $P=P_0(1+r)^t$ increases by more than $50\%$ but less than $100\%$ every year, where $r$ is a constant. Which of the following must be true?
+   A) $0<r<0.5$  B) $0.5<r<1$  C) $1<r<1.5$  D) $1.5<r<2$
+
+9. An investment grows at a constant annual rate of $6\%$. After $4$ years, the investment is worth $\$6{,}312.38$ (to the nearest cent). What was the initial value of the investment, to the nearest dollar?
+   A) $\$4{,}500$  B) $\$5{,}000$  C) $\$5{,}500$  D) $\$6{,}000$
+
+10. A radioactive isotope has a half-life of $1{,}600$ years. A sample initially contains $480$ grams. After $6{,}400$ years, approximately what percent of the original sample remains?
+    A) $3.125\%$  B) $6.25\%$  C) $12.5\%$  D) $25\%$
+
+11. The value of a shipment of goods is currently $\$72{,}000$ and depreciates by $4\%$ every $3$ months. Which equation gives the value $V$ of the shipment $t$ **years** from today?
+    A) $V=72000(0.96)^{4t}$  B) $V=72000(0.96)^{t/4}$  C) $V=72000(1.04)^{4t}$  D) $V=72000(0.96)^{3t}$
+
+12. Which expression is equivalent to $400(1.5)^{2t}$?
+    A) $400(3)^t$  B) $400(2.25)^t$  C) $800(1.5)^t$  D) $400(1.5)^t\cdot2$
+
+13. The population of a town was $2{,}000$ in 2018 and $2{,}880$ in 2020. If the population continues to grow at this same constant annual percent rate, what will the population be (to the nearest whole number) in 2022?
+    A) $3{,}456$  B) $4{,}147$  C) $4{,}320$  D) $5{,}760$
+
+14. A quantity $Q$ is modeled by $Q(t)=Q_0(k-3)^t$, where $k$ is a constant. For the model to represent exponential **decay**, which of the following must be true?
+    A) $k<3$  B) $3<k<4$  C) $k>4$  D) $k=3.5$ only
+
+15. A charity's donation total starts at $\$10{,}000$. It immediately receives a one-time matching gift that increases the total by $20\%$, and then the total grows by $3\%$ each additional month after that. Which equation gives the total donation amount $D$ after $m$ additional months (counted after the matching gift)?
+    A) $D=10000(1.03)^m$  B) $D=12000(1.03)^m$  C) $D=10000(1.23)^m$  D) $D=12000(1.2)(1.03)^m$
+
+**A note on sourcing:** real, official College Board SAT questions are
+copyrighted and are **not** licensed for reproduction in commercial
+test-prep materials, under any circumstances, with or without attribution.
+No verbatim College Board question appears in this book. Every item above
+was independently written to match the *method*, *structure*, and
+*officially documented difficulty tier* of real SAT Suite Question Bank
+items in this lesson's skill category — the numbers, names, and contexts
+are all original.
+
+---
+
 ## Answer Key
 
 **Set 1:**

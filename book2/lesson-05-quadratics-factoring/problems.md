@@ -81,6 +81,172 @@ what is the correct full solution (both values, where there are two)?
 
 ---
 
+## Set 8 — Official SAT-Style Application
+
+Multiple-choice (A–D), English, matching the real Digital SAT's format and
+item design for this lesson's official skill category (Advanced Math —
+*Nonlinear equations in one variable*, factoring-solvable subset only — no
+quadratic formula or completing the square, which are Lessons 6–7). Every
+item below is **original** — written by studying the method and structure of
+real, officially-released SAT Suite Question Bank items in this skill
+category, then building a new problem (new numbers, new context) that
+requires the exact same solving method. No real College Board question text,
+numbers, or wording is reproduced here or anywhere in this book.
+
+15 Easy / 15 Medium / 15 Hard, matching real-test density and difficulty
+distribution for this skill.
+
+### Easy
+
+1. What are the solutions to the equation $x^2+7x+12=0$?
+   A) $-4,-3$  B) $4,3$  C) $-4,3$  D) $4,-3$
+
+2. What is the smaller solution to the equation $x^2-8x+15=0$?
+   A) 3  B) 5  C) $-3$  D) $-5$
+
+3. What is the positive solution to the equation $x^2-9=0$?
+   A) 3  B) 9  C) $-3$  D) 81
+
+4. What are the solutions to the equation $2x^2+10x+12=0$?
+   A) $-3,-2$  B) $3,2$  C) $-6,-4$  D) $-1,-6$
+
+5. What is the positive solution to the equation $x^2+x-6=0$?
+   A) 2  B) 3  C) 6  D) $-2$
+
+6. What are the solutions to the equation $(x-3)(x+5)=0$?
+   A) $-5,3$  B) $5,-3$  C) $5,3$  D) $-5,-3$
+
+7. What is the positive solution to the equation $x^2-64=0$?
+   A) 8  B) 64  C) 32  D) $-8$
+
+8. What is the negative solution to the equation $x^2+4x=0$?
+   A) $-4$  B) $-1$  C) 0  D) 4
+
+9. A rectangle's width is $x$ and its length is $x+3$. If the area of the rectangle is 40, what is the width, $x$?
+   A) 5  B) 8  C) 4  D) 10
+
+10. What is the positive solution to the equation $3x^2-12=0$?
+    A) 2  B) 4  C) 12  D) $-2$
+
+11. What is the positive solution to the equation $x^2-5x=0$?
+    A) 5  B) 0  C) $-5$  D) 10
+
+12. What is the sum of the solutions to the equation $(x+4)(x-6)=0$?
+    A) 2  B) $-2$  C) 10  D) $-24$
+
+13. What is the sum of the solutions to the equation $x^2+2x-8=0$?
+    A) $-2$  B) 2  C) $-8$  D) 8
+
+14. Two consecutive positive integers have a product of 72. What is the larger of the two integers?
+    A) 9  B) 8  C) 12  D) 10
+
+15. How many real solutions does the equation $x^2+6x+9=0$ have?
+    A) None  B) Exactly one  C) Exactly two  D) Infinitely many
+
+### Medium
+
+1. What is the lesser solution to the equation $6x^2+11x+3=0$?
+   A) $-\dfrac{3}{2}$  B) $-\dfrac{1}{3}$  C) $\dfrac{3}{2}$  D) $\dfrac{1}{3}$
+
+2. What is the positive solution to the equation $4x^2-9=0$?
+   A) $\dfrac{3}{2}$  B) $\dfrac{9}{4}$  C) 3  D) $\dfrac{9}{2}$
+
+3. What is the positive solution to the equation $(x-7)(x+7)-5=-5$?
+   A) 7  B) 14  C) 5  D) 2
+
+4. What is the greatest solution to the equation $2x^2-5x-3=0$?
+   A) 3  B) $-\dfrac{1}{2}$  C) $\dfrac{5}{2}$  D) $-3$
+
+5. An object's height, in feet, $x$ seconds after launch is modeled by $h=-x^2+10x$. At what later time, in seconds, does the object again reach a height of 16 feet (other than the earlier time it passes through that height)?
+   A) 8  B) 2  C) 6  D) 16
+
+6. What is the positive solution to the equation $x^2-6x=16$?
+   A) 8  B) 2  C) $-2$  D) 6
+
+7. What is the negative solution to the equation $5x^2+20x=0$?
+   A) $-4$  B) $-5$  C) $-20$  D) 0
+
+8. A rectangular garden has length $x+5$ meters and width $x-1$ meters. If its area is 55 square meters, what is the width, in meters?
+   A) 5  B) 6  C) 10  D) 4
+
+9. What is the sum of the solutions to the equation $x^2+2x-24=0$?
+   A) $-2$  B) 2  C) $-24$  D) 24
+
+10. What is the positive solution to the equation $(3x-2)(x+4)=0$?
+    A) $\dfrac{2}{3}$  B) $-4$  C) $\dfrac{3}{2}$  D) 4
+
+11. What is the positive solution to the equation $3x^2+5x-2=0$?
+    A) $\dfrac{1}{3}$  B) $-2$  C) 2  D) 3
+
+12. What is the positive solution to the equation $x^2-121=0$?
+    A) 11  B) 121  C) $-11$  D) 60.5
+
+13. The product of two consecutive positive integers is 132. What is the smaller of the two integers?
+    A) 11  B) 12  C) 10  D) 13
+
+14. What is the positive solution to the equation $9x^2-25=0$?
+    A) $\dfrac{5}{3}$  B) $\dfrac{25}{9}$  C) $\dfrac{5}{9}$  D) 3
+
+15. What is the positive solution to the equation $x^2+10x-24=0$?
+    A) 2  B) 12  C) $-2$  D) 24
+
+### Hard
+
+1. What is the positive solution to the equation $12x^2-7x-10=0$?
+   A) $\dfrac{5}{4}$  B) $-\dfrac{2}{3}$  C) $\dfrac{4}{5}$  D) $\dfrac{2}{3}$
+
+2. What is the positive solution to the equation $(x-45)(x+45)-20=-20$?
+   A) 45  B) 20  C) 25  D) 65
+
+3. An object's height, in feet, $t$ seconds after launch is modeled by $h=-16t^2+64t+80$. Other than at launch ($t=0$), at what time, in seconds, does the object return to a height of 80 feet?
+   A) 4  B) 5  C) 16  D) 2
+
+4. What is the positive solution to the equation $8x^2-2x-3=0$?
+   A) $\dfrac{3}{4}$  B) $-\dfrac{1}{2}$  C) $\dfrac{1}{4}$  D) $\dfrac{3}{8}$
+
+5. A rectangle has length $2x+1$ and width $x+3$, both in meters. If its area is 88 square meters, what is the width, in meters?
+   A) 8  B) 5  C) 11  D) 17
+
+6. What is the greatest solution to the equation $\dfrac{1}{2}x^2-\dfrac{1}{2}x-3=0$?
+   A) 3  B) $-2$  C) 2  D) 6
+
+7. What is the positive solution to the equation $16x^2-81=0$?
+   A) $\dfrac{9}{4}$  B) $\dfrac{81}{16}$  C) $\dfrac{9}{16}$  D) 9
+
+8. The product of two consecutive positive even integers is 168. What is the larger of the two integers?
+   A) 14  B) 12  C) 16  D) 13
+
+9. What is the positive solution to the equation $(x-6)(x+6)=2x+27$?
+   A) 9  B) 7  C) $-7$  D) 63
+
+10. What is the positive solution to the equation $4x^2-16x-84=0$?
+    A) 7  B) 3  C) 21  D) 4
+
+11. Two positive numbers differ by 3, and their product is 180. What is the larger number?
+    A) 15  B) 12  C) 18  D) 20
+
+12. What is the positive solution to the equation $10x^2+13x-3=0$?
+    A) $\dfrac{1}{5}$  B) $-\dfrac{3}{2}$  C) $\dfrac{3}{10}$  D) $\dfrac{1}{10}$
+
+13. What is the positive solution to the equation $(x+8)(x-8)=5x+2$?
+    A) 11  B) 6  C) $-6$  D) 22
+
+14. A positive number increased by its own square equals 56. What is the number?
+    A) 7  B) 8  C) 6  D) 9
+
+15. What is the greater solution to the equation $6x^2-19x+10=0$?
+    A) $\dfrac{5}{2}$  B) $\dfrac{2}{3}$  C) $\dfrac{10}{3}$  D) $\dfrac{5}{3}$
+
+**A note on sourcing:** real, official College Board SAT questions are
+copyrighted and are **not** licensed for reproduction in commercial test-prep
+materials, under any circumstances, with or without attribution. No
+verbatim College Board question appears in this book. Every item above was
+independently written to match the *method*, *structure*, and *officially
+documented difficulty tier* of real SAT Suite Question Bank items in this
+lesson's skill category — the numbers, names, and contexts are all original.
+
+---
+
 ## Answer Key
 
 **Set 1:** 1) $-4,-1$  2) $-4,-2$  3) $-7,-2$  4) $-2,-1$  5) $-8,-2$  6) $-6,-2$  7) $-9,-2$  8) $-5,-2$
@@ -104,3 +270,169 @@ what is the correct full solution (both values, where there are two)?
    solution. Correct: factor instead — $2x(x+3)=0 \Rightarrow x=0$ or $x=-3$.
 
 **Set 7:** 1) $-\frac12,-\frac13$  2) $-\frac32,\frac32$  3) $-\frac12,\frac12$  4) $-2,5$  5) $-\frac52,2$
+
+---
+
+## Set 8 — Official SAT-Style Application
+
+Multiple-choice (A–D), English, matching the real Digital SAT's format and
+item design for this lesson's official skill category (Advanced Math —
+*Nonlinear equations in one variable*, factoring-solvable subset only — no
+quadratic formula or completing the square, which are Lessons 6–7). Every
+item below is **original** — written by studying the method and structure of
+real, officially-released SAT Suite Question Bank items in this skill
+category, then building a new problem (new numbers, new context) that
+requires the exact same solving method. No real College Board question text,
+numbers, or wording is reproduced here or anywhere in this book.
+
+15 Easy / 15 Medium / 15 Hard, matching real-test density and difficulty
+distribution for this skill.
+
+### Easy
+
+1. What are the solutions to the equation $x^2+7x+12=0$?
+   A) $-4,-3$  B) $4,3$  C) $-4,3$  D) $4,-3$
+
+2. What is the smaller solution to the equation $x^2-8x+15=0$?
+   A) 3  B) 5  C) $-3$  D) $-5$
+
+3. What is the positive solution to the equation $x^2-9=0$?
+   A) 3  B) 9  C) $-3$  D) 81
+
+4. What are the solutions to the equation $2x^2+10x+12=0$?
+   A) $-3,-2$  B) $3,2$  C) $-6,-4$  D) $-1,-6$
+
+5. What is the positive solution to the equation $x^2+x-6=0$?
+   A) 2  B) 3  C) 6  D) $-2$
+
+6. What are the solutions to the equation $(x-3)(x+5)=0$?
+   A) $-5,3$  B) $5,-3$  C) $5,3$  D) $-5,-3$
+
+7. What is the positive solution to the equation $x^2-64=0$?
+   A) 8  B) 64  C) 32  D) $-8$
+
+8. What is the negative solution to the equation $x^2+4x=0$?
+   A) $-4$  B) $-1$  C) 0  D) 4
+
+9. A rectangle's width is $x$ and its length is $x+3$. If the area of the rectangle is 40, what is the width, $x$?
+   A) 5  B) 8  C) 4  D) 10
+
+10. What is the positive solution to the equation $3x^2-12=0$?
+    A) 2  B) 4  C) 12  D) $-2$
+
+11. What is the positive solution to the equation $x^2-5x=0$?
+    A) 5  B) 0  C) $-5$  D) 10
+
+12. What is the sum of the solutions to the equation $(x+4)(x-6)=0$?
+    A) 2  B) $-2$  C) 10  D) $-24$
+
+13. What is the sum of the solutions to the equation $x^2+2x-8=0$?
+    A) $-2$  B) 2  C) $-8$  D) 8
+
+14. Two consecutive positive integers have a product of 72. What is the larger of the two integers?
+    A) 9  B) 8  C) 12  D) 10
+
+15. How many real solutions does the equation $x^2+6x+9=0$ have?
+    A) None  B) Exactly one  C) Exactly two  D) Infinitely many
+
+### Medium
+
+1. What is the lesser solution to the equation $6x^2+11x+3=0$?
+   A) $-\dfrac{3}{2}$  B) $-\dfrac{1}{3}$  C) $\dfrac{3}{2}$  D) $\dfrac{1}{3}$
+
+2. What is the positive solution to the equation $4x^2-9=0$?
+   A) $\dfrac{3}{2}$  B) $\dfrac{9}{4}$  C) 3  D) $\dfrac{9}{2}$
+
+3. What is the positive solution to the equation $(x-7)(x+7)-5=-5$?
+   A) 7  B) 14  C) 5  D) 2
+
+4. What is the greatest solution to the equation $2x^2-5x-3=0$?
+   A) 3  B) $-\dfrac{1}{2}$  C) $\dfrac{5}{2}$  D) $-3$
+
+5. An object's height, in feet, $x$ seconds after launch is modeled by $h=-x^2+10x$. At what later time, in seconds, does the object again reach a height of 16 feet (other than the earlier time it passes through that height)?
+   A) 8  B) 2  C) 6  D) 16
+
+6. What is the positive solution to the equation $x^2-6x=16$?
+   A) 8  B) 2  C) $-2$  D) 6
+
+7. What is the negative solution to the equation $5x^2+20x=0$?
+   A) $-4$  B) $-5$  C) $-20$  D) 0
+
+8. A rectangular garden has length $x+5$ meters and width $x-1$ meters. If its area is 55 square meters, what is the width, in meters?
+   A) 5  B) 6  C) 10  D) 4
+
+9. What is the sum of the solutions to the equation $x^2+2x-24=0$?
+   A) $-2$  B) 2  C) $-24$  D) 24
+
+10. What is the positive solution to the equation $(3x-2)(x+4)=0$?
+    A) $\dfrac{2}{3}$  B) $-4$  C) $\dfrac{3}{2}$  D) 4
+
+11. What is the positive solution to the equation $3x^2+5x-2=0$?
+    A) $\dfrac{1}{3}$  B) $-2$  C) 2  D) 3
+
+12. What is the positive solution to the equation $x^2-121=0$?
+    A) 11  B) 121  C) $-11$  D) 60.5
+
+13. The product of two consecutive positive integers is 132. What is the smaller of the two integers?
+    A) 11  B) 12  C) 10  D) 13
+
+14. What is the positive solution to the equation $9x^2-25=0$?
+    A) $\dfrac{5}{3}$  B) $\dfrac{25}{9}$  C) $\dfrac{5}{9}$  D) 3
+
+15. What is the positive solution to the equation $x^2+10x-24=0$?
+    A) 2  B) 12  C) $-2$  D) 24
+
+### Hard
+
+1. What is the positive solution to the equation $12x^2-7x-10=0$?
+   A) $\dfrac{5}{4}$  B) $-\dfrac{2}{3}$  C) $\dfrac{4}{5}$  D) $\dfrac{2}{3}$
+
+2. What is the positive solution to the equation $(x-45)(x+45)-20=-20$?
+   A) 45  B) 20  C) 25  D) 65
+
+3. An object's height, in feet, $t$ seconds after launch is modeled by $h=-16t^2+64t+80$. Other than at launch ($t=0$), at what time, in seconds, does the object return to a height of 80 feet?
+   A) 4  B) 5  C) 16  D) 2
+
+4. What is the positive solution to the equation $8x^2-2x-3=0$?
+   A) $\dfrac{3}{4}$  B) $-\dfrac{1}{2}$  C) $\dfrac{1}{4}$  D) $\dfrac{3}{8}$
+
+5. A rectangle has length $2x+1$ and width $x+3$, both in meters. If its area is 88 square meters, what is the width, in meters?
+   A) 8  B) 5  C) 11  D) 17
+
+6. What is the greatest solution to the equation $\dfrac{1}{2}x^2-\dfrac{1}{2}x-3=0$?
+   A) 3  B) $-2$  C) 2  D) 6
+
+7. What is the positive solution to the equation $16x^2-81=0$?
+   A) $\dfrac{9}{4}$  B) $\dfrac{81}{16}$  C) $\dfrac{9}{16}$  D) 9
+
+8. The product of two consecutive positive even integers is 168. What is the larger of the two integers?
+   A) 14  B) 12  C) 16  D) 13
+
+9. What is the positive solution to the equation $(x-6)(x+6)=2x+27$?
+   A) 9  B) 7  C) $-7$  D) 63
+
+10. What is the positive solution to the equation $4x^2-16x-84=0$?
+    A) 7  B) 3  C) 21  D) 4
+
+11. Two positive numbers differ by 3, and their product is 180. What is the larger number?
+    A) 15  B) 12  C) 18  D) 20
+
+12. What is the positive solution to the equation $10x^2+13x-3=0$?
+    A) $\dfrac{1}{5}$  B) $-\dfrac{3}{2}$  C) $\dfrac{3}{10}$  D) $\dfrac{1}{10}$
+
+13. What is the positive solution to the equation $(x+8)(x-8)=5x+2$?
+    A) 11  B) 6  C) $-6$  D) 22
+
+14. A positive number increased by its own square equals 56. What is the number?
+    A) 7  B) 8  C) 6  D) 9
+
+15. What is the greater solution to the equation $6x^2-19x+10=0$?
+    A) $\dfrac{5}{2}$  B) $\dfrac{2}{3}$  C) $\dfrac{10}{3}$  D) $\dfrac{5}{3}$
+
+**A note on sourcing:** real, official College Board SAT questions are
+copyrighted and are **not** licensed for reproduction in commercial test-prep
+materials, under any circumstances, with or without attribution. No
+verbatim College Board question appears in this book. Every item above was
+independently written to match the *method*, *structure*, and *officially
+documented difficulty tier* of real SAT Suite Question Bank items in this
+lesson's skill category — the numbers, names, and contexts are all original.

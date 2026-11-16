@@ -75,9 +75,25 @@
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
+}
+
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
 }
 
 \arrayrulecolor{accent}
@@ -88,14 +104,14 @@
 \begin{document}
 
 % ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{7}{Parabola Grafigi va Diskriminant}
+\topicheader{7}{Quadratic Graphs \& the Discriminant}
 \pagefooter{37}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11.5}{14.5}\selectfont
-\setkicker{1-to'plam}{Uchini, simmetriya o'qini, yo'nalishini va kengligini toping.}
+\setkicker{Set 1}{Find the vertex, axis of symmetry, direction, and width.}
 
 \noindent\pnum{1} $y=3(x-1)^2+4$\\[20mm]
 \noindent\pnum{2} $y=-2(x+3)^2-1$\\[20mm]
@@ -108,7 +124,7 @@
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11.5}{14.5}\selectfont
-\setkicker{2-to'plam}{$D=b^2-4ac$ ni hisoblang va yechimlar sonini ayting.}
+\setkicker{Set 2}{Compute $D=b^2-4ac$ and state the number of solutions.}
 
 \noindent\pnum{1} $x^2+5x+6=0$\\[20mm]
 \noindent\pnum{2} $x^2-4x+4=0$\\[20mm]
@@ -122,14 +138,14 @@
 \clearpage
 
 % ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{7}{Parabola Grafigi va Diskriminant}
+\topicheader{7}{Quadratic Graphs \& the Discriminant}
 \pagefooter{38}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11.5}{14.5}\selectfont
-\setkicker{3-to'plam}{$x$-kesmalarini (ildizlarni) toping.}
+\setkicker{Set 3}{Find the $x$-intercepts (roots).}
 
 \noindent\pnum{1} $x^2-7x+10=0$\\[20mm]
 \noindent\pnum{2} $x^2+x-12=0$\\[20mm]
@@ -142,7 +158,7 @@
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11.5}{14.5}\selectfont
-\setkicker{4-to'plam}{Uchini, diskriminantni va haqiqiy ildizlarni (bo'lsa) toping.}
+\setkicker{Set 4}{Find the vertex, the discriminant, and the real root(s), if any.}
 
 \noindent\pnum{1} $y=x^2-4x+3$\\[27mm]
 \noindent\pnum{2} $y=-x^2+4x-5$\\[27mm]
@@ -155,78 +171,227 @@
 \clearpage
 
 % ================= PAGE 3: Set 5 | Set 6 (spot the error) =================
-\topicheader{7}{Parabola Grafigi va Diskriminant}
+\topicheader{7}{Quadratic Graphs \& the Discriminant}
 \pagefooter{39}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{5-to'plam}{"$k$ ni toping" -- SAT uslubidagi diskriminant masalalari.}
+\setkicker{Set 5}{``Find $k$'' -- SAT-format discriminant problems.}
 
-\noindent\pnum{1} $x^2+kx+9=0$ tenglama aynan bitta haqiqiy yechimga ega bo'lishi uchun $k$ qanday qiymat(lar)ni qabul qilishi kerak?\\[14mm]
-\noindent\pnum{2} $x^2-4x+k=0$ tenglama haqiqiy yechimga ega bo'lmasligi uchun $k$ qanday bo'lishi kerak?\\[14mm]
-\noindent\pnum{3} $2x^2+4x+k=0$ tenglama ikkita haqiqiy yechimga ega bo'lishi uchun $k$ qanday bo'lishi kerak?\\[14mm]
-\noindent\pnum{4} $x^2+6x+k=0$ tenglama aynan bitta haqiqiy yechimga ega bo'lishi uchun $k$ ni toping.\\[14mm]
-\noindent\pnum{5} $kx^2+4x+4=0$ ($k\ne0$) tenglama haqiqiy yechimga ega bo'lmasligi uchun $k$ qanday bo'lishi kerak?
+\noindent\pnum{1} For what value(s) of $k$ does $x^2+kx+9=0$ have exactly one real solution?\\[14mm]
+\noindent\pnum{2} For what value(s) of $k$ does $x^2-4x+k=0$ have no real solutions?\\[14mm]
+\noindent\pnum{3} For what value(s) of $k$ does $2x^2+4x+k=0$ have two real solutions?\\[14mm]
+\noindent\pnum{4} Find $k$ so that $x^2+6x+k=0$ has exactly one real solution.\\[14mm]
+\noindent\pnum{5} For what value(s) of $k$ (with $k\ne0$) does $kx^2+4x+4=0$ have no real solution?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10.5}{13.5}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'g'ri javobni bering.}
+\setkicker{Set 6}{Spot the error -- name the mistake, give the correct answer.}
 
-\noindent\pnum{1} $y=2(x-3)^2+5$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``Uchi $(-3,5)$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{1} For $y=2(x-3)^2+5$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``Vertex is $(-3,5)$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{2} $x^2+2x+5=0$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$D=4-20=-16$, demak 2 ta haqiqiy yechim bor, chunki D haqiqiy son.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{2} For $x^2+2x+5=0$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``$D=4-20=-16$, so there are 2 real solutions since D is a real number.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{3} $y=-2x^2+8$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``Yuqoriga ochiladi, chunki $x^2$ oldidagi son musbat 2.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{3} For $y=-2x^2+8$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``Opens upward, because the number multiplying $x^2$ is positive 2.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{4} $x^2-5x+6=0$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$(x-2)(x-3)=0$, demak ildizlar $x=-2,-3$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{4} For $x^2-5x+6=0$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``Factors as $(x-2)(x-3)=0$, so the roots are $x=-2,-3$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{5} $y=x^2-4x+4$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$D=16-16=0$, demak yechim yo'q.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}
+\noindent\pnum{5} For $y=x^2-4x+4$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``$D=16-16=0$, so there are no solutions.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) =================
-\topicheader{7}{Parabola Grafigi va Diskriminant}
+% ================= PAGE 4: Set 7 (bonus) | Set 8 Easy 1-6 =================
+\topicheader{7}{Quadratic Graphs \& the Discriminant}
 \pagefooter{40}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin -- har biriga taxminan 90 soniya.}
+\setkicker{Set 7}{Bonus / challenge -- about 90 seconds each.}
 
-\noindent\pnum{1} To'pning balandligi $h(t)=-16t^2+64t+5$ formulasi bilan ifodalanadi. U qaysi vaqtda eng baland nuqtaga yetadi va bu balandlik qanchaga teng?\\[14mm]
-\noindent\pnum{2} $y=x^2+(k+2)x+9$ grafigi $x$ o'qiga aynan bitta nuqtada tegishi uchun $k$ ning qiymatini toping.\\[14mm]
-\noindent\pnum{3} Parabolaning uchi $(2,-3)$ nuqtada va u $(0,5)$ nuqtadan o'tadi. $y=ax^2+bx+c$ dagi $a$, $b$, $c$ ni toping.\\[16mm]
-\noindent\pnum{4} $3x^2-2x+1=0$ tenglama nechta haqiqiy yechimga ega -- uning grafigi $x$ o'qini kesib o'tadimi, tegadimi yoki umuman tegmaydimi?\\[14mm]
-\noindent\pnum{5} Agar $x^2+bx+16=0$ tenglamaning diskriminanti $0$ ga teng bo'lsa, $b$ ning barcha mumkin qiymatlarini toping.
+\noindent\pnum{1} A ball's height is modeled by $h(t)=-16t^2+64t+5$. At what time does it reach its maximum height, and what is that height?\\[14mm]
+\noindent\pnum{2} For what value of $k$ does $y=x^2+(k+2)x+9$ touch the x-axis exactly once?\\[14mm]
+\noindent\pnum{3} A parabola has vertex $(2,-3)$ and passes through $(0,5)$. Find $a$, $b$, $c$ in $y=ax^2+bx+c$.\\[16mm]
+\noindent\pnum{4} How many real solutions does $3x^2-2x+1=0$ have -- does its graph cross or touch the x-axis, or neither?\\[14mm]
+\noindent\pnum{5} If the discriminant of $x^2+bx+16=0$ equals $0$, find all possible values of $b$.
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+
+\satq{1}{What is the vertex of the graph of $y=2(x-3)^2+7$?}{$(3,7)$}{$(-3,7)$}{$(3,-7)$}{$(-3,-7)$}
+\satq{2}{Does the graph of $y=-4(x+1)^2-2$ open upward or downward?}{Upward}{Downward}{Neither}{Cannot be determined}
+\satq{3}{What is the axis of symmetry of the graph of $y=(x-6)^2+1$?}{$x=-6$}{$x=6$}{$x=1$}{$y=6$}
+\satq{4}{How many real solutions does $x^2+4x+4=0$ have?}{0}{1}{2}{Infinitely many}
+\satq{5}{How many real solutions does $x^2+x+1=0$ have?}{0}{1}{2}{3}
+\satq{6}{How many real solutions does $x^2-9=0$ have?}{1}{0}{3}{2}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar part 1 (Sets 1-4) =================
-\topicheader{7}{Parabola Grafigi va Diskriminant}
+% ================= PAGE 5: Set 8 -- Easy 7-12 | Easy 13-15 + Medium 1-3 =================
+\topicheader{7}{Quadratic Graphs \& the Discriminant}
 \pagefooter{41}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satqw{7}{What are the $x$-intercepts of the graph of $y=x^2-5x+6$?}{$(-2,0)$ and $(-3,0)$}{$(2,0)$ and $(3,0)$}{$(2,0)$ and $(-3,0)$}{$(5,0)$ and $(6,0)$}
+\satq{8}{If $f(x)=(x-2)(x+7)$, what is $f(0)$?}{$-9$}{$5$}{$-14$}{$14$}
+\satq{9}{What is the value of the discriminant of $x^2-6x+9=0$?}{6}{9}{0}{36}
+\satq{10}{A parabola opens upward and has vertex $(4,-5)$. What is the minimum value of the function?}{4}{$-5$}{5}{$-4$}
+\satq{11}{What is the vertex of the graph of $y=-(x+5)^2$?}{$(5,0)$}{$(0,-5)$}{$(-5,0)$}{$(0,5)$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satqw{12}{Is the graph of $y=5(x-1)^2-3$ narrower, wider, or the same width as the graph of $y=x^2$?}{Wider}{Same width}{Cannot be determined}{Narrower}
+\satq{13}{What is the $y$-intercept of the graph of $y=x^2+3x-10$?}{3}{10}{$-3$}{$-10$}
+\satq{14}{How many real solutions does $4x^2=0$ have?}{0}{Infinitely many}{1}{2}
+\satq{15}{If $f(x)=(x-3)^2+8$, what is the minimum value of $f$?}{3}{$-8$}{8}{$-3$}
+\satq{1}{What is the minimum value of $f(x)=x^2-10x+30$?}{10}{5}{25}{30}
+\satq{2}{What is the maximum value of $f(x)=-x^2+8x-10$?}{6}{4}{$-6$}{10}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6: Set 8 -- Medium 3-9 | Medium 10-15 =================
+\topicheader{7}{Quadratic Graphs \& the Discriminant}
+\pagefooter{42}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{3}{For what value(s) of $k$ does $x^2+kx+25=0$ have exactly one real solution?}{$k=\pm10$}{$k=\pm5$}{$k=10$}{$k=25$}
+\satq{4}{For what value(s) of $k$ does $x^2-8x+k=0$ have no real solutions?}{$k<16$}{$k>4$}{$k>16$}{$k<4$}
+\satq{5}{A ball's height is modeled by $h(t)=-16t^2+48t+4$. At what time, in seconds, does it reach its maximum height?}{1}{1.5}{2}{3}
+\satq{6}{A ball's height is modeled by $h(t)=-16t^2+48t+4$. What is the maximum height the ball reaches?}{36}{40}{48}{4}
+\satqw{7}{What is the solution set of $x^2-2x-15=0$?}{$\{3,-5\}$}{$\{-3,-5\}$}{$\{-3,5\}$}{$\{3,5\}$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satqw{8}{If the discriminant of $x^2+bx+16=0$ equals $0$, which of the following is a possible value of $b$?}{4}{8}{16}{64}
+\satqw{9}{The graph of $y=3(x-2)^2-12$ crosses the $x$-axis at how many points?}{0}{1}{2}{Cannot be determined}
+\satq{10}{What is the vertex form of $y=x^2+6x+5$?}{$(x-3)^2-4$}{$(x+3)^2+4$}{$(x+6)^2+5$}{$(x+3)^2-4$}
+\satq{11}{A parabola has equation $y=2x^2-8x+3$. What is the $x$-coordinate of its vertex?}{4}{2}{$-2$}{8}
+\satq{12}{For what value of $k$ does $3x^2+6x+k=0$ have exactly one real solution?}{6}{12}{3}{36}
+\satqw{13}{What is the discriminant of $2x^2-5x-3=0$, and how many real solutions does the equation have?}{$D=25$, 2 solutions}{$D=49$, 1 solution}{$D=-49$, 0 solutions}{$D=49$, 2 solutions}
+\satq{14}{A parabola has vertex $(-2,9)$ and opens downward. What is the maximum value of the function?}{$-2$}{2}{9}{$-9$}
+\satq{15}{If $f(x)=x^2-4x$, what is the minimum value of $f$?}{2}{$-2$}{4}{$-4$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 7: Set 8 -- Hard 1-4 | Hard 5-8 =================
+\topicheader{7}{Quadratic Graphs \& the Discriminant}
+\pagefooter{43}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard}{Choose the correct answer.}
+
+\satqw{1}{A parabola has vertex $(3,-4)$ and passes through the point $(5,4)$. What is the value of $a$ in $y=a(x-3)^2-4$?}{4}{2}{$-2$}{8}
+\satq{2}{For what value(s) of $k$ does $x^2+(k-4)x+9=0$ have exactly one real solution?}{$k=6$ or $k=-6$}{$k=10$ or $k=-2$}{$k=8$}{$k=-8$}
+\satqw{3}{A ball is thrown so that its height, in feet, after $t$ seconds is modeled by $h(t)=-16t^2+80t+6$. To the nearest foot, what is the maximum height the ball reaches?}{100}{96}{106}{116}
+\satq{4}{The function $g$ is defined by $g(x)=-2(x+1)^2+18$. For what positive value of $x$ does $g(x)=0$?}{3}{9}{$-4$}{2}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard (cont.)}{Choose the correct answer.}
+
+\satqw{5}{A quadratic function has $x$-intercepts at $x=-3$ and $x=7$ and passes through $(0,-21)$. What is the value of $a$ in $y=a(x+3)(x-7)$?}{$-1$}{1}{3}{7}
+\satq{6}{For what value of $c$ does $4x^2-12x+c=0$ have exactly one real solution?}{3}{12}{144}{9}
+\satqw{7}{The graph of $y=x^2+bx+c$ has its vertex at $(5,-2)$ and $y$-intercept at $(0,23)$. What is the value of $b$?}{10}{$-2$}{5}{$-10$}
+\satq{8}{For what value(s) of $k$ does $2x^2+4x+k=0$ have two distinct real solutions?}{$k>2$}{$k<4$}{$k<2$}{$k>4$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 8: Set 8 -- Hard 9-12 | Hard 13-15 =================
+\topicheader{7}{Quadratic Graphs \& the Discriminant}
+\pagefooter{44}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard (cont.)}{Choose the correct answer.}
+
+\satq{9}{A parabola with equation $y=x^2-14x+c$ has exactly one $x$-intercept. What is the value of $c$?}{14}{7}{196}{49}
+\satqw{10}{The height of a diver above the water, in meters, $t$ seconds after jumping is modeled by $h(t)=-5t^2+10t+3$. To the nearest tenth of a second, how long after jumping does the diver hit the water?}{2.0}{1.8}{2.6}{2.3}
+\satq{11}{A parabola has zeros at $x=4$ and $x=-6$. What is the $x$-coordinate of its vertex?}{1}{$-2$}{$-1$}{2}
+\satq{12}{The equation $x^2+px+36=0$ has two equal real solutions, and $p>0$. What is the value of $p$?}{6}{18}{$-12$}{12}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard (cont.)}{Choose the correct answer.}
+
+\satqw{13}{A quadratic function $f$ satisfies $f(2)=0$, $f(-5)=0$, and $f(0)=-20$. What is the value of $a$ in $f(x)=a(x-2)(x+5)$?}{$-2$}{4}{2}{10}
+\satqw{14}{The graph of $y=ax^2+bx+c$ has vertex $(-3,16)$ and passes through $(1,0)$. What is the value of $a$?}{1}{16}{$-16$}{$-1$}
+\satq{15}{For what positive value of $k$ does $kx^2-6x+1=0$ have exactly one real solution?}{6}{3}{36}{9}
+}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original -- written by studying the method
+and structure of real, officially-released SAT Suite Question Bank items in this
+lesson's skill categories, then building a new problem (new numbers, names, and
+context) requiring the same solving method. No real College Board question text
+is reproduced anywhere in this book.\par}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 9: Answers part 1 (Sets 1-4) =================
+\topicheader{7}{Quadratic Graphs \& the Discriminant}
+\pagefooter{45}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--4\par}
 \end{textblock*}
 
 \begin{textblock*}{194mm}(16mm,44mm)
@@ -235,64 +400,139 @@
 \renewcommand{\arraystretch}{1.25}
 \begin{tabular}{|>{\centering\arraybackslash}p{20mm}|>{\centering\arraybackslash}p{8mm}|p{144mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{6}{20mm}{\centering 1-to'plam} & 1 & Uchi $(1,4)$, o'q $x=1$, yuqoriga ochiladi, torroq\\\cline{2-3}
- & 2 & Uchi $(-3,-1)$, o'q $x=-3$, pastga ochiladi, torroq\\\cline{2-3}
- & 3 & Uchi $(5,2)$, o'q $x=5$, yuqoriga ochiladi, $y=x^2$ bilan bir xil kenglikda\\\cline{2-3}
- & 4 & Uchi $(2,6)$, o'q $x=2$, pastga ochiladi, kengroq\\\cline{2-3}
- & 5 & Uchi $(-4,-7)$, o'q $x=-4$, yuqoriga ochiladi, torroq\\\cline{2-3}
- & 6 & Uchi $(0,9)$, o'q $x=0$, pastga ochiladi, $y=x^2$ bilan bir xil kenglikda\\\hline
-\multirow{3}{20mm}{\centering 2-to'plam} & 1--2 & 1) $D=1$, 2 yechim \quad 2) $D=0$, 1 yechim\\\cline{2-3}
- & 3--4 & 3) $D=-16$, 0 yechim \quad 4) $D=49$, 2 yechim\\\cline{2-3}
- & 5--6 & 5) $D=-8$, 0 yechim \quad 6) $D=0$, 1 yechim\\\hline
-\multirow{3}{20mm}{\centering 3-to'plam} & 1--2 & 1) $x=2,5$ \quad 2) $x=-4,3$\\\cline{2-3}
+\multirow{6}{20mm}{\centering Set 1} & 1 & Vertex $(1,4)$, axis $x=1$, opens up, narrower\\\cline{2-3}
+ & 2 & Vertex $(-3,-1)$, axis $x=-3$, opens down, narrower\\\cline{2-3}
+ & 3 & Vertex $(5,2)$, axis $x=5$, opens up, same width as $y=x^2$\\\cline{2-3}
+ & 4 & Vertex $(2,6)$, axis $x=2$, opens down, wider\\\cline{2-3}
+ & 5 & Vertex $(-4,-7)$, axis $x=-4$, opens up, narrower\\\cline{2-3}
+ & 6 & Vertex $(0,9)$, axis $x=0$, opens down, same width as $y=x^2$\\\hline
+\multirow{3}{20mm}{\centering Set 2} & 1--2 & 1) $D=1$, 2 solutions \quad 2) $D=0$, 1 solution\\\cline{2-3}
+ & 3--4 & 3) $D=-16$, 0 solutions \quad 4) $D=49$, 2 solutions\\\cline{2-3}
+ & 5--6 & 5) $D=-8$, 0 solutions \quad 6) $D=0$, 1 solution\\\hline
+\multirow{3}{20mm}{\centering Set 3} & 1--2 & 1) $x=2,5$ \quad 2) $x=-4,3$\\\cline{2-3}
  & 3--4 & 3) $x=-1,\frac32$ \quad 4) $x=-3,3$\\\cline{2-3}
- & 5--6 & 5) $x=-3$ (qo'sh ildiz) \quad 6) $x=-2,\frac13$\\\hline
-\multirow{5}{20mm}{\centering 4-to'plam} & 1 & Uchi $(2,-1)$, $D=4$, ildizlar $x=1,3$\\\cline{2-3}
- & 2 & Uchi $(2,-1)$, $D=-4$, haqiqiy ildiz yo'q\\\cline{2-3}
- & 3 & Uchi $(2,0)$, $D=0$, ildiz $x=2$\\\cline{2-3}
- & 4 & Uchi $(2,3)$, $D=36$, ildizlar $x=1,3$\\\cline{2-3}
- & 5 & Uchi $(-1,0)$, $D=0$, ildiz $x=-1$\\\hline
+ & 5--6 & 5) $x=-3$ (double root) \quad 6) $x=-2,\frac13$\\\hline
+\multirow{5}{20mm}{\centering Set 4} & 1 & Vertex $(2,-1)$, $D=4$, roots $x=1,3$\\\cline{2-3}
+ & 2 & Vertex $(2,-1)$, $D=-4$, no real roots\\\cline{2-3}
+ & 3 & Vertex $(2,0)$, $D=0$, root $x=2$\\\cline{2-3}
+ & 4 & Vertex $(2,3)$, $D=36$, roots $x=1,3$\\\cline{2-3}
+ & 5 & Vertex $(-1,0)$, $D=0$, root $x=-1$\\\hline
 \end{tabular}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 6: Javoblar part 2 (Sets 5-7) + QR =================
-\topicheader{7}{Parabola Grafigi va Diskriminant}
-\pagefooter{42}
+% ================= PAGE 10: Answers part 2 (Sets 5-7) =================
+\topicheader{7}{Quadratic Graphs \& the Discriminant}
+\pagefooter{46}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 5--7\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,44mm)
 {\fontsize{9.5}{12}\selectfont
 \centering
 \renewcommand{\arraystretch}{1.25}
 \begin{tabular}{|>{\centering\arraybackslash}p{20mm}|>{\centering\arraybackslash}p{8mm}|p{144mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{3}{20mm}{\centering 5-to'plam} & 1--2 & 1) $k=\pm6$ \quad 2) $k>4$\\\cline{2-3}
+\multirow{3}{20mm}{\centering Set 5} & 1--2 & 1) $k=\pm6$ \quad 2) $k>4$\\\cline{2-3}
  & 3--4 & 3) $k<2$ \quad 4) $k=9$\\\cline{2-3}
  & 5 & 5) $k>1$\\\hline
-\multirow{5}{20mm}{\centering 6-to'plam} & 1 & Xato -- vertex shakli $a(x-h)^2+k$, demak uchi $(h,k)=(3,5)$, $(-3,5)$ emas.\\\cline{2-3}
- & 2 & Xato -- $D<0$ bo'lsa yechim \textbf{yo'q}, "D haqiqiy son" emas, D ning ishorasi muhim.\\\cline{2-3}
- & 3 & Xato -- oldidagi manfiy ishora e'tiborga olinmagan: $a=-2<0$, demak pastga ochiladi.\\\cline{2-3}
- & 4 & Xato -- $(x-2)=0$ dan $x=2$ chiqadi, $x=-2$ emas. To'g'ri ildizlar: $x=2,3$.\\\cline{2-3}
- & 5 & Xato -- $D=0$ bo'lsa aynan \textbf{bitta} yechim bor (parabola $x$ o'qiga tegadi), yechim yo'q emas.\\\hline
-\multirow{5}{20mm}{\centering 7-to'plam} & 1 & $t=2$ soniya, eng baland nuqta $=69$\\\cline{2-3}
- & 2 & $k=4$ yoki $k=-8$\\\cline{2-3}
+\multirow{5}{20mm}{\centering Set 6} & 1 & Error -- vertex form is $a(x-h)^2+k$, so the vertex is $(h,k)=(3,5)$, not $(-3,5)$.\\\cline{2-3}
+ & 2 & Error -- $D<0$ means \textbf{zero} real solutions, not 2; the sign of D is what matters.\\\cline{2-3}
+ & 3 & Error -- ignored the negative sign: $a=-2<0$ means the parabola opens \textbf{downward}.\\\cline{2-3}
+ & 4 & Error -- $(x-2)=0$ gives $x=2$, not $x=-2$. Correct roots: $x=2,3$.\\\cline{2-3}
+ & 5 & Error -- $D=0$ means \textbf{exactly one} real solution (the parabola touches the x-axis), not zero.\\\hline
+\multirow{5}{20mm}{\centering Set 7} & 1 & $t=2$ seconds, max height $=69$\\\cline{2-3}
+ & 2 & $k=4$ or $k=-8$\\\cline{2-3}
  & 3 & $a=2$, $b=-8$, $c=5$\\\cline{2-3}
- & 4 & $D=-8<0$ -- 0 ta haqiqiy yechim, grafik $x$ o'qini kesib o'tmaydi va tegmaydi ham\\\cline{2-3}
+ & 4 & $D=-8<0$ -- 0 real solutions, the graph neither crosses nor touches the x-axis\\\cline{2-3}
  & 5 & $b=\pm8$\\\hline
 \end{tabular}
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,230mm)
+\clearpage
+
+% ================= PAGE 11: Answers -- Set 8 + QR =================
+\topicheader{7}{Quadratic Graphs \& the Discriminant}
+\pagefooter{47}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+A&B&B&B&A&D&B&C&C&B\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+C&D&D&C&C\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&A&A&C&B&B&C&B&C&D\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&C&D&C&D\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&B&C&D&B&D&D&C&D&D\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+C&D&C&D&D\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}

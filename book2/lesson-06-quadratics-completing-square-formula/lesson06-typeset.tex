@@ -23,14 +23,10 @@
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
 
-% ---- Safe print margins: 16mm outer on both sides so bound/trimmed copies never
-% clip problem text. Columns are 83mm wide with a 6mm gap on each side of the
-% center rule (at x=105mm). ----
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
 \newcommand{\COLW}{83mm}
 
-% ---- Plain topic header: number chip + title, thin rule underneath. No band, no watermark. ----
 \newcommand{\topicheader}[2]{%
 \begin{textblock*}{194mm}(16mm,10mm)
 \begin{tikzpicture}
@@ -60,7 +56,6 @@
 \end{textblock*}
 }
 
-% ---- Fixed-length vertical column rule: #1 = top y (mm), #2 = length (mm) ----
 \newcommand{\colrule}[2]{%
 \begin{textblock*}{1mm}(105mm,#1mm)
 \begin{tikzpicture}
@@ -73,22 +68,34 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
-% ---- Small boxed problem number, reference-style. Plain \fbox -- stays flush with
-% the text baseline instead of centering on it. ----
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
-% ---- QR placeholder square + caption below ----
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
-% ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
+}
+
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
@@ -97,14 +104,14 @@
 \begin{document}
 
 % ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{6}{Kvadrat Tenglamalar: To'liq Kvadrat va Formula}
+\topicheader{6}{Quadratics II -- Completing the Square \& the Formula}
 \pagefooter{32}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{1-to'plam}{Har birini $a(x-h)^2+k$ ko'rinishiga keltiring (to'liq kvadratga keltirish).}
+\setkicker{Set 1}{For each equation, which equation is equivalent in vertex form, $a(x-h)^2+k$?}
 
 \noindent\pnum{1} $y=x^2-4x+3$\\[26mm]
 \noindent\pnum{2} $y=x^2+2x-5$\\[26mm]
@@ -117,7 +124,7 @@
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{2-to'plam}{Kvadrat tenglama formulasi bilan yeching (diskriminant aniq kvadrat).}
+\setkicker{Set 2}{Quadratic formula drill -- clean discriminants.}
 
 \noindent\pnum{1} $x^2-5x+6=0$\\[30mm]
 \noindent\pnum{2} $x^2+x-6=0$\\[30mm]
@@ -131,14 +138,14 @@
 \clearpage
 
 % ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{6}{Kvadrat Tenglamalar: To'liq Kvadrat va Formula}
+\topicheader{6}{Quadratics II -- Completing the Square \& the Formula}
 \pagefooter{33}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{3-to'plam}{Formula bilan yeching -- ildizlar irratsional bo'ladi.}
+\setkicker{Set 3}{Quadratic formula -- the roots are irrational.}
 
 \noindent\pnum{1} $x^2-4x+1=0$\\[30mm]
 \noindent\pnum{2} $x^2+2x-4=0$\\[30mm]
@@ -151,7 +158,7 @@
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{4-to'plam}{Aralash -- to'liq kvadratga keltirish yoki formula, o'zingiz tanlang.}
+\setkicker{Set 4}{Mixed -- choose completing the square or the formula.}
 
 \noindent\pnum{1} $x^2+8x+15=0$\\[40mm]
 \noindent\pnum{2} $x^2-2x-5=0$\\[40mm]
@@ -163,14 +170,14 @@
 \clearpage
 
 % ================= PAGE 3: Set 5 (verify both roots) | Set 6 (spot the error) =================
-\topicheader{6}{Kvadrat Tenglamalar: To'liq Kvadrat va Formula}
+\topicheader{6}{Quadratics II -- Completing the Square \& the Formula}
 \pagefooter{34}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{5-to'plam}{Ikkala ildizni toping, so'ng har birini asl tenglamaga qo'yib tekshiring.}
+\setkicker{Set 5}{Find both roots, then check each by substituting back.}
 
 \noindent\pnum{1} $x^2-x-12=0$\\[50mm]
 \noindent\pnum{2} $x^2+3x-10=0$\\[50mm]
@@ -180,33 +187,33 @@
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'g'ri javobni bering.}
+\setkicker{Set 6}{Spot the error -- name the mistake, give the correct answer.}
 
-\noindent\pnum{1} $x^2-6x+4=0$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
+\noindent\pnum{1} In solving $x^2-6x+4=0$, a student wrote:\\[1mm]
 \hspace*{7mm}\textit{``$x=\dfrac{-6\pm\sqrt{36-16}}{2}$''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[16mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[16mm]
 
-\noindent\pnum{2} $x^2+2x-2=0$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``Diskriminant $=4-8=-4$, $x=\dfrac{-2\pm\sqrt{-4}}{2}$''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[16mm]
+\noindent\pnum{2} In solving $x^2+2x-2=0$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``Discriminant $=4-8=-4$, so $x=\dfrac{-2\pm\sqrt{-4}}{2}$''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[16mm]
 
-\noindent\pnum{3} $x^2-4x-1=0$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$x=\dfrac{4+\sqrt{20}}{2}=2+\sqrt5$. Javob: $x=2+\sqrt5$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}
+\noindent\pnum{3} In solving $x^2-4x-1=0$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``$x=\dfrac{4+\sqrt{20}}{2}=2+\sqrt5$. The answer is $x=2+\sqrt5$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus, a != 1) -- own page; answers follow on a fresh page =================
-\topicheader{6}{Kvadrat Tenglamalar: To'liq Kvadrat va Formula}
+% ================= PAGE 4: Set 7 (bonus) | Set 8 starts =================
+\topicheader{6}{Quadratics II -- Completing the Square \& the Formula}
 \pagefooter{35}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin -- $a\ne1$ bo'lgan hollar.}
+\setkicker{Set 7}{Bonus / challenge -- $a\ne1$.}
 
 \noindent\pnum{1} $2x^2+6x+3=0$\\[45mm]
 \noindent\pnum{2} $3x^2-2x-2=0$\\[45mm]
@@ -215,15 +222,157 @@
 }
 \end{textblock*}
 
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+
+\satq{1}{What is one of the solutions to the equation $x^2-7x+10=0$?}{2}{$-2$}{7}{10}
+\satq{2}{What is one of the solutions to the equation $x^2+3x-10=0$?}{$-5$}{5}{$-2$}{10}
+\satq{3}{Which equation is equivalent to $y=x^2-6x+8$ in vertex form?}{$y=(x-3)^2-1$}{$y=(x-3)^2+1$}{$y=(x+3)^2-1$}{$y=(x-6)^2+8$}
+\satq{4}{Which equation is equivalent to $y=x^2+4x-5$ in vertex form?}{$y=(x+2)^2-9$}{$y=(x+2)^2+9$}{$y=(x-2)^2-9$}{$y=(x+4)^2-5$}
+\satq{5}{What is the sum of the solutions to $x^2-5x+6=0$?}{5}{6}{$-5$}{1}
+\satq{6}{What is the product of the solutions to $x^2-2x-15=0$?}{2}{$-2$}{$-15$}{15}
+}
+\end{textblock*}
+
 \clearpage
 
-% ================= PAGE 5: Javoblar -- full-page answer table, own page always =================
-\topicheader{6}{Kvadrat Tenglamalar: To'liq Kvadrat va Formula}
+% ================= PAGE 5: Set 8 -- Easy 7-12 | Easy 13-15 + Medium 1-3 =================
+\topicheader{6}{Quadratics II -- Completing the Square \& the Formula}
 \pagefooter{36}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{7}{What is the solution set of $x^2-x-6=0$?}{$\{-2,3\}$}{$\{2,-3\}$}{$\{-2,-3\}$}{$\{2,3\}$}
+\satq{8}{How many real solutions does $x^2+4x+7=0$ have?}{Zero}{Exactly one}{Exactly two}{Infinitely many}
+\satq{9}{How many real solutions does $x^2-6x+9=0$ have?}{Zero}{Exactly one}{Exactly two}{Infinitely many}
+\satq{10}{How many real solutions does $x^2+2x-8=0$ have?}{Zero}{Exactly one}{Exactly two}{Infinitely many}
+\satq{11}{Using the quadratic formula, what are the solutions to $x^2-4x-5=0$?}{$x=-1,5$}{$x=1,-5$}{$x=2,-2$}{$x=4,-5$}
+\satq{12}{What is the vertex of $y=x^2-8x+12$?}{$(4,-4)$}{$(4,4)$}{$(-4,-4)$}{$(8,12)$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{13}{What is the vertex of $y=x^2+2x-3$?}{$(-1,-4)$}{$(-1,4)$}{$(1,-4)$}{$(-2,-3)$}
+\satq{14}{What are the solutions to $2x^2-5x-3=0$?}{$x=3,-\frac12$}{$x=-3,\frac12$}{$x=3,\frac12$}{$x=-3,-\frac12$}
+\satq{15}{If $x^2-x-20=0$, what is the greater of the two solutions?}{5}{4}{$-4$}{$-5$}
+\satq{1}{What are the solutions to $x^2-6x+2=0$?}{$3\pm\sqrt7$}{$3\pm\sqrt2$}{$6\pm\sqrt7$}{$-3\pm\sqrt7$}
+\satq{2}{What is the positive solution to $x^2+4x-1=0$?}{$-2+\sqrt5$}{$-2-\sqrt5$}{$2+\sqrt5$}{$2-\sqrt5$}
+\satq{3}{What is the positive solution to $2x^2-4x-3=0$?}{$1+\frac{\sqrt{10}}{2}$}{$1-\frac{\sqrt{10}}{2}$}{$2+\sqrt{10}$}{$1+\sqrt5$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6: Set 8 -- Medium 4-9 | Medium 10-15 =================
+\topicheader{6}{Quadratics II -- Completing the Square \& the Formula}
+\pagefooter{37}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{4}{One solution to $x^2-8x+5=0$ can be written as $4+\sqrt{k}$. What is the value of $k$?}{11}{44}{8}{5}
+\satq{5}{One solution to $x^2+6x+2=0$ can be written as $-3+\sqrt{k}$. What is the value of $k$?}{7}{28}{6}{2}
+\satq{6}{What is the vertex of $y=2x^2-8x+3$?}{$(2,-5)$}{$(2,5)$}{$(-2,-5)$}{$(4,3)$}
+\satq{7}{The equation $y=x^2-10x+c$ is equivalent to $y=(x-5)^2-13$. What is $c$?}{12}{13}{$-13$}{25}
+\satq{8}{What is the sum of the solutions to $x^2-3x-18=0$?}{3}{$-3$}{18}{$-18$}
+\satq{9}{What is the product of the solutions to $2x^2+5x-3=0$?}{$-\frac32$}{$\frac32$}{$-\frac52$}{$\frac52$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{10}{If $x^2+kx+9=0$ has exactly one real solution, what is a positive value of $k$?}{6}{3}{9}{18}
+\satq{11}{What are the solutions to $3x^2-6x+1=0$?}{$1\pm\frac{\sqrt6}{3}$}{$1\pm\sqrt6$}{$3\pm\frac{\sqrt6}{3}$}{$2\pm\frac{\sqrt6}{3}$}
+\satq{12}{What is the sum of the solutions to $3x^2+9x-12=0$?}{$-3$}{3}{$-4$}{4}
+\satq{13}{If one solution to $x^2-4x+c=0$ is $x=1$, what is the value of $c$?}{3}{$-3$}{4}{$-4$}
+\satq{14}{Which equation is equivalent to $y=x^2+8x+10$ in vertex form?}{$y=(x+4)^2-6$}{$y=(x+4)^2+6$}{$y=(x-4)^2-6$}{$y=(x+8)^2+10$}
+\satq{15}{What is the negative solution to $x^2+x-12=0$?}{$-4$}{$-3$}{4}{3}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 7: Set 8 -- Hard 1-6 | Hard 7-12 =================
+\topicheader{6}{Quadratics II -- Completing the Square \& the Formula}
+\pagefooter{38}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard}{Choose the correct answer.}
+
+\satqw{1}{One solution to $3x^2-12x+7=0$ can be written as $\dfrac{12+\sqrt{k}}{6}$. What is the value of $k$?}{60}{30}{144}{84}
+\satqw{2}{One solution to $2x^2-10x+9=0$ can be written as $\dfrac{10-\sqrt{k}}{4}$. What is the value of $k$?}{28}{14}{100}{72}
+\satq{3}{For what positive value of $k$ does $x^2+kx+25=0$ have exactly one real solution?}{10}{5}{25}{50}
+\satq{4}{For what value of $c$ does $2x^2-8x+c=0$ have exactly one real solution?}{8}{4}{16}{32}
+\satqw{5}{The equation $x^2-6x+c=0$ has two distinct real solutions. Which could be the value of $c$?}{5}{9}{10}{12}
+\satq{6}{If the sum of the solutions to $x^2+bx+20=0$ is 9, what is the value of $b$?}{$-9$}{9}{$-20$}{20}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard (cont.)}{Choose the correct answer.}
+
+\satq{7}{If the product of the solutions to $x^2-7x+c=0$ is $-18$, what is the value of $c$?}{$-18$}{18}{7}{$-7$}
+\satq{8}{What are the solutions to $4x^2-8x-1=0$?}{$1\pm\frac{\sqrt5}{2}$}{$1\pm\sqrt5$}{$2\pm\frac{\sqrt5}{2}$}{$1\pm\frac{\sqrt5}{4}$}
+\satqw{9}{One solution to $x^2-5x-c=0$ is $x=8$, where $c$ is a constant. What is the other solution?}{$-3$}{3}{$-8$}{13}
+\satqw{10}{The equation $ax^2-6x+a=0$ has exactly one real solution, where $a$ is a positive constant. What is $a$?}{3}{6}{9}{36}
+\satq{11}{What is the sum of the solutions to $(x-3)^2=16$?}{6}{3}{$-6$}{16}
+\satq{12}{If $x^2-4x-21=0$, what is the positive difference between the two solutions?}{10}{4}{21}{7}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 8: Set 8 -- Hard 13-15 + sourcing note =================
+\topicheader{6}{Quadratics II -- Completing the Square \& the Formula}
+\pagefooter{39}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard (cont.)}{Choose the correct answer.}
+
+\satqw{13}{One solution to $5x^2+4x-3=0$ can be written as $\dfrac{-4-\sqrt{k}}{10}$. What is the value of $k$?}{76}{38}{16}{60}
+\satq{14}{The equation $2x^2+bx+18=0$ has exactly one real solution. What is a positive value of $b$?}{12}{6}{18}{36}
+\satq{15}{What is the sum of the solutions to $3(x^2-4x)=15$?}{4}{$-4$}{5}{$-5$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,120mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original -- written by studying the method
+and structure of real, officially-released SAT Suite Question Bank items in this
+lesson's skill category, then building a new problem (new numbers and context)
+requiring the same solving method. No real College Board question text is
+reproduced anywhere in this book.\par}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 9: Answers -- Sets 1-7 =================
+\topicheader{6}{Quadratics II -- Completing the Square \& the Formula}
+\pagefooter{40}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
 \end{textblock*}
 
 \begin{textblock*}{194mm}(16mm,44mm)
@@ -232,33 +381,104 @@
 \renewcommand{\arraystretch}{1.35}
 \begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{34mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{34mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{3}{24mm}{\centering 1-to'plam} & 1 & $(x-2)^2-1$ & 2 & $(x+1)^2-6$\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 1} & 1 & $(x-2)^2-1$ & 2 & $(x+1)^2-6$\\\cline{2-5}
  & 3 & $(x-4)^2-6$ & 4 & $(x+3)^2-5$\\\cline{2-5}
  & 5 & $(x-5)^2-4$ & 6 & $(x+1)^2$\\\hline
-\multirow{3}{24mm}{\centering 2-to'plam} & 1 & $x=2,3$ & 2 & $x=-3,2$\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 2} & 1 & $x=2,3$ & 2 & $x=-3,2$\\\cline{2-5}
  & 3 & $x=-\frac12,2$ & 4 & $x=\pm3$\\\cline{2-5}
  & 5 & $x=-1,-\frac23$ & 6 & $x=3,4$\\\hline
-\multirow{3}{24mm}{\centering 3-to'plam} & 1 & $x=2\pm\sqrt3$ & 2 & $x=-1\pm\sqrt5$\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 3} & 1 & $x=2\pm\sqrt3$ & 2 & $x=-1\pm\sqrt5$\\\cline{2-5}
  & 3 & $x=1\pm\frac{\sqrt6}{2}$ & 4 & $x=3\pm\sqrt2$\\\cline{2-5}
  & 5 & $x=-2\pm\sqrt2$ & 6 & $x=1\pm\frac{\sqrt3}{3}$\\\hline
-\multirow{2}{24mm}{\centering 4-to'plam} & 1 & $x=-5,-3$ & 2 & $x=1\pm\sqrt6$\\\cline{2-5}
+\multirow{2}{24mm}{\centering Set 4} & 1 & $x=-5,-3$ & 2 & $x=1\pm\sqrt6$\\\cline{2-5}
  & 3 & $x=-\frac12,\frac32$ & 4 & $x=\frac{-5\pm\sqrt{13}}{2}$\\\hline
-\multirow{2}{24mm}{\centering 5-to'plam} & 1 & $x=-3,4$ & 2 & $x=-5,2$\\\cline{2-5}
- & 3 & $x=-2,\frac32$ & -- & (barchasi $0$ga tekshiriladi)\\\hline
-\multirow{2}{24mm}{\centering 7-to'plam} & 1 & $x=-\frac32\pm\frac{\sqrt3}{2}$ & 2 & $x=\frac13\pm\frac{\sqrt7}{3}$\\\cline{2-5}
+\multirow{2}{24mm}{\centering Set 5} & 1 & $x=-3,4$ & 2 & $x=-5,2$\\\cline{2-5}
+ & 3 & $x=-2,\frac32$ & -- & (all check to $0$)\\\hline
+\multirow{2}{24mm}{\centering Set 7} & 1 & $x=-\frac32\pm\frac{\sqrt3}{2}$ & 2 & $x=\frac13\pm\frac{\sqrt7}{3}$\\\cline{2-5}
  & 3 & $x=-1,\frac15$ & 4 & $x=\frac74\pm\frac{\sqrt{17}}{4}$\\\hline
-\multirow{3}{24mm}{\centering 6-to'plam} & \multicolumn{4}{p{86mm}|}{1.\ Xato -- $-b=6$ o'rniga $b=-6$ ishlatilgan. To'g'ri: $x=3\pm\sqrt5$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{2.\ Xato -- diskriminant hisobi: $b^2-4ac=4-4(1)(-2)=4+8=12$, $-4$ emas. To'g'ri: $x=-1\pm\sqrt3$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{3.\ Xato -- faqat bitta ildiz bilan to'xtagan. To'g'ri: $x=2\pm\sqrt5$ (ikkalasi ham).}\\\hline
+\multirow{3}{24mm}{\centering Set 6} & \multicolumn{4}{p{86mm}|}{1.\ Error -- used $b=-6$ instead of $-b=6$. Correct: $x=3\pm\sqrt5$.}\\\cline{2-5}
+ & \multicolumn{4}{p{86mm}|}{2.\ Error -- discriminant: $b^2-4ac=4-4(1)(-2)=4+8=12$, not $-4$. Correct: $x=-1\pm\sqrt3$.}\\\cline{2-5}
+ & \multicolumn{4}{p{86mm}|}{3.\ Error -- stopped after one root. Correct: $x=2\pm\sqrt5$ (both).}\\\hline
 \end{tabular}
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,230mm)
+\clearpage
+
+% ================= PAGE 10: Answers -- Set 8 =================
+\topicheader{6}{Quadratics II -- Completing the Square \& the Formula}
+\pagefooter{41}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+A&A&A&A&A&C&A&A&B&C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+A&A&A&A&A\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+A&A&A&A&A&A&A&A&A&A\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+A&A&A&A&A\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+A&A&A&A&A&A&A&A&A&A\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+A&A&A&A&A\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}

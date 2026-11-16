@@ -90,6 +90,174 @@ answer.
 
 ---
 
+## Set 8 — Official SAT-Style Application
+
+Multiple-choice (A–D), English, matching the real Digital SAT's format,
+pacing, and item design for this lesson's two official skill categories
+(*Advanced Math — Nonlinear functions* and *Advanced Math — Nonlinear
+equations in one variable and systems of equations in two variables*).
+Every item below is **original** — written by studying the method and
+structure of real, officially-released SAT Suite Question Bank items in
+these skill categories, then building a new problem (new numbers, new
+context) that requires the exact same solving method. No real College Board
+question text, numbers, or wording is reproduced here or anywhere in this
+book.
+
+15 Easy / 15 Medium / 15 Hard, matching real-test density and difficulty
+distribution for this skill pair.
+
+### Easy
+
+1. What is the vertex of the graph of $y=2(x-3)^2+7$?
+   A) $(3,7)$  B) $(-3,7)$  C) $(3,-7)$  D) $(-3,-7)$
+
+2. Does the graph of $y=-4(x+1)^2-2$ open upward or downward?
+   A) Upward  B) Downward  C) Neither  D) Cannot be determined
+
+3. What is the axis of symmetry of the graph of $y=(x-6)^2+1$?
+   A) $x=-6$  B) $x=6$  C) $x=1$  D) $y=6$
+
+4. How many real solutions does $x^2+4x+4=0$ have?
+   A) 0  B) 1  C) 2  D) Infinitely many
+
+5. How many real solutions does $x^2+x+1=0$ have?
+   A) 0  B) 1  C) 2  D) 3
+
+6. How many real solutions does $x^2-9=0$ have?
+   A) 1  B) 0  C) 3  D) 2
+
+7. What are the $x$-intercepts of the graph of $y=x^2-5x+6$?
+   A) $(-2,0)$ and $(-3,0)$  B) $(2,0)$ and $(3,0)$  C) $(2,0)$ and $(-3,0)$  D) $(5,0)$ and $(6,0)$
+
+8. If $f(x)=(x-2)(x+7)$, what is $f(0)$?
+   A) $-9$  B) $5$  C) $-14$  D) $14$
+
+9. What is the value of the discriminant of $x^2-6x+9=0$?
+   A) $6$  B) $9$  C) $0$  D) $36$
+
+10. A parabola opens upward and has vertex $(4,-5)$. What is the minimum value of the function?
+    A) $4$  B) $-5$  C) $5$  D) $-4$
+
+11. What is the vertex of the graph of $y=-(x+5)^2$?
+    A) $(5,0)$  B) $(0,-5)$  C) $(-5,0)$  D) $(0,5)$
+
+12. Is the graph of $y=5(x-1)^2-3$ narrower, wider, or the same width as the graph of $y=x^2$?
+    A) Wider  B) Same width  C) Cannot be determined  D) Narrower
+
+13. What is the $y$-intercept of the graph of $y=x^2+3x-10$?
+    A) $3$  B) $10$  C) $-3$  D) $-10$
+
+14. How many real solutions does $4x^2=0$ have?
+    A) $0$  B) Infinitely many  C) $1$  D) $2$
+
+15. If $f(x)=(x-3)^2+8$, what is the minimum value of $f$?
+    A) $3$  B) $-8$  C) $8$  D) $-3$
+
+### Medium
+
+1. What is the minimum value of $f(x)=x^2-10x+30$?
+   A) $10$  B) $5$  C) $25$  D) $30$
+
+2. What is the maximum value of $f(x)=-x^2+8x-10$?
+   A) $6$  B) $4$  C) $-6$  D) $10$
+
+3. For what value(s) of $k$ does $x^2+kx+25=0$ have exactly one real solution?
+   A) $k=\pm10$  B) $k=\pm5$  C) $k=10$  D) $k=25$
+
+4. For what value(s) of $k$ does $x^2-8x+k=0$ have no real solutions?
+   A) $k<16$  B) $k>4$  C) $k>16$  D) $k<4$
+
+5. A ball's height is modeled by $h(t)=-16t^2+48t+4$. At what time, in seconds, does it reach its maximum height?
+   A) $1$  B) $1.5$  C) $2$  D) $3$
+
+6. A ball's height is modeled by $h(t)=-16t^2+48t+4$. What is the maximum height the ball reaches?
+   A) $36$  B) $40$  C) $48$  D) $4$
+
+7. What is the solution set of $x^2-2x-15=0$?
+   A) $\{3,-5\}$  B) $\{-3,-5\}$  C) $\{-3,5\}$  D) $\{3,5\}$
+
+8. If the discriminant of $x^2+bx+16=0$ equals $0$, which of the following is a possible value of $b$?
+   A) $4$  B) $8$  C) $16$  D) $64$
+
+9. The graph of $y=3(x-2)^2-12$ crosses the $x$-axis at how many points?
+   A) $0$  B) $1$  C) $2$  D) Cannot be determined
+
+10. What is the vertex form of $y=x^2+6x+5$?
+    A) $(x-3)^2-4$  B) $(x+3)^2+4$  C) $(x+6)^2+5$  D) $(x+3)^2-4$
+
+11. A parabola has equation $y=2x^2-8x+3$. What is the $x$-coordinate of its vertex?
+    A) $4$  B) $2$  C) $-2$  D) $8$
+
+12. For what value of $k$ does $3x^2+6x+k=0$ have exactly one real solution?
+    A) $6$  B) $12$  C) $3$  D) $36$
+
+13. What is the discriminant of $2x^2-5x-3=0$, and how many real solutions does the equation have?
+    A) $D=25$, 2 solutions  B) $D=49$, 1 solution  C) $D=-49$, 0 solutions  D) $D=49$, 2 solutions
+
+14. A parabola has vertex $(-2,9)$ and opens downward. What is the maximum value of the function?
+    A) $-2$  B) $2$  C) $9$  D) $-9$
+
+15. If $f(x)=x^2-4x$, what is the minimum value of $f$?
+    A) $2$  B) $-2$  C) $4$  D) $-4$
+
+### Hard
+
+1. A parabola has vertex $(3,-4)$ and passes through the point $(5,4)$. What is the value of $a$ in $y=a(x-3)^2-4$?
+   A) $4$  B) $2$  C) $-2$  D) $8$
+
+2. For what value(s) of $k$ does $x^2+(k-4)x+9=0$ have exactly one real solution?
+   A) $k=6$ or $k=-6$  B) $k=10$ or $k=-2$  C) $k=8$  D) $k=-8$
+
+3. A ball is thrown so that its height, in feet, after $t$ seconds is modeled by $h(t)=-16t^2+80t+6$. To the nearest foot, what is the maximum height the ball reaches?
+   A) $100$  B) $96$  C) $106$  D) $116$
+
+4. The function $g$ is defined by $g(x)=-2(x+1)^2+18$. For what positive value of $x$ does $g(x)=0$?
+   A) $3$  B) $9$  C) $-4$  D) $2$
+
+5. A quadratic function has $x$-intercepts at $x=-3$ and $x=7$ and passes through $(0,-21)$. What is the value of $a$ in $y=a(x+3)(x-7)$?
+   A) $-1$  B) $1$  C) $3$  D) $7$
+
+6. For what value of $c$ does $4x^2-12x+c=0$ have exactly one real solution?
+   A) $3$  B) $12$  C) $144$  D) $9$
+
+7. The graph of $y=x^2+bx+c$ has its vertex at $(5,-2)$ and $y$-intercept at $(0,23)$. What is the value of $b$?
+   A) $10$  B) $-2$  C) $5$  D) $-10$
+
+8. For what value(s) of $k$ does $2x^2+4x+k=0$ have two distinct real solutions?
+   A) $k>2$  B) $k<4$  C) $k<2$  D) $k>4$
+
+9. A parabola with equation $y=x^2-14x+c$ has exactly one $x$-intercept. What is the value of $c$?
+   A) $14$  B) $7$  C) $196$  D) $49$
+
+10. The height of a diver above the water, in meters, $t$ seconds after jumping is modeled by $h(t)=-5t^2+10t+3$. To the nearest tenth of a second, how long after jumping does the diver hit the water?
+    A) $2.0$  B) $1.8$  C) $2.6$  D) $2.3$
+
+11. A parabola has zeros at $x=4$ and $x=-6$. What is the $x$-coordinate of its vertex?
+    A) $1$  B) $-2$  C) $-1$  D) $2$
+
+12. The equation $x^2+px+36=0$ has two equal real solutions, and $p>0$. What is the value of $p$?
+    A) $6$  B) $18$  C) $-12$  D) $12$
+
+13. A quadratic function $f$ satisfies $f(2)=0$, $f(-5)=0$, and $f(0)=-20$. What is the value of $a$ in $f(x)=a(x-2)(x+5)$?
+    A) $-2$  B) $4$  C) $2$  D) $10$
+
+14. The graph of $y=ax^2+bx+c$ has vertex $(-3,16)$ and passes through $(1,0)$. What is the value of $a$?
+    A) $1$  B) $16$  C) $-16$  D) $-1$
+
+15. For what positive value of $k$ does $kx^2-6x+1=0$ have exactly one real solution?
+    A) $6$  B) $3$  C) $36$  D) $9$
+
+**A note on sourcing:** real, official College Board SAT questions are
+copyrighted and are **not** licensed for reproduction in commercial test-prep
+materials, under any circumstances, with or without attribution. No
+verbatim College Board question appears in this book. Every item above was
+independently written to match the *method*, *structure*, and *officially
+documented difficulty tier* of real SAT Suite Question Bank items in this
+lesson's skill categories — the numbers, names, and contexts are all
+original.
+
+---
+
 ## Answer Key
 
 **Set 1:**
@@ -134,3 +302,12 @@ answer.
 4. $D=-8<0$ — 0 real solutions, the graph neither crosses nor touches the
    x-axis
 5. $b=\pm8$
+
+**Set 8 — Easy:** 1) A  2) B  3) B  4) B  5) A  6) D  7) B  8) C  9) C  10) B
+11) C  12) D  13) D  14) C  15) C
+
+**Set 8 — Medium:** 1) B  2) A  3) A  4) C  5) B  6) B  7) C  8) B  9) C
+10) D  11) B  12) C  13) D  14) C  15) D
+
+**Set 8 — Hard:** 1) B  2) B  3) C  4) D  5) B  6) D  7) D  8) C  9) D  10) D
+11) C  12) D  13) C  14) D  15) D
