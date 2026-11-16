@@ -137,7 +137,7 @@ is reproduced here or anywhere in this book.
 2. For linear function $h$, the graph of $y=h(x)$ passes through $(4,10)$ and $(10,28)$. Which equation defines $h$?
    A) $h(x)=3x-2$  B) $h(x)=3x+2$  C) $h(x)=2x+2$  D) $h(x)=4x-6$
 
-3. For a proportional relationship between $x$ and $k$, the pairs $(x,k)=(5,22.5)$ and $(9,40.5)$ are both solutions. Which equation best represents the relationship between $x$ and $k$?
+3. For a proportional relationship between $x$ and $k$, the pairs $(5,22.5)$ and $(9,40.5)$, written as $(x,k)$, are both solutions. Which equation best represents the relationship between $x$ and $k$?
    A) $k=4.5x$  B) $x=4.5k$  C) $k=0.22x$  D) $xk=4.5$
 
 4. A hiker's distance from the trailhead, in miles, is modeled by $d(t)=2.5t+1$, where $t$ is the number of hours after starting. What is the best interpretation of the number 2.5 in this context?
@@ -153,7 +153,7 @@ is reproduced here or anywhere in this book.
    A) $f(x)=3x+5$  B) $f(x)=3x+8$  C) $f(x)=8x+3$  D) $f(x)=11x$
 
 8. The value, in dollars, of a certain machine $x$ years after purchase is modeled by $V(x)=8500-450x$. What does 450 represent in this context?
-   A) the machine's value when purchased  B) the amount the machine's value decreases each year  C) the machine's value after 1 year  D) the number of years until the machine is worthless
+   A) the machine's value when purchased  B) the yearly decrease in the machine's value  C) the machine's value after 1 year  D) the number of years until the machine is worthless
 
 9. For linear function $g$, $g(1)=4$ and $g(6)=24$. What is the value of $g(9)$?
    A) 28  B) 32  C) 36  D) 40
@@ -174,7 +174,7 @@ is reproduced here or anywhere in this book.
     A) $y=-2x+9$  B) $y=-2x+11$  C) $y=2x-9$  D) $y=-2x-9$
 
 15. A tank's water level, in centimeters, is modeled by $L(t)=85-3.5t$, where $t$ is the number of minutes since draining began. What is the best interpretation of the number 3.5 in this context?
-    A) the tank's initial water level  B) the number of centimeters the water level drops each minute  C) the total time it takes to drain the tank  D) the tank's water level after 1 minute
+    A) the tank's initial water level  B) the drop in water level, in centimeters per minute  C) the total time it takes to drain the tank  D) the tank's water level after 1 minute
 
 ### Hard
 
