@@ -23,10 +23,14 @@
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
 
+% ---- Safe print margins: 16mm outer on both sides so bound/trimmed copies never
+% clip problem text. Columns are 83mm wide with a 6mm gap on each side of the
+% center rule (at x=105mm). ----
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
 \newcommand{\COLW}{83mm}
 
+% ---- Plain topic header: number chip + title, thin rule underneath. No band, no watermark. ----
 \newcommand{\topicheader}[2]{%
 \begin{textblock*}{194mm}(16mm,10mm)
 \begin{tikzpicture}
@@ -56,6 +60,7 @@
 \end{textblock*}
 }
 
+% ---- Fixed-length vertical column rule: #1 = top y (mm), #2 = length (mm) ----
 \newcommand{\colrule}[2]{%
 \begin{textblock*}{1mm}(105mm,#1mm)
 \begin{tikzpicture}
@@ -68,18 +73,40 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
+% ---- Small boxed problem number, reference-style. Plain \fbox -- stays flush with
+% the text baseline instead of centering on it. ----
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
+% ---- QR placeholder square + caption below ----
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
+}
+
+% ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
@@ -87,194 +114,564 @@
 
 \begin{document}
 
-% ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{20}{Yuza va Hajm}
+% ================ PAGE =================
+\topicheader{20}{Area \& Volume}
 \pagefooter{108}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{1-to'plam}{Asosiy maydon formulalari.}
-
-\noindent\pnum{1} To'g'ri to'rtburchakning uzunligi $12$ sm, kengligi $5$ sm. Maydonini toping.\\[18mm]
-\noindent\pnum{2} Uchburchakning asosi $14$ sm, balandligi $6$ sm. Maydonini toping.\\[18mm]
-\noindent\pnum{3} Parallelogrammning asosi $9$ sm, balandligi $7$ sm. Maydonini toping.\\[18mm]
-\noindent\pnum{4} Trapetsiyaning ikki asosi $5$ sm va $11$ sm, balandligi $8$ sm. Maydonini toping.\\[18mm]
-\noindent\pnum{5} Doiraning radiusi $7$ sm. Maydonini toping.\\[18mm]
-\noindent\pnum{6} Doiraning diametri $20$ sm. Maydonini toping.
+\setkicker{Set 1}{Basic area formulas.}
+\noindent\pnum{1} A rectangle has a length of $12$ cm and a width of $5$ cm. What is the area of the rectangle, in square centimeters?\\[18mm]
+\noindent\pnum{2} A triangle has a base of $14$ cm and a height of $6$ cm. What is the area of the triangle, in square centimeters?\\[18mm]
+\noindent\pnum{3} A parallelogram has a base of $9$ cm and a height of $7$ cm. What is the area of the parallelogram, in square centimeters?\\[18mm]
+\noindent\pnum{4} A trapezoid has bases of $5$ cm and $11$ cm and a height of $8$ cm. What is the area of the trapezoid, in square centimeters?\\[18mm]
+\noindent\pnum{5} A circle has a radius of $7$ cm. What is the area of the circle, in square centimeters?\\[18mm]
+\noindent\pnum{6} A circle has a diameter of $20$ cm. What is the area of the circle, in square centimeters?\\[18mm]
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{2-to'plam}{Asosiy hajm formulalari.}
-
-\noindent\pnum{1} To'g'ri burchakli prizmaning o'lchamlari $8$ sm, $5$ sm, $3$ sm. Hajmini toping.\\[18mm]
-\noindent\pnum{2} Silindrning radiusi $4$ sm, balandligi $10$ sm. Hajmini toping.\\[18mm]
-\noindent\pnum{3} Konusning radiusi $6$ sm, balandligi $9$ sm. Hajmini toping.\\[18mm]
-\noindent\pnum{4} Sharning radiusi $3$ sm. Hajmini toping.\\[18mm]
-\noindent\pnum{5} Silindrning diametri $10$ sm, balandligi $7$ sm. Hajmini toping.\\[18mm]
-\noindent\pnum{6} Konusning diametri $8$ sm, balandligi $15$ sm. Hajmini toping.
+\setkicker{Set 2}{Basic volume formulas.}
+\noindent\pnum{1} A rectangular prism has dimensions $8$ cm, $5$ cm, and $3$ cm. What is the volume of the prism, in cubic centimeters?\\[18mm]
+\noindent\pnum{2} A cylinder has a radius of $4$ cm and a height of $10$ cm. What is the volume of the cylinder, in cubic centimeters?\\[18mm]
+\noindent\pnum{3} A cone has a radius of $6$ cm and a height of $9$ cm. What is the volume of the cone, in cubic centimeters?\\[18mm]
+\noindent\pnum{4} A sphere has a radius of $3$ cm. What is the volume of the sphere, in cubic centimeters?\\[18mm]
+\noindent\pnum{5} A cylinder has a diameter of $10$ cm and a height of $7$ cm. What is the volume of the cylinder, in cubic centimeters?\\[18mm]
+\noindent\pnum{6} A cone has a diameter of $8$ cm and a height of $15$ cm. What is the volume of the cone, in cubic centimeters?\\[18mm]
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 2: Set 3 (addition) | Set 4 (subtraction) =================
-\topicheader{20}{Yuza va Hajm}
+% ================ PAGE =================
+\topicheader{20}{Area \& Volume}
 \pagefooter{109}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{10.5}{13.5}\selectfont
-\setkicker{3-to'plam}{Qo'shma figuralar -- qo'shish, hech narsa kesib olinmagan.}
-
-\noindent\pnum{1} ``L'' shaklidagi figura ikki to'g'ri to'rtburchakdan iborat: $10$ sm $\times$ $6$ sm va unga yopishtirilgan $4$ sm $\times$ $3$ sm. Umumiy maydonni toping.\\[14mm]
-\noindent\pnum{2} To'g'ri to'rtburchak $8$ sm $\times$ $5$ sm, uning tepasiga asosi $8$ sm, balandligi $4$ sm bo'lgan uchburchak qo'shilgan (uy tomi shaklida). Umumiy maydonni toping.\\[14mm]
-\noindent\pnum{3} To'g'ri to'rtburchak $10$ sm $\times$ $6$ sm, uning uzun tomoniga radiusi $5$ sm bo'lgan yarim doira qo'shilgan. Umumiy maydonni toping.\\[14mm]
-\noindent\pnum{4} Ikki to'g'ri burchakli prizma birlashtirilgan: birinchisi $10\times4\times3$ sm, ikkinchisi $4\times4\times6$ sm. Umumiy hajmni toping.\\[14mm]
-\noindent\pnum{5} Tomoni $9$ sm bo'lgan kvadratga, kateti $6$ sm va $8$ sm bo'lgan to'g'ri burchakli uchburchak qo'shilgan. Umumiy maydonni toping.\\[14mm]
-\noindent\pnum{6} Radiusi $3$ sm, balandligi $10$ sm bo'lgan silindrning ustiga xuddi shu radiusli, balandligi $4$ sm bo'lgan konus qo'yilgan. Umumiy hajmni toping.
+{\fontsize{10.5}{13}\selectfont
+\setkicker{Set 3}{Composite figures -- addition; no piece removed.}
+\noindent\pnum{1} An L-shaped figure is formed from two rectangles: one measuring $10$ cm by $6$ cm, with a second rectangle measuring $4$ cm by $3$ cm attached to it. What is the total area of the figure, in square centimeters?\\[14mm]
+\noindent\pnum{2} A rectangle measuring $8$ cm by $5$ cm has a triangle with a base of $8$ cm and a height of $4$ cm attached on top, forming a shape like a house with a roof. What is the total area of the figure, in square centimeters?\\[14mm]
+\noindent\pnum{3} A rectangle measuring $10$ cm by $6$ cm has a semicircle with a radius of $5$ cm attached to one of its long sides. What is the total area of the figure, in square centimeters?\\[14mm]
+\noindent\pnum{4} Two rectangular prisms are joined together: one measuring $10 \times 4 \times 3$ cm and the other measuring $4 \times 4 \times 6$ cm. What is the total volume of the combined solid, in cubic centimeters?\\[14mm]
+\noindent\pnum{5} A right triangle with legs of $6$ cm and $8$ cm is attached to a square with a side length of $9$ cm. What is the total area of the figure, in square centimeters?\\[14mm]
+\noindent\pnum{6} A cone with a radius of $3$ cm and a height of $4$ cm sits on top of a cylinder with the same radius and a height of $10$ cm, forming a shape like an ice cream cone. What is the total volume of the combined solid, in cubic centimeters?\\[14mm]
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{10.5}{13.5}\selectfont
-\setkicker{4-to'plam}{Qo'shma figuralar -- ayirish, bir qism kesib olingan.}
-
-\noindent\pnum{1} Tomoni $10$ sm bo'lgan kvadratning ichidan radiusi $3$ sm bo'lgan doira shaklida teshik kesib olingan. Qolgan maydonni toping.\\[14mm]
-\noindent\pnum{2} To'g'ri to'rtburchak $12$ sm $\times$ $8$ sm. Uning ichidan tomoni $3$ sm bo'lgan kvadrat kesib olingan. Qolgan maydonni toping.\\[14mm]
-\noindent\pnum{3} Radiusi $10$ sm bo'lgan katta doiraning ichida, xuddi shu markazda radiusi $4$ sm bo'lgan kichik doira teshik qilib olingan. Qolgan maydonni toping.\\[14mm]
-\noindent\pnum{4} To'g'ri burchakli prizma $10\times8\times5$ sm. Uning ichidan $4\times3\times5$ sm o'lchamli bo'shliq kesib olingan. Qolgan hajmni toping.\\[14mm]
-\noindent\pnum{5} Ikki asosi $10$ sm va $16$ sm, balandligi $8$ sm bo'lgan trapetsiyadan, asosi $4$ sm va balandligi $6$ sm bo'lgan uchburchak kesib olingan. Qolgan maydonni toping.\\[14mm]
-\noindent\pnum{6} Radiusi $5$ sm, balandligi $12$ sm bo'lgan silindrning ichidan, xuddi shu radius va balandlikka ega konus shaklidagi bo'shliq o'yib olingan. Qolgan hajmni toping.
+{\fontsize{10.5}{13}\selectfont
+\setkicker{Set 4}{Composite figures -- subtraction; one part cut out.}
+\noindent\pnum{1} A circular hole with a radius of $3$ cm has been cut out of a square with a side length of $10$ cm. What is the area of the remaining figure, in square centimeters?\\[14mm]
+\noindent\pnum{2} A rectangle measures $12$ cm by $8$ cm. A square with a side length of $3$ cm has been cut out of it. What is the area of the remaining figure, in square centimeters?\\[14mm]
+\noindent\pnum{3} A small circle with a radius of $4$ cm has been cut out of the center of a large circle with a radius of $10$ cm, forming a ring (an annulus). What is the area of the remaining figure, in square centimeters?\\[14mm]
+\noindent\pnum{4} A rectangular prism measures $10 \times 8 \times 5$ cm. A rectangular tunnel measuring $4 \times 3 \times 5$ cm has been cut straight through it. What is the volume of the remaining solid, in cubic centimeters?\\[14mm]
+\noindent\pnum{5} A triangle with a base of $4$ cm and a height of $6$ cm has been cut out of a trapezoid with bases of $10$ cm and $16$ cm and a height of $8$ cm. What is the area of the remaining figure, in square centimeters?\\[14mm]
+\noindent\pnum{6} A cone-shaped cavity with the same radius and height has been carved out of a cylinder with a radius of $5$ cm and a height of $12$ cm. What is the volume of the remaining solid, in cubic centimeters?\\[14mm]
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 3: Set 5 (missing dimension) | Set 6 (spot the error) =================
-\topicheader{20}{Yuza va Hajm}
+% ================ PAGE =================
+\topicheader{20}{Area \& Volume}
 \pagefooter{110}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{5-to'plam}{Teskari yo'nalish -- maydon/hajm berilgan, o'lchamni toping.}
-
-\noindent\pnum{1} To'g'ri to'rtburchakning maydoni $72$ sm$^2$, kengligi $8$ sm. Uzunligini toping.\\[18mm]
-\noindent\pnum{2} Uchburchakning maydoni $35$ sm$^2$, asosi $10$ sm. Balandligini toping.\\[18mm]
-\noindent\pnum{3} Doiraning maydoni $81\pi$ sm$^2$. Doiraning diametrini toping.\\[18mm]
-\noindent\pnum{4} To'g'ri burchakli prizmaning hajmi $200$ sm$^3$, uzunligi $10$ sm, kengligi $4$ sm. Balandligini toping.\\[18mm]
-\noindent\pnum{5} Silindrning hajmi $250\pi$ sm$^3$, radiusi $5$ sm. Balandligini toping.\\[18mm]
-\noindent\pnum{6} Sharning hajmi $288\pi$ sm$^3$. Sharning radiusini toping.
+\setkicker{Set 5}{Working backward -- area or volume given; find the missing dimension.}
+\noindent\pnum{1} A rectangle has an area of $72$ cm$^2$ and a width of $8$ cm. What is the length of the rectangle, in centimeters?\\[20mm]
+\noindent\pnum{2} A triangle has an area of $35$ cm$^2$ and a base of $10$ cm. What is the height of the triangle, in centimeters?\\[20mm]
+\noindent\pnum{3} A circle has an area of $81\pi$ cm$^2$. What is the diameter of the circle, in centimeters?\\[20mm]
+\noindent\pnum{4} A rectangular prism has a volume of $200$ cm$^3$, a length of $10$ cm, and a width of $4$ cm. What is the height of the prism, in centimeters?\\[20mm]
+\noindent\pnum{5} A cylinder has a volume of $250\pi$ cm$^3$ and a radius of $5$ cm. What is the height of the cylinder, in centimeters?\\[20mm]
+\noindent\pnum{6} A sphere has a volume of $288\pi$ cm$^3$. What is the radius of the sphere, in centimeters?\\[20mm]
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{10}{13}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qoidani ayting, to'g'ri javobni bering.}
-
-\noindent\pnum{1} ``Doiraning diametri $10$ sm. Maydonini toping.'' ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$A=\pi(10)^2=100\pi$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{2} ``Tomoni $8$ sm bo'lgan kvadratning ichida radiusi $2$ sm bo'lgan doira teshik bor. Qolgan maydonni toping.'' ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$64+4\pi$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{3} ``Konusning radiusi $3$ sm, balandligi $10$ sm. Hajmini toping.'' ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$V=\pi(3)^2(10)=90\pi$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{4} ``Sharning radiusi $5$ sm. Hajmini toping.'' ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$V=\pi(5)^3=125\pi$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{5} ``Silindrning diametri $6$ sm, balandligi $10$ sm. Hajmini toping.'' ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$V=\pi(6)^2(10)=360\pi$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}
+{\fontsize{10.5}{13}\selectfont
+\setkicker{Set 6}{Spot the error -- name the mistake, give the correct answer.}
+\noindent\pnum{1} ``A circle has a diameter of $10$ cm. What is its area?''\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution:} $A=\pi(10)^2=100\pi$.\\[1.5mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[7mm]
+\noindent\pnum{2} ``A square with a side length of $8$ cm has a circular hole with a radius of $2$ cm cut out of it. What is the area of the remaining figure?''\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution:} $64+4\pi$.\\[1.5mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[7mm]
+\noindent\pnum{3} ``A cone has a radius of $3$ cm and a height of $10$ cm. What is its volume?''\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution:} $V=\pi(3)^2(10)=90\pi$.\\[1.5mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[7mm]
+\noindent\pnum{4} ``A sphere has a radius of $5$ cm. What is its volume?''\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution:} $V=\pi(5)^3=125\pi$.\\[1.5mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[7mm]
+\noindent\pnum{5} ``A cylinder has a diameter of $6$ cm and a height of $10$ cm. What is its volume?''\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution:} $V=\pi(6)^2(10)=360\pi$.\\[1.5mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[7mm]
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) -- own page =================
-\topicheader{20}{Yuza va Hajm}
+% ================ PAGE =================
+\topicheader{20}{Area \& Volume}
 \pagefooter{111}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{10.5}{13.5}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin -- ko'p bosqichli masalalar.}
-
-\noindent\pnum{1} To'g'ri burchakli prizma $10\times10\times20$ sm. Uning ichidan, balandligi bo'ylab o'tadigan radiusi $2$ sm bo'lgan silindrik teshik kesib olingan. Qolgan hajmni toping.\\[24mm]
-\noindent\pnum{2} Tomoni $14$ sm bo'lgan kvadratdan, radiusi $7$ sm bo'lgan bitta to'liq doira shaklida qism kesib olingan. Qolgan maydonni toping.\\[24mm]
-\noindent\pnum{3} Radiusi $4$ sm, balandligi $10$ sm bo'lgan silindrning ustiga, xuddi shu radiusli yarim shar joylashtirilgan. Umumiy hajmni toping.
+{\fontsize{11}{14}\selectfont
+\setkicker{Set 7}{Bonus / challenge -- multi-step.}
+\noindent\pnum{1} A rectangular prism measures $10 \times 10 \times 20$ cm. A cylindrical hole with a radius of $2$ cm has been drilled all the way through it along its height. What is the volume of the remaining solid, in cubic centimeters?\\[30mm]
+\noindent\pnum{2} A full circle with a radius of $7$ cm has been cut out of a square with a side length of $14$ cm. What is the area of the remaining figure, in square centimeters?\\[30mm]
+\noindent\pnum{3} A hemisphere with the same radius sits on top of a cylinder with a radius of $4$ cm and a height of $10$ cm, forming a shape like a silo. What is the total volume of the combined solid, in cubic centimeters?\\[30mm]
+\noindent\pnum{4} A prism has a trapezoidal cross section with bases of $6$ cm and $10$ cm and a height of $4$ cm; the prism's depth (length) is $15$ cm. What is the volume of the prism, in cubic centimeters?\\[30mm]
+\noindent\pnum{5} A cone-shaped cavity with the same radius and height has been removed from a cylinder with a radius of $6$ cm and a height of $15$ cm. What is the volume of the remaining solid, in cubic centimeters?\\[30mm]
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{10.5}{13.5}\selectfont
-\vspace*{0mm}
-\noindent\pnum{4} Ko'ndalang kesimi trapetsiya shaklida bo'lgan prizma: trapetsiyaning asoslari $6$ sm va $10$ sm, balandligi $4$ sm; prizmaning uzunligi $15$ sm. Prizmaning hajmini toping.\\[24mm]
-\noindent\pnum{5} Radiusi $6$ sm, balandligi $15$ sm bo'lgan silindrning ichidan, xuddi shu radius va balandlikka ega konus shaklidagi bo'shliq olib tashlangan. Qolgan hajmni toping.
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+{\sffamily\bfseries\fontsize{9}{11}\selectfont\color{accent} EASY}\\[1mm]
+\noindent\pnum{1} A rectangle has a length of $15$ cm and a width of $4$ cm. What is the area of the rectangle, in square centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 38 & (B) 19 \\[2.5mm]
+(C) 60 & (D) 120 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{2} A triangle has a base of $12$ cm and a height of $9$ cm. What is the area of the triangle, in square centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 21 & (B) 54 \\[2.5mm]
+(C) 108 & (D) 27 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{3} A parallelogram has a base of $11$ cm and a height of $6$ cm. What is the area of the parallelogram, in square centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 17 & (B) 33 \\[2.5mm]
+(C) 132 & (D) 66 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{4} A trapezoid has bases of $8$ cm and $14$ cm and a height of $5$ cm. What is the area of the trapezoid, in square centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 55 & (B) 40 \\[2.5mm]
+(C) 70 & (D) 110 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{5} A circle has a radius of $9$ cm. What is the area of the circle, in square centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $18 \pi$ & (B) $81 \pi$ \\[2.5mm]
+(C) $162 \pi$ & (D) $9 \pi$ \\
+\end{tabular}\\[5mm]
+\noindent\pnum{6} A circle has a diameter of $16$ cm. What is the area of the circle, in square centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $16 \pi$ & (B) $256 \pi$ \\[2.5mm]
+(C) $64 \pi$ & (D) $128 \pi$ \\
+\end{tabular}\\[5mm]
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar =================
-\topicheader{20}{Yuza va Hajm}
+% ================ PAGE =================
+\topicheader{20}{Area \& Volume}
 \pagefooter{112}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\noindent\pnum{7} A rectangular prism has dimensions $6$ cm, $4$ cm, and $2$ cm. What is its volume, in cubic centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 48 & (B) 12 \\[2.5mm]
+(C) 24 & (D) 96 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{8} A cylinder has a radius of $3$ cm and a height of $10$ cm. What is its volume, in cubic centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $30 \pi$ & (B) $60 \pi$ \\[2.5mm]
+(C) $360 \pi$ & (D) $90 \pi$ \\
+\end{tabular}\\[5mm]
+\noindent\pnum{9} A cone has a radius of $5$ cm and a height of $12$ cm. What is its volume, in cubic centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $300 \pi$ & (B) $100 \pi$ \\[2.5mm]
+(C) $20 \pi$ & (D) $25 \pi$ \\
+\end{tabular}\\[5mm]
+\noindent\pnum{10} A square has a side length of $7$ cm. What is the area of the square, in square centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 49 & (B) 14 \\[2.5mm]
+(C) 28 & (D) 343 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{11} A rectangle has an area of $96$ square centimeters and a width of $8$ cm. What is the length of the rectangle, in centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 88 & (B) 104 \\[2.5mm]
+(C) 12 & (D) 768 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{12} A triangle has a base of $18$ cm and an area of $45$ square centimeters. What is the height of the triangle, in centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 5 & (B) $\frac{5}{2}$ \\[2.5mm]
+(C) 9 & (D) 90 \\
+\end{tabular}\\[5mm]
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\noindent\pnum{13} A rectangular prism has a length of $3$ cm, a width of $7$ cm, and a height of $4$ cm. What is its volume, in cubic centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 14 & (B) 42 \\[2.5mm]
+(C) 84 & (D) 168 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{14} A square has a perimeter of $36$ cm. What is the area of the square, in square centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 9 & (B) 81 \\[2.5mm]
+(C) 36 & (D) 324 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{15} A parallelogram and a triangle have the same base of $12$ cm and the same height of $5$ cm. What is the difference between the areas of the parallelogram and the triangle, in square centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 17 & (B) 60 \\[2.5mm]
+(C) 90 & (D) 30 \\
+\end{tabular}\\[5mm]
+{\sffamily\bfseries\fontsize{9}{11}\selectfont\color{accent} MEDIUM}\\[1mm]
+\noindent\pnum{1} A figure consists of a rectangle measuring $9$ cm by $7$ cm with a triangle attached to one $9$-cm side of the rectangle. The triangle's base is that $9$-cm side, and its height is $4$ cm. What is the total area of the figure, in square centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 63 & (B) 81 \\[2.5mm]
+(C) 99 & (D) 45 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{2} A square has a side length of $12$ cm. A triangle with a base of $6$ cm and a height of $4$ cm is cut out of one corner of the square. What is the area of the remaining figure, in square centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 120 & (B) 156 \\[2.5mm]
+(C) 132 & (D) 144 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{3} A rectangular prism measures $10$ cm by $6$ cm by $4$ cm. A cylindrical hole with a radius of $1$ cm is drilled straight through the prism along its $4$-cm height. What is the volume of the remaining solid, in cubic centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $4 \pi + 240$ & (B) 236 \\[2.5mm]
+(C) $240 - 16 \pi$ & (D) $240 - 4 \pi$ \\
+\end{tabular}\\[5mm]
+}
+\end{textblock*}
+
+\clearpage
+
+% ================ PAGE =================
+\topicheader{20}{Area \& Volume}
+\pagefooter{113}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\noindent\pnum{4} A semicircle has a diameter of $12$ cm. What is the area of the semicircle, in square centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $18 \pi$ & (B) $36 \pi$ \\[2.5mm]
+(C) $6 \pi$ & (D) $72 \pi$ \\
+\end{tabular}\\[5mm]
+\noindent\pnum{5} A circle has an area of $49\pi$ square centimeters. What is the diameter of the circle, in centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 7 & (B) 14 \\[2.5mm]
+(C) 49 & (D) $\frac{49}{2}$ \\
+\end{tabular}\\[5mm]
+\noindent\pnum{6} A rectangular prism has a volume of $360$ cubic centimeters. Its base measures $6$ cm by $5$ cm. What is the height of the prism, in centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 30 & (B) 60 \\[2.5mm]
+(C) 2160 & (D) 12 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{7} A cylinder has a radius of $4$ cm and a height of $9$ cm. A cone has the same radius and the same height as the cylinder. What is the volume of the cone, in cubic centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $48 \pi$ & (B) $144 \pi$ \\[2.5mm]
+(C) $36 \pi$ & (D) $16 \pi$ \\
+\end{tabular}\\[5mm]
+\noindent\pnum{8} A sphere has a diameter of $18$ cm. What is the volume of the sphere, in cubic centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $108 \pi$ & (B) $486 \pi$ \\[2.5mm]
+(C) $972 \pi$ & (D) $7776 \pi$ \\
+\end{tabular}\\[5mm]
+\noindent\pnum{9} A cylinder has a radius of $3$ cm and a height of $8$ cm. A cone with the same radius and a height of $4$ cm is attached to the top of the cylinder. What is the total volume of the combined solid, in cubic centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $72 \pi$ & (B) $84 \pi$ \\[2.5mm]
+(C) $96 \pi$ & (D) $108 \pi$ \\
+\end{tabular}\\[5mm]
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\noindent\pnum{10} A rectangular room measures $4$ meters by $3$ meters. Square floor tiles each measure $50$ centimeters on a side. What is the least number of whole tiles needed to cover the floor of the room, if no tile is cut?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 12 & (B) 6 \\[2.5mm]
+(C) 48 & (D) 192 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{11} A solid cylinder has a volume of $200\pi$ cubic centimeters and a height of $8$ cm. What is the diameter of its base, in centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 5 & (B) 25 \\[2.5mm]
+(C) 50 & (D) 10 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{12} A trapezoid has bases of $8$ cm and $x$ cm and a height of $6$ cm. Its area is $60$ square centimeters. What is the value of $x$?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 2 & (B) 12 \\[2.5mm]
+(C) 20 & (D) 28 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{13} A square has an area of $50$ square centimeters. What is the perimeter of the square, in centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $20 \sqrt{2}$ & (B) $5 \sqrt{2}$ \\[2.5mm]
+(C) $10 \sqrt{2}$ & (D) 50 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{14} A rectangular prism has a volume of $240$ cubic centimeters. Its length is twice its width, and its height is $5$ cm. What is the width of the prism, in centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $2 \sqrt{6}$ & (B) $4 \sqrt{6}$ \\[2.5mm]
+(C) 6 & (D) 12 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{15} A cylinder has a radius of $5$ cm and a height of $10$ cm. A sphere with a radius of $5$ cm fits exactly inside the cylinder. What is the volume of the cylinder that is not occupied by the sphere, in cubic centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}(A) $250 \pi$\\[0.8mm]
+\hspace*{7mm}(B) $\frac{500 \pi}{3}$\\[0.8mm]
+\hspace*{7mm}(C) $\frac{250 \pi}{3}$\\[0.8mm]
+\hspace*{7mm}(D) $\frac{125 \pi}{3}$\\[5mm]
+}
+\end{textblock*}
+
+\clearpage
+
+% ================ PAGE =================
+\topicheader{20}{Area \& Volume}
+\pagefooter{114}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\fontsize{9}{11}\selectfont\color{accent} HARD}\\[1mm]
+\noindent\pnum{1} A rectangular prism measures $12$ cm by $5$ cm by $3$ cm. A cylindrical hole with a radius of $1$ cm is drilled straight through the prism along its $12$-cm length. What is the volume of the remaining solid, in cubic centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $12 \pi + 180$ & (B) $180 - 48 \pi$ \\[2.5mm]
+(C) $180 - 3 \pi$ & (D) $180 - 12 \pi$ \\
+\end{tabular}\\[5mm]
+\noindent\pnum{2} A square has a side length equal to twice the radius of a circle. The area of the circle is $9\pi$ square centimeters, and the circle is cut out of the square. What is the area of the remaining figure, in square centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}(A) $9 \pi + 36$\\[0.8mm]
+\hspace*{7mm}(B) $36 - \frac{9 \pi}{2}$\\[0.8mm]
+\hspace*{7mm}(C) $36 - 9 \pi$\\[0.8mm]
+\hspace*{7mm}(D) $36 - 3 \pi$\\[5mm]
+\noindent\pnum{3} A solid cylinder has a radius of $3$ cm and a height of $6$ cm. A solid sphere that fits exactly inside the cylinder is removed from it. What is the volume of the remaining solid, in cubic centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $36 \pi$ & (B) $18 \pi$ \\[2.5mm]
+(C) $54 \pi$ & (D) $90 \pi$ \\
+\end{tabular}\\[5mm]
+\noindent\pnum{4} A solid cylinder has a radius of $r$ cm and a height of $2r$ cm. Its volume is $128\pi$ cubic centimeters. What is the value of $r$?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 4 & (B) 2 \\[2.5mm]
+(C) 8 & (D) 16 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{5} A cone has a volume of $96\pi$ cubic centimeters and a radius of $6$ cm. What is the height of the cone, in centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 2 & (B) $\frac{8}{3}$ \\[2.5mm]
+(C) 8 & (D) 24 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{6} A cylindrical tank has a radius of $40$ cm and a height of $1.5$ m. One liter equals $1000$ cubic centimeters. How many liters of water are needed to fill the tank completely? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $24 \pi$ & (B) $240 \pi$ \\[2.5mm]
+(C) $2400 \pi$ & (D) $240000 \pi$ \\
+\end{tabular}\\[5mm]
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\noindent\pnum{7} A trapezoid has bases of $10$ cm and $16$ cm and a height of $6$ cm. A triangle with a base of $4$ cm and a height of $6$ cm is cut out of the trapezoid. What is the area of the remaining figure, in square centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 54 & (B) 72 \\[2.5mm]
+(C) 90 & (D) 66 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{8} A sphere has a volume of $\dfrac{500}{3}\pi$ cubic centimeters. What is the diameter of the sphere, in centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 10 & (B) 5 \\[2.5mm]
+(C) 15 & (D) 25 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{9} A rectangular box measures $0.4$ m by $25$ cm by $1.2$ m. What is the volume of the box, in cubic centimeters?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 12 & (B) 1200 \\[2.5mm]
+(C) 120000 & (D) 0.12 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{10} A figure is formed by attaching a triangle to one $6$-cm side of a rectangle. The rectangle is $6$ cm wide and $L$ cm long. The triangle has a base of $6$ cm and a height of $4$ cm. The total area of the figure is $60$ square centimeters. What is the value of $L$?\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) 4 & (B) 6 \\[2.5mm]
+(C) 10 & (D) 8 \\
+\end{tabular}\\[5mm]
+\noindent\pnum{11} A cylinder has a diameter of $12$ cm and a height of $25$ cm. What is the volume of the cylinder, in cubic centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $225 \pi$ & (B) $900 \pi$ \\[2.5mm]
+(C) $3600 \pi$ & (D) $300 \pi$ \\
+\end{tabular}\\[5mm]
+\noindent\pnum{12} A rectangle measures $10$ cm by $8$ cm. A semicircle with a diameter of $8$ cm is attached outward to one of the $8$-cm sides of the rectangle. What is the total area of the figure, in square centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $4 \pi + 80$ & (B) $16 \pi + 80$ \\[2.5mm]
+(C) $80 + 32 \pi$ & (D) $8 \pi + 80$ \\
+\end{tabular}\\[5mm]
+}
+\end{textblock*}
+
+\clearpage
+
+% ================ PAGE =================
+\topicheader{20}{Area \& Volume}
+\pagefooter{115}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\noindent\pnum{13} A solid is formed by a cylinder with a radius of $4$ cm and a height of $10$ cm, with a cone of the same radius and a height of $6$ cm attached to the top. What is the total volume of the solid, in cubic centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $192 \pi$ & (B) $160 \pi$ \\[2.5mm]
+(C) $256 \pi$ & (D) $224 \pi$ \\
+\end{tabular}\\[5mm]
+\noindent\pnum{14} A sphere with a radius of $4$ cm is placed inside a cube so that it touches all six faces of the cube. What is the volume of the cube that is not occupied by the sphere, in cubic centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}(A) $512 - 64 \pi$\\[0.8mm]
+\hspace*{7mm}(B) $512 - 256 \pi$\\[0.8mm]
+\hspace*{7mm}(C) $512 - \frac{256 \pi}{3}$\\[0.8mm]
+\hspace*{7mm}(D) $512 - 16 \pi$\\[5mm]
+\noindent\pnum{15} A cylinder has a volume of $180\pi$ cubic centimeters and a height of $5$ cm. A second cylinder has the same radius as the first cylinder and a height of $15$ cm. What is the volume of the second cylinder, in cubic centimeters? Give the answer in terms of $\pi$.\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) $36 \pi$ & (B) $540 \pi$ \\[2.5mm]
+(C) $180 \pi$ & (D) $1620 \pi$ \\
+\end{tabular}\\[5mm]
+}
+\end{textblock*}
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original -- written by studying the method and structure of real, officially-released SAT Suite Question Bank items in this lesson's skill category (Area and volume), then building a new problem (new numbers, names and context) requiring the same solving method. No real College Board question text is reproduced anywhere in this book.\par}
+\end{textblock*}
+
+\clearpage
+
+\clearpage
+% ================ ANSWERS 1-7 ================
+\topicheader{20}{Area \& Volume}
+\pagefooter{116}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
 \end{textblock*}
 
 \begin{textblock*}{194mm}(16mm,44mm)
-{\fontsize{9}{11.5}\selectfont
+{\fontsize{9.5}{12}\selectfont
 \centering
 \renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|>{\centering\arraybackslash}p{22mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{30mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{30mm}|}
+\begin{tabular}{|>{\centering\arraybackslash}p{26mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{32mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{32mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{3}{22mm}{\centering 1-to'plam} & 1 & $60$ sm$^2$ & 2 & $42$ sm$^2$\\\cline{2-5}
- & 3 & $63$ sm$^2$ & 4 & $64$ sm$^2$\\\cline{2-5}
- & 5 & $49\pi$ sm$^2$ & 6 & $100\pi$ sm$^2$\\\hline
-\multirow{3}{22mm}{\centering 2-to'plam} & 1 & $120$ sm$^3$ & 2 & $160\pi$ sm$^3$\\\cline{2-5}
- & 3 & $108\pi$ sm$^3$ & 4 & $36\pi$ sm$^3$\\\cline{2-5}
- & 5 & $175\pi$ sm$^3$ & 6 & $80\pi$ sm$^3$\\\hline
-\multirow{3}{22mm}{\centering 3-to'plam} & 1 & $72$ sm$^2$ & 2 & $56$ sm$^2$\\\cline{2-5}
- & 3 & $60+\frac{25}{2}\pi$ sm$^2$ & 4 & $216$ sm$^3$\\\cline{2-5}
- & 5 & $105$ sm$^2$ & 6 & $102\pi$ sm$^3$\\\hline
-\multirow{3}{22mm}{\centering 4-to'plam} & 1 & $100-9\pi$ sm$^2$ & 2 & $87$ sm$^2$\\\cline{2-5}
- & 3 & $84\pi$ sm$^2$ & 4 & $340$ sm$^3$\\\cline{2-5}
- & 5 & $92$ sm$^2$ & 6 & $200\pi$ sm$^3$\\\hline
-\multirow{3}{22mm}{\centering 5-to'plam} & 1 & $l=9$ sm & 2 & $h=7$ sm\\\cline{2-5}
- & 3 & $d=18$ sm & 4 & $h=5$ sm\\\cline{2-5}
- & 5 & $h=10$ sm & 6 & $r=6$ sm\\\hline
-\multirow{2}{22mm}{\centering 7-to'plam} & 1 & $2000-80\pi$ sm$^3$ & 2 & $196-49\pi$ sm$^2$\\\cline{2-5}
- & 3 & $\frac{608}{3}\pi$ sm$^3$ & 4 & $480$ sm$^3$\\\cline{2-5}
- & 5 & \multicolumn{3}{p{70mm}|}{$360\pi$ sm$^3$}\\\hline
-\multirow{5}{22mm}{\centering 6-to'plam} & \multicolumn{4}{p{72mm}|}{1.\ Diametrni radius o'rniga qo'ygan. To'g'ri: $r=5$, $A=\pi(5)^2=25\pi$.}\\\cline{2-5}
- & \multicolumn{4}{p{72mm}|}{2.\ Teshikni qo'shgan, ayirish kerak edi. To'g'ri: $64-4\pi$.}\\\cline{2-5}
- & \multicolumn{4}{p{72mm}|}{3.\ Konus koeffitsiyenti $\frac13$ unutilgan. To'g'ri: $\frac13\pi(3)^2(10)=30\pi$.}\\\cline{2-5}
- & \multicolumn{4}{p{72mm}|}{4.\ Shar koeffitsiyenti $\frac43$ unutilgan. To'g'ri: $\frac43\pi(5)^3=\frac{500}{3}\pi$.}\\\cline{2-5}
- & \multicolumn{4}{p{72mm}|}{5.\ Diametrni radius o'rniga qo'ygan. To'g'ri: $\pi(3)^2(10)=90\pi$.}\\\hline
+\multirow{3}{26mm}{\centering Set 1} & 1 & $60$ cm$^2$ & 2 & $42$ cm$^2$\\\cline{2-5}
+ & 3 & $63$ cm$^2$ & 4 & $64$ cm$^2$\\\cline{2-5}
+ & 5 & $49\pi$ cm$^2$ & 6 & $100\pi$ cm$^2$\\\hline
+\multirow{3}{26mm}{\centering Set 2} & 1 & $120$ cm$^3$ & 2 & $160\pi$ cm$^3$\\\cline{2-5}
+ & 3 & $108\pi$ cm$^3$ & 4 & $36\pi$ cm$^3$\\\cline{2-5}
+ & 5 & $175\pi$ cm$^3$ & 6 & $80\pi$ cm$^3$\\\hline
+\multirow{3}{26mm}{\centering Set 3} & 1 & $72$ cm$^2$ & 2 & $56$ cm$^2$\\\cline{2-5}
+ & 3 & $60+\tfrac{25}{2}\pi$ cm$^2$ & 4 & $216$ cm$^3$\\\cline{2-5}
+ & 5 & $105$ cm$^2$ & 6 & $102\pi$ cm$^3$\\\hline
+\multirow{3}{26mm}{\centering Set 4} & 1 & $100-9\pi$ cm$^2$ & 2 & $87$ cm$^2$\\\cline{2-5}
+ & 3 & $84\pi$ cm$^2$ & 4 & $340$ cm$^3$\\\cline{2-5}
+ & 5 & $92$ cm$^2$ & 6 & $200\pi$ cm$^3$\\\hline
+\multirow{6}{26mm}{\centering Set 5} & \multicolumn{4}{p{84mm}|}{1.\ $l=9$ cm}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ $h=7$ cm}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ $d=18$ cm}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ $h=5$ cm}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ $h=10$ cm}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{6.\ $r=6$ cm}\\\hline
+\multirow{5}{26mm}{\centering Set 6} & \multicolumn{4}{p{84mm}|}{1.\ Error -- diameter plugged in as $r$ without halving. Correct: $r=5$, $A=25\pi$ cm$^2$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ Error -- the hole was added instead of subtracted. Correct: $64-4\pi$ cm$^2$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ Error -- the cone's $\tfrac13$ coefficient was dropped. Correct: $30\pi$ cm$^3$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ Error -- the sphere's $\tfrac43$ coefficient was dropped. Correct: $\tfrac{500}{3}\pi$ cm$^3$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ Error -- diameter plugged in as $r$ without halving. Correct: $90\pi$ cm$^3$.}\\\hline
+\multirow{5}{26mm}{\centering Set 7} & \multicolumn{4}{p{84mm}|}{1.\ $2000-80\pi$ cm$^3$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ $196-49\pi$ cm$^2$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ $\tfrac{608}{3}\pi$ cm$^3$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ $480$ cm$^3$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ $360\pi$ cm$^3$}\\\hline
 \end{tabular}
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,240mm)
+\clearpage
+\clearpage
+% ================ ANSWERS Set 8 ================
+\topicheader{20}{Area \& Volume}
+\pagefooter{117}
+\mbox{}%
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&B&D&A&B&C&A&D&B&A\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+C&A&C&B&D\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&C&D&A&B&D&A&C&B&C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+D&B&A&A&C\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+D&C&B&A&C&B&D&A&C&D\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&D&A&C&B\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}
