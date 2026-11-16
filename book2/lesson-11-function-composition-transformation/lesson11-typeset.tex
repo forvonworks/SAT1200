@@ -23,10 +23,14 @@
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
 
+% ---- Safe print margins: 16mm outer on both sides so bound/trimmed copies never
+% clip problem text. Columns are 83mm wide with a 6mm gap on each side of the
+% center rule (at x=105mm). ----
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
 \newcommand{\COLW}{83mm}
 
+% ---- Plain topic header: number chip + title, thin rule underneath. No band, no watermark. ----
 \newcommand{\topicheader}[2]{%
 \begin{textblock*}{194mm}(16mm,10mm)
 \begin{tikzpicture}
@@ -56,6 +60,7 @@
 \end{textblock*}
 }
 
+% ---- Fixed-length vertical column rule: #1 = top y (mm), #2 = length (mm) ----
 \newcommand{\colrule}[2]{%
 \begin{textblock*}{1mm}(105mm,#1mm)
 \begin{tikzpicture}
@@ -68,18 +73,43 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
+% ---- Small boxed problem number, reference-style. Plain \fbox -- stays flush with
+% the text baseline instead of centering on it. ----
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
+% ---- QR placeholder square + caption below ----
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
+}
+
+% ---- Difficulty sub-heading inside Set 8 ----
+\newcommand{\diffhead}[1]{{\sffamily\bfseries\color{accent}\fontsize{10.5}{13}\selectfont #1}\par\vspace{1.2mm}}
+
+% ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
@@ -87,15 +117,15 @@
 
 \begin{document}
 
-% ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{11}{Funksiya kompozitsiyasi va transformatsiyasi}
+% ================= PAGE 1 =================
+\topicheader{11}{Function Composition \& Transformation}
 \pagefooter{59}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{1-to'plam}{Nuqtada kompozitsiyani hisoblang. $f(x)=3x-2$, $g(x)=x^2+1$, $h(x)=2x+5$.}
+\setkicker{Set 1}{Composite values. Use $f(x)=3x-2$, $g(x)=x^2+1$, $h(x)=2x+5$.}
 
 \noindent\pnum{1} $f(g(2))=$\\[24mm]
 \noindent\pnum{2} $g(f(1))=$\\[24mm]
@@ -108,7 +138,7 @@
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{2-to'plam}{Kompozitsiyani algebraik tarzda to'liq soddalashtiring.}
+\setkicker{Set 2}{Build each composition and simplify it algebraically.}
 
 \noindent\pnum{1} $f(g(x))=$\\[24mm]
 \noindent\pnum{2} $g(f(x))=$\\[24mm]
@@ -121,157 +151,421 @@
 
 \clearpage
 
-% ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{11}{Funksiya kompozitsiyasi va transformatsiyasi}
+% ================= PAGE 2 =================
+\topicheader{11}{Function Composition \& Transformation}
 \pagefooter{60}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{3-to'plam}{Vertikal transformatsiya. $f(x)=x^2-4$.}
+\setkicker{Set 3}{Vertical transformation. $f(x)=x^2-4$.}
 
 \noindent\pnum{1} $f(3)+5=$\\[22mm]
 \noindent\pnum{2} $f(1)-3=$\\[22mm]
 \noindent\pnum{3} $-f(2)=$\\[22mm]
 \noindent\pnum{4} $2f(1)=$\\[22mm]
 \noindent\pnum{5} $-f(0)+1=$\\[22mm]
-\noindent\pnum{6} $f(4)=\,?$ va $f(4)+2=\,?$ Natija qancha siljidi?
+\noindent\pnum{6} $f(4)=\,?$ and $f(4)+2=\,?$ By how much does the output shift?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{4-to'plam}{Gorizontal transformatsiya (ishora qopqoni). $f(x)=x^2-4$.}
+\setkicker{Set 4}{Horizontal transformation (sign trap). $f(x)=x^2-4$.}
 
-\noindent\pnum{1} $f(x-3)$ da $x=5$\\[22mm]
-\noindent\pnum{2} $f(x+2)$ da $x=1$\\[22mm]
-\noindent\pnum{3} $f(-x)$ da $x=3$\\[22mm]
-\noindent\pnum{4} $f(x-1)$ da $x=0$\\[22mm]
-\noindent\pnum{5} $f(x-2)$ da $x=6$ va $f(x)$ da $x=4$. Nimani sezdingiz?\\[8mm]
-\noindent\pnum{6} $f(-x)$ da $x=-2$
+\noindent\pnum{1} $f(x-3)$ when $x=5$\\[22mm]
+\noindent\pnum{2} $f(x+2)$ when $x=1$\\[22mm]
+\noindent\pnum{3} $f(-x)$ when $x=3$\\[22mm]
+\noindent\pnum{4} $f(x-1)$ when $x=0$\\[22mm]
+\noindent\pnum{5} $f(x-2)$ when $x=6$. How does it compare with $f(x)$ when $x=4$?\\[8mm]
+\noindent\pnum{6} $f(-x)$ when $x=-2$
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 3: Set 5 | Set 6 (spot the error) =================
-\topicheader{11}{Funksiya kompozitsiyasi va transformatsiyasi}
+% ================= PAGE 3 =================
+\topicheader{11}{Function Composition \& Transformation}
 \pagefooter{61}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11.5}{14.5}\selectfont
-\setkicker{5-to'plam}{Aralash -- kompozitsiya va transformatsiya birgalikda.}
+\setkicker{Set 5}{Mixed: composition and transformation.}
 
-\noindent\pnum{1} $f(x)=x^2+1$, $g(x)=x-3$. $f(g(x))=\,?$, $x=5$ da qiymati?\\[12mm]
-\noindent\pnum{2} $f(x)=2x+3$. $f(x-1)$ ni $x=4$ da baholang.\\[14mm]
-\noindent\pnum{3} $g(x)=x^2-2x$. $g(-x)$ ni soddalashtiring.\\[12mm]
-\noindent\pnum{4} $f(x)=x^2+1$, $g(x)=x+2$. $g(f(2))=\,?$\\[12mm]
-\noindent\pnum{5} $f(x)=x^2-5$. $-f(x-1)$ ni $x=3$ da baholang.\\[12mm]
-\noindent\pnum{6} $f(x)=3x$. $f(f(2))=\,?$
+\noindent\pnum{1} If $f(x)=x^2+1$ and $g(x)=x-3$, find $f(g(x))$ in simplified form, and its value when $x=5$.\\[14mm]
+\noindent\pnum{2} If $f(x)=2x+3$, find the value of $f(x-1)$ when $x=4$.\\[14mm]
+\noindent\pnum{3} If $g(x)=x^2-2x$, find $g(-x)$ in simplified form.\\[12mm]
+\noindent\pnum{4} If $f(x)=x^2+1$ and $g(x)=x+2$, find $g(f(2))$.\\[12mm]
+\noindent\pnum{5} If $f(x)=x^2-5$, find the value of $-f(x-1)$ when $x=3$.\\[12mm]
+\noindent\pnum{6} If $f(x)=3x$, find $f(f(2))$.
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10.3}{13}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'g'ri javobni bering.}
+\setkicker{Set 6}{Identify the error: name the mistake, then give the correct answer.}
 
-\noindent\pnum{1} $f(x)=x^2+1$, $g(x)=2x$. $f(g(3))$ ni toping:\\[1mm]
-\hspace*{7mm}\textit{``$f(3)=10$, so'ngra $g(10)=20$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{1} If $f(x)=x^2+1$ and $g(x)=2x$, what is $f(g(3))$? The work shown is:\\[1mm]
+\hspace*{7mm}\textit{``$f(3)=10$, then $g(10)=20$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[46mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{2} $f(x)=x^2-4$. $f(3)+2$ ni toping:\\[1mm]
-\hspace*{7mm}\textit{``$f(x+2)$ ni hisoblaymiz: $f(5)=21$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{2} If $f(x)=x^2-4$, what is $f(3)+2$? The work shown is:\\[1mm]
+\hspace*{7mm}\textit{``We compute $f(x+2)$: $f(5)=21$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[46mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{3} $f(x)=x^2+3x$. $f(x-2)$ ni $x=5$ da toping:\\[1mm]
-\hspace*{7mm}\textit{``Chapga siljiydi: $f(x+2)=f(7)=70$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{3} If $f(x)=x^2+3x$, what is $f(x-2)$ when $x=5$? The work shown is:\\[1mm]
+\hspace*{7mm}\textit{``It shifts left, so $f(x+2)=f(7)=70$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[46mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{4} $f(x)=x^2-1$. $f(-x)$ ni $x=2$ da toping:\\[1mm]
-\hspace*{7mm}\textit{``$f(-x)=-f(x)$, shuning uchun $-f(2)=-3$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{4} If $f(x)=x^2-1$, what is $f(-x)$ when $x=2$? The work shown is:\\[1mm]
+\hspace*{7mm}\textit{``$f(-x)=-f(x)$, so $-f(2)=-3$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[46mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{5} $f(x)=2x+1$, $g(x)=x-4$. $g(f(x))$ ni toping:\\[1mm]
+\noindent\pnum{5} If $f(x)=2x+1$ and $g(x)=x-4$, what is $g(f(x))$? The work shown is:\\[1mm]
 \hspace*{7mm}\textit{``$f(g(x))=2(x-4)+1=2x-7$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}
+\hspace*{7mm}Error + fix: \makebox[46mm]{\dotfill}\\[6mm]
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) =================
-\topicheader{11}{Funksiya kompozitsiyasi va transformatsiyasi}
+% ================= PAGE 4 =================
+\topicheader{11}{Function Composition \& Transformation}
 \pagefooter{62}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin.}
+\setkicker{Set 7}{Bonus / challenge.}
 
-\noindent\pnum{1} $f(x)=x^2-2x+1$, $g(x)=x+3$. $f(g(x))$ ni to'liq soddalashtiring.\\[16mm]
-\noindent\pnum{2} $f(x)=x^2-4$. $-f(x-1)$ ni $x=0$ da baholang.\\[22mm]
-\noindent\pnum{3} $f(x)=2x-5$, $g(x)=x^2+1$. $g(f(2))$ va $f(g(2))$ ni toping -- teng me?\\[22mm]
-\noindent\pnum{4} $f(x)=x^2+1$. $h(x)=f(x-3)+2$ bo'lsa, $h(5)$ ni toping.\\[22mm]
-\noindent\pnum{5} $f(x)=3x+2$. $f(f(x))$ ni soddalashtiring.
+\noindent\pnum{1} If $f(x)=x^2-2x+1$ and $g(x)=x+3$, find $f(g(x))$ in fully simplified form.\\[16mm]
+\noindent\pnum{2} If $f(x)=x^2-4$, find the value of $-f(x-1)$ when $x=0$.\\[22mm]
+\noindent\pnum{3} If $f(x)=2x-5$ and $g(x)=x^2+1$, find $g(f(2))$ and $f(g(2))$. Are the two values equal?\\[22mm]
+\noindent\pnum{4} If $f(x)=x^2+1$ and $h(x)=f(x-3)+2$, find $h(5)$.\\[22mm]
+\noindent\pnum{5} If $f(x)=3x+2$, find $f(f(x))$ in simplified form.
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+
+\diffhead{Easy}
+
+
+\satq{1}{If $f(x)=2x+7$, what is the value of $f(-3)$?}{$1$}{$-13$}{$-1$}{$13$}
+
+\satq{2}{If $g(x)=x^2-5$, what is the value of $g(4)$?}{$-9$}{$11$}{$-1$}{$21$}
+
+\satq{3}{If $f(x)=3x-2$, what is the value of $f(2)+f(-1)$?}{$1$}{$5$}{$-1$}{$9$}
+
+\satq{4}{If $f(x)=x^2+4$ and $g(x)=2x-1$, what is the value of $g(f(1))$?}{$5$}{$11$}{$1$}{$9$}
+
+\satq{5}{If $f(x)=x^2+1$, what is the value of $f(x+2)$ when $x=3$?}{$2$}{$26$}{$8$}{$12$}
+
+\satq{6}{The function $f$ has the values $f(1)=3$, $f(2)=5$, $f(3)=-4$, and $f(4)=0$. What is the value of $f(f(1))$?}{$-4$}{$0$}{$3$}{$5$}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar =================
-\topicheader{11}{Funksiya kompozitsiyasi va transformatsiyasi}
+% ================= PAGE 5 =================
+\topicheader{11}{Function Composition \& Transformation}
 \pagefooter{63}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\diffhead{Easy}
+
+
+\satq{7}{If $f(x)=5-x$ and $g(x)=x^2$, what is the value of $f(g(-2))$?}{$9$}{$49$}{$7$}{$1$}
+
+\satq{8}{If $f(x)=x^2-3x$, what is the value of $f(2)+4$?}{$-6$}{$-2$}{$2$}{$18$}
+
+\satq{9}{If $f(x)=x^2+2x-3$, what is the value of $-f(2)$?}{$-3$}{$5$}{$3$}{$-5$}
+
+\satq{10}{If $g(x)=x^2+x$, what is the value of $g(x-3)$ when $x=4$?}{$0$}{$17$}{$2$}{$56$}
+
+\satq{11}{If $f(x)=3x+1$ and $g(x)=x-2$, which expression is equal to $f(g(x))$?}{$3x-1$}{$3x-6$}{$3x-5$}{$3x-7$}
+
+\satq{12}{The graph of $y=f(x)$ is shifted down $5$ units to form the graph of $y=g(x)$. If $f(x)=2x+3$, what is $g(1)$?}{$0$}{$-5$}{$5$}{$10$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\diffhead{Easy}
+
+
+\satq{13}{If $f(x)=x+3$ and $g(x)=3x$, what is the value of $g(f(-1))$?}{$6$}{$0$}{$-3$}{$2$}
+
+\satq{14}{If $f(x)=x^2-2x+5$, what is the value of $f(-x)$ when $x=-1$?}{$8$}{$4$}{$-8$}{$-4$}
+
+\satq{15}{The function $g$ is defined by $g(x)=f(x+1)$, where $f(x)=3x+6$. What is $g(2)$?}{$9$}{$15$}{$12$}{$18$}
+
+\diffhead{Medium}
+
+
+\satq{1}{If $f(x)=3x-2$ and $g(x)=x^2+1$, what is the value of $f(g(-2))$?}{$13$}{$65$}{$-17$}{$-8$}
+
+\satq{2}{If $h(x)=2x+5$ and $f(x)=3x-2$, for what value of $x$ is $f(h(x))=0$?}{$-\dfrac{13}{6}$}{$\dfrac{13}{6}$}{$-\dfrac{5}{2}$}{$\dfrac{2}{3}$}
+
+\satq{3}{Let $f(x)=x^2-6x$, and let $g(x)=f(x)+k$, where $k$ is a constant. If $g(4)=-3$, what is the value of $k$?}{$-5$}{$11$}{$5$}{$-11$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6 =================
+\topicheader{11}{Function Composition \& Transformation}
+\pagefooter{64}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\diffhead{Medium}
+
+
+\satq{4}{Let $f(x)=3x+2$ and $g(x)=f(x-k)$, where $k$ is a constant. If $g(4)=5$, what is the value of $k$?}{$-1$}{$-3$}{$3$}{$1$}
+
+\satq{5}{Let $f(x)=x^2-1$ and $g(x)=-f(x)$. What is the value of $g(f(2))$?}{$8$}{$-3$}{$-8$}{$3$}
+
+\satq{6}{The function $f(x)=2x+1$, and the function $g$ has the values $g(-1)=2$, $g(0)=-1$, $g(1)=0$, and $g(2)=3$. What is the value of $g(f(0))$?}{$-1$}{$0$}{$1$}{$3$}
+
+\satq{7}{If $f(x)=x^2-3x$ and $g(x)=x+2$, what is $f(g(x))$ in simplified form?}{$x^2-3x+2$}{$x^2+x-2$}{$x^2-3x-2$}{$x^2+x+4$}
+
+\satq{8}{For the functions $f(x)=2x-1$ and $g(x)=x^2+k$, where $k$ is a constant, $f(g(2))=17$. What is the value of $k$?}{$10$}{$-5$}{$\dfrac{9}{2}$}{$5$}
+
+\satq{9}{Let $f(x)=x^2+4x$ and $g(x)=f(x+3)$. What is the value of $g(-1)$?}{$0$}{$-3$}{$12$}{$21$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\diffhead{Medium}
+
+
+\satq{10}{The graph of $y=x^2$ is translated $3$ units to the left and $2$ units down. Which expression defines the translated function?}{$(x+3)^2-2$}{$(x-3)^2-2$}{$(x+3)^2+2$}{$(x-3)^2+2$}
+
+\satq{11}{If $f(x)=x^2-2$ and $g(x)=3-x$, what is the value of $f(g(-1))$?}{$4$}{$2$}{$7$}{$14$}
+
+\satq{12}{If $f(x)=x^2-4x+3$, what is the value of $-2f(2)+3$?}{$-1$}{$5$}{$1$}{$2$}
+
+\satq{13}{If $f(x)=x^2+2$, which expression is equal to $f(x-4)$?}{$x^2-8x+16$}{$x^2-8x+18$}{$x^2+8x+18$}{$x^2-2$}
+
+\satqw{14}{Let $f(x)=x-5$ and $g(x)=2x^2$. For which value(s) of $x$ is $f(g(x))=13$?}{$x=\pm3$}{$x=3$ only}{$x=\pm\sqrt{\tfrac{13}{2}}$}{$x=\pm2$}
+
+\satq{15}{If $f(x)=4x-3$ and $g(x)=\dfrac{x}{2}+1$, which expression is equal to $f(g(x))$?}{$2x-2$}{$2x+4$}{$2x-\dfrac{1}{2}$}{$2x+1$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 7 =================
+\topicheader{11}{Function Composition \& Transformation}
+\pagefooter{65}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\diffhead{Hard}
+
+
+\satq{1}{Let $f(x)=x^2$ and $g(x)=x+2$. For what value of $x$ does $f(g(x))=g(f(x))$?}{$\dfrac{1}{2}$}{$-2$}{$0$}{$-\dfrac{1}{2}$}
+
+\satq{2}{The graph of $y=f(x)$, where $f(x)=x^2-2$, is translated $3$ units to the right and $4$ units up to form the graph of $y=g(x)$. What is the value of $g(5)$?}{$6$}{$2$}{$27$}{$66$}
+
+\satq{3}{Let $f(x)=3x-2$ and $g(x)=f(x)+k$, where $k$ is a constant. If $g(g(0))=8$, what is the value of $k$?}{$-4$}{$10$}{$2$}{$4$}
+
+\satq{4}{Let $f(x)=2x+3$ and $g(x)=f(x)-f(x-1)$. What is $g(x)$?}{$2x+3$}{$-2$}{$2$}{$2x+1$}
+
+\satq{5}{A function $f$ satisfies $f(x+2)=f(x)+4$ for all values of $x$. If $f(0)=1$, what is the value of $f(6)$?}{$9$}{$17$}{$13$}{$25$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\diffhead{Hard}
+
+
+\satq{6}{The function $f$ is defined by the table: $f(1)=4$, $f(2)=1$, $f(3)=3$, $f(4)=2$. The function $g$ is defined by $g(x)=2x-1$. For what value of $x$ is $g(f(x))=5$?}{$2$}{$4$}{$1$}{$3$}
+
+\satq{7}{Let $f(x)=x^2-6x+5$ and $g(x)=f(-x)$. For what value of $x$ is $g(x)=f(x)$?}{$1$}{$-1$}{$0$}{$5$}
+
+\satq{8}{Let $f(x)=ax+3$ and $g(x)=2x-5$, where $a$ is a constant. If $f(g(x))=g(f(x))$ for all values of $x$, what is the value of $a$?}{$-\dfrac{2}{5}$}{$\dfrac{2}{5}$}{$\dfrac{5}{2}$}{$2$}
+
+\satq{9}{The point $(2,5)$ lies on the graph of $y=f(x)$. The graph of $y=g(x)$ is obtained by translating the graph of $y=f(x)$ $3$ units to the left and $4$ units down. Which point must lie on the graph of $y=g(x)$?}{$(-1,1)$}{$(5,1)$}{$(-1,9)$}{$(5,9)$}
+
+\satqw{10}{Let $f(x)=2x-3$ and $g(x)=x^2$. What are all values of $x$ for which $g(f(x))=25$?}{$x=4$ only}{$x=4$ and $x=-1$}{$x=-1$ only}{$x=14$ and $x=-11$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 8 =================
+\topicheader{11}{Function Composition \& Transformation}
+\pagefooter{66}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\diffhead{Hard}
+
+
+\satq{11}{Let $f(x)=x^2-6x+5$ and $g(x)=f(x+2)+1$. What is $g(1)$?}{$-3$}{$-4$}{$1$}{$13$}
+
+\satqw{12}{Let $f(x)=x^2+1$ and $g(x)=3x-2$. What are all values of $x$ for which $f(g(x))=f(x)$?}{$x=1$ only}{$x=\tfrac{1}{2}$ only}{$x=1$ and $x=\tfrac{1}{2}$}{$x=-1$ and $x=\tfrac{1}{2}$}
+
+\satq{13}{Let $f$ be a function with $f(3)=5$. Let $g(x)=f(x)+4$ and $h(x)=g(x-3)$. What is the value of $h(6)$?}{$1$}{$9$}{$5$}{$13$}
+
+\satq{14}{Let $f(x)=x-4$ and $g(x)=x^2-6$. How many integers $x$ with $-3\le x\le 3$ satisfy $f(g(x))\le 0$?}{$2$}{$7$}{$4$}{$5$}
+
+\satqw{15}{Let $f(x)=\dfrac{x}{2}+1$ and $g(x)=x^2-8$. For which values of $x$ is $f(g(x))=-1$?}{$x=\pm2$}{$x=2$ only}{$x=-2$ only}{$x=\pm\sqrt{7}$}
+}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original. Each was written by studying the method, traps, and distractor style of real, officially released SAT Suite Question Bank items in the \emph{Nonlinear functions} category, then building a new problem with new numbers, names, and context. No real College Board question text is reproduced anywhere in this book, and every answer was verified by a sympy script.\par}
+\end{textblock*}
+\clearpage
+
+% ================= PAGE 9: Answer key, Sets 1-7 =================
+\topicheader{11}{Function Composition \& Transformation}
+\pagefooter{67}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
 \end{textblock*}
 
 \begin{textblock*}{194mm}(16mm,44mm)
 {\fontsize{9.3}{11.8}\selectfont
 \centering
 \renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{34mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{34mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{3}{24mm}{\centering 1-to'plam} & 1 & 13 & 2 & 2\\\cline{2-5}
- & 3 & 13 & 4 & 9\\\cline{2-5}
- & 5 & 5 & 6 & 10\\\hline
-\multirow{3}{24mm}{\centering 2-to'plam} & 1 & $3x^2+1$ & 2 & $9x^2-12x+5$\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 1} & 1 & $13$ & 2 & $2$\\\cline{2-5}
+ & 3 & $13$ & 4 & $9$\\\cline{2-5}
+ & 5 & $5$ & 6 & $10$\\\hline
+\multirow{3}{24mm}{\centering Set 2} & 1 & $3x^2+1$ & 2 & $9x^2-12x+5$\\\cline{2-5}
  & 3 & $6x+13$ & 4 & $6x+1$\\\cline{2-5}
  & 5 & $4x^2+20x+26$ & 6 & $2x^2+7$\\\hline
-\multirow{3}{24mm}{\centering 3-to'plam} & 1 & 10 & 2 & $-6$\\\cline{2-5}
- & 3 & 0 & 4 & $-6$\\\cline{2-5}
- & 5 & 5 & 6 & \multicolumn{1}{p{34mm}|}{\centering $f(4)\!=\!12$, $+2\!=\!14$}\\\hline
-\multirow{3}{24mm}{\centering 4-to'plam} & 1 & 0 & 2 & 5\\\cline{2-5}
- & 3 & 5 & 4 & $-3$\\\cline{2-5}
- & 5 & \multicolumn{1}{p{34mm}|}{\centering teng, $=12$} & 6 & 0\\\hline
-\multirow{3}{24mm}{\centering 5-to'plam} & 1 & $x^2{-}6x{+}10$; $5$ & 2 & 9\\\cline{2-5}
- & 3 & $x^2+2x$ & 4 & 7\\\cline{2-5}
- & 5 & 1 & 6 & 18\\\hline
-\multirow{3}{24mm}{\centering 7-to'plam} & 1 & $x^2+4x+4$ & 2 & 3\\\cline{2-5}
- & 3 & \multicolumn{1}{p{34mm}|}{\centering $2$, $5$ -- teng emas} & 4 & 7\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 3} & 1 & $10$ & 2 & $-6$\\\cline{2-5}
+ & 3 & $0$ & 4 & $-6$\\\cline{2-5}
+ & 5 & $5$ & 6 & \multicolumn{1}{p{34mm}|}{\centering $f(4)=12$, $+2=14$}\\\hline
+\multirow{3}{24mm}{\centering Set 4} & 1 & $0$ & 2 & $5$\\\cline{2-5}
+ & 3 & $5$ & 4 & $-3$\\\cline{2-5}
+ & 5 & \multicolumn{1}{p{34mm}|}{\centering both $=12$} & 6 & $0$\\\hline
+\multirow{3}{24mm}{\centering Set 5} & 1 & $x^2-6x+10$; $5$ & 2 & $9$\\\cline{2-5}
+ & 3 & $x^2+2x$ & 4 & $7$\\\cline{2-5}
+ & 5 & $1$ & 6 & $18$\\\hline
+\multirow{3}{24mm}{\centering Set 7} & 1 & $x^2+4x+4$ & 2 & $3$\\\cline{2-5}
+ & 3 & \multicolumn{1}{p{34mm}|}{\centering $2$, $5$ -- not equal} & 4 & $7$\\\cline{2-5}
  & 5 & $9x+8$ & -- & --\\\hline
-\multirow{5}{24mm}{\centering 6-to'plam} & \multicolumn{4}{p{86mm}|}{1.\ Kompozitsiya tartibi teskari olingan ($g(f(3))$ emas, $f(g(3))$ kerak). To'g'ri: $g(3)=6$, $f(6)=37$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{2.\ $f(x)+2$ (natijaga qo'shish) bilan $f(x+2)$ (kirishga qo'shish) aralashtirilgan. To'g'ri: $f(3)=5$, $f(3)+2=7$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{3.\ $f(x-h)$ o'ngga siljiydi deb noto'g'ri faraz qilingan. To'g'ri: $f(3)=18$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{4.\ $f(-x)=-f(x)$ deb noto'g'ri faraz qilingan. To'g'ri: $f(-2)=3$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{5.\ So'ralgan $g(f(x))$ o'rniga $f(g(x))$ hisoblangan. To'g'ri: $g(f(x))=2x-3$.}\\\hline
+\multirow{5}{24mm}{\centering Set 6} & \multicolumn{4}{p{86mm}|}{1.\ Composition order reversed ($g(f(3))$, not $f(g(3))$). Correct: $g(3)=6$, $f(6)=37$.}\\\cline{2-5}
+ & \multicolumn{4}{p{86mm}|}{2.\ $f(x)+2$ confused with $f(x+2)$. Correct: $f(3)=5$, $f(3)+2=7$.}\\\cline{2-5}
+ & \multicolumn{4}{p{86mm}|}{3.\ $f(x-h)$ assumed to shift left; it shifts right. Correct: $f(3)=18$.}\\\cline{2-5}
+ & \multicolumn{4}{p{86mm}|}{4.\ $f(-x)=-f(x)$ assumed. Correct: $f(-2)=3$.}\\\cline{2-5}
+ & \multicolumn{4}{p{86mm}|}{5.\ $f(g(x))$ computed instead of $g(f(x))$. Correct: $g(f(x))=2x-3$.}\\\hline
 \end{tabular}
+
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,252mm)
+\clearpage
+
+% ================= PAGE 10: Answer key, Set 8 =================
+\topicheader{11}{Function Composition \& Transformation}
+\pagefooter{68}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+A&B&C&D&B&A&D&C&D&C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5\\\hline
+C&A&A&B&B\\\hline
+\end{tabular}
+\\[6mm]
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+A&A&C&C&C&B&B&D&C&A\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5\\\hline
+D&B&B&A&D\\\hline
+\end{tabular}
+\\[6mm]
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+D&A&D&C&C&D&C&B&A&B\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5\\\hline
+A&C&B&B&A\\\hline
+\end{tabular}
+
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,214mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}
 \end{textblock*}
+
 
 \end{document}
