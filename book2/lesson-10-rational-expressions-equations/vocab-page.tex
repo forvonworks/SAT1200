@@ -1,0 +1,107 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+\usepackage{longtable}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{602785}
+\definecolor{badge}{HTML}{B8A0C8}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{150mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+
+\begin{document}
+\topicheader{10}{Rational Expressions \& Equations}
+\pagekicker{Vocabulary for this lesson's problems (Sets 1--8)}
+\pagefooter{53}
+\mbox{}%
+\renewcommand{\arraystretch}{1.37}
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{11.5}{13.5}\selectfont
+\begin{tabular}{|p{80mm}|p{90mm}|}
+\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+\textbf{expression} & \textit{ifoda} \\ \hline
+\rowcolor{badge!18}
+\textbf{equivalent (to)} & \textit{ekvivalent (teng kuchli)} \\ \hline
+\textbf{product / quotient} & \textit{ko'paytma / bo'linma} \\ \hline
+\rowcolor{badge!18}
+\textbf{solution / solution set} & \textit{yechim / yechimlar to'plami} \\ \hline
+\textbf{no solution} & \textit{yechim yo'q} \\ \hline
+\rowcolor{badge!18}
+\textbf{every real number except} & \textit{... dan tashqari barcha haqiqiy sonlar} \\ \hline
+\textbf{undefined} & \textit{aniqlanmagan} \\ \hline
+\rowcolor{badge!18}
+\textbf{for $x\ne3$ (excluded value)} & \textit{$x\ne3$ bo'lganda (ruxsat etilmagan qiymat)} \\ \hline
+\textbf{constant} & \textit{o'zgarmas son (konstanta)} \\ \hline
+\rowcolor{badge!18}
+\textbf{sum of all real solutions} & \textit{barcha haqiqiy yechimlarning yig'indisi} \\ \hline
+\textbf{for what value of} & \textit{qanday qiymatda} \\ \hline
+\rowcolor{badge!18}
+\textbf{which statement \dots\ is true} & \textit{qaysi mulohaza to'g'ri} \\ \hline
+\textbf{shared equally / split equally} & \textit{teng bo'lib bo'linadi} \\ \hline
+\rowcolor{badge!18}
+\textbf{working together} & \textit{birgalikda ishlaganda} \\ \hline
+\textbf{constant speed / miles per hour} & \textit{doimiy tezlik / soatiga mil} \\ \hline
+\rowcolor{badge!18}
+\textbf{cost per crate} & \textit{har bir quti uchun narx} \\ \hline
+\textbf{fewer (than)} & \textit{kam (dan)} \\ \hline
+\rowcolor{badge!18}
+\textbf{original} & \textit{dastlabki (asl)} \\ \hline
+\end{tabular}
+}
+\end{textblock*}
+\end{document}
