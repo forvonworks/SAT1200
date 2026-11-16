@@ -94,6 +94,122 @@ the correct answer.
 
 ---
 
+## Set 8 — Real SAT-Style Problems
+
+Multiple-choice (A–D). 15 Easy / 15 Medium / 15 Hard. Every item is original,
+written to require the same method as real, officially-released SAT Suite
+Question Bank items for *Systems of two linear equations in two variables* —
+see the sourcing note at the end of this set.
+
+### Easy
+
+1. Line $A$ passes through $(0,2)$ and $(4,10)$. Line $B$ passes through $(0,8)$ and $(4,4)$. What is the solution $(x,y)$ to the system formed by these two lines?
+   A) $(0,2)$  B) $(2,6)$  C) $(4,4)$  D) $(6,2)$
+2. $x=5$ and $2x+y=19$. The solution to the system is $(x,y)$. What is the value of $y$?
+   A) 9  B) 4  C) 14  D) 29
+3. $y=3x$ and $x+y=24$. The solution to the system is $(x,y)$. What is the value of $x$?
+   A) 6  B) 8  C) 18  D) 24
+4. $x+y=15$ and $x-y=5$. What is the value of $x$?
+   A) 5  B) 10  C) 15  D) 20
+5. $2x+y=20$ and $x+y=13$. What is the value of $y$?
+   A) 6  B) 7  C) 13  D) 20
+6. A movie theater sells child tickets for \$8 and adult tickets for \$13. One evening it sold 200 tickets and collected \$2,150. Which system can be used to find the number of child tickets, $c$, and adult tickets, $a$, sold?
+   A) $c+a=200$, $8c+13a=2150$  B) $c+a=200$, $13c+8a=2150$  C) $8c+13a=200$, $c+a=2150$  D) $c+a=2150$, $8c+13a=200$
+7. $3x+y=22$ and $x-y=2$. What is the value of $x$?
+   A) 4  B) 5  C) 6  D) 8
+8. What is the solution $(x,y)$ to the system $y=2x-3$ and $x+y=15$?
+   A) $(5,10)$  B) $(6,9)$  C) $(9,6)$  D) $(4,11)$
+9. A bakery sells cupcakes for \$3 each and cookies for \$2 each. Maria bought 10 items and spent \$24. Which system can be used to find the number of cupcakes, $c$, and cookies, $k$, she bought?
+   A) $c+k=24$, $3c+2k=10$  B) $c+k=10$, $2c+3k=24$  C) $c+k=10$, $3c+2k=24$  D) $3c+2k=10$, $c+k=24$
+10. $x+2y=16$ and $x-2y=4$. What is the value of $y$?
+    A) 2  B) 3  C) 4  D) 10
+11. $x=2y$ and $3x+y=28$. What is the value of $y$?
+    A) 4  B) 7  C) 8  D) 14
+12. $4x+y=30$ and $x+y=12$. What is the value of $x$?
+    A) 3  B) 12  C) 18  D) 6
+13. The sum of two numbers is 45 and their difference is 11. What is the larger number?
+    A) 17  B) 22  C) 28  D) 34
+14. $y=4x$ and $2x+y=36$. What is the value of $x$?
+    A) 4  B) 9  C) 6  D) 24
+15. $2x+3y=19$ and $2x-3y=5$. What is the value of $x$?
+    A) 3  B) 7  C) 12  D) 6
+
+### Medium
+
+1. $y=-\dfrac{1}{5}x$ and $y=\dfrac{1}{4}x$. The solution to the system is $(x,y)$. What is the value of $x$?
+   A) $-5$  B) $-4$  C) 0  D) 4
+2. $3x+4y=26$ and $x+4y=14$. What is the value of $x$?
+   A) 6  B) 2  C) 3  D) 12
+3. A tour guide's rating is found by subtracting the number of negative reviews from 3 times the number of positive reviews. The guide received 50 reviews in total and a rating of 70. How many positive reviews did the guide receive?
+   A) 20  B) 30  C) 35  D) 40
+4. $2x+3y=22$ and $x+y=9$. What is the value of $x$?
+   A) 4  B) 5  C) 9  D) 13
+5. The system $4x+6y=18$ and $2x+ky=9$, where $k$ is a constant, has infinitely many solutions. What is the value of $k$?
+   A) 2  B) 3  C) 6  D) 9
+6. In the system $2x+5y=20$ and $4x+10y=k$, $k$ is a constant. For what value of $k$ does the system have infinitely many solutions?
+   A) 20  B) 24  C) 40  D) 80
+7. A vending machine sells small snack bags for \$2 and large bags for \$3.50. One day it sold 5 more large bags than small bags, for total sales of \$100. Which system can be used to find the number of small bags, $s$, and large bags, $l$, sold?
+   A) $l=s+5$, $2s+3.5l=100$  B) $s=l+5$, $2s+3.5l=100$  C) $l=s+5$, $3.5s+2l=100$  D) $s+l=5$, $2s+3.5l=100$
+8. $\dfrac{1}{2}x+y=7$ and $x-y=2$. What is the value of $x$?
+   A) 2  B) 4  C) 6  D) 8
+9. $3x+2y=16$ and $5x+3y=26$. What is the value of $x$?
+   A) 2  B) 4  C) 5  D) 6
+10. Raffle tickets cost \$4 and gala tickets cost \$15. A total of 80 tickets were sold for \$760. Which system can be used to find the number of raffle tickets, $r$, and gala tickets, $g$, sold?
+    A) $r+g=760$, $4r+15g=80$  B) $r+g=80$, $15r+4g=760$  C) $r+g=80$, $4r+15g=760$  D) $4r+15g=80$, $r+g=760$
+11. Line $P$ passes through $(1,4)$ and $(5,12)$. Line $Q$ passes through $(1,14)$ and $(5,2)$. What is the solution $(x,y)$ to the system formed by these lines?
+    A) $(1,4)$  B) $(2,6)$  C) $(5,2)$  D) $(3,8)$
+12. $7x+3y=44$ and $2x+3y=19$. What is the value of $y$?
+    A) 3  B) 5  C) 9  D) 15
+13. $4x-y=18$ and $x+y=12$. What is the value of $5x$?
+    A) 30  B) 6  C) 12  D) 36
+14. In the system $6x+9y=21$ and $2x+3y=k$, $k$ is a constant. The system has no solution for every value of $k$ except one. What is that value of $k$?
+    A) 3  B) 7  C) 21  D) 63
+15. A farm has only chickens and cows: 50 heads and 140 legs in total. Which system can be used to find the number of chickens, $c$, and cows, $w$?
+    A) $c+w=50$, $2c+4w=140$  B) $c+w=50$, $4c+2w=140$  C) $c+w=140$, $2c+4w=50$  D) $2c+4w=50$, $c+w=140$
+
+### Hard
+
+1. In the system $6x-8y=12y+4$ and $py=3+3x$, $p$ is a constant. If the system has no solution, what is the value of $p$?
+   A) $-10$  B) 3  C) 6  D) 10
+2. In the system $\dfrac{1}{3}x+\dfrac{1}{4}y=\dfrac{1}{12}$ and $ax+y=c$, $a$ and $c$ are constants. If the system has infinitely many solutions, what is the value of $a$?
+   A) $\dfrac{1}{3}$  B) $\dfrac{3}{4}$  C) $\dfrac{4}{3}$  D) 4
+3. For the system $2x+y=10$ and $4x+2y=20$: for each real number $r$, which point lies on the graph of each equation in the $xy$-plane?
+   A) $(r,\,-2r+10)$  B) $(r,\,2r+10)$  C) $(r,\,-2r-10)$  D) $(-2r+10,\,r)$
+4. In the system $\dfrac{x}{2}-\dfrac{y}{3}=1$ and $3x-my=9$, $m$ is a constant. If the system has no solution, what is the value of $m$?
+   A) $-2$  B) 2  C) 3  D) 6
+5. A company builds standard chairs (3 hours of labor each) and deluxe chairs (5 hours each). Last week it used 190 labor hours, and built 10 fewer deluxe chairs than standard chairs. Which system can be used to find the number of standard chairs, $s$, and deluxe chairs, $d$?
+   A) $5s+3d=190$, $d=s-10$  B) $3s+5d=190$, $d=s+10$  C) $3s+5d=190$, $d=s-10$  D) $3s+5d=190$, $s=d-10$
+6. $7x+4y=58$ and $3x+4y=34$. What is the value of $x$?
+   A) 4  B) 6  C) 8  D) 24
+7. Floor tickets to a concert cost \$85 and balcony tickets cost \$45. Three times as many balcony tickets as floor tickets were sold, for a total of \$6,600. How many balcony tickets were sold?
+   A) 30  B) 60  C) 90  D) 120
+8. In the system $5x+2y=14$ and $15x+6y=k$, $k$ is a constant. For what value of $k$ does the system have infinitely many solutions?
+   A) 14  B) 28  C) 42  D) 70
+9. $4x+3y=17$ and $3x+5y=21$. What is the value of $y$?
+   A) 2  B) 3  C) 4  D) 5
+10. Nodira invested \$8,000 in two accounts, one earning 3% and the other 5% annual interest. After one year she earned \$320 in interest. Which system can be used to find the amounts invested at 3%, $x$, and at 5%, $y$, in dollars?
+    A) $x+y=320$, $0.03x+0.05y=8000$  B) $x+y=8000$, $0.05x+0.03y=320$  C) $x+y=8000$, $3x+5y=320$  D) $x+y=8000$, $0.03x+0.05y=320$
+11. In the system $5x-8y=16y+3$ and $nx=\dfrac{1}{4}-4y$, $n$ is a constant. If the system has no solution, what is the value of $n$?
+    A) $-\dfrac{6}{5}$  B) $-\dfrac{5}{6}$  C) $\dfrac{5}{6}$  D) $\dfrac{6}{5}$
+12. $9x-2y=41$ and $3x+2y=19$. What is the value of $x$?
+    A) 2  B) 4  C) 5  D) 12
+13. A chemist mixes a 10% acid solution with a 40% acid solution to make 50 liters of a 22% acid solution. How many liters of the 40% solution are used?
+    A) 11  B) 20  C) 25  D) 30
+14. $2x+7y=31$ and $2x-3y=11$. What is the value of $10y$?
+    A) 2  B) 10  C) 20  D) 42
+15. In the system $4x+9y=15$ and $kx+3y=5$, $k$ is a constant. For what value of $k$ does the system have infinitely many solutions?
+    A) $\dfrac{4}{3}$  B) $\dfrac{3}{4}$  C) 4  D) 12
+
+**A note on sourcing:** real, official College Board SAT questions are
+copyrighted and are **not** licensed for reproduction in commercial test-prep
+materials, under any circumstances, with or without attribution. No
+verbatim College Board question appears in this book. Every item above was
+independently written to match the *method*, *structure*, and *officially
+documented difficulty tier* of real SAT Suite Question Bank items in this
+lesson's skill category — the numbers, names, and contexts are all original.
+
+---
+
 ## Answer Key
 
 **Set 1:** 1) $(5,8)$  2) $(5,10)$  3) $(4,8)$  4) $(9,4)$  5) $(3,7)$  6) $(4,13)$

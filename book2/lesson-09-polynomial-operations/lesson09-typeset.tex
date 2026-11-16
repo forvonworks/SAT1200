@@ -75,9 +75,27 @@
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
+}
+
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
 }
 
 \arrayrulecolor{accent}
@@ -87,148 +105,270 @@
 
 \begin{document}
 
-% ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{9}{Ko'phadlar ustida amallar}
+\topicheader{9}{Polynomial Operations}
 \pagefooter{49}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{1-to'plam}{Qo'shish/ayirish -- ayirish ishorasi qopqoniga e'tibor bering.}
+\setkicker{Set 1}{Add/subtract -- watch the subtraction-sign trap. Write in standard form.}
 
-\noindent\pnum{1} $(3x^2+2x-5)+(x^2-4x+7)=$\\[22mm]
-\noindent\pnum{2} $(5x^3-2x+1)-(2x^3+3x-4)=$\\[22mm]
-\noindent\pnum{3} $(-2x^2+6x-3)+(4x^2-6x+8)=$\\[22mm]
-\noindent\pnum{4} $(6x^2-3x)-(2x^2-3x+5)=$\\[22mm]
-\noindent\pnum{5} $(x^3+2x^2-x)+(-x^3+5x-3)=$\\[22mm]
-\noindent\pnum{6} $(4x^2+7)-(x^2-2x+7)=$
+\noindent\pnum{1} $(3x^2+2x-5)+(x^2-4x+7)$\\[22mm]
+\noindent\pnum{2} $(5x^3-2x+1)-(2x^3+3x-4)$\\[22mm]
+\noindent\pnum{3} $(-2x^2+6x-3)+(4x^2-6x+8)$\\[22mm]
+\noindent\pnum{4} $(6x^2-3x)-(2x^2-3x+5)$\\[22mm]
+\noindent\pnum{5} $(x^3+2x^2-x)+(-x^3+5x-3)$\\[22mm]
+\noindent\pnum{6} $(4x^2+7)-(x^2-2x+7)$
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{2-to'plam}{Binomlarni ko'paytirish (FOIL usuli).}
+\setkicker{Set 2}{Multiply binomials (FOIL). Write in standard form.}
 
-\noindent\pnum{1} $(x+3)(x+5)=$\\[22mm]
-\noindent\pnum{2} $(x-2)(x+7)=$\\[22mm]
-\noindent\pnum{3} $(2x+1)(x-4)=$\\[22mm]
-\noindent\pnum{4} $(x-6)(x-6)=$\\[22mm]
-\noindent\pnum{5} $(3x+2)(3x-2)=$\\[22mm]
-\noindent\pnum{6} $(x+4)(2x^2-x+3)=$
+\noindent\pnum{1} $(x+3)(x+5)$\\[22mm]
+\noindent\pnum{2} $(x-2)(x+7)$\\[22mm]
+\noindent\pnum{3} $(2x+1)(x-4)$\\[22mm]
+\noindent\pnum{4} $(x-6)(x-6)$\\[22mm]
+\noindent\pnum{5} $(3x+2)(3x-2)$\\[22mm]
+\noindent\pnum{6} $(x+4)(2x^2-x+3)$
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{9}{Ko'phadlar ustida amallar}
+\topicheader{9}{Polynomial Operations}
 \pagefooter{50}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{3-to'plam}{Qiyinroq ko'paytirish -- kvadratlar, binom$\times$trinom, uch ko'paytuvchi.}
+\setkicker{Set 3}{Harder products -- squares, binomial $\times$ trinomial, three factors.}
 
-\noindent\pnum{1} $(x+2)^2=$\\[22mm]
-\noindent\pnum{2} $(2x-1)^2=$\\[22mm]
-\noindent\pnum{3} $(x^2+3x-2)(x+4)=$\\[22mm]
-\noindent\pnum{4} $(x-1)(x^2+x+1)=$\\[22mm]
-\noindent\pnum{5} $(3x+1)(x^2-2x+5)=$\\[22mm]
-\noindent\pnum{6} $(x+2)(x-2)(x+1)=$
+\noindent\pnum{1} $(x+2)^2$\\[22mm]
+\noindent\pnum{2} $(2x-1)^2$\\[22mm]
+\noindent\pnum{3} $(x^2+3x-2)(x+4)$\\[22mm]
+\noindent\pnum{4} $(x-1)(x^2+x+1)$\\[22mm]
+\noindent\pnum{5} $(3x+1)(x^2-2x+5)$\\[22mm]
+\noindent\pnum{6} $(x+2)(x-2)(x+1)$
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{4-to'plam}{Bo'lish.}
+\setkicker{Set 4}{Division. Give the quotient; is the division exact?}
 
-\noindent\pnum{1} $(6x^3-9x^2+3x)\div3x=$\\[22mm]
-\noindent\pnum{2} $(8x^2+12x)\div4x=$\\[22mm]
-\noindent\pnum{3} $(10x^4-5x^3+15x^2)\div5x^2=$\\[22mm]
-\noindent\pnum{4} $(x^2+5x+6)\div(x+2)=$\\[22mm]
-\noindent\pnum{5} $(x^2-9)\div(x-3)=$\\[22mm]
-\noindent\pnum{6} $(2x^2+7x+3)\div(2x+1)=$
+\noindent\pnum{1} $(6x^3-9x^2+3x)\div3x$\\[22mm]
+\noindent\pnum{2} $(8x^2+12x)\div4x$\\[22mm]
+\noindent\pnum{3} $(10x^4-5x^3+15x^2)\div5x^2$\\[22mm]
+\noindent\pnum{4} $(x^2+5x+6)\div(x+2)$\\[22mm]
+\noindent\pnum{5} $(x^2-9)\div(x-3)$\\[22mm]
+\noindent\pnum{6} $(2x^2+7x+3)\div(2x+1)$
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 3: Set 5 | Set 6 (spot the error) =================
-\topicheader{9}{Ko'phadlar ustida amallar}
+\topicheader{9}{Polynomial Operations}
 \pagefooter{51}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{5-to'plam}{Aralash -- bir masalada bir nechta amal, haqiqiy test zichligi.}
+\setkicker{Set 5}{Mixed -- several operations in one problem, real-test density.}
 
-\noindent\pnum{1} $(x+3)(x-2)-(x^2-5)=$\\[22mm]
-\noindent\pnum{2} $(2x-1)(x+4)+(x^2+3x)=$\\[22mm]
-\noindent\pnum{3} $(x+5)^2-(x^2+10)=$\\[22mm]
-\noindent\pnum{4} $(3x^2-2x+1)-(x+2)(x-1)=$\\[22mm]
-\noindent\pnum{5} $2(x+1)(x-1)+(x^2-3)=$\\[22mm]
-\noindent\pnum{6} $(x-4)^2+(8x-10)=$
+\noindent\pnum{1} $(x+3)(x-2)-(x^2-5)$\\[22mm]
+\noindent\pnum{2} $(2x-1)(x+4)+(x^2+3x)$\\[22mm]
+\noindent\pnum{3} $(x+5)^2-(x^2+10)$\\[22mm]
+\noindent\pnum{4} $(3x^2-2x+1)-(x+2)(x-1)$\\[22mm]
+\noindent\pnum{5} $2(x+1)(x-1)+(x^2-3)$\\[22mm]
+\noindent\pnum{6} $(x-4)^2+(8x-10)$
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'g'ri javobni bering.}
+\setkicker{Set 6}{Spot the error -- name the mistake, give the correct expression.}
 
-\noindent\pnum{1} $(x^2+3x)-(x^2-2x+5)$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
+\noindent\pnum{1} Simplifying $(x^2+3x)-(x^2-2x+5)$, a student wrote:\\[1mm]
 \hspace*{7mm}\textit{``$x^2+3x-x^2-2x+5=x+5$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{2} $(x+3)(x-4)$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
+\noindent\pnum{2} Simplifying $(x+3)(x-4)$, a student wrote:\\[1mm]
 \hspace*{7mm}\textit{``$x\times x+3\times(-4)=x^2-12$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{3} $3x\times(-5x)$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
+\noindent\pnum{3} Simplifying $3x\times(-5x)$, a student wrote:\\[1mm]
 \hspace*{7mm}\textit{``$=+15x^2$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{4} $x^2+x^2$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
+\noindent\pnum{4} Simplifying $x^2+x^2$, a student wrote:\\[1mm]
 \hspace*{7mm}\textit{``$=x^4$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{5} $(8x^2+4x)\div4x$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$8x^2\div4x=2x$, demak javob $2x+4x=6x$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}
+\noindent\pnum{5} Simplifying $(8x^2+4x)\div4x$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``$8x^2\div4x=2x$, so the answer is $2x+4x=6x$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) -- own page =================
-\topicheader{9}{Ko'phadlar ustida amallar}
+\topicheader{9}{Polynomial Operations}
 \pagefooter{52}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin -- har biriga taxminan 90 soniya.}
+\setkicker{Set 7}{Bonus / challenge -- about 90 seconds each.}
 
-\noindent\pnum{1} $(x+1)(x+2)(x+3)=$\\[26mm]
-\noindent\pnum{2} $(x^2+2x+1)\div(x+1)=$\\[26mm]
-\noindent\pnum{3} $(3x-2)(2x+5)-(x-1)(x+6)=$\\[26mm]
-\noindent\pnum{4} $(x+4)^2-(x-4)^2=$\\[26mm]
-\noindent\pnum{5} $(2x^2-3x+1)\div(2x-1)=$
+\noindent\pnum{1} $(x+1)(x+2)(x+3)$\\[26mm]
+\noindent\pnum{2} $(x^2+2x+1)\div(x+1)$\\[26mm]
+\noindent\pnum{3} $(3x-2)(2x+5)-(x-1)(x+6)$\\[26mm]
+\noindent\pnum{4} $(x+4)^2-(x-4)^2$\\[26mm]
+\noindent\pnum{5} $(2x^2-3x+1)\div(2x-1)$
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Easy}\par\vspace{2mm}
+\satq{1}{Which expression is equivalent to $3x^2+9$?}{$3(x^2+6)$}{$3(x^2+3)$}{$3(x+3)$}{$x^2+3$}
+\satq{2}{Which expression is equivalent to $15x-(6x+4x)$?}{$13x$}{$25x$}{$5x$}{$27x$}
+\satq{3}{Which expression is equivalent to $(7x^2+5)-(4x^2)$?}{$11x^2+5$}{$3x^2+5$}{$3x^2$}{$3x^2-5$}
+\satq{4}{Which of the following is equivalent to the sum of $(x^3+4x^2+2)$ and $(x^2+3x+6)$?}{$x^3+5x^2+3x+8$}{$x^5+5x^2+3x+8$}{$x^3+4x^2+3x+8$}{$2x^3+5x^2+3x+8$}
+\satq{5}{Which expression is equivalent to $6x^2+18x$?}{$6x(x+18)$}{$x(6x+3)$}{$6x(x+3)$}{$6(x^2+18x)$}
+\satq{6}{Which expression is equivalent to $(5x^2+3)-(2x^2-4)$?}{$3x^2-1$}{$7x^2-1$}{$3x^2-7$}{$3x^2+7$}
+\satq{7}{Which expression is equivalent to $8x-(3x+2x)$?}{$13x$}{$7x$}{$-3x$}{$3x$}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar -- full-page answer table =================
-\topicheader{9}{Ko'phadlar ustida amallar}
+\topicheader{9}{Polynomial Operations}
 \pagefooter{53}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{8}{Which expression is equivalent to the result when $(4x^2+7x-1)$ is subtracted from $(9x^2+2x+5)$?}{$5x^2-5x+6$}{$5x^2+5x+6$}{$-5x^2-5x-6$}{$5x^2+9x+4$}
+\satq{9}{Which expression is equivalent to $(2x+5)+(3x-9)$?}{$5x-4$}{$5x+4$}{$6x-4$}{$5x-14$}
+\satq{10}{Which expression is equivalent to $4(x+3)+2x$?}{$6x+3$}{$4x+12$}{$6x+12$}{$6x+7$}
+\satq{11}{Which expression is equivalent to $10x^2y-4xy^2$?}{$2xy(5x-4y)$}{$2x(5xy-2y^2)$}{$2xy(5x-2y)$}{$2xy(5x^2-2y)$}
+\satq{12}{Which expression is equivalent to $(x^2+6x+9)-(x^2+4)$?}{$6x+5$}{$6x+13$}{$6x-5$}{$2x^2+6x+5$}
+\satq{13}{Which expression is equivalent to $7x-(2x-5x)$?}{$4x$}{$10x$}{$0$}{$-4x$}
+\satq{14}{Which expression is equivalent to the sum of $(3x^2-x)$ and $(-x^2+5x-2)$?}{$2x^2-4x-2$}{$2x^2+4x-2$}{$4x^2+4x-2$}{$2x^2+4x+2$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{15}{Which expression is equivalent to $12x^3-8x^2$?}{$4x(3x^2-2x)$}{$4x^2(3x-8)$}{$4(3x^3-2x^2)$}{$4x^2(3x-2)$}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Medium}\par\vspace{2mm}
+\satq{1}{Which expression is equivalent to $(x+6)^2-(x-6)^2$?}{$0$}{$12x$}{$24x^2$}{$24x$}
+\satq{2}{Which expression is equivalent to $(2x-3)^2+(x+5)$?}{$4x^2-11x+14$}{$4x^2-13x+14$}{$4x^2-11x+4$}{$4x^2+x+2$}
+\satq{3}{Which expression is equivalent to $(3x+1)(x-2)-(x^2-5)$?}{$2x^2-5x-7$}{$4x^2-5x+3$}{$2x^2-5x+3$}{$2x^2+5x+3$}
+\satq{4}{Which expression is equivalent to $x^4-5x^2-6$, written as a product of two factors?}{$(x^2-3)(x^2+2)$}{$(x^2-6)(x^2+1)$}{$(x^2-2)(x^2+3)$}{$(x^2+6)(x^2-1)$}
+\satq{5}{Which expression is equivalent to $(x^2+7)-(2x^2-3x+4)$?}{$-x^2-3x+3$}{$-x^2+3x+3$}{$x^2+3x+3$}{$-x^2+3x-3$}
+\satq{6}{Which expression is equivalent to $(4x-1)(x+3)-(x^2+2x)$?}{$3x^2+9x-3$}{$3x^2+13x-3$}{$5x^2+9x-3$}{$3x^2+9x+3$}
+}
+\end{textblock*}
+
+\clearpage
+
+\topicheader{9}{Polynomial Operations}
+\pagefooter{54}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{7}{The expression $5x^2+30x$ can be written in the form $5x(x+a)$, where $a$ is a constant. What is the value of $a$?}{$5$}{$6$}{$30$}{$35$}
+\satq{8}{The expression $(x^2+2x-8)-(x^2-3x+1)$ can be written in the form $bx+c$, where $b$ and $c$ are constants. What is the value of $b+c$?}{$-4$}{$14$}{$4$}{$-14$}
+\satq{9}{Which expression is equivalent to $(x-7)^2-(x^2-49)$?}{$98-14x$}{$-14x$}{$14x-98$}{$98+14x$}
+\satq{10}{Which expression is equivalent to $18x^3y^2-12x^2y^3$?}{$6xy^2(3x^2-2y)$}{$6x^2y^2(3x-2y)$}{$6x^2y^2(3x-2y^2)$}{$6x^2y(3xy-2y^2)$}
+\satq{11}{Which expression is equivalent to $(2x+5)(x-3)+7x$?}{$2x^2-x-15$}{$2x^2+13x-15$}{$2x^2+6x+15$}{$2x^2+6x-15$}
+\satq{12}{Which expression is equivalent to $(x^2-4)-(x-2)(x+5)$?}{$3x-6$}{$-3x-6$}{$6-3x$}{$6+3x$}
+\satq{13}{The expression $\dfrac{11x+10}{x(x+5)}$ is equivalent to $\dfrac{p}{x}+\dfrac{w}{x+5}$, where $p$ and $w$ are constants. What is the value of $w$?}{$2$}{$11$}{$9$}{$5$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{14}{Which expression is equivalent to the fully factored form of $6x^2-24$?}{$6(x-4)(x+1)$}{$(6x-2)(x+2)$}{$6(x-2)(x+2)$}{$6(x^2-4)$}
+\satq{15}{Which expression is equivalent to $(x+4)(x-4)+(x+1)^2$?}{$2x^2+2x+17$}{$2x^2+2x-17$}{$2x^2-2x-15$}{$2x^2+2x-15$}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Hard}\par\vspace{2mm}
+\satq{1}{If $(x-k)$ is a factor of the expression $x^2-\dfrac{1}{11}nk^2$, where $n$ and $k$ are constants and $k>0$, what is the value of $n$?}{$\dfrac{1}{11}$}{$-11$}{$11$}{$22$}
+\satqw{2}{Which expression is equivalent to $\dfrac{56b}{k}+56bk$, where $k>0$?}{$\dfrac{56b(k+1)}{k}$}{$\dfrac{112b}{k}$}{$\dfrac{56b(k^2+1)}{k}$}{$\dfrac{56bk^2}{k}$}
+\satq{3}{The expression $(5x^3+4x^2)-(2x^2+7x)-(3x^2+x)$ can be written in the form $5x^3+ax^2+bx$, where $a$ and $b$ are constants. What is the value of $a+b$?}{$-1$}{$-9$}{$1$}{$9$}
+}
+\end{textblock*}
+
+\clearpage
+
+\topicheader{9}{Polynomial Operations}
+\pagefooter{55}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{4}{The expression $\dfrac{17x+54}{x(x+6)}$ is equivalent to $\dfrac{p}{x}+\dfrac{w}{x+6}$, where $p$ and $w$ are constants. What is the value of $p$?}{$8$}{$17$}{$9$}{$6$}
+\satq{5}{Which expression is equivalent to $(3x+7)^2-(3x-7)^2$?}{$84x$}{$0$}{$42x$}{$84x^2$}
+\satq{6}{Which expression is equivalent to $x^4+3x^2-10$, written as a product of two factors?}{$(x^2+2)(x^2-5)$}{$(x^2-5)(x^2-2)$}{$(x^2+10)(x^2-1)$}{$(x^2+5)(x^2-2)$}
+\satq{7}{The expression $(4x^2-9)-(x-3)(x+3)$ can be written in the form $cx^2+d$, where $c$ and $d$ are constants. What is the value of $c-d$?}{$0$}{$3$}{$-3$}{$6$}
+\satq{8}{Which expression is equivalent to $(2x-5)(x+4)-(x-1)(x+6)$?}{$x^2-2x-14$}{$x^2+2x-14$}{$3x^2-2x-14$}{$x^2-2x+14$}
+\satq{9}{Which expression is equivalent to the fully factored form of $4x^4-4x^2-24$?}{$4(x^2+3)(x^2-2)$}{$(4x^2-3)(x^2+2)$}{$4(x^2-6)(x^2+4)$}{$4(x^2-3)(x^2+2)$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{10}{The expression $\dfrac{23x-16}{x(x-4)}$ is equivalent to $\dfrac{p}{x}+\dfrac{w}{x-4}$, where $p$ and $w$ are constants. What is the value of $w$?}{$19$}{$4$}{$23$}{$16$}
+\satq{11}{Which expression is equivalent to $(2x^3)(5x^4)-(3x^2)(4x^5)$?}{$2x^7$}{$-2x^7$}{$-2x^{20}$}{$-2x^9$}
+\satq{12}{Which expression is equivalent to $(x+9)(x-9)-(x+3)(x-3)$?}{$72$}{$-72$}{$-72x$}{$-6x$}
+\satq{13}{The expression $(7x^2-3x+2)-(ax^2+bx-5)$ is equivalent to $3x^2-8x+7$, where $a$ and $b$ are constants. What is the value of $a+b$?}{$-9$}{$1$}{$9$}{$-1$}
+\satq{14}{Which expression is equivalent to $\dfrac{x^2-2x-8}{x+2}$?}{$x+4$}{$x-6$}{$x+2$}{$x-4$}
+\satq{15}{The expression $2(x+5)^2-(x-3)(x+3)$ can be written in the form $ax^2+bx+c$, where $a$, $b$, and $c$ are constants. What is the value of $a+b+c$?}{$80$}{$70$}{$59$}{$20$}
+}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original -- written by studying the method
+and structure of real, officially-released SAT Suite Question Bank items in this
+lesson's skill category, then building a new problem (new numbers and context)
+requiring the same solving method. No real College Board question text
+is reproduced anywhere in this book.\par}
+\end{textblock*}
+
+\clearpage
+
+\topicheader{9}{Polynomial Operations}
+\pagefooter{56}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
 \end{textblock*}
 
 \begin{textblock*}{194mm}(16mm,44mm)
@@ -237,38 +377,106 @@
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|>{\centering\arraybackslash}p{20mm}|>{\centering\arraybackslash}p{7mm}|>{\centering\arraybackslash}p{36mm}|>{\centering\arraybackslash}p{7mm}|>{\centering\arraybackslash}p{36mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{3}{20mm}{\centering 1-to'plam} & 1 & $4x^2-2x+2$ & 2 & $3x^3-5x+5$\\\cline{2-5}
+\multirow{3}{20mm}{\centering Set 1} & 1 & $4x^2-2x+2$ & 2 & $3x^3-5x+5$\\\cline{2-5}
  & 3 & $2x^2+5$ & 4 & $4x^2-5$\\\cline{2-5}
  & 5 & $2x^2+4x-3$ & 6 & $3x^2+2x$\\\hline
-\multirow{3}{20mm}{\centering 2-to'plam} & 1 & $x^2+8x+15$ & 2 & $x^2+5x-14$\\\cline{2-5}
+\multirow{3}{20mm}{\centering Set 2} & 1 & $x^2+8x+15$ & 2 & $x^2+5x-14$\\\cline{2-5}
  & 3 & $2x^2-7x-4$ & 4 & $x^2-12x+36$\\\cline{2-5}
  & 5 & $9x^2-4$ & 6 & $2x^3+7x^2-x+12$\\\hline
-\multirow{3}{20mm}{\centering 3-to'plam} & 1 & $x^2+4x+4$ & 2 & $4x^2-4x+1$\\\cline{2-5}
+\multirow{3}{20mm}{\centering Set 3} & 1 & $x^2+4x+4$ & 2 & $4x^2-4x+1$\\\cline{2-5}
  & 3 & $x^3+7x^2+10x-8$ & 4 & $x^3-1$\\\cline{2-5}
  & 5 & $3x^3-5x^2+13x+5$ & 6 & $x^3+x^2-4x-4$\\\hline
-\multirow{3}{20mm}{\centering 4-to'plam} & 1 & $2x^2-3x+1$ & 2 & $2x+3$\\\cline{2-5}
- & 3 & $2x^2-x+3$ & 4 & $x+3$\\\cline{2-5}
- & 5 & $x+3$ & 6 & $x+3$\\\hline
-\multirow{3}{20mm}{\centering 5-to'plam} & 1 & $x-1$ & 2 & $3x^2+10x-4$\\\cline{2-5}
+\multirow{3}{20mm}{\centering Set 4} & 1 & $2x^2-3x+1$ & 2 & $2x+3$\\\cline{2-5}
+ & 3 & $2x^2-x+3$ & 4 & $x+3$ (exact)\\\cline{2-5}
+ & 5 & $x+3$ (exact) & 6 & $x+3$ (exact)\\\hline
+\multirow{3}{20mm}{\centering Set 5} & 1 & $x-1$ & 2 & $3x^2+10x-4$\\\cline{2-5}
  & 3 & $10x+15$ & 4 & $2x^2-3x+3$\\\cline{2-5}
  & 5 & $3x^2-5$ & 6 & $x^2+6$\\\hline
-\multirow{3}{20mm}{\centering 7-to'plam} & 1 & $x^3+6x^2+11x+6$ & 2 & $x+1$\\\cline{2-5}
+\multirow{5}{20mm}{\centering Set 6} & \multicolumn{4}{p{86mm}|}{1.\ Only the first term's sign was flipped; every term in the second parentheses must flip. Correct: $5x-5$.}\\\cline{2-5}
+ & \multicolumn{4}{p{86mm}|}{2.\ Only First and Last were multiplied (incomplete FOIL); the Outer and Inner terms are missing. Correct: $x^2-x-12$.}\\\cline{2-5}
+ & \multicolumn{4}{p{86mm}|}{3.\ Positive $\times$ negative gives a negative. Correct: $-15x^2$.}\\\cline{2-5}
+ & \multicolumn{4}{p{86mm}|}{4.\ Exponents were added as if multiplying; adding like terms keeps the exponent. Correct: $2x^2$.}\\\cline{2-5}
+ & \multicolumn{4}{p{86mm}|}{5.\ Only the first term was divided by $4x$; the second term must be divided too. Correct: $2x+1$.}\\\hline
+\multirow{3}{20mm}{\centering Set 7} & 1 & $x^3+6x^2+11x+6$ & 2 & $x+1$ (exact)\\\cline{2-5}
  & 3 & $5x^2+6x-4$ & 4 & $16x$\\\cline{2-5}
- & 5 & $x-1$ & -- & --\\\hline
-\multirow{5}{20mm}{\centering 6-to'plam} & \multicolumn{4}{p{86mm}|}{1.\ Faqat birinchi had ishorasi o'zgartirildi, ikkinchi qavs ichidagi barcha hadlar ishorasini almashtirish kerak. To'g'ri: $5x-5$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{2.\ Faqat Birinchi va Oxirgi hadlar ko'paytirildi (FOIL to'liq emas) -- Tashqi va Ichki hadlar tushib qolgan. To'g'ri: $x^2-x-12$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{3.\ Manfiy$\times$manfiy musbat berishi kerak, bu yerda musbat$\times$manfiy bo'lgani uchun natija manfiy. To'g'ri: $-15x^2$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{4.\ Darajalar ko'paytirishdagidek qo'shildi; bu o'xshash hadlarni qo'shish, daraja o'zgarmaydi. To'g'ri: $2x^2$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{5.\ Faqat birinchi had $4x$ ga bo'lindi, ikkinchi had ham bo'linishi kerak. To'g'ri: $2x+1$.}\\\hline
+ & 5 & $x-1$ (exact) & -- & --\\\hline
 \end{tabular}
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,248mm)
+\clearpage
+
+\topicheader{9}{Polynomial Operations}
+\pagefooter{57}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&C&B&A&C&D&D&A&A&C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+C&A&B&B&D\\\hline
+\end{tabular}
+}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+D&A&C&B&B&A&B&A&A&B\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+D&C&C&C&D\\\hline
+\end{tabular}
+}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&C&B&C&A&D&B&A&D&A\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&B&C&D&A\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}

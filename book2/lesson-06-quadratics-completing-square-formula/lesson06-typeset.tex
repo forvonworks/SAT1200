@@ -96,6 +96,8 @@
 \hspace*{7mm}(D) #6\\[7mm]%
 }
 
+\newcommand{\difflabel}[1]{{\sffamily\bfseries\color{accent}\fontsize{10}{12}\selectfont #1}\par\vspace{1.5mm}}
+
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
@@ -225,7 +227,7 @@
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10}{12.5}\selectfont
 \setkicker{Set 8}{Real SAT-style problems.}
-
+\difflabel{Easy}
 \satq{1}{What is one of the solutions to the equation $x^2-7x+10=0$?}{$-2$}{2}{7}{10}
 \satq{2}{What is one of the solutions to the equation $x^2+3x-10=0$?}{$-5$}{$-2$}{5}{10}
 \satq{3}{Which equation is equivalent to $y=x^2-6x+8$ in vertex form?}{$y=(x-6)^2+8$}{$y=(x+3)^2-1$}{$y=(x-3)^2+1$}{$y=(x-3)^2-1$}
@@ -245,7 +247,7 @@
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10}{12.5}\selectfont
-\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\setkicker{Set 8 -- Easy (cont.)}{Choose the correct answer.}
 
 \satq{7}{What is the solution set of $x^2-x-6=0$?}{$\{-2,-3\}$}{$\{-2,3\}$}{$\{2,-3\}$}{$\{2,3\}$}
 \satq{8}{How many real solutions does $x^2+4x+7=0$ have?}{Zero}{Exactly one}{Exactly two}{Infinitely many}
@@ -258,11 +260,12 @@
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10}{12.5}\selectfont
-\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\setkicker{Set 8 -- Easy (cont.)}{Choose the correct answer.}
 
 \satq{13}{What is the vertex of $y=x^2+2x-3$?}{$(-2,-3)$}{$(-1,4)$}{$(-1,-4)$}{$(1,-4)$}
 \satq{14}{What are the solutions to $2x^2-5x-3=0$?}{$x=3,\frac12$}{$x=-3,-\frac12$}{$x=-3,\frac12$}{$x=3,-\frac12$}
 \satq{15}{If $x^2-x-20=0$, what is the greater of the two solutions?}{$-5$}{$-4$}{4}{5}
+\difflabel{Medium}
 \satq{1}{What are the solutions to $x^2-6x+2=0$?}{$3\pm\sqrt2$}{$6\pm\sqrt7$}{$3\pm\sqrt7$}{$-3\pm\sqrt7$}
 \satq{2}{What is the positive solution to $x^2+4x-1=0$?}{$2+\sqrt5$}{$2-\sqrt5$}{$-2+\sqrt5$}{$-2-\sqrt5$}
 \satq{3}{What is the positive solution to $2x^2-4x-3=0$?}{$1+\frac{\sqrt{10}}{2}$}{$1-\frac{\sqrt{10}}{2}$}{$2+\sqrt{10}$}{$1+\sqrt5$}
@@ -279,7 +282,7 @@
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10}{12.5}\selectfont
-\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\setkicker{Set 8 -- Medium (cont.)}{Choose the correct answer.}
 
 \satq{4}{One solution to $x^2-8x+5=0$ can be written as $4+\sqrt{k}$. What is the value of $k$?}{5}{8}{11}{44}
 \satq{5}{One solution to $x^2+6x+2=0$ can be written as $-3+\sqrt{k}$. What is the value of $k$?}{2}{6}{7}{28}
@@ -292,7 +295,7 @@
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10}{12.5}\selectfont
-\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\setkicker{Set 8 -- Medium (cont.)}{Choose the correct answer.}
 
 \satq{10}{If $x^2+kx+9=0$ has exactly one real solution, what is a positive value of $k$?}{3}{6}{9}{18}
 \satq{11}{What are the solutions to $3x^2-6x+1=0$?}{$1\pm\sqrt6$}{$3\pm\frac{\sqrt6}{3}$}{$2\pm\frac{\sqrt6}{3}$}{$1\pm\frac{\sqrt6}{3}$}
@@ -355,7 +358,7 @@
 }
 \end{textblock*}
 
-\begin{textblock*}{\COLW}(\RCOL,120mm)
+\begin{textblock*}{178mm}(16mm,272mm)
 {\fontsize{8}{10}\selectfont\color{black!60}\itshape
 Sourcing note: every item in Set 8 is original -- written by studying the method
 and structure of real, officially-released SAT Suite Question Bank items in this

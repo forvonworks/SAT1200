@@ -73,8 +73,7 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
-% ---- Small boxed problem number, reference-style. Plain \fbox -- stays flush with
-% the text baseline instead of centering on it. ----
+% ---- Small boxed problem number, reference-style. ----
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
@@ -83,12 +82,30 @@
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
-% ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
+}
+
+% ---- Answer-table styling ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
@@ -97,142 +114,291 @@
 \begin{document}
 
 % ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{4}{So'z masalalarini tarjima qilish}
+\topicheader{4}{Word-Problem Translation}
 \pagefooter{22}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{1-to'plam}{Faqat tarjima qiling -- javobni hisoblamang.}
+\setkicker{Set 1}{Translate only -- do not solve.}
 
-\noindent\pnum{1} Bir son $x$ va 9 ning yig'indisi.\\[16mm]
-\noindent\pnum{2} Bir son $n$ dan 7 kam.\\[16mm]
-\noindent\pnum{3} Bir son $y$ 12 ga kamaytirilgan.\\[16mm]
-\noindent\pnum{4} Bir son $x$ ning ikki bravari, 5 ga oshirilgan.\\[16mm]
-\noindent\pnum{5} Bir son $n$ va 4 ning ko'paytmasi, 3 ga kamaytirilgan.\\[16mm]
-\noindent\pnum{6} Bir son $x$ ning uch bravaridan 5 ko'p.\\[16mm]
-\noindent\pnum{7} Bir son $n$ kamida 10.\\[16mm]
-\noindent\pnum{8} Bir son $x$, 6 ga kamaytirilganda, 20 dan oshmaydi.
+\noindent\pnum{1} Which expression represents the sum of a number $x$ and $9$?\\[14mm]
+\noindent\pnum{2} Which expression represents a value $7$ less than a number $n$?\\[14mm]
+\noindent\pnum{3} Which expression represents a number $y$ decreased by $12$?\\[14mm]
+\noindent\pnum{4} Which expression represents twice a number $x$, increased by $5$?\\[14mm]
+\noindent\pnum{5} Which expression represents the product of a number $n$ and $4$, decreased by $3$?\\[14mm]
+\noindent\pnum{6} Which expression represents a value $5$ more than three times a number $x$?\\[14mm]
+\noindent\pnum{7} Which inequality represents the statement: a number $n$ is at least $10$?\\[14mm]
+\noindent\pnum{8} Which inequality represents the statement: a number $x$, decreased by $6$, is no more than $20$?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{2-to'plam}{Tarjima qiling va yeching (bir qadamli).}
+\setkicker{Set 2}{Translate \& solve (one-step).}
 
-\noindent\pnum{1} Bir son $n$ dan 7 kami 15 ga teng. $n$ ni toping.\\[22mm]
-\noindent\pnum{2} Bir son $x$ 9 ga oshirilganda 23 bo'ladi. $x$ ni toping.\\[22mm]
-\noindent\pnum{3} Bir son $y$ ning ikki bravari 36 ga teng. $y$ ni toping.\\[22mm]
-\noindent\pnum{4} Bir son 8 ga kamaytirilganda 15 bo'ladi. Sonni toping.\\[22mm]
-\noindent\pnum{5} Bir son $m$ dan 15 kami 7 ga teng. $m$ ni toping.\\[22mm]
-\noindent\pnum{6} Bir son $k$ ning 4 ga bo'linmasi 9 ga teng. $k$ ni toping.
+\noindent\pnum{1} Seven less than a number $n$ is $15$. What is the value of $n$?\\[22mm]
+\noindent\pnum{2} A number $x$ increased by $9$ is $23$. What is the value of $x$?\\[22mm]
+\noindent\pnum{3} Twice a number $y$ is $36$. What is the value of $y$?\\[22mm]
+\noindent\pnum{4} A number decreased by $8$ is $15$. What is the number?\\[22mm]
+\noindent\pnum{5} Fifteen less than a number $m$ is $7$. What is the value of $m$?\\[22mm]
+\noindent\pnum{6} The quotient of a number $k$ and $4$ is $9$. What is the value of $k$?
 }
 \end{textblock*}
 
 \clearpage
 
 % ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{4}{So'z masalalarini tarjima qilish}
+\topicheader{4}{Word-Problem Translation}
 \pagefooter{23}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{3-to'plam}{Tarjima qiling va yeching (ikki qadamli).}
+\setkicker{Set 3}{Translate \& solve (two-step).}
 
-\noindent\pnum{1} Bir son $x$ ning ikki bravaridan 5 ko'pi 17 ga teng. $x$ ni toping.\\[24mm]
-\noindent\pnum{2} Bir son $n$ ning uch bravaridan 8 kami 19 ga teng. $n$ ni toping.\\[24mm]
-\noindent\pnum{3} Bir son $y$ va 4 ning yig'indisining ikki bravari 26 ga teng. $y$ ni toping.\\[24mm]
-\noindent\pnum{4} Bir son $k$ ning yarmidan 7 kami 3 ga teng. $k$ ni toping.\\[24mm]
-\noindent\pnum{5} Bir son $m$ ning to'rt bravaridan 3 kami, shu sonning ikki bravaridan 9 ko'piga teng. $m$ ni toping.\\[24mm]
-\noindent\pnum{6} Bir son $x$, 6 ga kamaytirilib, ikki barobar oshirilsa, 28 bo'ladi. $x$ ni toping.
+\noindent\pnum{1} Five more than twice a number $x$ is $17$. What is the value of $x$?\\[24mm]
+\noindent\pnum{2} Eight less than three times a number $n$ is $19$. What is the value of $n$?\\[24mm]
+\noindent\pnum{3} Twice the sum of a number $y$ and $4$ is $26$. What is the value of $y$?\\[24mm]
+\noindent\pnum{4} Seven less than half a number $k$ is $3$. What is the value of $k$?\\[24mm]
+\noindent\pnum{5} Three less than four times a number $m$ equals twice the number, increased by $9$. What is the value of $m$?\\[24mm]
+\noindent\pnum{6} A number $x$, decreased by $6$, is doubled to get $28$. What is the value of $x$?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{4-to'plam}{To'liq so'z masalalari (modellashtirish).}
+\setkicker{Set 4}{Full word problems (modeling).}
 
-\noindent\pnum{1} To'rtburchakning uzunligi eni ning uch bravaridan 2 ko'p. Perimetri 44. Enini toping.\\[26mm]
-\noindent\pnum{2} Ikki ketma-ket butun sonning yig'indisi 45. Kichik sonni toping.\\[26mm]
-\noindent\pnum{3} Mariya ukasining yoshidan ikki barobar katta va яна 4 yosh katta. Yoshlari yig'indisi 31. Ukasining yoshini toping.\\[26mm]
-\noindent\pnum{4} Ko'ylak qalpoqdan ikki barobar qimmat va yana \$8 qimmat. Ikkalasi birgalikda \$38. Qalpoqning narxini toping.\\[26mm]
-\noindent\pnum{5} Bir son o'zining 20\%-iga oshirilganda 72 bo'ladi. Dastlabki sonni toping.
+\noindent\pnum{1} A rectangle's length is $2$ more than three times its width. The perimeter is $44$. What is the width of the rectangle?\\[26mm]
+\noindent\pnum{2} The sum of two consecutive integers is $45$. What is the smaller of the two integers?\\[26mm]
+\noindent\pnum{3} Maria is $4$ years older than twice her brother's age. The sum of their ages is $31$. What is her brother's age?\\[26mm]
+\noindent\pnum{4} A shirt costs \$8 more than twice the cost of a hat. Together they cost \$38. What is the cost of the hat?\\[26mm]
+\noindent\pnum{5} A number is increased by $20\%$ of itself to get $72$. What is the original number?
 }
 \end{textblock*}
 
 \clearpage
 
 % ================= PAGE 3: Set 5 | Set 6 (spot the error) =================
-\topicheader{4}{So'z masalalarini tarjima qilish}
+\topicheader{4}{Word-Problem Translation}
 \pagefooter{24}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{5-to'plam}{Tengsizlikni tarjima qiling va yeching.}
+\setkicker{Set 5}{Inequality translation \& solve.}
 
-\noindent\pnum{1} Bir son 5 ga kamaytirilganda kamida 10 bo'ladi. Sonning mumkin bo'lgan qiymatlarini toping.\\[24mm]
-\noindent\pnum{2} Bir sonning uch bravari 21 dan oshmaydi. Mumkin bo'lgan qiymatlarni toping.\\[24mm]
-\noindent\pnum{3} Bir sondan 5 ko'pi 12 dan kichik. Mumkin bo'lgan qiymatlarni toping.\\[24mm]
-\noindent\pnum{4} Bir son ning ikki bravaridan 4 kami kamida 10. Mumkin bo'lgan qiymatlarni toping.\\[24mm]
-\noindent\pnum{5} Faqat tarjima qiling: bir son $x$ 8 dan katta.
+\noindent\pnum{1} A number decreased by $5$ is at least $10$. What are the possible values of the number?\\[24mm]
+\noindent\pnum{2} Three times a number is no more than $21$. What are the possible values of the number?\\[24mm]
+\noindent\pnum{3} Five more than a number is less than $12$. What are the possible values of the number?\\[24mm]
+\noindent\pnum{4} Twice a number, decreased by $4$, is at least $10$. What are the possible values of the number?\\[24mm]
+\noindent\pnum{5} Which inequality represents the statement: a number $x$ is more than $8$?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10.5}{13.5}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- "kam" so'zidagi tartib almashtirish xatosi.}
+\setkicker{Set 6}{Spot the error -- the reverse-order trap, every time.}
 
-\noindent\pnum{1} Tarjima qiling: ``bir son $x$ dan 9 kam.'' -- \textit{berilgan: $9-x$.}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{1} Translate ``$9$ less than a number $x$.'' -- \textit{shown as $9-x$.}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{2} ``Bir son $n$ dan 15 kami 20 ga teng. $n$ ni toping.'' -- \textit{berilgan: $15-n=20$.}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{2} ``Fifteen less than a number $n$ equals $20$. What is $n$?'' -- \textit{shown as $15-n=20$.}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{3} Tarjima qiling: ``bir son $y$ dan 6 ayirilgan.'' -- \textit{berilgan: $6-y$.}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{3} Translate ``$6$ subtracted from a number $y$.'' -- \textit{shown as $6-y$.}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{4} Tarjima qiling: ``bir son $x$ 10 dan kichik.'' -- \textit{berilgan: $10-x$.}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{4} Translate ``a number $x$ is less than $10$.'' -- \textit{shown as $10-x$.}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{5} ``Bir son va 3 ning ayirmasining ikki bravari 10 ga teng. Sonni toping.'' -- \textit{berilgan: $2n-3=10$.}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}
+\noindent\pnum{5} ``Twice the difference of a number and $3$ is $10$. What is the number?'' -- \textit{shown as $2n-3=10$.}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) -- own page =================
-\topicheader{4}{So'z masalalarini tarjima qilish}
+% ================= PAGE 4: Set 7 (bonus) | Set 8 Easy 1-6 =================
+\topicheader{4}{Word-Problem Translation}
 \pagefooter{25}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin -- ko'p qadamli, vaqtni nazorat qiling.}
+\setkicker{Set 7}{Bonus / challenge -- timed, multi-step.}
 
-\noindent\pnum{1} Uchta ketma-ket juft butun sonning yig'indisi 90. Eng \textbf{katta} sonni toping.\\[32mm]
-\noindent\pnum{2} Arqon ikki bo'lakka kesilgan. Bir bo'lagi ikkinchisining ikki bravaridan 5 metr uzun. Umumiy uzunligi 35 metr. Eng \textbf{qisqa} bo'lakning uzunligini toping.\\[32mm]
-\noindent\pnum{3} Jonning puli Mariyaning pulidan ikki barobar ko'p va yana \$15 ko'p. Birgalikda \$120. \textbf{Jon}ning pulini toping.\\[32mm]
-\noindent\pnum{4} Bir son o'zining 30\%-iga oshirilib, so'ng 5 ga kamaytirilsa, 47 bo'ladi. Dastlabki sonni toping.\\[32mm]
-\noindent\pnum{5} Bir son va 7 ning yig'indisining ikki bravari, shu sonning besh bravaridan 10 kamiga teng. Sonni toping.
+\noindent\pnum{1} The sum of three consecutive even integers is $90$. What is the \textbf{largest} of the three integers?\\[30mm]
+\noindent\pnum{2} A rope is cut into two pieces. One piece is $5$ meters longer than twice the other. The total length is $35$ meters. What is the length, in meters, of the \textbf{shorter} piece?\\[30mm]
+\noindent\pnum{3} John has \$15 more than twice as much money as Maria. Together they have \$120. How much money does \textbf{John} have?\\[30mm]
+\noindent\pnum{4} A number increased by $30\%$ of itself, then decreased by $5$, equals $47$. What is the original number?\\[30mm]
+\noindent\pnum{5} Twice the sum of a number and $7$ is $10$ less than five times the number. What is the number?
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+
+\satq{1}{Bananas cost \$0.60 per pound. How many dollars will $b$ pounds of bananas cost?}{$0.60b$}{$0.60+b$}{$0.60/b$}{$b/0.60$}
+\satq{2}{If a number $x$ increased by $11$ is $29$, what is $x$?}{7}{18}{29}{40}
+\satq{3}{A water tank already holds 20 gallons. A hose adds 5 gallons per minute for $m$ minutes. Which equation gives the total gallons $g$ after $m$ minutes?}{$g=20+5m$}{$g=5+20m$}{$g=20m+5$}{$g=25m$}
+\satq{4}{Seven less than a number $y$ is $24$. What is $y$?}{17}{24}{31}{38}
+\satq{5}{Twice a number $n$ is $48$. What is $n$?}{12}{24}{46}{96}
+\satq{6}{Which expression represents $9$ more than a number $k$?}{$k+9$}{$9-k$}{$9k$}{$k-9$}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar -- full-page answer table, own page always =================
-\topicheader{4}{So'z masalalarini tarjima qilish}
+% ================= PAGE 5: Set 8 -- Easy 7-12 | Easy 13-15 + Medium 1-3 =================
+\topicheader{4}{Word-Problem Translation}
 \pagefooter{26}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{7}{A number $x$ decreased by $15$ is $6$. What is $x$?}{6}{9}{21}{90}
+\satq{8}{Which inequality represents: a number $p$ is no more than $40$?}{$p\leq40$}{$p\geq40$}{$p<40$}{$p>40$}
+\satq{9}{A taxi charges a \$4 flat fee plus \$2 per mile. Which expression gives the total fare for driving $m$ miles?}{$4+2m$}{$2+4m$}{$4m+2$}{$6m$}
+\satq{10}{The sum of a number and $14$ is $30$. What is the number?}{14}{16}{30}{44}
+\satq{11}{A number $m$, decreased by $9$, is $13$. What is $m$?}{4}{13}{22}{31}
+\satq{12}{Which expression represents the quotient of a number $z$ and $6$?}{$z/6$}{$6/z$}{$6z$}{$z-6$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{13}{Three times a number $w$ is $51$. What is $w$?}{17}{48}{54}{153}
+\satq{14}{A gym membership costs \$25 to join plus \$15 per month. Which expression gives the total cost after $t$ months?}{$25+15t$}{$15+25t$}{$40t$}{$25t+15$}
+\satq{15}{Twelve less than a number $x$ is $5$. What is $x$?}{$-7$}{7}{17}{60}
+\satq{1}{Five more than twice a number $x$ is $23$. What is $x$?}{4}{9}{14}{18}
+\satq{2}{Nine less than four times a number $n$ is $23$. What is $n$?}{3.5}{8}{14}{32}
+\satqw{3}{A model estimates that a tortoise travels between 48 and 55 meters per hour. Which inequality represents the estimated total number of meters, $x$, it could travel in 6 hours?}{$48(6)\leq x\leq55(6)$}{$48+6\leq x\leq55+6$}{$48\leq6+x\leq55$}{$48\leq6x\leq55$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6: Set 8 -- Medium 4-9 | Medium 10-15 =================
+\topicheader{4}{Word-Problem Translation}
+\pagefooter{27}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{4}{A number $x$ is at most $12$ more than $3$ times the value of $y$. If $y=5$, what is the greatest possible value of $x$?}{15}{17}{27}{51}
+\satq{5}{A parking garage charges \$6 for the first hour and \$3 for each additional hour. Which equation gives the total charge $c$ for $h$ additional hours?}{$c=6+3h$}{$c=3+6h$}{$c=9h$}{$c=6h+3$}
+\satq{6}{Fourteen more than three times a number is equal to twice the number, increased by $20$. What is the number?}{3}{6}{9}{14}
+\satq{7}{Three more than twice a number $x$ is at most $19$. What are the possible values of $x$?}{$x\leq8$}{$x\leq11$}{$x\leq38$}{$x\geq8$}
+\satqw{8}{A plumber charges a \$45 service fee plus \$35 per hour. If the total charge was \$185, which equation can be used to find the number of hours $h$ the plumber worked?}{$45+35h=185$}{$35+45h=185$}{$80h=185$}{$45h+35=185$}
+\satq{9}{The sum of two consecutive odd integers is $56$. What is the larger integer?}{27}{28}{29}{31}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{10}{A number increased by $25\%$ of itself is $60$. What is the original number?}{15}{45}{48}{75}
+\satq{11}{Rashid is $5$ years younger than three times his cousin's age. The sum of their ages is $35$. What is his cousin's age?}{5}{10}{25}{30}
+\satq{12}{A rectangle's length is $3$ less than twice its width. The perimeter is $54$. What is the length of the rectangle?}{10}{13}{17}{20}
+\satq{13}{A number $x$ is at least $7$ less than twice a number $y$. If $y=12$, what is the smallest possible value of $x$?}{5}{12}{17}{31}
+\satq{14}{A bakery packs cookies and brownies into boxes, with no more than $10$ items per box. If $c$ is the number of cookies and $b$ the number of brownies in a box, which inequality represents this situation?}{$c+b\leq10$}{$c+b\geq10$}{$c-b\leq10$}{$c-b\geq10$}
+\satq{15}{Eight less than five times a number is the same as three times the number, increased by $10$. What is the number?}{1}{3}{9}{18}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 7: Set 8 -- Hard 1-4 | Hard 5-8 =================
+\topicheader{4}{Word-Problem Translation}
+\pagefooter{28}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard}{Choose the correct answer.}
+
+\satqw{1}{A farm stand sells apples, pears, and plums. The number of pears sold is $4$ times the number $n$ of plums sold, and the number of apples sold is $25$. That day, the stand sold $130$ pieces of fruit total. Which equation represents this situation?}{$25(4n)+n+25=130$}{$4n+4(25)=130$}{$n+4n+25n=130$}{$5n+25=130$}
+\satq{2}{In the equation $x(r-7)+5=15x+32$, $r$ is a positive integer. If the equation has exactly one solution, what CANNOT be the value of $r$?}{15}{20}{22}{30}
+\satqw{3}{If $\dfrac{x-5}{9}=\dfrac{x-5}{14}$, the value of $x-5$ is between which of the following pairs of values?}{$-10$ and $-6$}{$-4$ and $4$}{$6$ and $10$}{$12$ and $15$}
+\satq{4}{What value of $x$ satisfies $4(x+6)-9(x+6)=50$?}{$-16$}{$-10$}{$-6$}{$4$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard (cont.)}{Choose the correct answer.}
+
+\satqw{5}{A model estimates that a cyclist travels between 14 and 17 miles per hour. Which inequality represents the estimated total number of miles, $x$, the cyclist could travel in $h$ hours, where $h>0$?}{$14h\leq x\leq17h$}{$14+h\leq x\leq17+h$}{$14\leq h+x\leq17$}{$14\leq hx\leq17$}
+\satq{6}{A number $x$ is at most $23$ less than $6$ times the value of $y$. If $y=9$, what is the greatest possible value of $x$?}{13}{21}{31}{54}
+\satq{7}{Laylo is $7$ years older than three times her nephew's age. In $4$ years, the sum of their ages will be $59$. How old is Laylo right now?}{11}{33}{40}{44}
+\satqw{8}{A warehouse stores boxes of three sizes. The number of large boxes is $7$ times the number $m$ of medium boxes, and the number of small boxes is $34$. The warehouse stores $250$ boxes total. Which equation represents this situation?}{$34(7m)+m+34=250$}{$7m+7(34)=250$}{$m+7m+34m=250$}{$8m+34=250$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 8: Set 8 -- Hard 9-12 | Hard 13-15 =================
+\topicheader{4}{Word-Problem Translation}
+\pagefooter{29}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard (cont.)}{Choose the correct answer.}
+
+\satq{9}{A number is increased by $40\%$ of itself, then decreased by $8$, to get $97$. What is the original number?}{65}{69}{75}{89}
+\satq{10}{The sum of four consecutive integers is $10$ more than three times the smallest integer. What is the largest of the four integers?}{4}{5}{6}{7}
+\satq{11}{A board is cut into two pieces. One piece is $9$ cm longer than three times the other. The total length is $73$ cm. What is the length, in cm, of the longer piece?}{16}{48}{57}{64}
+\satq{12}{In the equation $2(kx-5)=\dfrac{7}{3}x-12$, $k$ is a constant. If the equation has no solution, what is the value of $k$?}{$\dfrac{7}{6}$}{$-\dfrac{7}{6}$}{$-6$}{$-5$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 -- Hard (cont.)}{Choose the correct answer.}
+
+\satq{13}{A number $x$ satisfies $3x-8=2x+19$. What is the value of $x+15$?}{19}{27}{35}{42}
+\satq{14}{Zarina has \$12 more than twice as much money as Umida. Together they have \$168. How much money does Zarina have?}{52}{104}{116}{156}
+\satq{15}{A number decreased by $9$ is more than $4$, but the same number increased by $3$ is at most $22$. What is the largest possible integer value of the number?}{13}{14}{18}{19}
+}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original -- written by studying the method
+and structure of real, officially-released SAT Suite Question Bank items in this
+lesson's skill categories, then building a new problem (new numbers, names, and
+context) requiring the same solving method. No real College Board question text
+is reproduced anywhere in this book.\par}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 9: Answers -- Sets 1-7 =================
+\topicheader{4}{Word-Problem Translation}
+\pagefooter{30}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
 \end{textblock*}
 
 \begin{textblock*}{194mm}(16mm,44mm)
@@ -241,41 +407,112 @@
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|>{\centering\arraybackslash}p{26mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{28mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{28mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{4}{26mm}{\centering 1-to'plam} & 1 & $x+9$ & 2 & $n-7$\\\cline{2-5}
+\multirow{4}{26mm}{\centering Set 1} & 1 & $x+9$ & 2 & $n-7$\\\cline{2-5}
  & 3 & $y-12$ & 4 & $2x+5$\\\cline{2-5}
  & 5 & $4n-3$ & 6 & $3x+5$\\\cline{2-5}
  & 7 & $n\geq10$ & 8 & $x-6\leq20$\\\hline
-\multirow{3}{26mm}{\centering 2-to'plam} & 1 & $n=22$ & 2 & $x=14$\\\cline{2-5}
+\multirow{3}{26mm}{\centering Set 2} & 1 & $n=22$ & 2 & $x=14$\\\cline{2-5}
  & 3 & $y=18$ & 4 & $x=23$\\\cline{2-5}
  & 5 & $m=22$ & 6 & $k=36$\\\hline
-\multirow{3}{26mm}{\centering 3-to'plam} & 1 & $x=6$ & 2 & $n=9$\\\cline{2-5}
+\multirow{3}{26mm}{\centering Set 3} & 1 & $x=6$ & 2 & $n=9$\\\cline{2-5}
  & 3 & $y=9$ & 4 & $k=20$\\\cline{2-5}
  & 5 & $m=6$ & 6 & $x=20$\\\hline
-\multirow{5}{26mm}{\centering 4-to'plam} & \multicolumn{4}{p{76mm}|}{1.\ eni $=5$ (uzunligi $=17$)}\\\cline{2-5}
- & \multicolumn{4}{p{76mm}|}{2.\ kichik son $=22$}\\\cline{2-5}
- & \multicolumn{4}{p{76mm}|}{3.\ ukaning yoshi $=9$}\\\cline{2-5}
- & \multicolumn{4}{p{76mm}|}{4.\ qalpoq narxi $=\$10$}\\\cline{2-5}
- & \multicolumn{4}{p{76mm}|}{5.\ dastlabki son $=60$}\\\hline
-\multirow{3}{26mm}{\centering 5-to'plam} & 1 & $x\geq15$ & 2 & $x\leq7$\\\cline{2-5}
+\multirow{5}{26mm}{\centering Set 4} & \multicolumn{4}{p{76mm}|}{1.\ width $=5$ (length $=17$)}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{2.\ smaller integer $=22$}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{3.\ brother's age $=9$}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{4.\ hat $=\$10$}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{5.\ original number $=60$}\\\hline
+\multirow{3}{26mm}{\centering Set 5} & 1 & $x\geq15$ & 2 & $x\leq7$\\\cline{2-5}
  & 3 & $x<7$ & 4 & $x\geq7$\\\cline{2-5}
  & 5 & $x>8$ & -- & --\\\hline
-\multirow{5}{26mm}{\centering 6-to'plam} & \multicolumn{4}{p{76mm}|}{1.\ Xato -- tartib teskari bo'lishi kerak edi. To'g'ri: $x-9$.}\\\cline{2-5}
- & \multicolumn{4}{p{76mm}|}{2.\ Xato -- xuddi shu teskari tartib. To'g'ri: $n-15=20$, demak $n=35$.}\\\cline{2-5}
- & \multicolumn{4}{p{76mm}|}{3.\ Xato -- ``ayirilgan'' ham tartibni teskari qiladi. To'g'ri: $y-6$.}\\\cline{2-5}
- & \multicolumn{4}{p{76mm}|}{4.\ Xato -- bu solishtirish, ayirish emas. To'g'ri: $x<10$.}\\\cline{2-5}
- & \multicolumn{4}{p{76mm}|}{5.\ Xato -- ayirma qavsga olinishi kerak edi. To'g'ri: $2(n-3)=10$, demak $n=8$.}\\\hline
-\multirow{3}{26mm}{\centering 7-to'plam} & 1 & $32$ & 2 & $10$ m\\\cline{2-5}
+\multirow{5}{26mm}{\centering Set 6} & \multicolumn{4}{p{76mm}|}{1.\ Error -- read left to right instead of reversing order for ``less than.'' Correct: $x-9$.}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{2.\ Error -- same reversal in an equation. Correct: $n-15=20$, so $n=35$.}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{3.\ Error -- ``subtracted from'' reverses order too. Correct: $y-6$.}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{4.\ Error -- ``is less than'' is a comparison, not subtraction. Correct: $x<10$.}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{5.\ Error -- the difference must be grouped before doubling. Correct: $2(n-3)=10$, so $n=8$.}\\\hline
+\multirow{3}{26mm}{\centering Set 7} & 1 & $32$ & 2 & $10$ m\\\cline{2-5}
  & 3 & $\$85$ & 4 & $40$\\\cline{2-5}
  & 5 & $8$ & -- & --\\\hline
 \end{tabular}
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,240mm)
+\clearpage
+
+% ================= PAGE 10: Answers -- Set 8 =================
+\topicheader{4}{Word-Problem Translation}
+\pagefooter{31}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+A&B&A&C&B&A&C&A&A&B\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+C&A&A&A&C\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&B&A&C&A&B&A&A&C&C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&C&C&A&C\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+D&C&B&A&A&C&C&D&C&D\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+C&A&D&C&D\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}

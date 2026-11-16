@@ -75,10 +75,31 @@
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
+
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
+}
+
+% ---- Difficulty-tier label inside Set 8 (numbering restarts per tier) ----
+\newcommand{\tier}[1]{{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont #1}\par\vspace{1.5mm}}
 
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
@@ -88,14 +109,14 @@
 \begin{document}
 
 % ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{5}{Kvadrat tenglamalar I --- ko'paytuvchalash}
+\topicheader{5}{Quadratics I -- Factoring}
 \pagefooter{27}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{1-to'plam}{Ko'paytuvchalarga ajrating: $a=1$, $b$ va $c$ musbat.}
+\setkicker{Set 1}{Factor and solve: $a=1$, positive $b$ and $c$.}
 
 \noindent\pnum{1} $x^2+5x+4=0$\\[20mm]
 \noindent\pnum{2} $x^2+6x+8=0$\\[20mm]
@@ -110,7 +131,7 @@
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{2-to'plam}{Ko'paytuvchalarga ajrating: manfiy $b$ va/yoki $c$.}
+\setkicker{Set 2}{Factor and solve: negative $b$ and/or $c$.}
 
 \noindent\pnum{1} $x^2-5x+6=0$\\[20mm]
 \noindent\pnum{2} $x^2+2x-15=0$\\[20mm]
@@ -126,14 +147,14 @@
 \clearpage
 
 % ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{5}{Kvadrat tenglamalar I --- ko'paytuvchalash}
+\topicheader{5}{Quadratics I -- Factoring}
 \pagefooter{28}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{3-to'plam}{Avval umumiy ko'paytuvchini chiqaring, so'ng $a\neq1$ holatini ko'paytuvchalang.}
+\setkicker{Set 3}{Factor out the GCF first, then factor $a\neq1$.}
 
 \noindent\pnum{1} $3x^2+9x+6=0$\\[20mm]
 \noindent\pnum{2} $2x^2-8=0$\\[20mm]
@@ -148,7 +169,7 @@
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{4-to'plam}{Avval hammasini nolga tenglashtiring, so'ng yeching.}
+\setkicker{Set 4}{Set everything equal to zero first, then solve.}
 
 \noindent\pnum{1} $(x+2)(x-1)=4$\\[26mm]
 \noindent\pnum{2} $(x-2)(x+5)=18$\\[26mm]
@@ -161,56 +182,56 @@
 
 \clearpage
 
-% ================= PAGE 3: Set 5 (what's being asked) | Set 6 (spot the error) =================
-\topicheader{5}{Kvadrat tenglamalar I --- ko'paytuvchalash}
+% ================= PAGE 3: Set 5 | Set 6 (spot the error) =================
+\topicheader{5}{Quadratics I -- Factoring}
 \pagefooter{29}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11.5}{15}\selectfont
-\setkicker{5-to'plam}{Tenglamani yeching, so'ng savolda aniq so'ralgan narsaga javob bering.}
+\setkicker{Set 5}{Solve, then answer exactly what the question asks.}
 
-\noindent\pnum{1} $x^2-2x-15=0$. Ildizlar \textbf{yig'indisini} toping: \makebox[30mm]{\dotfill}\\[24mm]
-\noindent\pnum{2} $x^2+x-12=0$. Ildizlar \textbf{ko'paytmasini} toping: \makebox[30mm]{\dotfill}\\[24mm]
-\noindent\pnum{3} $x^2-7x+6=0$. Ildizlar orasidagi \textbf{musbat ayirmani} toping (katta minus kichik): \makebox[30mm]{\dotfill}\\[24mm]
-\noindent\pnum{4} $x^2+3x-10=0$. Ildizlar \textbf{yig'indisini} toping: \makebox[30mm]{\dotfill}
+\noindent\pnum{1} $x^2-2x-15=0$. Find the \textbf{sum} of the solutions: \makebox[30mm]{\dotfill}\\[24mm]
+\noindent\pnum{2} $x^2+x-12=0$. Find the \textbf{product} of the solutions: \makebox[30mm]{\dotfill}\\[24mm]
+\noindent\pnum{3} $x^2-7x+6=0$. Find the \textbf{positive difference} between the solutions (larger minus smaller): \makebox[30mm]{\dotfill}\\[24mm]
+\noindent\pnum{4} $x^2+3x-10=0$. Find the \textbf{sum} of the solutions: \makebox[30mm]{\dotfill}
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'liq to'g'ri javobni bering (ikkala ildiz, agar ikkita bo'lsa).}
+\setkicker{Set 6}{Spot the error -- name the mistake, give the full correct answer (both solutions, where there are two).}
 
-\noindent\pnum{1} $(x+3)(x-2)=0$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``Yechish: $x+3=0$, shuning uchun $x=-3$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[10mm]
+\noindent\pnum{1} In solving $(x+3)(x-2)=0$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``Solution: $x+3=0$, so $x=-3$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[10mm]
 
-\noindent\pnum{2} $x^2-4x-5=0$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``Yechish: $(x-1)(x+5)=0$, shuning uchun $x=1$ yoki $x=-5$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[10mm]
+\noindent\pnum{2} In solving $x^2-4x-5=0$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``Solution: $(x-1)(x+5)=0$, so $x=1$ or $x=-5$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[10mm]
 
-\noindent\pnum{3} $(x-2)(x+4)=16$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``Yechish: $x-2=16$ yoki $x+4=16$, shuning uchun $x=18$ yoki $x=12$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[10mm]
+\noindent\pnum{3} In solving $(x-2)(x+4)=16$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``Solution: $x-2=16$ or $x+4=16$, so $x=18$ or $x=12$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[10mm]
 
-\noindent\pnum{4} $2x^2+6x=0$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``Yechish: $2x^2=-6x$, ikkala tomonni $x$ ga bo'lamiz: $2x=-6$, $x=-3$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}
+\noindent\pnum{4} In solving $2x^2+6x=0$, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``Solution: $2x^2=-6x$; divide both sides by $x$: $2x=-6$, so $x=-3$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) =================
-\topicheader{5}{Kvadrat tenglamalar I --- ko'paytuvchalash}
+% ================= PAGE 4: Set 7 | Set 8 (starts right after Set 7) =================
+\topicheader{5}{Quadratics I -- Factoring}
 \pagefooter{30}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin.}
+\setkicker{Set 7}{Bonus / challenge.}
 
 \noindent\pnum{1} $6x^2+5x+1=0$\\[26mm]
 \noindent\pnum{2} $4x^2-9=0$\\[26mm]
@@ -220,15 +241,175 @@
 }
 \end{textblock*}
 
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+
+\tier{Easy}
+\satq{1}{What are the solutions to the equation $x^2+7x+12=0$?}{$-4,\ -3$}{$4,\ 3$}{$-4,\ 3$}{$4,\ -3$}
+\satq{2}{What is the smaller solution to the equation $x^2-8x+15=0$?}{5}{3}{$-5$}{$-3$}
+\satq{3}{What is the positive solution to the equation $x^2-9=0$?}{81}{9}{3}{$-3$}
+\satq{4}{What are the solutions to the equation $2x^2+10x+12=0$?}{$-6,\ -4$}{$-3,\ -2$}{$-1,\ -6$}{$3,\ 2$}
+\satq{5}{What is the positive solution to the equation $x^2+x-6=0$?}{3}{6}{$-2$}{2}
+\satq{6}{What are the solutions to the equation $(x-3)(x+5)=0$?}{$-5,\ -3$}{$5,\ 3$}{$5,\ -3$}{$-5,\ 3$}
+}
+\end{textblock*}
+
 \clearpage
 
-% ================= PAGE 5: Javoblar =================
-\topicheader{5}{Kvadrat tenglamalar I --- ko'paytuvchalash}
+% ================= Set 8 page (footer 31) =================
+\topicheader{5}{Quadratics I -- Factoring}
 \pagefooter{31}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\tier{Easy}
+\satq{7}{What is the positive solution to the equation $x^2-64=0$?}{32}{64}{8}{$-8$}
+\satq{8}{What is the negative solution to the equation $x^2+4x=0$?}{$-4$}{$-1$}{4}{0}
+\satqw{9}{A rectangle's width is $x$ and its length is $x+3$. If the area of the rectangle is 40, what is the width, $x$?}{8}{5}{10}{4}
+\satq{10}{What is the positive solution to the equation $3x^2-12=0$?}{12}{4}{2}{$-2$}
+\satq{11}{What is the positive solution to the equation $x^2-5x=0$?}{10}{$-5$}{5}{0}
+\satq{12}{What is the sum of the solutions to the equation $(x+4)(x-6)=0$?}{2}{$-24$}{10}{$-2$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\tier{Easy}
+\satq{13}{What is the sum of the solutions to the equation $x^2+2x-8=0$?}{$-2$}{$-8$}{8}{2}
+\satqw{14}{Two consecutive positive integers have a product of 72. What is the larger of the two integers?}{12}{9}{10}{8}
+\satq{15}{How many real solutions does the equation $x^2+6x+9=0$ have?}{Infinitely many}{Exactly two}{None}{Exactly one}
+\tier{Medium}
+\satq{1}{What is the lesser solution to the equation $6x^2+11x+3=0$?}{$\dfrac{3}{2}$}{$-\dfrac{1}{3}$}{$-\dfrac{3}{2}$}{$\dfrac{1}{3}$}
+\satq{2}{What is the positive solution to the equation $4x^2-9=0$?}{$\dfrac{9}{2}$}{3}{$\dfrac{3}{2}$}{$\dfrac{9}{4}$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= Set 8 page (footer 32) =================
+\topicheader{5}{Quadratics I -- Factoring}
+\pagefooter{32}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\tier{Medium}
+\satq{3}{What is the positive solution to the equation $(x-7)(x+7)-5=-5$?}{2}{14}{7}{5}
+\satq{4}{What is the greatest solution to the equation $2x^2-5x-3=0$?}{$\dfrac{5}{2}$}{3}{$-3$}{$-\dfrac{1}{2}$}
+\satqw{5}{An object's height, in feet, $x$ seconds after launch is modeled by $h=-x^2+10x$. The object is at a height of 16 feet at two different times. What is the later of these two times, in seconds?}{6}{16}{2}{8}
+\satq{6}{What is the positive solution to the equation $x^2-6x=16$?}{8}{6}{2}{$-2$}
+\satq{7}{What is the negative solution to the equation $5x^2+20x=0$?}{$-5$}{$-4$}{$-20$}{0}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\tier{Medium}
+\satqw{8}{A rectangular garden has length $x+5$ meters and width $x-1$ meters. If its area is 55 square meters, what is the width, in meters?}{6}{5}{4}{10}
+\satq{9}{What is the sum of the solutions to the equation $x^2+2x-24=0$?}{24}{2}{$-2$}{$-24$}
+\satq{10}{What is the positive solution to the equation $(3x-2)(x+4)=0$?}{4}{$\dfrac{2}{3}$}{$\dfrac{3}{2}$}{$-4$}
+\satq{11}{What is the positive solution to the equation $3x^2+5x-2=0$?}{3}{2}{$-2$}{$\dfrac{1}{3}$}
+\satq{12}{What is the positive solution to the equation $x^2-121=0$?}{11}{121}{$-11$}{60.5}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= Set 8 page (footer 33) =================
+\topicheader{5}{Quadratics I -- Factoring}
+\pagefooter{33}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\tier{Medium}
+\satqw{13}{The product of two consecutive positive integers is 132. What is the smaller of the two integers?}{10}{12}{13}{11}
+\satq{14}{What is the positive solution to the equation $9x^2-25=0$?}{$\dfrac{5}{3}$}{3}{$\dfrac{5}{9}$}{$\dfrac{25}{9}$}
+\satq{15}{What is the positive solution to the equation $x^2+10x-24=0$?}{2}{$-2$}{12}{24}
+\tier{Hard}
+\satq{1}{What is the positive solution to the equation $12x^2-7x-10=0$?}{$\dfrac{4}{5}$}{$-\dfrac{2}{3}$}{$\dfrac{5}{4}$}{$\dfrac{2}{3}$}
+\satq{2}{What is the positive solution to the equation $(x-45)(x+45)-20=-20$?}{65}{45}{20}{25}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\tier{Hard}
+\satqw{3}{An object's height, in feet, $t$ seconds after launch is modeled by $h=-16t^2+64t+80$. Other than at launch ($t=0$), at what time, in seconds, does the object return to a height of 80 feet?}{16}{2}{4}{5}
+\satq{4}{What is the positive solution to the equation $8x^2-2x-3=0$?}{$\dfrac{3}{4}$}{$\dfrac{3}{8}$}{$-\dfrac{1}{2}$}{$\dfrac{1}{4}$}
+\satqw{5}{A rectangle has length $2x+1$ and width $x+3$, both in meters. If its area is 88 square meters, what is the width, in meters?}{8}{17}{5}{11}
+\satq{6}{What is the greatest solution to the equation $\dfrac{1}{2}x^2-\dfrac{1}{2}x-3=0$?}{3}{2}{6}{$-2$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= Set 8 page (footer 34) =================
+\topicheader{5}{Quadratics I -- Factoring}
+\pagefooter{34}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\tier{Hard}
+\satq{7}{What is the positive solution to the equation $16x^2-81=0$?}{9}{$\dfrac{9}{16}$}{$\dfrac{9}{4}$}{$\dfrac{81}{16}$}
+\satqw{8}{The product of two consecutive positive even integers is 168. What is the larger of the two integers?}{12}{14}{16}{13}
+\satq{9}{What is the positive solution to the equation $(x-6)(x+6)=2x+27$?}{7}{$-7$}{9}{63}
+\satq{10}{What is the positive solution to the equation $4x^2-16x-84=0$?}{4}{21}{3}{7}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\tier{Hard}
+\satqw{11}{Two positive numbers differ by 3, and their product is 180. What is the larger number?}{15}{20}{12}{18}
+\satq{12}{What is the positive solution to the equation $10x^2+13x-3=0$?}{$\dfrac{1}{10}$}{$\dfrac{3}{10}$}{$-\dfrac{3}{2}$}{$\dfrac{1}{5}$}
+\satq{13}{What is the positive solution to the equation $(x+8)(x-8)=5x+2$?}{6}{22}{$-6$}{11}
+\satqw{14}{A positive number increased by its own square equals 56. What is the number?}{6}{7}{9}{8}
+\satq{15}{What is the greater solution to the equation $6x^2-19x+10=0$?}{$\dfrac{5}{3}$}{$\dfrac{5}{2}$}{$\dfrac{10}{3}$}{$\dfrac{2}{3}$}
+}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original -- written by studying the method
+and structure of real, officially-released SAT Suite Question Bank items in this
+lesson's skill category, then building a new problem (new numbers, names, and
+context) requiring the same solving method. No real College Board question text
+is reproduced anywhere in this book.\par}
+\end{textblock*}
+
+\clearpage
+
+% ================= Answers -- Sets 1-7 =================
+\topicheader{5}{Quadratics I -- Factoring}
+\pagefooter{35}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
 \end{textblock*}
 
 \begin{textblock*}{194mm}(16mm,44mm)
@@ -237,39 +418,110 @@
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|>{\centering\arraybackslash}p{26mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{28mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{28mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{4}{26mm}{\centering 1-to'plam} & 1 & $-4,-1$ & 2 & $-4,-2$\\\cline{2-5}
+\multirow{4}{26mm}{\centering Set 1} & 1 & $-4,-1$ & 2 & $-4,-2$\\\cline{2-5}
  & 3 & $-7,-2$ & 4 & $-2,-1$\\\cline{2-5}
  & 5 & $-8,-2$ & 6 & $-6,-2$\\\cline{2-5}
  & 7 & $-9,-2$ & 8 & $-5,-2$\\\hline
-\multirow{4}{26mm}{\centering 2-to'plam} & 1 & $2,3$ & 2 & $-5,3$\\\cline{2-5}
+\multirow{4}{26mm}{\centering Set 2} & 1 & $2,3$ & 2 & $-5,3$\\\cline{2-5}
  & 3 & $-2,5$ & 4 & $3,4$\\\cline{2-5}
  & 5 & $-7,3$ & 6 & $-4,6$\\\cline{2-5}
  & 7 & $-2,3$ & 8 & $-5,4$\\\hline
-\multirow{4}{26mm}{\centering 3-to'plam} & 1 & $-2,-1$ & 2 & $-2,2$\\\cline{2-5}
+\multirow{4}{26mm}{\centering Set 3} & 1 & $-2,-1$ & 2 & $-2,2$\\\cline{2-5}
  & 3 & $-\frac12,-2$ & 4 & $-\frac23,1$\\\cline{2-5}
  & 5 & $-2,1$ & 6 & $-1,\frac52$\\\cline{2-5}
  & 7 & $-2,-1$ & 8 & $-\frac12,-3$\\\hline
-\multirow{3}{26mm}{\centering 4-to'plam} & 1 & $-3,2$ & 2 & $-7,4$\\\cline{2-5}
+\multirow{3}{26mm}{\centering Set 4} & 1 & $-3,2$ & 2 & $-7,4$\\\cline{2-5}
  & 3 & $-6,1$ & 4 & $1,4$\\\cline{2-5}
  & 5 & $-4,-1$ & 6 & $-2,3$\\\hline
-\multirow{2}{26mm}{\centering 5-to'plam} & 1 & $2$ & 2 & $-12$\\\cline{2-5}
+\multirow{2}{26mm}{\centering Set 5} & 1 & $2$ & 2 & $-12$\\\cline{2-5}
  & 3 & $5$ & 4 & $-3$\\\hline
-\multirow{3}{26mm}{\centering 7-to'plam} & 1 & $-\frac12,-\frac13$ & 2 & $-\frac32,\frac32$\\\cline{2-5}
+\multirow{4}{26mm}{\centering Set 6} & \multicolumn{4}{p{76mm}|}{1.\ Error -- stopped after one solution. Correct: $x=-3$ or $x=2$ (both).}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{2.\ Error -- wrong sign pair. Correct: $(x-5)(x+1)=0$, so $x=5$ or $x=-1$.}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{3.\ Error -- the right side isn't $0$. Correct: $x^2+2x-24=0 \Rightarrow (x+6)(x-4)=0 \Rightarrow x=-6$ or $x=4$.}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{4.\ Error -- dividing by $x$ loses the $x=0$ solution. Correct: $2x(x+3)=0 \Rightarrow x=0$ or $x=-3$.}\\\hline
+\multirow{3}{26mm}{\centering Set 7} & 1 & $-\frac12,-\frac13$ & 2 & $-\frac32,\frac32$\\\cline{2-5}
  & 3 & $-\frac12,\frac12$ & 4 & $-2,5$\\\cline{2-5}
  & 5 & $-\frac52,2$ & -- & --\\\hline
-\multirow{4}{26mm}{\centering 6-to'plam} & \multicolumn{4}{p{76mm}|}{1.\ Xato -- bitta ildizda to'xtagan. To'g'ri: $x=-3$ yoki $x=2$ (ikkalasi).}\\\cline{2-5}
- & \multicolumn{4}{p{76mm}|}{2.\ Xato -- noto'g'ri ishora juftligi. To'g'ri: $(x-5)(x+1)=0$, $x=5$ yoki $x=-1$.}\\\cline{2-5}
- & \multicolumn{4}{p{76mm}|}{3.\ Xato -- o'ng tomon $0$ emas. To'g'ri: $x^2+2x-24=0 \Rightarrow (x+6)(x-4)=0 \Rightarrow x=-6$ yoki $x=4$.}\\\cline{2-5}
- & \multicolumn{4}{p{76mm}|}{4.\ Xato -- $x$ ga bo'lish $x=0$ yechimini yo'qotadi. To'g'ri: $2x(x+3)=0 \Rightarrow x=0$ yoki $x=-3$.}\\\hline
 \end{tabular}
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,240mm)
+\clearpage
+
+% ================= Answers -- Set 8 =================
+\topicheader{5}{Quadratics I -- Factoring}
+\pagefooter{36}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+A&B&C&B&D&D&C&A&B&C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+C&A&A&B&D\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&C&C&B&D&A&B&B&C&B\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+D&A&D&A&A\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&B&C&A&A&A&C&B&C&D\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+A&D&D&B&B\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}

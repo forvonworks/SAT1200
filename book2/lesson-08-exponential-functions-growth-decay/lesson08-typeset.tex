@@ -68,6 +68,11 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
+% ---- Difficulty sub-label inside Set 8 ----
+\newcommand{\tierlabel}[1]{%
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont #1}\par\vspace{2mm}%
+}
+
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
@@ -75,9 +80,27 @@
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
+}
+
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
 }
 
 \arrayrulecolor{accent}
@@ -88,14 +111,14 @@
 \begin{document}
 
 % ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{8}{Eksponensial o'sish va kamayish}
+\topicheader{8}{Exponential Growth \& Decay}
 \pagefooter{43}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{1-to'plam}{Jadval chiziqlimi yoki eksponensialmi? Qoidasini ($y=\ldots$) yozing.}
+\setkicker{Set 1}{Each function is defined by the table of values below, for $x=0,1,2,3$. Is it linear or exponential? Write an equation that defines it.}
 
 \noindent\pnum{1} $y = 5,\ 10,\ 20,\ 40$\par\vspace{16mm}
 \noindent\pnum{2} $y = 3,\ 7,\ 11,\ 15$\par\vspace{16mm}
@@ -108,155 +131,340 @@
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{2-to'plam}{O'sish: tenglama tuzing, so'ng hisoblang.}
+\setkicker{Set 2}{Exponential growth -- write the equation, then evaluate.}
 
-\noindent\pnum{1} A town's population is 200 and grows 5\% per year. Find the population after 4 years.\par\vspace{11mm}
-\noindent\pnum{2} An investment of \$1000 grows 6\% per year. Find its value after 3 years.\par\vspace{11mm}
-\noindent\pnum{3} A bacteria culture starts at 50 and doubles every hour. Find the count after 5 hours.\par\vspace{11mm}
-\noindent\pnum{4} A city's population is 8000 and grows 3\% per year. Find the population after 2 years.\par\vspace{11mm}
-\noindent\pnum{5} An item costs \$20 and its price increases 10\% per year. Find the price after 3 years.\par\vspace{11mm}
-\noindent\pnum{6} A quantity starts at 12 and grows by a factor of 1.5 each step. Find its value after 4 steps.
+\noindent\pnum{1} The population of a town is currently $200$ people and grows at a constant rate of $5\%$ per year. What is the population of the town after $4$ years?\par\vspace{11mm}
+\noindent\pnum{2} An investment of \$1000 grows at a constant rate of $6\%$ per year. What is the value of the investment after $3$ years?\par\vspace{11mm}
+\noindent\pnum{3} A culture of bacteria currently contains $50$ bacteria, and the number of bacteria doubles every hour. What is the number of bacteria after $5$ hours?\par\vspace{11mm}
+\noindent\pnum{4} The population of a city is currently $8000$ people and grows at a constant rate of $3\%$ per year. What is the population after $2$ years?\par\vspace{11mm}
+\noindent\pnum{5} The price of an item is currently \$20 and increases at a constant rate of $10\%$ per year. What is the price after $3$ years?\par\vspace{11mm}
+\noindent\pnum{6} A quantity is currently $12$ and increases by a constant factor of $1.5$ with each step. What is its value after $4$ steps?
 }
 \end{textblock*}
 
 \clearpage
 
 % ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{8}{Eksponensial o'sish va kamayish}
+\topicheader{8}{Exponential Growth \& Decay}
 \pagefooter{44}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{3-to'plam}{Kamayish: tenglama tuzing, so'ng hisoblang.}
+\setkicker{Set 3}{Exponential decay -- write the equation, then evaluate.}
 
-\noindent\pnum{1} A car worth \$15000 depreciates 12\% per year. Find its value after 3 years.\par\vspace{11mm}
-\noindent\pnum{2} A 200 g sample decreases 8\% per year. Find the amount after 2 years.\par\vspace{11mm}
-\noindent\pnum{3} A population of 5000 declines 4\% per year. Find the population after 5 years.\par\vspace{11mm}
-\noindent\pnum{4} 100 mg of medication decreases 25\% every hour. Find the amount after 3 hours.\par\vspace{11mm}
-\noindent\pnum{5} An 800 L tank loses 10\% of its water each day. Find the amount after 2 days.\par\vspace{11mm}
-\noindent\pnum{6} A \$2000 value decreases by a factor of 0.8 each year. Find the value after 3 years.
+\noindent\pnum{1} The value of a car is currently \$15000 and depreciates at a constant rate of $12\%$ per year. What is the value of the car after $3$ years?\par\vspace{11mm}
+\noindent\pnum{2} A sample currently has a mass of $200$ grams and decreases at a constant rate of $8\%$ per year. What is the mass after $2$ years?\par\vspace{11mm}
+\noindent\pnum{3} The population of a certain species is currently $5000$ and declines at a constant rate of $4\%$ per year. What is the population after $5$ years?\par\vspace{11mm}
+\noindent\pnum{4} A patient is given $100$ mg of a medication, and the amount remaining decreases at a constant rate of $25\%$ per hour. What amount remains after $3$ hours?\par\vspace{11mm}
+\noindent\pnum{5} A tank currently holds $800$ liters of water, and the amount decreases at a constant rate of $10\%$ per day. What amount remains after $2$ days?\par\vspace{11mm}
+\noindent\pnum{6} A value of \$2000 decreases by a constant factor of $0.8$ each year. What is the value after $3$ years?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{4-to'plam}{Avval chiziqli/eksponensialligini aniqlang, so'ng hisoblang.}
+\setkicker{Set 4}{Mixed -- first decide linear or exponential, then evaluate.}
 
-\noindent\pnum{1} A plant grows 3 cm every week, starting at 10 cm. Height after 6 weeks?\par\vspace{11mm}
-\noindent\pnum{2} A savings account earns 4\% interest per year, starting at \$500. Value after 3 years?\par\vspace{11mm}
-\noindent\pnum{3} A phone loses 15\% of its charge every hour, starting at 100\%. Charge after 2 hours?\par\vspace{11mm}
-\noindent\pnum{4} A pool drains at a constant rate of 50 liters per minute, starting with 2000 liters. Amount after 10 minutes?\par\vspace{9mm}
-\noindent\pnum{5} Bacteria triple every day, starting with 4. Count after 4 days?\par\vspace{11mm}
-\noindent\pnum{6} A runner's distance increases by 2 miles every day, starting at 1 mile. Distance after 5 days?
+\noindent\pnum{1} The height of a plant is currently $10$ cm and increases by $3$ cm each week. What is the height after $6$ weeks?\par\vspace{11mm}
+\noindent\pnum{2} A savings account has a balance of \$500 and earns interest at a constant rate of $4\%$ per year. What is the balance after $3$ years?\par\vspace{11mm}
+\noindent\pnum{3} The battery charge of a phone is currently $100\%$ and decreases at a constant rate of $15\%$ per hour. What is the charge after $2$ hours?\par\vspace{11mm}
+\noindent\pnum{4} A pool holds $2000$ liters of water, and water drains at a constant rate of $50$ liters per minute. What amount remains after $10$ minutes?\par\vspace{11mm}
+\noindent\pnum{5} A population of bacteria is currently $4$ and triples each day. What is the population after $4$ days?\par\vspace{11mm}
+\noindent\pnum{6} A runner has traveled $1$ mile, and the distance traveled increases by $2$ miles each day. What is the total distance after $5$ days?
 }
 \end{textblock*}
 
 \clearpage
 
 % ================= PAGE 3: Set 5 | Set 6 (spot the error) =================
-\topicheader{8}{Eksponensial o'sish va kamayish}
+\topicheader{8}{Exponential Growth \& Decay}
 \pagefooter{45}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{5-to'plam}{Yarimparchalanish davri (half-life).}
+\setkicker{Set 5}{Half-life.}
 
-\noindent\pnum{1} 160 g of a substance has a half-life of 4 years. How much remains after 12 years?\par\vspace{18mm}
-\noindent\pnum{2} 500 mg of a drug has a half-life of 6 hours. How much remains after 18 hours?\par\vspace{18mm}
-\noindent\pnum{3} 80 g of an isotope has a half-life of 10 days. How much remains after 30 days?\par\vspace{18mm}
-\noindent\pnum{4} A population halves every 5 years, starting at 6400. Find the population after 20 years.\par\vspace{18mm}
-\noindent\pnum{5} 1000 bacteria die off such that the count halves every 3 hours. Find the count after 9 hours.
+\noindent\pnum{1} A substance with a mass of $160$ grams has a half-life of $4$ years. What mass remains after $12$ years?\par\vspace{18mm}
+\noindent\pnum{2} A drug with a mass of $500$ mg has a half-life of $6$ hours. What mass remains in the body after $18$ hours?\par\vspace{18mm}
+\noindent\pnum{3} An isotope with a mass of $80$ grams has a half-life of $10$ days. What mass remains after $30$ days?\par\vspace{18mm}
+\noindent\pnum{4} The population of a certain species is currently $6400$ and halves every $5$ years. What is the population after $20$ years?\par\vspace{18mm}
+\noindent\pnum{5} A population of $1000$ bacteria halves every $3$ hours. What is the population after $9$ hours?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'g'ri javobni bering.}
+\setkicker{Set 6}{Spot the error -- name the mistake, give the correct answer.}
 
-\noindent\pnum{1} A city grows 7\% per year, starting at 10000. Find the population after 2 years --\\
+\noindent\pnum{1} A city of $10000$ grows $7\%$ per year. For the population after $2$ years, a student wrote:\\[1mm]
 \hspace*{7mm}\textit{``$10000\times(1.7)^2=28900$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
+\hspace*{7mm}Error + fix: \makebox[45mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{2} A sample decreases 20\% per year, starting at 500. Find the amount after 2 years --\\
+\noindent\pnum{2} A $500$-gram sample decreases $20\%$ per year. For the mass after $2$ years, a student wrote:\\[1mm]
 \hspace*{7mm}\textit{``$500\times(1+0.2)^2=720$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
+\hspace*{7mm}Error + fix: \makebox[45mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{3} A table shows $y=2,4,8,16$ for $x=0,1,2,3$ --\\
-\hspace*{7mm}\textit{``This is linear with common difference 2, so $y=2+2x$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
+\noindent\pnum{3} A table shows $y=2,4,8,16$ for $x=0,1,2,3$. A student wrote:\\[1mm]
+\hspace*{7mm}\textit{``Linear with common difference $2$, so $y=2+2x$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[45mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{4} A car depreciates by \$1500/year, starting at \$20000 --\\
-\hspace*{7mm}\textit{``This is exponential: $y=20000\times(1-0.075)^t$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
+\noindent\pnum{4} A car worth \$20000 loses \$1500 per year. A student wrote:\\[1mm]
+\hspace*{7mm}\textit{``Exponential: $y=20000\times(1-0.075)^t$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[45mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{5} Amount remaining after 3 half-lives, starting at 240 g --\\
-\hspace*{7mm}\textit{``$240-3\times\frac12\times240=240-360=-120$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}
+\noindent\pnum{5} For the mass of a $240$-gram substance left after $3$ half-lives, a student wrote:\\[1mm]
+\hspace*{7mm}\textit{``$240-3\times\frac12\times240=-120$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[45mm]{\dotfill}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus, work backward) =================
-\topicheader{8}{Eksponensial o'sish va kamayish}
+% ================= PAGE 4: Set 7 (left) | Set 8 Easy 1-6 (right) =================
+\topicheader{8}{Exponential Growth \& Decay}
 \pagefooter{46}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin -- teskari masala: berilgan natijadan parametrni toping.}
+\setkicker{Set 7}{Bonus / challenge -- work backward.}
 
-\noindent\pnum{1} A population grows from 200 to 242 in 2 years at a constant annual percent rate. Find the rate.\par\vspace{20mm}
-\noindent\pnum{2} A substance decays to $\frac14$ of its original amount after 10 days. Find its half-life.\par\vspace{20mm}
-\noindent\pnum{3} An investment grows from \$1000 to \$1331 in 3 years at a constant annual rate. Find the rate.\par\vspace{20mm}
-\noindent\pnum{4} A car worth \$25000 depreciates to \$20000 after 1 year at a constant percent rate. Find the rate, then predict the value after a total of 2 years.\par\vspace{16mm}
-\noindent\pnum{5} A quantity grows from 3 to 48 over 4 equal steps. Is this linear or exponential? Find the rule.
+\noindent\pnum{1} The population of a town grows from $200$ to $242$ over $2$ years at a constant annual percent rate. What is the annual percent rate of growth?\par\vspace{20mm}
+\noindent\pnum{2} A substance decays to $\frac14$ of its original mass after $10$ days. What is its half-life, in days?\par\vspace{20mm}
+\noindent\pnum{3} An investment grows from \$1000 to \$1331 over $3$ years at a constant annual percent rate. What is the annual percent rate of growth?\par\vspace{20mm}
+\noindent\pnum{4} A car worth \$25000 depreciates to \$20000 after $1$ year at a constant annual percent rate. What is the rate, and what will the value be after a total of $2$ years?\par\vspace{16mm}
+\noindent\pnum{5} A quantity increases from $3$ to $48$ over $4$ equal steps. Is it linear or exponential, and what equation defines it?
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+\tierlabel{Easy}
+
+\satq{1}{A video had $80$ views when posted. Each hour after, the number of views doubled from the previous hour. Which equation gives the total views $n$ after $d$ hours?}{$n=80d$}{$n=80(2)^d$}{$n=2(80)^d$}{$n=(80)^2+d$}
+\satq{2}{A town's population is modeled by $P(t)=500(1.04)^t$, where $t$ is the number of years since 2020. What is the population in 2020?}{$500$}{$520$}{$1.04$}{$504$}
+\satq{3}{A car's value is modeled by $V(t)=24{,}000(0.88)^t$, where $t$ is years since purchase. What is the value, to the nearest dollar, after $2$ years?}{$18{,}200$}{$18{,}586$}{$19{,}200$}{$21{,}120$}
+\satq{4}{A substance decreases by $15\%$ each hour. Which value is the decay factor in an exponential model of the substance?}{$0.15$}{$0.85$}{$1.15$}{$-0.15$}
+\satq{5}{A population is modeled by $P=P_0(1+r)^t$, where $r$ is a constant. If the population is decreasing, which must be true?}{$r<-1$}{$-1<r<0$}{$0<r<1$}{$r>1$}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar part 1 -- Sets 1-4 =================
-\topicheader{8}{Eksponensial o'sish va kamayish}
+% ================= PAGE 5: Set 8 Easy 6-10 | Easy 11-15 =================
+\topicheader{8}{Exponential Growth \& Decay}
 \pagefooter{47}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{6}{A \$300 investment grows at a constant rate of $5\%$ per year. What is its value after $2$ years?}{\$315.00}{\$330.00}{\$330.75}{\$345.00}
+\satq{7}{A $60$ mg dose of a medication decreases by $20\%$ each hour. How much remains after $2$ hours?}{$36.00$ mg}{$38.40$ mg}{$40.00$ mg}{$48.00$ mg}
+\satqw{8}{The population of a village is currently $8{,}000$ and is estimated to increase each year by $2\%$ from the previous year. Which equation can be used to estimate the number of years $t$ it will take for the population to reach $10{,}000$?}{$8000=10000(0.02)^t$}{$8000=10000(2)^t$}{$10000=8000(0.02)^t$}{$10000=8000(1.02)^t$}
+\satq{9}{A function is defined by the table of values $y=6,\ 12,\ 24,\ 48$ for $x=0,1,2,3$. Which equation defines this function?}{$y=6+6x$}{$y=6(2)^x$}{$y=2(6)^x$}{$y=6x^2$}
+\satq{10}{A substance has a half-life of $3$ years. If it starts with a mass of $80$ grams, what mass remains after $6$ years?}{$10$ g}{$20$ g}{$40$ g}{$60$ g}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{11}{A city's population decreases by $4\%$ each year. Which value is the growth factor $b$ in a model $P=P_0\,b^{\,t}$?}{$0.04$}{$0.96$}{$1.04$}{$-0.04$}
+\satq{12}{A bacteria culture starts with $25$ bacteria and triples every hour. How many bacteria are there after $3$ hours?}{$75$}{$225$}{$675$}{$2{,}025$}
+\satq{13}{A quantity begins at $10$ and doubles every step. Which equation gives the value $y$ after $x$ steps?}{$y=10+2x$}{$y=10(2)^x$}{$y=2(10)^x$}{$y=x^2+10$}
+\satq{14}{An item's price increases by $8\%$ each year. What is the growth factor in an exponential model of the price?}{$0.08$}{$0.92$}{$1.08$}{$8$}
+\satq{15}{A \$5{,}000 car loses $10\%$ of its value every year. What is its value after $2$ years?}{\$3{,}800}{\$4{,}000}{\$4{,}050}{\$4{,}500}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6: Set 8 Medium 1-5 | Medium 6-10 =================
+\topicheader{8}{Exponential Growth \& Decay}
+\pagefooter{48}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\tierlabel{Medium}
+
+\noindent\pnum{1} The table shows the exponential relationship between time $t$, in years, and the total amount $n$, in dollars, in a savings account with no deposits or withdrawals. Which equation best represents the relationship between $t$ and $n$?\\[2mm]
+\hspace*{7mm}{\renewcommand{\arraystretch}{1.15}\begin{tabular}{|c|c|}
+\hline
+\rowcolor{badge!40}$t$ (years) & $n$ (dollars)\\\hline
+$0$ & $250.00$\\\hline
+$1$ & $260.00$\\\hline
+$2$ & $270.40$\\\hline
+\end{tabular}}\\[2mm]
+\hspace*{7mm}(A) $n=(1+250)^t$\\[1.6mm]
+\hspace*{7mm}(B) $n=(1+0.04)^t$\\[1.6mm]
+\hspace*{7mm}(C) $n=250(1+0.04)^t$\\[1.6mm]
+\hspace*{7mm}(D) $n=0.04(1+250)^t$\\[7mm]
+\satq{2}{The function $f(t)=20{,}000(2)^{t/650}$ gives the number of bacteria in a population $t$ minutes after an initial observation. How many minutes does it take for the population to double?}{$2$}{$325$}{$650$}{$20{,}000$}
+\satq{3}{$P(t)=500(1.03)^{(4/2)t}$ models a population, in thousands, $t$ years after 2010; the population increases by $3\%$ every $n$ months. What is $n$?}{$3$}{$6$}{$12$}{$24$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satqw{4}{A car is currently worth \$18{,}000, and its value is estimated to decrease each year by $6\%$ from the previous year's value. Which equation can be used to estimate the number of years $t$ it will take for the value to reach \$12{,}000?}{$18000=12000(0.94)^t$}{$12000=18000(0.06)^t$}{$12000=18000(0.94)^t$}{$18000=12000(1.06)^t$}
+\satq{5}{A population modeled by $P=P_0(1+r)^t$ more than doubles every year, where $r$ is a constant. Which must be true?}{$0<r<1$}{$r>1$}{$-1<r<0$}{$r<-1$}
+\satq{6}{A function is defined by the table of values $y=12,\ 18,\ 27,\ 40.5$ for $x=0,1,2,3$. Which equation defines this function?}{$y=12+6x$}{$y=12(1.5)^x$}{$y=1.5(12)^x$}{$y=12(0.5)^x$}
+\satq{7}{A \$2{,}000 investment grows $5\%$ in the first year and then $8\%$ in the second year. What is its value after $2$ years?}{\$2{,}160}{\$2{,}200}{\$2{,}260}{\$2{,}268}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 7: Set 8 Medium 8-12 | Medium 13-15 =================
+\topicheader{8}{Exponential Growth \& Decay}
+\pagefooter{49}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{8}{A substance's mass is multiplied by $0.5$ every $8$ days. What fraction of the original mass remains after $24$ days?}{$\dfrac12$}{$\dfrac14$}{$\dfrac18$}{$\dfrac{1}{16}$}
+\satq{9}{A company's revenue was \$50{,}000 last year and is \$53{,}000 this year. If revenue grows at a constant exponential rate, what is the annual percent growth rate?}{$3\%$}{$5\%$}{$6\%$}{$10\%$}
+\satq{10}{A radioactive sample has a mass of $90$ grams and loses $15\%$ of its mass every year. What is the mass, to the nearest tenth of a gram, after $3$ years?}{$53.1$ g}{$54.6$ g}{$55.3$ g}{$57.4$ g}
+\satq{11}{A population is modeled by $P(t)=1{,}200(1.02)^{3t}$, where $t$ is in years. By what percent does the model estimate the population increases every $4$ months?}{$1\%$}{$2\%$}{$6\%$}{$8\%$}
+\satq{12}{A jacket's price is \$80. It increases by $25\%$ for a sale event, then decreases by $20\%$ during a clearance. What is the final price?}{\$76}{\$78}{\$80}{\$84}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{13}{A medication's concentration in the bloodstream decreases by $30\%$ every $2$ hours. If the initial concentration is $80$ mg/L, which equation gives the concentration $C$ after $t$ hours?}{$C=80(0.7)^t$}{$C=80(0.7)^{t/2}$}{$C=80(0.3)^{t/2}$}{$C=80(1.3)^{t/2}$}
+\satq{14}{A population is modeled by $P(t)=300(1.15)^t$. For what whole-number value of $t$ does $P(t)$ first exceed $600$?}{$3$}{$4$}{$5$}{$6$}
+\satq{15}{A substance has a half-life of $5$ hours. How many hours does it take for the substance to decay to $\frac18$ of its original amount?}{$8$}{$10$}{$15$}{$40$}
+\tierlabel{Hard}
+\satq{1}{$P(t)=840(1.06)^{(4/3)t}$ models the population, in thousands, of a city $t$ years after 2015; the population increases by $6\%$ every $n$ months. What is $n$?}{$4$}{$8$}{$9$}{$16$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 8: Set 8 Hard 2-6 | Hard 7-10 =================
+\topicheader{8}{Exponential Growth \& Decay}
+\pagefooter{50}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{2}{A quantity modeled by $Q=Q_0(1+r)^t$ decreases to less than half its value every year, where $r$ is a constant. Which must be true?}{$r<-1$}{$-1<r<-0.5$}{$-0.5<r<0$}{$r>-0.5$}
+\satqw{3}{A streaming service currently has $85{,}000$ subscribers, projected to increase each month by $2.5\%$ from the previous month. Which equation can be used to estimate the number of months $t$ it will take to reach $120{,}000$ subscribers?}{$85000=120000(0.025)^t$}{$120000=85000(0.025)^t$}{$120000=85000(1.025)^t$}{$85000=120000(1.025)^t$}
+\satq{4}{The function $f(t)=18{,}000(3)^{t/504}$ models the number of users of an app $t$ days after launch. How many \textbf{weeks} does it take for the number of users to triple?}{$72$}{$504$}{$84$}{$3$}
+\satq{5}{An investment grows from \$4{,}000 to \$5{,}290 over $2$ years at a constant annual percent rate. What is the annual rate of growth?}{$10\%$}{$12\%$}{$15\%$}{$20\%$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{6}{A boat's value decreases from \$60{,}000 to \$30{,}720 over $3$ years at a constant annual percent rate. What is the annual rate of depreciation?}{$10\%$}{$15\%$}{$20\%$}{$25\%$}
+\satqw{7}{A population is modeled by $P(t)=500(1.08)^t$, where $t$ is the number of years since 2010. Which function best models the population $Q(m)$, where $m$ is the number of months since 2010?}{$Q(m)=500(1.08)^{m/12}$}{$Q(m)=500(1.08)^{12m}$}{$Q(m)=500\left(\frac{1.08}{12}\right)^m$}{$Q(m)=500(1.08)^m-12$}
+\satq{8}{A population modeled by $P=P_0(1+r)^t$ increases by more than $50\%$ but less than $100\%$ every year. Which must be true?}{$0<r<0.5$}{$0.5<r<1$}{$1<r<1.5$}{$1.5<r<2$}
+\satq{9}{An investment grows at a constant annual rate of $6\%$. After $4$ years it is worth \$6{,}312.38. What was its initial value, to the nearest dollar?}{\$4{,}500}{\$5{,}000}{\$5{,}500}{\$6{,}000}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 9: Set 8 Hard 10-12 | Hard 13-15 =================
+\topicheader{8}{Exponential Growth \& Decay}
+\pagefooter{51}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{10}{An isotope has a half-life of $1{,}600$ years. A sample initially contains $480$ grams. After $6{,}400$ years, what percent of the original sample remains?}{$3.125\%$}{$6.25\%$}{$12.5\%$}{$25\%$}
+\satqw{11}{The value of a shipment of goods is currently \$72{,}000 and depreciates by $4\%$ every $3$ months. Which equation gives the value $V$ of the shipment $t$ \textbf{years} from today?}{$V=72000(0.96)^{4t}$}{$V=72000(0.96)^{t/4}$}{$V=72000(1.04)^{4t}$}{$V=72000(0.96)^{3t}$}
+\satq{12}{Which expression is equivalent to $400(1.5)^{2t}$?}{$400(3)^t$}{$400(2.25)^t$}{$800(1.5)^t$}{$400(1.5)^t\cdot2$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{13}{A town's population was $2{,}000$ in 2018 and $2{,}880$ in 2020. If it keeps growing at the same constant annual percent rate, what will the population be in 2022, to the nearest whole number?}{$3{,}456$}{$4{,}147$}{$4{,}320$}{$5{,}760$}
+\satq{14}{A quantity is modeled by $Q(t)=Q_0(k-3)^t$, where $k$ is a constant. For the model to represent exponential \textbf{decay}, which must be true?}{$k<3$}{$3<k<4$}{$k>4$}{$k=3.5$ only}
+\satqw{15}{A charity's donation total starts at \$10{,}000. A one-time matching gift immediately increases the total by $20\%$; then the total grows by $3\%$ each additional month. Which equation gives the total $D$ after $m$ additional months (counted after the gift)?}{$D=10000(1.03)^m$}{$D=12000(1.03)^m$}{$D=10000(1.23)^m$}{$D=12000(1.2)(1.03)^m$}
+}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original -- written by studying the method
+and structure of real, officially-released SAT Suite Question Bank items in this
+lesson's skill category, then building a new problem (new numbers, names, and
+context) requiring the same solving method. No real College Board question text
+is reproduced anywhere in this book.\par}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 10: Answers part 1 -- Sets 1-4 =================
+\topicheader{8}{Exponential Growth \& Decay}
+\pagefooter{52}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--4\par}
 \end{textblock*}
 
 \begin{textblock*}{194mm}(16mm,46mm)
 {\fontsize{10}{12.5}\selectfont
 \centering
 \renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|p{145mm}|}
+\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|p{120mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{6}{24mm}{\centering 1-to'plam} & 1 & Exponential, $y=5\times2^x$\\\cline{2-3}
+\multirow{6}{24mm}{\centering Set 1} & 1 & Exponential, $y=5\times2^x$\\\cline{2-3}
  & 2 & Linear, $y=3+4x$\\\cline{2-3}
  & 3 & Exponential, $y=100\times0.9^x$\\\cline{2-3}
  & 4 & Linear, $y=50-5x$\\\cline{2-3}
  & 5 & Exponential, $y=2\times3^x$\\\cline{2-3}
  & 6 & Linear, $y=10+2.5x$\\\hline
-\multirow{6}{24mm}{\centering 2-to'plam} & 1 & $\approx243$\\\cline{2-3}
+\multirow{6}{24mm}{\centering Set 2} & 1 & $\approx243$\\\cline{2-3}
  & 2 & $\approx\$1191.02$\\\cline{2-3}
  & 3 & $1600$\\\cline{2-3}
  & 4 & $\approx8487$\\\cline{2-3}
  & 5 & $\approx\$26.62$\\\cline{2-3}
  & 6 & $60.75$\\\hline
-\multirow{6}{24mm}{\centering 3-to'plam} & 1 & $\approx\$10222.08$\\\cline{2-3}
+\multirow{6}{24mm}{\centering Set 3} & 1 & $\approx\$10222.08$\\\cline{2-3}
  & 2 & $\approx169.28$ g\\\cline{2-3}
  & 3 & $\approx4077$\\\cline{2-3}
  & 4 & $\approx42.19$ mg\\\cline{2-3}
  & 5 & $648$ L\\\cline{2-3}
  & 6 & $\$1024$\\\hline
-\multirow{6}{24mm}{\centering 4-to'plam} & 1 & Linear, $28$ cm\\\cline{2-3}
+\multirow{6}{24mm}{\centering Set 4} & 1 & Linear, $28$ cm\\\cline{2-3}
  & 2 & Exponential, $\approx\$562.43$\\\cline{2-3}
  & 3 & Exponential, $\approx72.25\%$\\\cline{2-3}
  & 4 & Linear, $1500$ L\\\cline{2-3}
@@ -268,30 +476,34 @@
 
 \clearpage
 
-% ================= PAGE 6: Javoblar part 2 -- Sets 5-7 + QR =================
-\topicheader{8}{Eksponensial o'sish va kamayish}
-\pagefooter{48}
+% ================= PAGE 11: Answers part 2 -- Sets 5-7 =================
+\topicheader{8}{Exponential Growth \& Decay}
+\pagefooter{53}
 \mbox{}%
 
-\begin{textblock*}{194mm}(16mm,32mm)
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 5--7\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
 {\fontsize{10}{12.5}\selectfont
 \centering
 \renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|p{145mm}|}
+\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|p{120mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{5}{24mm}{\centering 5-to'plam} & 1 & $20$ g\\\cline{2-3}
+\multirow{5}{24mm}{\centering Set 5} & 1 & $20$ g\\\cline{2-3}
  & 2 & $62.5$ mg\\\cline{2-3}
  & 3 & $10$ g\\\cline{2-3}
  & 4 & $400$\\\cline{2-3}
  & 5 & $125$\\\hline
-\multirow{5}{24mm}{\centering 6-to'plam} & 1 & Error -- $7\%$ treated as $1.7$ instead of $1.07$. To'g'ri: $10000\times1.07^2\approx11449$.\\\cline{2-3}
- & 2 & Error -- used $(1+r)$ for a decaying quantity instead of $(1-r)$. To'g'ri: $500\times0.8^2=320$.\\\cline{2-3}
- & 3 & Error -- differences $2,4,8$ are not constant; ratios $2,2,2$ are constant, so it's exponential: $y=2\times2^x$.\\\cline{2-3}
- & 4 & Error -- a constant dollar amount per year is linear, not exponential. To'g'ri: $y=20000-1500t$.\\\cline{2-3}
- & 5 & Error -- treated repeated halving as subtraction instead of multiplication. To'g'ri: $240\times(\frac12)^3=30$ g.\\\hline
-\multirow{5}{24mm}{\centering 7-to'plam} & 1 & $r=10\%$\\\cline{2-3}
+\multirow{5}{24mm}{\centering Set 6} & 1 & Error -- $7\%$ treated as $1.7$ instead of $1.07$. Correct: $10000\times1.07^2\approx11449$.\\\cline{2-3}
+ & 2 & Error -- used $(1+r)$ for a decaying quantity instead of $(1-r)$. Correct: $500\times0.8^2=320$.\\\cline{2-3}
+ & 3 & Error -- differences $2,4,8$ are not constant; ratios $2,2,2$ are, so it is exponential: $y=2\times2^x$.\\\cline{2-3}
+ & 4 & Error -- a constant dollar amount per year is linear, not exponential. Correct: $y=20000-1500t$.\\\cline{2-3}
+ & 5 & Error -- treated repeated halving as subtraction instead of multiplication. Correct: $240\times(\frac12)^3=30$ g.\\\hline
+\multirow{5}{24mm}{\centering Set 7} & 1 & $r=10\%$\\\cline{2-3}
  & 2 & $h=5$ days\\\cline{2-3}
  & 3 & $r=10\%$\\\cline{2-3}
  & 4 & $r=20\%$; after 2 years, $\$16000$\\\cline{2-3}
@@ -300,9 +512,80 @@
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,220mm)
+\clearpage
+
+% ================= PAGE 12: Answers -- Set 8 + QR =================
+\topicheader{8}{Exponential Growth \& Decay}
+\pagefooter{54}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&A&B&B&B&C&B&D&B&B\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&C&B&C&C\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&C&B&C&B&B&D&C&C&C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&C&B&C&C\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&B&C&A&C&C&A&B&B&B\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+A&B&B&B&B\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}
