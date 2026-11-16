@@ -23,10 +23,14 @@
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
 
+% ---- Safe print margins: 16mm outer on both sides so bound/trimmed copies never
+% clip problem text. Columns are 83mm wide with a 6mm gap on each side of the
+% center rule (at x=105mm). ----
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
 \newcommand{\COLW}{83mm}
 
+% ---- Plain topic header: number chip + title, thin rule underneath. No band, no watermark. ----
 \newcommand{\topicheader}[2]{%
 \begin{textblock*}{194mm}(16mm,10mm)
 \begin{tikzpicture}
@@ -56,6 +60,7 @@
 \end{textblock*}
 }
 
+% ---- Fixed-length vertical column rule: #1 = top y (mm), #2 = length (mm) ----
 \newcommand{\colrule}[2]{%
 \begin{textblock*}{1mm}(105mm,#1mm)
 \begin{tikzpicture}
@@ -68,237 +73,393 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
+% ---- Small boxed problem number, reference-style. Plain \fbox -- stays flush with
+% the text baseline instead of centering on it. ----
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
+% ---- QR placeholder square + caption below ----
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
+}
+
+% ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
 \newcommand{\anstitle}[1]{{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont #1}\\[1.3mm]}
 
-% ---- Shared reference diagram for Set 3: two parallel lines cut by a transversal,
-% point P on l1, point Q on l2, four angle positions marked at each. ----
-\newcommand{\transversaldiagram}{%
-\begin{center}
-\begin{tikzpicture}[scale=1]
-\draw[ink,thick] (-22mm,9mm) -- (22mm,9mm);
-\node[right] at (22mm,9mm) {\small $\ell_1$};
-\draw[ink,thick] (-22mm,-9mm) -- (22mm,-9mm);
-\node[right] at (22mm,-9mm) {\small $\ell_2$};
-\draw[accent,thick] (-9mm,16mm) -- (9mm,-16mm);
-\node[above right] at (-9mm,16mm) {\small $t$};
-\fill (0,9mm) circle (0.5mm);
-\node[above] at (0,9.5mm) {\small $P$};
-\fill (3mm,-9mm) circle (0.5mm);
-\node[below] at (3mm,-9.5mm) {\small $Q$};
-\node[font=\tiny] at (-4mm,11mm) {UL};
-\node[font=\tiny] at (3mm,11mm) {UR};
-\node[font=\tiny] at (-4mm,7mm) {LL};
-\node[font=\tiny] at (3mm,7mm) {LR};
-\node[font=\tiny] at (-1mm,-7mm) {UL};
-\node[font=\tiny] at (6mm,-7mm) {UR};
-\node[font=\tiny] at (-1mm,-11mm) {LL};
-\node[font=\tiny] at (6mm,-11mm) {LR};
-\end{tikzpicture}
-\end{center}
-}
-
 \begin{document}
 
-% ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{19}{Burchaklar va Uchburchaklar}
+\topicheader{19}{Angles \& Triangles}
 \pagefooter{103}
 \colrule{32}{238}
 \mbox{}%
-
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{11.5}{14.5}\selectfont
-\setkicker{1-to'plam}{To'ldiruvchi, yondosh va vertikal burchaklar.}
-
-\noindent\pnum{1} Two angles are complementary. One measures $37°$. Find the other.\\[18mm]
-\noindent\pnum{2} Two angles are supplementary. One measures $112°$. Find the other.\\[18mm]
-\noindent\pnum{3} Two angles are vertical angles. One measures $74°$. Find the other.\\[18mm]
-\noindent\pnum{4} Two complementary angles measure $2x$ and $3x$. Find $x$, then find both angles.\\[20mm]
-\noindent\pnum{5} Two supplementary angles measure $4x+10$ and $2x+20$. Find $x$, then find both angles.\\[20mm]
-\noindent\pnum{6} Two vertical angles measure $3x+15$ and $5x-25$. Find $x$, then find the angle.
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 1}{Complementary, supplementary, vertical.}
+\noindent\pnum{1} Two angles are complementary, and one of the angles measures $37°$. What is the measure of the other angle?\\[18mm]
+\noindent\pnum{2} Two angles are supplementary, and one of the angles measures $112°$. What is the measure of the other angle?\\[18mm]
+\noindent\pnum{3} Two angles are vertical angles, and one of the angles measures $74°$. What is the measure of the other angle?\\[18mm]
+\noindent\pnum{4} Two complementary angles have measures of $2x$ and $3x$. What is the value of $x$? What are the measures of the two angles?\\[20mm]
+\noindent\pnum{5} Two supplementary angles have measures of $4x+10$ and $2x+20$. What is the value of $x$? What are the measures of the two angles?\\[20mm]
+\noindent\pnum{6} Two vertical angles have measures of $3x+15$ and $5x-25$. What is the value of $x$? What is the measure of the angle?\\[20mm]
 }
 \end{textblock*}
-
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{11.5}{14.5}\selectfont
-\setkicker{2-to'plam}{Uchburchak ichki burchaklari yig'indisi.}
-
-\noindent\pnum{1} A triangle has angles $50°$ and $65°$. Find the third angle.\\[18mm]
-\noindent\pnum{2} A triangle has angles $90°$ and $35°$. Find the third angle.\\[18mm]
-\noindent\pnum{3} An equilateral triangle has three equal angles, each $x$. Find $x$.\\[18mm]
-\noindent\pnum{4} A triangle's angles measure $2x$, $3x$, and $4x$. Find $x$, then find each angle.\\[20mm]
-\noindent\pnum{5} A triangle's angles measure $x+10$, $x+20$, and $x+30$. Find $x$, then find each angle.\\[20mm]
-\noindent\pnum{6} An isosceles triangle has two equal base angles, each $2x$, and a vertex angle of $x+60$. Find $x$, then find all three angles.
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 2}{Triangle angle sum.}
+\noindent\pnum{1} In a triangle, two of the angles have measures of $50°$ and $65°$. What is the measure of the third angle?\\[18mm]
+\noindent\pnum{2} In a triangle, two of the angles have measures of $90°$ and $35°$. What is the measure of the third angle?\\[18mm]
+\noindent\pnum{3} In an equilateral triangle, each of the three angles has a measure of $x$. What is the value of $x$?\\[18mm]
+\noindent\pnum{4} In a triangle, the three angles have measures of $2x$, $3x$, and $4x$. What is the value of $x$? What is the measure of each angle?\\[20mm]
+\noindent\pnum{5} In a triangle, the three angles have measures of $x+10$, $x+20$, and $x+30$. What is the value of $x$? What is the measure of each angle?\\[20mm]
+\noindent\pnum{6} In an isosceles triangle, the two base angles each have a measure of $2x$, and the vertex angle has a measure of $x+60$. What is the value of $x$? What are the measures of all three angles?\\[20mm]
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 2: Set 3 (diagram) | Set 4 =================
-\topicheader{19}{Burchaklar va Uchburchaklar}
+\topicheader{19}{Angles \& Triangles}
 \pagefooter{104}
 \colrule{32}{238}
 \mbox{}%
-
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{11}{14}\selectfont
-\setkicker{3-to'plam}{Parallel to'g'ri chiziqlar va kesuvchi. $\ell_1\parallel\ell_2$, kesuvchi $t$ ularni $P$ va $Q$ nuqtalarda kesadi.}
-\transversaldiagram
-
-\noindent\pnum{1} $P$'s lower-right angle is $72°$. Find $Q$'s upper-left angle.\\[10mm]
-\noindent\pnum{2} $P$'s lower-left angle is $96°$. Find $Q$'s upper-right angle.\\[10mm]
-\noindent\pnum{3} $P$'s lower-right angle is $130°$. Find $Q$'s upper-right angle.\\[10mm]
-\noindent\pnum{4} $P$'s upper-right angle is $108°$. Find $Q$'s upper-right angle.\\[10mm]
-\noindent\pnum{5} $P$'s lower-left angle is $85°$. Find $Q$'s lower-left angle.\\[10mm]
-\noindent\pnum{6} Lines $m$ and $n$ cut by a transversal, $m\parallel n$ is \emph{not} stated. One angle is $85°$, the alternate-interior angle is $95°$. Can you conclude $m\parallel n$?
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 3}{Parallel lines cut by a transversal.}
+\noindent{\small\itshape Lines $\ell_1$ and $\ell_2$ are parallel and are cut by a transversal $t$, which intersects $\ell_1$ at point $P$ and $\ell_2$ at point $Q$. Here $\ell_1$ is the upper line and $\ell_2$ is the lower line. At each point, the four angles are named by position: upper-left, upper-right, lower-left, and lower-right.}\par\vspace{2mm}
+\noindent\pnum{1} The measure of $P$'s lower-right angle is $72°$. What is the measure of $Q$'s upper-left angle?\\[10mm]
+\noindent\pnum{2} The measure of $P$'s lower-left angle is $96°$. What is the measure of $Q$'s upper-right angle?\\[10mm]
+\noindent\pnum{3} The measure of $P$'s lower-right angle is $130°$. What is the measure of $Q$'s upper-right angle?\\[10mm]
+\noindent\pnum{4} The measure of $P$'s upper-right angle is $108°$. What is the measure of $Q$'s upper-right angle?\\[10mm]
+\noindent\pnum{5} The measure of $P$'s lower-left angle is $85°$. What is the measure of $Q$'s lower-left angle?\\[10mm]
+\noindent\pnum{6} Lines $m$ and $n$ are cut by a transversal, but it is \textbf{not} stated or marked that $m \parallel n$. One angle formed measures $85°$, and the angle in the alternate interior position measures $95°$. Based on this information, can it be concluded that $m \parallel n$? What, if anything, can be concluded?\\[10mm]
 }
 \end{textblock*}
-
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{10.5}{13.5}\selectfont
-\setkicker{4-to'plam}{O'xshash uchburchaklar: harflar tartibiga rioya qiling.}
-
-\noindent\pnum{1} $\triangle ABC \sim \triangle DEF$. $AB=4$, $BC=6$, $AC=8$, $DE=6$. Find $EF$ and $DF$.\\[14mm]
-\noindent\pnum{2} $\triangle PQR \sim \triangle LMN$. $PQ=5$, $QR=12$, $PR=13$, $LM=15$. Find $MN$ and $LN$.\\[14mm]
-\noindent\pnum{3} $\triangle XYZ \sim \triangle ABC$. $XY=7$, $YZ=9$, $XZ=11$, $BC=18$. Find $AB$ and $AC$.\\[14mm]
-\noindent\pnum{4} $\triangle GHI \sim \triangle KLM$. $GH=10$, $HI=14$, $GI=16$, $KL=25$. Find $LM$ and $KM$.\\[14mm]
-\noindent\pnum{5} $\triangle RST \sim \triangle UVW$, scale $\frac{3}{2}$ (RST$\to$UVW). $RS=8$, $ST=10$, $RT=14$. Find $UV,VW,UW$.\\[14mm]
-\noindent\pnum{6} $\triangle ABC \sim \triangle DEF$. $AB=6$, $BC=8$, $AC=10$ (perimeter $24$), $DE=9$. Find the perimeter of $\triangle DEF$.
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 4}{Similar triangles: correct correspondence.}
+\noindent\pnum{1} In $\triangle ABC \sim \triangle DEF$, $AB=4$, $BC=6$, $AC=8$, and $DE=6$. What are the values of $EF$ and $DF$?\\[14mm]
+\noindent\pnum{2} In $\triangle PQR \sim \triangle LMN$, $PQ=5$, $QR=12$, $PR=13$, and $LM=15$. What are the values of $MN$ and $LN$?\\[14mm]
+\noindent\pnum{3} In $\triangle XYZ \sim \triangle ABC$, $XY=7$, $YZ=9$, $XZ=11$, and $BC=18$. What are the values of $AB$ and $AC$?\\[14mm]
+\noindent\pnum{4} In $\triangle GHI \sim \triangle KLM$, $GH=10$, $HI=14$, $GI=16$, and $KL=25$. What are the values of $LM$ and $KM$?\\[14mm]
+\noindent\pnum{5} In $\triangle RST \sim \triangle UVW$, the scale factor from $\triangle RST$ to $\triangle UVW$ is $\frac{3}{2}$. If $RS=8$, $ST=10$, and $RT=14$, what are the values of $UV$, $VW$, and $UW$?\\[14mm]
+\noindent\pnum{6} In $\triangle ABC \sim \triangle DEF$, $AB=6$, $BC=8$, and $AC=10$ (so the perimeter of $\triangle ABC$ is $24$), and $DE=9$. What is the perimeter of $\triangle DEF$?\\[14mm]
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 3: Set 5 | Set 6 (spot the error) =================
-\topicheader{19}{Burchaklar va Uchburchaklar}
+\topicheader{19}{Angles \& Triangles}
 \pagefooter{105}
 \colrule{32}{238}
 \mbox{}%
-
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{10.3}{13}\selectfont
-\setkicker{5-to'plam}{Aralash: burchaklar + o'xshashlik.}
-
-\noindent\pnum{1} In $\triangle ABC$, $\angle A=50°$, $\angle B=70°$. Find $\angle C$. Also $\triangle ABC \sim \triangle DEF$, $DE=2\times AB$; if $AB=6$, find $DE$ and state $\angle D$ (explain why, no new computation).\\[12mm]
-\noindent\pnum{2} Two triangles have $\angle A=\angle D=65°$, $\angle B=\angle E=80°$. Are they similar? By which criterion? Find $\angle C,\angle F$.\\[10mm]
-\noindent\pnum{3} $\triangle ABC \sim \triangle DEF$ by SAS: $AB=8$, $DE=12$, $\angle A=\angle D=40°$, $AC=10$. Find $DF$.\\[10mm]
-\noindent\pnum{4} In $\triangle ABC$, $D$ on $AB$, $E$ on $AC$, $DE\parallel BC$. $AD=4$, $DB=6$, $AE=6$. Find $EC$.\\[10mm]
-\noindent\pnum{5} A $1.8$ m person casts a $2.4$ m shadow. A flagpole casts a $9.6$ m shadow. Find the flagpole's height.\\[10mm]
-\noindent\pnum{6} Two triangles both have angles $55°,60°,65°$. First triangle's side opposite $55°$ is $5$; second's is $10$. Are they similar? Find the scale factor.
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 5}{Mixed: angles and similarity.}
+\noindent\pnum{1} In $\triangle ABC$, $\angle A=50°$ and $\angle B=70°$. What is the measure of $\angle C$? Separately, $\triangle ABC \sim \triangle DEF$, and $DE=2\times AB$. If $AB=6$, what is the value of $DE$, and what is the measure of $\angle D$? (No new computation is needed to find $\angle D$ — explain why.)\\[12mm]
+\noindent\pnum{2} Two triangles have $\angle A=\angle D=65°$ and $\angle B=\angle E=80°$. Are the triangles similar? If so, by which similarity criterion? What are the measures of $\angle C$ and $\angle F$?\\[10mm]
+\noindent\pnum{3} In $\triangle ABC \sim \triangle DEF$ by the SAS similarity criterion, $AB=8$, $DE=12$, $\angle A=\angle D=40°$, and $AC=10$. What is the value of $DF$?\\[10mm]
+\noindent\pnum{4} In $\triangle ABC$, point $D$ lies on $AB$ and point $E$ lies on $AC$, with $DE \parallel BC$. If $AD=4$, $DB=6$, and $AE=6$, what is the value of $EC$? (Hint: since $DE\parallel BC$, $\triangle ADE \sim \triangle ABC$.)\\[10mm]
+\noindent\pnum{5} A person who is $1.8$ meters tall casts a shadow that is $2.4$ meters long. At the same moment, a flagpole casts a shadow that is $9.6$ meters long. What is the height, in meters, of the flagpole?\\[10mm]
+\noindent\pnum{6} Two triangles each have angle measures of $55°$, $60°$, and $65°$, though the angles are listed in different orders and no correspondence between vertices is given. In the first triangle, the side opposite the $55°$ angle has length $5$; in the second triangle, the side opposite the $55°$ angle has length $10$. Are the triangles similar? What is the scale factor?\\[10mm]
 }
 \end{textblock*}
-
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{10}{13}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'g'ri javobni bering.}
-
-\noindent\pnum{1} $\ell_1\parallel\ell_2$. $P$'s lower-right angle is $70°$. Find $Q$'s upper-left angle.\\[1mm]
-\hspace*{7mm}\textit{``Bular bir tomonlama ichki burchaklar: $180-70=110°$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{2} Uchburchak burchaklari $2x,3x,4x$. $x$ ni toping.\\[1mm]
-\hspace*{7mm}\textit{``$2x+3x+4x=360$, $9x=360$, $x=40$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{3} $\triangle ABC\sim\triangle DEF$. $AB=6,BC=9,AC=12,DE=8$. $EF$ ni toping.\\[1mm]
-\hspace*{7mm}\textit{``$EF=AC\times\frac{DE}{AB}=12\times\frac86=16$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{4} Ikki burchak komplementar. Biri $65°$. Ikkinchisini toping.\\[1mm]
-\hspace*{7mm}\textit{``Yig'indi $180°$: $180-65=115°$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{5} $\ell_1\parallel\ell_2$. $P$'s upper-right (mos burchak) $112°$. $Q$'s upper-right?\\[1mm]
-\hspace*{7mm}\textit{``Mos burchaklar yig'indisi $180°$: $180-112=68°$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 6}{Spot the error -- name the mistake, give the correct answer.}
+\noindent\pnum{1} $\ell_1\parallel\ell_2$. The measure of $P$'s lower-right angle is $70°$. What is the measure of $Q$'s upper-left angle?\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution:} ``These are co-interior angles, so their measures sum to $180°$: $180-70=110°$.''\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[28mm]{\dotfill}\\[6mm]
+\noindent\pnum{2} A triangle's angles have measures of $2x$, $3x$, and $4x$. What is the value of $x$?\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution:} ``$2x+3x+4x=360$ (because the angle sum is $360°$), $9x=360$, $x=40$.''\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[28mm]{\dotfill}\\[6mm]
+\noindent\pnum{3} $\triangle ABC\sim\triangle DEF$, with $AB=6$, $BC=9$, $AC=12$, and $DE=8$. What is the value of $EF$?\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution:} ``$EF$ corresponds to $AC$, so $EF=AC\times\frac{DE}{AB} =12\times\frac{8}{6}=16$.''\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[28mm]{\dotfill}\\[6mm]
+\noindent\pnum{4} Two angles are complementary, and one of the angles measures $65°$. What is the measure of the other angle?\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution:} ``Complementary angles sum to $180°$, so the other angle is $180-65=115°$.''\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[28mm]{\dotfill}\\[6mm]
+\noindent\pnum{5} $\ell_1\parallel\ell_2$. The measure of $P$'s upper-right angle is $112°$ (corresponding angles). What is the measure of $Q$'s upper-right angle?\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution:} ``Corresponding angles sum to $180°$, so $180-112=68°$.''\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[28mm]{\dotfill}\\[6mm]
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) =================
-\topicheader{19}{Burchaklar va Uchburchaklar}
+\topicheader{19}{Angles \& Triangles}
 \pagefooter{106}
 \colrule{32}{238}
 \mbox{}%
-
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{10.8}{14}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin -- ko'p qadamli masalalar.}
-
-\noindent\pnum{1} In $\triangle ABC$, $\angle A=3x$, $\angle B=2x+10$, $\angle C=x+20$. Find $x$ and all three angles, then classify as acute, right, or obtuse.\\[24mm]
-\noindent\pnum{2} $\ell_1\parallel\ell_2$. $P$'s lower-left angle is $4y+10$. $Q$'s upper-left is $6y-50$ (co-interior pair). Find $y$, then both angles.\\[24mm]
-\noindent\pnum{3} $\triangle ABC \sim \triangle DEF$. Perimeter of $ABC$ is $30$, $AB:BC:AC=2:3:5$. $DE=10$. Find the perimeter of $DEF$ (and $EF$, $DF$).\\[24mm]
-\noindent\pnum{4} An isosceles triangle has vertex angle $3x-10$ and each base angle $x+15$. Find $x$, all three angles, and the exterior angle at a base angle.\\[24mm]
-\noindent\pnum{5} A $3$ m stick casts a $4$ m shadow. A tree casts a $16$ m shadow. (a) Find the tree's height. (b) Find the straight-line distance from the top of the tree to the tip of its shadow.
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 7}{Bonus / challenge -- multi-step problems.}
+\noindent\pnum{1} In $\triangle ABC$, $\angle A=3x$, $\angle B=2x+10$, and $\angle C=x+20$. What is the value of $x$? What are the measures of all three angles? Classify the triangle as acute, right, or obtuse.\\[24mm]
+\noindent\pnum{2} $\ell_1\parallel\ell_2$. The measure of $P$'s lower-left angle is $4y+10$, and the measure of $Q$'s upper-left angle is $6y-50$. These angles form a co-interior (same-side interior) angles pair. What is the value of $y$, and what are the measures of both angles?\\[24mm]
+\noindent\pnum{3} $\triangle ABC \sim \triangle DEF$. The perimeter of $\triangle ABC$ is $30$, with $AB:BC:AC = 2:3:5$, and $DE=10$. What is the perimeter of $\triangle DEF$ (and the values of $EF$ and $DF$)?\\[24mm]
+\noindent\pnum{4} An isosceles triangle has a vertex angle of $3x-10$ and base angles each measuring $x+15$. What is the value of $x$, and what are the measures of all three angles? What is the measure of the exterior angle formed by extending one base side beyond a base angle (the angle supplementary to that base angle)?\\[24mm]
+\noindent\pnum{5} A $3$ m stick casts a $4$ m shadow. At the same time, a tree casts a $16$ m shadow. (a) Using similar triangles, what is the height of the tree? (b) What is the straight-line distance from the top of the tree to the tip of its shadow?\\[24mm]
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+{\sffamily\bfseries\fontsize{9}{11}\selectfont\color{accent} Easy}\par\vspace{1mm}
+\satq{1}{Two complementary angles measure $(4x+6)°$ and $(x+4)°$. What is the measure of the larger angle?}{$70°$}{$20°$}{$54°$}{$110°$}
+\satq{2}{Two supplementary angles are such that one of them is $5$ times the other. What is the measure of the larger angle?}{$30°$}{$36°$}{$75°$}{$150°$}
+\satq{3}{Two vertical angles measure $(2x+14)°$ and $(3x-6)°$. What is the value of $x$?}{$8$}{$20$}{$14$}{$26$}
+\satq{4}{The three angles of a triangle measure $48°$, $(2x+7)°$, and $(x+5)°$. What is the value of $x$?}{$35$}{$52$}{$40$}{$60$}
+\satq{5}{The two acute angles of a right triangle measure $2x°$ and $(x+30)°$. What is the measure of the larger acute angle?}{$50°$}{$40°$}{$60°$}{$90°$}
+\satq{6}{Two parallel lines are cut by a transversal. One angle formed at one intersection measures $68°$. What is the measure of the alternate interior angle at the other intersection?}{$22°$}{$68°$}{$112°$}{$136°$}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar =================
-\topicheader{19}{Burchaklar va Uchburchaklar}
+\topicheader{19}{Angles \& Triangles}
 \pagefooter{107}
+\colrule{32}{238}
 \mbox{}%
-
-\begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{7}{Two parallel lines are cut by a transversal. Two co-interior (same-side interior) angles are formed. One of them measures $64°$. What is the measure of the other co-interior angle?}{$26°$}{$64°$}{$116°$}{$154°$}
+\satq{8}{An isosceles triangle has a vertex angle of $40°$. What is the measure of each base angle?}{$50°$}{$100°$}{$140°$}{$70°$}
+\satq{9}{Two angles of a triangle measure $30°$ and $75°$. What is the measure of the third angle?}{$65°$}{$75°$}{$105°$}{$115°$}
+\satq{10}{Two complementary angles measure $(x+12)°$ and $(2x-3)°$. What is the value of $x$?}{$27$}{$9$}{$31$}{$78$}
+\satq{11}{In $\triangle ABC \sim \triangle DEF$, $AB=4$, $BC=6$, and $DE=10$. What is the length of $EF$?}{$2.4$}{$15$}{$9$}{$24$}
+\satq{12}{In $\triangle PQR \sim \triangle STU$, $PQ=3$, $QR=5$, and $ST=12$. What is the length of $TU$?}{$1.25$}{$8$}{$15$}{$20$}
+}
 \end{textblock*}
-
-\begin{textblock*}{194mm}(16mm,44mm)
-{\fontsize{8.7}{11}\selectfont
-\centering
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{44mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{44mm}|}
-\hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
-\hline
-\multirow{3}{24mm}{\centering 1-to'plam} & 1 & $53°$ & 2 & $68°$\\\cline{2-5}
- & 3 & $74°$ & 4 & $x=18$; $36°,54°$\\\cline{2-5}
- & 5 & $x=25$; $110°,70°$ & 6 & $x=20$; $75°$\\\hline
-\multirow{3}{24mm}{\centering 2-to'plam} & 1 & $65°$ & 2 & $55°$\\\cline{2-5}
- & 3 & $x=60°$ & 4 & $x=20$; $40°,60°,80°$\\\cline{2-5}
- & 5 & $x=40$; $50°,60°,70°$ & 6 & $x=24$; $48°,48°,84°$\\\hline
-\multirow{3}{24mm}{\centering 3-to'plam} & 1 & $72°$ (almashinuvchi) & 2 & $96°$ (almashinuvchi)\\\cline{2-5}
- & 3 & $50°$ (bir tomonlama) & 4 & $108°$ (mos burchak)\\\cline{2-5}
- & 5 & $85°$ (mos burchak) & 6 & Yo'q, $m\not\parallel n$\\\hline
-\multirow{3}{24mm}{\centering 4-to'plam} & 1 & $\frac32$; $EF=9,DF=12$ & 2 & $3$; $MN=36,LN=39$\\\cline{2-5}
- & 3 & $2$; $AB=14,AC=22$ & 4 & $\frac52$; $LM=35,KM=40$\\\cline{2-5}
- & 5 & $UV=12,VW=15,UW=21$ & 6 & $\frac32$; perimetr $36$\\\hline
-\multirow{3}{24mm}{\centering 5-to'plam} & 1 & $60°$; $DE=12,\angle D=50°$ & 2 & Ha, AA; $35°,35°$\\\cline{2-5}
- & 3 & $DF=15$ & 4 & $EC=9$\\\cline{2-5}
- & 5 & $7.2$ m & 6 & Ha, AA; koeffitsiyent $2$\\\hline
-\multirow{5}{24mm}{\centering 6-to'plam} & \multicolumn{4}{p{104mm}|}{1.\ Xato -- bular almashinuvchi ichki (teng), bir tomonlama emas. To'g'ri: $70°$.}\\\cline{2-5}
- & \multicolumn{4}{p{104mm}|}{2.\ Xato -- uchburchak burchaklari yig'indisi $180°$, $360°$ emas. To'g'ri: $x=20$.}\\\cline{2-5}
- & \multicolumn{4}{p{104mm}|}{3.\ Xato -- mos tomon $BC$, $AC$ emas. To'g'ri: $EF=9\times\frac86=12$.}\\\cline{2-5}
- & \multicolumn{4}{p{104mm}|}{4.\ Xato -- komplementar yig'indisi $90°$. To'g'ri: $25°$.}\\\cline{2-5}
- & \multicolumn{4}{p{104mm}|}{5.\ Xato -- mos burchaklar teng, yig'indi emas. To'g'ri: $112°$.}\\\hline
-\multirow{5}{24mm}{\centering 7-to'plam} & \multicolumn{4}{p{104mm}|}{1.\ $x=25$; $75°,60°,45°$ -- o'tkir uchburchak.}\\\cline{2-5}
- & \multicolumn{4}{p{104mm}|}{2.\ $y=22$; $P=98°,Q=82°$.}\\\cline{2-5}
- & \multicolumn{4}{p{104mm}|}{3.\ $AB{=}6,BC{=}9,AC{=}15$; koeff.\ $\frac53$; $EF{=}15,DF{=}25$; perimetr $50$.}\\\cline{2-5}
- & \multicolumn{4}{p{104mm}|}{4.\ $x=32$; uch $86°$, asos $47°,47°$; tashqi burchak $133°$.}\\\cline{2-5}
- & \multicolumn{4}{p{104mm}|}{5.\ (a) balandlik $12$ m (b) masofa $=\sqrt{12^2+16^2}=20$ m.}\\\hline
-\end{tabular}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{13}{The three angles of a triangle measure $x°$, $2x°$, and $3x°$. What is the measure of the largest angle?}{$30°$}{$60°$}{$90°$}{$120°$}
+\satq{14}{Two lines intersect, forming four angles. One of the four angles measures $130°$. What is the measure of the angle vertical to it?}{$130°$}{$50°$}{$65°$}{$230°$}
+\satq{15}{The two acute angles of a right triangle are in the ratio $2:3$. What is the measure of the smaller acute angle?}{$18°$}{$36°$}{$54°$}{$60°$}
+{\sffamily\bfseries\fontsize{9}{11}\selectfont\color{accent} Medium}\par\vspace{1mm}
+\satq{1}{Two complementary angles measure $(2x+3)°$ and $(4x-9)°$. What is the measure of the smaller angle?}{$19°$}{$55°$}{$35°$}{$145°$}
+\satq{2}{Two supplementary angles measure $(5x-18)°$ and $(x+42)°$. What is the measure of the larger angle?}{$112°$}{$68°$}{$96°$}{$128°$}
+\satq{3}{Two parallel lines are cut by a transversal. Two corresponding angles measure $(4x+10)°$ and $(6x-30)°$. What is the value of $x$?}{$2$}{$25$}{$40$}{$20$}
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,252mm)
+\clearpage
+
+\topicheader{19}{Angles \& Triangles}
+\pagefooter{108}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{4}{Two parallel lines are cut by a transversal. Two co-interior (same-side interior) angles measure $(3x+12)°$ and $(x+8)°$. What is the measure of the larger of these two angles?}{$48°$}{$132°$}{$96°$}{$228°$}
+\satqw{5}{Lines $r$ and $s$ are cut by a transversal. One angle measures $58°$, and its alternate interior angle measures $122°$. Which statement is correct?}{Line $r$ is parallel to line $s$, because $58°+122°=180°$.}{Line $r$ is parallel to line $s$, because the two angles are supplementary.}{Line $r$ is not parallel to line $s$, because alternate interior angles are equal when the lines are parallel, and here they are not equal.}{Line $r$ is parallel to line $s$, because the transversal must be perpendicular to both lines.}
+\satq{6}{In triangle $XYZ$, $\angle X=40°$. If triangle $XYZ$ is isosceles, which of the following CANNOT be the measure of $\angle Y$?}{$110°$}{$40°$}{$70°$}{$100°$}
+\satq{7}{$\triangle ABC \sim \triangle DEF$. The perimeter of $\triangle ABC$ is $36$, the perimeter of $\triangle DEF$ is $54$, and $BC=8$. What is the length of $EF$?}{$\frac{16}{3}$}{$16$}{$27$}{$12$}
+\satq{8}{$\triangle ABC \sim \triangle DEF$, with $AB=6$, $AC=9$, and $DE=10$. What is the length of $DF$?}{$5.4$}{$19$}{$15$}{$60$}
+\satq{9}{$\triangle KLM \sim \triangle NOP$, with $KL=5$, $LM=7$, $KM=9$, and $NP=18$. What is the length of $OP$?}{$14$}{$3.5$}{$7$}{$16$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{10}{$\triangle ABC \sim \triangle EDF$, with $AB=6$, $BC=8$, $AC=10$, and $ED=12$. What is the length of $DF$?}{$4$}{$16$}{$8$}{$20$}
+\satq{11}{In triangle $ABC$, $\angle A=2x°$, $\angle B=(x+10)°$, and $\angle C=(3x-10)°$. What is the measure of the largest angle?}{$40°$}{$60°$}{$80°$}{$100°$}
+\satq{12}{Two parallel lines are cut by a transversal. Two alternate interior angles measure $(2x+15)°$ and $(3x-5)°$. What is the measure of one of these angles?}{$10°$}{$55°$}{$35°$}{$65°$}
+\satq{13}{Two similar triangles have corresponding sides in the ratio $4:7$. The perimeter of the smaller triangle is $28$. What is the perimeter of the larger triangle?}{$16$}{$32$}{$49$}{$196$}
+\satq{14}{Two lines intersect. Two angles that form a straight line measure $(5x-10)°$ and $(x+40)°$. What is the measure of the angle vertical to the angle measuring $(5x-10)°$?}{$115°$}{$65°$}{$90°$}{$125°$}
+\satq{15}{The three angles of a triangle are in the ratio $3:4:5$. What is the measure of the largest angle?}{$45°$}{$60°$}{$90°$}{$75°$}
+}
+\end{textblock*}
+
+\clearpage
+
+\topicheader{19}{Angles \& Triangles}
+\pagefooter{109}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\fontsize{9}{11}\selectfont\color{accent} Hard}\par\vspace{1mm}
+\satq{1}{Two parallel lines are cut by a transversal. Two co-interior (same-side interior) angles measure $2x°$ and $(x+30)°$. What is the measure of the smaller of the two angles?}{$50°$}{$80°$}{$100°$}{$130°$}
+\satq{2}{In triangle $ABC$, $\angle A=52°$ and $\angle C=68°$. A line $\ell$ passes through vertex $B$ and is parallel to side $\overline{AC}$. What is the sum of the two angles formed between line $\ell$ and segments $\overline{BA}$ and $\overline{BC}$, measured on the same side of $\ell$ as segment $\overline{AC}$?}{$60°$}{$112°$}{$120°$}{$128°$}
+\satq{3}{Triangles $PQR$ and $XYZ$ are similar, with $P\leftrightarrow X$, $Q\leftrightarrow Y$, and $R\leftrightarrow Z$. If $PQ=3x-1$, $QR=2x+6$, $XY=20$, and $YZ=30$, what is the length of $QR$?}{$12$}{$8$}{$10$}{$18$}
+\satq{4}{Triangle $A$ has side lengths $9$, $12$, and $15$. Triangle $B$ is similar to triangle $A$, and the shortest side of triangle $B$ is $6$. What is the perimeter of triangle $B$?}{$18$}{$27$}{$54$}{$24$}
+\satq{5}{Two parallel lines are cut by a transversal. Two co-interior (same-side interior) angles measure $\left(\frac{x}{2}+30\right)°$ and $(x-6)°$. What is the measure of the smaller of the two angles?}{$52°$}{$98°$}{$82°$}{$104°$}
+\satq{6}{In triangle $PQR$, two of the angles measure $(x+20)°$ and $(2x+10)°$. If the third angle is obtuse, which of the following could be the value of $x$?}{$25$}{$35$}{$40$}{$10$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{7}{$\triangle ABC$ has $D$ on $\overline{AB}$ and $E$ on $\overline{AC}$, with $\overline{DE}\parallel\overline{BC}$. If $AD=5$, $DB=10$, and $DE=7$, what is the length of $BC$?}{$21$}{$14$}{$17.5$}{$35$}
+\satq{8}{In triangle $PQR$, $\angle P=(3x+5)°$, $\angle Q=(5x-15)°$, and $\angle R=(2x+10)°$. The exterior angle at $R$ is formed by extending side $\overline{PR}$ beyond $R$, and it is supplementary to $\angle R$. What is the measure of this exterior angle?}{$46°$}{$134°$}{$74°$}{$106°$}
+\satqw{9}{Triangle $ABC$ has $\angle A=47°$ and $\angle B=66°$. Triangle $DEF$ has $\angle D=66°$ and $\angle E=67°$. Which statement is true?}{The triangles are similar by AA: $\angle A=\angle F=47°$, $\angle B=\angle D=66°$, and $\angle C=\angle E=67°$.}{The triangles are not similar, because no side lengths are given.}{The triangles are similar, because the angles of each triangle sum to $180°$.}{The triangles are not similar, because $\angle A\neq\angle D$.}
+\satq{10}{In triangle $ABC$, point $D$ is on $\overline{AB}$ and point $E$ is on $\overline{AC}$, with $\overline{DE}\parallel\overline{BC}$. The angle $\angle ADE$ measures $(2x+10)°$, and $\angle ABC$ measures $(3x-5)°$. What is the measure of $\angle ADE$?}{$15°$}{$35°$}{$40°$}{$50°$}
+\satq{11}{A tree casts a shadow that is $4$ meters longer than its height. At the same time, a $1.5$-meter post casts a shadow that is $2$ meters long. What is the height of the tree, in meters?}{$6$}{$12$}{$8$}{$16$}
+}
+\end{textblock*}
+
+\clearpage
+
+\topicheader{19}{Angles \& Triangles}
+\pagefooter{110}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.8}{13.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{12}{Two lines intersect. Adjacent angles $\angle 1$ and $\angle 2$ are supplementary, with $\angle 1=(4x-20)°$ and $\angle 2=(2x+20)°$. Angle $\angle 3$ is vertical to $\angle 1$, and angle $\angle 4$ is vertical to $\angle 2$. What is the value of $\angle 3+\angle 4$, in degrees?}{$80°$}{$100°$}{$200°$}{$180°$}
+\satq{13}{In right triangle $ABC$, $\angle C=90°$, $\angle A=(2x+5)°$, and $\angle B=(3x-10)°$. What is the measure of the larger acute angle?}{$47°$}{$43°$}{$45°$}{$90°$}
+\satq{14}{$\triangle ABC \sim \triangle DEF$, with $A\leftrightarrow D$, $B\leftrightarrow E$, and $C\leftrightarrow F$. $AB=4$, $AC=6$, $DE=2x+1$, and $DF=x+6$. What is the value of $x$?}{$2$}{$\frac{9}{4}$}{$3$}{$\frac{9}{2}$}
+\satq{15}{The three angles of a triangle are such that the middle angle is $20°$ more than the smallest angle, and the largest angle is $40°$ more than the smallest angle. What is the measure of the largest angle?}{$80°$}{$60°$}{$100°$}{$120°$}
+}
+\end{textblock*}
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original. It was written after studying the method, traps, and distractor style of real, officially released SAT Suite Question Bank items in this lesson's skill category, then building a new problem (new numbers, names, and context) that needs the same solving steps. No real College Board question text is reproduced anywhere in this book. Each answer was checked: numeric answers by recomputing the equations, and the non-numeric items by direct reasoning.\par}
+\end{textblock*}
+
+\clearpage
+\topicheader{19}{Angles \& Triangles}
+\pagefooter{111}
+\mbox{}%
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,44mm)
+{\fontsize{9}{11.5}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{60mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{60mm}|}
+\hline
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
+\hline
+\multirow{3}{24mm}{\centering Set 1} & 1 & $53°$ & 2 & $68°$\\\cline{2-5}
+ & 3 & $74°$ & 4 & $x=18$; $36°,54°$\\\cline{2-5}
+ & 5 & $x=25$; $110°,70°$ & 6 & $x=20$; $75°$\\\hline
+\multirow{3}{24mm}{\centering Set 2} & 1 & $65°$ & 2 & $55°$\\\cline{2-5}
+ & 3 & $x=60°$ & 4 & $x=20$; $40°,60°,80°$\\\cline{2-5}
+ & 5 & $x=40$; $50°,60°,70°$ & 6 & $x=24$; $48°,48°,84°$\\\hline
+\multirow{3}{24mm}{\centering Set 3} & 1 & $72°$ (alt. int.) & 2 & $96°$ (alt. int.)\\\cline{2-5}
+ & 3 & $50°$ (co-int.) & 4 & $108°$ (corr.)\\\cline{2-5}
+ & 5 & $85°$ (corr.) & 6 & No: $85°\ne95°$, so $m\not\parallel n$\\\hline
+\multirow{3}{24mm}{\centering Set 4} & 1 & $\tfrac32$; $EF=9$, $DF=12$ & 2 & $3$; $MN=36$, $LN=39$\\\cline{2-5}
+ & 3 & $2$; $AB=14$, $AC=22$ & 4 & $\tfrac52$; $LM=35$, $KM=40$\\\cline{2-5}
+ & 5 & $UV=12$, $VW=15$, $UW=21$ & 6 & $\tfrac32$; perimeter $=36$\\\hline
+\multirow{6}{24mm}{\centering Set 5} & \multicolumn{4}{p{130mm}|}{1.\ $\angle C=60°$; $DE=12$; $\angle D=50°$ (same angles)}\\\cline{2-5}
+ & \multicolumn{4}{p{130mm}|}{2.\ Yes, AA; $\angle C=\angle F=35°$}\\\cline{2-5}
+ & \multicolumn{4}{p{130mm}|}{3.\ $DF=15$ (SAS)}\\\cline{2-5}
+ & \multicolumn{4}{p{130mm}|}{4.\ $EC=9$}\\\cline{2-5}
+ & \multicolumn{4}{p{130mm}|}{5.\ $7.2$ m}\\\cline{2-5}
+ & \multicolumn{4}{p{130mm}|}{6.\ Yes (AA); scale factor $2$}\\\hline
+\multirow{5}{24mm}{\centering Set 6} & \multicolumn{4}{p{130mm}|}{1.\ Error: alternate interior angles are equal, not co-interior. Correct: $70°$.}\\\cline{2-5}
+ & \multicolumn{4}{p{130mm}|}{2.\ Error: triangle angles sum to $180°$, not $360°$. Correct: $x=20$.}\\\cline{2-5}
+ & \multicolumn{4}{p{130mm}|}{3.\ Error: $EF$ corresponds to $BC$, not $AC$. Correct: $EF=9\times\frac{8}{6}=12$.}\\\cline{2-5}
+ & \multicolumn{4}{p{130mm}|}{4.\ Error: complementary angles sum to $90°$, not $180°$. Correct: $25°$.}\\\cline{2-5}
+ & \multicolumn{4}{p{130mm}|}{5.\ Error: corresponding angles are equal, not supplementary. Correct: $112°$.}\\\hline
+\multirow{5}{24mm}{\centering Set 7} & \multicolumn{4}{p{130mm}|}{1.\ $x=25$; $75°,60°,45°$ -- acute}\\\cline{2-5}
+ & \multicolumn{4}{p{130mm}|}{2.\ $y=22$; $P=98°$, $Q=82°$}\\\cline{2-5}
+ & \multicolumn{4}{p{130mm}|}{3.\ $AB=6$, $BC=9$, $AC=15$; scale $\frac53$; $EF=15$, $DF=25$; perimeter $=50$}\\\cline{2-5}
+ & \multicolumn{4}{p{130mm}|}{4.\ $x=32$; vertex $86°$, base $47°,47°$; exterior angle $133°$}\\\cline{2-5}
+ & \multicolumn{4}{p{130mm}|}{5.\ (a) $12$ m  (b) $20$ m}\\\hline
+\end{tabular}
+}
+\end{textblock*}
+\clearpage
+\topicheader{19}{Angles \& Triangles}
+\pagefooter{112}
+\mbox{}%
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+A&D&B&C&A&B&C&D&B&A\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&D&C&A&B\\\hline
+\end{tabular}\\[1mm]
+}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&A&D&B&C&A&D&C&A&B\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+C&B&C&A&D\\\hline
+\end{tabular}\\[1mm]
+}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&C&A&D&C&D&A&B&A&C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&D&A&B&A\\\hline
+\end{tabular}\\[1mm]
+}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}
