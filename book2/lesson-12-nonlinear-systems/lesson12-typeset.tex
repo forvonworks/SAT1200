@@ -23,10 +23,14 @@
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
 
+% ---- Safe print margins: 16mm outer on both sides so bound/trimmed copies never
+% clip problem text. Columns are 83mm wide with a 6mm gap on each side of the
+% center rule (at x=105mm). ----
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
 \newcommand{\COLW}{83mm}
 
+% ---- Plain topic header: number chip + title, thin rule underneath. No band, no watermark. ----
 \newcommand{\topicheader}[2]{%
 \begin{textblock*}{194mm}(16mm,10mm)
 \begin{tikzpicture}
@@ -56,6 +60,7 @@
 \end{textblock*}
 }
 
+% ---- Fixed-length vertical column rule: #1 = top y (mm), #2 = length (mm) ----
 \newcommand{\colrule}[2]{%
 \begin{textblock*}{1mm}(105mm,#1mm)
 \begin{tikzpicture}
@@ -68,35 +73,55 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
+% ---- Small boxed problem number, reference-style. Plain \fbox -- stays flush with
+% the text baseline instead of centering on it. ----
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
+% ---- QR placeholder square + caption below ----
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
+}
+
+% ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.35}
 \newcommand{\anstitle}[1]{{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont #1}\\[1.3mm]}
 
 \begin{document}
 
 % ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{12}{Nochiziqli sistemalar}
+\topicheader{12}{Nonlinear Systems}
 \pagefooter{64}
 \colrule{32}{238}
 \mbox{}%
-
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{11.5}{14}\selectfont
-\setkicker{1-to'plam}{Har bir sistemani yeching -- har biri ikkita $(x,y)$ juftlik beradi.}
-
+{\fontsize{11.5}{14.4}\selectfont\raggedright
+\setkicker{Set 1}{Linear-quadratic drill -- find every solution $(x,y)$.}
 \noindent\pnum{1} $y=x+1,\ \ y=x^2-1$\\[28mm]
 \noindent\pnum{2} $y=2x,\ \ y=x^2-3$\\[28mm]
 \noindent\pnum{3} $y=x-2,\ \ y=x^2-4$\\[28mm]
@@ -107,9 +132,8 @@
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{11.5}{14}\selectfont
-\setkicker{2-to'plam}{Chiziqli-kvadratik, qiyinroq koeffitsiyentlar bilan.}
-
+{\fontsize{11.5}{14.4}\selectfont\raggedright
+\setkicker{Set 2}{Harder coefficients -- find every solution $(x,y)$.}
 \noindent\pnum{1} $y=2x-5,\ \ y=x^2-3x+1$\\[28mm]
 \noindent\pnum{2} $y=2x+4,\ \ y=x^2+x-2$\\[28mm]
 \noindent\pnum{3} $y=-3x+11,\ \ y=x^2-x+3$\\[28mm]
@@ -121,15 +145,13 @@
 \clearpage
 
 % ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{12}{Nochiziqli sistemalar}
+\topicheader{12}{Nonlinear Systems}
 \pagefooter{65}
 \colrule{32}{238}
 \mbox{}%
-
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{11.5}{14}\selectfont
-\setkicker{3-to'plam}{Natijaviy tenglamaning diskriminantini toping va nechta haqiqiy yechim borligini ayting.}
-
+{\fontsize{11.5}{14.4}\selectfont\raggedright
+\setkicker{Set 3}{No real solution -- how many real solutions does each system have? Use the discriminant.}
 \noindent\pnum{1} $y=x,\ \ y=x^2+5$\\[24mm]
 \noindent\pnum{2} $y=2x-1,\ \ y=x^2+4$\\[24mm]
 \noindent\pnum{3} $y=-x,\ \ y=x^2+3$\\[24mm]
@@ -138,9 +160,8 @@
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{11.5}{14}\selectfont
-\setkicker{4-to'plam}{Har ikkala tenglamaning bosh koeffitsiyenti bir xil -- $x^2$ ni yo'qotish uchun ayiring.}
-
+{\fontsize{11.5}{14.4}\selectfont\raggedright
+\setkicker{Set 4}{Quadratic-quadratic -- same leading coefficient, so subtract to cancel $x^2$. Find $(x,y)$.}
 \noindent\pnum{1} $y=x^2+3x+2,\ \ y=x^2-x+10$\\[24mm]
 \noindent\pnum{2} $y=x^2+5x-1,\ \ y=x^2+x+7$\\[24mm]
 \noindent\pnum{3} $y=x^2-2x+4,\ \ y=x^2+4x-8$\\[24mm]
@@ -151,121 +172,318 @@
 
 \clearpage
 
-% ================= PAGE 3: Set 5 | Set 6 (spot the error) =================
-\topicheader{12}{Nochiziqli sistemalar}
+% ================= PAGE 3: Set 5 | Set 6 =================
+\topicheader{12}{Nonlinear Systems}
 \pagefooter{66}
 \colrule{32}{238}
 \mbox{}%
-
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{10.5}{13}\selectfont
-\setkicker{5-to'plam}{Sistemani yeching, lekin faqat so'ralgan miqdorni bering -- xom juftliklarni emas.}
-
-\noindent\pnum{1} $y=x+1,\ y=x^2-1$ -- barcha yechimlarning \textbf{$y$-koordinatalari yig'indisini} toping.\\[14mm]
-\noindent\pnum{2} $y=2x,\ y=x^2-3$ -- barcha yechimlarning \textbf{$x$-koordinatalari ko'paytmasini} toping.\\[14mm]
-\noindent\pnum{3} $y=2x-5,\ y=x^2-3x+1$ -- ikkala yechim bo'yicha $x_1+x_2+y_1+y_2$ ni toping.\\[14mm]
-\noindent\pnum{4} $y=4x-3,\ y=x^2$ -- ikkita $y$-qiymat orasidagi \textbf{musbat farqni} toping.\\[14mm]
-\noindent\pnum{5} $y=x+2,\ y=x^2$ -- \textbf{kattaroq} $x$-qiymatli yechim uchun $x+y$ ni toping.
+{\fontsize{10.5}{13.1}\selectfont\raggedright
+\setkicker{Set 5}{What is actually being asked? Give only the value requested.}
+\noindent\pnum{1} $y=x+1,\ y=x^2-1$ -- what is the \textbf{sum of the $y$-coordinates} of all solutions?\\[14mm]
+\noindent\pnum{2} $y=2x,\ y=x^2-3$ -- what is the \textbf{product of the $x$-coordinates} of all solutions?\\[14mm]
+\noindent\pnum{3} $y=2x-5,\ y=x^2-3x+1$ -- what is $x_1+x_2+y_1+y_2$ across both solutions?\\[14mm]
+\noindent\pnum{4} $y=4x-3,\ y=x^2$ -- what is the \textbf{positive difference} between the two $y$-values of the solutions?\\[14mm]
+\noindent\pnum{5} $y=x+2,\ y=x^2$ -- what is $x+y$ for the solution with the \textbf{larger} $x$-value?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{10.5}{13}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'g'ri javobni bering.}
+{\fontsize{10.5}{13.1}\selectfont\raggedright
+\setkicker{Set 6}{Spot the error -- name the mistake, give the correct answer.}
+\noindent\pnum{1} $y=x+1,\ y=x^2-1$:\\[1mm]
+\hspace*{7mm}\textit{``$x^2-x-2=0 \Rightarrow (x-2)(x+1)=0 \Rightarrow x=2 \Rightarrow y=3$. The solution is $(2,3)$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{1} $y=x+1,\ y=x^2-1$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$x^2-x-2=0 \Rightarrow (x-2)(x+1)=0 \Rightarrow x=2 \Rightarrow y=3$. Javob: $(2,3)$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{2} $y=2x,\ y=x^2-3$:\\[1mm]
+\hspace*{7mm}\textit{``$x^2-2x-3=0 \Rightarrow x=3$ or $x=-1$. The solutions are $x=3$ and $x=-1$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{2} $y=2x,\ y=x^2-3$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$x^2-2x-3=0 \Rightarrow x=3$ yoki $x=-1$. Javob: $x=3$, $x=-1$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{3} $y=x^2+3x+2,\ y=x^2-x+10$:\\[1mm]
+\hspace*{7mm}\textit{``Removing the $x^2$ terms: $(3x+2)+(-x+10)=0 \Rightarrow 2x+12=0 \Rightarrow x=-6$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{3} $y=x^2+3x+2,\ y=x^2-x+10$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$x^2$ hadlarini olib tashlab: $(3x+2)+(-x+10)=0 \Rightarrow 2x+12=0 \Rightarrow x=-6$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[8mm]
-
-\noindent\pnum{4} $y=x,\ y=x^2+5$ ifodasida ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$x^2-x+5=0$: $D=1-20=-19$. $D$ manfiy bo'lsa ham, $x=\frac{1\pm\sqrt{19}}{2}$ -- ikkita yechim topamiz.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}
+\noindent\pnum{4} $y=x,\ y=x^2+5$:\\[1mm]
+\hspace*{7mm}\textit{``Solving $x^2-x+5=0$: $D=1-20=-19$. Even though $D$ is negative, we still find two solutions, $x=\frac{1\pm\sqrt{19}}{2}$.''}\\[2mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) =================
-\topicheader{12}{Nochiziqli sistemalar}
+% ================= PAGE 4: Set 7 | Set 8 starts =================
+\topicheader{12}{Nonlinear Systems}
 \pagefooter{67}
 \colrule{32}{238}
 \mbox{}%
-
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{11}{14}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin -- har biriga taxminan 90 soniya.}
-
-\noindent\pnum{1} $y=x^2-4x+1,\ \ y=x^2+2x-11$\\[28mm]
-\noindent\pnum{2} $y=\dfrac{1}{2}x+1,\ \ y=x^2-x$\\[28mm]
-\noindent\pnum{3} $y=2x+7,\ y=x^2+4x+10$ -- chiziq parabola bilan nechta kesishish nuqtasiga ega?\\[22mm]
-\noindent\pnum{4} $y=4x-4,\ y=x^2$ -- urinish nuqtasini toping.
+{\fontsize{11}{13.8}\selectfont\raggedright
+\setkicker{Set 7}{Bonus / challenge -- the hardest items in this set.}
+\noindent\pnum{1} Find the solution $(x,y)$ of $y=x^2-4x+1$ and $y=x^2+2x-11$.\\[27mm]
+\noindent\pnum{2} Find all solutions $(x,y)$ of $y=\dfrac{1}{2}x+1$ and $y=x^2-x$.\\[27mm]
+\noindent\pnum{3} How many points of intersection does the line $y=2x+7$ have with the parabola $y=x^2+4x+10$?\\[27mm]
+\noindent\pnum{4} The line $y=4x-4$ is tangent to the parabola $y=x^2$. What is the point of tangency?\\[27mm]
+\noindent\pnum{5} For the system $y=-2x+5$ and $y=x^2-3x-1$, what is the \textbf{positive difference} between the two $y$-values of the solutions?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{11}{14}\selectfont
-
-\noindent\pnum{5} $y=-2x+5,\ y=x^2-3x-1$ -- ikkita $y$-qiymat orasidagi \textbf{musbat farqni} toping.
+{\fontsize{10}{12.5}\selectfont\raggedright
+\setkicker{Set 8}{Real SAT-style problems.}
+\par\vspace{1mm}{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Easy}\par\vspace{2mm}
+\satq{1}{Which ordered pair $(x,y)$ is a solution to the system $y=x+3$ and $y=x^2-3$?}{$(-3,0)$}{$(3,6)$}{$(0,3)$}{$(6,3)$}\par\vspace{1.5mm}
+\satq{2}{The system $y=x+4$ and $y=x^2+2$ has two solutions. What is the sum of their $y$-coordinates?}{$9$}{$1$}{$6$}{$18$}\par\vspace{1.5mm}
+\satq{3}{The system $y=5x-6$ and $y=x^2$ has two solutions. One of them has $x=3$. What is the $y$-coordinate of that solution?}{$3$}{$4$}{$15$}{$9$}\par\vspace{1.5mm}
+\satq{4}{How many real solutions does the system $y=x-1$ and $y=x^2+3$ have?}{None}{Exactly one}{Exactly two}{Infinitely many}\par\vspace{1.5mm}
+\satq{5}{How many real solutions does the system $y=6x-9$ and $y=x^2$ have?}{None}{Exactly one}{Exactly two}{Infinitely many}\par\vspace{1.5mm}
+\satq{6}{The line $y=2x+1$ meets the parabola $y=x^2+2$ at exactly one point. What is the $y$-coordinate of that point?}{$1$}{$2$}{$5$}{$3$}\par\vspace{1.5mm}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar =================
-\topicheader{12}{Nochiziqli sistemalar}
+% ================= PAGE 5: Set 8 (cont.) =================
+\topicheader{12}{Nonlinear Systems}
 \pagefooter{68}
+\colrule{32}{238}
 \mbox{}%
-
-\begin{textblock*}{194mm}(16mm,28mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\raggedright
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{7}{The line $y=2x+1$ and the parabola $y=x^2-2$ intersect at two points. What is the positive difference between the two $y$-coordinates?}{$4$}{$6$}{$8$}{$10$}\par\vspace{1.5mm}
+\satq{8}{Which ordered pair $(x,y)$ satisfies both $y=-x+2$ and $y=x^2$?}{$(1,1)$}{$(-1,3)$}{$(2,0)$}{$(-2,-4)$}\par\vspace{1.5mm}
+\satq{9}{The graphs of $y=x+2$ and $y=x^2$ intersect at two points. For the point with a positive $x$-coordinate, what is the product $xy$?}{$2$}{$6$}{$12$}{$8$}\par\vspace{1.5mm}
+\satq{10}{How many points of intersection do the line $y=2x+3$ and the parabola $y=x^2$ have?}{Exactly one}{Exactly two}{None}{Infinitely many}\par\vspace{1.5mm}
+\satq{11}{The line $y=x+1$ is tangent to the parabola $y=x^2-3x+5$. What is the $x$-coordinate of the point of tangency?}{$1$}{$3$}{$2$}{$4$}\par\vspace{1.5mm}
+\satq{12}{The line $y=3x+4$ and the parabola $y=x^2$ intersect at two points. What is the sum of their $x$-coordinates?}{$3$}{$-4$}{$16$}{$17$}\par\vspace{1.5mm}
+}
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,40mm)
-{\fontsize{9}{11}\selectfont
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\raggedright
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{13}{The line $y=x$ and the parabola $y=x^2-6$ intersect at two points. What is the product of the $y$-coordinates of these two points?}{$1$}{$-6$}{$5$}{$6$}\par\vspace{1.5mm}
+\satq{14}{How many points of intersection do the horizontal line $y=3$ and the parabola $y=x^2-6$ have?}{Exactly one}{None}{Exactly four}{Exactly two}\par\vspace{1.5mm}
+\satq{15}{The line $y=2x+8$ and the parabola $y=x^2$ intersect at two points. What is the $y$-coordinate of the point whose $x$-coordinate is negative?}{$4$}{$-2$}{$8$}{$16$}\par\vspace{1.5mm}
+\par\vspace{1mm}{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Medium}\par\vspace{2mm}
+\satq{1}{The line $y=3x+1$ is tangent to the parabola $y=2x^2-x+3$. What is the $y$-coordinate of the point of tangency?}{$1$}{$3$}{$7$}{$4$}\par\vspace{1.5mm}
+\satq{2}{The line $y=2x+1$ and the parabola $y=2x^2+3x-5$ intersect at two points. What is the sum of the $y$-coordinates of these points?}{$1$}{$7$}{$4$}{$-1$}\par\vspace{1.5mm}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6: Set 8 (cont.) =================
+\topicheader{12}{Nonlinear Systems}
+\pagefooter{69}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\raggedright
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{3}{For what value of $k$ does the line $y=x+k$ touch the parabola $y=x^2$ at exactly one point?}{$-\dfrac{1}{4}$}{$\dfrac{1}{4}$}{$-4$}{$1$}\par\vspace{1.5mm}
+\satq{4}{The line $y=4x-1$ is tangent to the parabola $y=x^2+bx+3$. If $b$ is positive, what is $b$?}{$-8$}{$0$}{$4$}{$8$}\par\vspace{1.5mm}
+\satq{5}{The graphs of $y=2x^2+3x-1$ and $y=2x^2-x+7$ intersect at exactly one point. What is the $y$-coordinate of that point?}{$7$}{$9$}{$13$}{$17$}\par\vspace{1.5mm}
+\satq{6}{The parabolas $y=x^2-2x+5$ and $y=x^2+4x-7$ intersect at exactly one point. What is the sum of the $x$-coordinate and the $y$-coordinate of that point?}{$2$}{$7$}{$5$}{$10$}\par\vspace{1.5mm}
+\satq{7}{The line $y=\dfrac{1}{2}x+3$ and the parabola $y=x^2$ intersect at two points. What is the sum of their $x$-coordinates?}{$-\dfrac{1}{2}$}{$2$}{$\dfrac{1}{2}$}{$3$}\par\vspace{1.5mm}
+\satq{8}{The line $y=-x+4$ and the parabola $y=x^2-2$ intersect at two points. For the point with the larger $x$-coordinate, what is the product $xy$?}{$-21$}{$4$}{$9$}{$14$}\par\vspace{1.5mm}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\raggedright
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satqw{9}{For which values of $k$ does the line $y=kx$ intersect the parabola $y=x^2-4$ at exactly two points?}{$k=0$ only}{$k>0$}{$k<-4$}{All real values of $k$}\par\vspace{1.5mm}
+\satq{10}{A company's revenue is $R=6x$ and its cost is $C=x^2-2x+12$, where $x$ is the number of units produced and both are in dollars. Break-even occurs where $R=C$. What is the sum of the break-even values of $x$?}{$6$}{$12$}{$8$}{$18$}\par\vspace{1.5mm}
+\satq{11}{The line $y=x+2$ and the parabola $y=x^2-4x+6$ intersect at two points. What is the $y$-coordinate of the point with the smaller $x$-coordinate?}{$1$}{$3$}{$4$}{$6$}\par\vspace{1.5mm}
+\satq{12}{The line $y=2x+3$ and the parabola $y=x^2$ intersect at two points. What is the sum of the $y$-coordinates of these points?}{$10$}{$2$}{$5$}{$12$}\par\vspace{1.5mm}
+\satq{13}{The line $y=2x+k$ touches the parabola $y=x^2+4x+7$ at exactly one point. What is $k$?}{$3$}{$5$}{$6$}{$8$}\par\vspace{1.5mm}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 7: Set 8 (cont.) =================
+\topicheader{12}{Nonlinear Systems}
+\pagefooter{70}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\raggedright
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{14}{The graphs of $y=2x^2-5x+1$ and $y=2x^2+x-11$ intersect at exactly one point. What is the $y$-coordinate of that point?}{$1$}{$-1$}{$-3$}{$5$}\par\vspace{1.5mm}
+\satqw{15}{Consider the system $y=x-4$ and $y=x^2-3x+3$. Which statement is correct about the quadratic equation obtained by setting the two expressions for $y$ equal?}{$D=-12$, no real solutions}{$D=-12$, two real solutions}{$D=12$, two real solutions}{$D=4$, one real solution}\par\vspace{1.5mm}
+\par\vspace{1mm}{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Hard}\par\vspace{2mm}
+\satq{1}{The line $y=mx+1$ is tangent to the parabola $y=x^2+3x+5$. If $m<0$, what is $m$?}{$-7$}{$-1$}{$1$}{$7$}\par\vspace{1.5mm}
+\satq{2}{The graphs of $y=2x^2-x-1$ and $y=\dfrac{1}{2}x-\dfrac{1}{2}$ intersect at two points. What is the product of their $x$-coordinates?}{$-\dfrac{1}{4}$}{$\dfrac{1}{4}$}{$-\dfrac{3}{4}$}{$1$}\par\vspace{1.5mm}
+\satq{3}{The parabolas $y=2x^2+5x-3$ and $y=2x^2-x+k$ intersect at a point whose $x$-coordinate is $2$. What is $k$?}{$9$}{$3$}{$7$}{$15$}\par\vspace{1.5mm}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\raggedright
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{4}{The line $y=2x+3$ and the parabola $y=x^2-4x+k$ intersect at two points. For any value of $k$ for which this happens, what is the sum of the $x$-coordinates of the two intersection points?}{$-6$}{$6$}{$2$}{$4$}\par\vspace{1.5mm}
+\satq{5}{The line $y=x-1$ and the parabola $y=x^2-4x+5$ intersect at two points. What is the product of their $y$-coordinates?}{$3$}{$5$}{$2$}{$6$}\par\vspace{1.5mm}
+\satq{6}{The line $y=3x+4$ and the parabola $y=x^2$ intersect at two points. For the point with a positive $x$-coordinate, what is the sum $x+y$?}{$5$}{$16$}{$24$}{$20$}\par\vspace{1.5mm}
+\satq{7}{For how many values of $k$ does the line $y=kx-1$ touch the parabola $y=x^2+3$ at exactly one point?}{$0$}{$1$}{$4$}{$2$}\par\vspace{1.5mm}
+\satq{8}{The graphs of $y=-x^2+4x+1$ and $y=x+1$ intersect at two points. What is the sum of their $y$-coordinates?}{$5$}{$1$}{$4$}{$7$}\par\vspace{1.5mm}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 8: Set 8 (cont.) =================
+\topicheader{12}{Nonlinear Systems}
+\pagefooter{71}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\raggedright
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{9}{A curved path is modeled by $y=x^2-6x+10$, and a straight road by $y=2x-2$. The path crosses the road at two points. What is the horizontal distance between these two points?}{$2$}{$4$}{$8$}{$12$}\par\vspace{1.5mm}
+\satq{10}{The graphs of $y=3x^2+2x-4$ and $y=3x^2-5x+8$ intersect at exactly one point. What is the $x$-coordinate of that point?}{$\dfrac{7}{12}$}{$-\dfrac{12}{7}$}{$\dfrac{12}{7}$}{$12$}\par\vspace{1.5mm}
+\satq{11}{The line $y=6x$ touches the curve $y=ax^2+1$ at exactly one point. What is $a$?}{$3$}{$6$}{$36$}{$9$}\par\vspace{1.5mm}
+\satq{12}{The line $y=x$ and the parabola $y=x^2-3x+2$ intersect at two points $(x_1,y_1)$ and $(x_2,y_2)$. What is $\dfrac{1}{x_1}+\dfrac{1}{x_2}$?}{$2$}{$4$}{$\dfrac{1}{2}$}{$-2$}\par\vspace{1.5mm}
+\satq{13}{A line passes through $(2,1)$ with slope $-3$ and intersects the parabola $y=x^2$ at two points. What is the sum of the $x$-coordinates of these two points?}{$-7$}{$-3$}{$3$}{$7$}\par\vspace{1.5mm}
+\satq{14}{The parabolas $y=x^2+bx+3$ and $y=x^2+5x-1$ intersect at the point whose $x$-coordinate is $-2$. What is $b$?}{$-3$}{$3$}{$9$}{$7$}\par\vspace{1.5mm}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\raggedright
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satqw{15}{Which system has exactly one real solution?}{$y=x+1$ and $y=x^2$}{$y=4x$ and $y=x^2+1$}{$y=2x-1$ and $y=x^2$}{$y=4x+4$ and $y=x^2$}\par\vspace{1.5mm}
+}
+\end{textblock*}
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original -- written by studying the method and structure of
+real, officially released SAT Suite Question Bank items in this lesson's skill category, then building
+a new problem (new numbers, names and context) that requires the same solving method. No real College
+Board question text is reproduced anywhere in this book.\par}
+\end{textblock*}
+
+\clearpage
+
+% ================= ANSWERS: Sets 1-7 =================
+\topicheader{12}{Nonlinear Systems}
+\pagefooter{72}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,44mm)
+{\fontsize{9.5}{12}\selectfont
 \centering
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{34mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{34mm}|}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|>{\centering\arraybackslash}p{26mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{32mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{32mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{3}{24mm}{\centering 1-to'plam} & 1 & $(2,3),(-1,0)$ & 2 & $(3,6),(-1,-2)$\\\cline{2-5}
+\multirow{3}{26mm}{\centering Set 1} & 1 & $(2,3),(-1,0)$ & 2 & $(3,6),(-1,-2)$\\\cline{2-5}
  & 3 & $(2,0),(-1,-3)$ & 4 & $(2,8),(-1,-1)$\\\cline{2-5}
  & 5 & $(3,9),(-2,4)$ & 6 & $(1,1),(3,9)$\\\hline
-\multirow{3}{24mm}{\centering 2-to'plam} & 1 & $(2,-1),(3,1)$ & 2 & $(3,10),(-2,0)$\\\cline{2-5}
+\multirow{3}{26mm}{\centering Set 2} & 1 & $(2,-1),(3,1)$ & 2 & $(3,10),(-2,0)$\\\cline{2-5}
  & 3 & $(2,5),(-4,23)$ & 4 & $(3,7),(-3,7)$\\\cline{2-5}
  & 5 & $(0,2),(4,-2)$ & -- & --\\\hline
-\multirow{4}{24mm}{\centering 3-to'plam} & \multicolumn{4}{p{86mm}|}{1.\ $D=-19$, haqiqiy yechim yo'q}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{2.\ $D=-16$, haqiqiy yechim yo'q}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{3.\ $D=-11$, haqiqiy yechim yo'q}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{4.\ $D=-27$, haqiqiy yechim yo'q}\\\hline
-\multirow{3}{24mm}{\centering 4-to'plam} & 1 & $(2,12)$ & 2 & $(2,13)$\\\cline{2-5}
+\multirow{4}{26mm}{\centering Set 3} & \multicolumn{4}{p{84mm}|}{1.\ $D=-19$: no real solution}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ $D=-16$: no real solution}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ $D=-11$: no real solution}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ $D=-27$: no real solution}\\\hline
+\multirow{3}{26mm}{\centering Set 4} & 1 & $(2,12)$ & 2 & $(2,13)$\\\cline{2-5}
  & 3 & $(2,4)$ & 4 & $(2,7)$\\\cline{2-5}
  & 5 & $(1,8)$ & -- & --\\\hline
-\multirow{3}{24mm}{\centering 5-to'plam} & 1 & $3$ & 2 & $-3$\\\cline{2-5}
+\multirow{3}{26mm}{\centering Set 5} & 1 & $3$ & 2 & $-3$\\\cline{2-5}
  & 3 & $5$ & 4 & $8$\\\cline{2-5}
- & 5 & $6$ \scriptsize{(nuqta $(2,4)$)} & -- & --\\\hline
-\multirow{4}{24mm}{\centering 6-to'plam} & \multicolumn{4}{p{86mm}|}{1.\ Ikkinchi yechim $x=-1$ (va mos $y=0$) tushib qolgan. To'g'ri: $(2,3)$ \textbf{va} $(-1,0)$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{2.\ $x$ topilgan, lekin $y$ ga qaytarib qo'yilmagan. To'g'ri: $(3,6)$ va $(-1,-2)$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{3.\ Ikki ifoda qo'shilgan, tenglashtirilmagan. To'g'ri qadam: $3x+2=-x+10$. To'g'ri: $x=2$, $y=12$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{4.\ Manfiy diskriminant haqiqiy yechim yo'qligini bildiradi; $\sqrt{19}$ yozish buni to'g'rilamaydi. To'g'ri: haqiqiy yechim yo'q.}\\\hline
-\multirow{3}{24mm}{\centering 7-to'plam} & 1 & $(2,-3)$ & 2 & $(2,2),(-\frac12,\frac34)$\\\cline{2-5}
- & 3 & $D=-8$, $0$ ta & 4 & $(2,4)$ (qo'sh ildiz)\\\cline{2-5}
+ & 5 & $6$ \scriptsize{(point $(2,4)$)} & -- & --\\\hline
+\multirow{4}{26mm}{\centering Set 6} & \multicolumn{4}{p{84mm}|}{1.\ Error: the second solution $x=-1$ (and $y=0$) was dropped. Correct: $(2,3)$ \textbf{and} $(-1,0)$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ Error: $x$ was found but never substituted back for $y$. Correct: $(3,6)$ and $(-1,-2)$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ Error: the two expressions were added instead of set equal. Correct: $3x+2=-x+10$, so $(2,12)$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ Error: a negative discriminant means no real solution; $\sqrt{19}$ does not fix it. Correct: no real solution.}\\\hline
+\multirow{3}{26mm}{\centering Set 7} & 1 & $(2,-3)$ & 2 & $(2,2),\left(-\tfrac12,\tfrac34\right)$\\\cline{2-5}
+ & 3 & $D=-8$, $0$ points & 4 & $(2,4)$ (double root)\\\cline{2-5}
  & 5 & $10$ & -- & --\\\hline
 \end{tabular}
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,245mm)
+
+%% ================= ANSWERS: Set 8 =================
+\clearpage
+\topicheader{12}{Nonlinear Systems}
+\pagefooter{73}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+{\fontsize{10}{13}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&A&D&A&B&D&C&A&D&B\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+C&A&B&D&A\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,100mm)
+\centering
+{\fontsize{10}{13}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+D&A&A&D&C&B&C&B&D&C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&A&C&B&A\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,154mm)
+\centering
+{\fontsize{10}{13}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&A&A&B&C&D&D&A&B&C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+D&A&B&D&C\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}
