@@ -23,10 +23,14 @@
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
 
+% ---- Safe print margins: 16mm outer on both sides so bound/trimmed copies never
+% clip problem text. Columns are 83mm wide with a 6mm gap on each side of the
+% center rule (at x=105mm). ----
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
 \newcommand{\COLW}{83mm}
 
+% ---- Plain topic header: number chip + title, thin rule underneath. No band, no watermark. ----
 \newcommand{\topicheader}[2]{%
 \begin{textblock*}{194mm}(16mm,10mm)
 \begin{tikzpicture}
@@ -56,6 +60,7 @@
 \end{textblock*}
 }
 
+% ---- Fixed-length vertical column rule: #1 = top y (mm), #2 = length (mm) ----
 \newcommand{\colrule}[2]{%
 \begin{textblock*}{1mm}(105mm,#1mm)
 \begin{tikzpicture}
@@ -68,207 +73,443 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
+% ---- Small boxed problem number, reference-style. Plain \fbox -- stays flush with
+% the text baseline instead of centering on it. ----
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
+% ---- QR placeholder square + caption below ----
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
+}
+
+% ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
 \newcommand{\anstitle}[1]{{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont #1}\\[1.3mm]}
 
+
+% ---- Set 8 spacing: slightly tighter item spacing so 8 items fit per column ----
+\renewcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[1.5mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[4mm]%
+}
+\renewcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[1.5mm]
+\hspace*{7mm}(A) #3\\[1.2mm]
+\hspace*{7mm}(B) #4\\[1.2mm]
+\hspace*{7mm}(C) #5\\[1.2mm]
+\hspace*{7mm}(D) #6\\[4mm]%
+}
 \begin{document}
 
-% ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{13}{Nisbat, tezlik va proportsiya}
+% ================= PAGE 69 =================
+\topicheader{13}{Ratios, Rates \& Proportions}
 \pagefooter{69}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{1-to'plam}{Nisbatni eng sodda ko'rinishga keltiring.}
+\setkicker{Set 1}{Write each ratio in simplest form.}
 
-\noindent\pnum{1} $10:15$ nisbatini eng sodda ko'rinishga keltiring.\\[20mm]
-\noindent\pnum{2} $21:14$ nisbatini eng sodda ko'rinishga keltiring.\\[20mm]
-\noindent\pnum{3} $16:24:40$ nisbatini eng sodda ko'rinishga keltiring.\\[20mm]
-\noindent\pnum{4} Qutida $9$ ta qizil va $12$ ta ko'k shar bor. Qizil:ko'k nisbatini eng sodda ko'rinishda yozing.\\[22mm]
-\noindent\pnum{5} $24$ ni $36$ ga nisbatini eng sodda ko'rinishda yozing.\\[20mm]
-\noindent\pnum{6} Nisbat $4:9$. Jami nechta ``qism'' bor?
+\noindent\pnum{1} Write the ratio $10:15$ in simplest form.\\[20mm]
+\noindent\pnum{2} Write the ratio $21:14$ in simplest form.\\[20mm]
+\noindent\pnum{3} Write the ratio $16:24:40$ in simplest form.\\[20mm]
+\noindent\pnum{4} A box contains $9$ red marbles and $12$ blue marbles. Write the ratio of red to blue marbles in simplest form.\\[22mm]
+\noindent\pnum{5} Write the ratio of $24$ to $36$ in simplest form.\\[20mm]
+\noindent\pnum{6} A ratio is $4:9$. What is the total number of parts represented?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11.5}{15}\selectfont
-\setkicker{2-to'plam}{Qism-qismga va qism-butunga nisbat -- avval jami qismlar sonini toping.}
+\setkicker{Set 2}{Part-to-part vs. part-to-whole -- find the total number of parts first.}
 
-\noindent\pnum{1} Sinfda o'g'il:qiz nisbati $3:5$, jami $40$ o'quvchi. Nechta o'g'il bola bor?\\[18mm]
-\noindent\pnum{2} Yuqoridagi sinfda: qiz bolalar butunning qanday qismini tashkil qiladi?\\[18mm]
-\noindent\pnum{3} Mushuk:it nisbati $2:7$, jami $27$ ta uy hayvoni. Nechta it bor?\\[18mm]
-\noindent\pnum{4} Qizil:ko'k shar nisbati $4:5$, jami $36$ ta shar. Qizil sharlar butunning qanday qismi?\\[20mm]
-\noindent\pnum{5} Olma:apelsin nisbati $5:3$, jami $32$ ta meva. Olmalar apelsinlardan nechta ko'p?\\[18mm]
-\noindent\pnum{6} Un:shakar nisbati $5:2$, jami $70$ stakan. Nechta stakan shakar kerak?
+\noindent\pnum{1} In a class, the ratio of boys to girls is $3:5$, and there are $40$ students in total. How many boys are in the class?\\[18mm]
+\noindent\pnum{2} In the same class ($3:5$ ratio, $40$ students in total), what fraction of the whole class do the girls represent?\\[18mm]
+\noindent\pnum{3} The ratio of cats to dogs at a shelter is $2:7$, with $27$ animals in total. How many dogs are at the shelter?\\[18mm]
+\noindent\pnum{4} A box contains red and blue marbles in a ratio of $4:5$, with $36$ marbles in total. What fraction of the whole do the red marbles represent (relative to the whole, not to the blue marbles)?\\[20mm]
+\noindent\pnum{5} A basket contains apples and oranges in a ratio of $5:3$, with $32$ pieces of fruit in total. How many more apples are there than oranges?\\[18mm]
+\noindent\pnum{6} A recipe calls for flour and sugar in a ratio of $5:2$. If the flour and sugar together total $70$ cups, how many cups of sugar are needed?
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{13}{Nisbat, tezlik va proportsiya}
+% ================= PAGE 70 =================
+\topicheader{13}{Ratios, Rates \& Proportions}
 \pagefooter{70}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{12}{15}\selectfont
-\setkicker{3-to'plam}{Tezlik va birlik tezlik.}
+{\fontsize{11.5}{15}\selectfont
+\setkicker{Set 3}{Rates and unit rates.}
 
-\noindent\pnum{1} Mashina $3$ soatda $180$ km yuradi. Birlik tezlikni (km/soat) toping.\\[20mm]
-\noindent\pnum{2} Fabrika $5$ soatda $250$ dona ishlab chiqaradi. Soatiga nechta dona?\\[20mm]
-\noindent\pnum{3} $15$ kg guruch $45$ dollar turadi. $1$ kg narxi qancha?\\[20mm]
-\noindent\pnum{4} Printer $4$ daqiqada $48$ bet chop etadi. Daqiqasiga nechta bet?\\[20mm]
-\noindent\pnum{5} Qaysi tezlik kattaroq: $2$ soatda $120$ milya, yoki $3$ soatda $150$ milya?\\[20mm]
-\noindent\pnum{6} Yuguruvchi $50$ soniyada $400$ metr yuguradi. Soniyasiga necha metr?
+\noindent\pnum{1} A car travels $180$ kilometers in $3$ hours at a constant speed. What is the car's speed, in kilometers per hour?\\[20mm]
+\noindent\pnum{2} A factory produces $250$ units in $5$ hours at a constant rate. How many units per hour does the factory produce?\\[20mm]
+\noindent\pnum{3} If $15$ kg of rice costs \$45 and the price per kilogram is constant, what is the price per kilogram?\\[20mm]
+\noindent\pnum{4} A printer prints $48$ pages in $4$ minutes at a constant rate. How many pages per minute does it print?\\[20mm]
+\noindent\pnum{5} Which represents a greater rate: $120$ miles in $2$ hours, or $150$ miles in $3$ hours?\\[20mm]
+\noindent\pnum{6} A runner covers $400$ meters in $50$ seconds at a constant speed. How many meters per second does the runner cover?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{12}{15}\selectfont
-\setkicker{4-to'plam}{Proportsiyani yeching va masshtablang.}
+{\fontsize{11.5}{15}\selectfont
+\setkicker{Set 4}{Solve the proportions and scale the ratios. Find $x$.}
 
-\noindent\pnum{1} $\dfrac{x}{5} = \dfrac{12}{20}$ tenglamasini yeching.\\[20mm]
-\noindent\pnum{2} $\dfrac{8}{x} = \dfrac{6}{15}$ tenglamasini yeching.\\[20mm]
-\noindent\pnum{3} $\dfrac{3}{4} = \dfrac{x}{28}$ tenglamasini yeching.\\[20mm]
-\noindent\pnum{4} Retseptda un:shakar $=3:5$. $18$ stakan un bo'lsa, nechta stakan shakar kerak?\\[20mm]
-\noindent\pnum{5} Xarita masshtabi: $1$ dyuym $=15$ milya. $4.5$ dyuym necha milya?\\[20mm]
-\noindent\pnum{6} Xarita masshtabi: $2$ sm $=25$ km. $7$ sm necha km?
+\noindent\pnum{1} Solve $\dfrac{x}{5} = \dfrac{12}{20}$ for $x$.\\[20mm]
+\noindent\pnum{2} Solve $\dfrac{8}{x} = \dfrac{6}{15}$ for $x$.\\[20mm]
+\noindent\pnum{3} Solve $\dfrac{3}{4} = \dfrac{x}{28}$ for $x$.\\[20mm]
+\noindent\pnum{4} A recipe calls for flour to sugar in a ratio of $3:5$. If $18$ cups of flour are used, how many cups of sugar are needed?\\[20mm]
+\noindent\pnum{5} On a map, $1$ inch represents $15$ miles. How many miles does $4.5$ inches represent?\\[20mm]
+\noindent\pnum{6} On a map, $2$ cm represents $25$ km. How many kilometers does $7$ cm represent?
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 3: Set 5 | Set 6 (spot the error) =================
-\topicheader{13}{Nisbat, tezlik va proportsiya}
+% ================= PAGE 71 =================
+\topicheader{13}{Ratios, Rates \& Proportions}
 \pagefooter{71}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11.5}{15}\selectfont
-\setkicker{5-to'plam}{Aralash masalalar.}
+\setkicker{Set 5}{Mixed word problems.}
 
-\noindent\pnum{1} Tadbirda erkak:ayol nisbati $5:3$, jami $96$ kishi. Erkaklar ayollardan nechta ko'p?\\[18mm]
-\noindent\pnum{2} Mashina har $28$ milyaga $1$ gallon benzin sarflaydi. $182$ milya uchun necha gallon kerak?\\[20mm]
-\noindent\pnum{3} O'qituvchi:o'quvchi nisbati $1:18$. $36$ ta o'qituvchi bo'lsa, nechta o'quvchi bor?\\[18mm]
-\noindent\pnum{4} Pons retseptida sharbat:soda nisbati $4:3$. Jami $56$ stakan uchun nechta stakan soda kerak?\\[20mm]
-\noindent\pnum{5} Mashina $5$ daqiqada $60$ shisha to'ldiradi. Shu tezlikda $192$ shishaga necha daqiqa kerak?\\[18mm]
-\noindent\pnum{6} Jamg'arma:xarajat nisbati $2:5$. $350$ dollar sarflansa, qancha pul jamg'ariladi?
+\noindent\pnum{1} At an event, the ratio of men to women is $5:3$, with $96$ people in total. How many more men are there than women?\\[18mm]
+\noindent\pnum{2} A car uses $1$ gallon of gas every $28$ miles at a constant rate. How many gallons are needed for a $182$-mile trip?\\[18mm]
+\noindent\pnum{3} At a school, the ratio of teachers to students is $1:18$. If there are $36$ teachers, how many students are there?\\[18mm]
+\noindent\pnum{4} A punch recipe calls for juice to soda in a ratio of $4:3$. To make $56$ cups of punch in total, how many cups of soda are needed?\\[20mm]
+\noindent\pnum{5} A machine, filling bottles at a constant rate, fills $60$ bottles in $5$ minutes. At that same rate, how many minutes are needed to fill $192$ bottles?\\[18mm]
+\noindent\pnum{6} Aziz saves and spends his monthly income in a ratio of $2:5$ (savings to spending). If he spends \$350, how much does he save?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10.3}{13}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'g'ri javobni bering.}
+\setkicker{Set 6}{Spot the error -- name the mistake, then give the correct answer.}
 
-\noindent\pnum{1} Qizil:ko'k nisbati $3:7$, jami $50$ shar. Xato yechim:\\[1mm]
-\hspace*{7mm}\textit{``Qizil $= \frac{3}{7}\times50 \approx 21.43$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{1} The ratio of red to blue marbles is $3:7$, with $50$ marbles in total. Incorrect solution:\\[1mm]
+\hspace*{7mm}\textit{``Red $=\frac{3}{7}\times50\approx21.43$.''}\\[2mm]
+\hspace*{7mm}Error and fix: \makebox[46mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{2} $\dfrac{x}{6}=\dfrac{10}{15}$. Xato yechim:\\[1mm]
-\hspace*{7mm}\textit{``Ko'ndalang: $x\times10=6\times15$, $10x=90$, $x=9$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{2} $\dfrac{x}{6}=\dfrac{10}{15}$. Incorrect solution:\\[1mm]
+\hspace*{7mm}\textit{``Cross-multiplying: $x\times10=6\times15$, so $10x=90$, $x=9$.''}\\[2mm]
+\hspace*{7mm}Error and fix: \makebox[46mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{3} Poezd $2$ soat $30$ daqiqada $120$ km. Xato yechim:\\[1mm]
-\hspace*{7mm}\textit{``Tezlik $=120\div2=60$ km/soat.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{3} A train travels $120$ km in $2$ hours $30$ minutes. Incorrect solution:\\[1mm]
+\hspace*{7mm}\textit{``Speed $=120\div2=60$ km/h.''}\\[2mm]
+\hspace*{7mm}Error and fix: \makebox[46mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{4} Qalam:ruchka $4:9$, $36$ ta ruchka. Xato yechim:\\[1mm]
-\hspace*{7mm}\textit{``$\frac{4}{9}=\frac{36}{p}$, $4p=324$, $p=81$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{4} The ratio of pencils to pens is $4:9$. If there are $36$ pens, how many pencils are there? Incorrect solution:\\[1mm]
+\hspace*{7mm}\textit{``$\tfrac{4}{9}=\frac{36}{p}$, so $4p=324$, $p=81$.''}\\[2mm]
+\hspace*{7mm}Error and fix: \makebox[46mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{5} $5$ ta daftar $20$ dollar. Xato yechim:\\[1mm]
-\hspace*{7mm}\textit{``Birlik tezlik $=\frac{5}{20}=0.25$ dollar.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}
+\noindent\pnum{5} At a store, $5$ notebooks cost \$20 in total. Find the price of one notebook. Incorrect solution:\\[1mm]
+\hspace*{7mm}\textit{``Unit rate $=\frac{5}{20}=0.25$, so one notebook costs \$0.25.''}\\[2mm]
+\hspace*{7mm}Error and fix: \makebox[46mm]{\dotfill}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) =================
-\topicheader{13}{Nisbat, tezlik va proportsiya}
+% ================= PAGE 72 =================
+\topicheader{13}{Ratios, Rates \& Proportions}
 \pagefooter{72}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{11.5}{15}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin -- 2+ qadamli masalalar.}
+{\fontsize{11.5}{14.5}\selectfont
+\setkicker{Set 7}{Bonus / challenge -- the hardest items in this set.}
 
-\noindent\pnum{1} Davlat yutgan oltin:kumush:bronza nisbati $2:3:4$, jami $54$ medal. Bronza oltindan nechta ko'p?\\[22mm]
-\noindent\pnum{2} Fabrika $4$ soatda $180$ dona ishlab chiqaradi. $540$ dona uchun necha soat kerak?\\[22mm]
-\noindent\pnum{3} Xarita masshtabi: $3$ sm $=40$ km. $150$ km necha santimetr?\\[22mm]
-\noindent\pnum{4} Aziz:Bekzod yoshi hozir $3:4$. $5$ yil oldin bu nisbat $2:3$ edi. Hozirgi yoshlarini toping.\\[24mm]
-\noindent\pnum{5} Mashina $2$ soat $60$ milya/soat, keyin $3$ soat $45$ milya/soat tezlikda yuradi. Butun sayohat uchun o'rtacha tezlikni toping.
+\noindent\pnum{1} A country's gold, silver, and bronze medal counts are in a ratio of $2:3:4$, with $54$ medals in total. How many more bronze medals are there than gold medals?\\[22mm]
+\noindent\pnum{2} A factory, operating at a constant rate, produces $180$ units in $4$ hours. At that same rate, how many hours are needed to produce $540$ units?\\[22mm]
+\noindent\pnum{3} On a map, $3$ cm represents $40$ km. How many centimeters on the map represent $150$ km?\\[22mm]
+\noindent\pnum{4} The ratio of Aziz's age to Bekzod's age is currently $3:4$. Five years ago, this ratio was $2:3$. Find their current ages.\\[24mm]
+\noindent\pnum{5} A car travels at $60$ miles per hour for the first $2$ hours of a trip, then at $45$ miles per hour for the next $3$ hours. What is the car's average speed for the entire trip?
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems. Easy 1--7.}
+
+\satq{1}{A bag contains red and blue marbles in the ratio $4:7$. If the bag contains $44$ marbles in total, how many red marbles are in the bag?}{$4$}{$28$}{$16$}{$44$}
+\satq{2}{At a museum, the ratio of adult visitors to child visitors on a given day is $3:2$. If there were $60$ adult visitors that day, how many child visitors were there?}{$40$}{$30$}{$90$}{$120$}
+\satq{3}{In a class, the ratio of girls to boys is $5:4$. What fraction of the class is boys?}{$\dfrac{4}{5}$}{$\dfrac{5}{9}$}{$\dfrac{5}{4}$}{$\dfrac{4}{9}$}
+\satq{4}{A printer prints $144$ pages in $12$ minutes at a constant rate. How many pages does it print per minute?}{$\dfrac{1}{12}$}{$12$}{$132$}{$156$}
+\satq{5}{A cyclist rides $84$ miles in $3.5$ hours at a constant speed. What is the cyclist's speed, in miles per hour?}{$24$}{$21$}{$28$}{$294$}
+\satq{6}{If $\dfrac{x}{9}=\dfrac{8}{12}$, what is the value of $x$?}{$8$}{$13.5$}{$6$}{$12$}
+\satq{7}{A recipe calls for $3$ cups of flour for every $2$ cups of milk. If $12$ cups of flour are used, how many cups of milk are needed?}{$6$}{$18$}{$36$}{$8$}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar -- full-page answer tables, own page always =================
-\topicheader{13}{Nisbat, tezlik va proportsiya}
+% ================= PAGE 73 =================
+\topicheader{13}{Ratios, Rates \& Proportions}
 \pagefooter{73}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Easy 8--15. Choose the correct answer.}
+
+\satq{8}{On a map, $1$ centimeter represents $8$ kilometers. How many kilometers does $6.5$ centimeters represent?}{$0.8125$}{$52$}{$48$}{$56$}
+\satq{9}{Write the ratio $36:48$ in simplest form.}{$3:4$}{$9:12$}{$4:3$}{$6:8$}
+\satq{10}{The ratio of water to juice in a drink is $2:5$. If the drink contains $35$ ounces in total, how many ounces of water are in the drink?}{$5$}{$14$}{$10$}{$25$}
+\satq{11}{A pack of $12$ batteries costs \$9.60. What is the cost, in dollars, of one battery?}{$1.25$}{$0.80$}{$0.08$}{$9.60$}
+\satq{12}{A store sells $4$ pens for \$3. At this same rate, how many dollars will $20$ pens cost?}{\$5}{\$12}{\$60}{\$15}
+\satq{13}{A jar contains only nickels and dimes in the ratio $3:5$, with $24$ coins in total. How many more dimes than nickels are in the jar?}{$6$}{$9$}{$15$}{$24$}
+\satq{14}{A train travels at a constant speed of $80$ miles per hour. How many minutes does it take to travel $60$ miles?}{$0.75$}{$4{,}800$}{$45$}{$75$}
+\satq{15}{If $\dfrac{3}{x}=\dfrac{4.5}{6}$, what is the value of $x$?}{$2.25$}{$4$}{$6$}{$13.5$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Medium 1--7. Choose the correct answer.}
+
+\satq{1}{The ratio of cats to dogs at a shelter is $2:3$. After $10$ cats are adopted, the ratio of cats to dogs becomes $1:3$. How many cats were at the shelter before the adoptions?}{$10$}{$15$}{$30$}{$20$}
+\satqw{2}{Store A sells $6$ pounds of rice for \$15. Store B sells $10$ pounds of rice for \$22. Which store has the lower price per pound?}{Store A}{Store B}{Both stores have the same price per pound}{The information given is not enough to decide}
+\satq{3}{A water tank fills at a constant rate of $18$ liters every $3$ minutes. At this rate, how many minutes are needed to fill a $150$-liter tank?}{$25$}{$8.3$}{$50$}{$450$}
+\satq{4}{A car travels at $72$ kilometers per hour. What is the car's speed, in meters per second?}{$1.2$}{$72$}{$20$}{$259.2$}
+\satq{5}{At a school, the ratio of students who walk to school to students who take the bus is $3:4$. If $280$ students either walk or take the bus, and every one of them does exactly one of these, how many students take the bus?}{$120$}{$160$}{$180$}{$280$}
+\satq{6}{The ratio of flour to sugar in a recipe is $3:2$. The ratio of sugar to butter is $4:1$. What is the ratio of flour to butter?}{$6:1$}{$3:1$}{$7:1$}{$1:6$}
+\satq{7}{A bakery uses $5$ eggs for every $2$ cakes it bakes. At this rate, how many eggs are needed to bake $14$ cakes?}{$5.6$}{$14$}{$70$}{$35$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 74 =================
+\topicheader{13}{Ratios, Rates \& Proportions}
+\pagefooter{74}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Medium 8--14. Choose the correct answer.}
+
+\satq{8}{Lina drives $120$ miles at $60$ miles per hour and then drives another $120$ miles at $40$ miles per hour. What is her average speed for the entire $240$-mile trip, in miles per hour?}{$50$}{$52$}{$48$}{$100$}
+\satq{9}{The ratio of Nodira's savings to Sardor's savings is $7:5$. Nodira has \$120 more than Sardor. How much money do they have together?}{\$300}{\$720}{\$600}{\$840}
+\satq{10}{The ratio of red, yellow, and green paint in a mixture is $2:3:5$. If $45$ liters of green paint are used, how many liters of red paint are used?}{$18$}{$9$}{$27$}{$45$}
+\satq{11}{One machine makes $240$ bolts per hour. A second machine makes $360$ bolts per hour. Working together at these constant rates, how many bolts do the two machines make in $2.5$ hours?}{$600$}{$900$}{$1{,}200$}{$1{,}500$}
+\satq{12}{On a blueprint, $1$ inch represents $4$ feet. A wall is $2.75$ inches long on the blueprint. How long is the actual wall, in feet?}{$0.6875$}{$1.375$}{$11$}{$6.75$}
+\satq{13}{A recipe uses $250$ grams of flour to make $4$ servings. How many kilograms of flour are needed to make $10$ servings?}{$0.625$}{$6.25$}{$62.5$}{$625$}
+\satq{14}{A machine makes $10$ batches of bread every $4$ hours at a constant rate. How many batches does it make in $18$ hours?}{$7.2$}{$45$}{$72$}{$180$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Medium 15, Hard 1--5. Choose the correct answer.}
+
+\satq{15}{In a club, every member plays exactly one of two games, chess or go. The ratio of chess players to go players is $3:5$, and the club has $48$ members. What fraction of the members play go?}{$\dfrac{3}{8}$}{$\dfrac{5}{3}$}{$\dfrac{3}{5}$}{$\dfrac{5}{8}$}
+\satq{1}{A library has books and DVDs in the ratio $7:2$. The library then buys $30$ more DVDs, and the ratio of books to DVDs becomes $7:4$. How many books does the library have?}{$15$}{$30$}{$105$}{$60$}
+\satq{2}{A metal has a density of $8.9$ grams per cubic centimeter. A piece of this metal has a mass of $2{,}670$ grams. What is the volume of the piece, in cubic centimeters?}{$\dfrac{1}{300}$}{$300$}{$2{,}661.1$}{$23{,}763$}
+\satq{3}{A cyclist rides at a constant speed of $18$ kilometers per hour. How many meters does she travel in $25$ seconds?}{$125$}{$450$}{$1{,}800$}{$7{,}200$}
+\satq{4}{The price of $3$ kilograms of apples is \$4.79. At this same rate, what is the price, to the nearest cent, of $1.75$ kilograms of apples?}{\$1.60}{\$2.80}{\$8.38}{\$2.79}
+\satq{5}{Three friends divide $360$ coins among themselves in the ratio $2:3:4$ (Ali : Bek : Cem). How many more coins does Cem receive than Ali?}{$40$}{$80$}{$120$}{$160$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 75 =================
+\topicheader{13}{Ratios, Rates \& Proportions}
+\pagefooter{75}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Hard 6--11. Choose the correct answer.}
+
+\satq{6}{A cleaning concentrate is mixed with water in the ratio $1:9$ (concentrate to water) to make a solution. How many liters of concentrate are needed to make $2.5$ liters of solution?}{$0.225$}{$2.25$}{$0.25$}{$2.5$}
+\satq{7}{The ratio of boys to girls in a club is $4:5$. After $6$ boys join and $3$ girls leave, the number of boys and the number of girls are equal. How many members did the club have before these changes?}{$81$}{$45$}{$36$}{$90$}
+\satq{8}{If $\dfrac{a}{b}=\dfrac{3}{5}$ and $a+b=96$, what is the value of $b-a$?}{$12$}{$36$}{$60$}{$24$}
+\satq{9}{What value of $x$ satisfies the proportion $\dfrac{x+2}{3}=\dfrac{x-1}{2}$?}{$1$}{$7$}{$5$}{$11$}
+\satq{10}{A juice concentrate is mixed with water. Right now, the concentrate makes up $\dfrac{1}{4}$ of the total mixture, and there are $6$ liters of concentrate. How many liters of water must be added so that the concentrate makes up $\dfrac{1}{6}$ of the new total mixture?}{$6$}{$18$}{$12$}{$24$}
+\satq{11}{Brand X sells $500$ pages of printer paper for \$25. Brand Y sells $750$ pages for \$33. What is the difference, in dollars per $1{,}000$ pages, between the cost of Brand X and the cost of Brand Y?}{$0.006$}{$6$}{$50$}{$8$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Hard 12--15. Choose the correct answer.}
+
+\satq{12}{Pipe A fills a pool at $15$ cubic meters per hour. Pipe B drains the pool at $10$ cubic meters per hour. If both pipes are open for $8$ hours, what is the net change in the amount of water in the pool, in cubic meters?}{$40$}{$80$}{$120$}{$200$}
+\satq{13}{A worker earns \$540 for $7.5$ hours of work per day over $3$ days, at a constant hourly rate. What is the worker's hourly rate, in dollars per hour?}{$72$}{$180$}{$4{,}050$}{$24$}
+\satq{14}{A recipe for $6$ servings calls for $\dfrac{2}{3}$ cup of rice. How many cups of rice are needed for $10$ servings?}{$\dfrac{1}{9}$}{$\dfrac{5}{9}$}{$\dfrac{10}{9}$}{$\dfrac{20}{9}$}
+\satq{15}{In a school, the ratio of grade 9 students to grade 10 students is $5:4$, and the ratio of grade 10 students to grade 11 students is $2:3$. What is the ratio of grade 9 students to grade 11 students?}{$5:6$}{$7:12$}{$6:5$}{$15:8$}
+}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+A note on sourcing: real, official College Board SAT questions are copyrighted and are not licensed for reproduction in commercial test-prep materials. Every item in Set 8 was written by studying the method and structure of real SAT Suite Question Bank items in this skill, then building a new problem (new numbers, names and context) that requires the same solving steps. All 45 answers were verified by script.\par}
+\end{textblock*}
+\clearpage
+
+% ================= PAGE 76: Answer key -- Sets 1-7 =================
+\topicheader{13}{Ratios, Rates \& Proportions}
+\pagefooter{76}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
 \end{textblock*}
 
 \begin{textblock*}{194mm}(16mm,44mm)
 {\fontsize{9.3}{11.8}\selectfont
-\centering
+\begin{center}
 \renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|>{\centering\arraybackslash}p{26mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{32mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{32mm}|}
+\begin{tabular}{|>{\centering\arraybackslash}p{26mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{34mm}|>{\centering\arraybackslash}p{10mm}|>{\centering\arraybackslash}p{34mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{3}{26mm}{\centering 1-to'plam} & 1 & $2:3$ & 2 & $3:2$\\\cline{2-5}
+
+\multirow{3}{26mm}{\centering Set 1} & 1 & $2:3$ & 2 & $3:2$\\\cline{2-5}
  & 3 & $2:3:5$ & 4 & $3:4$\\\cline{2-5}
  & 5 & $2:3$ & 6 & $13$\\\hline
-\multirow{3}{26mm}{\centering 2-to'plam} & 1 & 15 o'g'il & 2 & $\frac{5}{8}$\\\cline{2-5}
- & 3 & 21 it & 4 & $\frac{4}{9}$\\\cline{2-5}
- & 5 & 8 ta ko'p & 6 & 20 stakan\\\hline
-\multirow{3}{26mm}{\centering 3-to'plam} & 1 & 60 km/soat & 2 & 50/soat\\\cline{2-5}
- & 3 & \$3/kg & 4 & 12 bet/daq\\\cline{2-5}
- & 5 & 1-chisi (60mph) & 6 & 8 m/s\\\hline
-\multirow{3}{26mm}{\centering 4-to'plam} & 1 & $x=3$ & 2 & $x=20$\\\cline{2-5}
- & 3 & $x=21$ & 4 & 30 stakan\\\cline{2-5}
- & 5 & 67.5 milya & 6 & 87.5 km\\\hline
-\multirow{3}{26mm}{\centering 5-to'plam} & 1 & 24 ko'p & 2 & 6.5 gal\\\cline{2-5}
- & 3 & 648 o'q. & 4 & 24 stakan\\\cline{2-5}
- & 5 & 16 daq & 6 & \$140\\\hline
-\multirow{3}{26mm}{\centering 7-to'plam} & 1 & 12 ko'p & 2 & 12 soat\\\cline{2-5}
- & 3 & 11.25 sm & 4 & 15 \& 20 yosh\\\cline{2-5}
+\multirow{3}{26mm}{\centering Set 2} & 1 & 15 boys & 2 & $\tfrac{5}{8}$\\\cline{2-5}
+ & 3 & 21 dogs & 4 & $\tfrac{4}{9}$\\\cline{2-5}
+ & 5 & 8 more & 6 & 20 cups\\\hline
+\multirow{3}{26mm}{\centering Set 3} & 1 & 60 km/h & 2 & 50 units/h\\\cline{2-5}
+ & 3 & \$3/kg & 4 & 12 pages/min\\\cline{2-5}
+ & 5 & 1st rate (60 mph) & 6 & 8 m/s\\\hline
+\multirow{3}{26mm}{\centering Set 4} & 1 & $x=3$ & 2 & $x=20$\\\cline{2-5}
+ & 3 & $x=21$ & 4 & 30 cups\\\cline{2-5}
+ & 5 & 67.5 miles & 6 & 87.5 km\\\hline
+\multirow{3}{26mm}{\centering Set 5} & 1 & 24 more & 2 & 6.5 gallons\\\cline{2-5}
+ & 3 & 648 students & 4 & 24 cups\\\cline{2-5}
+ & 5 & 16 minutes & 6 & \$140\\\hline
+\multirow{3}{26mm}{\centering Set 7} & 1 & 12 more & 2 & 12 hours\\\cline{2-5}
+ & 3 & 11.25 cm & 4 & Aziz 15, Bekzod 20\\\cline{2-5}
  & 5 & 51 mph & -- & --\\\hline
-\multirow{5}{26mm}{\centering 6-to'plam} & \multicolumn{4}{p{82mm}|}{1.\ Xato -- qism-qismga va qism-butunga nisbatni aralashtirgan. To'g'ri: $\frac{3}{10}\times50=15$.}\\\cline{2-5}
- & \multicolumn{4}{p{82mm}|}{2.\ Xato -- ko'ndalang ko'paytirishda noto'g'ri juftlik. To'g'ri: $15x=60$, $x=4$.}\\\cline{2-5}
- & \multicolumn{4}{p{82mm}|}{3.\ Xato -- $30$ daqiqani soatga aylantirmagan. To'g'ri: $120\div2.5=48$ km/soat.}\\\cline{2-5}
- & \multicolumn{4}{p{82mm}|}{4.\ Xato -- proportsiya tartibini aralashtirgan. To'g'ri: $9p=144$, $p=16$.}\\\cline{2-5}
- & \multicolumn{4}{p{82mm}|}{5.\ Xato -- birlik tezlikni teskari hisoblagan. To'g'ri: $20\div5=4$ dollar/daftar.}\\\hline
+\multirow{5}{26mm}{\centering Set 6} & \multicolumn{4}{p{84mm}|}{1.\ Error: used $7$ (the blue part alone) instead of the total parts $3+7=10$. Correct: $\frac{3}{10}\times50=15$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ Error: the cross-multiplication paired the wrong terms. Correct: $15x=60$, $x=4$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ Error: the $30$ minutes was dropped instead of converted to $2.5$ hours. Correct: $120\div2.5=48$ km/h.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ Error: the positions of pencils and pens were swapped. Correct: $9p=144$, $p=16$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ Error: the unit rate was inverted (notebooks per dollar). Correct: $20\div5=4$ dollars per notebook.}\\\hline
+
 \end{tabular}
+\end{center}
+}
+\end{textblock*}
+\clearpage
+
+% ================= PAGE 77: Answer key -- Set 8 =================
+\topicheader{13}{Ratios, Rates \& Proportions}
+\pagefooter{77}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{center}\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&A&D&B&A&C&D&B&A&C\\\hline
+\end{tabular}\end{center}
+\vspace{2mm}
+\begin{center}\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&D&A&C&B\\\hline
+\end{tabular}\end{center}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{center}\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+D&B&A&C&B&A&D&C&B&A\\\hline
+\end{tabular}\end{center}
+\vspace{2mm}
+\begin{center}\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+D&C&A&B&D\\\hline
+\end{tabular}\end{center}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{center}\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&B&A&D&B&C&A&D&B&C\\\hline
+\end{tabular}\end{center}
+\vspace{2mm}
+\begin{center}\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&A&D&C&A\\\hline
+\end{tabular}\end{center}
 }
 \end{textblock*}
 
 \begin{textblock*}{194mm}(16mm,232mm)
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}

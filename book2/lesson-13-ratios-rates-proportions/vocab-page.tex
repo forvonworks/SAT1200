@@ -1,0 +1,108 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+\usepackage{longtable}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{602785}
+\definecolor{badge}{HTML}{B8A0C8}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{150mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+
+\begin{document}
+\topicheader{13}{Ratios, Rates \& Proportions}
+\pagekicker{Vocabulary for this lesson's problems (Sets 1--8)}
+\pagefooter{68}
+\mbox{}%
+\renewcommand{\arraystretch}{1.37}
+\begin{textblock*}{178mm}(16mm,33mm)
+{\fontsize{11.5}{13.5}\selectfont
+\begin{tabular}{|p{80mm}|p{90mm}|}
+\hline
+\rowcolor{accent}
+{\color{white}\sffamily\bfseries English} & {\color{white}\sffamily\bfseries O'zbekcha} \\ \hline
+\textbf{ratio} & \textit{nisbat} \\ \hline
+\rowcolor{badge!18}
+\textbf{in simplest form} & \textit{eng sodda ko'rinishda} \\ \hline
+\textbf{total number of parts} & \textit{qismlarning umumiy soni} \\ \hline
+\rowcolor{badge!18}
+\textbf{fraction of the whole} & \textit{butunning kasr qismi} \\ \hline
+\textbf{how many more ... than} & \textit{necha ta ko'p ... dan} \\ \hline
+\rowcolor{badge!18}
+\textbf{rate} & \textit{tezlik} \\ \hline
+\textbf{constant rate} & \textit{o'zgarmas tezlik} \\ \hline
+\rowcolor{badge!18}
+\textbf{per hour} & \textit{soatiga} \\ \hline
+\textbf{proportion} & \textit{proportsiya} \\ \hline
+\rowcolor{badge!18}
+\textbf{map} & \textit{xarita} \\ \hline
+\textbf{average speed} & \textit{o'rtacha tezlik} \\ \hline
+\rowcolor{badge!18}
+\textbf{density} & \textit{zichlik} \\ \hline
+\textbf{cubic centimeters} & \textit{kub santimetr} \\ \hline
+\rowcolor{badge!18}
+\textbf{net change} & \textit{sof o'zgarish} \\ \hline
+\textbf{to the nearest cent} & \textit{eng yaqin tiyingacha} \\ \hline
+\rowcolor{badge!18}
+\textbf{together} & \textit{birgalikda} \\ \hline
+\textbf{equal} & \textit{teng} \\ \hline
+\rowcolor{badge!18}
+\textbf{concentrate} & \textit{konsentrat} \\ \hline
+\textbf{solution} & \textit{eritma} \\ \hline
+\end{tabular}
+}
+\end{textblock*}
+\end{document}
