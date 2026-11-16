@@ -102,7 +102,7 @@ is reproduced here or anywhere in this book.
 6. A company's cost, in dollars, to produce $x$ items is modeled by $C(x)=18x+400$. What does 400 represent in this context?
    A) the cost per item  B) the fixed cost before producing any items  C) the total cost for 400 items  D) the number of items produced
 
-7. The table shows three values of $x$ and their corresponding values of $y$ for a linear relationship: $(2,11)$, $(4,19)$, $(6,27)$. What is the slope of the line?
+7. The pairs $(2,11)$, $(4,19)$, and $(6,27)$ are solutions to a linear relationship between $x$ and $y$. What is the slope of the line?
    A) 2  B) 4  C) 8  D) 11
 
 8. If $f(x)=-4x+9$, for what value of $x$ does $f(x)=1$?
@@ -132,12 +132,12 @@ is reproduced here or anywhere in this book.
 ### Medium
 
 1. The amount of fuel remaining in a tank, in liters, is modeled by $y=180-12x$, where $x$ is the number of minutes after a leak starts. What is the best interpretation of the $x$-intercept of this equation?
-   A) The tank starts with 15 liters.  B) The tank leaks 15 liters per minute.  C) The tank will be empty after about 15 minutes.  D) The tank leaks for a total of 180 minutes.
+   A) The tank starts with 15 liters.  B) The tank leaks 15 liters per minute.  C) The tank will be empty after 15 minutes.  D) The tank leaks for a total of 180 minutes.
 
 2. For linear function $h$, the graph of $y=h(x)$ passes through $(4,10)$ and $(10,28)$. Which equation defines $h$?
    A) $h(x)=3x-2$  B) $h(x)=3x+2$  C) $h(x)=2x+2$  D) $h(x)=4x-6$
 
-3. For a proportional relationship between $x$ and $k$, the pairs $(5,22.5)$ and $(9,40.5)$ are both solutions. Which equation best represents the relationship between $x$ and $k$?
+3. For a proportional relationship between $x$ and $k$, the pairs $(5,22.5)$ and $(9,40.5)$, written as $(x,k)$, are both solutions. Which equation best represents the relationship between $x$ and $k$?
    A) $k=4.5x$  B) $x=4.5k$  C) $k=0.22x$  D) $xk=4.5$
 
 4. A hiker's distance from the trailhead, in miles, is modeled by $d(t)=2.5t+1$, where $t$ is the number of hours after starting. What is the best interpretation of the number 2.5 in this context?
@@ -146,14 +146,14 @@ is reproduced here or anywhere in this book.
 5. For a linear relationship between $x$ and $y$, the pairs $(12,54)$ and $(20,86)$ are both solutions. Which equation represents this relationship?
    A) $y=4x+54$  B) $y=3x+18$  C) $y=4x+6$  D) $y=4x-6$
 
-6. For a linear relationship between $x$ and $y$, the table gives two values of $x$ and their corresponding values of $y$, where $t$ is a constant: $x=-6 \to y=t$; $x=2 \to y=t+32$. Which equation represents this relationship?
+6. For a linear relationship between $x$ and $y$, the pairs $(-6,t)$ and $(2,t+32)$ are both solutions, where $t$ is a constant. Which equation represents this relationship?
    A) $y=4x+t-24$  B) $y=8x+t+24$  C) $y=4x+t+32$  D) $y=4x+t+24$
 
 7. A parking garage charges \$8 for the first hour and \$3 for each additional hour. Which function $f$ gives the total charge, in dollars, for parking $x$ hours, where $x\ge1$?
    A) $f(x)=3x+5$  B) $f(x)=3x+8$  C) $f(x)=8x+3$  D) $f(x)=11x$
 
 8. The value, in dollars, of a certain machine $x$ years after purchase is modeled by $V(x)=8500-450x$. What does 450 represent in this context?
-   A) the machine's value when purchased  B) the amount the machine's value decreases each year  C) the machine's value after 1 year  D) the number of years until the machine is worthless
+   A) the machine's value when purchased  B) the yearly decrease in the machine's value  C) the machine's value after 1 year  D) the number of years until the machine is worthless
 
 9. For linear function $g$, $g(1)=4$ and $g(6)=24$. What is the value of $g(9)$?
    A) 28  B) 32  C) 36  D) 40
@@ -174,7 +174,7 @@ is reproduced here or anywhere in this book.
     A) $y=-2x+9$  B) $y=-2x+11$  C) $y=2x-9$  D) $y=-2x-9$
 
 15. A tank's water level, in centimeters, is modeled by $L(t)=85-3.5t$, where $t$ is the number of minutes since draining began. What is the best interpretation of the number 3.5 in this context?
-    A) the tank's initial water level  B) the number of centimeters the water level drops each minute  C) the total time it takes to drain the tank  D) the tank's water level after 1 minute
+    A) the tank's initial water level  B) the drop in water level, in centimeters per minute  C) the total time it takes to drain the tank  D) the tank's water level after 1 minute
 
 ### Hard
 
@@ -184,10 +184,10 @@ is reproduced here or anywhere in this book.
 2. A tutoring service charges \$150 for the first three hours of tutoring plus an hourly fee for each additional hour. The total cost for 6 hours of tutoring is \$390. Which function $f$ gives the total cost, in dollars, for $x$ hours of tutoring, where $x\ge3$?
    A) $f(x)=80x+150$  B) $f(x)=130x-240$  C) $f(x)=80x+90$  D) $f(x)=80x-90$
 
-3. For a linear relationship between $x$ and $y$, the table gives three values of $x$ and their corresponding values of $y$, where $t$ is a constant: $x=-40\to y=t$; $x=-25\to y=t+45$; $x=-10\to y=t+90$. Which equation represents this relationship?
+3. For a linear relationship between $x$ and $y$, the pairs $(-40,t)$, $(-25,t+45)$, and $(-10,t+90)$ are solutions, where $t$ is a constant. Which equation represents this relationship?
    A) $y=-3x+t+120$  B) $y=3x+t+120$  C) $y=3x+t-120$  D) $y=3x+t+45$
 
-4. A landscaping company charges a \$95 base fee plus an hourly rate for labor. For a 7-hour job, the total charge is \$305. Based on this rate, which is closest to the total charge for a 12-hour job?
+4. A landscaping company charges a \$95 base fee plus an hourly rate for labor. For a 7-hour job, the total charge is \$305. At this rate, what is the total charge, in dollars, for a 12-hour job?
    A) \$405  B) \$425  C) \$455  D) \$480
 
 5. A tank holds between 20 and 80 gallons of water, inclusive. The function $W(t)=20+4t$, where $0\le t\le15$, models the number of gallons in the tank $t$ minutes after a valve opens. What is the best interpretation of the number 4 in this context?
@@ -199,7 +199,7 @@ is reproduced here or anywhere in this book.
 7. A gym charges a one-time \$60 registration fee plus \$35 per month. A competing gym charges no registration fee but \$50 per month. After how many months will the total cost at both gyms be equal?
    A) 2  B) 3  C) 4  D) 5
 
-8. The temperature of a cooling liquid, in degrees Celsius, is a linear function of time in minutes. After 4 minutes the temperature is $68°$C, and after 10 minutes it is $50°$C. What is the temperature after 15 minutes?
+8. The temperature of a cooling liquid, in degrees Celsius, is a linear function of time in minutes. After 4 minutes the temperature is 68°C, and after 10 minutes it is 50°C. What is the temperature after 15 minutes?
    A) $30°$C  B) $32°$C  C) $35°$C  D) $38°$C
 
 9. For linear function $f$, $f(x)=kx+9$. If $f(6)=f(2)+20$, what is the value of $k$?
@@ -208,7 +208,7 @@ is reproduced here or anywhere in this book.
 10. For linear function $r$, $r(3)=7$ and $r(11)=19$. What is the value of $r(0)$?
     A) 2  B) $\frac52$  C) 3  D) $\frac72$
 
-11. The number of visitors to a museum each day can be modeled by the function $V(d)=0.8d+12$, where $10\le d\le200$ and $d$ is the number of days since a new exhibit opened. If the exhibit has been open for 85 days, which is closest to the predicted number of visitors?
+11. The number of visitors to a museum each day can be modeled by the function $V(d)=0.8d+12$, where $10\le d\le200$ and $d$ is the number of days since a new exhibit opened. If the exhibit has been open for 85 days, what is the predicted number of visitors?
     A) 68  B) 72  C) 76  D) 80
 
 12. The cost, in dollars, of shipping a package is a linear function of its weight, in kilograms. The pairs $(2,14)$ and $(6,26)$, in the form (weight, cost), are both solutions. If $w$ kilograms is associated with a shipping cost of $c$ dollars, which equation best represents the relationship between $w$ and $c$?
@@ -220,7 +220,7 @@ is reproduced here or anywhere in this book.
 14. Company A's shipping cost, in dollars, is modeled by $A(x)=5x+40$, and Company B's shipping cost is modeled by $B(x)=9x$, where $x$ is the number of items shipped. For what value of $x$ are the two companies' costs equal?
     A) 4  B) 8  C) 10  D) 13
 
-15. For a linear relationship between $x$ and $y$, the table gives three values of $x$ and their corresponding values of $y$, where $t$ is a constant: $x=10\to y=t$; $x=30\to y=t-60$; $x=50\to y=t-120$. Which equation represents this relationship?
+15. For a linear relationship between $x$ and $y$, the pairs $(10,t)$, $(30,t-60)$, and $(50,t-120)$ are solutions, where $t$ is a constant. Which equation represents this relationship?
     A) $y=3x+t+30$  B) $y=-3x+t+30$  C) $y=-3x+t-30$  D) $y=-3x+t+60$
 
 **A note on sourcing:** every item in Set 8 is original -- written by studying

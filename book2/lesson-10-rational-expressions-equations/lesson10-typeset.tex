@@ -5,14 +5,12 @@
 \usepackage{tikz}
 \usepackage[table]{xcolor}
 \usepackage[absolute]{textpos}
-\usepackage{enumitem}
 \usepackage{array}
 \usepackage{multirow}
 
 \setmainfont{Libertinus Serif}
 \setsansfont{Libertinus Sans}
 \setmathfont{Libertinus Math}
-\newfontfamily\trackedsans{Libertinus Sans}[LetterSpace=8.0]
 
 \definecolor{accent}{HTML}{602785}
 \definecolor{badge}{HTML}{B8A0C8}
@@ -23,6 +21,7 @@
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
 
+% 16 mm outer print margins; two 83 mm columns with a centre rule at x = 105 mm
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
 \newcommand{\COLW}{83mm}
@@ -56,6 +55,7 @@
 \end{textblock*}
 }
 
+% Fixed-length vertical column rule: #1 = top y (mm), #2 = length (mm)
 \newcommand{\colrule}[2]{%
 \begin{textblock*}{1mm}(105mm,#1mm)
 \begin{tikzpicture}
@@ -68,16 +68,40 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
+% Difficulty label inside Set 8 (small, accent colour)
+\newcommand{\difflabel}[1]{%
+\par\vspace{1mm}{\sffamily\bfseries\color{accent}\fontsize{10}{12}\selectfont #1}\par\vspace{1mm}%
+}
+
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
+% QR placeholder square + caption below
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
+}
+
+% Multiple-choice block: #1=number #2=stem #3-6=choices A-D (2x2 grid)
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% Multiple-choice block with stacked choices, for long choices
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
 }
 
 \arrayrulecolor{accent}
@@ -88,188 +112,362 @@
 \begin{document}
 
 % ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{10}{Ratsional ifodalar va tenglamalar}
+\topicheader{10}{Rational Expressions \& Equations}
 \pagefooter{54}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{12}{15}\selectfont
-\setkicker{1-to'plam}{Soddalashtiring -- avval ko'paytuvchilarga ajrating, keyin faqat ko'paytuvchilarni qisqartiring.}
+{\fontsize{11}{14}\selectfont
+\setkicker{Set 1}{Which expression is equivalent? Factor first, then cancel common factors only.}
 
-\noindent\pnum{1} $\dfrac{x^2-9}{x+3}=$\\[20mm]
-\noindent\pnum{2} $\dfrac{x^2+5x+6}{x+2}=$\\[20mm]
-\noindent\pnum{3} $\dfrac{x^2-5x+6}{x^2-4}=$\\[20mm]
-\noindent\pnum{4} $\dfrac{2x^2+4x}{x^2-4}=$\\[20mm]
-\noindent\pnum{5} $\dfrac{x^2-1}{x^2+2x+1}=$\\[20mm]
-\noindent\pnum{6} $\dfrac{x^2-7x+10}{x^2-25}=$
+\noindent\pnum{1} Which of the following is equivalent to $\dfrac{x^2-9}{x+3}$ for $x\ne-3$?\\[20mm]
+\noindent\pnum{2} Which of the following is equivalent to $\dfrac{x^2+5x+6}{x+2}$ for $x\ne-2$?\\[20mm]
+\noindent\pnum{3} Which of the following is equivalent to $\dfrac{x^2-5x+6}{x^2-4}$ for $x\ne2$ and $x\ne-2$?\\[20mm]
+\noindent\pnum{4} Which of the following is equivalent to $\dfrac{2x^2+4x}{x^2-4}$ for $x\ne-2$ and $x\ne2$?\\[20mm]
+\noindent\pnum{5} Which of the following is equivalent to $\dfrac{x^2-1}{x^2+2x+1}$ for $x\ne-1$?\\[20mm]
+\noindent\pnum{6} Which of the following is equivalent to $\dfrac{x^2-7x+10}{x^2-25}$ for $x\ne5$ and $x\ne-5$?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{12}{15}\selectfont
-\setkicker{2-to'plam}{Ko'paytiring yoki bo'ling.}
+{\fontsize{11}{14}\selectfont
+\setkicker{Set 2}{Multiply or divide. Factor first, then simplify.}
 
-\noindent\pnum{1} $\dfrac{x+4}{x-3}\times\dfrac{x-3}{x+1}=$\\[20mm]
-\noindent\pnum{2} $\dfrac{x^2-16}{3x}\times\dfrac{x}{x+4}=$\\[20mm]
-\noindent\pnum{3} $\dfrac{x-2}{x+5}\times\dfrac{x+5}{x-2}=$\\[20mm]
-\noindent\pnum{4} $\dfrac{x^2-9}{x+2}\div\dfrac{x+3}{x+2}=$\\[20mm]
-\noindent\pnum{5} $\dfrac{x+1}{x-5}\div\dfrac{x+1}{2x-10}=$\\[20mm]
-\noindent\pnum{6} $\dfrac{x^2-4}{5}\div\dfrac{x-2}{10}=$
+\noindent\pnum{1} What is the product $\dfrac{x+4}{x-3}\times\dfrac{x-3}{x+1}$?\\[20mm]
+\noindent\pnum{2} What is the product $\dfrac{x^2-16}{3x}\times\dfrac{x}{x+4}$?\\[20mm]
+\noindent\pnum{3} What is the product $\dfrac{x-2}{x+5}\times\dfrac{x+5}{x-2}$?\\[20mm]
+\noindent\pnum{4} What is the quotient $\dfrac{x^2-9}{x+2}\div\dfrac{x+3}{x+2}$?\\[20mm]
+\noindent\pnum{5} What is the quotient $\dfrac{x+1}{x-5}\div\dfrac{x+1}{2x-10}$?\\[20mm]
+\noindent\pnum{6} What is the quotient $\dfrac{x^2-4}{5}\div\dfrac{x-2}{10}$?
 }
 \end{textblock*}
 
 \clearpage
 
 % ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{10}{Ratsional ifodalar va tenglamalar}
+\topicheader{10}{Rational Expressions \& Equations}
 \pagefooter{55}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{12}{15}\selectfont
-\setkicker{3-to'plam}{Tenglamani yeching (hali tuzoq yo'q).}
+{\fontsize{11}{14}\selectfont
+\setkicker{Set 3}{Solve the rational equation. No trap yet.}
 
-\noindent\pnum{1} $\dfrac{x}{3}+1=\dfrac{x+4}{6}$\\[24mm]
-\noindent\pnum{2} $\dfrac{2}{x}+1=3$\\[24mm]
-\noindent\pnum{3} $\dfrac{x+1}{x+4}=\dfrac{1}{2}$\\[24mm]
-\noindent\pnum{4} $\dfrac{3}{x-1}=\dfrac{2}{x+2}$\\[24mm]
-\noindent\pnum{5} $\dfrac{x}{5}+\dfrac{1}{5}=\dfrac{6}{x}$ \textit{(ikkita javob)}
+\noindent\pnum{1} What is the solution to the equation $\dfrac{x}{3}+1=\dfrac{x+4}{6}$?\\[24mm]
+\noindent\pnum{2} What is the solution to the equation $\dfrac{2}{x}+1=3$?\\[24mm]
+\noindent\pnum{3} What is the solution to the equation $\dfrac{x+1}{x+4}=\dfrac{1}{2}$?\\[24mm]
+\noindent\pnum{4} What is the solution to the equation $\dfrac{3}{x-1}=\dfrac{2}{x+2}$?\\[24mm]
+\noindent\pnum{5} What are the solutions to the equation $\dfrac{x}{5}+\dfrac{1}{5}=\dfrac{6}{x}$? \textit{(there are two)}
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{4-to'plam}{Yeching va TEKSHIRING -- ba'zi nomzodlar rad etilishi, ba'zilari esa qabul qilinishi kerak. Javobni son yoki ``yechim yo'q'' deb aniq ko'rsating.}
+\setkicker{Set 4}{Solve, then CHECK each candidate in the original equation. Some are rejected and some are accepted. Give a value or ``no solution''.}
 
-\noindent\pnum{1} $\dfrac{x}{x-3}=\dfrac{3}{x-3}-2$\\[30mm]
-\noindent\pnum{2} $\dfrac{x+1}{x-4}=\dfrac{5}{x-4}$\\[30mm]
-\noindent\pnum{3} $\dfrac{2x}{x-5}=\dfrac{10}{x-5}+1$\\[30mm]
-\noindent\pnum{4} $\dfrac{x+2}{x-1}=3$ \textit{(bu tuzoq emas -- tekshiring)}
+\noindent\pnum{1} What is the solution to the equation $\dfrac{x}{x-3}=\dfrac{3}{x-3}-2$, or does the equation have no solution?\\[30mm]
+\noindent\pnum{2} What is the solution to the equation $\dfrac{x+1}{x-4}=\dfrac{5}{x-4}$, or does the equation have no solution?\\[30mm]
+\noindent\pnum{3} What is the solution to the equation $\dfrac{2x}{x-5}=\dfrac{10}{x-5}+1$, or does the equation have no solution?\\[30mm]
+\noindent\pnum{4} What is the solution to the equation $\dfrac{x+2}{x-1}=3$? \textit{(this one is not a trap -- confirm the candidate is valid)}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 3: Set 5 | Set 6 (spot the error) =================
-\topicheader{10}{Ratsional ifodalar va tenglamalar}
+% ================= PAGE 3: Set 5 | Set 6 =================
+\topicheader{10}{Rational Expressions \& Equations}
 \pagefooter{56}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{11.5}{14.5}\selectfont
-\setkicker{5-to'plam}{Aralash -- har bir band o'z ko'rsatmasiga ega.}
+{\fontsize{11}{14}\selectfont
+\setkicker{Set 5}{Mixed practice. Each item has its own instruction.}
 
-\noindent\pnum{1} Soddalashtiring: $\dfrac{2x^2-8}{x^2-4}=$\\[20mm]
-\noindent\pnum{2} Yeching: $\dfrac{4}{x+1}=\dfrac{2}{x-1}$\\[20mm]
-\noindent\pnum{3} Ko'paytiring: $\dfrac{x-5}{x+3}\times\dfrac{x+3}{2x}=$\\[20mm]
-\noindent\pnum{4} Yeching va tekshiring: $\dfrac{1}{x-2}+\dfrac{1}{x+2}=\dfrac{4}{x^2-4}$\\[20mm]
-\noindent\pnum{5} Soddalashtiring: $\dfrac{x^2-6x+9}{x^2-9}=$
+\noindent\pnum{1} Which of the following is equivalent to $\dfrac{2x^2-8}{x^2-4}$? \textit{(what is left after everything cancels is not automatically $0$ or $1$)}\\[22mm]
+\noindent\pnum{2} What is the solution to the equation $\dfrac{4}{x+1}=\dfrac{2}{x-1}$?\\[22mm]
+\noindent\pnum{3} What is the product $\dfrac{x-5}{x+3}\times\dfrac{x+3}{2x}$?\\[22mm]
+\noindent\pnum{4} What is the solution to the equation $\dfrac{1}{x-2}+\dfrac{1}{x+2}=\dfrac{4}{x^2-4}$, or does the equation have no solution?\\[22mm]
+\noindent\pnum{5} Which of the following is equivalent to $\dfrac{x^2-6x+9}{x^2-9}$?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'g'ri javobni bering.}
+\setkicker{Set 6}{Identify the error. Name the mistake and give the correct answer.}
 
-\noindent\pnum{1} $\dfrac{x+5}{x}$ ni soddalashtiring -- ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$x$'larni qisqartiramiz: javob $5$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{1} A student simplified $\dfrac{x+5}{x}$ by canceling the $x$'s and reported $5$.\\[1mm]
+\hspace*{7mm}Error and fix: \makebox[40mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{2} $\dfrac{x^2-4}{x+2}$ ni soddalashtiring -- ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``Hammasi qisqaradi, javob $0$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{2} A student simplified $\dfrac{x^2-4}{x+2}$, concluded that everything cancels, and reported $0$.\\[1mm]
+\hspace*{7mm}Error and fix: \makebox[40mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{3} $\dfrac{3x}{x-2}=\dfrac{6}{x-2}+x$ ni yeching -- ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``Tozalab, $x^2-5x+6=0$, demak $x=2$ yoki $x=3$ -- ikkalasi ham yechim.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{3} A student solved $\dfrac{3x}{x-2}=\dfrac{6}{x-2}+x$, cleared fractions to $x^2-5x+6=0$, and reported $x=2$ and $x=3$.\\[1mm]
+\hspace*{7mm}Error and solution set: \makebox[40mm]{\dotfill}\\[8mm]
 
-\noindent\pnum{4} $\dfrac{3x+6}{3x}$ ni soddalashtiring -- ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``$3$'larni va $x$'larni qisqartiramiz: javob $6$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}
+\noindent\pnum{4} A student simplified $\dfrac{3x+6}{3x}$ by canceling the $3$'s and the $x$'s and reported $6$.\\[1mm]
+\hspace*{7mm}Error and fix: \makebox[40mm]{\dotfill}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 6 (item 5 continued) | Set 7 (bonus) =================
-\topicheader{10}{Ratsional ifodalar va tenglamalar}
+% ================= PAGE 4: Set 6 (item 5) | Set 7, then Set 8 starts below it =================
+\topicheader{10}{Rational Expressions \& Equations}
 \pagefooter{57}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{6-to'plam (davomi)}{}
+\setkicker{Set 6 (cont.)}{Identify the error.}
 
-\noindent\pnum{5} $\dfrac{x-2}{x+3}\times\dfrac{x+3}{x-2}$ ni ko'paytiring -- ko'rsatilgan yechimda xato bor:\\[1mm]
-\hspace*{7mm}\textit{``Hammasi qisqaradi, javob $0$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}
+\noindent\pnum{5} A student multiplied $\dfrac{x-2}{x+3}\times\dfrac{x+3}{x-2}$, concluded that everything cancels, and reported $0$.\\[1mm]
+\hspace*{7mm}Error and fix: \makebox[40mm]{\dotfill}
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{12}{15}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin.}
+{\fontsize{11}{14}\selectfont
+\setkicker{Set 7}{Extended thinking.}
 
-\noindent\pnum{1} $\dfrac{2}{x-1}-\dfrac{3}{x+1}=1$ \textit{(ikkita javob)}\\[26mm]
-\noindent\pnum{2} $\dfrac{x^3-x}{x^2-1}=$\\[26mm]
-\noindent\pnum{3} $\dfrac{x+1}{x-3}=\dfrac{x-1}{x+3}$\\[26mm]
-\noindent\pnum{4} $\dfrac{1}{x}+\dfrac{1}{x+2}=\dfrac{3}{4}$ \textit{(ikkita javob)}
+\noindent\pnum{1} What are the solutions to the equation $\dfrac{2}{x-1}-\dfrac{3}{x+1}=1$? \textit{(there are two)}\\[24mm]
+\noindent\pnum{2} Which of the following is equivalent to $\dfrac{x^3-x}{x^2-1}$?\\[24mm]
+\noindent\pnum{3} What is the solution to the equation $\dfrac{x+1}{x-3}=\dfrac{x-1}{x+3}$?\\[24mm]
+\noindent\pnum{4} What are the solutions to the equation $\dfrac{1}{x}+\dfrac{1}{x+2}=\dfrac{3}{4}$? \textit{(there are two)}\\[8mm]
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+\difflabel{Easy}
+\satq{1}{Which of the following is equivalent to $\dfrac{x^2-16}{x-4}$ for $x\ne4$?}{$x-4$}{$x+4$}{$\dfrac{x+4}{x-4}$}{$x^2-4$}
+\satq{2}{Which of the following is equivalent to $\dfrac{3x}{x^2+x}$ for $x\ne0$ and $x\ne-1$?}{$\dfrac{3}{x}$}{$\dfrac{3}{x+1}$}{$\dfrac{3x}{x+1}$}{$\dfrac{1}{x+1}$}
+
 }
+}
+\end{textblock*}
+\clearpage
+% ===== Set 8 continuation =====
+\topicheader{10}{Rational Expressions \& Equations}
+\pagefooter{58}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{3}{What is the product $\dfrac{x+2}{5}\times\dfrac{10}{x+2}$ for $x\ne-2$?}{$2$}{$10$}{$2(x+2)$}{$\dfrac{1}{2}$}
+\satq{4}{What is the quotient $\dfrac{x^2-1}{4}\div\dfrac{x+1}{8}$ for $x\ne-1$?}{$2x+2$}{$2x-2$}{$\dfrac{x-1}{2}$}{$\dfrac{x^2-1}{2}$}
+\satq{5}{What is the solution to the equation $\dfrac{x}{3}=\dfrac{x-2}{2}$?}{2}{4}{6}{$-6$}
+\satq{6}{What is the solution to the equation $\dfrac{12}{x}=4$?}{3}{$-3$}{8}{48}
+\satq{7}{What is the solution to the equation $\dfrac{x+5}{x-1}=2$?}{3}{7}{$-7$}{1}
+\satq{8}{Which of the following is equivalent to $\dfrac{x+5}{x-1}+\dfrac{2x-3}{x-1}$ for $x\ne1$?}{$\dfrac{3x+8}{x-1}$}{$\dfrac{3x+2}{x-1}$}{$\dfrac{3x-2}{x-1}$}{$\dfrac{3x+2}{x^2-1}$}
+\satq{9}{Which of the following is equivalent to $\dfrac{2x-6}{x^2-9}$ for $x\ne3$ and $x\ne-3$?}{$\dfrac{2}{x+3}$}{$\dfrac{2}{x-3}$}{$\dfrac{x-3}{x+3}$}{$\dfrac{2x}{x+3}$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{10}{What is the solution to the equation $\dfrac{x}{x+4}=\dfrac{2}{x+4}$?}{2}{$-4$}{6}{No solution}
+\satq{11}{What is the solution to the equation $\dfrac{1}{x}+\dfrac{1}{2}=\dfrac{3}{x}$?}{2}{4}{6}{$-4$}
+\satq{12}{Which of the following is equivalent to $\dfrac{x^2-25}{x^2-10x+25}$ for $x\ne5$?}{$\dfrac{x+5}{x-5}$}{$\dfrac{x-5}{x+5}$}{$x+5$}{$\dfrac{x^2+5}{x-5}$}
+\satq{13}{For which value of $x$ is the expression $\dfrac{4x+8}{x-7}$ undefined?}{7}{$-7$}{$-2$}{0}
+\satq{14}{If $x\ne3$, what is the value of $\dfrac{x^2-x-6}{x-3}$ when $x=-7$?}{$-9$}{$-5$}{5}{9}
+\satq{15}{Which of the following is a solution to $\dfrac{4}{x}=\dfrac{x}{9}$?}{3}{6}{9}{18}
+}
+\end{textblock*}
+\clearpage
+% ===== Set 8 continuation =====
+\topicheader{10}{Rational Expressions \& Equations}
+\pagefooter{59}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Medium}
+\satq{1}{What is the solution to the equation $\dfrac{x+1}{x-2}-\dfrac{3}{x-2}=2$?}{0}{2}{No solution}{4}
+\satq{2}{What is the solution to the equation $\dfrac{2x}{x+3}=\dfrac{6}{x+3}+1$?}{3}{9}{$-3$}{6}
+\satq{3}{What is the solution to the equation $\dfrac{x}{x-4}=\dfrac{16}{x-4}+4$?}{0}{4}{$-4$}{16}
+\satq{4}{What is the solution to the equation $\dfrac{3}{x-2}+\dfrac{1}{x+2}=\dfrac{6}{x^2-4}$?}{$\dfrac{1}{2}$}{1}{$-1$}{2}
+\satqw{5}{Which statement about the equation $\dfrac{x+3}{x-2}=\dfrac{5}{x-2}+1$ is true?}{$x=2$ is the only solution.}{Every real number is a solution.}{Every real number except $2$ is a solution.}{The equation has no solution.}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{6}{Pump A fills an empty tank in 4 hours, and pump B fills the same empty tank in 6 hours. Working together at these constant rates, how many hours do the two pumps need to fill the empty tank?}{$\dfrac{12}{5}$ hours}{$\dfrac{5}{2}$ hours}{5 hours}{10 hours}
+\satq{7}{Dilnoza drives 120 miles at a constant speed of $x$ miles per hour. If she had driven 10 miles per hour faster, the trip would have taken 1 hour less. What is the value of $x$?}{20}{30}{40}{50}
+\satq{8}{What is the solution set of $\dfrac{x}{x-1}-\dfrac{1}{x+1}=\dfrac{2}{x^2-1}$?}{$x=1$}{$x=-1$}{$x=1$ or $x=-1$}{No solution}
+\satq{9}{What is the solution to the equation $\dfrac{x^2}{x-3}=\dfrac{9}{x-3}$?}{3}{$-3$}{$3$ or $-3$}{No solution}
+\satq{10}{Which of the following is equivalent to $\dfrac{x^2-4x-12}{x^2-x-6}$ for $x\ne3$ and $x\ne-2$?}{$\dfrac{x-6}{x-3}$}{$\dfrac{x-3}{x-6}$}{$\dfrac{x+6}{x+3}$}{$\dfrac{x-2}{x-3}$}
+\satq{11}{Which of the following is equivalent to $\dfrac{x^2-9}{x^2+2x-3}\cdot\dfrac{x^2-1}{x^2-6x+9}$ for $x\ne3$, $x\ne-3$, and $x\ne1$?}{$\dfrac{x+1}{x-3}$}{$\dfrac{x-1}{x+3}$}{$\dfrac{x+3}{x-3}$}{$\dfrac{x+1}{x+3}$}
+}
+\end{textblock*}
+\clearpage
+% ===== Set 8 continuation =====
+\topicheader{10}{Rational Expressions \& Equations}
+\pagefooter{60}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{12}{Which of the following is equivalent to $\dfrac{x^2+x-6}{x^2-1}\div\dfrac{x+3}{x+1}$ for $x\ne\pm1$ and $x\ne-3$?}{$\dfrac{x-2}{x-1}$}{$\dfrac{x-1}{x-2}$}{$\dfrac{x+3}{x-1}$}{$\dfrac{x-2}{x+1}$}
+\satq{13}{A total of 48 ounces of food is shared equally among $x$ people. If 4 more people join, and the same 48 ounces is still shared equally, each person receives 2 fewer ounces. What is the value of $x$?}{4}{6}{8}{12}
+\satq{14}{If $x+\dfrac{1}{x}=5$ and $x\ne0$, what is the value of $\dfrac{x^2+1}{x}$?}{$\dfrac{1}{5}$}{5}{7}{25}
+\satq{15}{For what value of $k$ does the equation $\dfrac{x+k}{x-3}=2$ have no solution?}{$-3$}{3}{6}{$-6$}
+\difflabel{Hard}
+\satq{1}{What is the solution to the equation $\dfrac{x^2}{x-2}=\dfrac{4}{x-2}+6$?}{2}{4}{2 or 4}{No solution}
+\satq{2}{For what value of $k$ does the equation $\dfrac{x^2-9}{x-3}=k$ have no solution?}{0}{3}{6}{9}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{3}{Printer X can print a batch of reports in $x$ hours, and Printer Y can print the same batch in $x+3$ hours. Working together at these constant rates, the two printers finish the batch in 2 hours. What is the value of $x$?}{$-2$}{2}{3}{5}
+\satqw{4}{Which of the following is equivalent to $\dfrac{x^2+x-12}{x^2-9}\cdot\dfrac{x^2-6x+9}{x^2-16}$ for $x\ne\pm3$ and $x\ne\pm4$?}{$\dfrac{(x-3)^2}{(x+3)(x-4)}$}{$\dfrac{x-3}{(x+3)(x-4)}$}{$\dfrac{(x-3)^2}{(x-3)(x+3)}$}{$\dfrac{x-3}{x-4}$}
+\satq{5}{Which of the following is equivalent to $\dfrac{\dfrac{1}{x-1}+\dfrac{1}{x+1}}{\dfrac{x}{x-1}}$ for $x\ne-1$, $x\ne0$, and $x\ne1$?}{$\dfrac{2}{x+1}$}{$\dfrac{2}{x-1}$}{$\dfrac{2x}{x+1}$}{$\dfrac{x+1}{2}$}
+\satq{6}{What is the solution to the equation $\dfrac{x+2}{x-2}-\dfrac{x-2}{x+2}=\dfrac{16}{x^2-4}$?}{$x=2$}{$x=-2$}{$x=0$}{No solution}
+\satq{7}{What are the solutions to the equation $\dfrac{x^2+9}{x+1}=5$?}{$x=1$ only}{$x=4$ only}{$x=1$ or $x=4$}{$x=-1$ or $x=-4$}
+}
+\end{textblock*}
+\clearpage
+% ===== Set 8 continuation =====
+\topicheader{10}{Rational Expressions \& Equations}
+\pagefooter{61}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satqw{8}{Which statement about the equation $\dfrac{x+4}{x+2}-\dfrac{x}{x-2}=\dfrac{-8}{x^2-4}$ is true?}{$x=0$ is the only solution.}{The equation has no solution.}{Every real number except $2$ and $-2$ is a solution.}{Every real number is a solution.}
+\satq{9}{A shipment of crates costs \$600 to deliver, split equally among the crates, so each crate costs $\dfrac{600}{x}$ dollars. If 10 more crates are added to the shipment, the cost per crate decreases by \$5. How many crates are in the original shipment?}{20}{30}{40}{60}
+\satq{10}{In the equation $\dfrac{x}{x-k}=\dfrac{2}{x-k}+3$, $k$ is a constant. For what value of $k$ does the equation have no solution?}{1}{2}{3}{4}
+\satq{11}{Which of the following is equivalent to $\dfrac{x^3-8}{x^2-4}$ for $x\ne\pm2$?}{$\dfrac{x^2+2x+4}{x+2}$}{$\dfrac{x^2+4}{x+2}$}{$x^2+2x+4$}{$\dfrac{x+2}{x^2+2x+4}$}
+\satq{12}{Working alone, Asha can finish a job in $x$ hours, and Bekzod can finish the same job in $x+6$ hours. Working together at these constant rates, they finish the job in 4 hours. How many hours would Bekzod need to finish the job alone?}{4}{6}{10}{12}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{13}{What is the sum of all real solutions to $\dfrac{x+1}{x-1}+\dfrac{x-1}{x+1}=\dfrac{5}{2}$?}{$-3$}{0}{3}{6}
+\satq{14}{Which of the following is a solution to $\dfrac{x}{x-2}-\dfrac{2}{x+2}=\dfrac{13}{x^2-4}$?}{2}{$-2$}{3}{4}
+\satq{15}{For what value of $a$ is $\dfrac{3x+a}{x+1}=\dfrac{5}{x+1}+3$ true for every value of $x$ except $x=-1$?}{2}{5}{8}{11}
+}
+\end{textblock*}
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original. Each was written to match the method and distractor style of the official Equivalent expressions and Nonlinear equations items, checked against that bank, with new numbers, names and contexts. No College Board question text, numbers or wording is reproduced in this book.\par}
 \end{textblock*}
 
 \clearpage
-
-% ================= PAGE 5: Javoblar -- unified answer table + QR =================
-\topicheader{10}{Ratsional ifodalar va tenglamalar}
-\pagefooter{58}
+\topicheader{10}{Rational Expressions \& Equations}
+\pagefooter{62}
 \mbox{}%
-
 \begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
 \end{textblock*}
-
 \begin{textblock*}{194mm}(16mm,44mm)
-{\fontsize{9.5}{12}\selectfont
+{\fontsize{9}{11.5}\selectfont
 \centering
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{32mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{32mm}|}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{34mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{34mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{3}{24mm}{\centering 1-to'plam} & 1 & $x-3$ & 2 & $x+3$\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 1} & 1 & $x-3$ & 2 & $x+3$\\\cline{2-5}
  & 3 & $\frac{x-3}{x+2}$ & 4 & $\frac{2x}{x-2}$\\\cline{2-5}
  & 5 & $\frac{x-1}{x+1}$ & 6 & $\frac{x-2}{x+5}$\\\hline
-\multirow{3}{24mm}{\centering 2-to'plam} & 1 & $\frac{x+4}{x+1}$ & 2 & $\frac{x-4}{3}$\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 2} & 1 & $\frac{x+4}{x+1}$ & 2 & $\frac{x-4}{3}$\\\cline{2-5}
  & 3 & $1$ & 4 & $x-3$\\\cline{2-5}
  & 5 & $2$ & 6 & $2x+4$\\\hline
-\multirow{3}{24mm}{\centering 3-to'plam} & 1 & $x=-2$ & 2 & $x=1$\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 3} & 1 & $x=-2$ & 2 & $x=1$\\\cline{2-5}
  & 3 & $x=2$ & 4 & $x=-8$\\\cline{2-5}
- & 5 & \multicolumn{3}{p{48mm}|}{$x=-6$ yoki $x=5$}\\\hline
-\multirow{4}{24mm}{\centering 4-to'plam} & \multicolumn{4}{p{74mm}|}{1.\ $x=3$ emas -- mahraj $x-3$ nolga aylanadi. \textbf{Yechim yo'q.}}\\\cline{2-5}
- & \multicolumn{4}{p{74mm}|}{2.\ $x=4$ emas -- mahraj $x-4$ nolga aylanadi. \textbf{Yechim yo'q.}}\\\cline{2-5}
- & \multicolumn{4}{p{74mm}|}{3.\ $x=5$ emas -- mahraj $x-5$ nolga aylanadi. \textbf{Yechim yo'q.}}\\\cline{2-5}
- & \multicolumn{4}{p{74mm}|}{4.\ $x=\frac{5}{2}$ -- mahraj $\frac32\ne0$, \textbf{to'g'ri yechim} (tuzoq emas).}\\\hline
-\multirow{3}{24mm}{\centering 5-to'plam} & 1 & $2$ & 2 & $x=3$\\\cline{2-5}
- & 3 & $\frac{x-5}{2x}$ & 4 & \multicolumn{1}{p{32mm}|}{yechim yo'q}\\\cline{2-5}
+ & 5 & \multicolumn{3}{p{48mm}|}{$x=-6$ or $x=5$}\\\hline
+\multirow{4}{24mm}{\centering Set 4} & \multicolumn{4}{p{76mm}|}{1.\ $x=3$ is rejected (it makes $x-3=0$). \textbf{No solution.}}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{2.\ $x=4$ is rejected (it makes $x-4=0$). \textbf{No solution.}}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{3.\ $x=5$ is rejected (it makes $x-5=0$). \textbf{No solution.}}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{4.\ $x=\frac{5}{2}$ is valid ($x-1=\frac32\ne0$). \textbf{Not a trap.}}\\\hline
+\multirow{3}{24mm}{\centering Set 5} & 1 & $2$ & 2 & $x=3$\\\cline{2-5}
+ & 3 & $\frac{x-5}{2x}$ & 4 & \multicolumn{1}{p{34mm}|}{no solution}\\\cline{2-5}
  & 5 & \multicolumn{3}{p{48mm}|}{$\frac{x-3}{x+3}$}\\\hline
-\multirow{5}{24mm}{\centering 6-to'plam} & \multicolumn{4}{p{74mm}|}{1.\ Xato -- $x$ surat $(x+5)$ ning hadi, ko'paytuvchisi emas. To'g'ri: $\frac{x+5}{x}$ allaqachon soddalashtirilgan.}\\\cline{2-5}
- & \multicolumn{4}{p{74mm}|}{2.\ Xato -- $(x+2)$ qisqargach $(x-2)$ qoladi, yo'qolmaydi. To'g'ri: $x-2$.}\\\cline{2-5}
- & \multicolumn{4}{p{74mm}|}{3.\ Xato -- $x=2$ asl mahrajda tekshirilmagan, u nolga aylanadi. To'g'ri: faqat $x=3$.}\\\cline{2-5}
- & \multicolumn{4}{p{74mm}|}{4.\ Xato -- $x$ faqat bitta hadning ko'paytuvchisi. To'g'ri: $\frac{3x+6}{3x}=\frac{x+2}{x}$, ortiq soddalashmaydi.}\\\cline{2-5}
- & \multicolumn{4}{p{74mm}|}{5.\ Xato -- ko'paytuvchilar qisqaradi, lekin natija $1$ bo'ladi, $0$ emas. To'g'ri: $1$.}\\\hline
-\multirow{2}{24mm}{\centering 7-to'plam} & 1 & $x{=}{-}3$ yoki $2$ & 2 & $x$\\\cline{2-5}
- & 3 & $x=0$ & 4 & $x{=}{-}\frac43$ yoki $2$\\\hline
+\multirow{5}{24mm}{\centering Set 6} & \multicolumn{4}{p{76mm}|}{1.\ Error: $x$ is a term of $x+5$, not a factor. Correct: $\frac{x+5}{x}$, already simplest.}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{2.\ Error: after cancelling $(x+2)$, the factor $(x-2)$ remains. Correct: $x-2$.}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{3.\ Error: $x=2$ was not checked; it makes $x-2=0$. Correct: $x=3$ only.}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{4.\ Error: $x$ is not a factor of all of $3x+6$. Correct: $\frac{3x+6}{3x}=\frac{x+2}{x}$.}\\\cline{2-5}
+ & \multicolumn{4}{p{76mm}|}{5.\ Error: cancelling identical factors gives $1$, not $0$. Correct: $1$.}\\\hline
+\multirow{2}{24mm}{\centering Set 7} & 1 & $x=-3$ or $x=2$ & 2 & $x$\\\cline{2-5}
+ & 3 & $x=0$ & 4 & $x=-\frac43$ or $x=2$\\\hline
 \end{tabular}
 }
 \end{textblock*}
-
+\clearpage
+\topicheader{10}{Rational Expressions \& Equations}
+\pagefooter{63}
+\mbox{}%
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{center}\begin{tabular}{|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|}
+\hline
+\rowcolor{badge!55}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\\hline
+B & B & A & B & C & A & B & B & A & A\\\hline
+\end{tabular}\end{center}
+\vspace{3mm}
+\begin{center}\begin{tabular}{|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|}
+\hline
+\rowcolor{badge!55}
+11 & 12 & 13 & 14 & 15\\\hline
+B & A & A & B & B\\\hline
+\end{tabular}\end{center}
+}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{center}\begin{tabular}{|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|}
+\hline
+\rowcolor{badge!55}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\\hline
+C & B & A & A & C & A & B & D & B & A\\\hline
+\end{tabular}\end{center}
+\vspace{3mm}
+\begin{center}\begin{tabular}{|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|}
+\hline
+\rowcolor{badge!55}
+11 & 12 & 13 & 14 & 15\\\hline
+A & A & C & B & A\\\hline
+\end{tabular}\end{center}
+}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{center}\begin{tabular}{|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|}
+\hline
+\rowcolor{badge!55}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\\hline
+B & C & C & A & A & D & C & C & B & B\\\hline
+\end{tabular}\end{center}
+\vspace{3mm}
+\begin{center}\begin{tabular}{|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{8mm}|}
+\hline
+\rowcolor{badge!55}
+11 & 12 & 13 & 14 & 15\\\hline
+A & D & B & C & C\\\hline
+\end{tabular}\end{center}
+}
+\end{textblock*}
 \begin{textblock*}{194mm}(16mm,232mm)
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}

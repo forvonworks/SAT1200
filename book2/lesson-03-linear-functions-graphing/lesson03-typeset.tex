@@ -23,10 +23,13 @@
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
 
+% ---- Safe print margins: 16mm outer on both sides. Columns are 83mm wide with a
+% 6mm gap on each side of the center rule (at x=105mm). ----
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
 \newcommand{\COLW}{83mm}
 
+% ---- Plain topic header: number chip + title, thin rule underneath. ----
 \newcommand{\topicheader}[2]{%
 \begin{textblock*}{194mm}(16mm,10mm)
 \begin{tikzpicture}
@@ -56,6 +59,7 @@
 \end{textblock*}
 }
 
+% ---- Fixed-length vertical column rule: #1 = top y (mm), #2 = length (mm) ----
 \newcommand{\colrule}[2]{%
 \begin{textblock*}{1mm}(105mm,#1mm)
 \begin{tikzpicture}
@@ -68,18 +72,43 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
+% ---- Difficulty label inside Set 8 ----
+\newcommand{\difflabel}[1]{%
+{\sffamily\bfseries\color{accent}\fontsize{10}{12}\selectfont #1}\par\vspace{1.5mm}%
+}
+
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
+% ---- QR placeholder square + caption below ----
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- Multiple-choice block, 2x2 grid for short choices: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- Multiple-choice block, stacked choices, for long choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
+}
+
+% ---- Answer-table styling ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
@@ -88,142 +117,293 @@
 \begin{document}
 
 % ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{3}{Chiziqli funksiyalar va grafiklar}
+\topicheader{3}{Linear Functions \& Graphing}
 \pagefooter{17}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{1-to'plam}{Ikki nuqta orqali qiyalikni (slope) toping.}
+\setkicker{Set 1}{Slope from two points (pure drill).}
 
-\noindent\pnum{1} $(1,2)$ va $(4,11)$: $m=$\\[30mm]
-\noindent\pnum{2} $(0,5)$ va $(3,-4)$: $m=$\\[30mm]
-\noindent\pnum{3} $(-1,4)$ va $(3,4)$: $m=$\\[30mm]
-\noindent\pnum{4} $(-2,-3)$ va $(2,5)$: $m=$\\[30mm]
-\noindent\pnum{5} $(0,0)$ va $(5,15)$: $m=$\\[30mm]
-\noindent\pnum{6} $(6,1)$ va $(2,9)$: $m=$
+\noindent\pnum{1} Through $(1,2)$ and $(4,11)$: $m=$\\[30mm]
+\noindent\pnum{2} Through $(0,5)$ and $(3,-4)$: $m=$\\[30mm]
+\noindent\pnum{3} Through $(-1,4)$ and $(3,4)$: $m=$\\[30mm]
+\noindent\pnum{4} Through $(-2,-3)$ and $(2,5)$: $m=$\\[30mm]
+\noindent\pnum{5} Through $(0,0)$ and $(5,15)$: $m=$\\[30mm]
+\noindent\pnum{6} Through $(6,1)$ and $(2,9)$: $m=$
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{2-to'plam}{Ikki nuqta orqali qiyalikni toping -- qiyinroq sonlar.}
+\setkicker{Set 2}{Slope from two points (harder numbers).}
 
-\noindent\pnum{1} $(1,2)$ va $(5,5)$: $m=$\\[30mm]
-\noindent\pnum{2} $(-3,4)$ va $(1,-2)$: $m=$\\[30mm]
-\noindent\pnum{3} $(2,-1)$ va $(-2,3)$: $m=$\\[30mm]
-\noindent\pnum{4} $(0,-5)$ va $(4,0)$: $m=$\\[30mm]
-\noindent\pnum{5} $(-4,-2)$ va $(2,-6)$: $m=$\\[30mm]
-\noindent\pnum{6} $(3,7)$ va $(-3,-5)$: $m=$
+\noindent\pnum{1} Through $(1,2)$ and $(5,5)$: $m=$\\[30mm]
+\noindent\pnum{2} Through $(-3,4)$ and $(1,-2)$: $m=$\\[30mm]
+\noindent\pnum{3} Through $(2,-1)$ and $(-2,3)$: $m=$\\[30mm]
+\noindent\pnum{4} Through $(0,-5)$ and $(4,0)$: $m=$\\[30mm]
+\noindent\pnum{5} Through $(-4,-2)$ and $(2,-6)$: $m=$\\[30mm]
+\noindent\pnum{6} Through $(3,7)$ and $(-3,-5)$: $m=$
 }
 \end{textblock*}
 
 \clearpage
 
 % ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{3}{Chiziqli funksiyalar va grafiklar}
+\topicheader{3}{Linear Functions \& Graphing}
 \pagefooter{18}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{12}{15}\selectfont
-\setkicker{3-to'plam}{To'g'ri chiziq tenglamasini yozing ($y=mx+b$).}
+\setkicker{Set 3}{Write an equation of the line ($y=mx+b$).}
 
-\noindent\pnum{1} Qiyalik $4$, $(1,3)$ orqali.\\[26mm]
-\noindent\pnum{2} Qiyalik $-2$, $(0,5)$ orqali.\\[26mm]
-\noindent\pnum{3} $(2,1)$ va $(4,7)$ orqali.\\[26mm]
-\noindent\pnum{4} $(-1,4)$ va $(3,-4)$ orqali.\\[26mm]
-\noindent\pnum{5} Qiyalik $\frac12$, $(4,-1)$ orqali.\\[26mm]
-\noindent\pnum{6} $(0,-3)$ va $(5,2)$ orqali.
+\noindent\pnum{1} Slope $4$, through $(1,3)$. Equation:\\[26mm]
+\noindent\pnum{2} Slope $-2$, through $(0,5)$. Equation:\\[26mm]
+\noindent\pnum{3} Through $(2,1)$ and $(4,7)$. Equation:\\[26mm]
+\noindent\pnum{4} Through $(-1,4)$ and $(3,-4)$. Equation:\\[26mm]
+\noindent\pnum{5} Slope $\frac12$, through $(4,-1)$. Equation:\\[26mm]
+\noindent\pnum{6} Through $(0,-3)$ and $(5,2)$. Equation:
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11.5}{15}\selectfont
-\setkicker{4-to'plam}{Parallel va perpendikulyar chiziqlar.}
+\setkicker{Set 4}{Parallel and perpendicular lines.}
 
-\noindent\pnum{1} $y=3x+2$ ga parallel, $(1,8)$ orqali.\\[25mm]
-\noindent\pnum{2} $y=-4x+1$ ga parallel, $(2,-3)$ orqali.\\[25mm]
-\noindent\pnum{3} $y=2x-5$ ga perpendikulyar, $(4,1)$ orqali.\\[25mm]
-\noindent\pnum{4} $y=-\frac13x+2$ ga perpendikulyar, $(-2,0)$ orqali.\\[25mm]
-\noindent\pnum{5} $y=5$ ga parallel, $(3,-2)$ orqali.\\[25mm]
-\noindent\pnum{6} $x=4$ ga perpendikulyar, $(0,7)$ orqali.
+\noindent\pnum{1} Parallel to $y=3x+2$, through $(1,8)$. Equation:\\[25mm]
+\noindent\pnum{2} Parallel to $y=-4x+1$, through $(2,-3)$. Equation:\\[25mm]
+\noindent\pnum{3} Perpendicular to $y=2x-5$, through $(4,1)$. Equation:\\[25mm]
+\noindent\pnum{4} Perpendicular to $y=-\frac13x+2$, through $(-2,0)$. Equation:\\[25mm]
+\noindent\pnum{5} Parallel to $y=5$, through $(3,-2)$. Equation:\\[25mm]
+\noindent\pnum{6} Perpendicular to $x=4$, through $(0,7)$. Equation:
 }
 \end{textblock*}
 
 \clearpage
 
 % ================= PAGE 3: Set 5 (context) | Set 6 (spot the error) =================
-\topicheader{3}{Chiziqli funksiyalar va grafiklar}
+\topicheader{3}{Linear Functions \& Graphing}
 \pagefooter{19}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{5-to'plam}{Kontekst -- qiyalik va $y$-kesishni talqin qiling.}
+\setkicker{Set 5}{Context -- interpret the slope and the $y$-intercept.}
 
-\noindent\pnum{1} $C(x)=2000x+5000$ (taksi narxi, so'm, $x$=km). $C(10)=$\\[14mm]
-\noindent\pnum{2} Shu $C(x)$ uchun: $C(x)=35000$ bo'lganda $x=$\\[14mm]
-\noindent\pnum{3} $V(x)=-5x+60$ (idish hajmi, litr). $V(8)=$\\[14mm]
-\noindent\pnum{4} Shu $V(x)$ uchun: idish bo'shaganda ($V(x)=0$) $x=$\\[14mm]
-\noindent\pnum{5} Qiyaligi $4$, $y$-kesishi $-7$ bo'lgan chiziq. $x=3$ da qiymati?\\[14mm]
-\noindent\pnum{6} O'simlik bo'yi (sm) $x$ hafta: $(2,10)$ va $(5,19)$ orqali o'tadi. $0$-haftadagi bo'yi?
+\noindent\pnum{1} $C(x)=2000x+5000$ is the taxi fare, in som, for $x$ km. $C(10)=$\\[14mm]
+\noindent\pnum{2} Using the same $C(x)$: $C(x)=35000$ when $x=$\\[14mm]
+\noindent\pnum{3} $V(x)=-5x+60$ is the volume, in liters, after $x$ minutes. $V(8)=$\\[14mm]
+\noindent\pnum{4} Using the same $V(x)$: the tank is empty ($V(x)=0$) when $x=$\\[14mm]
+\noindent\pnum{5} A line has slope $4$ and $y$-intercept $-7$. Its $y$-value at $x=3$ is\\[14mm]
+\noindent\pnum{6} A plant's height, in cm, is linear in weeks and passes through $(2,10)$ and $(5,19)$. Its height at week $0$ is
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'g'ri javobni bering.}
+\setkicker{Set 6}{Spot the error -- find the mistake, then give the correct answer.}
 
-\noindent\pnum{1} $(2,5)$ va $(6,13)$ orqali qiyalik: \textit{``Yechim: $m=\frac{6-2}{13-5}=\frac{4}{8}=\frac12$.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{1} Slope through $(2,5)$ and $(6,13)$. A student writes: \textit{``$m=\frac{6-2}{13-5}=\frac{4}{8}=\frac12$.''}\\[1mm]
+\hspace*{7mm}Error and fix: \makebox[48mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{2} $y=5x-3$: \textit{``Qiyalik $-3$, kesilgan nuqta $5$.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{2} For $y=5x-3$, a student writes: \textit{``The slope is $-3$ and the $y$-intercept is $5$.''}\\[1mm]
+\hspace*{7mm}Error and fix: \makebox[48mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{3} $y=2x+1$ ga perpendikulyar: \textit{``Perpendikulyar chiziqning qiyaligi ham $2$ bo'ladi, chunki ular kesishadi.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{3} Perpendicular to $y=2x+1$. A student writes: \textit{``The perpendicular line also has slope $2$, since perpendicular lines intersect.''}\\[1mm]
+\hspace*{7mm}Error and fix: \makebox[48mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{4} $(3,4)$ orqali, qiyalik $-2$: \textit{``$y-4=-2(x-3) \Rightarrow y-4=-2x-6 \Rightarrow y=-2x-2$.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}\\[6mm]
+\noindent\pnum{4} Through $(3,4)$ with slope $-2$. A student writes: \textit{``$y-4=-2(x-3) \Rightarrow y-4=-2x-6 \Rightarrow y=-2x-2$.''}\\[1mm]
+\hspace*{7mm}Error and fix: \makebox[48mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{5} $V(x)=-4x+40$: \textit{``Tank $x=10$ da to'la bo'ladi, chunki $V(10)=0$.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[52mm]{\dotfill}
+\noindent\pnum{5} For $V(x)=-4x+40$, a student writes: \textit{``The tank is full when $x=10$, since $V(10)=0$.''}\\[1mm]
+\hspace*{7mm}Error and fix: \makebox[48mm]{\dotfill}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) =================
-\topicheader{3}{Chiziqli funksiyalar va grafiklar}
+% ================= PAGE 4: Set 7 (left) | Set 8 start (right) =================
+\topicheader{3}{Linear Functions \& Graphing}
 \pagefooter{20}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11.5}{15}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin -- har biriga taxminan 90 soniya.}
+\setkicker{Set 7}{Bonus / challenge.}
 
-\noindent\pnum{1} $(1,2)$ orqali, $(0,0)$ va $(3,9)$ orqali o'tuvchi chiziqqa parallel.\\[32mm]
-\noindent\pnum{2} $(-2,5)$ orqali, qiyaligi $\frac23$ bo'lgan chiziqqa perpendikulyar.\\[32mm]
-\noindent\pnum{3} $y=kx+4$ qaysi $k$ da $(3,13)$ orqali o'tadi?\\[32mm]
-\noindent\pnum{4} $y=mx+5$ va $y=3x+b$ -- bir xil chiziq, $(2,11)$ orqali. $m$ va $b$?\\[32mm]
-\noindent\pnum{5} $y=-2x+1$ ga parallel va $y=5x-7$ bilan bir xil $y$-kesishga ega chiziq.
+\noindent\pnum{1} Line $k$ through $(1,2)$, parallel to the line through $(0,0)$ and $(3,9)$. Equation of $k$:\\[32mm]
+\noindent\pnum{2} Through $(-2,5)$, perpendicular to a line with slope $\frac23$. Equation:\\[32mm]
+\noindent\pnum{3} The line $y=kx+4$ passes through $(3,13)$. $k=$\\[32mm]
+\noindent\pnum{4} $y=mx+5$ and $y=3x+b$ are the same line, which passes through $(2,11)$. $m=$ and $b=$\\[32mm]
+\noindent\pnum{5} Parallel to $y=-2x+1$, with the same $y$-intercept as $y=5x-7$. Equation:
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+\difflabel{Easy}
+\satq{1}{The graph of linear function $f$ passes through $(0,-6)$ and $(3,0)$. Which equation defines $f$?}{$f(x)=2x-6$}{$f(x)=-2x-6$}{$f(x)=2x+6$}{$f(x)=-2x+6$}
+\satq{2}{If $f(x)=3x-2$, what is $f(7)$?}{5}{12}{19}{26}
+\satqw{3}{The function $P(t)=400+15t$ models the number of trees planted in a park, where $P(t)$ is the number of trees $t$ years after 2010. What is the best interpretation of $P(20)=700$?}{700 trees were planted in 2010.}{700 trees are predicted in 2020.}{700 trees are predicted in 2030.}{20 trees are predicted in 2030.}
+\satq{4}{A line defined by $g(x)=mx+b$ has slope $5$ and $y$-intercept $-3$. What is $g(2)$?}{2}{7}{10}{13}
+\satq{5}{For linear function $h$, $h(0)=9$ and $h(4)=21$. What is the slope of the graph of $y=h(x)$?}{3}{4}{9}{12}
+\satqw{6}{A company's cost, in dollars, to produce $x$ items is modeled by $C(x)=18x+400$. What does 400 represent in this context?}{the cost per item}{the fixed cost before producing any items}{the total cost for 400 items}{the number of items produced}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar =================
-\topicheader{3}{Chiziqli funksiyalar va grafiklar}
+% ================= PAGE 5 =================
+\topicheader{3}{Linear Functions \& Graphing}
 \pagefooter{21}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Easy (cont.)}
+\satq{7}{The pairs $(2,11)$, $(4,19)$, and $(6,27)$ are solutions to a linear relationship between $x$ and $y$. What is the slope of the line?}{2}{4}{8}{11}
+\satq{8}{If $f(x)=-4x+9$, for what value of $x$ does $f(x)=1$?}{$-2$}{$1$}{$2$}{$4$}
+\satq{9}{The graph of $y=f(x)$ is a line with slope $-3$ passing through $(2,5)$. What is $f(0)$?}{$-1$}{$5$}{$8$}{$11$}
+\satq{10}{A candle's height, in centimeters, after burning for $m$ minutes is $H(m)=20-0.05m$. What is the height after burning for 100 minutes?}{5}{10}{15}{20}
+\satq{11}{For linear function $k$, the graph of $y=k(x)$ has a $y$-intercept of $7$ and passes through $(4,19)$. What is the slope?}{3}{4}{7}{12}
+\satq{12}{If $f(x)=2x+c$ and $f(5)=17$, what is the value of $c$?}{2}{5}{7}{17}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Easy (cont.)}
+\satq{13}{A line has slope $6$ and passes through $(0,-4)$. Which equation defines this line?}{$y=6x-4$}{$y=-6x+4$}{$y=6x+4$}{$y=4x-6$}
+\satq{14}{The function $w$ gives a plant's weight, in grams, $x$ days after planting: $w(x)=5x+2$. What is $w(0)$?}{0}{2}{5}{7}
+\satq{15}{A line in the $xy$-plane has an $x$-intercept of $4$ and passes through $(0,-8)$. What is the slope of the line?}{$-2$}{$2$}{$4$}{$8$}
+\difflabel{Medium}
+\satqw{1}{The amount of fuel in a tank, in liters, is modeled by $y=180-12x$, where $x$ is the number of minutes after a leak starts. What is the best interpretation of the $x$-intercept of this equation?}{The tank starts with 15 liters.}{The tank leaks 15 liters per minute.}{The tank will be empty after 15 minutes.}{The tank leaks for a total of 180 minutes.}
+\satq{2}{For linear function $h$, the graph of $y=h(x)$ passes through $(4,10)$ and $(10,28)$. Which equation defines $h$?}{$h(x)=3x-2$}{$h(x)=3x+2$}{$h(x)=2x+2$}{$h(x)=4x-6$}
+\satq{3}{For a proportional relationship between $x$ and $k$, the pairs $(5,22.5)$ and $(9,40.5)$, written as $(x,k)$, are both solutions. Which equation best represents the relationship between $x$ and $k$?}{$k=4.5x$}{$x=4.5k$}{$k=0.22x$}{$xk=4.5$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6 =================
+\topicheader{3}{Linear Functions \& Graphing}
+\pagefooter{22}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Medium (cont.)}
+\satqw{4}{A hiker's distance from the trailhead, in miles, is modeled by $d(t)=2.5t+1$, where $t$ is the number of hours after starting. What is the best interpretation of the number 2.5 in this context?}{the hiker's starting distance from the trailhead}{the hiker's average speed, in miles per hour}{the total distance the hiker will travel}{the time elapsed since the hiker started}
+\satq{5}{For a linear relationship between $x$ and $y$, the pairs $(12,54)$ and $(20,86)$ are both solutions. Which equation represents this relationship?}{$y=4x+54$}{$y=3x+18$}{$y=4x+6$}{$y=4x-6$}
+\satq{6}{For a linear relationship between $x$ and $y$, the pairs $(-6,t)$ and $(2,t+32)$ are both solutions, where $t$ is a constant. Which equation represents this relationship?}{$y=4x+t-24$}{$y=8x+t+24$}{$y=4x+t+32$}{$y=4x+t+24$}
+\satq{7}{A parking garage charges \$8 for the first hour and \$3 for each additional hour. Which function $f$ gives the total charge, in dollars, for parking $x$ hours, where $x\ge1$?}{$f(x)=3x+5$}{$f(x)=3x+8$}{$f(x)=8x+3$}{$f(x)=11x$}
+\satqw{8}{The value, in dollars, of a certain machine $x$ years after purchase is modeled by $V(x)=8500-450x$. What does 450 represent in this context?}{the machine's value when purchased}{the yearly decrease in the machine's value}{the machine's value after 1 year}{the number of years until the machine is worthless}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Medium (cont.)}
+\satq{9}{For linear function $g$, $g(1)=4$ and $g(6)=24$. What is the value of $g(9)$?}{28}{32}{36}{40}
+\satq{10}{A line has an $x$-intercept of $6$ and a $y$-intercept of $-18$. What is the slope of the line?}{$-3$}{$\frac13$}{$3$}{$6$}
+\satq{11}{A recipe requires $c$ cups of flour for every batch of $b$ cookies, where $c$ and $b$ are proportional. If 2.5 cups of flour make 20 cookies, which equation relates $c$ and $b$?}{$c=0.125b$}{$b=0.125c$}{$c=8b$}{$bc=0.125$}
+\satq{12}{For linear function $m$, the graph of $y=m(x)$ has slope $-5$ and passes through $(3,-2)$. What is the $y$-intercept of the graph?}{$-17$}{$-2$}{$3$}{$13$}
+\satq{13}{A water tank contains 500 liters and is being filled at a constant rate. After 6 minutes it contains 560 liters. How many liters will it contain after 15 minutes?}{600}{620}{650}{700}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 7 =================
+\topicheader{3}{Linear Functions \& Graphing}
+\pagefooter{23}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Medium (cont.)}
+\satq{14}{A line has a slope of $-2$ and passes through the point $(5,1)$. Which equation defines this line?}{$y=-2x+9$}{$y=-2x+11$}{$y=2x-9$}{$y=-2x-9$}
+\satqw{15}{A tank's water level, in centimeters, is modeled by $L(t)=85-3.5t$, where $t$ is the number of minutes since draining began. What is the best interpretation of the number 3.5 in this context?}{the tank's initial water level}{the drop in water level, in centimeters per minute}{the total time it takes to drain the tank}{the tank's water level after 1 minute}
+\difflabel{Hard}
+\satq{1}{For groups of 20 or more people, a zoo charges \$18 per person for the first 20 people and \$11 for each additional person. Which function $f$ gives the total charge, in dollars, for a group of $n$ people, where $n\ge20$?}{$f(n)=11n+360$}{$f(n)=11n+140$}{$f(n)=29n-220$}{$f(n)=11n+18$}
+\satq{2}{A tutoring service charges \$150 for the first three hours of tutoring plus an hourly fee for each additional hour. The total cost for 6 hours of tutoring is \$390. Which function $f$ gives the total cost, in dollars, for $x$ hours of tutoring, where $x\ge3$?}{$f(x)=80x+150$}{$f(x)=130x-240$}{$f(x)=80x+90$}{$f(x)=80x-90$}
+\satq{3}{For a linear relationship between $x$ and $y$, the pairs $(-40,t)$, $(-25,t+45)$, and $(-10,t+90)$ are solutions, where $t$ is a constant. Which equation represents this relationship?}{$y=-3x+t+120$}{$y=3x+t+120$}{$y=3x+t-120$}{$y=3x+t+45$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Hard (cont.)}
+\satq{4}{A landscaping company charges a \$95 base fee plus an hourly rate for labor. For a 7-hour job, the total charge is \$305. At this rate, what is the total charge, in dollars, for a 12-hour job?}{\$405}{\$425}{\$455}{\$480}
+\satqw{5}{A tank holds between 20 and 80 gallons of water, inclusive. The function $W(t)=20+4t$, where $0\le t\le15$, models the number of gallons in the tank $t$ minutes after a valve opens. What is the best interpretation of the number 4 in this context?}{the tank's initial volume}{the number of gallons added per minute}{the maximum volume of the tank}{the time it takes to fill the tank}
+\satq{6}{For linear function $p$, $p(x)=ax+b$, where $a$ and $b$ are constants. If $p(2)=11$ and $p(5)=26$, what is the value of $p(10)$?}{41}{46}{51}{56}
+\satq{7}{A gym charges a one-time \$60 registration fee plus \$35 per month. A competing gym charges no registration fee but \$50 per month. After how many months will the total cost at both gyms be equal?}{2}{3}{4}{5}
+\satq{8}{The temperature of a cooling liquid, in degrees Celsius, is a linear function of time in minutes. After 4 minutes the temperature is 68°C, and after 10 minutes it is 50°C. What is the temperature after 15 minutes?}{30°C}{32°C}{35°C}{38°C}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 8 =================
+\topicheader{3}{Linear Functions \& Graphing}
+\pagefooter{24}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Hard (cont.)}
+\satq{9}{For linear function $f$, $f(x)=kx+9$. If $f(6)=f(2)+20$, what is the value of $k$?}{3}{5}{7}{9}
+\satq{10}{For linear function $r$, $r(3)=7$ and $r(11)=19$. What is the value of $r(0)$?}{2}{$\frac52$}{3}{$\frac72$}
+\satqw{11}{The number of visitors to a museum each day is modeled by the function $V(d)=0.8d+12$, where $10\le d\le200$ and $d$ is the number of days since a new exhibit opened. If the exhibit has been open for 85 days, what is the predicted number of visitors?}{68}{72}{76}{80}
+\satqw{12}{The cost, in dollars, of shipping a package is a linear function of its weight, in kilograms. The pairs $(2,14)$ and $(6,26)$, in the form (weight, cost), are both solutions. If $w$ kilograms is associated with a shipping cost of $c$ dollars, which equation best represents the relationship between $w$ and $c$?}{$c=3w+14$}{$w=3c+8$}{$c=8w+3$}{$c=3w+8$}
+\satq{13}{For what value of the constant $a$ does the linear function $f(x)=ax-7$ satisfy $f(4)=2f(1)$?}{$-\frac72$}{$-2$}{$\frac72$}{$7$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Hard (cont.)}
+\satq{14}{Company A's shipping cost, in dollars, is modeled by $A(x)=5x+40$, and Company B's shipping cost is modeled by $B(x)=9x$, where $x$ is the number of items shipped. For what value of $x$ are the two companies' costs equal?}{4}{8}{10}{13}
+\satq{15}{For a linear relationship between $x$ and $y$, the pairs $(10,t)$, $(30,t-60)$, and $(50,t-120)$ are solutions, where $t$ is a constant. Which equation represents this relationship?}{$y=3x+t+30$}{$y=-3x+t+30$}{$y=-3x+t-30$}{$y=-3x+t+60$}
+}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original -- written by studying the method
+and structure of real, officially-released SAT Suite Question Bank items in this
+lesson's skill category, then building a new problem (new numbers, names, and
+context) that requires the same solving method. No real College Board question text
+is reproduced anywhere in this book.\par}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 8: Answers -- Sets 1-7 =================
+\topicheader{3}{Linear Functions \& Graphing}
+\pagefooter{25}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
 \end{textblock*}
 
 \begin{textblock*}{194mm}(16mm,44mm)
@@ -232,38 +412,109 @@
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{34mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{34mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{3}{24mm}{\centering 1-to'plam} & 1 & 3 & 2 & $-3$\\\cline{2-5}
- & 3 & 0 & 4 & 2\\\cline{2-5}
- & 5 & 3 & 6 & $-2$\\\hline
-\multirow{3}{24mm}{\centering 2-to'plam} & 1 & $\frac34$ & 2 & $-\frac32$\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 1} & 1 & $3$ & 2 & $-3$\\\cline{2-5}
+ & 3 & $0$ & 4 & $2$\\\cline{2-5}
+ & 5 & $3$ & 6 & $-2$\\\hline
+\multirow{3}{24mm}{\centering Set 2} & 1 & $\frac34$ & 2 & $-\frac32$\\\cline{2-5}
  & 3 & $-1$ & 4 & $\frac54$\\\cline{2-5}
- & 5 & $-\frac23$ & 6 & 2\\\hline
-\multirow{3}{24mm}{\centering 3-to'plam} & 1 & $y=4x-1$ & 2 & $y=-2x+5$\\\cline{2-5}
+ & 5 & $-\frac23$ & 6 & $2$\\\hline
+\multirow{3}{24mm}{\centering Set 3} & 1 & $y=4x-1$ & 2 & $y=-2x+5$\\\cline{2-5}
  & 3 & $y=3x-5$ & 4 & $y=-2x+2$\\\cline{2-5}
  & 5 & $y=\frac12x-3$ & 6 & $y=x-3$\\\hline
-\multirow{3}{24mm}{\centering 4-to'plam} & 1 & $y=3x+5$ & 2 & $y=-4x+5$\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 4} & 1 & $y=3x+5$ & 2 & $y=-4x+5$\\\cline{2-5}
  & 3 & $y=-\frac12x+3$ & 4 & $y=3x+6$\\\cline{2-5}
  & 5 & $y=-2$ & 6 & $y=7$\\\hline
-\multirow{3}{24mm}{\centering 5-to'plam} & 1 & 25000 & 2 & 15\\\cline{2-5}
- & 3 & 20 & 4 & 12\\\cline{2-5}
- & 5 & 5 & 6 & 4\\\hline
-\multirow{5}{24mm}{\centering 6-to'plam} & \multicolumn{4}{p{86mm}|}{1.\ Xato -- formula teskari ishlatilgan ($\Delta x/\Delta y$ o'rniga). To'g'ri: $m=2$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{2.\ Xato -- qiyalik va $y$-kesish almashtirilgan. To'g'ri: qiyalik $=5$, $y$-kesish $=-3$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{3.\ Xato -- teskari qarama-qarshi emas, bir xil qiyalik ishlatilgan. To'g'ri: qiyalik $=-\frac12$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{4.\ Xato -- $-2(x-3)$ ni ochishda ishora xatosi: $-2x+6$, $-2x-6$ emas. To'g'ri: $y=-2x+10$.}\\\cline{2-5}
- & \multicolumn{4}{p{86mm}|}{5.\ Xato -- $V(x)=0$ idish \textbf{bo'sh} degani, to'la emas; hisob emas, ma'no xato talqin qilingan.}\\\hline
-\multirow{3}{24mm}{\centering 7-to'plam} & 1 & $y=3x-1$ & 2 & $y=-\frac32x+2$\\\cline{2-5}
- & 3 & $k=3$ & 4 & $m=3,\,b=5$\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 5} & 1 & $25000$ & 2 & $15$\\\cline{2-5}
+ & 3 & $20$ & 4 & $12$\\\cline{2-5}
+ & 5 & $5$ & 6 & $4$\\\hline
+\multirow{5}{24mm}{\centering Set 6} & \multicolumn{4}{p{86mm}|}{1.\ Error -- inverted the formula ($\Delta x/\Delta y$ instead of $\Delta y/\Delta x$). Correct: $m=2$.}\\\cline{2-5}
+ & \multicolumn{4}{p{86mm}|}{2.\ Error -- swapped slope and $y$-intercept. Correct: slope $=5$, $y$-intercept $=-3$.}\\\cline{2-5}
+ & \multicolumn{4}{p{86mm}|}{3.\ Error -- used the same slope instead of the negative reciprocal. Correct: slope $=-\frac12$.}\\\cline{2-5}
+ & \multicolumn{4}{p{86mm}|}{4.\ Error -- sign mistake distributing $-2(x-3)$: it is $-2x+6$, not $-2x-6$. Correct: $y=-2x+10$.}\\\cline{2-5}
+ & \multicolumn{4}{p{86mm}|}{5.\ Error -- $V(x)=0$ means the tank is \textbf{empty}, not full; the context was misread, not a computation error.}\\\hline
+\multirow{3}{24mm}{\centering Set 7} & 1 & $y=3x-1$ & 2 & $y=-\frac32x+2$\\\cline{2-5}
+ & 3 & $k=3$ & 4 & $m=3$, $b=5$\\\cline{2-5}
  & 5 & $y=-2x-7$ & -- & --\\\hline
 \end{tabular}
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,248mm)
+\clearpage
+
+% ================= PAGE 9: Answers -- Set 8 =================
+\topicheader{3}{Linear Functions \& Graphing}
+\pagefooter{26}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+A&C&C&B&A&B&B&C&D&C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+A&C&A&B&B\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&A&A&B&C&D&A&B&C&C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+A&D&C&B&B\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&D&B&C&B&C&C&C&B&B\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+D&D&A&C&B\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}

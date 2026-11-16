@@ -154,15 +154,15 @@ see the sourcing note at the end of this set.
    A) 2  B) 4  C) 6  D) 8
 9. $3x+2y=16$ and $5x+3y=26$. What is the value of $x$?
    A) 2  B) 4  C) 5  D) 6
-10. Raffle tickets cost \$4 and gala tickets cost \$15. A total of 80 tickets were sold for \$760. Which system can be used to find the number of raffle tickets, $r$, and gala tickets, $g$, sold?
-    A) $r+g=760$, $4r+15g=80$  B) $r+g=80$, $15r+4g=760$  C) $r+g=80$, $4r+15g=760$  D) $4r+15g=80$, $r+g=760$
+10. Raffle tickets cost \$4 and gala tickets cost \$15. A total of 80 tickets were sold for \$650. Which system can be used to find the number of raffle tickets, $r$, and gala tickets, $g$, sold?
+    A) $r+g=650$, $4r+15g=80$  B) $r+g=80$, $15r+4g=650$  C) $r+g=80$, $4r+15g=650$  D) $4r+15g=80$, $r+g=650$
 11. Line $P$ passes through $(1,4)$ and $(5,12)$. Line $Q$ passes through $(1,14)$ and $(5,2)$. What is the solution $(x,y)$ to the system formed by these lines?
     A) $(1,4)$  B) $(2,6)$  C) $(5,2)$  D) $(3,8)$
 12. $7x+3y=44$ and $2x+3y=19$. What is the value of $y$?
     A) 3  B) 5  C) 9  D) 15
 13. $4x-y=18$ and $x+y=12$. What is the value of $5x$?
     A) 30  B) 6  C) 12  D) 36
-14. In the system $6x+9y=21$ and $2x+3y=k$, $k$ is a constant. The system has no solution for every value of $k$ except one. What is that value of $k$?
+14. In the system $6x+9y=21$ and $2x+3y=k$, $k$ is a constant. For every value of $k$ except one, the system has no solution. What is that one value of $k$?
     A) 3  B) 7  C) 21  D) 63
 15. A farm has only chickens and cows: 50 heads and 140 legs in total. Which system can be used to find the number of chickens, $c$, and cows, $w$?
     A) $c+w=50$, $2c+4w=140$  B) $c+w=50$, $4c+2w=140$  C) $c+w=140$, $2c+4w=50$  D) $2c+4w=50$, $c+w=140$
@@ -173,7 +173,7 @@ see the sourcing note at the end of this set.
    A) $-10$  B) 3  C) 6  D) 10
 2. In the system $\dfrac{1}{3}x+\dfrac{1}{4}y=\dfrac{1}{12}$ and $ax+y=c$, $a$ and $c$ are constants. If the system has infinitely many solutions, what is the value of $a$?
    A) $\dfrac{1}{3}$  B) $\dfrac{3}{4}$  C) $\dfrac{4}{3}$  D) 4
-3. For the system $2x+y=10$ and $4x+2y=20$: for each real number $r$, which point lies on the graph of each equation in the $xy$-plane?
+3. For the system $2x+y=10$ and $4x+2y=20$, and for each real number $r$, which point lies on the graphs of both equations in the $xy$-plane?
    A) $(r,\,-2r+10)$  B) $(r,\,2r+10)$  C) $(r,\,-2r-10)$  D) $(-2r+10,\,r)$
 4. In the system $\dfrac{x}{2}-\dfrac{y}{3}=1$ and $3x-my=9$, $m$ is a constant. If the system has no solution, what is the value of $m$?
    A) $-2$  B) 2  C) 3  D) 6
@@ -187,8 +187,8 @@ see the sourcing note at the end of this set.
    A) 14  B) 28  C) 42  D) 70
 9. $4x+3y=17$ and $3x+5y=21$. What is the value of $y$?
    A) 2  B) 3  C) 4  D) 5
-10. Nodira invested \$8,000 in two accounts, one earning 3% and the other 5% annual interest. After one year she earned \$320 in interest. Which system can be used to find the amounts invested at 3%, $x$, and at 5%, $y$, in dollars?
-    A) $x+y=320$, $0.03x+0.05y=8000$  B) $x+y=8000$, $0.05x+0.03y=320$  C) $x+y=8000$, $3x+5y=320$  D) $x+y=8000$, $0.03x+0.05y=320$
+10. Nodira invested \$8,000 in two accounts, one earning 3% and the other 5% annual interest. After one year she earned \$340 in interest. Which system can be used to find the amounts invested at 3%, $x$, and at 5%, $y$, in dollars?
+    A) $x+y=340$, $0.03x+0.05y=8000$  B) $x+y=8000$, $0.05x+0.03y=340$  C) $x+y=8000$, $3x+5y=340$  D) $x+y=8000$, $0.03x+0.05y=340$
 11. In the system $5x-8y=16y+3$ and $nx=\dfrac{1}{4}-4y$, $n$ is a constant. If the system has no solution, what is the value of $n$?
     A) $-\dfrac{6}{5}$  B) $-\dfrac{5}{6}$  C) $\dfrac{5}{6}$  D) $\dfrac{6}{5}$
 12. $9x-2y=41$ and $3x+2y=19$. What is the value of $x$?
@@ -242,3 +242,9 @@ lesson's skill category — the numbers, names, and contexts are all original.
    Correct: $y=11-4=7$, so the answer is $(4,7)$.
 
 **Set 7:** 1) $(2,1)$  2) The numbers are $16$ and $8$.  3) $k=6$  4) $(4,3)$
+
+**Set 8 — Easy:** 1) B  2) A  3) A  4) B  5) A  6) A  7) C  8) B  9) C  10) B  11) A  12) D  13) C  14) C  15) D
+
+**Set 8 — Medium:** 1) C  2) A  3) B  4) B  5) B  6) C  7) A  8) C  9) B  10) C  11) D  12) A  13) A  14) B  15) A
+
+**Set 8 — Hard:** 1) D  2) C  3) A  4) B  5) C  6) B  7) C  8) C  9) B  10) D  11) B  12) C  13) B  14) C  15) A

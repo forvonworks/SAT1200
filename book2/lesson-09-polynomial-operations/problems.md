@@ -129,7 +129,7 @@ distribution for this skill.
     A) $6x+3$  B) $4x+12$  C) $6x+12$  D) $6x+7$
 
 11. Which expression is equivalent to $10x^2y-4xy^2$?
-    A) $2xy(5x-4y)$  B) $2x(5xy-2y^2)$  C) $2xy(5x-2y)$  D) $2xy(5x^2-2y)$
+    A) $2xy(5x-4y)$  B) $2x(5xy-2y)$  C) $2xy(5x-2y)$  D) $2xy(5x^2-2y)$
 
 12. Which expression is equivalent to $(x^2+6x+9)-(x^2+4)$?
     A) $6x+5$  B) $6x+13$  C) $6x-5$  D) $2x^2+6x+5$
@@ -141,7 +141,7 @@ distribution for this skill.
     A) $2x^2-4x-2$  B) $2x^2+4x-2$  C) $4x^2+4x-2$  D) $2x^2+4x+2$
 
 15. Which expression is equivalent to $12x^3-8x^2$?
-    A) $4x(3x^2-2x)$  B) $4x^2(3x-8)$  C) $4(3x^3-2x^2)$  D) $4x^2(3x-2)$
+    A) $4x(3x^2-2)$  B) $4x^2(3x-8)$  C) $4x^2(3x+2)$  D) $4x^2(3x-2)$
 
 ### Medium
 
@@ -173,7 +173,7 @@ distribution for this skill.
    A) $98-14x$  B) $-14x$  C) $14x-98$  D) $98+14x$
 
 10. Which expression is equivalent to $18x^3y^2-12x^2y^3$?
-    A) $6xy^2(3x^2-2y)$  B) $6x^2y^2(3x-2y)$  C) $6x^2y^2(3x-2y^2)$  D) $6x^2y(3xy-2y^2)$
+    A) $6xy^2(3x^2-2y)$  B) $6x^2y^2(3x-2y)$  C) $6x^2y^2(3x-2y^2)$  D) $6x^2y(3xy-2y)$
 
 11. Which expression is equivalent to $(2x+5)(x-3)+7x$?
     A) $2x^2-x-15$  B) $2x^2+13x-15$  C) $2x^2+6x+15$  D) $2x^2+6x-15$
@@ -181,11 +181,11 @@ distribution for this skill.
 12. Which expression is equivalent to $(x^2-4)-(x-2)(x+5)$?
     A) $3x-6$  B) $-3x-6$  C) $6-3x$  D) $6+3x$
 
-13. The expression $\dfrac{11x+10}{x(x+5)}$ is equivalent to $\dfrac{p}{x}+\dfrac{w}{x+5}$, where $p$ and $w$ are constants. What is the value of $w$?
-    A) $2$  B) $11$  C) $9$  D) $5$
+13. The expression $(x+4)(x-7)-(x^2-9x)$ can be written in the form $bx+c$, where $b$ and $c$ are constants. What is the value of $c$?
+   A) $28$  B) $-28$  C) $6$  D) $-3$
 
 14. Which expression is equivalent to the fully factored form of $6x^2-24$?
-    A) $6(x-4)(x+1)$  B) $(6x-2)(x+2)$  C) $6(x-2)(x+2)$  D) $6(x^2-4)$
+    A) $6(x-4)(x+1)$  B) $(6x-2)(x+2)$  C) $6(x-2)(x+2)$  D) $6(x^2+4)$
 
 15. Which expression is equivalent to $(x+4)(x-4)+(x+1)^2$?
     A) $2x^2+2x+17$  B) $2x^2+2x-17$  C) $2x^2-2x-15$  D) $2x^2+2x-15$
@@ -201,8 +201,8 @@ distribution for this skill.
 3. The expression $(5x^3+4x^2)-(2x^2+7x)-(3x^2+x)$ can be written in the form $5x^3+ax^2+bx$, where $a$ and $b$ are constants. What is the value of $a+b$?
    A) $-1$  B) $-9$  C) $1$  D) $9$
 
-4. The expression $\dfrac{17x+54}{x(x+6)}$ is equivalent to $\dfrac{p}{x}+\dfrac{w}{x+6}$, where $p$ and $w$ are constants. What is the value of $p$?
-   A) $8$  B) $17$  C) $9$  D) $6$
+4. The product $(2x+a)(x-3)$ is equal to $2x^2+bx-12$ for all values of $x$, where $a$ and $b$ are constants. What is the value of $b$?
+   A) $-2$  B) $2$  C) $-10$  D) $6$
 
 5. Which expression is equivalent to $(3x+7)^2-(3x-7)^2$?
    A) $84x$  B) $0$  C) $42x$  D) $84x^2$
@@ -219,8 +219,8 @@ distribution for this skill.
 9. Which expression is equivalent to the fully factored form of $4x^4-4x^2-24$?
    A) $4(x^2+3)(x^2-2)$  B) $(4x^2-3)(x^2+2)$  C) $4(x^2-6)(x^2+4)$  D) $4(x^2-3)(x^2+2)$
 
-10. The expression $\dfrac{23x-16}{x(x-4)}$ is equivalent to $\dfrac{p}{x}+\dfrac{w}{x-4}$, where $p$ and $w$ are constants. What is the value of $w$?
-    A) $19$  B) $4$  C) $23$  D) $16$
+10. The polynomial $2x^2+kx-15$ is divisible by $(x+3)$ with no remainder. What is the value of $k$?
+   A) $1$  B) $-1$  C) $5$  D) $-5$
 
 11. Which expression is equivalent to $(2x^3)(5x^4)-(3x^2)(4x^5)$?
     A) $2x^7$  B) $-2x^7$  C) $-2x^{20}$  D) $-2x^9$
@@ -255,7 +255,7 @@ lesson's skill category — the numbers, names, and contexts are all original.
 
 **Set 3:** 1) $x^2+4x+4$  2) $4x^2-4x+1$  3) $x^3+7x^2+10x-8$  4) $x^3-1$  5) $3x^3-5x^2+13x+5$  6) $x^3+x^2-4x-4$
 
-**Set 4:** 1) $2x^2-3x+1$  2) $2x+3$  3) $2x^2-x+3$  4) $x+3$ (no remainder)  5) $x+3$ (no remainder)  6) $x+3$ (no remainder)
+**Set 4:** 1) $2x^2-3x+1$  2) $2x+3$  3) $2x^2-x+3$  4) $x+3$ (exact)  5) $x+3$ (exact)  6) $x+3$ (exact)
 
 **Set 5:** 1) $x-1$  2) $3x^2+10x-4$  3) $10x+15$  4) $2x^2-3x+3$  5) $3x^2-5$  6) $x^2+6$
 
@@ -271,10 +271,10 @@ lesson's skill category — the numbers, names, and contexts are all original.
 5. Error — only the first term was divided by $4x$; the second term must be
    divided too. Correct: $2x+1$.
 
-**Set 7:** 1) $x^3+6x^2+11x+6$  2) $x+1$ (no remainder)  3) $5x^2+6x-4$  4) $16x$  5) $x-1$ (no remainder)
+**Set 7:** 1) $x^3+6x^2+11x+6$  2) $x+1$ (exact)  3) $5x^2+6x-4$  4) $16x$  5) $x-1$ (exact)
 
 **Set 8 — Easy:** 1) B  2) C  3) B  4) A  5) C  6) D  7) D  8) A  9) A  10) C  11) C  12) A  13) B  14) B  15) D
 
-**Set 8 — Medium:** 1) D  2) A  3) C  4) B  5) B  6) A  7) B  8) A  9) A  10) B  11) D  12) C  13) C  14) C  15) D
+**Set 8 — Medium:** 1) D  2) A  3) C  4) B  5) B  6) A  7) B  8) A  9) A  10) B  11) D  12) C  13) B  14) C  15) D
 
-**Set 8 — Hard:** 1) C  2) C  3) B  4) C  5) A  6) D  7) B  8) A  9) D  10) A  11) B  12) B  13) C  14) D  15) A
+**Set 8 — Hard:** 1) C  2) C  3) B  4) A  5) A  6) D  7) B  8) A  9) D  10) A  11) B  12) B  13) C  14) D  15) A
