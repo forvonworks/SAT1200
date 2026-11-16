@@ -129,6 +129,262 @@ sample/assignment rules from Concept 3.
 
 ---
 
+## Set 7 — Official SAT-Style Application
+
+Multiple-choice (A–D), English. Every item below is **original**: it was written after studying the method, trap pattern and difficulty of released SAT Suite Question Bank items in the skill *Evaluating statistical claims: observational studies and experiments*. Each item stays inside this lesson's concepts (random vs. convenience samples and what they allow you to generalize; random assignment vs. observational studies and what they allow you to claim; the "What can this study ACTUALLY prove?" check; overreaching conclusions; lurking variables). No question text, numbers, or context from the bank is reproduced.
+
+15 Easy / 15 Medium / 15 Hard.
+
+### Easy
+
+1. A researcher randomly assigns 96 volunteers to two groups of equal size: a treatment group and a control group. How many volunteers are in the control group?
+   A) 48  B) 24  C) 72  D) 96
+
+2. A principal wants to know how many hours per week students at her school spend on homework. She writes the name of each of the school's 640 students on a card, mixes the cards, and draws 60 without looking. She surveys those 60 students. What is the largest group to which the survey results can be generalized?
+   A) The 60 students who were surveyed  B) All students in the school district  C) All students who would volunteer for a homework survey  D) All 640 students in the school
+
+3. A bookstore asks the first 25 customers who come in on a Saturday morning to rate its café. Which statement best describes the sample?
+   A) A random sample, because every customer had an equal chance of being asked
+   B) A convenience sample, because it includes only people who happened to be in the store at that time
+   C) A random sample, because it contains 25 people
+   D) A random sample, because it was collected on a weekend
+
+4. A botanist randomly assigns 40 tomato plants to two equal groups. One group receives a new soil supplement and the other receives plain soil. After six weeks, the supplemented plants are taller on average. Which conclusion is best supported?
+   A) The supplement is only associated with taller plants; the design cannot show that it causes them
+   B) The supplement causes taller plants among the 40 plants in this study
+   C) Plants that grew taller were more likely to receive the supplement
+   D) The result shows nothing, because the two groups were the same size
+
+5. A researcher records, without assigning anyone to a group, how many hours each of 300 residents of a town sleeps and whether each resident drinks coffee after 6 p.m. Every resident had an equal chance of being selected. Which statement is best supported?
+   A) Drinking coffee after 6 p.m. causes less sleep among the town's residents
+   B) Late coffee drinking has no effect on sleep, because nobody was assigned to drink coffee
+   C) Late coffee drinking is associated with less sleep only among the 300 residents who were measured
+   D) Late coffee drinking is associated with less sleep among the town's residents, but the study cannot show that it causes less sleep
+
+6. A city council randomly selects 500 registered voters from the complete voter list and asks each one whether the city should add bike lanes. Which statement is correct?
+   A) The results cannot be generalized, because 500 people is too small a sample
+   B) The results cannot be generalized, because some voters will decline to answer
+   C) The results can be generalized to all registered voters in the city, because the sample was random
+   D) The results can be generalized only to voters in the council members' own districts
+
+7. A teacher lets each student choose whether to study with flashcards or with practice tests, then compares the two groups' scores. Which description best fits this study?
+   A) An experiment with random assignment, because the teacher compared two groups
+   B) An experiment with a random sample, because the teacher used all students
+   C) A survey of a convenience sample, because students answered questions
+   D) An observational study, because the teacher did not assign the groups
+
+8. A gym has 3,000 members. A random sample of 200 members is surveyed about the new class schedule. The results can be generalized to which group?
+   A) All people who exercise at gyms in the country  B) All people who live near the gym  C) All 3,000 members of the gym  D) Only the 200 members who answered
+
+9. A study finds that children with more toys tend to have higher reading scores. The researchers did not assign toys to any children. Which factor is the most likely lurking variable that could explain both?
+   A) The color of the toys
+   B) The height of the children
+   C) The family's income, which may affect both toy ownership and access to reading materials
+   D) The day of the week the survey was given
+
+10. Which of the following studies can support a cause-and-effect conclusion?
+   A) Researchers randomly assign 50 students to listen to music or silence during a test, then compare their scores
+   B) A survey of a random sample of voters about their favorite news source
+   C) A researcher compares ice cream sales and drowning reports in one city's records
+   D) Students who chose to join a reading club are compared with students who did not
+
+11. A university with 9,000 students randomly selects 150 students to survey about their commute time. The results can be generalized to which largest group?
+   A) The 150 students who were surveyed  B) All 9,000 students at the university  C) All university students in the country  D) Only students who live off campus
+
+12. A student writes: "My study shows that people who sleep more get better grades, so sleeping more causes better grades." The study did not assign anyone to sleep longer. Which statement best identifies the error?
+   A) The study used too few students
+   B) The student treated an association as proof of causation
+   C) The study should have used a convenience sample instead of a random sample
+   D) The grades should have been measured in hours
+
+13. A school randomly selects 24 students from a class of 240 to take a survey. What percent of the class is in the sample?
+   A) 1%  B) 24%  C) 10%  D) 240%
+
+14. A dentist flips a coin for each patient to decide whether the patient receives a new mouthwash or the usual mouthwash. The dentist then compares plaque levels between the two groups. Which description best fits this study?
+   A) An experiment with random assignment, because a coin determined each patient's group
+   B) An observational study, because the dentist recorded plaque levels
+   C) A convenience sample, because only patients who visited the dentist were included
+   D) A survey, because patients answered questions
+
+15. A survey of 50 students who signed up for the school newspaper club found that 40 of them like the new cafeteria menu. Which statement is best supported?
+   A) Most of the 50 club members who were surveyed like the new cafeteria menu
+   B) Most students in the school like the new cafeteria menu
+   C) Most adults in the country like the new cafeteria menu
+   D) The new cafeteria menu makes students like school more
+
+### Medium
+
+1. A pharmacy randomly selects 300 of its 5,000 loyalty-card customers. It randomly assigns half of the selected customers to receive text-message refill reminders and half to receive no reminders, then compares refill rates. Which statement is best supported?
+   A) Text reminders are associated with higher refill rates among all 5,000 loyalty-card customers
+   B) Text reminders cause higher refill rates only for the 300 customers in the study
+   C) Text reminders are associated with higher refill rates, but no cause-and-effect claim is possible
+   D) Text reminders cause higher refill rates, and this can be generalized to all 5,000 loyalty-card customers
+
+2. A researcher randomly selects 800 high school students from all high schools in a state. She does not assign anyone to a group. Students who attend a weekend tutoring program have higher average GPAs than students who do not. Which conclusion is best supported?
+   A) Tutoring causes higher GPAs for all students in the state
+   B) Tutoring causes higher GPAs, but only for the 800 students who were studied
+   C) Tutoring is associated with higher GPAs among the state's high school students, but the study does not show that tutoring causes the difference
+   D) Tutoring is associated with higher GPAs only among the 800 students who were studied
+
+3. A running club invites the 60 members who signed up for a spring event to take part in a study. The researcher randomly assigns 30 members to a new warm-up routine and 30 to the usual routine. After eight weeks, the warm-up group runs faster on average. Which conclusion is best supported?
+   A) The warm-up routine causes faster running for all runners in the city
+   B) The warm-up routine causes faster running for these 60 members, but the results do not extend to other runners
+   C) The warm-up routine is associated with faster running for the 60 members, but it does not cause it
+   D) The warm-up routine is associated with faster running for all runners in the city
+
+4. A cooking instructor records, for 18 students who chose to join her class, how many hours each practiced at home and how well each cooked a final dish. She does not assign practice hours to anyone. Students who practiced more cooked better dishes. Which conclusion is best supported?
+   A) Practice causes better cooking for all cooks
+   B) Practice causes better dishes among these 18 students
+   C) Practice is associated with better dishes among all cooks
+   D) Practice is associated with better dishes among these 18 students; no cause-and-effect claim or wider claim is supported
+
+5. A tea company sends free samples to 200 people who volunteered through its website. Of those 200, 150 say they like the tea, and no groups were assigned. Which is the most accurate way to report the result?
+   A) Most people in the country like the tea
+   B) Most of the 200 volunteers who tried the tea said they liked it
+   C) The tea causes people to like it
+   D) The tea is liked by everyone who tries it
+
+6. A researcher wants to show that a new reading app causes higher test scores. Currently, 400 students are randomly selected from a district, and each student chooses whether to use the app. Which change would most directly allow a cause-and-effect conclusion?
+   A) Increase the sample to 4,000 students
+   B) Randomly assign the selected students to use the app or not, instead of letting them choose
+   C) Ask the students to rate how much they enjoy the app
+   D) Use only the students who scored highest on a previous test
+
+7. A random sample of 500 students from a university is surveyed, and 30% say they work a part-time job. Which statement must be true?
+   A) The true percentage of all students who work part-time may differ from 30%, because a sample gives an estimate
+   B) Exactly 30% of all students at the university work part-time
+   C) Every part-time worker at the university was included in the sample
+   D) Because the sample was random, the percentage for all students is exactly 30%
+
+8. A mobile app company randomly selects 2,000 people from its list of 50,000 users and asks whether they use the daily reminder feature. Users who use the reminder have higher weekly activity. No one is assigned to use or skip the feature. Which statement is best supported?
+   A) The reminder feature causes higher activity for all 50,000 users
+   B) The reminder feature is associated with higher activity among the 50,000 users, but cause is not shown
+   C) The reminder feature causes higher activity among the 2,000 people sampled
+   D) The reminder feature is associated with higher activity only among the 2,000 people sampled
+
+9. A clinic has 450 patients. A researcher randomly selects 90 of them and randomly assigns exactly half of the selected patients to a new appointment schedule. How many patients were assigned to the new schedule?
+   A) 45  B) 22  C) 90  D) 225
+
+10. A researcher randomly selects 300 students from a school district and randomly assigns each student to a phonics class or a whole-word class. The phonics group reads better at the end of the year. Which statement is NOT supported by the study?
+   A) Phonics causes better reading for the district's students
+   B) The phonics group read better at the end of the year
+   C) Phonics causes better reading for students across the country
+   D) Random assignment makes a causal comparison appropriate
+
+11. A researcher randomly selects 2,000 nurses from a national list of all licensed nurses. She asks each nurse whether they work night shifts and how tired they feel, and she does not assign anyone to a shift. Which description best fits this study?
+   A) An observational study with a random sample, so associations can be generalized to all licensed nurses on the list
+   B) An experiment with random assignment, so causal claims apply to all licensed nurses
+   C) An experiment without randomization, so causal claims cannot be made
+   D) An observational study with a convenience sample, so results apply only to those surveyed
+
+12. A fitness-tracker company invites 150 owners who signed up for its newsletter to take part in a study. The company does not assign anyone to a group. Participants walk more than before, and the company concludes that its tracker causes people to walk more. Which option identifies every design flaw in this conclusion?
+   A) The sample is too small to show anything
+   B) The study used only one sample, so the result cannot be trusted
+   C) The participants were not randomly selected and no random assignment was used, so the study cannot show a cause and cannot generalize beyond newsletter subscribers
+   D) The company measured walking, which is not a useful measure
+
+13. A coffee shop surveys only its first 100 customers each morning for a month, collecting 3,000 responses in total. Which statement is correct?
+   A) With 3,000 responses, the sample is now random and represents all customers in the city
+   B) The 3,000 responses prove that the coffee causes customers to return
+   C) The study became an experiment because it collected many responses
+   D) A larger sample reduces random variation, but it cannot make a sample representative when responses come only from morning customers
+
+14. A county health office lists all 3,500 residents who hold a valid library card and randomly selects 250 of them. Each selected resident is randomly assigned to receive a flu-shot reminder or no reminder, and the office compares vaccination rates. Which statement is best supported?
+   A) Reminders cause higher vaccination rates among all 3,500 library cardholders
+   B) Reminders are associated with vaccination rates only among the 250 selected residents
+   C) Reminders cause higher vaccination rates only among the 250 selected residents
+   D) Reminders are associated with higher vaccination rates among all county residents
+
+15. A survey finds that people who take a daily vitamin report fewer colds than people who do not. Participants chose whether to take vitamins, and the researchers did not assign anyone. Which factor is the most likely lurking variable?
+   A) The brand name printed on the vitamin bottle
+   B) The temperature of the room where the survey was filled out
+   C) Overall health-consciousness, which may lead people both to take vitamins and to avoid colds
+   D) The number of questions on the survey
+
+### Hard
+
+1. A city randomly selects 300 bakers from a complete list of all licensed bakers in the city. Each baker decides for himself or herself whether to attend a training program, and the city later compares sales. Researchers do not assign training to anyone. Which conclusion is best supported?
+   A) Training causes higher sales for all licensed bakers in the city
+   B) Training causes higher sales only among the 300 bakers in the study
+   C) Training is associated with higher sales for all licensed bakers in the city, but the study does not show that training causes it
+   D) Training has no relationship with sales for the 300 bakers in the study
+
+2. A study enrolls 180 volunteers. Researchers randomly assign three-fifths of them to Group A and the rest to Group B. During the study, 12 people from Group A and 9 people from Group B drop out. How many participants complete the study?
+   A) 168  B) 159  C) 171  D) 180
+
+3. A hospital records 1,000 randomly selected patients. Doctors chose which patients received Drug Y, and they were more likely to give Drug Y to patients with milder illness. Patients who received Drug Y had fewer complications. Which statement is best supported?
+   A) Drug Y causes fewer complications for all hospital patients
+   B) Drug Y causes fewer complications for the 1,000 patients, because the sample was random
+   C) Drug Y has no relationship with complications
+   D) Drug Y is associated with fewer complications, but because doctors chose the treatment and illness severity may affect both, the study does not show that Drug Y causes the difference
+
+4. A bank randomly selects 150 of its 40,000 online-account holders. It randomly assigns half of them to receive a \$10 bonus for a savings deposit and the other half nothing. The bonus group deposits more money on average. Which claim is best supported?
+   A) The bonus causes more deposits among all bank customers
+   B) The bonus causes more deposits among all 40,000 online-account holders
+   C) The bonus causes more deposits only among the 150 account holders in the study
+   D) The bonus is associated with more deposits among the 150 account holders only
+
+5. A school district randomly selects 200 of its 9,000 students for a study of a new math program. Each selected student chooses whether to join the program, and the district later compares test scores. Which change would best allow the district to claim that the program caused score gains for all 9,000 students?
+   A) Increase the sample to 2,000 students, keeping the choice to join
+   B) Survey only the students who chose to join the program
+   C) Randomly assign each selected student to the program or to a comparison group, instead of letting students choose
+   D) Measure the test scores twice instead of once
+
+6. A farm randomly selects 500 of its 2,000 dairy cows. Half are randomly assigned to feed X and half to feed Y. After three months, the feed X cows produce more milk on average. Which statement is best supported?
+   A) Feed X increases milk production for the farm's 2,000 cows
+   B) Feed X increases milk production for all dairy farms
+   C) Feed X is associated with more milk production among the farm's cows, but no cause is shown
+   D) Feed X increases milk production for the 500 cows in the study only
+
+7. A researcher randomly selects 400 students from a large high school and records how much time each spends on homework and each student's grade point average. No one is assigned to a homework schedule. A blog post states that homework causes higher grades. Which evaluation is most accurate?
+   A) The claim is not supported: the results show an association with grades for the school's students, but cause is not shown
+   B) The claim is valid, because the sample was random
+   C) The claim is valid for the 400 students only
+   D) The results are unrelated to grades
+
+8. A clinic posts a notice asking for volunteers and receives 800 sign-ups. Researchers randomly assign half of the volunteers to a new vaccine and half to a placebo, without telling participants which they received. After one season, the vaccine group has fewer infections. Which claim is best supported?
+   A) The vaccine causes fewer infections among all adults
+   B) The vaccine is associated with fewer infections, but cannot be shown to cause them
+   C) No conclusion is possible, since the volunteers were not randomly selected
+   D) The vaccine causes fewer infections among people similar to these volunteers
+
+9. A company has 10,000 employees. Which method allows results to be generalized to all 10,000 employees?
+   A) Drawing 100 names at random from the list of employees who work Monday shifts
+   B) Drawing 100 names at random from the full list of all 10,000 employees
+   C) Surveying 100 employees who volunteered after an email to all staff
+   D) Surveying 100 employees whom the manager selected as typical
+
+10. Forty-eight students are randomly divided into four groups of equal size. One group is the control group, and the other three receive different treatments. What fraction of all 48 students is in the control group?
+   A) $\frac{1}{4}$  B) $\frac{1}{3}$  C) $\frac{1}{12}$  D) $\frac{1}{2}$
+
+11. A company has 1,500 employees. It randomly selects 150 employees and randomly assigns 60 of them to standing desks and 90 to regular desks. After six months, the standing-desk group reports less back pain on average. Which claim is strongest and best supported?
+   A) Standing desks cause less back pain for the 150 employees in the study only
+   B) Standing desks cause less back pain for all 1,500 employees
+   C) Standing desks are associated with less back pain for all 1,500 employees, but cause is not shown
+   D) Standing desks are not related to back pain, since the two groups were different sizes
+
+12. A university randomly selects 300 of its students and randomly assigns each to a study app or a regular study method. The app group scores higher on the final exam. A newspaper headline reads: "Study app raises test scores at universities nationwide." Which correction is most accurate?
+   A) The app raises scores for this university's students, but the nationwide claim is not supported because only one university was sampled
+   B) The app raises scores for students across the country
+   C) The app is associated with higher scores at this university, but cause is not shown
+   D) The study shows nothing, because only one university was used
+
+13. Consider three statements. I. A random sample allows results to be generalized to the population it was drawn from. II. Random assignment allows a cause-and-effect conclusion. III. A larger convenience sample becomes representative of the population once it is large enough. Which statements are correct?
+   A) I only  B) I, II, and III  C) I and II only  D) III only
+
+14. A city health department randomly selects 500 adults from the patient list of one clinic in the city. It randomly assigns half to receive text reminders and half to receive none, then compares appointment attendance. Which is the largest group to which a cause-and-effect conclusion can be generalized?
+   A) All adults in the city  B) All adults in the state  C) All patients of this clinic  D) The 500 adults who were selected
+
+15. A researcher randomly selects 200 students from a district of 5,000 students. The students are not randomly assigned to music lessons; they choose whether to take them. Students who took lessons have higher test scores. A headline reads: "Music lessons make children smarter across the nation." Which correction is most accurate?
+   A) Music lessons cause higher scores among the district's 5,000 students
+   B) Music lessons cause higher scores across the nation
+   C) Music lessons are associated with higher scores among the 200 sampled students only
+   D) Music lessons are associated with higher scores among the district's 5,000 students, but cause is not shown
+
+**A note on sourcing:** real, official College Board SAT questions are copyrighted and are **not** licensed for reproduction in commercial test-prep materials, under any circumstances, with or without attribution. No verbatim College Board question appears in this book. The items in this set were written to match the *method*, *distractor style*, and *difficulty tier* of released items in this lesson's skill category. The numbers, names, and contexts are all original. Items use only this lesson's concepts; the margin-of-error material seen in the bank's *Inference from sample statistics* category is outside this lesson's scope and was not used.
+
+---
+
 ## Answer Key
 
 **Set 1:**
@@ -228,3 +484,9 @@ sample/assignment rules from Concept 3.
    to generalize beyond it. This is the opposite of every flawed conclusion in Set 4 —
    it shows that a study can be used correctly by simply matching the claim's scope to
    the sample's actual scope.
+
+**Set 7 — Easy:** 1) A  2) D  3) B  4) B  5) D  6) C  7) D  8) C  9) C  10) A  11) B  12) B  13) C  14) A  15) A
+
+**Set 7 — Medium:** 1) D  2) C  3) B  4) D  5) B  6) B  7) A  8) B  9) A  10) C  11) A  12) C  13) D  14) A  15) C
+
+**Set 7 — Hard:** 1) C  2) B  3) D  4) B  5) C  6) A  7) A  8) D  9) B  10) A  11) B  12) A  13) C  14) C  15) D
