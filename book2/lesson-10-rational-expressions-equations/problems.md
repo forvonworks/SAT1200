@@ -84,7 +84,7 @@ Identify the error and give the correct value.
 
 ## Set 8 — Official SAT-Style Application
 
-Multiple-choice (A–D), English, in the format of the Digital SAT for this lesson's two skill areas: equivalent expressions (rational) and nonlinear equations that reduce to rational form. Every item below is **original**: each was written from the solving method taught in this lesson, with new numbers and context. No official question text or numbers are reproduced. There are 15 Easy, 15 Medium and 15 Hard items.
+Multiple-choice (A–D), English, in the format of the Digital SAT for this lesson's two skill areas: equivalent expressions and nonlinear equations (rational form). Every item below is **original**: new numbers and contexts, written to match the method and distractor style of the official 'Equivalent expressions' and 'Nonlinear equations' items. No official question text, numbers or wording is reproduced. There are 15 Easy, 15 Medium and 15 Hard items.
 
 ### Easy
 
@@ -109,8 +109,8 @@ Multiple-choice (A–D), English, in the format of the Digital SAT for this less
 7. What is the solution to the equation $\dfrac{x+5}{x-1}=2$?
    A) 3  B) 7  C) $-7$  D) 1
 
-8. Which of the following is equivalent to $\dfrac{x^2+6x+9}{x+3}$ for $x\ne-3$?
-   A) $x+9$  B) $x+3$  C) $x^2+3$  D) $x+6$
+8. Which of the following is equivalent to $\dfrac{x+5}{x-1}+\dfrac{2x-3}{x-1}$ for $x\ne1$?
+   A) $\dfrac{3x+8}{x-1}$  B) $\dfrac{3x+2}{x-1}$  C) $\dfrac{3x-2}{x-1}$  D) $\dfrac{3x+2}{x^2-1}$
 
 9. Which of the following is equivalent to $\dfrac{2x-6}{x^2-9}$ for $x\ne3$ and $x\ne-3$?
    A) $\dfrac{2}{x+3}$  B) $\dfrac{2}{x-3}$  C) $\dfrac{x-3}{x+3}$  D) $\dfrac{2x}{x+3}$
@@ -174,8 +174,8 @@ Multiple-choice (A–D), English, in the format of the Digital SAT for this less
 13. A total of 48 ounces of food is shared equally among $x$ people. If 4 more people join, and the same 48 ounces is still shared equally, each person receives 2 fewer ounces. What is the value of $x$?
    A) 4  B) 6  C) 8  D) 12
 
-14. What is the solution to the equation $\dfrac{x}{x+2}=\dfrac{1}{3}+\dfrac{2}{x+2}$?
-   A) 2  B) 4  C) $-4$  D) 8
+14. If $x+\dfrac{1}{x}=5$ and $x\ne0$, what is the value of $\dfrac{x^2+1}{x}$?
+   A) $\dfrac{1}{5}$  B) 5  C) 7  D) 25
 
 15. For what value of $k$ does the equation $\dfrac{x+k}{x-3}=2$ have no solution?
    A) $-3$  B) 3  C) 6  D) $-6$
@@ -194,8 +194,8 @@ Multiple-choice (A–D), English, in the format of the Digital SAT for this less
 4. Which of the following is equivalent to $\dfrac{x^2+x-12}{x^2-9}\cdot\dfrac{x^2-6x+9}{x^2-16}$ for $x\ne\pm3$ and $x\ne\pm4$?
    A) $\dfrac{(x-3)^2}{(x+3)(x-4)}$  B) $\dfrac{x-3}{(x+3)(x-4)}$  C) $\dfrac{(x-3)^2}{(x-3)(x+3)}$  D) $\dfrac{x-3}{x-4}$
 
-5. Which of the following is equivalent to $\dfrac{1}{x-1}+\dfrac{2}{x+1}$ for $x\ne\pm1$?
-   A) $\dfrac{3x-1}{x^2-1}$  B) $\dfrac{3x+1}{x^2-1}$  C) $\dfrac{3x}{x^2-1}$  D) $\dfrac{3x-1}{x^2+1}$
+5. Which of the following is equivalent to $\dfrac{\dfrac{1}{x-1}+\dfrac{1}{x+1}}{\dfrac{x}{x-1}}$ for $x\ne-1$, $x\ne0$, and $x\ne1$?
+   A) $\dfrac{2}{x+1}$  B) $\dfrac{2}{x-1}$  C) $\dfrac{2x}{x+1}$  D) $\dfrac{x+1}{2}$
 
 6. What is the solution to the equation $\dfrac{x+2}{x-2}-\dfrac{x-2}{x+2}=\dfrac{16}{x^2-4}$?
    A) $x=2$  B) $x=-2$  C) $x=0$  D) No solution
@@ -227,8 +227,7 @@ Multiple-choice (A–D), English, in the format of the Digital SAT for this less
 15. For what value of $a$ is $\dfrac{3x+a}{x+1}=\dfrac{5}{x+1}+3$ true for every value of $x$ except $x=-1$?
    A) 2  B) 5  C) 8  D) 11
 
-**A note on sourcing:** every item in Set 8 is original. Each was written from the solving methods in this lesson (simplifying by factoring, multiplying and dividing, clearing denominators, and checking for excluded values), using new numbers, names and contexts. No College Board question text, numbers or wording is reproduced anywhere in this book.
-
+**A note on sourcing:** every item in Set 8 is original. Each was written to match the method and distractor style of the official Equivalent expressions and Nonlinear equations items, checked against that bank, with new numbers, names and contexts. No College Board question text, numbers or wording is reproduced anywhere in this book.
 ---
 
 ## Answer Key
