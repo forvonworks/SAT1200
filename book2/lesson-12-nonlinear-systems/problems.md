@@ -179,10 +179,8 @@ here or anywhere in this book — see the note at the end of this set.
     A) $1$  B) $-1$  C) $-3$  D) $5$
 
 15. Consider the system $y=x-4$ and $y=x^2-3x+3$. Which statement is correct about the quadratic equation obtained by setting the two expressions for $y$ equal?
-    A) Its discriminant is $-12$, so it has no real solutions.
-    B) Its discriminant is $-12$, so it has two real solutions.
-    C) Its discriminant is $12$, so it has two real solutions.
-    D) Its discriminant is $4$, so it has one real solution.
+    A) $D=-12$, no real solutions  B) $D=-12$, two real solutions
+    C) $D=12$, two real solutions  D) $D=4$, one real solution
 
 ### Hard
 
