@@ -23,10 +23,14 @@
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
 
+% ---- Safe print margins: 16mm outer on both sides so bound/trimmed copies never
+% clip problem text. Columns are 83mm wide with a 6mm gap on each side of the
+% center rule (at x=105mm). ----
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
 \newcommand{\COLW}{83mm}
 
+% ---- Plain topic header: number chip + title, thin rule underneath. No band, no watermark. ----
 \newcommand{\topicheader}[2]{%
 \begin{textblock*}{194mm}(16mm,10mm)
 \begin{tikzpicture}
@@ -56,6 +60,7 @@
 \end{textblock*}
 }
 
+% ---- Fixed-length vertical column rule: #1 = top y (mm), #2 = length (mm) ----
 \newcommand{\colrule}[2]{%
 \begin{textblock*}{1mm}(105mm,#1mm)
 \begin{tikzpicture}
@@ -68,244 +73,459 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
+% ---- Small boxed problem number, reference-style. Plain \fbox -- stays flush with
+% the text baseline instead of centering on it. ----
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
+% ---- QR placeholder square + caption below ----
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[1.5mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[1.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[4mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[4mm]%
+}
+
+% ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
 \newcommand{\anstitle}[1]{{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont #1}\\[1.3mm]}
 
-% ---- Minimal right-triangle diagram: #1 = right-angle vertex label (at origin),
-% #2 = horizontal-leg vertex label, #3 = vertical-leg vertex label ----
-\newcommand{\righttriangle}[3]{%
-\begin{tikzpicture}[baseline=0mm]
-\coordinate (R) at (0,0);
-\coordinate (H) at (18mm,0);
-\coordinate (V) at (0,14mm);
-\draw[ink,thick] (V) -- (R) -- (H) -- cycle;
-\draw[ink] (0,2.2mm) -- (2.2mm,2.2mm) -- (2.2mm,0);
-\node[font=\small,below left] at (R) {#1};
-\node[font=\small,right] at (H) {#2};
-\node[font=\small,above] at (V) {#3};
-\end{tikzpicture}%
-}
-
 \begin{document}
 
-% ================= PAGE 1: Set 1 (ID sides, with diagrams) | Set 2 (exact ratios) =================
-\topicheader{22}{To'g'ri Burchakli Uchburchak Trigonometriyasi}
+% ================= PAGE 1 (118): Set 1 | Set 2 =================
+\topicheader{22}{Right-Triangle Trigonometry}
 \pagefooter{118}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{10.5}{13}\selectfont
-\setkicker{1-to'plam}{Har bir uchburchak va burchak uchun qarshi tomon, qo'shni tomon va gipotenuzani ayting.}
+{\fontsize{11}{14}\selectfont
+\setkicker{Set 1}{Identify the opposite leg, adjacent leg, and hypotenuse for each angle.}
 
-\righttriangle{C}{B}{A}\\[2mm]
-\noindent\pnum{1} Burchak $A$ uchun: \dotfill\\[5mm]
-\noindent\pnum{2} Burchak $B$ uchun (xuddi shu uchburchak): \dotfill\\[8mm]
+Right triangle $ABC$, right angle at $C$.\\[2mm]
+\noindent\pnum{1} For angle $A$: what is the opposite leg, the adjacent leg, and the hypotenuse?\\[13mm]
+\noindent\pnum{2} For angle $B$ (same triangle): what is the opposite leg, the adjacent leg, and the hypotenuse?\\[13mm]
 
-\righttriangle{Q}{R}{P}\\[2mm]
-\noindent\pnum{3} Burchak $P$ uchun: \dotfill\\[5mm]
-\noindent\pnum{4} Burchak $R$ uchun (xuddi shu uchburchak): \dotfill\\[8mm]
+Right triangle $PQR$, right angle at $Q$.\\[2mm]
+\noindent\pnum{3} For angle $P$: what is the opposite leg, the adjacent leg, and the hypotenuse?\\[13mm]
+\noindent\pnum{4} For angle $R$ (same triangle): what is the opposite leg, the adjacent leg, and the hypotenuse?\\[13mm]
 
-\righttriangle{Y}{Z}{X}\\[2mm]
-\noindent\pnum{5} Burchak $X$ uchun: \dotfill\\[5mm]
-\noindent\pnum{6} Burchak $Z$ uchun (xuddi shu uchburchak): \dotfill
+Right triangle $XYZ$, right angle at $Y$, hypotenuse $XZ$.\\[2mm]
+\noindent\pnum{5} For angle $X$: what is the opposite leg, the adjacent leg, and the hypotenuse?\\[13mm]
+\noindent\pnum{6} For angle $Z$ (same triangle): what is the opposite leg, the adjacent leg, and the hypotenuse?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{2-to'plam}{Har bir uchburchak uchun $\sin\theta$, $\cos\theta$, $\tan\theta$ ni toping (kasrni soddalashtiring).}
+\setkicker{Set 2}{Compute the three ratios as exact fractions in lowest terms.}
 
-\noindent\pnum{1} Katetlar $3$ va $4$, gipotenuza $5$. $\theta$ -- uzunligi $3$ bo'lgan katetga qarshi.\\[13mm]
-\noindent\pnum{2} Xuddi shu uchburchak. $\theta$ -- uzunligi $4$ bo'lgan katetga qarshi.\\[13mm]
-\noindent\pnum{3} Katetlar $5$ va $12$, gipotenuza $13$. $\theta$ -- uzunligi $5$ bo'lgan katetga qarshi.\\[13mm]
-\noindent\pnum{4} Xuddi shu uchburchak. $\theta$ -- uzunligi $12$ bo'lgan katetga qarshi.\\[13mm]
-\noindent\pnum{5} Katetlar $8$ va $15$, gipotenuza $17$. $\theta$ -- uzunligi $8$ bo'lgan katetga qarshi.\\[13mm]
-\noindent\pnum{6} Katetlar $7$ va $24$, gipotenuza $25$. $\theta$ -- uzunligi $24$ bo'lgan katetga qarshi.
+Right triangle $ABC$, right angle at $C$. $AC=3$, $BC=4$, hypotenuse $AB=5$.\\[2mm]
+\noindent\pnum{1} What are $\sin B$, $\cos B$, and $\tan B$?\\[13mm]
+\noindent\pnum{2} In the same triangle, what are $\sin A$, $\cos A$, and $\tan A$?\\[13mm]
+
+Right triangle $PQR$, right angle at $Q$. $QR=5$, $PQ=12$, hypotenuse $PR=13$.\\[2mm]
+\noindent\pnum{3} What are $\sin P$, $\cos P$, and $\tan P$?\\[13mm]
+\noindent\pnum{4} In the same triangle, what are $\sin R$, $\cos R$, and $\tan R$?\\[13mm]
+
+Right triangle $XYZ$, right angle at $Y$. $YZ=8$, $XY=15$, hypotenuse $XZ=17$.\\[2mm]
+\noindent\pnum{5} What are $\sin X$, $\cos X$, and $\tan X$?\\[13mm]
+
+Right triangle $DEF$, right angle at $F$. $EF=24$, $DF=7$, hypotenuse $DE=25$.\\[2mm]
+\noindent\pnum{6} What are $\sin D$, $\cos D$, and $\tan D$?
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 2: Set 3 (missing side) | Set 4 (missing angle) =================
-\topicheader{22}{To'g'ri Burchakli Uchburchak Trigonometriyasi}
+% ================= PAGE 2 (119): Set 3 | Set 4 =================
+\topicheader{22}{Right-Triangle Trigonometry}
 \pagefooter{119}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{3-to'plam}{Etishmayotgan tomonni toping (yuzdan birigacha yaxlitlang).}
+\setkicker{Set 3}{Solve for a missing side. Round to the nearest hundredth. Right angle at $C$.}
 
-\noindent\pnum{1} Gipotenuza $=12$, burchak $=25°$. Qarshi tomonni toping.\\[13mm]
-\noindent\pnum{2} Gipotenuza $=18$, burchak $=40°$. Qo'shni tomonni toping.\\[13mm]
-\noindent\pnum{3} Qo'shni $=10$, burchak $=55°$. Qarshi tomonni toping.\\[13mm]
-\noindent\pnum{4} Qarshi $=9$, burchak $=32°$. Gipotenuzani toping.\\[13mm]
-\noindent\pnum{5} Gipotenuza $=22$, burchak $=63°$. Qo'shni tomonni toping.\\[13mm]
-\noindent\pnum{6} Qo'shni $=14$, burchak $=47°$. Gipotenuzani toping.
+\noindent\pnum{1} $\angle A=25^\circ$, hypotenuse $=12$. Find the side opposite $A$.\\[13mm]
+\noindent\pnum{2} $\angle A=40^\circ$, hypotenuse $=18$. Find the side adjacent to $A$.\\[13mm]
+\noindent\pnum{3} $\angle A=55^\circ$, side adjacent to $A$ $=10$. Find the side opposite $A$.\\[13mm]
+\noindent\pnum{4} $\angle A=32^\circ$, side opposite $A$ $=9$. Find the hypotenuse.\\[13mm]
+\noindent\pnum{5} $\angle A=63^\circ$, hypotenuse $=22$. Find the side adjacent to $A$.\\[13mm]
+\noindent\pnum{6} $\angle A=47^\circ$, side adjacent to $A$ $=14$. Find the hypotenuse.
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{4-to'plam}{Etishmayotgan burchakni toping (o'ndan birigacha yaxlitlang).}
+\setkicker{Set 4}{Solve for a missing angle. Round to the nearest tenth of a degree. Right angle at $C$, angle in question is $A$.}
 
-\noindent\pnum{1} Qarshi $=6$, gipotenuza $=14$. Burchakni toping.\\[13mm]
-\noindent\pnum{2} Qo'shni $=9$, gipotenuza $=20$. Burchakni toping.\\[13mm]
-\noindent\pnum{3} Qarshi $=11$, qo'shni $=15$. Burchakni toping.\\[13mm]
-\noindent\pnum{4} Qarshi $=18$, gipotenuza $=30$. Burchakni toping.\\[13mm]
-\noindent\pnum{5} Qo'shni $=21$, qarshi $=25$ (bir xil burchakka nisbatan). Burchakni toping.\\[13mm]
-\noindent\pnum{6} Qo'shni $=13$, gipotenuza $=37$. Burchakni toping.
+\noindent\pnum{1} Opposite $=6$, hypotenuse $=14$. Find $\angle A$.\\[13mm]
+\noindent\pnum{2} Adjacent $=9$, hypotenuse $=20$. Find $\angle A$.\\[13mm]
+\noindent\pnum{3} Opposite $=11$, adjacent $=15$. Find $\angle A$.\\[13mm]
+\noindent\pnum{4} Opposite $=18$, hypotenuse $=30$. Find $\angle A$.\\[13mm]
+\noindent\pnum{5} Adjacent $=21$, opposite $=25$. Find $\angle A$.\\[13mm]
+\noindent\pnum{6} Adjacent $=13$, hypotenuse $=37$. Find $\angle A$.
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 3: Set 5 (applied word problems) | Set 6 (spot the error) =================
-\topicheader{22}{To'g'ri Burchakli Uchburchak Trigonometriyasi}
+% ================= PAGE 3 (120): Set 5 | Set 6 =================
+\topicheader{22}{Right-Triangle Trigonometry}
 \pagefooter{120}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10.3}{13}\selectfont
-\setkicker{5-to'plam}{Aralash amaliy masalalar (boshqacha ko'rsatilmasa, yuzdan birigacha yaxlitlang).}
+\setkicker{Set 5}{Mixed applied problems. Round to the nearest hundredth unless stated otherwise.}
 
-\noindent\pnum{1} $12$ fut uzunlikdagi narvon devorga $68°$ burchak ostida tiralgan. U devorning qancha balandligiga yetadi?\\[9mm]
-\noindent\pnum{2} Pandus gorizontal $40$ fut masofada $10°$ burchak ostida ko'tariladi. Pandusning o'zi (gipotenuza) qancha uzun?\\[9mm]
-\noindent\pnum{3} Minoradan $100$ m masofadagi nuqtadan minora cho'qqisiga ko'tarilish burchagi $38°$. Minoraning balandligini toping.\\[9mm]
-\noindent\pnum{4} Uçurtma ipi $65$ m uzunlikda va yer bilan $50°$ burchak hosil qiladi. Uçurtma odamdan gorizontal qancha uzoqda?\\[9mm]
-\noindent\pnum{5} To'g'ri burchakli uchburchakning katetlari $9$ va $12$. Avval gipotenuzani, so'ng $9$ uzunlikdagi katetga qarshi burchakni toping (o'ndan birigacha).\\[9mm]
-\noindent\pnum{6} Samolyot $6°$ pasayish burchagi ostida $2000$ m gorizontal masofani bosib o'tadi. Balandligi necha metrga kamayadi?
+\noindent\pnum{1} A ladder $12$ ft long leans against a wall, making a $68^\circ$ angle with the ground. How high up the wall does the ladder reach?\\[9mm]
+\noindent\pnum{2} A ramp rises over a horizontal distance of $40$ ft at an angle of $10^\circ$. What is the length of the ramp itself (the hypotenuse)?\\[9mm]
+\noindent\pnum{3} From a point $100$ m from the base of a tower, the angle of elevation to the top of the tower is $38^\circ$. What is the height of the tower?\\[9mm]
+\noindent\pnum{4} A kite string is $65$ m long and makes a $50^\circ$ angle with the ground. What is the horizontal distance from the kite to the person holding the string?\\[9mm]
+\noindent\pnum{5} A right triangle has legs of length $9$ and $12$. What is the length of the hypotenuse, and what is the measure of the angle opposite the leg of length $9$ (to the nearest hundredth of a degree)?\\[9mm]
+\noindent\pnum{6} An airplane descends at an angle of depression of $6^\circ$ while covering $2000$ m of horizontal distance. By how many meters does its altitude decrease?
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10}{13}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'g'ri javobni bering.}
+\setkicker{Set 6}{Spot the error. Name the error, say which rule it breaks, and give the correct answer.}
 
-\noindent\pnum{1} To'g'ri burchak $C$ da, $BC=5$, $AC=12$, $AB=13$. $\sin A$ ni toping.\\[1mm]
-\hspace*{7mm}\textit{``$\sin A=\frac{12}{13}$, chunki $12$ -- uzunroq katet.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
+\noindent\pnum{1} In right triangle $ABC$ (right angle at $C$), $BC=5$, $AC=12$, $AB=13$. What is $\sin A$?\\[1mm]
+\hspace*{7mm}\textit{``$\sin A=\frac{12}{13}$, because $12$ is the longer leg.''}\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[30mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{2} Xuddi shu uchburchak. $\cos B$ ni toping.\\[1mm]
-\hspace*{7mm}\textit{``Burchak $A$ uchun qo'shni $AC=12$ edi, shuning uchun $\cos B=\frac{12}{13}$ ham.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
+\noindent\pnum{2} In the same triangle, what is $\cos B$ (the angle at $B$, not $A$)?\\[1mm]
+\hspace*{7mm}\textit{``Since $AC=12$ was adjacent to $A$, $\cos B=\frac{12}{13}$ as well.''}\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[30mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{3} $\sin 30°$ ni toping.\\[1mm]
-\hspace*{7mm}\textit{``Kalkulyatorga $30$ ni kiritib, $\sin 30\approx-0.988$ chiqdi.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
+\noindent\pnum{3} What is $\sin 30^\circ$?\\[1mm]
+\hspace*{7mm}\textit{``Entering $30$ into the calculator gives $\sin 30\approx-0.988$.''}\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[30mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{4} $\sin\theta=0.6$ berilgan, $\theta$ ni toping.\\[1mm]
-\hspace*{7mm}\textit{``$\sin\theta=0.6$, shuning uchun $\theta=0.6°$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
+\noindent\pnum{4} If $\sin\theta=0.6$, what is $\theta$?\\[1mm]
+\hspace*{7mm}\textit{``$\sin\theta=0.6$, so $\theta=0.6^\circ$.''}\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[30mm]{\dotfill}\\[6mm]
 
-\noindent\pnum{5} Gipotenuza $10$, bir katet $6$. Boshqa katetni toping.\\[1mm]
-\hspace*{7mm}\textit{``$10^2+6^2=$boshqa katet$^2$, demak $\sqrt{136}\approx11.66$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}
+\noindent\pnum{5} A right triangle has hypotenuse $10$ and one leg $6$. What is the other leg?\\[1mm]
+\hspace*{7mm}\textit{``$10^2+6^2=\text{other leg}^2$, so the other leg $=\sqrt{136}\approx11.66$.''}\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[30mm]{\dotfill}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) =================
-\topicheader{22}{To'g'ri Burchakli Uchburchak Trigonometriyasi}
+% ================= PAGE 4 (121): Set 7 | Set 8 (Easy 1-6) =================
+\topicheader{22}{Right-Triangle Trigonometry}
 \pagefooter{121}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10.3}{13}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin.}
+\setkicker{Set 7}{Bonus / challenge.}
 
-\noindent\pnum{1} $\sin 23°\approx0.3907$ berilgan, $\cos 67°$ ni qaytadan hisoblamay toping (qo'shimcha burchak ayniyatidan foydalaning).\\[13mm]
-\noindent\pnum{2} To'g'ri burchakli uchburchakning o'tkir burchaklaridan biri $34°$. Ikkinchi o'tkir burchakni toping va $\sin 34°$ bilan o'sha burchak kosinusi orasidagi bog'lanishni ayting.\\[13mm]
-\noindent\pnum{3} Gipotenuza $26$, o'tkir burchaklardan biri $42°$. Ikkala katetni toping (yuzdan birigacha).\\[16mm]
-\noindent\pnum{4} $20$ futlik narvon devorga $16$ fut balandlikda yetib boradi. Toping: (a) narvonning yer bilan hosil qilgan burchagi, (b) devor bilan hosil qilgan burchagi, (c) ikkala burchak qo'shimcha ekanini tasdiqlang.\\[16mm]
-\noindent\pnum{5} Samolyot $15°$ doimiy burchak ostida $5000$ m uchish yo'li bo'ylab ko'tariladi. Bosib o'tilgan gorizontal masofa va erishilgan balandlikni toping (har birini yuzdan birigacha).
+\noindent\pnum{1} If $\sin 23^\circ\approx0.3907$, what is the value of $\cos 67^\circ$? Use the complementary-angle identity rather than recomputing.\\[13mm]
+\noindent\pnum{2} A right triangle has an acute angle of $34^\circ$. What is the measure of the other acute angle, and how do $\sin 34^\circ$ and that angle's cosine compare?\\[13mm]
+\noindent\pnum{3} A right triangle has hypotenuse $26$ and one acute angle $42^\circ$. What are the lengths of both legs, each to the nearest hundredth?\\[16mm]
+\noindent\pnum{4} A $20$-ft ladder reaches $16$ ft up a wall. Find (a) the angle the ladder makes with the ground, (b) the angle it makes with the wall, and (c) the sum of those two angles, confirming they are complementary.\\[16mm]
+\noindent\pnum{5} A plane climbs at a constant angle of $15^\circ$ along a flight path of $5000$ m. Find the horizontal distance covered and the altitude gained (each to the nearest hundredth).
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+{\sffamily\bfseries\color{accent}\fontsize{10}{12}\selectfont Easy}\\[1mm]
+\satqw{1}{In right triangle $DEF$, the right angle is at $E$. $DE=9$, $EF=40$, and the hypotenuse $DF=41$. What is $\sin D$?}{$\frac{9}{41}$}{$\frac{9}{40}$}{$\frac{40}{9}$}{$\frac{40}{41}$}
+\satq{2}{In right triangle $MNP$, the right angle is at $N$. $MN=6$, $NP=8$, and the hypotenuse $MP=10$. What is $\tan P$?}{$\frac{3}{4}$}{$\frac{4}{5}$}{$\frac{3}{5}$}{$\frac{4}{3}$}
+\satq{3}{In right triangle $ABC$, the right angle is at $C$. If $\cos A=0.6$, what is $\sin B$?}{$0.4$}{$0.8$}{$0.6$}{$\frac{5}{3}$}
+\satqw{4}{For an acute angle $\theta$, $\sin\theta=\frac{5}{13}$. What is the value of $\cos(90^{\circ}-\theta)$?}{$\frac{12}{13}$}{$\frac{13}{5}$}{$\frac{13}{12}$}{$\frac{5}{13}$}
+\satqw{5}{A right triangle has legs of length 7 and 24 and hypotenuse 25. Angle $\theta$ is opposite the leg of length 7. What is $\tan\theta$?}{$\frac{24}{25}$}{$\frac{24}{7}$}{$\frac{7}{24}$}{$\frac{7}{25}$}
+\satqw{6}{In right triangle $XYZ$, the right angle is at $Y$. $XY=15$, $YZ=8$, and the hypotenuse $XZ=17$. What is $\cos Z$?}{$\frac{15}{17}$}{$\frac{8}{15}$}{$\frac{17}{8}$}{$\frac{8}{17}$}
+
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar -- full-page unified answer table =================
-\topicheader{22}{To'g'ri Burchakli Uchburchak Trigonometriyasi}
+% ================= PAGE 5 (122): Set 8 cont. =================
+\topicheader{22}{Right-Triangle Trigonometry}
 \pagefooter{122}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10}{12}\selectfont Easy (cont.)}\\[1mm]
+\satqw{7}{A 13-foot ladder leans against a vertical wall. Its foot is on level ground, and its top touches the wall at a height of 12 feet. What is the sine of the angle the ladder makes with the ground?}{$\frac{12}{13}$}{$\frac{5}{13}$}{$\frac{5}{12}$}{$\frac{13}{12}$}
+\satq{8}{In a right triangle, the hypotenuse is 35 units long and $\cos\theta=\frac{3}{5}$, where $\theta$ is one of the acute angles. What is the length, in units, of the leg adjacent to $\theta$?}{14}{21}{28}{58.33}
+\satq{9}{If $\cos 48^{\circ}\approx 0.6691$ (rounded to four decimal places), what is $\sin 42^{\circ}$ to four decimal places?}{$0.6691$}{$0.7431$}{$0.3420$}{$0.9135$}
+\satq{10}{In right triangle $PQR$, the right angle is at $Q$. $PQ=12$, $QR=16$, and the hypotenuse $PR=20$. What is $\sin R$?}{$\frac{4}{5}$}{$\frac{3}{4}$}{$\frac{5}{3}$}{$\frac{3}{5}$}
+\satq{11}{In a right triangle, one acute angle measures $(2y+10)^{\circ}$ and the other acute angle measures $(y+20)^{\circ}$. What is the value of $y$?}{10}{20}{30}{40}
+\satqw{12}{In right triangle $ABC$, the right angle is at $C$. If $\sin A=\frac{7}{25}$, what is $\cos B$?}{$\frac{7}{25}$}{$\frac{25}{7}$}{$\frac{24}{25}$}{$\frac{7}{24}$}
+
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10}{12}\selectfont Easy (cont.)}\\[1mm]
+\satq{13}{The hypotenuse of a right triangle is 10 units long, and $\sin\theta=0.8$ for one of its acute angles $\theta$. What is the length, in units, of the leg opposite $\theta$?}{6}{8}{10}{12.5}
+\satq{14}{A right triangle has legs of length 3 and 4 and hypotenuse 5. To the nearest tenth of a degree, what is the measure of the acute angle opposite the leg of length 3?}{0.8°}{36.9°}{53.1°}{45.0°}
+\satqw{15}{For an acute angle $\theta$ of a right triangle, which expression is equal to $\tan\theta$?}{$\sin\theta\cdot\cos\theta$}{$\sin\theta+\cos\theta$}{$\dfrac{\sin\theta}{\cos\theta}$}{$\dfrac{\cos\theta}{\sin\theta}$}
+{\sffamily\bfseries\color{accent}\fontsize{10}{12}\selectfont Medium}\\[1mm]
+\satq{1}{A student stands 60 feet from the base of a tree on level ground. The angle of elevation from the student's eyes to the top of the tree is $35^{\circ}$. Ignoring the height of the student's eyes above the ground, what is the height of the tree, to the nearest hundredth of a foot?}{34.41}{42.01}{49.15}{85.69}
+\satq{2}{A ramp is 18 meters long and makes an angle of $12^{\circ}$ with the ground. What is the horizontal distance the ramp covers, to the nearest hundredth of a meter?}{17.61}{3.74}{18.40}{3.83}
+\satq{3}{A ramp rises 2.5 feet over a horizontal distance of 14 feet. What is the measure of the angle the ramp makes with the ground, to the nearest tenth of a degree?}{$10.1^{\circ}$}{$10.3^{\circ}$}{$79.9^{\circ}$}{$0.18^{\circ}$}
+\satq{4}{In right triangle $ABC$, the right angle is at $C$. $BC=5$, $AC=12$, and the hypotenuse $AB=13$. What is $\tan B$?}{$\frac{5}{12}$}{$\frac{5}{13}$}{$\frac{13}{5}$}{$\frac{12}{5}$}
+
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6 (123): Set 8 cont. =================
+\topicheader{22}{Right-Triangle Trigonometry}
+\pagefooter{123}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10}{12}\selectfont Medium (cont.)}\\[1mm]
+\satq{5}{A 25-foot ladder makes a $70^{\circ}$ angle with the ground. How far is the foot of the ladder from the base of the wall, to the nearest hundredth of a foot?}{23.49}{68.69}{8.55}{73.10}
+\satq{6}{From the top of a cliff 30 meters high, the angle of depression to a boat on the water is $25^{\circ}$. To the nearest hundredth of a meter, what is the horizontal distance from the base of the cliff to the boat?}{13.99}{12.68}{70.99}{64.34}
+\satq{7}{Given that $\sin 38^{\circ}\approx 0.6157$, what is the value of $\cos 52^{\circ}+\sin 38^{\circ}$ to four decimal places?}{0.3843}{0.6157}{0.7880}{1.2313}
+\satq{8}{In a right triangle, the side opposite an acute angle of $28^{\circ}$ has length 7.5. To the nearest hundredth, what is the length of the hypotenuse?}{3.52}{6.62}{15.98}{3.99}
+\satq{9}{A 17-foot ladder reaches a window that is 15 feet above the ground. To the nearest tenth of a degree, what is the measure of the angle the ladder makes with the ground?}{$61.9^{\circ}$}{$0.88^{\circ}$}{$28.1^{\circ}$}{$75.0^{\circ}$}
+\satq{10}{In a right triangle, the leg opposite an acute angle $\theta$ has length $6$, and the hypotenuse has length $2x+4$. If $\sin\theta=0.6$, what is the value of $x$?}{1}{3}{5}{7}
+\satq{11}{In right triangle $ABC$, the right angle is at $C$. $\tan A=0.75$ and the side opposite angle $A$ is $BC=12$. What is the length of $AC$?}{8}{9}{15}{16}
+
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10}{12}\selectfont Medium (cont.)}\\[1mm]
+\satq{12}{In right triangle $ABC$, the right angle is at $C$. The measure of angle $A$ is $(4x+5)^{\circ}$ and the measure of angle $B$ is $(2x+1)^{\circ}$. What is the value of $x$?}{12}{14}{16}{18}
+\satq{13}{The two acute angles of a right triangle measure $\alpha=(2x+5)^{\circ}$ and $\beta=(x+10)^{\circ}$. If $\sin\alpha=\cos\beta$, what is the value of $x$?}{35}{30}{25}{15}
+\satq{14}{A plane descends at a constant angle of $8^{\circ}$ while covering 1,500 meters of horizontal distance. To the nearest hundredth of a meter, by how much does its altitude decrease?}{208.76}{210.81}{1485.40}{1514.74}
+\satq{15}{A building is 40 meters tall. An observer stands at ground level 55 meters from the base of the building. To the nearest tenth of a degree, what is the angle of elevation from the observer to the top of the building?}{54.0°}{0.73°}{36.0°}{35.0°}
+{\sffamily\bfseries\color{accent}\fontsize{10}{12}\selectfont Hard}\\[1mm]
+\satq{1}{From a point on level ground 50 meters from the base of a tower, the angle of elevation to the top of the tower is $40^{\circ}$. The observer walks 30 meters straight toward the tower. To the nearest tenth of a degree, what is the new angle of elevation to the top of the tower?}{54.4°}{64.5°}{76.6°}{40.0°}
+\satq{2}{In right triangle $ABC$, the right angle is at $C$, and $\tan A=\frac{5}{2}$. What is the value of $\tan A\cdot\tan B$?}{1}{0}{$\frac{2}{5}$}{$\frac{5}{2}$}
+\satq{3}{In right triangle $ABC$, the right angle is at $C$. $\sin A=\frac{3}{5}$, the side opposite angle $A$ has length $x+2$, and the hypotenuse has length $5x$. What is the value of $x$?}{4}{2}{3}{1}
+
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 7 (124): Set 8 cont. + sourcing note =================
+\topicheader{22}{Right-Triangle Trigonometry}
+\pagefooter{124}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10}{12}\selectfont Hard (cont.)}\\[1mm]
+\satq{4}{From a point $P$ on level ground, the angle of elevation to the top of a tower is $35^{\circ}$. After the observer walks 40 meters straight toward the tower, the angle of elevation is $55^{\circ}$. To the nearest tenth of a meter, what is the height of the tower?}{54.9}{78.5}{57.1}{28.0}
+\satq{5}{A lighthouse is 45 meters tall. From the top of the lighthouse, the angle of depression to a boat is $22^{\circ}$. To the nearest tenth of a meter, what is the straight-line distance from the top of the lighthouse to the boat?}{120.1}{111.4}{16.9}{45.0}
+\satq{6}{One acute angle of a right triangle measures $x^2$ degrees, and the other acute angle measures $x$ degrees. What is the measure, in degrees, of the larger acute angle?}{9}{81}{90}{99}
+\satq{7}{A 20-foot ladder leans against a wall with its foot on level ground. The ladder makes a $70^{\circ}$ angle with the ground. The foot of the ladder is then pulled away from the wall so that the ladder makes a $60^{\circ}$ angle with the ground. To the nearest hundredth of a foot, how far did the foot of the ladder move away from the wall?}{3.16}{6.84}{10.00}{13.16}
+\satq{8}{In a right triangle, the hypotenuse is 25 units long and one acute angle measures $36^{\circ}$. To the nearest tenth, what is the perimeter of the triangle, in units?}{39.7}{45.2}{34.9}{59.9}
+\satq{9}{A rectangle is 15 units long and 8 units wide. To the nearest tenth of a degree, what is the measure of the angle between a diagonal of the rectangle and the longer side?}{0.53°}{28.1°}{61.9°}{32.0°}
+
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10}{12}\selectfont Hard (cont.)}\\[1mm]
+\satq{10}{On level ground, two vertical poles stand at the same time of day, when the angle of elevation of the sun is $32^{\circ}$. Pole A is 8 feet tall, and pole B is 14 feet tall. To the nearest tenth of a foot, how much longer is the shadow of pole B than the shadow of pole A?}{6.0}{12.8}{22.4}{9.6}
+\satq{11}{In right triangle $ABC$, the right angle is at $C$. $\sin A=0.6$ and $BC=18$. What is $\tan B$?}{$\frac{3}{4}$}{$\frac{5}{3}$}{$\frac{4}{3}$}{$\frac{3}{5}$}
+\satq{12}{In right triangle $ABC$, the right angle is at $C$. $\sin A=\cos(3A-10)^{\circ}$. What is the measure of angle $B$, in degrees?}{25}{115}{55}{65}
+\satq{13}{A right triangle has legs of length 20 and 48 and hypotenuse 52. What is the tangent of the larger acute angle of the triangle?}{$\frac{5}{12}$}{$\frac{12}{5}$}{$\frac{5}{13}$}{$\frac{13}{5}$}
+\satq{14}{For acute angles, $\sin(3x-6)^{\circ}=\cos(2x+6)^{\circ}$. What is the value of $x$?}{12}{16}{18}{24}
+\satq{15}{A ramp must rise 3 meters to reach a platform, and the angle the ramp makes with the ground must not exceed $5^{\circ}$. To the nearest hundredth of a meter, what is the least possible horizontal length of the ramp?}{0.26}{2.99}{34.29}{34.42}
+
+}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original. It was written by studying the
+method, trap and distractor style of real, officially released SAT Suite Question
+Bank items in the Right triangles and trigonometry category, then building a new
+problem (new numbers, names and context) that needs the same solving method. No
+real College Board question text is reproduced anywhere in this book.\par}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 8 (125): Answer key -- Sets 1-7 =================
+\topicheader{22}{Right-Triangle Trigonometry}
+\pagefooter{125}
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,42mm)
-{\fontsize{8.7}{10.8}\selectfont
+\begin{textblock*}{194mm}(16mm,44mm)
+{\fontsize{9}{11}\selectfont
 \centering
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{8mm}|>{\centering\arraybackslash}p{136mm}|}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|>{\centering\arraybackslash}p{26mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{32mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{32mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{6}{24mm}{\centering 1-to'plam} & 1 & Qarshi $=BC$, qo'shni $=AC$, gipotenuza $=AB$\\\cline{2-3}
- & 2 & Qarshi $=AC$, qo'shni $=BC$, gipotenuza $=AB$\\\cline{2-3}
- & 3 & Qarshi $=QR$, qo'shni $=PQ$, gipotenuza $=PR$\\\cline{2-3}
- & 4 & Qarshi $=PQ$, qo'shni $=QR$, gipotenuza $=PR$\\\cline{2-3}
- & 5 & Qarshi $=YZ$, qo'shni $=XY$, gipotenuza $=XZ$\\\cline{2-3}
- & 6 & Qarshi $=XY$, qo'shni $=YZ$, gipotenuza $=XZ$\\\hline
-\multirow{6}{24mm}{\centering 2-to'plam} & 1 & $\sin=\frac35,\ \cos=\frac45,\ \tan=\frac34$\\\cline{2-3}
- & 2 & $\sin=\frac45,\ \cos=\frac35,\ \tan=\frac43$\\\cline{2-3}
- & 3 & $\sin=\frac{5}{13},\ \cos=\frac{12}{13},\ \tan=\frac{5}{12}$\\\cline{2-3}
- & 4 & $\sin=\frac{12}{13},\ \cos=\frac{5}{13},\ \tan=\frac{12}{5}$\\\cline{2-3}
- & 5 & $\sin=\frac{8}{17},\ \cos=\frac{15}{17},\ \tan=\frac{8}{15}$\\\cline{2-3}
- & 6 & $\sin=\frac{24}{25},\ \cos=\frac{7}{25},\ \tan=\frac{24}{7}$\\\hline
-\multirow{6}{24mm}{\centering 3-to'plam} & 1 & $5.07$\\\cline{2-3}
- & 2 & $13.79$\\\cline{2-3}
- & 3 & $14.28$\\\cline{2-3}
- & 4 & $16.98$\\\cline{2-3}
- & 5 & $9.99$\\\cline{2-3}
- & 6 & $20.53$\\\hline
-\multirow{6}{24mm}{\centering 4-to'plam} & 1 & $25.4°$\\\cline{2-3}
- & 2 & $63.3°$\\\cline{2-3}
- & 3 & $36.3°$\\\cline{2-3}
- & 4 & $36.9°$\\\cline{2-3}
- & 5 & $50.0°$\\\cline{2-3}
- & 6 & $69.4°$\\\hline
-\multirow{6}{24mm}{\centering 5-to'plam} & 1 & $\approx11.13$ ft\\\cline{2-3}
- & 2 & $\approx40.62$ ft\\\cline{2-3}
- & 3 & $\approx78.13$ m\\\cline{2-3}
- & 4 & $\approx41.78$ m\\\cline{2-3}
- & 5 & Gipotenuza $=15$; burchak $\approx36.87°$\\\cline{2-3}
- & 6 & $\approx210.21$ m\\\hline
-\multirow{5}{24mm}{\centering 6-to'plam} & 1 & Qarshi/qo'shni noto'g'ri aniqlangan. To'g'ri: $\sin A=\frac{5}{13}$.\\\cline{2-3}
- & 2 & Burchak almashganda tomonlar qayta aniqlanmagan. To'g'ri: $\cos B=\frac{5}{13}$.\\\cline{2-3}
- & 3 & Kalkulyator radian rejimida edi. To'g'ri: $\sin30°=0.5$.\\\cline{2-3}
- & 4 & Nisbat burchak deb olingan. To'g'ri: $\theta=\arcsin(0.6)\approx36.9°$.\\\cline{2-3}
- & 5 & Gipotenuza katet kabi qo'shilgan. To'g'ri: boshqa katet $=\sqrt{10^2-6^2}=8$.\\\hline
-\multirow{5}{24mm}{\centering 7-to'plam} & 1 & $\cos67°=\sin23°\approx0.3907$\\\cline{2-3}
- & 2 & Boshqa burchak $=56°$; $\cos56°=\sin34°\approx0.5592$\\\cline{2-3}
- & 3 & Qarshi $\approx17.40$, qo'shni $\approx19.32$\\\cline{2-3}
- & 4 & (a) $\approx53.13°$, (b) $\approx36.87°$, (c) $53.13°+36.87°=90°$ (toʻgʻri)\\\cline{2-3}
- & 5 & Gorizontal $\approx4829.63$ m; balandlik $\approx1294.10$ m\\\hline
+\multirow{6}{26mm}{\centering Set 1} & \multicolumn{4}{p{84mm}|}{1.\ Opposite $=BC$, adjacent $=AC$, hypotenuse $=AB$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ Opposite $=AC$, adjacent $=BC$, hypotenuse $=AB$ (the hypotenuse never changes).}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ Opposite $=QR$, adjacent $=PQ$, hypotenuse $=PR$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ Opposite $=PQ$, adjacent $=QR$, hypotenuse $=PR$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ Opposite $=YZ$, adjacent $=XY$, hypotenuse $=XZ$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{6.\ Opposite $=XY$, adjacent $=YZ$, hypotenuse $=XZ$.}\\\hline
+\multirow{6}{26mm}{\centering Set 2} & \multicolumn{4}{p{84mm}|}{1.\ $\sin=\frac35$, $\cos=\frac45$, $\tan=\frac34$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ $\sin=\frac45$, $\cos=\frac35$, $\tan=\frac43$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ $\sin=\frac{5}{13}$, $\cos=\frac{12}{13}$, $\tan=\frac{5}{12}$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ $\sin=\frac{12}{13}$, $\cos=\frac{5}{13}$, $\tan=\frac{12}{5}$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ $\sin=\frac{8}{17}$, $\cos=\frac{15}{17}$, $\tan=\frac{8}{15}$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{6.\ $\sin=\frac{24}{25}$, $\cos=\frac{7}{25}$, $\tan=\frac{24}{7}$}\\\hline
+\multirow{3}{26mm}{\centering Set 3} & 1 & $5.07$ & 2 & $13.79$\\\cline{2-5}
+ & 3 & $14.28$ & 4 & $16.98$\\\cline{2-5}
+ & 5 & $9.99$ & 6 & $20.53$\\\hline
+\multirow{3}{26mm}{\centering Set 4} & 1 & $25.4^\circ$ & 2 & $63.3^\circ$\\\cline{2-5}
+ & 3 & $36.3^\circ$ & 4 & $36.9^\circ$\\\cline{2-5}
+ & 5 & $50.0^\circ$ & 6 & $69.4^\circ$\\\hline
+\multirow{6}{26mm}{\centering Set 5} & \multicolumn{4}{p{84mm}|}{1.\ $\approx 11.13$ ft}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ $\approx 40.62$ ft}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ $\approx 78.13$ m}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ $\approx 41.78$ m}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ Hypotenuse $=15$; angle $=\arcsin\frac{9}{15}\approx 36.87^\circ$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{6.\ $\approx 210.21$ m}\\\hline
+\multirow{5}{26mm}{\centering Set 6} & \multicolumn{4}{p{84mm}|}{1.\ Picked the longer leg by size, not the leg opposite $A$. Correct: $\sin A=\frac{5}{13}$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ Reused angle $A$'s labels for angle $B$. Correct: $\cos B=\frac{5}{13}$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ Calculator left in radian mode. Correct: $\sin 30^\circ=0.5$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ The ratio was reported as the angle. Correct: $\theta=\arcsin(0.6)\approx 36.9^\circ$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ Hypotenuse treated as a leg. Correct: other leg $=\sqrt{10^2-6^2}=8$.}\\\hline
+\multirow{5}{26mm}{\centering Set 7} & \multicolumn{4}{p{84mm}|}{1.\ $\cos 67^\circ=\sin 23^\circ\approx 0.3907$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ Other angle $=56^\circ$; $\cos 56^\circ=\sin 34^\circ\approx 0.5592$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ Opposite $\approx 17.40$; adjacent $\approx 19.32$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ (a) $\approx 53.13^\circ$; (b) $\approx 36.87^\circ$; (c) $53.13^\circ+36.87^\circ=90^\circ$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ Horizontal $\approx 4829.63$ m; altitude $\approx 1294.10$ m}\\\hline
 \end{tabular}
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,250mm)
+\clearpage
+
+% ================= PAGE 9 (126): Answer key -- Set 8 =================
+\topicheader{22}{Right-Triangle Trigonometry}
+\pagefooter{126}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+D&A&C&D&C&D&A&B&A&D\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&A&B&B&C\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&A&A&D&C&D&D&C&A&B\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+D&B&C&B&C\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&A&D&A&A&B&A&D&B&D\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+C&D&B&C&C\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}
