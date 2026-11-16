@@ -1,1 +1,6 @@
 .claude/settings.local.json
+
+# LaTeX build + page-render scratch
+book2/**/*.aux
+book2/**/*.log
+book2/**/*.png

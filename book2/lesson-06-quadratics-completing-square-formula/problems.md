@@ -96,25 +96,25 @@ distribution.
 ### Easy
 
 1. What is one of the solutions to the equation $x^2-7x+10=0$?
-   A) 2  B) $-2$  C) 7  D) 10
+   A) $-2$  B) 2  C) 7  D) 10
 
 2. What is one of the solutions to the equation $x^2+3x-10=0$?
-   A) $-5$  B) 5  C) $-2$  D) 10
+   A) $-5$  B) $-2$  C) 5  D) 10
 
 3. Which equation is equivalent to $y=x^2-6x+8$ when written in vertex form?
-   A) $y=(x-3)^2-1$  B) $y=(x-3)^2+1$  C) $y=(x+3)^2-1$  D) $y=(x-6)^2+8$
+   A) $y=(x-6)^2+8$  B) $y=(x+3)^2-1$  C) $y=(x-3)^2+1$  D) $y=(x-3)^2-1$
 
 4. Which equation is equivalent to $y=x^2+4x-5$ when written in vertex form?
-   A) $y=(x+2)^2-9$  B) $y=(x+2)^2+9$  C) $y=(x-2)^2-9$  D) $y=(x+4)^2-5$
+   A) $y=(x+4)^2-5$  B) $y=(x+2)^2+9$  C) $y=(x+2)^2-9$  D) $y=(x-2)^2-9$
 
 5. What is the sum of the solutions to $x^2-5x+6=0$?
-   A) 5  B) 6  C) $-5$  D) 1
+   A) $-5$  B) 1  C) 5  D) 6
 
 6. What is the product of the solutions to $x^2-2x-15=0$?
-   A) 2  B) $-2$  C) $-15$  D) 15
+   A) $-15$  B) $-2$  C) 2  D) 15
 
 7. What is the solution set of $x^2-x-6=0$?
-   A) $\{-2,3\}$  B) $\{2,-3\}$  C) $\{-2,-3\}$  D) $\{2,3\}$
+   A) $\{-2,-3\}$  B) $\{-2,3\}$  C) $\{2,-3\}$  D) $\{2,3\}$
 
 8. How many real solutions does $x^2+4x+7=0$ have?
    A) Zero  B) Exactly one  C) Exactly two  D) Infinitely many
@@ -126,113 +126,121 @@ distribution.
     A) Zero  B) Exactly one  C) Exactly two  D) Infinitely many
 
 11. Using the quadratic formula, what are the solutions to $x^2-4x-5=0$?
-    A) $x=-1,5$  B) $x=1,-5$  C) $x=2,-2$  D) $x=4,-5$
+    A) $x=-1,5$  B) $x=4,-5$  C) $x=2,-2$  D) $x=1,-5$
 
 12. What is the vertex of $y=x^2-8x+12$?
-    A) $(4,-4)$  B) $(4,4)$  C) $(-4,-4)$  D) $(8,12)$
+    A) $(8,12)$  B) $(-4,-4)$  C) $(4,4)$  D) $(4,-4)$
 
 13. What is the vertex of $y=x^2+2x-3$?
-    A) $(-1,-4)$  B) $(-1,4)$  C) $(1,-4)$  D) $(-2,-3)$
+    A) $(-2,-3)$  B) $(-1,4)$  C) $(-1,-4)$  D) $(1,-4)$
 
 14. What are the solutions to $2x^2-5x-3=0$?
-    A) $x=3,-\frac12$  B) $x=-3,\frac12$  C) $x=3,\frac12$  D) $x=-3,-\frac12$
+    A) $x=3,\frac12$  B) $x=-3,-\frac12$  C) $x=-3,\frac12$  D) $x=3,-\frac12$
 
 15. If $x^2-x-20=0$, what is the greater of the two solutions?
-    A) 5  B) 4  C) $-4$  D) $-5$
+    A) $-5$  B) $-4$  C) 4  D) 5
 
 ### Medium
 
 1. What are the solutions to $x^2-6x+2=0$?
-   A) $3\pm\sqrt7$  B) $3\pm\sqrt2$  C) $6\pm\sqrt7$  D) $-3\pm\sqrt7$
+   A) $3\pm\sqrt2$  B) $6\pm\sqrt7$  C) $3\pm\sqrt7$  D) $-3\pm\sqrt7$
 
 2. What is the positive solution to $x^2+4x-1=0$?
-   A) $-2+\sqrt5$  B) $-2-\sqrt5$  C) $2+\sqrt5$  D) $2-\sqrt5$
+   A) $2+\sqrt5$  B) $2-\sqrt5$  C) $-2+\sqrt5$  D) $-2-\sqrt5$
 
 3. What is the positive solution to $2x^2-4x-3=0$?
-   A) $1+\dfrac{\sqrt{10}}{2}$  B) $1-\dfrac{\sqrt{10}}{2}$  C) $2+\sqrt{10}$  D) $1+\sqrt5$
+   A) $1+\frac{\sqrt{10}}{2}$  B) $1-\frac{\sqrt{10}}{2}$  C) $2+\sqrt{10}$  D) $1+\sqrt5$
 
 4. One solution to $x^2-8x+5=0$ can be written as $4+\sqrt{k}$, where $k$ is a constant. What is the value of $k$?
-   A) 11  B) 44  C) 8  D) 5
+   A) 5  B) 8  C) 11  D) 44
 
 5. One solution to $x^2+6x+2=0$ can be written as $-3+\sqrt{k}$, where $k$ is a constant. What is the value of $k$?
-   A) 7  B) 28  C) 6  D) 2
+   A) 2  B) 6  C) 7  D) 28
 
 6. What is the vertex of $y=2x^2-8x+3$?
-   A) $(2,-5)$  B) $(2,5)$  C) $(-2,-5)$  D) $(4,3)$
+   A) $(2,-5)$  B) $(4,3)$  C) $(-2,-5)$  D) $(2,5)$
 
 7. The equation $y=x^2-10x+c$ is equivalent to $y=(x-5)^2-13$. What is the value of $c$?
-   A) 12  B) 13  C) $-13$  D) 25
+   A) $-13$  B) 12  C) 13  D) 25
 
 8. What is the sum of the solutions to $x^2-3x-18=0$?
-   A) 3  B) $-3$  C) 18  D) $-18$
+   A) $-18$  B) $-3$  C) 3  D) 18
 
 9. What is the product of the solutions to $2x^2+5x-3=0$?
-   A) $-\dfrac32$  B) $\dfrac32$  C) $-\dfrac52$  D) $\dfrac52$
+   A) $-\frac52$  B) $-\frac32$  C) $\frac32$  D) $\frac52$
 
 10. If $x^2+kx+9=0$ has exactly one real solution, what is a positive value of $k$?
-    A) 6  B) 3  C) 9  D) 18
+    A) 3  B) 6  C) 9  D) 18
 
 11. What are the solutions to $3x^2-6x+1=0$?
-    A) $1\pm\dfrac{\sqrt6}{3}$  B) $1\pm\sqrt6$  C) $3\pm\dfrac{\sqrt6}{3}$  D) $2\pm\dfrac{\sqrt6}{3}$
+    A) $1\pm\sqrt6$  B) $3\pm\frac{\sqrt6}{3}$  C) $2\pm\frac{\sqrt6}{3}$  D) $1\pm\frac{\sqrt6}{3}$
 
 12. What is the sum of the solutions to $3x^2+9x-12=0$?
-    A) $-3$  B) 3  C) $-4$  D) 4
+    A) $-4$  B) $-3$  C) 3  D) 4
 
 13. If one solution to $x^2-4x+c=0$ is $x=1$, what is the value of $c$?
-    A) 3  B) $-3$  C) 4  D) $-4$
+    A) $-4$  B) $-3$  C) 3  D) 4
 
 14. Which equation is equivalent to $y=x^2+8x+10$ when written in vertex form?
-    A) $y=(x+4)^2-6$  B) $y=(x+4)^2+6$  C) $y=(x-4)^2-6$  D) $y=(x+8)^2+10$
+    A) $y=(x-4)^2-6$  B) $y=(x+4)^2+6$  C) $y=(x+4)^2-6$  D) $y=(x+8)^2+10$
 
 15. What is the negative solution to $x^2+x-12=0$?
-    A) $-4$  B) $-3$  C) 4  D) 3
+    A) $-4$  B) $-3$  C) 3  D) 4
 
 ### Hard
 
 1. One solution to $3x^2-12x+7=0$ can be written as $\dfrac{12+\sqrt{k}}{6}$, where $k$ is a constant. What is the value of $k$?
-   A) 60  B) 30  C) 144  D) 84
+   A) 30  B) 60  C) 84  D) 144
 
 2. One solution to $2x^2-10x+9=0$ can be written as $\dfrac{10-\sqrt{k}}{4}$, where $k$ is a constant. What is the value of $k$?
-   A) 28  B) 14  C) 100  D) 72
+   A) 14  B) 28  C) 72  D) 100
 
 3. For what positive value of $k$ does $x^2+kx+25=0$ have exactly one real solution?
-   A) 10  B) 5  C) 25  D) 50
+   A) 5  B) 10  C) 25  D) 50
 
 4. For what value of $c$ does $2x^2-8x+c=0$ have exactly one real solution?
-   A) 8  B) 4  C) 16  D) 32
+   A) 4  B) 8  C) 16  D) 32
 
 5. The equation $x^2-6x+c=0$ has two distinct real solutions. Which of the following could be the value of $c$?
    A) 5  B) 9  C) 10  D) 12
 
 6. If the sum of the solutions to $x^2+bx+20=0$ is 9, what is the value of $b$?
-   A) $-9$  B) 9  C) $-20$  D) 20
+   A) $-20$  B) $-9$  C) 9  D) 20
 
 7. If the product of the solutions to $x^2-7x+c=0$ is $-18$, what is the value of $c$?
-   A) $-18$  B) 18  C) 7  D) $-7$
+   A) $-18$  B) $-7$  C) 7  D) 18
 
 8. What are the solutions to $4x^2-8x-1=0$?
-   A) $1\pm\dfrac{\sqrt5}{2}$  B) $1\pm\sqrt5$  C) $2\pm\dfrac{\sqrt5}{2}$  D) $1\pm\dfrac{\sqrt5}{4}$
+   A) $1\pm\frac{\sqrt5}{4}$  B) $1\pm\sqrt5$  C) $1\pm\frac{\sqrt5}{2}$  D) $2\pm\frac{\sqrt5}{2}$
 
 9. One solution to the equation $x^2-5x-c=0$ is $x=8$, where $c$ is a constant. What is the other solution?
-   A) $-3$  B) 3  C) $-8$  D) 13
+   A) $-8$  B) $-3$  C) 3  D) 13
 
 10. The equation $ax^2-6x+a=0$ has exactly one real solution, where $a$ is a positive constant. What is the value of $a$?
     A) 3  B) 6  C) 9  D) 36
 
 11. What is the sum of the solutions to the equation $(x-3)^2=16$?
-    A) 6  B) 3  C) $-6$  D) 16
+    A) $-6$  B) 3  C) 6  D) 16
 
 12. If $x^2-4x-21=0$, what is the positive difference between the two solutions?
-    A) 10  B) 4  C) 21  D) 7
+    A) 4  B) 7  C) 10  D) 21
 
 13. One solution to $5x^2+4x-3=0$ can be written as $\dfrac{-4-\sqrt{k}}{10}$, where $k$ is a constant. What is the value of $k$?
-    A) 76  B) 38  C) 16  D) 60
+    A) 16  B) 38  C) 60  D) 76
 
 14. The equation $2x^2+bx+18=0$ has exactly one real solution. What is a positive value of $b$?
-    A) 12  B) 6  C) 18  D) 36
+    A) 6  B) 12  C) 18  D) 36
 
 15. What is the sum of the solutions to the equation $3(x^2-4x)=15$?
-    A) 4  B) $-4$  C) 5  D) $-5$
+    A) $-5$  B) $-4$  C) 4  D) 5
+
+**A note on sourcing:** real, official College Board SAT questions are
+copyrighted and are **not** licensed for reproduction in commercial test-prep
+materials, under any circumstances, with or without attribution. No
+verbatim College Board question appears in this book. Every item above was
+independently written to match the *method*, *structure*, and *officially
+documented difficulty tier* of real SAT Suite Question Bank items in this
+lesson's skill category -- the numbers and contexts are all original.
 
 ---
 
@@ -257,8 +265,8 @@ distribution.
 
 **Set 7:** 1) $x=-\dfrac32\pm\dfrac{\sqrt3}{2}$  2) $x=\dfrac13\pm\dfrac{\sqrt7}{3}$  3) $x=-1,\frac15$  4) $x=\dfrac74\pm\dfrac{\sqrt{17}}{4}$
 
-**Set 8 — Easy:** 1) A  2) A  3) A  4) A  5) A  6) C  7) A  8) A  9) B  10) C  11) A  12) A  13) A  14) A  15) A
+**Set 8 — Easy:** 1) B  2) A  3) D  4) C  5) C  6) A  7) B  8) A  9) B  10) C  11) A  12) D  13) C  14) D  15) D
 
-**Set 8 — Medium:** 1) A  2) A  3) A  4) A  5) A  6) A  7) A  8) A  9) A  10) A  11) A  12) A  13) A  14) A  15) A
+**Set 8 — Medium:** 1) C  2) C  3) A  4) C  5) C  6) A  7) B  8) C  9) B  10) B  11) D  12) B  13) C  14) C  15) A
 
-**Set 8 — Hard:** 1) A  2) A  3) A  4) A  5) A  6) A  7) A  8) A  9) A  10) A  11) A  12) A  13) A  14) A  15) A
+**Set 8 — Hard:** 1) B  2) B  3) B  4) B  5) A  6) B  7) A  8) C  9) B  10) A  11) C  12) C  13) D  14) B  15) C

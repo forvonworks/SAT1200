@@ -144,10 +144,10 @@ is reproduced here or anywhere in this book.
    A) the hiker's starting distance from the trailhead  B) the hiker's average speed, in miles per hour  C) the total distance the hiker will travel  D) the time elapsed since the hiker started
 
 5. For a linear relationship between $x$ and $y$, the pairs $(12,54)$ and $(20,86)$ are both solutions. Which equation represents this relationship?
-   A) $y=4x+6$  B) $y=4x+54$  C) $y=3x+18$  D) $y=4x-6$
+   A) $y=4x+54$  B) $y=3x+18$  C) $y=4x+6$  D) $y=4x-6$
 
 6. For a linear relationship between $x$ and $y$, the table gives two values of $x$ and their corresponding values of $y$, where $t$ is a constant: $x=-6 \to y=t$; $x=2 \to y=t+32$. Which equation represents this relationship?
-   A) $y=4x+t+24$  B) $y=4x+t-24$  C) $y=8x+t+24$  D) $y=4x+t+32$
+   A) $y=4x+t-24$  B) $y=8x+t+24$  C) $y=4x+t+32$  D) $y=4x+t+24$
 
 7. A parking garage charges \$8 for the first hour and \$3 for each additional hour. Which function $f$ gives the total charge, in dollars, for parking $x$ hours, where $x\ge1$?
    A) $f(x)=3x+5$  B) $f(x)=3x+8$  C) $f(x)=8x+3$  D) $f(x)=11x$
@@ -179,13 +179,13 @@ is reproduced here or anywhere in this book.
 ### Hard
 
 1. For groups of 20 or more people, a zoo charges \$18 per person for the first 20 people and \$11 for each additional person. Which function $f$ gives the total charge, in dollars, for a group with $n$ people, where $n\ge20$?
-   A) $f(n)=11n+140$  B) $f(n)=11n+360$  C) $f(n)=29n-220$  D) $f(n)=11n+18$
+   A) $f(n)=11n+360$  B) $f(n)=11n+140$  C) $f(n)=29n-220$  D) $f(n)=11n+18$
 
 2. A tutoring service charges \$150 for the first three hours of tutoring plus an hourly fee for each additional hour. The total cost for 6 hours of tutoring is \$390. Which function $f$ gives the total cost, in dollars, for $x$ hours of tutoring, where $x\ge3$?
-   A) $f(x)=80x-90$  B) $f(x)=80x+150$  C) $f(x)=130x-240$  D) $f(x)=80x+90$
+   A) $f(x)=80x+150$  B) $f(x)=130x-240$  C) $f(x)=80x+90$  D) $f(x)=80x-90$
 
 3. For a linear relationship between $x$ and $y$, the table gives three values of $x$ and their corresponding values of $y$, where $t$ is a constant: $x=-40\to y=t$; $x=-25\to y=t+45$; $x=-10\to y=t+90$. Which equation represents this relationship?
-   A) $y=3x+t+120$  B) $y=-3x+t+120$  C) $y=3x+t-120$  D) $y=3x+t+45$
+   A) $y=-3x+t+120$  B) $y=3x+t+120$  C) $y=3x+t-120$  D) $y=3x+t+45$
 
 4. A landscaping company charges a \$95 base fee plus an hourly rate for labor. For a 7-hour job, the total charge is \$305. Based on this rate, which is closest to the total charge for a 12-hour job?
    A) \$405  B) \$425  C) \$455  D) \$480
@@ -203,16 +203,16 @@ is reproduced here or anywhere in this book.
    A) $30°$C  B) $32°$C  C) $35°$C  D) $38°$C
 
 9. For linear function $f$, $f(x)=kx+9$. If $f(6)=f(2)+20$, what is the value of $k$?
-   A) 2  B) 4  C) 5  D) 9
+   A) 3  B) 5  C) 7  D) 9
 
 10. For linear function $r$, $r(3)=7$ and $r(11)=19$. What is the value of $r(0)$?
-    A) 1  B) 2  C) $\frac52$  D) 3
+    A) 2  B) $\frac52$  C) 3  D) $\frac72$
 
 11. The number of visitors to a museum each day can be modeled by the function $V(d)=0.8d+12$, where $10\le d\le200$ and $d$ is the number of days since a new exhibit opened. If the exhibit has been open for 85 days, which is closest to the predicted number of visitors?
-    A) 68  B) 76  C) 80  D) 92
+    A) 68  B) 72  C) 76  D) 80
 
 12. The cost, in dollars, of shipping a package is a linear function of its weight, in kilograms. The pairs $(2,14)$ and $(6,26)$, in the form (weight, cost), are both solutions. If $w$ kilograms is associated with a shipping cost of $c$ dollars, which equation best represents the relationship between $w$ and $c$?
-    A) $c=3w+8$  B) $c=3w+14$  C) $w=3c+8$  D) $c=8w+3$
+    A) $c=3w+14$  B) $w=3c+8$  C) $c=8w+3$  D) $c=3w+8$
 
 13. For what value of the constant $a$ does the linear function $f(x)=ax-7$ satisfy $f(4)=2f(1)$?
     A) $-\frac72$  B) $-2$  C) $\frac72$  D) 7
@@ -221,7 +221,7 @@ is reproduced here or anywhere in this book.
     A) 4  B) 8  C) 10  D) 13
 
 15. For a linear relationship between $x$ and $y$, the table gives three values of $x$ and their corresponding values of $y$, where $t$ is a constant: $x=10\to y=t$; $x=30\to y=t-60$; $x=50\to y=t-120$. Which equation represents this relationship?
-    A) $y=-3x+t+30$  B) $y=3x+t+30$  C) $y=-3x+t-30$  D) $y=-3x+t+60$
+    A) $y=3x+t+30$  B) $y=-3x+t+30$  C) $y=-3x+t-30$  D) $y=-3x+t+60$
 
 **A note on sourcing:** every item in Set 8 is original -- written by studying
 the method and structure of real, officially-released SAT Suite Question
@@ -256,3 +256,9 @@ book.
    meaning was misread, not a computation error.
 
 **Set 7:** 1) $y=3x-1$  2) $y=-\frac32x+2$  3) $k=3$  4) $m=3$, $b=5$  5) $y=-2x-7$
+
+**Set 8 — Easy:** 1) A  2) C  3) C  4) B  5) A  6) B  7) B  8) C  9) D  10) C  11) A  12) C  13) A  14) B  15) B
+
+**Set 8 — Medium:** 1) C  2) A  3) A  4) B  5) C  6) D  7) A  8) B  9) C  10) C  11) A  12) D  13) C  14) B  15) B
+
+**Set 8 — Hard:** 1) B  2) D  3) B  4) C  5) B  6) C  7) C  8) C  9) B  10) B  11) D  12) D  13) A  14) C  15) B
