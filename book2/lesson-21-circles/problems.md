@@ -73,6 +73,157 @@ Each item below contains exactly one flawed step. Identify the error, state whic
 
 ---
 
+## Set 8 — Official SAT-Style Application
+
+Multiple-choice (A–D), English, matching the real Digital SAT's format and item design for this lesson's skill category (*Circles*: arcs, sectors, and the equation of a circle). Every item below is **original** — written by studying the method, trap and distractor style of real, officially-released SAT Suite Question Bank items in this category, then building a new problem (new numbers, new context) that needs the same solving steps. No real College Board question text, numbers, or wording is reproduced here or anywhere in this book — see the note at the end of this set.
+
+15 Easy / 15 Medium / 15 Hard. Every item stays inside this lesson's scope (arc length, arc measure, sector area, and the circle equation); no tangent-line, chord, or radian items are used.
+
+### Easy
+
+1. A circle has a radius of $10$ cm. A central angle of $36°$ intercepts an arc of the circle. What is the length of this arc, in centimeters?
+   A) $\pi$  B) $36\pi$  C) $2\pi$  D) $20\pi$
+
+2. A circle has a radius of $12$ cm. What is the length of the arc intercepted by a central angle of $150°$?
+   A) $10\pi$  B) $24\pi$  C) $5\pi$  D) $60\pi$
+
+3. A circle has a radius of $7$ cm. What is the area of the sector formed by a central angle of $90°$?
+   A) $\dfrac{7\pi}{2}$  B) $\dfrac{49\pi}{2}$  C) $49\pi$  D) $\dfrac{49\pi}{4}$
+
+4. A circle has a radius of $4$ cm. What is the length of the arc intercepted by a central angle of $210°$?
+   A) $\dfrac{7\pi}{3}$  B) $\dfrac{14\pi}{3}$  C) $8\pi$  D) $\dfrac{28\pi}{3}$
+
+5. Which equation represents a circle in the $xy$-plane with center $(3,-4)$ and radius $6$?
+   A) $(x+3)^2+(y-4)^2=36$  B) $(x-3)^2+(y+4)^2=6$  C) $(x-3)^2+(y+4)^2=36$  D) $(x-3)^2+(y-4)^2=36$
+
+6. The equation of a circle in the $xy$-plane is $(x-4)^2+(y+1)^2=25$. What is the radius of the circle?
+   A) $5$  B) $4$  C) $10$  D) $25$
+
+7. A circle has a circumference of $48$ cm. What is the length of the arc intercepted by a central angle of $45°$?
+   A) $45$ cm  B) $8$ cm  C) $12$ cm  D) $6$ cm
+
+8. A circle has a radius of $9$ cm. What is the area of the sector formed by a central angle of $120°$?
+   A) $9\pi$  B) $27\pi$  C) $54\pi$  D) $81\pi$
+
+9. A circle has a radius of $3$ cm. What is the length of the arc intercepted by a central angle of $300°$?
+   A) $2.5\pi$  B) $10\pi$  C) $5\pi$  D) $6\pi$
+
+10. An arc of a circle with radius $15$ cm has a length of $5\pi$ cm. What is the measure, in degrees, of the central angle that intercepts this arc?
+   A) $60°$  B) $30°$  C) $6°$  D) $120°$
+
+11. Which of the following points lies on the circle $(x-2)^2+(y-3)^2=16$ in the $xy$-plane?
+   A) $(2,3)$  B) $(3,7)$  C) $(5,6)$  D) $(2,7)$
+
+12. A circle has a diameter of $16$ cm. What is the area of the sector formed by a central angle of $45°$?
+   A) $32\pi$  B) $8\pi$  C) $2\pi$  D) $64\pi$
+
+13. What are the coordinates of the center of the circle $(x+5)^2+(y-2)^2=36$ in the $xy$-plane?
+   A) $(5,-2)$  B) $(-5,-2)$  C) $(-5,2)$  D) $(5,2)$
+
+14. A circle has a radius of $4$ cm. What is the length of the arc intercepted by a central angle of $180°$?
+   A) $4\pi$  B) $2\pi$  C) $8\pi$  D) $16\pi$
+
+15. A sector of a circle has a central angle of $60°$ and an area of $6\pi$ cm$^2$. What is the radius of the circle, in centimeters?
+   A) $3$  B) $12$  C) $36$  D) $6$
+
+### Medium
+
+1. A circle has a radius of $16$ cm. An arc of the circle has a length of $8\pi$ cm. What is the measure, in degrees, of the central angle that intercepts this arc?
+   A) $45°$  B) $90°$  C) $60°$  D) $180°$
+
+2. A sector of a circle has a central angle of $72°$ and an area of $10\pi$ square units. What is the radius of the circle, in units?
+   A) $5$  B) $10$  C) $50$  D) $5\sqrt{2}$
+
+3. A sector of a circle has a radius of $5$ meters and a central angle of $216°$. What is the length of the arc of the sector, in meters?
+   A) $216$  B) $3\pi$  C) $6\pi$  D) $10\pi$
+
+4. Which of the following correctly gives the center and radius of the circle $(x+7)^2+(y-2)^2=18$?
+   A) center $(-7,2)$, radius $3\sqrt{2}$  B) center $(7,-2)$, radius $3\sqrt{2}$  C) center $(-7,2)$, radius $18$  D) center $(7,-2)$, radius $18$
+
+5. The equation $x^2+y^2-6x+10y+18=0$ represents a circle in the $xy$-plane. Which of the following gives the center and radius of the circle?
+   A) center $(-3,5)$, radius $4$  B) center $(3,-5)$, radius $4$  C) center $(3,-5)$, radius $16$  D) center $(3,-5)$, radius $2\sqrt{13}$
+
+6. The equation $x^2+y^2+4x-8y-5=0$ represents a circle in the $xy$-plane. What is the radius of the circle?
+   A) $5$  B) $\sqrt{5}$  C) $10$  D) $25$
+
+7. A circular running track has a radius of $40$ meters. A runner covers the part of the track that corresponds to a central angle of $81°$. What is the length of this part of the track, in meters?
+   A) $18\pi$  B) $9\pi$  C) $36\pi$  D) $81\pi$
+
+8. In the $xy$-plane, a circle has equation $(x-5)^2+(y+2)^2=25$. The point $(8,2)$ is which of the following?
+   A) inside the circle  B) outside the circle  C) the center of the circle  D) on the circle
+
+9. An arc of a circle has a central angle of $40°$ and a length of $4\pi$ cm. What is the circumference of the circle, in centimeters?
+   A) $9\pi$  B) $36\pi$  C) $40\pi$  D) $72\pi$
+
+10. The equation $(x+4)^2+(y-1)^2=k$ represents a circle with radius $7$. What is the value of $k$?
+   A) $7$  B) $14$  C) $49$  D) $28$
+
+11. A sector of a circle has a central angle of $60°$ and an area of $24\pi$ cm$^2$. What is the length of the arc of this sector, in centimeters?
+   A) $4\pi$  B) $2\pi$  C) $8\pi$  D) $12\pi$
+
+12. A sector of a circle has a radius of $9$ cm and a central angle of $80°$. What is the perimeter of the sector, consisting of the two radii and the arc? Give an exact answer.
+   A) $8\pi+18$  B) $4\pi$  C) $4\pi+18$  D) $4\pi+36$
+
+13. The area of a sector is $\dfrac{1}{10}$ of the area of its circle. What is the measure, in degrees, of the central angle of the sector?
+   A) $10°$  B) $18°$  C) $100°$  D) $36°$
+
+14. The equation $x^2+y^2-2x+4y=4$ represents a circle in the $xy$-plane. What is the radius of the circle?
+   A) $9$  B) $\sqrt{13}$  C) $2$  D) $3$
+
+15. A circle in the $xy$-plane has center $(2,-3)$ and passes through the point $(5,1)$. Which equation represents this circle?
+   A) $(x+2)^2+(y-3)^2=25$  B) $(x-2)^2+(y+3)^2=7$  C) $(x-2)^2+(y+3)^2=25$  D) $(x-2)^2+(y+3)^2=5$
+
+### Hard
+
+1. A sector of a circle has an arc length of $12\pi$ cm and a central angle of $120°$. What is the area of the sector, in square centimeters?
+   A) $36\pi$  B) $54\pi$  C) $108\pi$  D) $216\pi$
+
+2. Circle A has a radius of $5$ cm, and circle B has a radius of $15$ cm. A central angle of $72°$ forms a sector in circle A and a sector in circle B. What is the ratio of the area of the sector in circle B to the area of the sector in circle A?
+   A) $3$  B) $6$  C) $9$  D) $27$
+
+3. The equation $x^2+y^2-8x+6y+c=0$ represents a circle with radius $4$. What is the value of $c$?
+   A) $16$  B) $25$  C) $-9$  D) $9$
+
+4. How many points with integer coordinates lie inside the circle or on the circle $(x-1)^2+(y+2)^2=4$ in the $xy$-plane?
+   A) $9$  B) $13$  C) $12$  D) $16$
+
+5. In the $xy$-plane, a circle has center $(-1,2)$ and radius $5$. Which of the following points lies outside the circle?
+   A) $(-4,6)$  B) $(1,-1)$  C) $(4,-2)$  D) $(2,5)$
+
+6. In the $xy$-plane, a circle has center $(3,-2)$ and passes through the point $(6,2)$. The point $(a,-2)$ lies on the circle, and $a>0$. What is the value of $a$?
+   A) $-2$  B) $4$  C) $16$  D) $8$
+
+7. A circle has a radius of $15$ cm. A sector of this circle has an arc length of $6\pi$ cm. A second sector of the same circle has a central angle that is $60°$ greater than the central angle of the first sector. What is the area of the second sector, in square centimeters?
+   A) $\dfrac{75\pi}{2}$  B) $\dfrac{165\pi}{2}$  C) $132\pi$  D) $\dfrac{225\pi}{2}$
+
+8. A sector of a circle has an area of $36\pi$ cm$^2$ and an arc length of $12\pi$ cm. What is the radius of the circle, in centimeters?
+   A) $6$  B) $3$  C) $12$  D) $18$
+
+9. A circle in the $xy$-plane has its center on the line $y=2x$. The circle passes through the origin and the point $(6,0)$. What is the radius of the circle?
+   A) $6$  B) $45$  C) $3\sqrt{5}$  D) $9$
+
+10. The equation $x^2+y^2-4x+6y+c=0$ represents a circle with radius $6$. What is the value of $c$?
+   A) $-23$  B) $23$  C) $-13$  D) $49$
+
+11. Circle A has a radius of $15$ cm. A central angle of $40°$ intercepts an arc of circle A. A central angle of $100°$ in circle B intercepts an arc of the same length. What is the radius of circle B, in centimeters?
+   A) $6$  B) $9$  C) $24$  D) $\dfrac{75}{2}$
+
+12. The area of a sector of a circle is $A$. If the radius of the circle is doubled and the central angle of the sector is halved, what is the area of the new sector in terms of $A$?
+   A) $\dfrac{A}{2}$  B) $4A$  C) $2A$  D) $8A$
+
+13. For how many integer values of $k$ with $1 \le k \le 20$ does the equation $x^2+y^2-6x+4y+k=0$ represent a circle with a positive radius?
+   A) $11$  B) $13$  C) $20$  D) $12$
+
+14. Two sectors of the same circle have central angles of $60°$ and $100°$. The sector with the $60°$ angle has an arc length of $4\pi$ cm. What is the positive difference between the areas of the two sectors, in square centimeters?
+   A) $16\pi$  B) $8\pi$  C) $24\pi$  D) $64\pi$
+
+15. The point $(5,k)$ lies on the circle $(x-1)^2+(y-2)^2=20$ in the $xy$-plane, and $k>2$. What is the value of $k$?
+   A) $0$  B) $4$  C) $6$  D) $8$
+
+**A note on sourcing:** real, official College Board SAT questions are copyrighted and are **not** licensed for reproduction in commercial test-prep materials, under any circumstances, with or without attribution. No verbatim College Board question appears in this book. Every item above was independently written to match the *method*, *trap structure*, and *officially documented difficulty tier* of real SAT Suite Question Bank items in the Circles category, after the bank's items were checked against that method. The numbers, names, and contexts are all original, and every answer was verified by computation (exact $\pi$ arithmetic and completing-the-square checks), not by hand alone.
+
+---
+
 ## Answer Key
 
 **Set 1:** 1) $2\pi$ cm  2) $6\pi$ cm  3) $12\pi$ cm  4) $120°$  5) $90°$
@@ -81,7 +232,7 @@ Each item below contains exactly one flawed step. Identify the error, state whic
 **Set 2:** 1) $6\pi$ cm²  2) $60\pi$ cm²  3) $9\pi$ cm²  4) $20\pi$ cm²
 5) $54°$  6) $30°$
 
-**Set 3:** 1) $3\pi$ ft  2) $9\pi$ cm²  3) $10\pi$ cm  4) $45\pi$ cm²
+**Set 3:** 1) $3\pi$ cm  2) $9\pi$ cm²  3) $10\pi$ cm  4) $45\pi$ cm²
 5) $5\pi$ ft  6) $45\pi$ ft²
 
 **Set 4:** 1) center $(2,5)$, $r=7$  2) center $(-3,1)$, $r=4$
@@ -111,3 +262,7 @@ Each item below contains exactly one flawed step. Identify the error, state whic
 4. $\theta=45°$; arc length $=4\pi$ cm (with radius $16$ cm)
 5. Center $(-2,5)$, $r=7$; arc length $=\dfrac{14\pi}{5}$ cm, sector area
    $=\dfrac{49\pi}{5}$ cm²
+
+**Set 8 — Easy:** 1) C  2) A  3) D  4) B  5) C  6) A  7) D  8) B  9) C  10) A  11) D  12) B  13) C  14) A  15) D
+**Set 8 — Medium:** 1) B  2) D  3) C  4) A  5) B  6) A  7) A  8) D  9) B  10) C  11) A  12) C  13) D  14) D  15) C
+**Set 8 — Hard:** 1) C  2) C  3) D  4) B  5) C  6) D  7) B  8) A  9) C  10) A  11) A  12) C  13) D  14) A  15) B
