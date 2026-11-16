@@ -22,6 +22,7 @@
 \setlength{\TPVertModule}{1mm}
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
+\sloppy\emergencystretch=2em
 
 % ---- Safe print margins: 16mm outer on both sides so bound/trimmed copies never
 % clip problem text. Columns are 83mm wide with a 6mm gap on each side of the
@@ -70,7 +71,7 @@
 }
 
 \newcommand{\setkicker}[2]{%
-{\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{10.3}{13}\selectfont\color{black!75} #2}\par\vspace{2mm}%
+{\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
 % ---- Small boxed problem number, reference-style. Plain \fbox -- stays flush with
@@ -83,176 +84,422 @@
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
-% ---- Answer-table styling: accent-colored grid ----
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
+}
+
+% ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
-\renewcommand{\arraystretch}{1.25}
+\renewcommand{\arraystretch}{1.35}
 \newcommand{\anstitle}[1]{{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont #1}\\[1.3mm]}
 
 \begin{document}
 
-% ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{18}{Tadqiqot Dizayni va Statistik Xulosalar}
+\topicheader{18}{Study Design \& Statistical Claims}
 \pagefooter{98}
 \colrule{32}{238}
 \mbox{}%
-
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10.3}{13}\selectfont
-\setkicker{1-to'plam}{Tasodifiy tanlanmami yoki qulaylik tanlanmasi? Har bir holat uchun ayting va natijani umumlashtirish mumkinmi, tushuntiring.}
-
-\noindent\pnum{1} Telefon ishlab chiqaruvchisi 400,000 ro'yxatdan o'tgan egalari ichidan kompyuter orqali tasodifiy tanlangan 2,000 mijozga so'rovnoma yuboradi.\\[14mm]
-\noindent\pnum{2} Radio eshittirish tinglovchilarni yangi soliq qonuni haqida fikr bildirish uchun qo'ng'iroq qilishga chaqiradi; 300 kishi qo'ng'iroq qiladi.\\[14mm]
-\noindent\pnum{3} Kasalxona o'tgan yili davolangan 10,000 bemorning to'liq bazasidan 150 ta fayl tasodifiy tanlab, o'rtacha tiklanish vaqtini o'rganadi.\\[14mm]
-\noindent\pnum{4} Sport zali o'z Instagram sahifasida qaysi kunlarda mashq qilishni afzal ko'rishlari haqida so'rovnoma joylaydi; 600 obunachi javob beradi.\\[14mm]
-\noindent\pnum{5} Milliy bog' qo'riqchisi parkka kiruvchi har 20-mashinani (ichida kim bo'lishidan qat'i nazar) to'xtatib, necha masofa bosib o'tganini so'raydi, toki 400 ta mashina so'rovdan o'tguncha.
+\setkicker{Set 1}{For each scenario, state the sampling method and the population the results can be generalized to.}
+\noindent\pnum{1} A phone manufacturer emails a survey to 2,000 customers chosen by a computer at random from its complete list of 400,000 registered owners.\\[14mm]
+\noindent\pnum{2} A radio show asks listeners to call in and share their opinion on a new tax law; 300 people call in.\\[14mm]
+\noindent\pnum{3} A hospital randomly selects 150 patient files from its full database of 10,000 patients treated last year to study average recovery time.\\[14mm]
+\noindent\pnum{4} A gym posts a poll on its own Instagram page asking followers which days they prefer to work out; 600 followers respond.\\[14mm]
+\noindent\pnum{5} A national park ranger stops every 20th car entering the park (regardless of who is in it) to ask visitors how far they traveled, until 400 cars have been surveyed.
 }
 \end{textblock*}
-
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10.3}{13}\selectfont
-\setkicker{2-to'plam}{Eksperimentmi yoki kuzatuv tadqiqotimi? Sabab-oqibat (causation) da'vo qilish mumkinmi yoki faqat bog'liqlik (correlation), ayting.}
-
-\noindent\pnum{1} Tadqiqotchilar 80 ta o'simlikni tasodifiy ikki guruhga ajratadi: yangi o'g'it yoki oddiy suv, so'ng 3 haftadan keyin o'sishni o'lchaydi.\\[14mm]
-\noindent\pnum{2} O'qituvchi old qatorda o'tiradigan o'quvchilarning test ballari orqa qatordagilarnikidan yuqoriroq ekanini payqaydi -- o'quvchilar o'zlari joy tanlagan.\\[14mm]
-\noindent\pnum{3} Dorixona sinovi 300 ko'ngillini tasodifiy ikki guruhga ajratadi: yangi dori yoki platsebo, na ko'ngillilar, na shifokorlar qaysi guruh ekanini bilishmaydi.\\[14mm]
-\noindent\pnum{4} Iqtisodchi 10 yillik milliy ma'lumotlarni o'rganib, muzqaymoq savdosi yuqori bo'lgan oylarda quyoshdan kuyish tashriflari ham yuqoriroq ekanini topadi.\\[14mm]
-\noindent\pnum{5} Kompaniya xodimlarga uydan yoki ofisdan ishlashni o'zlari tanlashga ruxsat beradi, so'ng yil oxirida ikki (o'zi tanlagan) guruhning mahsuldorligini solishtiradi.
+\setkicker{Set 2}{Classify each study, and state whether only a correlation or a cause-and-effect conclusion is possible.}
+\noindent\pnum{1} Researchers randomly assign 80 plants to receive either a new fertilizer or plain water, then measure growth after 3 weeks.\\[14mm]
+\noindent\pnum{2} A teacher notices that students who sit in the front row tend to have higher test scores than students who sit in the back, based on where students chose to sit.\\[14mm]
+\noindent\pnum{3} A pharmaceutical trial randomly assigns 300 volunteers to receive either a new medication or a placebo, with neither the volunteers nor the doctors told which is which.\\[14mm]
+\noindent\pnum{4} An economist studies 10 years of national data and finds that months with higher ice cream sales also have higher rates of sunburn-related doctor visits.\\[14mm]
+\noindent\pnum{5} A company lets employees choose whether to work from home or come into the office, then compares the two (self-chosen) groups' productivity scores at year's end.
 }
 \end{textblock*}
-
 \clearpage
 
-% ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{18}{Tadqiqot Dizayni va Statistik Xulosalar}
+\topicheader{18}{Study Design \& Statistical Claims}
 \pagefooter{99}
 \colrule{32}{238}
 \mbox{}%
-
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10.3}{13}\selectfont
-\setkicker{3-to'plam}{Aralash: tanlanma VA guruhlash birgalikda. Ikkalasi ham tasodifiymi, va aniq nima xulosa qilish mumkinligini ayting.}
-
-\noindent\pnum{1} Universitet to'liq talabalar ro'yxatidan 500 nafarini tasodifiy tanlaydi, so'ng ularning yarmini yangi 15 daqiqalik kunlik usulga, yarmini odatdagi tartibga tasodifiy ajratadi, yakuniy imtihon ballarini o'lchaydi.\\[18mm]
-\noindent\pnum{2} Fitnes blogerining 40 nafar obunachisi qadam-sanash tanlovi uchun o'z xohishi bilan ishtirok etadi; bloger ularning yarmini pedometr ilovasiga, yarmini esa unga tasodifiy ajratadi, o'rtacha kunlik qadamlarni solishtiradi.\\[18mm]
-\noindent\pnum{3} Shahar kommunal to'lovlar bazasidan 1,000 xonadonni tasodifiy tanlaydi; xonadonlardan shunchaki quyosh panelidan foydalanadimi deb so'raladi va to'lovlar solishtiriladi.\\[18mm]
-\noindent\pnum{4} 25 nafar psixologiya talabasidan iborat sinf (kattaroq populatsiyadan tasodifiy tanlanmagan) kuzatiladi: 8 soatdan ko'p uxlagan talabalar kam uxlaganlarga qaraganda test ballari yuqoriroq, hech qanday guruh tadqiqotchi tomonidan belgilanmagan.
+\setkicker{Set 3}{Use the four-row table to decide what each design supports.}
+\noindent\pnum{1} A university randomly selects 500 students from its full enrollment to participate, then randomly assigns half to a new 15-minute daily study technique and half to their usual routine, measuring final exam scores.\\[18mm]
+\noindent\pnum{2} A fitness blogger's 40 newsletter subscribers volunteer for a step-count challenge; the blogger randomly assigns half to use a pedometer app and half not to, comparing average daily steps after one month.\\[18mm]
+\noindent\pnum{3} A city randomly selects 1,000 households from its utility billing records to survey about energy use; households are simply asked whether they already use solar panels or not, and energy bills are compared.\\[18mm]
+\noindent\pnum{4} A psychology class of 25 students (not randomly chosen from any larger population) is observed: students who reported sleeping over 8 hours the night before a quiz scored higher than those who reported less, with no groups assigned by the researcher.
 }
 \end{textblock*}
-
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10.3}{13}\selectfont
-\setkicker{4-to'plam}{Haddan oshishni toping. Qaysi qoida buzilganini (tanlanma, guruhlash yoki ikkalasi) ayting va to'g'ri ko'lamdagi xulosani qayta yozing.}
-
-\noindent\pnum{1} Pazandachilik veb-sayti o'z axborot byulleteniga o'z xohishi bilan yozilgan 90 kishini so'raydi, 70 tasi yangi retseptni yoqtirganini topadi va da'vo qiladi: \textit{``Bu retsept hamma joyda uy oshpazlari orasida mashhur.''}\\[18mm]
-\noindent\pnum{2} Tadqiqotchilar butun mamlakat bo'ylab tasodifiy tanlangan 200 kattalarni kunlik 10 daqiqalik meditatsiya guruhiga yoki meditatsiyasiz guruhga tasodifiy ajratadi va meditatsiya guruhida stress pastroq ekanini topadi. Blogger buni shunday yozadi: \textit{``Tadqiqotlar ko'rsatadiki, meditatsiya ba'zi odamlarni tinchlantiradi''} -- bu atayin noaniq ifoda, haqiqatda tadqiqot natijasini kamsitib ko'rsatayotganini baholang.\\[18mm]
-\noindent\pnum{3} Milliy miqyosda tasodifiy tanlangan 2,000 kattalar o'rganiladi va zavq uchun muntazam o'qiydiganlarning xotira testi ballari yuqoriroq ekani topiladi. Gazeta sarlavhasi: \textit{``O'qish kattalarda xotirani yaxshilaydi.''}\\[18mm]
-\noindent\pnum{4} Bitta maktab (tasodifiy tanlanmagan) o'z 120 nafar o'quvchisini yangi uy vazifasi ilovasi yoki eski qog'oz usuliga tasodifiy ajratadi, ilova guruhining baholari oshganini topadi. Tuman e'lon qiladi: \textit{``Bu ilova shtatdagi har bir o'quvchi uchun baholarni oshiradi.''}\\[18mm]
-\noindent\pnum{5} Bitta savdo markazidagi 50 xaridor (hech qanday guruh belgilanmagan) kuzatiladi: sodiqlik ilovasidan foydalanganlar ko'proq xarajat qilgani topiladi. Marketing xati da'vo qiladi: \textit{``Bizning sodiqlik ilovamiz hamma joyda mijozlarni ko'proq xarajat qilishga majbur qiladi.''}
+\setkicker{Set 4}{Identify which rule is broken, and state a properly scoped conclusion.}
+\noindent\pnum{1} A cooking website surveys 90 people who voluntarily signed up for its newsletter about a new recipe, finds 70 liked it, and claims: \textit{``This recipe is a hit with home cooks everywhere.''}\\[18mm]
+\noindent\pnum{2} Researchers randomly assign 200 randomly-selected adults nationwide to a 10-minute daily meditation group or a no-meditation group, and find the meditation group reports lower stress. A wellness influencer summarizes it as: \textit{``Studies show meditation makes some people feel calmer''} — intentionally vague, to be evaluated for whether it actually \textit{understates} what the study supports.\\[18mm]
+\noindent\pnum{3} An observational study randomly samples 2,000 adults nationally and finds that adults who read for pleasure weekly report better memory test scores than those who don't. A newspaper headline states: \textit{``Reading causes better memory in adults.''}\\[18mm]
+\noindent\pnum{4} A single high school (not randomly chosen) runs an experiment: it randomly assigns its own 120 students to a new homework app or the old paper method, finding the app group's grades improve. The school district announces: \textit{``This app will improve grades for every student in the state.''}\\[18mm]
+\noindent\pnum{5} A convenience sample of 50 shoppers at one mall is observed (no groups assigned): shoppers who used a store's loyalty app spent more per visit than those who didn't. A marketing email claims: \textit{``Our loyalty app causes customers to spend more, everywhere.''}
 }
 \end{textblock*}
-
 \clearpage
 
-% ================= PAGE 3: Set 5 | Set 6 (bonus) =================
-\topicheader{18}{Tadqiqot Dizayni va Statistik Xulosalar}
+\topicheader{18}{Study Design \& Statistical Claims}
 \pagefooter{100}
 \colrule{32}{238}
 \mbox{}%
-
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10.3}{13}\selectfont
-\setkicker{5-to'plam}{To'g'ri xulosani yozing. Tadqiqot nimani qo'llab-quvvatlashi va nimani qo'llab-quvvatlay olmasligini o'z so'zlaringiz bilan yozing.}
-
-\noindent\pnum{1} Milliy miqyosda tasodifiy tanlangan 600 kattalar (hech qanday guruh belgilanmagan) kofe iste'moli va o'zini qanday sezgani haqida so'raladi; kuniga 2+ chashka ichuvchilar o'zlarini sergakroq his qilishini aytishadi.\\[26mm]
-\noindent\pnum{2} Biologiya laboratoriyasi (tasodifiy jalb qilinmagan, o'z xohishi bilan ishtirok etgan) 60 ta sichqonni yangi vitamin qo'shimchasi yoki nazorat ratsioniga tasodifiy ajratadi, qo'shimcha guruhida 8 haftadan keyin suyak zichligi yaxshiroq ekanini topadi.\\[26mm]
-\noindent\pnum{3} Milliy miqyosda tasodifiy tanlangan 1,200 o'rta maktab o'quvchisi musiqa asbobida chalish va standartlashtirilgan test ballari haqida so'raladi; chaluvchilar o'rtacha yuqoriroq ball oladi, hech qanday guruh belgilanmagan.
+\setkicker{Set 5}{State what each design supports and what it cannot support, in your own words.}
+\noindent\pnum{1} A random sample of 600 adults nationwide is surveyed (no groups assigned) about coffee consumption and self-reported alertness; those who drink 2+ cups daily report higher alertness.\\[26mm]
+\noindent\pnum{2} A biology lab randomly assigns 60 (non-randomly-recruited, volunteer) lab mice to a new vitamin supplement or a control diet, finding the supplement group has measurably better bone density after 8 weeks.\\[26mm]
+\noindent\pnum{3} A random sample of 1,200 high school students nationwide is surveyed about whether they play a musical instrument and their standardized test scores; students who play an instrument score higher on average, with no groups assigned.
 }
 \end{textblock*}
-
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10.3}{13}\selectfont
-\setkicker{6-to'plam}{Bonus / qiyin -- qatlamli holatlar. Har birida haqiqiy dizaynni aniqlang va xulosa asoslanganmi, tushuntiring.}
-
-\noindent\pnum{1} Universitet 800 talabani ro'yxatidan tasodifiy tanlab, ularni yarim kunlik ish va GPA haqida so'raydi -- lekin 800 tadan faqat 110 tasi (o'z xohishi bilan) javob beradi. Universitet bu natija ``odatiy talaba''ni ifodalaydi, deb xulosa qiladi. Haqiqiy dizayn qanday va xulosa asoslanganmi?\\[26mm]
-\noindent\pnum{2} Milliy miqyosda vakillik qiluvchi tasodifiy tanlangan 3,000 kattalar uyqu tadqiqotiga jalb qilinadi. Shu tanlanma ichida tadqiqotchilar yarmini yangi uyqu kuzatuv qurilmasiga, yarmini qog'oz kundaligiga tasodifiy ajratadi, qurilma guruhida uyqu jadvali barqarorroq ekanini topadi. Bu yerda mamlakat miqyosida sabab-oqibat da'vosi asoslanganmi va bu holat yuqoridagilardan nimasi bilan farq qiladi?\\[26mm]
-\noindent\pnum{3} Qiyin holat: shirinlik kompaniyasi o'z ilova foydalanuvchilaridan (umumiy aholidan emas, balki o'z foydalanuvchi bazasidan) 500 nafarini tasodifiy tanlaydi va ularni yangi ta'm yoki klassik ta'mga tasodifiy ajratadi, yangi ta'm yuqoriroq baholanganini topadi. Kompaniya: ``Ilova foydalanuvchilarimiz orasida yangi ta'm afzal ko'riladi, lekin ilovamizdan hech qachon foydalanmaganlar uchun bu to'g'rimi, hali ayta olmaymiz'' deydi. Bu tor va aniq da'vo, boshqa holatlardan farqli o'laroq, asoslanganmi?
+\setkicker{Set 6}{Identify the real design and decide whether the conclusion is justified.}
+\noindent\pnum{1} A university randomly samples 800 students from its enrollment to survey about part-time work and GPA — but of the 800 contacted, only 110 (a self-selected subgroup) actually respond to the survey. The university concludes the result represents ``the typical student.'' What's the real design here, and is the conclusion justified?\\[26mm]
+\noindent\pnum{2} A nationally representative random sample of 3,000 adults is recruited for a sleep study. Within that sample, researchers randomly assign half to a new sleep-tracking device and half to a paper sleep diary, and find the device group reports more consistent sleep schedules. Is a nationwide causal claim justified here, and why does this case differ from most of the studies above?\\[26mm]
+\noindent\pnum{3} A trick case: a snack company randomly selects 500 of its registered app users (not the general public, but a random sample \textit{of its own user base}) and randomly assigns them to try a new flavor or the classic flavor, finding the new flavor rated higher. The company claims: ``Among our app users, the new flavor is preferred, and we can't yet say whether that holds for people who've never used our app.'' Is this specific, narrower claim actually justified, unlike the other overreaching claims in this lesson?
+\par\vspace{6mm}
+\setkicker{Set 7}{Real SAT-style problems.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Easy}\par\vspace{1.5mm}
+\satq{1}{A researcher randomly assigns 96 volunteers to two groups of equal size: a treatment group and a control group. How many volunteers are in the control group?}{48}{24}{72}{96}
 }
 \end{textblock*}
-
 \clearpage
 
-% ================= PAGE 4: Javoblar -- Sets 1-3 =================
-\topicheader{18}{Tadqiqot Dizayni va Statistik Xulosalar}
+\topicheader{18}{Study Design \& Statistical Claims}
 \pagefooter{101}
+\colrule{32}{238}
 \mbox{}%
-
-\begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Easy}\par\vspace{1.5mm}
+\satqw{2}{A principal wants to know how many hours per week students at her school spend on homework. She writes the name of each of the school's 640 students on a card, mixes the cards, and draws 60 without looking. She surveys those 60 students. What is the largest group to which the survey results can be generalized?}{The 60 students who were surveyed}{All students in the school district}{All students who would volunteer for a homework survey}{All 640 students in the school}
+\satqw{3}{A bookstore asks the first 25 customers who come in on a Saturday morning to rate its café. Which statement best describes the sample?}{A random sample, because every customer had an equal chance of being asked}{A convenience sample, because it includes only people who happened to be in the store at that time}{A random sample, because it contains 25 people}{A random sample, because it was collected on a weekend}
+\satqw{4}{A botanist randomly assigns 40 tomato plants to two equal groups. One group receives a new soil supplement and the other receives plain soil. After six weeks, the supplemented plants are taller on average. Which conclusion is best supported?}{The supplement is only associated with taller plants; the design cannot show that it causes them}{The supplement causes taller plants among the 40 plants in this study}{Plants that grew taller were more likely to receive the supplement}{The result shows nothing, because the two groups were the same size}
+}
 \end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Easy}\par\vspace{1.5mm}
+\satqw{5}{A researcher records, without assigning anyone to a group, how many hours each of 300 residents of a town sleeps and whether each resident drinks coffee after 6 p.m. Every resident had an equal chance of being selected. Which statement is best supported?}{Drinking coffee after 6 p.m. causes less sleep among the town's residents}{Late coffee drinking has no effect on sleep, because nobody was assigned to drink coffee}{Late coffee drinking is associated with less sleep only among the 300 residents who were measured}{Late coffee drinking is associated with less sleep among the town's residents, but the study cannot show that it causes less sleep}
+\satqw{6}{A city council randomly selects 500 registered voters from the complete voter list and asks each one whether the city should add bike lanes. Which statement is correct?}{The results cannot be generalized, because 500 people is too small a sample}{The results cannot be generalized, because some voters will decline to answer}{The results can be generalized to all registered voters in the city, because the sample was random}{The results can be generalized only to voters in the council members' own districts}
+\satqw{7}{A teacher lets each student choose whether to study with flashcards or with practice tests, then compares the two groups' scores. Which description best fits this study?}{An experiment with random assignment, because the teacher compared two groups}{An experiment with a random sample, because the teacher used all students}{A survey of a convenience sample, because students answered questions}{An observational study, because the teacher did not assign the groups}
+}
+\end{textblock*}
+\clearpage
 
+\topicheader{18}{Study Design \& Statistical Claims}
+\pagefooter{102}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Easy}\par\vspace{1.5mm}
+\satqw{8}{A gym has 3,000 members. A random sample of 200 members is surveyed about the new class schedule. The results can be generalized to which group?}{All people who exercise at gyms in the country}{All people who live near the gym}{All 3,000 members of the gym}{Only the 200 members who answered}
+\satqw{9}{A study finds that children with more toys tend to have higher reading scores. The researchers did not assign toys to any children. Which factor is the most likely lurking variable that could explain both?}{The color of the toys}{The height of the children}{The family's income, which may affect both toy ownership and access to reading materials}{The day of the week the survey was given}
+\satqw{10}{Which of the following studies can support a cause-and-effect conclusion?}{Researchers randomly assign 50 students to listen to music or silence during a test, then compare their scores}{A survey of a random sample of voters about their favorite news source}{A researcher compares ice cream sales and drowning reports in one city's records}{Students who chose to join a reading club are compared with students who did not}
+\satqw{11}{A university with 9,000 students randomly selects 150 students to survey about their commute time. The results can be generalized to which largest group?}{The 150 students who were surveyed}{All 9,000 students at the university}{All university students in the country}{Only students who live off campus}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Easy}\par\vspace{1.5mm}
+\satqw{12}{A student writes: ``My study shows that people who sleep more get better grades, so sleeping more causes better grades.'' The study did not assign anyone to sleep longer. Which statement best identifies the error?}{The study used too few students}{The student treated an association as proof of causation}{The study should have used a convenience sample instead of a random sample}{The grades should have been measured in hours}
+\satq{13}{A school randomly selects 24 students from a class of 240 to take a survey. What percent of the class is in the sample?}{1\%}{24\%}{10\%}{240\%}
+\satqw{14}{A dentist flips a coin for each patient to decide whether the patient receives a new mouthwash or the usual mouthwash. The dentist then compares plaque levels between the two groups. Which description best fits this study?}{An experiment with random assignment, because a coin determined each patient's group}{An observational study, because the dentist recorded plaque levels}{A convenience sample, because only patients who visited the dentist were included}{A survey, because patients answered questions}
+}
+\end{textblock*}
+\clearpage
+
+\topicheader{18}{Study Design \& Statistical Claims}
+\pagefooter{103}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Easy}\par\vspace{1.5mm}
+\satqw{15}{A survey of 50 students who signed up for the school newspaper club found that 40 of them like the new cafeteria menu. Which statement is best supported?}{Most of the 50 club members who were surveyed like the new cafeteria menu}{Most students in the school like the new cafeteria menu}{Most adults in the country like the new cafeteria menu}{The new cafeteria menu makes students like school more}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Medium}\par\vspace{1.5mm}
+\satqw{1}{A pharmacy randomly selects 300 of its 5,000 loyalty-card customers. It randomly assigns half of the selected customers to receive text-message refill reminders and half to receive no reminders, then compares refill rates. Which statement is best supported?}{Text reminders are associated with higher refill rates among all 5,000 loyalty-card customers}{Text reminders cause higher refill rates only for the 300 customers in the study}{Text reminders are associated with higher refill rates, but no cause-and-effect claim is possible}{Text reminders cause higher refill rates, and this can be generalized to all 5,000 loyalty-card customers}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Medium}\par\vspace{1.5mm}
+\satqw{2}{A researcher randomly selects 800 high school students from all high schools in a state. She does not assign anyone to a group. Students who attend a weekend tutoring program have higher average GPAs than students who do not. Which conclusion is best supported?}{Tutoring causes higher GPAs for all students in the state}{Tutoring causes higher GPAs, but only for the 800 students who were studied}{Tutoring is associated with higher GPAs among the state's high school students, but the study does not show that tutoring causes the difference}{Tutoring is associated with higher GPAs only among the 800 students who were studied}
+\satqw{3}{A running club invites the 60 members who signed up for a spring event to take part in a study. The researcher randomly assigns 30 members to a new warm-up routine and 30 to the usual routine. After eight weeks, the warm-up group runs faster on average. Which conclusion is best supported?}{The warm-up routine causes faster running for all runners in the city}{The warm-up routine causes faster running for these 60 members, but the results do not extend to other runners}{The warm-up routine is associated with faster running for the 60 members, but it does not cause it}{The warm-up routine is associated with faster running for all runners in the city}
+}
+\end{textblock*}
+\clearpage
+
+\topicheader{18}{Study Design \& Statistical Claims}
+\pagefooter{104}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Medium}\par\vspace{1.5mm}
+\satqw{4}{A cooking instructor records, for 18 students who chose to join her class, how many hours each practiced at home and how well each cooked a final dish. She does not assign practice hours to anyone. Students who practiced more cooked better dishes. Which conclusion is best supported?}{Practice causes better cooking for all cooks}{Practice causes better dishes among these 18 students}{Practice is associated with better dishes among all cooks}{Practice is associated with better dishes among these 18 students; no cause-and-effect claim or wider claim is supported}
+\satqw{5}{A tea company sends free samples to 200 people who volunteered through its website. Of those 200, 150 say they like the tea, and no groups were assigned. Which is the most accurate way to report the result?}{Most people in the country like the tea}{Most of the 200 volunteers who tried the tea said they liked it}{The tea causes people to like it}{The tea is liked by everyone who tries it}
+\satqw{6}{A researcher wants to show that a new reading app causes higher test scores. Currently, 400 students are randomly selected from a district, and each student chooses whether to use the app. Which change would most directly allow a cause-and-effect conclusion?}{Increase the sample to 4,000 students}{Randomly assign the selected students to use the app or not, instead of letting them choose}{Ask the students to rate how much they enjoy the app}{Use only the students who scored highest on a previous test}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Medium}\par\vspace{1.5mm}
+\satqw{7}{A random sample of 500 students from a university is surveyed, and 30\% say they work a part-time job. Which statement must be true?}{The true percentage of all students who work part-time may differ from 30\%, because a sample gives an estimate}{Exactly 30\% of all students at the university work part-time}{Every part-time worker at the university was included in the sample}{Because the sample was random, the percentage for all students is exactly 30\%}
+\satqw{8}{A mobile app company randomly selects 2,000 people from its list of 50,000 users and asks whether they use the daily reminder feature. Users who use the reminder have higher weekly activity. No one is assigned to use or skip the feature. Which statement is best supported?}{The reminder feature causes higher activity for all 50,000 users}{The reminder feature is associated with higher activity among the 50,000 users, but cause is not shown}{The reminder feature causes higher activity among the 2,000 people sampled}{The reminder feature is associated with higher activity only among the 2,000 people sampled}
+\satq{9}{A clinic has 450 patients. A researcher randomly selects 90 of them and randomly assigns exactly half of the selected patients to a new appointment schedule. How many patients were assigned to the new schedule?}{45}{22}{90}{225}
+}
+\end{textblock*}
+\clearpage
+
+\topicheader{18}{Study Design \& Statistical Claims}
+\pagefooter{105}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Medium}\par\vspace{1.5mm}
+\satqw{10}{A researcher randomly selects 300 students from a school district and randomly assigns each student to a phonics class or a whole-word class. The phonics group reads better at the end of the year. Which statement is NOT supported by the study?}{Phonics causes better reading for the district's students}{The phonics group read better at the end of the year}{Phonics causes better reading for students across the country}{Random assignment makes a causal comparison appropriate}
+\satqw{11}{A researcher randomly selects 2,000 nurses from a national list of all licensed nurses. She asks each nurse whether they work night shifts and how tired they feel, and she does not assign anyone to a shift. Which description best fits this study?}{An observational study with a random sample, so associations can be generalized to all licensed nurses on the list}{An experiment with random assignment, so causal claims apply to all licensed nurses}{An experiment without randomization, so causal claims cannot be made}{An observational study with a convenience sample, so results apply only to those surveyed}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Medium}\par\vspace{1.5mm}
+\satqw{12}{A fitness-tracker company invites 150 owners who signed up for its newsletter to take part in a study. The company does not assign anyone to a group. Participants walk more than before, and the company concludes that its tracker causes people to walk more. Which option identifies every design flaw in this conclusion?}{The sample is too small to show anything}{The study used only one sample, so the result cannot be trusted}{The participants were not randomly selected and no random assignment was used, so the study cannot show a cause and cannot generalize beyond newsletter subscribers}{The company measured walking, which is not a useful measure}
+\satqw{13}{A coffee shop surveys only its first 100 customers each morning for a month, collecting 3,000 responses in total. Which statement is correct?}{With 3,000 responses, the sample is now random and represents all customers in the city}{The 3,000 responses prove that the coffee causes customers to return}{The study became an experiment because it collected many responses}{A larger sample reduces random variation, but it cannot make a sample representative when responses come only from morning customers}
+}
+\end{textblock*}
+\clearpage
+
+\topicheader{18}{Study Design \& Statistical Claims}
+\pagefooter{106}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Medium}\par\vspace{1.5mm}
+\satqw{14}{A county health office lists all 3,500 residents who hold a valid library card and randomly selects 250 of them. Each selected resident is randomly assigned to receive a flu-shot reminder or no reminder, and the office compares vaccination rates. Which statement is best supported?}{Reminders cause higher vaccination rates among all 3,500 library cardholders}{Reminders are associated with vaccination rates only among the 250 selected residents}{Reminders cause higher vaccination rates only among the 250 selected residents}{Reminders are associated with higher vaccination rates among all county residents}
+\satqw{15}{A survey finds that people who take a daily vitamin report fewer colds than people who do not. Participants chose whether to take vitamins, and the researchers did not assign anyone. Which factor is the most likely lurking variable?}{The brand name printed on the vitamin bottle}{The temperature of the room where the survey was filled out}{Overall health-consciousness, which may lead people both to take vitamins and to avoid colds}{The number of questions on the survey}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Hard}\par\vspace{1.5mm}
+\satqw{1}{A city randomly selects 300 bakers from a complete list of all licensed bakers in the city. Each baker decides for himself or herself whether to attend a training program, and the city later compares sales. Researchers do not assign training to anyone. Which conclusion is best supported?}{Training causes higher sales for all licensed bakers in the city}{Training causes higher sales only among the 300 bakers in the study}{Training is associated with higher sales for all licensed bakers in the city, but the study does not show that training causes it}{Training has no relationship with sales for the 300 bakers in the study}
+\satq{2}{A study enrolls 180 volunteers. Researchers randomly assign three-fifths of them to Group A and the rest to Group B. During the study, 12 people from Group A and 9 people from Group B drop out. How many participants complete the study?}{168}{159}{171}{180}
+\satqw{3}{A hospital records 1,000 randomly selected patients. Doctors chose which patients received Drug Y, and they were more likely to give Drug Y to patients with milder illness. Patients who received Drug Y had fewer complications. Which statement is best supported?}{Drug Y causes fewer complications for all hospital patients}{Drug Y causes fewer complications for the 1,000 patients, because the sample was random}{Drug Y has no relationship with complications}{Drug Y is associated with fewer complications, but because doctors chose the treatment and illness severity may affect both, the study does not show that Drug Y causes the difference}
+}
+\end{textblock*}
+\clearpage
+
+\topicheader{18}{Study Design \& Statistical Claims}
+\pagefooter{107}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Hard}\par\vspace{1.5mm}
+\satqw{4}{A bank randomly selects 150 of its 40,000 online-account holders. It randomly assigns half of them to receive a \$10 bonus for a savings deposit and the other half nothing. The bonus group deposits more money on average. Which claim is best supported?}{The bonus causes more deposits among all bank customers}{The bonus causes more deposits among all 40,000 online-account holders}{The bonus causes more deposits only among the 150 account holders in the study}{The bonus is associated with more deposits among the 150 account holders only}
+\satqw{5}{A school district randomly selects 200 of its 9,000 students for a study of a new math program. Each selected student chooses whether to join the program, and the district later compares test scores. Which change would best allow the district to claim that the program caused score gains for all 9,000 students?}{Increase the sample to 2,000 students, keeping the choice to join}{Survey only the students who chose to join the program}{Randomly assign each selected student to the program or to a comparison group, instead of letting students choose}{Measure the test scores twice instead of once}
+\satqw{6}{A farm randomly selects 500 of its 2,000 dairy cows. Half are randomly assigned to feed X and half to feed Y. After three months, the feed X cows produce more milk on average. Which statement is best supported?}{Feed X increases milk production for the farm's 2,000 cows}{Feed X increases milk production for all dairy farms}{Feed X is associated with more milk production among the farm's cows, but no cause is shown}{Feed X increases milk production for the 500 cows in the study only}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Hard}\par\vspace{1.5mm}
+\satqw{7}{A researcher randomly selects 400 students from a large high school and records how much time each spends on homework and each student's grade point average. No one is assigned to a homework schedule. A blog post states that homework causes higher grades. Which evaluation is most accurate?}{The claim is not supported: the results show an association with grades for the school's students, but cause is not shown}{The claim is valid, because the sample was random}{The claim is valid for the 400 students only}{The results are unrelated to grades}
+\satqw{8}{A clinic posts a notice asking for volunteers and receives 800 sign-ups. Researchers randomly assign half of the volunteers to a new vaccine and half to a placebo, without telling participants which they received. After one season, the vaccine group has fewer infections. Which claim is best supported?}{The vaccine causes fewer infections among all adults}{The vaccine is associated with fewer infections, but cannot be shown to cause them}{No conclusion is possible, since the volunteers were not randomly selected}{The vaccine causes fewer infections among people similar to these volunteers}
+\satqw{9}{A company has 10,000 employees. Which method allows results to be generalized to all 10,000 employees?}{Drawing 100 names at random from the list of employees who work Monday shifts}{Drawing 100 names at random from the full list of all 10,000 employees}{Surveying 100 employees who volunteered after an email to all staff}{Surveying 100 employees whom the manager selected as typical}
+}
+\end{textblock*}
+\clearpage
+
+\topicheader{18}{Study Design \& Statistical Claims}
+\pagefooter{108}
+\colrule{32}{212}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Hard}\par\vspace{1.5mm}
+\satq{10}{Forty-eight students are randomly divided into four groups of equal size. One group is the control group, and the other three receive different treatments. What fraction of all 48 students is in the control group?}{$\frac{1}{4}$}{$\frac{1}{3}$}{$\frac{1}{12}$}{$\frac{1}{2}$}
+\satqw{11}{A company has 1,500 employees. It randomly selects 150 employees and randomly assigns 60 of them to standing desks and 90 to regular desks. After six months, the standing-desk group reports less back pain on average. Which claim is strongest and best supported?}{Standing desks cause less back pain for the 150 employees in the study only}{Standing desks cause less back pain for all 1,500 employees}{Standing desks are associated with less back pain for all 1,500 employees, but cause is not shown}{Standing desks are not related to back pain, since the two groups were different sizes}
+\satqw{12}{A university randomly selects 300 of its students and randomly assigns each to a study app or a regular study method. The app group scores higher on the final exam. A newspaper headline reads: ``Study app raises test scores at universities nationwide.'' Which correction is most accurate?}{The app raises scores for this university's students, but the nationwide claim is not supported because only one university was sampled}{The app raises scores for students across the country}{The app is associated with higher scores at this university, but cause is not shown}{The study shows nothing, because only one university was used}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10.3}{13}\selectfont
+\setkicker{Set 7 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{10.5}{12}\selectfont Hard}\par\vspace{1.5mm}
+\satqw{13}{Consider three statements. I. A random sample allows results to be generalized to the population it was drawn from. II. Random assignment allows a cause-and-effect conclusion. III. A larger convenience sample becomes representative of the population once it is large enough. Which statements are correct?}{I only}{I, II, and III}{I and II only}{III only}
+\satqw{14}{A city health department randomly selects 500 adults from the patient list of one clinic in the city. It randomly assigns half to receive text reminders and half to receive none, then compares appointment attendance. Which is the largest group to which a cause-and-effect conclusion can be generalized?}{All adults in the city}{All adults in the state}{All patients of this clinic}{The 500 adults who were selected}
+\satqw{15}{A researcher randomly selects 200 students from a district of 5,000 students. The students are not randomly assigned to music lessons; they choose whether to take them. Students who took lessons have higher test scores. A headline reads: ``Music lessons make children smarter across the nation.'' Which correction is most accurate?}{Music lessons cause higher scores among the district's 5,000 students}{Music lessons cause higher scores across the nation}{Music lessons are associated with higher scores among the 200 sampled students only}{Music lessons are associated with higher scores among the district's 5,000 students, but cause is not shown}
+}
+\end{textblock*}
+\begin{textblock*}{178mm}(16mm,252mm)
+{\itshape\fontsize{8}{10}\selectfont\color{black!75} Sourcing note: real, official College Board SAT questions are copyrighted and are not licensed for reproduction in commercial test-prep materials, under any circumstances, with or without attribution. No verbatim College Board question appears in this book. The items in this set were written to match the \textit{method}, \textit{distractor style}, and \textit{difficulty tier} of released items in this lesson's skill category. The numbers, names, and contexts are all original. Items use only this lesson's concepts; the margin-of-error material seen in the bank's \textit{Inference from sample statistics} category is outside this lesson's scope and was not used.}
+\end{textblock*}
+\clearpage
+
+\topicheader{18}{Study Design \& Statistical Claims}
+\pagefooter{109}
+\mbox{}%
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--3\par}
+\end{textblock*}
 \begin{textblock*}{194mm}(16mm,42mm)
 {\fontsize{9.3}{11.5}\selectfont
 \centering
 \begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{8mm}|p{138mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Izoh}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{5}{24mm}{\centering 1-to'plam} & 1 & Tasodifiy -- har bir egada tanlanish imkoniyati teng, 400,000 ga umumlashtirsa bo'ladi.\\\cline{2-3}
- & 2 & Qulaylik/o'z xohishi -- faqat qo'ng'iroq qilganlar vakil, umumlashtirib bo'lmaydi.\\\cline{2-3}
- & 3 & Tasodifiy -- to'liq bazadan tanlangan, barcha bemorlarga umumlashtiriladi.\\\cline{2-3}
- & 4 & Qulaylik/o'z xohishi -- faqat javob bergan Instagram obunachilari, umumlashtirib bo'lmaydi.\\\cline{2-3}
- & 5 & Tasodifiy -- har 20-mashina tizimli tanlov, tashrif davridagi barcha tashrifchilarga umumlashtiriladi.\\\hline
-\multirow{5}{24mm}{\centering 2-to'plam} & 1 & Eksperiment -- sabab-oqibat da'vo qilish mumkin (o'g'it o'sishga sabab bo'ldi).\\\cline{2-3}
- & 2 & Kuzatuv -- faqat bog'liqlik; joy tasodifiy belgilanmagan, boshqa omillar sabab bo'lishi mumkin.\\\cline{2-3}
- & 3 & Eksperiment -- sabab-oqibat da'vo qilish mumkin (shu sinov populatsiyasida).\\\cline{2-3}
- & 4 & Kuzatuv -- faqat bog'liqlik; yashirin omil (issiq ob-havo) ikkalasiga ham sabab.\\\cline{2-3}
- & 5 & Kuzatuv -- faqat bog'liqlik; xodimlar joyni o'zi tanlagan, boshqa farqlar sabab bo'lishi mumkin.\\\hline
-\multirow{4}{24mm}{\centering 3-to'plam} & 1 & Tasodifiy tanlanma + tasodifiy guruhlash -- eng kuchli holat: sabab-oqibat ham, umumlashtirish ham mumkin.\\\cline{2-3}
- & 2 & Tasodifiy emas tanlanma (o'z xohishi) + tasodifiy guruhlash -- sabab-oqibat faqat shu 40 obunachi uchun, umumlashtirib bo'lmaydi.\\\cline{2-3}
- & 3 & Tasodifiy tanlanma + tasodifiy emas guruhlash (o'zlari tanlagan) -- faqat bog'liqlik, lekin shahar xonadonlariga umumlashtiriladi.\\\cline{2-3}
- & 4 & Tasodifiy emas tanlanma + tasodifiy emas guruhlash -- eng zaif holat: faqat shu sinf ichida bog'liqlik, umumlashtirib bo'lmaydi, sabab-oqibat yo'q.\\\hline
+\multirow{5}{24mm}{\centering Set 1} & 1 & Random sample: every owner had an equal chance, so the result generalizes to all 400,000 registered owners.\\\cline{2-3}
+ & 2 & Convenience sample: only listeners who chose to call; cannot generalize to all listeners.\\\cline{2-3}
+ & 3 & Random sample: generalizes to all patients treated last year.\\\cline{2-3}
+ & 4 & Convenience sample: only the followers who chose to respond; cannot generalize to all gym members.\\\cline{2-3}
+ & 5 & Random sample: stopping every 20th car gives each visiting car an equal chance; generalizes to park visitors during the survey period.\\\hline
+\multirow{5}{24mm}{\centering Set 2} & 1 & Experiment (random assignment): causation; the fertilizer caused the difference in these plants.\\\cline{2-3}
+ & 2 & Observational study: correlation only; seating was not assigned, so other factors may explain the gap.\\\cline{2-3}
+ & 3 & Experiment (random assignment): causation for this trial's volunteer population.\\\cline{2-3}
+ & 4 & Observational study: correlation only; a lurking variable (hot weather) drives both.\\\cline{2-3}
+ & 5 & Observational study: correlation only; employees chose their own work location.\\\hline
+\multirow{4}{24mm}{\centering Set 3} & 1 & Random sample and random assignment: causation, generalizable to the full university population.\\\cline{2-3}
+ & 2 & Non-random sample and random assignment: causation only for these 40 subscribers.\\\cline{2-3}
+ & 3 & Random sample, no assignment: association generalizable to city households; not causation.\\\cline{2-3}
+ & 4 & Non-random sample, no assignment: association within this one class only; no causal claim.\\\hline
 \end{tabular}
 }
 \end{textblock*}
-
 \clearpage
 
-% ================= PAGE 5: Javoblar -- Sets 4-6 + QR =================
-\topicheader{18}{Tadqiqot Dizayni va Statistik Xulosalar}
-\pagefooter{102}
+\topicheader{18}{Study Design \& Statistical Claims}
+\pagefooter{110}
 \mbox{}%
-
-\begin{textblock*}{194mm}(16mm,22mm)
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 4--6\par}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,42mm)
 {\fontsize{9.3}{11.5}\selectfont
 \centering
 \begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{8mm}|p{138mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Izoh}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{5}{24mm}{\centering 4-to'plam} & 1 & Tanlanma buzilgan -- o'z xohishi bilan yozilganlar, ``hamma joyda'' emas. To'g'ri: ``90 ko'ngillidan ko'pchiligi retseptni yoqtirdi.''\\\cline{2-3}
- & 2 & Hech qanday qoida buzilmagan -- aslida ifoda tadqiqot natijasini kamsitib ko'rsatadi (tasodifiy tanlanma + tasodifiy guruhlash to'liq umumlashtiriladigan sabab-oqibat xulosani qo'llab-quvvatlaydi); bu har bir xulosa haddan oshmasligini, ba'zilari ehtiyotkor bo'lishini ko'rsatadi.\\\cline{2-3}
- & 3 & Guruhlash buzilgan -- bu kuzatuv tadqiqoti, faqat bog'liqlik. To'g'ri: ``Zavq uchun o'qish kattalarda yaxshiroq xotira bilan bog'liq.''\\\cline{2-3}
- & 4 & Tanlanma buzilgan -- sabab-oqibat shu 120 o'quvchi uchun to'g'ri, lekin maktab o'zi tasodifiy tanlanmagan, shtat miqyosida umumlashtirib bo'lmaydi.\\\cline{2-3}
- & 5 & Ikkala qoida ham buzilgan -- qulaylik tanlanmasi (``hamma joyda'' emas) va tasodifiy guruhlash yo'q (o'zlari tanlagan), faqat shu savdo markazida ham faqat bog'liqlik.\\\hline
-\multirow{3}{24mm}{\centering 5-to'plam} & 1 & Qo'llab-quvvatlaydi: kofe va sergaklik orasidagi bog'liqlik, kattalarga umumlashtiriladi. Qo'llab-quvvatlamaydi: kofe sergaklikka sabab bo'lishini (guruhlash yo'q).\\\cline{2-3}
- & 2 & Qo'llab-quvvatlaydi: qo'shimcha suyak zichligiga sabab bo'lishini, lekin faqat shu sichqonlar populatsiyasi uchun. Qo'llab-quvvatlamaydi: barcha sichqonlar yoki turlarga umumlashtirishni.\\\cline{2-3}
- & 3 & Qo'llab-quvvatlaydi: asbob chalish va yuqori ball orasidagi bog'liqlik, o'quvchilarga umumlashtiriladi. Qo'llab-quvvatlamaydi: asbob chalish ballarga sabab bo'lishini (guruhlash yo'q).\\\hline
-\multirow{3}{24mm}{\centering 6-to'plam} & 1 & Haqiqiy dizayn zaifroq: 800 tasodifiy tanlangan, lekin faqat 110 tasi o'z xohishi bilan javob bergan (javobsizlik muammosi) -- ``odatiy talaba'' xulosasi to'liq asoslanmagan.\\\cline{2-3}
- & 2 & Ha -- mamlakat miqyosida sabab-oqibat asoslangan, chunki ikkala shart ham bajarilgan: tasodifiy vakillik tanlanma VA tasodifiy guruhlash. Boshqa ko'p holatlar faqat bittasini qondiradi.\\\cline{2-3}
- & 3 & Ha -- bu tor da'vo to'liq asoslangan: tanlanma tasodifiy, lekin faqat kompaniya foydalanuvchilaridan; kompaniya da'vo ko'lamini aynan tanlanma ko'lamiga mos qiladi.\\\hline
+\multirow{5}{24mm}{\centering Set 4} & 1 & Sampling violated: the 90 volunteers only. Correct: ``Most of the 90 volunteers who tried the recipe liked it.''\\\cline{2-3}
+ & 2 & No rule broken: the wording understates a well-supported result (a cautious restatement).\\\cline{2-3}
+ & 3 & Assignment violated: observational study. Correct: ``Reading for pleasure is associated with better memory scores in adults.''\\\cline{2-3}
+ & 4 & Sampling violated: the causal claim holds for the school's 120 students; the school was not randomly selected, so no state-wide claim.\\\cline{2-3}
+ & 5 & Both violated: convenience sample (one mall) and no random assignment; association only, and only at that mall.\\\hline
+\multirow{3}{24mm}{\centering Set 5} & 1 & Supports an association between coffee and alertness among adults nationwide. Does not support that coffee causes alertness.\\\cline{2-3}
+ & 2 & Supports a causal effect of the supplement on bone density for this group of mice. Does not support the same effect in all mice or other species.\\\cline{2-3}
+ & 3 & Supports an association between playing an instrument and higher scores among students nationwide. Does not support causation.\\\hline
+\multirow{3}{24mm}{\centering Set 6} & 1 & Weaker design: 800 randomly selected, but only 110 self-selected respondents (non-response). The ``typical student'' claim is not fully justified.\\\cline{2-3}
+ & 2 & Yes: both a random sample and random assignment, so a nationwide causal claim is justified.\\\cline{2-3}
+ & 3 & Yes: the narrower claim is limited to the company's own users, which matches the sample.\\\hline
 \end{tabular}
 }
 \end{textblock*}
+\clearpage
 
-\begin{textblock*}{194mm}(16mm,243mm)
+\topicheader{18}{Study Design \& Statistical Claims}
+\pagefooter{111}
+\mbox{}%
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 7\par}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+A&D&B&B&D&C&D&C&C&A\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&B&C&A&A\\\hline
+\end{tabular}\\[4mm]
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+D&C&B&D&B&B&A&B&A&C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+A&C&D&A&C\\\hline
+\end{tabular}\\[4mm]
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&B&D&B&C&A&A&D&B&A\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&A&C&C&D\\\hline
+\end{tabular}
+\end{center}
+}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,232mm)
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}
