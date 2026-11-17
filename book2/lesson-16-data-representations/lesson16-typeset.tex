@@ -90,20 +90,20 @@
 
 % ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
 \newcommand{\satq}[6]{%
-\noindent\pnum{#1} #2\\[2mm]
+\noindent\pnum{#1} #2\\[1.2mm]
 \hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
-(A) #3 & (B) #4 \\[2.5mm]
+(A) #3 & (B) #4 \\[1.5mm]
 (C) #5 & (D) #6 \\
-\end{tabular}\\[7mm]%
+\end{tabular}\\[3.5mm]%
 }
 
 % ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
 \newcommand{\satqw}[6]{%
-\noindent\pnum{#1} #2\\[2mm]
-\hspace*{7mm}(A) #3\\[1.6mm]
-\hspace*{7mm}(B) #4\\[1.6mm]
-\hspace*{7mm}(C) #5\\[1.6mm]
-\hspace*{7mm}(D) #6\\[7mm]%
+\noindent\pnum{#1} #2\\[1.2mm]
+\hspace*{7mm}(A) #3\\[1mm]
+\hspace*{7mm}(B) #4\\[1mm]
+\hspace*{7mm}(C) #5\\[1mm]
+\hspace*{7mm}(D) #6\\[3.5mm]%
 }
 
 % ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
@@ -307,7 +307,7 @@ $120$ students were surveyed about their language-learning method and the level 
 \begin{textblock*}{\COLW}(\LCOL,162.0mm)
 {\fontsize{10}{12.5}\selectfont
 \setkicker{Set 8}{Real SAT-style problems.}
-{\sffamily\bfseries\color{accent}\fontsize{10.5}{13}\selectfont EASY (items 1--15)}\par\vspace{1.5mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Easy}\\[1.3mm]
 \satq{1}{A teacher recorded how many books each of $40$ students read last month.\\[1mm]
 \centerline{\fontsize{9}{11}\selectfont\begin{tabular}{|l|c|c|c|c|}
 \hline
@@ -317,7 +317,6 @@ Students & 4 & 11 & 15 & 10 \\ \hline
 How many students read at least $2$ books?}{$25$}{$15$}{$21$}{$36$}
 \vspace{1mm}
 \satq{2}{A class of $40$ students was asked which instrument they play. Each student plays at most one instrument: $16$ play piano, $10$ play guitar, and the rest play no instrument. What percent of the students play no instrument?}{$14\%$}{$35\%$}{$40\%$}{$65\%$}
-\vspace{1mm}
 }
 \end{textblock*}
 \begin{textblock*}{\COLW}(\RCOL,162.0mm)
@@ -332,7 +331,6 @@ Students & 2 & 5 & 3 & 6 & 9 \\ \hline
 How many students scored $9$ or higher?}{$6$}{$9$}{$15$}{$20$}
 \vspace{1mm}
 \satq{4}{A coffee shop counted its customers each day from Monday to Thursday: $14$, $19$, $22$, and $10$. The total for Monday through Friday was $80$. How many customers came in on Friday?}{$10$}{$17$}{$25$}{$15$}
-\vspace{1mm}
 }
 \end{textblock*}
 \clearpage
@@ -359,7 +357,6 @@ How many of the members are female?}{$25$}{$40$}{$47$}{$53$}
 \satq{8}{In a survey, $30$ students read a book and $20$ students watched the movie; each student did exactly one of these. $24$ of the book readers liked the book, and $10$ of the movie watchers liked the movie. What percent of the students who read the book liked it?}{$24\%$}{$48\%$}{$90\%$}{$80\%$}
 \vspace{1mm}
 \satq{9}{A two-way table has two rows and two columns. The two row totals are $90$ and $60$, and one column total is $80$. What is the other column total?}{$70$}{$60$}{$90$}{$150$}
-\vspace{1mm}
 }
 \end{textblock*}
 \begin{textblock*}{\COLW}(\RCOL,32.0mm)
@@ -381,6 +378,7 @@ How many more students chose summer than winter?}{$9$}{$4$}{$18$}{$27$}
 \vspace{1mm}
 \satq{14}{Each of the $80$ people surveyed chose either tea or coffee. Among the $35$ men, $20$ chose tea. Among the $45$ women, $25$ chose tea. How many people chose coffee?}{$20$}{$35$}{$45$}{$55$}
 \vspace{1mm}
+\satqw{15}{A school found that students who attend more tutoring sessions tend to have higher test scores; this is a positive association. Which conclusion is the most accurate?}{Tutoring causes every student's score to rise.}{Students with higher scores attend fewer tutoring sessions.}{The data show a positive association, but they do not prove that tutoring caused the higher scores.}{Higher test scores cause students to attend more tutoring sessions.}
 }
 \end{textblock*}
 \clearpage
@@ -391,9 +389,7 @@ How many more students chose summer than winter?}{$9$}{$4$}{$18$}{$27$}
 \begin{textblock*}{\COLW}(\LCOL,32.0mm)
 {\fontsize{10}{12.5}\selectfont
 \setkicker{Set 8 (cont.)}{Choose the correct answer.}
-\satqw{15}{A school found that students who attend more tutoring sessions tend to have higher test scores; this is a positive association. Which conclusion is the most accurate?}{Tutoring causes every student's score to rise.}{Students with higher scores attend fewer tutoring sessions.}{The data show a positive association, but they do not prove that tutoring caused the higher scores.}{Higher test scores cause students to attend more tutoring sessions.}
-\vspace{1mm}
-{\sffamily\bfseries\color{accent}\fontsize{10.5}{13}\selectfont MEDIUM (items 1--15)}\par\vspace{1.5mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Medium}\\[1.3mm]
 \satq{1}{The table shows the club each of $100$ students chose.\\[1mm]
 \centerline{\fontsize{9}{11}\selectfont\begin{tabular}{|l|c|c|c|c|}
 \hline
@@ -410,11 +406,6 @@ Of the students who chose music, what percent are seniors?}{$8\%$}{$40\%$}{$20\%
 \vspace{1mm}
 \satq{4}{The points $(1,3),\ (2,5),\ (3,7),\ (4,9),\ (5,11)$ lie on a straight line. Based on this trend, what is the most reasonable value of $y$ when $x=7$?}{$15$}{$13$}{$17$}{$21$}
 \vspace{1mm}
-}
-\end{textblock*}
-\begin{textblock*}{\COLW}(\RCOL,32.0mm)
-{\fontsize{10}{12.5}\selectfont
-\setkicker{Set 8 (cont.)}{Choose the correct answer.}
 \satqw{5}{A health article reports that people who drink more water have fewer headaches, and concludes that drinking water prevents headaches. Which statement is the best evaluation of this conclusion?}{The conclusion is valid because the association is strong.}{The data show an association, but other factors could explain it, so the data do not prove that water prevents headaches.}{The conclusion is wrong because headaches cause people to drink less water, so there is no association.}{The conclusion is valid because fewer headaches always follow more water.}
 \vspace{1mm}
 \satq{6}{In a survey of $300$ people, $60\%$ said they use a library. Of the people who use a library, $40\%$ are students. How many library users are students?}{$108$}{$120$}{$72$}{$180$}
@@ -428,19 +419,13 @@ Homeowners & 35 & 45 & 40 & 120 \\ \hline
 \textbf{Total} & 60 & 75 & 65 & 200 \\ \hline
 \end{tabular}}\\[1mm]
 Of the people who have a cat, what percent are homeowners?}{$37.5\%$}{$56.25\%$}{$75\%$}{$60\%$}
-\vspace{1mm}
-\satq{8}{The points in a scatterplot lie approximately along a straight line through $(20,40)$ and $(30,70)$, where $x$ is the average July temperature in degrees Celsius and $y$ is the number of ice cream shops in the city. Using this line, approximately how many shops would a city with an average July temperature of $25^\circ$C have?}{$55$}{$40$}{$50$}{$70$}
-\vspace{1mm}
 }
 \end{textblock*}
-\clearpage
-\topicheader{16}{Data Representations}
-\pagefooter{93}
-\mbox{}%
-\colrule{32}{238}
-\begin{textblock*}{\COLW}(\LCOL,32.0mm)
+\begin{textblock*}{\COLW}(\RCOL,32.0mm)
 {\fontsize{10}{12.5}\selectfont
 \setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{8}{The points in a scatterplot lie approximately along a straight line through $(20,40)$ and $(30,70)$, where $x$ is the average July temperature in degrees Celsius and $y$ is the number of ice cream shops in the city. Using this line, approximately how many shops would a city with an average July temperature of $25^\circ$C have?}{$55$}{$40$}{$50$}{$70$}
+\vspace{1mm}
 \satq{9}{A survey of $120$ students asked how they get to school: $40\%$ walk, $25\%$ take the bus, and $35\%$ ride a bike. How many more students ride a bike than take the bus?}{$18$}{$12$}{$30$}{$42$}
 \vspace{1mm}
 \satq{10}{A company has $60$ employees: $15$ managers and $45$ staff members. Of the managers, $9$ commute by train. Of the staff members, $21$ commute by train. Of all the employees who commute by train, what percent are managers?}{$15\%$}{$60\%$}{$30\%$}{$70\%$}
@@ -449,11 +434,6 @@ Of the people who have a cat, what percent are homeowners?}{$37.5\%$}{$56.25\%$}
 \vspace{1mm}
 \satqw{12}{Plot 1 shows points spread in a loose band that rises from left to right. Plot 2 shows points lying close to a line that falls from left to right. Which statement is correct?}{Plot 2 shows a stronger association, and the association is negative.}{Plot 1 shows a stronger association, and the association is negative.}{Plot 1 shows a stronger association, and the association is positive.}{Plot 2 shows a stronger association, and the association is positive.}
 \vspace{1mm}
-}
-\end{textblock*}
-\begin{textblock*}{\COLW}(\RCOL,32.0mm)
-{\fontsize{10}{12.5}\selectfont
-\setkicker{Set 8 (cont.)}{Choose the correct answer.}
 \satq{13}{A store recorded whether each of its $100$ customers made a purchase.\\[1mm]
 \centerline{\fontsize{9}{11}\selectfont\begin{tabular}{|l|c|c|c|}
 \hline
@@ -467,20 +447,19 @@ What percent of the customers who made a purchase were returning customers?}{$16
 \satq{14}{In a survey of $45$ girls and $50$ boys, $18$ girls and $30$ boys said they like soccer. What is the difference, in percentage points, between the percent of boys who like soccer and the percent of girls who like soccer?}{$12$}{$40$}{$20$}{$60$}
 \vspace{1mm}
 \satq{15}{A club has $50$ members. There are $14$ members under $18$ years old, $21$ members aged $18$ to $29$, and $15$ members aged $30$ or older. What percent of the members are at least $18$ years old?}{$14\%$}{$28\%$}{$42\%$}{$72\%$}
-\vspace{1mm}
-{\sffamily\bfseries\color{accent}\fontsize{10.5}{13}\selectfont HARD (items 1--15)}\par\vspace{1.5mm}
-\satq{1}{In a survey, $45\%$ of the respondents were men. Of the men, $60\%$ prefer tea. If $54$ men prefer tea, how many people were surveyed?}{$90$}{$120$}{$200$}{$270$}
-\vspace{1mm}
 }
 \end{textblock*}
 \clearpage
 \topicheader{16}{Data Representations}
-\pagefooter{94}
+\pagefooter{93}
 \mbox{}%
 \colrule{32}{238}
 \begin{textblock*}{\COLW}(\LCOL,32.0mm)
 {\fontsize{10}{12.5}\selectfont
 \setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Hard}\\[1.3mm]
+\satq{1}{In a survey, $45\%$ of the respondents were men. Of the men, $60\%$ prefer tea. If $54$ men prefer tea, how many people were surveyed?}{$90$}{$120$}{$200$}{$270$}
+\vspace{1mm}
 \satq{2}{Group X has $80$ students, and $40\%$ of them chose option P. Group Y has $120$ students. Of all $200$ students in the two groups, $55\%$ chose option P. What percent of Group Y chose option P?}{$55\%$}{$60\%$}{$78\%$}{$65\%$}
 \vspace{1mm}
 \satq{3}{In a survey of $150$ people, $100$ answered yes to a question. There were $90$ men and $60$ women. The number of men who answered yes is $3$ times the number of women who answered yes. How many men answered no?}{$15$}{$25$}{$35$}{$75$}
@@ -498,31 +477,20 @@ Of the students who ride a bike, what percent have high attendance?}{$\approx 9.
 \vspace{1mm}
 \satq{5}{Refer to the table in the previous question. Of the students who ride in a car, what percent have low attendance?}{$\approx 7.3\%$}{$\approx 17.8\%$}{$20\%$}{$32\%$}
 \vspace{1mm}
+\satqw{6}{Refer to the table in the previous two questions. Within which attendance level is the percent of students who ride the bus highest?}{Medium attendance}{High attendance}{All three levels are equal}{Low attendance}
+\vspace{1mm}
+\satqw{7}{A research team wants to know whether extra computer time causes higher exam scores at schools. Which study design best tests whether the extra computer time causes the score increase?}{Randomly assign students to an extra-computer-time group or a control group, then compare their scores.}{Survey more schools and check whether the positive association continues.}{Draw a line of best fit through the points and examine its slope.}{Compare the same schools' scores across two different years.}
 }
 \end{textblock*}
 \begin{textblock*}{\COLW}(\RCOL,32.0mm)
 {\fontsize{10}{12.5}\selectfont
 \setkicker{Set 8 (cont.)}{Choose the correct answer.}
-\satqw{6}{Refer to the table in the previous two questions. Within which attendance level is the percent of students who ride the bus highest?}{Medium attendance}{High attendance}{All three levels are equal}{Low attendance}
-\vspace{1mm}
-\satqw{7}{A research team wants to know whether extra computer time causes higher exam scores at schools. Which study design best tests whether the extra computer time causes the score increase?}{Randomly assign students to an extra-computer-time group or a control group, then compare their scores.}{Survey more schools and check whether the positive association continues.}{Draw a line of best fit through the points and examine its slope.}{Compare the same schools' scores across two different years.}
-\vspace{1mm}
 \satq{8}{Last year a club had $100$ members: $40$ girls and $60$ boys. This year the number of girls increased by $50\%$, and the number of boys stayed the same. What percent of this year's members are girls?}{$40\%$}{$50\%$}{$60\%$}{$75\%$}
 \vspace{1mm}
 \satq{9}{A town has $200$ households. $60$ households own a bike, and $25\%$ of the bike owners own a helmet. Of the households that do not own a bike, $40\%$ own a helmet. What percent of all $200$ households own a helmet?}{$15\%$}{$25\%$}{$35.5\%$}{$40\%$}
 \vspace{1mm}
 \satq{10}{A school has $500$ students. $35\%$ of the students are in grade $9$, and $40\%$ of the grade-$9$ students are boys. Of the students who are not in grade $9$, $52\%$ are girls. How many girls are in the school?}{$105$}{$169$}{$380$}{$274$}
 \vspace{1mm}
-}
-\end{textblock*}
-\clearpage
-\topicheader{16}{Data Representations}
-\pagefooter{95}
-\mbox{}%
-\colrule{32}{238}
-\begin{textblock*}{\COLW}(\LCOL,32.0mm)
-{\fontsize{10}{12.5}\selectfont
-\setkicker{Set 8 (cont.)}{Choose the correct answer.}
 \satq{11}{A group of $200$ voters is made up of men and women in the ratio $3:2$. Of the men, $60\%$ voted yes. Of the women, $45\%$ voted yes. How many voters voted yes in total?}{$108$}{$72$}{$96$}{$120$}
 \vspace{1mm}
 \satq{12}{Class A has $40$ students, and $12$ of them chose online homework. Class B has $60$ students, and $45$ of them chose online homework. What percent of the combined $100$ students chose online homework?}{$45\%$}{$57\%$}{$52.5\%$}{$60\%$}
@@ -532,7 +500,6 @@ Of the students who ride a bike, what percent have high attendance?}{$\approx 9.
 \satq{14}{In a school, $200$ students were split into three groups. Group A has $40$ students, of whom $30$ passed. Group B has $60$ students, of whom $33$ passed. Group C has $100$ students. Overall, $60\%$ of all $200$ students passed. What percent of Group C passed?}{$55\%$}{$60\%$}{$75\%$}{$57\%$}
 \vspace{1mm}
 \satq{15}{In a survey of $160$ students, $40\%$ prefer online classes. Of the students who prefer online classes, $48$ are in grade $11$. What percent of all $160$ students prefer online classes but are not in grade $11$?}{$10\%$}{$16\%$}{$30\%$}{$40\%$}
-\vspace{1mm}
 }
 \end{textblock*}
 \begin{textblock*}{178mm}(16mm,272mm)
@@ -545,7 +512,7 @@ is reproduced anywhere in this book.\par}
 \end{textblock*}
 \clearpage
 \topicheader{16}{Data Representations}
-\pagefooter{96}
+\pagefooter{94}
 \mbox{}%
 \begin{textblock*}{194mm}(16mm,30mm)
 {\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
@@ -585,7 +552,7 @@ is reproduced anywhere in this book.\par}
 \end{textblock*}
 \clearpage
 \topicheader{16}{Data Representations}
-\pagefooter{97}
+\pagefooter{95}
 \mbox{}%
 \begin{textblock*}{194mm}(16mm,30mm)
 {\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
