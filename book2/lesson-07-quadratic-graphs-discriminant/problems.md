@@ -303,11 +303,11 @@ original.
    x-axis
 5. $b=\pm8$
 
-**Set 8 — Easy:** 1) A  2) B  3) B  4) B  5) A  6) D  7) B  8) C  9) C  10) B
+**Set 8 — Easy:** 1) A  2) B  3) B  4) B  5) A  6) D  7) B  8) C  9) C  10) B  11) C  12) D  13) D  14) C  15) C
 11) C  12) D  13) D  14) C  15) C
 
-**Set 8 — Medium:** 1) B  2) A  3) A  4) C  5) B  6) B  7) C  8) B  9) C
+**Set 8 — Medium:** 1) B  2) A  3) A  4) C  5) B  6) B  7) C  8) B  9) C  10) D  11) B  12) C  13) D  14) C  15) D
 10) D  11) B  12) C  13) D  14) C  15) D
 
-**Set 8 — Hard:** 1) B  2) B  3) C  4) D  5) B  6) D  7) D  8) C  9) D  10) D
+**Set 8 — Hard:** 1) B  2) B  3) C  4) D  5) B  6) D  7) D  8) C  9) D  10) D  11) C  12) D  13) C  14) D  15) D
 11) C  12) D  13) C  14) D  15) D
