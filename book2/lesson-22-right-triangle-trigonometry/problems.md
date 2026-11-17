@@ -208,7 +208,7 @@ identity.
 6. From the top of a cliff 30 meters high, the angle of depression to a boat on the water is $25°$. To the nearest hundredth of a meter, what is the horizontal distance from the base of the cliff to the boat?
    A) 13.99  B) 12.68  C) 70.99  D) 64.34
 
-7. Given that $\sin 38°\approx 0.6157$, what is the value of $\cos 52°+\sin 38°$ to four decimal places?
+7. Given that $\sin 38°\approx 0.61566$, what is the value of $\cos 52°+\sin 38°$ to four decimal places?
    A) 0.3843  B) 0.6157  C) 0.7880  D) 1.2313
 
 8. In a right triangle, the side opposite an acute angle of $28°$ has length 7.5. To the nearest hundredth, what is the length of the hypotenuse?
