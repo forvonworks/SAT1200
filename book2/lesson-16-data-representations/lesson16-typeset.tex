@@ -94,16 +94,16 @@
 \hspace*{7mm}{\renewcommand{\arraystretch}{1.05}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
 (A) #3 & (B) #4 \\[1mm]
 (C) #5 & (D) #6 \\
-\end{tabular}}\\[2.5mm]%
+\end{tabular}}\\[2mm]%
 }
 
 % ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
 \newcommand{\satqw}[6]{%
 \noindent\pnum{#1} #2\\[1mm]
-\hspace*{7mm}(A) #3\\[0.6mm]
-\hspace*{7mm}(B) #4\\[0.6mm]
-\hspace*{7mm}(C) #5\\[0.6mm]
-\hspace*{7mm}(D) #6\\[2.5mm]%
+\hspace*{7mm}\begin{minipage}[t]{76mm}\hangindent=6mm \hangafter=1 (A) #3\end{minipage}\\[0.6mm]
+\hspace*{7mm}\begin{minipage}[t]{76mm}\hangindent=6mm \hangafter=1 (B) #4\end{minipage}\\[0.6mm]
+\hspace*{7mm}\begin{minipage}[t]{76mm}\hangindent=6mm \hangafter=1 (C) #5\end{minipage}\\[0.6mm]
+\hspace*{7mm}\begin{minipage}[t]{76mm}\hangindent=6mm \hangafter=1 (D) #6\end{minipage}\\[2mm]%
 }
 
 % ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
@@ -303,13 +303,13 @@ $120$ students were surveyed about their language-learning method and the level 
 \hspace*{7mm}\ans{70mm}
 }
 \end{textblock*}
-\colrule{156}{114}
-\begin{textblock*}{\COLW}(\LCOL,156.0mm)
+\colrule{153}{117}
+\begin{textblock*}{\COLW}(\LCOL,153.0mm)
 {\fontsize{9.5}{11}\selectfont
 \setkicker{Set 8}{Real SAT-style problems.}
 {\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Easy}\\[1.3mm]
 \satq{1}{A teacher recorded how many books each of $40$ students read last month.\\[1mm]
-\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\begin{tabular}{|l|c|c|c|c|}
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|c|}
 \hline
 \rowcolor{badge!45}\textbf{Books read} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} \\ \hline
 Students & 4 & 11 & 15 & 10 \\ \hline
@@ -317,22 +317,24 @@ Students & 4 & 11 & 15 & 10 \\ \hline
 How many students read at least $2$ books?}{$25$}{$15$}{$21$}{$36$}
 \vspace{0mm}
 \satq{2}{A class of $40$ students was asked which instrument they play. Each student plays at most one instrument: $16$ play piano, $10$ play guitar, and the rest play no instrument. What percent of the students play no instrument?}{$14\%$}{$35\%$}{$40\%$}{$65\%$}
-}
-\end{textblock*}
-\begin{textblock*}{\COLW}(\RCOL,156.0mm)
-{\fontsize{9.5}{11}\selectfont
-\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\vspace{0mm}
 \satq{3}{The table shows the number of students who earned each score on a quiz. There are $25$ students in total.\\[1mm]
-\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\begin{tabular}{|l|c|c|c|c|c|}
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|c|c|}
 \hline
 \rowcolor{badge!45}\textbf{Score} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} \\ \hline
 Students & 2 & 5 & 3 & 6 & 9 \\ \hline
 \end{tabular}}\\[1mm]
 How many students scored $9$ or higher?}{$6$}{$9$}{$15$}{$20$}
-\vspace{0mm}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,153.0mm)
+{\fontsize{9.5}{11}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
 \satq{4}{A coffee shop counted its customers each day from Monday to Thursday: $14$, $19$, $22$, and $10$. The total for Monday through Friday was $80$. How many customers came in on Friday?}{$10$}{$17$}{$25$}{$15$}
 \vspace{0mm}
 \satqw{5}{The scatterplot shows the weekly hours $x$ that $9$ students spend on their phones and each student's average nightly sleep $y$, in hours. The points fall from the upper left to the lower right. Which description best fits the association between $x$ and $y$?}{Negative association}{Positive association}{No association}{Cannot be determined from a scatterplot}
+\vspace{0mm}
+\satq{6}{The points $(2,5),\ (4,9),\ (6,13),\ (8,17)$ lie approximately on a straight line. Based on this line, what is the approximate value of $y$ when $x=5$?}{$9$}{$11$}{$10$}{$13$}
 }
 \end{textblock*}
 \clearpage
@@ -343,10 +345,8 @@ How many students scored $9$ or higher?}{$6$}{$9$}{$15$}{$20$}
 \begin{textblock*}{\COLW}(\LCOL,32.0mm)
 {\fontsize{9.5}{11}\selectfont
 \setkicker{Set 8 (cont.)}{Choose the correct answer.}
-\satq{6}{The points $(2,5),\ (4,9),\ (6,13),\ (8,17)$ lie approximately on a straight line. Based on this line, what is the approximate value of $y$ when $x=5$?}{$9$}{$11$}{$10$}{$13$}
-\vspace{0mm}
 \satq{7}{The table shows the members of a gym by age group and gender.\\[1mm]
-\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\begin{tabular}{|l|c|c|c|}
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|}
 \hline
 \rowcolor{badge!45} & \textbf{Male} & \textbf{Female} & \textbf{Total} \\ \hline
 Adults & 35 & 25 & 60 \\ \hline
@@ -361,28 +361,28 @@ How many of the members are female?}{$25$}{$40$}{$47$}{$53$}
 \satq{10}{A frequency table lists four values: $3$ appears $4$ times, $5$ appears $2$ times, $7$ appears $6$ times, and $9$ appears $3$ times. How many data values are greater than $4$?}{$2$}{$11$}{$9$}{$15$}
 \vspace{0mm}
 \satq{11}{A bag holds $30$ marbles: $12$ red, $8$ blue, $6$ green, and $4$ yellow. What percent of the marbles are not red?}{$12\%$}{$40\%$}{$60\%$}{$70\%$}
-}
-\end{textblock*}
-\begin{textblock*}{\COLW}(\RCOL,32.0mm)
-{\fontsize{9.5}{11}\selectfont
-\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\vspace{0mm}
 \satqw{12}{A scatterplot shows the heights and shoe sizes of $15$ students. The points are scattered with no clear upward or downward pattern. Which conclusion is best supported by the scatterplot?}{Taller students always have larger shoe sizes.}{Shoe size causes students to be taller.}{All students in the group have the same shoe size.}{There is no clear association between height and shoe size in this group.}
 \vspace{0mm}
 \satq{13}{The table shows the number of students who chose each season as their favorite. There are $52$ students in total.\\[1mm]
-\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\begin{tabular}{|l|c|c|c|c|}
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|c|}
 \hline
 \rowcolor{badge!45}\textbf{Season} & \textbf{Summer} & \textbf{Spring} & \textbf{Autumn} & \textbf{Winter} \\ \hline
 Students & 18 & 14 & 11 & 9 \\ \hline
 \end{tabular}}\\[1mm]
 How many more students chose summer than winter?}{$9$}{$4$}{$18$}{$27$}
-\vspace{0mm}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32.0mm)
+{\fontsize{9.5}{11}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
 \satq{14}{Each of the $80$ people surveyed chose either tea or coffee. Among the $35$ men, $20$ chose tea. Among the $45$ women, $25$ chose tea. How many people chose coffee?}{$20$}{$35$}{$45$}{$55$}
 \vspace{0mm}
 \satqw{15}{A school found that students who attend more tutoring sessions tend to have higher test scores; this is a positive association. Which conclusion is the most accurate?}{Tutoring causes every student's score to rise.}{Students with higher scores attend fewer tutoring sessions.}{The data show a positive association, but they do not prove that tutoring caused the higher scores.}{Higher test scores cause students to attend more tutoring sessions.}
 \vspace{0mm}
 {\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Medium}\\[1.3mm]
 \satq{1}{The table shows the club each of $100$ students chose.\\[1mm]
-\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\begin{tabular}{|l|c|c|c|c|}
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|c|}
 \hline
 \rowcolor{badge!45} & \textbf{Art} & \textbf{Music} & \textbf{Sport} & \textbf{Total} \\ \hline
 Juniors & 18 & 12 & 20 & 50 \\ \hline
@@ -392,6 +392,10 @@ Seniors & 22 & 8 & 20 & 50 \\ \hline
 Of the students who chose music, what percent are seniors?}{$8\%$}{$40\%$}{$20\%$}{$60\%$}
 \vspace{0mm}
 \satq{2}{Refer to the table in the previous question. What percent of all $100$ students are seniors who chose art?}{$40\%$}{$44\%$}{$22\%$}{$50\%$}
+\vspace{0mm}
+\satq{3}{Refer to the table in the first question of this set. Next year the number of students who choose music increases by $25\%$. How many students will choose music next year?}{$5$}{$23$}{$45$}{$25$}
+\vspace{0mm}
+\satq{4}{The points $(1,3),\ (2,5),\ (3,7),\ (4,9),\ (5,11)$ lie on a straight line. Based on this trend, what is the most reasonable value of $y$ when $x=7$?}{$15$}{$13$}{$17$}{$21$}
 }
 \end{textblock*}
 \clearpage
@@ -402,16 +406,12 @@ Of the students who chose music, what percent are seniors?}{$8\%$}{$40\%$}{$20\%
 \begin{textblock*}{\COLW}(\LCOL,32.0mm)
 {\fontsize{9.5}{11}\selectfont
 \setkicker{Set 8 (cont.)}{Choose the correct answer.}
-\satq{3}{Refer to the table in the first question of this set. Next year the number of students who choose music increases by $25\%$. How many students will choose music next year?}{$5$}{$23$}{$45$}{$25$}
-\vspace{0mm}
-\satq{4}{The points $(1,3),\ (2,5),\ (3,7),\ (4,9),\ (5,11)$ lie on a straight line. Based on this trend, what is the most reasonable value of $y$ when $x=7$?}{$15$}{$13$}{$17$}{$21$}
-\vspace{0mm}
 \satqw{5}{A health article reports that people who drink more water have fewer headaches, and concludes that drinking water prevents headaches. Which statement is the best evaluation of this conclusion?}{The conclusion is valid because the association is strong.}{The data show an association, but other factors could explain it, so the data do not prove that water prevents headaches.}{The conclusion is wrong because headaches cause people to drink less water, so there is no association.}{The conclusion is valid because fewer headaches always follow more water.}
 \vspace{0mm}
 \satq{6}{In a survey of $300$ people, $60\%$ said they use a library. Of the people who use a library, $40\%$ are students. How many library users are students?}{$108$}{$120$}{$72$}{$180$}
 \vspace{0mm}
 \satq{7}{The table shows the pets owned by $200$ people, classified by housing type.\\[1mm]
-\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\begin{tabular}{|l|c|c|c|c|}
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|c|}
 \hline
 \rowcolor{badge!45} & \textbf{Dog} & \textbf{Cat} & \textbf{Other} & \textbf{Total} \\ \hline
 Renters & 25 & 30 & 25 & 80 \\ \hline
@@ -423,19 +423,19 @@ Of the people who have a cat, what percent are homeowners?}{$37.5\%$}{$56.25\%$}
 \satq{8}{The points in a scatterplot lie approximately along a straight line through $(20,40)$ and $(30,70)$, where $x$ is the average July temperature in degrees Celsius and $y$ is the number of ice cream shops in the city. Using this line, approximately how many shops would a city with an average July temperature of $25^\circ$C have?}{$55$}{$40$}{$50$}{$70$}
 \vspace{0mm}
 \satq{9}{A survey of $120$ students asked how they get to school: $40\%$ walk, $25\%$ take the bus, and $35\%$ ride a bike. How many more students ride a bike than take the bus?}{$18$}{$12$}{$30$}{$42$}
+\vspace{0mm}
+\satq{10}{A company has $60$ employees: $15$ managers and $45$ staff members. Of the managers, $9$ commute by train. Of the staff members, $21$ commute by train. Of all the employees who commute by train, what percent are managers?}{$15\%$}{$60\%$}{$30\%$}{$70\%$}
 }
 \end{textblock*}
 \begin{textblock*}{\COLW}(\RCOL,32.0mm)
 {\fontsize{9.5}{11}\selectfont
 \setkicker{Set 8 (cont.)}{Choose the correct answer.}
-\satq{10}{A company has $60$ employees: $15$ managers and $45$ staff members. Of the managers, $9$ commute by train. Of the staff members, $21$ commute by train. Of all the employees who commute by train, what percent are managers?}{$15\%$}{$60\%$}{$30\%$}{$70\%$}
-\vspace{0mm}
 \satqw{11}{Group 1 has $48$ people, of whom $36$ are satisfied. Group 2 has $60$ people, of whom $45$ are satisfied. Which statement is true?}{Group 1 has a higher percent satisfied.}{Group 2 has a higher percent satisfied.}{Group 2 has a higher percent satisfied, because it has more satisfied people.}{Both groups have the same percent satisfied, $75\%$.}
 \vspace{0mm}
 \satqw{12}{Plot 1 shows points spread in a loose band that rises from left to right. Plot 2 shows points lying close to a line that falls from left to right. Which statement is correct?}{Plot 2 shows a stronger association, and the association is negative.}{Plot 1 shows a stronger association, and the association is negative.}{Plot 1 shows a stronger association, and the association is positive.}{Plot 2 shows a stronger association, and the association is positive.}
 \vspace{0mm}
 \satq{13}{A store recorded whether each of its $100$ customers made a purchase.\\[1mm]
-\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\begin{tabular}{|l|c|c|c|}
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|}
 \hline
 \rowcolor{badge!45} & \textbf{Purchased} & \textbf{Did not purchase} & \textbf{Total} \\ \hline
 New customers & 36 & 24 & 60 \\ \hline
@@ -465,7 +465,7 @@ What percent of the customers who made a purchase were returning customers?}{$16
 \satq{3}{In a survey of $150$ people, $100$ answered yes to a question. There were $90$ men and $60$ women. The number of men who answered yes is $3$ times the number of women who answered yes. How many men answered no?}{$15$}{$25$}{$35$}{$75$}
 \vspace{0mm}
 \satq{4}{The table shows how each of $110$ students in a school travels to school, by attendance level.\\[1mm]
-\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\begin{tabular}{|l|c|c|c|c|}
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|c|}
 \hline
 \rowcolor{badge!45} & \textbf{Bus} & \textbf{Car} & \textbf{Bike} & \textbf{Total} \\ \hline
 Low attendance & 12 & 8 & 5 & 25 \\ \hline
@@ -480,13 +480,13 @@ Of the students who ride a bike, what percent have high attendance?}{$\approx 9.
 \satqw{6}{Refer to the table in the previous two questions. Within which attendance level is the percent of students who ride the bus highest?}{Medium attendance}{High attendance}{All three levels are equal}{Low attendance}
 \vspace{0mm}
 \satqw{7}{A research team wants to know whether extra computer time causes higher exam scores at schools. Which study design best tests whether the extra computer time causes the score increase?}{Randomly assign students to an extra-computer-time group or a control group, then compare their scores.}{Survey more schools and check whether the positive association continues.}{Draw a line of best fit through the points and examine its slope.}{Compare the same schools' scores across two different years.}
-\vspace{0mm}
-\satq{8}{Last year a club had $100$ members: $40$ girls and $60$ boys. This year the number of girls increased by $50\%$, and the number of boys stayed the same. What percent of this year's members are girls?}{$40\%$}{$50\%$}{$60\%$}{$75\%$}
 }
 \end{textblock*}
 \begin{textblock*}{\COLW}(\RCOL,32.0mm)
 {\fontsize{9.5}{11}\selectfont
 \setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{8}{Last year a club had $100$ members: $40$ girls and $60$ boys. This year the number of girls increased by $50\%$, and the number of boys stayed the same. What percent of this year's members are girls?}{$40\%$}{$50\%$}{$60\%$}{$75\%$}
+\vspace{0mm}
 \satq{9}{A town has $200$ households. $60$ households own a bike, and $25\%$ of the bike owners own a helmet. Of the households that do not own a bike, $40\%$ own a helmet. What percent of all $200$ households own a helmet?}{$15\%$}{$25\%$}{$35.5\%$}{$40\%$}
 \vspace{0mm}
 \satq{10}{A school has $500$ students. $35\%$ of the students are in grade $9$, and $40\%$ of the grade-$9$ students are boys. Of the students who are not in grade $9$, $52\%$ are girls. How many girls are in the school?}{$105$}{$169$}{$380$}{$274$}
@@ -568,12 +568,12 @@ is reproduced anywhere in this book.\par}
 1&2&3&4&5&6&7&8&9&10\\\hline
 A&B&C&D&A&B&C&D&A&B\\\hline
 \end{tabular}\\[1mm]
-\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\makebox[194mm][c]{\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
 \hline
 \rowcolor{badge!55}
 11&12&13&14&15\\\hline
 C&D&A&B&C\\\hline
-\end{tabular}
+\end{tabular}}
 }
 \end{textblock*}
 \begin{textblock*}{194mm}(16mm,100mm)
@@ -587,12 +587,12 @@ C&D&A&B&C\\\hline
 1&2&3&4&5&6&7&8&9&10\\\hline
 B&C&D&A&B&C&D&A&B&C\\\hline
 \end{tabular}\\[1mm]
-\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\makebox[194mm][c]{\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
 \hline
 \rowcolor{badge!55}
 11&12&13&14&15\\\hline
 D&A&B&C&D\\\hline
-\end{tabular}
+\end{tabular}}
 }
 \end{textblock*}
 \begin{textblock*}{194mm}(16mm,154mm)
@@ -606,12 +606,12 @@ D&A&B&C&D\\\hline
 1&2&3&4&5&6&7&8&9&10\\\hline
 C&D&A&B&C&D&A&B&C&D\\\hline
 \end{tabular}\\[1mm]
-\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\makebox[194mm][c]{\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
 \hline
 \rowcolor{badge!55}
 11&12&13&14&15\\\hline
 A&B&C&D&A\\\hline
-\end{tabular}
+\end{tabular}}
 }
 \end{textblock*}
 \begin{textblock*}{194mm}(16mm,232mm)
