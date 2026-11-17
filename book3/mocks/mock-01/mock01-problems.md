@@ -367,21 +367,13 @@ Seniors & 24 & 31 & 40\\\hline
 - Domain: ADV
 - Difficulty: H
 - Type: MC
-- Stem: The table gives three values of the quadratic function $f$. The graph of $g$ is the graph of $f$ translated 3 units to the left and 10 units up. What is the value of $g(0)$?
-- Figure:
-```latex
-\begin{tabular}{|c|c|c|c|}
-\hline
-$x$ & $2$ & $4$ & $6$\\\hline
-$f(x)$ & $1$ & $-7$ & $1$\\\hline
-\end{tabular}
-```
-- A: $-5$
-- B: $5$
-- C: $35$
-- D: $101$
-- Answer: B
-- Solution: $f(2)=f(6)$ so the axis is $x=4$, vertex $(4,-7)$; $a=2$; $g(x)=f(x+3)+10$, $g(0)=f(3)+10=-5+10=5$.
+- Stem: The quadratic function $f$ has a maximum value of 25 at $x=3$, and $f(0)=16$. The function $g$ is defined by $g(x)=-2f(x+1)+k$, where $k$ is a constant. The graph of $g$ in the $xy$-plane has exactly one $x$-intercept. What is the value of $g(0)$?
+- A: $-17$
+- B: $0$
+- C: $8$
+- D: $32$
+- Answer: C
+- Solution: $f(x)=a(x-3)^2+25$, $f(0)=9a+25=16$, $a=-1$. $g(x)=2(x-2)^2-50+k$ has minimum $k-50$, one $x$-intercept needs $k=50$; $g(0)=-2f(1)+50=-42+50=8$ ($-17$: $k=25$; $0$: the minimum value; $32$: shifted the wrong way).
 
 ## M2-Q11
 - Domain: ALG
@@ -451,41 +443,33 @@ $f(x)$ & $1$ & $-7$ & $1$\\\hline
 - Domain: ALG
 - Difficulty: H
 - Type: MC
-- Stem: The length of a rectangle is 4 more than twice its width. When the length is increased by 6 and the width is decreased by 2, the area of the new rectangle equals the area of the original rectangle. What is the perimeter of the original rectangle, in units?
-- A: $34$
-- B: $60$
-- C: $68$
-- D: $76$
-- Answer: C
-- Solution: $(2w+10)(w-2)=(2w+4)w \Rightarrow 2w=20$, $w=10$, $L=24$; perimeter $=68$ (76 is the new rectangle's).
+- Stem: In the $xy$-plane, a line has a positive $x$-intercept and a positive $y$-intercept and passes through the point $(4,3)$. The triangle formed by the line and the two axes has an area of 24 square units. What is the slope of the line?
+- A: $-\frac{4}{3}$
+- B: $-\frac{3}{4}$
+- C: $\frac{3}{4}$
+- D: $\frac{4}{3}$
+- Answer: B
+- Solution: Intercepts $p,q$ with $pq=48$ and $\frac4p+\frac3q=1$; so $3p^2-48p+192=0$, $(p-8)^2=0$, $p=8$, $q=6$; slope $-q/p=-3/4$ ($-4/3$ swaps the intercepts).
 
 ## M2-Q18
 - Domain: ADV
 - Difficulty: H
 - Type: GRID
-- Stem: The number of subscribers to a video channel, in thousands, is modeled by $S(t)=a\cdot b^{t}$, where $t$ is the number of weeks since the channel launched and $a$ and $b$ are positive constants. The table gives two values. According to the model, how many more thousands of subscribers will the channel have 6 weeks after launch than 5 weeks after launch?
-- Figure:
-```latex
-\begin{tabular}{|c|c|c|}
-\hline
-$t$ (weeks) & $1$ & $4$\\\hline
-$S(t)$ (thousands) & $6$ & $162$\\\hline
-\end{tabular}
-```
-- Answer: 972
-- Solution: $b^3=162/6=27$, $b=3$, $a=2$; $S(6)-S(5)=1458-486=972$ (1458 alone is a trap).
+- Stem: The graph of $y=-x^2+8x-3$ and the line $y=2x+k$, where $k$ is a constant, intersect at two points in the $xy$-plane. The $x$-coordinates of the two points differ by 4. What is the $y$-coordinate of the intersection point that has the larger $x$-coordinate?
+- Answer: 12
+- Solution: $x^2-6x+(3+k)=0$; roots differ by $\sqrt{36-4(3+k)}=4$, so $k=2$, roots $1$ and $5$; $y=2(5)+2=12$.
 
 ## M2-Q19
 - Domain: ALG
 - Difficulty: H
 - Type: MC
-- Stem: The equation $|2x-7|=k$, where $k$ is a positive constant, has two solutions that differ by 9. What is the product of the two solutions?
-- A: $-8$
-- B: $7$
-- C: $8$
-- D: $9$
+- Stem: The function $f$ is linear, and $f(f(x))=4x+9$ for all values of $x$. If $f(2)>0$, what is the value of $f(-10)$?
+- A: $-17$
+- B: $-15.5$
+- C: $-11$
+- D: $11$
 - Answer: A
-- Solution: Solutions $(7\pm k)/2$ differ by $k$, so $k=9$: $x=8$ and $x=-1$; product $-8$.
+- Solution: $f(x)=ax+b$: $a^2=4$, $b(a+1)=9$. $a=-2$ gives $b=-9$ and $f(2)=-13<0$ (rejected, gives $11$); $a=2$, $b=3$, $f(-10)=-17$ ($-11$: $b=9$; $-15.5$: $b=9/2$).
 
 ## M2-Q20
 - Domain: PSDA
@@ -524,10 +508,10 @@ $S(t)$ (thousands) & $6$ & $162$\\\hline
 - Domain: ADV
 - Difficulty: H
 - Type: MC
-- Stem: What is the solution to the equation below?\dsp{$\sqrt{x+7}-\sqrt{x-2}=1$}
-- A: $2$
-- B: $7$
-- C: $9$
-- D: $18$
+- Stem: In the equation below, $k$ is a constant.\dsp{$\dfrac{x-1}{x-k}=\dfrac{x+3}{x-2}$}What is the sum of all values of $k$ for which the equation has no solution?
+- A: $3$
+- B: $6$
+- C: $8$
+- D: $9$
 - Answer: D
-- Solution: $\sqrt{x+7}=1+\sqrt{x-2}$; square: $x+7=x-1+2\sqrt{x-2}$, so $\sqrt{x-2}=4$, $x=18$ (check: $5-4=1$).
+- Solution: Cross-multiplying gives $(k-6)x=-3k-2$. $k=6$: no solution. Otherwise $x=\frac{3k+2}{6-k}$, which is extraneous when it equals $2$ ($k=2$) or $k$ ($k=1$ or $2$). So $k\in\{1,2,6\}$, sum $9$ (3, 8, 6 drop a value).

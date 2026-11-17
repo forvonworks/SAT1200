@@ -118,7 +118,7 @@ PREAMBLE = r"""\documentclass[a4paper]{article}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
 % centered display line inside a stem
-\newcommand{\dsp}[1]{\par\vspace{1.4mm}\centerline{#1}\vspace{0.2mm}}
+\newcommand{\dsp}[1]{\par\vspace{1.4mm}\centerline{#1}\vspace{1.8mm}}
 
 % student-produced response box
 \newcommand{\gridbox}{%
