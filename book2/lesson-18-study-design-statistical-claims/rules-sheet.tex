@@ -102,57 +102,56 @@
 \pagefooter{98}
 \mbox{}%
 
-% ---- CARD 1: Random sample -> generalize ----
-\cardbg{16}{40}{178}{48}
-\pill{26}{43}{Random sample (tasodifiy tanlanma) $\to$ generalize}
+% ---- Random sampling (y=40 h=38, end 78) ----
+\cardbg{16}{40}{178}{38}
+\pill{26}{43}{Random sampling (tasodifiy tanlanma) $\Rightarrow$ generalize}
 
-\begin{textblock*}{158mm}(26mm,56mm)
-{\fontsize{11}{14}\selectfont\color{ink}
-Random sample $\to$ conclusion applies to the whole population. Convenience
-sample $\to$ describes only itself, no matter how large.}
+\begin{textblock*}{158mm}(26mm,53.0mm)
+{\fontsize{13}{16}\selectfont random sample $\Rightarrow$ result applies to the whole population}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,72mm)
-{\fontsize{10.5}{13}\selectfont\color{black!55}\itshape
-Size improves precision; only randomness improves representativeness.}
+\begin{textblock*}{158mm}(26mm,61.0mm)
+{\fontsize{13}{16}\selectfont convenience / voluntary-response sample $\Rightarrow$ describes only itself}
 \end{textblock*}
 
-% ---- CARD 2: Random assignment -> causation ----
-\cardbg{16}{96}{178}{52}
-\pill{26}{99}{Random assignment $\to$ causation}
-
-\begin{textblock*}{158mm}(26mm,112mm)
-{\fontsize{11}{14}\selectfont\color{ink}
-Random assignment to groups $\to$ ``X causes Y.'' Observational study (no
-assignment) $\to$ ``X is associated with Y'' only -- never causation.}
+\begin{textblock*}{158mm}(26mm,70.0mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape A bigger sample improves precision, not representativeness.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,131mm)
-{\fontsize{10.5}{13}\selectfont\color{black!55}\itshape
-A lurking variable can drive both at once -- e.g. ice-cream sales and
-drownings both rise with hot weather, not with each other.}
+% ---- Random assignment (y=85 h=38, end 123) ----
+\cardbg{16}{85}{178}{38}
+\pill{26}{88}{Random assignment (tasodifiy taqsimlash) $\Rightarrow$ cause-and-effect}
+
+\begin{textblock*}{158mm}(26mm,98.0mm)
+{\fontsize{13}{16}\selectfont random assignment to groups $\Rightarrow$ ``X causes Y''}
 \end{textblock*}
 
-% ---- CARD 3: The two-question check ----
-\cardbg{16}{156}{178}{95}
-\pill{26}{159}{What can this study prove?}
-
-\begin{textblock*}{158mm}(26mm,172mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-Ask both questions -- they're independent:}
+\begin{textblock*}{158mm}(26mm,106.0mm)
+{\fontsize{13}{16}\selectfont observational study (no assignment) $\Rightarrow$ ``X is associated with Y'' only}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,181mm)
-{\fontsize{10}{13}\selectfont
-\begin{tabular}{|>{\centering\arraybackslash}p{32mm}|>{\centering\arraybackslash}p{36mm}|p{74mm}|}
+\begin{textblock*}{158mm}(26mm,115.0mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape A lurking variable may drive both X and Y.}
+\end{textblock*}
+
+% ---- Decision table (y=130 h=68, end 198) ----
+\cardbg{16}{130}{178}{68}
+\pill{26}{133}{What can this study prove?}
+
+\begin{textblock*}{158mm}(26mm,143.0mm)
+{\fontsize{11}{14}\selectfont
+\begin{tabular}{|>{\centering\arraybackslash}p{30mm}|>{\centering\arraybackslash}p{40mm}|p{58mm}|}
 \hline
-\rowcolor{accent}
-{\color{white}\textbf{Sample random?}} & {\color{white}\textbf{Assignment random?}} & {\color{white}\textbf{Can claim}} \\ \hline
-Yes & Yes & Causation, whole population (rare) \\ \hline
-Yes & No & Correlation only, whole population \\ \hline
-No & Yes & Causation, this group only \\ \hline
-No & No & Nothing reliable \\ \hline
+\cellcolor{accent}\textcolor{white}{\textbf{Random sample?}} & \cellcolor{accent}\textcolor{white}{\textbf{Random assignment?}} & \cellcolor{accent}\textcolor{white}{\textbf{Can claim}} \\ \hline
+Yes & Yes & cause-and-effect, whole population \\ \hline
+Yes & No & association only, whole population \\ \hline
+No & Yes & cause-and-effect, this group only \\ \hline
+No & No & neither \\ \hline
 \end{tabular}}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,187.0mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape Sampling answers ``who?'' (generalize); assignment answers ``which group?'' (cause).}
 \end{textblock*}
 
 \end{document}

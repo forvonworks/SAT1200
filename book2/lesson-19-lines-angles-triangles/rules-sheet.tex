@@ -97,68 +97,89 @@
 % ======================================================================
 % PAGE 1
 % ======================================================================
-\topicheader{19}{Angles \& Triangles}
+\topicheader{19}{Lines, Angles \& Triangles}
 \videobanner{Lesson 19}
 \pagefooter{103}
 \mbox{}%
 
-% ---- CARD 1: Angle relationships ----
-\cardbg{16}{40}{178}{70}
+% ---- Angle relationships (y=40 h=56, end 96) ----
+\cardbg{16}{40}{178}{56}
 \pill{26}{43}{Angle relationships (burchaklar)}
 
-\begin{textblock*}{158mm}(26mm,56mm)
+\begin{textblock*}{158mm}(26mm,54.0mm)
 {\fontsize{11}{14}\selectfont
-\begin{tabular}{|p{60mm}|>{\centering\arraybackslash}p{85mm}|}
+\begin{tabular}{|p{62mm}|>{\centering\arraybackslash}p{62mm}|}
 \hline
-\rowcolor{accent}
-{\color{white}\textbf{Type}} & {\color{white}\textbf{Rule}} \\ \hline
-Complementary & sum $=90°$ \\ \hline
-Supplementary & sum $=180°$ \\ \hline
+\cellcolor{accent}\textcolor{white}{\textbf{Pair}} & \cellcolor{accent}\textcolor{white}{\textbf{Rule}} \\ \hline
+Complementary angles & sum $=90°$ \\ \hline
+Supplementary angles (on a line) & sum $=180°$ \\ \hline
+Angles around a point & sum $=360°$ \\ \hline
 Vertical angles & equal \\ \hline
 \end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,95mm)
-{\fontsize{13}{16}\selectfont $\angle A+\angle B+\angle C=180°$ (any triangle)}
-\end{textblock*}
+% ---- Parallel lines cut by a transversal (y=103 h=70, end 173) ----
+\cardbg{16}{103}{178}{70}
+\pill{26}{106}{Parallel lines cut by a transversal}
 
-% ---- CARD 2: Parallel lines cut by a transversal ----
-\cardbg{16}{116}{178}{150}
-\pill{26}{119}{Parallel lines cut by a transversal}
-
-\begin{textblock*}{158mm}(26mm,132mm)
+\begin{textblock*}{92mm}(26mm,117.0mm)
 {\fontsize{11}{14}\selectfont
-\begin{tabular}{|p{60mm}|>{\centering\arraybackslash}p{85mm}|}
+\begin{tabular}{|p{44mm}|>{\centering\arraybackslash}p{28mm}|}
 \hline
-\rowcolor{accent}
-{\color{white}\textbf{Pair}} & {\color{white}\textbf{Rule}} \\ \hline
-Corresponding angles & equal \\ \hline
-Alternate interior angles & equal \\ \hline
-Co-interior (same-side) angles & sum $=180°$ \\ \hline
+\cellcolor{accent}\textcolor{white}{\textbf{Pair}} & \cellcolor{accent}\textcolor{white}{\textbf{Rule}} \\ \hline
+Corresponding & equal \\ \hline
+Alternate interior & equal \\ \hline
+Same-side interior & sum $=180°$ \\ \hline
 \end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,171mm)
-\begin{tikzpicture}[every node/.style={font=\fontsize{10}{10}\selectfont}]
-\coordinate (L1a) at (-5mm,25mm); \coordinate (L1b) at (65mm,25mm);
-\coordinate (L2a) at (-5mm,0mm);  \coordinate (L2b) at (65mm,0mm);
-\draw[ink,line width=1pt] (L1a) -- (L1b);
-\draw[ink,line width=1pt] (L2a) -- (L2b);
-\draw[ink,line width=1.2pt] (10mm,22.8mm) -- (14mm,25mm) -- (10mm,27.2mm);
-\draw[ink,line width=1.2pt] (10mm,-2.2mm) -- (14mm,0mm) -- (10mm,2.2mm);
-\coordinate (P) at (25mm,25mm); \coordinate (Q) at (45mm,0mm);
-\draw[accent,line width=1.2pt] (15.6mm,36.7mm) -- (54.4mm,-11.7mm);
-\node[text=accent,font=\sffamily\bfseries\fontsize{11}{11}\selectfont] at (31mm,19mm) {$a$};
-\node[text=accent,font=\sffamily\bfseries\fontsize{11}{11}\selectfont] at (36mm,8mm) {$a$};
-\node[anchor=west,font=\tiny] at (65mm,25mm) {$\ell_1$};
-\node[anchor=west,font=\tiny] at (65mm,0mm) {$\ell_2$};
+\begin{textblock*}{92mm}(26mm,150.0mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape Only when the lines are stated or marked $\parallel$.}
+\end{textblock*}
+
+\begin{textblock*}{74mm}(118mm,115.0mm)
+\begin{tikzpicture}[every node/.style={font=\fontsize{9.5}{9.5}\selectfont,text=accent}]
+\pgfmathsetmacro{\tl}{30/sin(65)}
+\coordinate (P) at (36mm,30mm);
+\coordinate (Q) at ($(P)+(245:\tl mm)$);
+\draw[ink,line width=1pt] (0mm,30mm) -- (62mm,30mm);
+\draw[ink,line width=1pt] (0mm,0mm) -- (62mm,0mm);
+\draw[ink,line width=1.2pt] (8mm,27.8mm) -- (12mm,30mm) -- (8mm,32.2mm);
+\draw[ink,line width=1.2pt] (8mm,-2.2mm) -- (12mm,0mm) -- (8mm,2.2mm);
+\draw[accent,line width=1.2pt] ($(P)+(65:12mm)$) -- ($(Q)+(245:12mm)$);
+\foreach \c in {P,Q}{
+  \node at ($(\c)+(32.5:10mm)$) {$65°$};
+  \node at ($(\c)+(122.5:10mm)$) {$115°$};
+  \node at ($(\c)+(212.5:10mm)$) {$65°$};
+  \node at ($(\c)+(302.5:10mm)$) {$115°$};
+}
+\node[anchor=west,text=ink] at (62mm,30mm) {$\ell_1$};
+\node[anchor=west,text=ink] at (62mm,0mm) {$\ell_2$};
 \end{tikzpicture}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,245mm)
-{\fontsize{10}{13}\selectfont\color{black!55}\itshape
-Only applies when the lines are stated or marked ($\rightarrow$) parallel -- never assume
-from how a figure looks.}
+% ---- Triangle angle sum (y=180 h=36, end 216) ----
+\cardbg{16}{180}{178}{36}
+\pill{26}{183}{Triangle angle sum}
+
+\begin{textblock*}{158mm}(26mm,193.0mm)
+{\fontsize{15}{18}\selectfont $\angle A+\angle B+\angle C=180°$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,205.0mm)
+{\fontsize{13}{16}\selectfont $50°+65°+x=180°\ \Rightarrow\ x=65°$}
+\end{textblock*}
+
+% ---- Isosceles & equilateral (y=223 h=40, end 263) ----
+\cardbg{16}{223}{178}{40}
+\pill{26}{226}{Isosceles \& equilateral triangles}
+
+\begin{textblock*}{158mm}(26mm,236.0mm)
+{\fontsize{13}{16}\selectfont isosceles: base angles equal \quad equilateral: every angle $=60°$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,245.0mm)
+{\fontsize{13}{16}\selectfont vertex angle $40°\ \Rightarrow\ $ each base angle $=\dfrac{180°-40°}{2}=70°$}
 \end{textblock*}
 
 \clearpage
@@ -166,65 +187,106 @@ from how a figure looks.}
 % ======================================================================
 % PAGE 2
 % ======================================================================
-\topicheader{19}{Angles \& Triangles}
+\topicheader{19}{Lines, Angles \& Triangles}
 \pagekicker{Rules sheet -- 2/2}
 \pagefooter{104}
 \mbox{}%
 
-% ---- CARD 3: Similar triangles ----
-\cardbg{16}{33}{178}{80}
-\pill{26}{36}{Similar triangles (o'xshash)}
+% ---- Exterior angle (y=33 h=52, end 85) ----
+\cardbg{16}{33}{178}{52}
+\pill{26}{36}{Exterior angle of a triangle}
 
-\begin{textblock*}{158mm}(26mm,49mm)
-{\fontsize{12}{15}\selectfont
-$\triangle ABC\sim\triangle DEF\ \Longrightarrow\ \dfrac{AB}{DE}=\dfrac{BC}{EF}=\dfrac{AC}{DF}$}
+\begin{textblock*}{92mm}(26mm,47.0mm)
+{\fontsize{13}{16}\selectfont\raggedright exterior angle $=$ sum of the two remote interior angles}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,68mm)
-{\fontsize{11}{14}\selectfont\color{ink}
-Letter order tells you the match: $A\leftrightarrow D$, $B\leftrightarrow E$, $C\leftrightarrow F$
--- proportional, not equal.}
+\begin{textblock*}{92mm}(26mm,62.0mm)
+{\fontsize{13}{16}\selectfont $40°+75°=115°$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,80mm)
+\begin{textblock*}{92mm}(26mm,70.0mm)
+{\fontsize{13}{16}\selectfont exterior $+$ adjacent interior $=180°$}
+\end{textblock*}
+
+\begin{textblock*}{66mm}(120mm,46.0mm)
+\begin{tikzpicture}[every node/.style={font=\fontsize{8.5}{8.5}\selectfont,text=accent}]
+\pgfmathsetmacro{\ab}{40*sin(65)/sin(75)}
+\coordinate (A) at (0mm,0mm);
+\coordinate (C) at (40mm,0mm);
+\coordinate (B) at (40:\ab mm);
+\coordinate (D) at (56mm,0mm);
+\draw[accent,line width=1.1pt] (A) -- (B) -- (C) -- cycle;
+\draw[accent,line width=1.1pt] (C) -- (D);
+\draw[accent,line width=0.6pt] ($(A)+(0:9mm)$) arc[start angle=0,end angle=40,radius=9mm];
+\draw[accent,line width=0.6pt] ($(B)+(220:8mm)$) arc[start angle=220,end angle=295,radius=8mm];
+\draw[accent,line width=0.6pt] ($(C)+(115:5mm)$) arc[start angle=115,end angle=180,radius=5mm];
+\draw[accent,line width=0.6pt] ($(C)+(0:7mm)$) arc[start angle=0,end angle=115,radius=7mm];
+\node at ($(A)+(20:14mm)$) {$40°$};
+\node at ($(B)+(257.5:12mm)$) {$75°$};
+\node at ($(C)+(147.5:9.5mm)$) {$65°$};
+\node at ($(C)+(57.5:11mm)$) {$115°$};
+\node[text=ink,anchor=north east] at (A) {$A$};
+\node[text=ink,anchor=south] at (B) {$B$};
+\node[text=ink,anchor=north] at (C) {$C$};
+\end{tikzpicture}
+\end{textblock*}
+
+% ---- Similar triangles (y=92 h=86, end 178) ----
+\cardbg{16}{92}{178}{86}
+\pill{26}{95}{Similar triangles (o'xshash)}
+
+\begin{textblock*}{158mm}(26mm,105.0mm)
+{\fontsize{15}{18}\selectfont $\triangle ABC\sim\triangle DEF\ \Rightarrow\ \dfrac{AB}{DE}=\dfrac{BC}{EF}=\dfrac{AC}{DF}$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,120.0mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape Match sides by letter order ($A\leftrightarrow D$, $B\leftrightarrow E$, $C\leftrightarrow F$); proportional, not equal.}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,130.0mm)
+{\fontsize{12}{16}\selectfont $\text{scale}=\dfrac{DE}{AB}=\dfrac86=\dfrac43\ \Rightarrow\ EF=9\cdot\dfrac43=12,\ DF=12\cdot\dfrac43=16$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,145.0mm)
+\begin{tikzpicture}[every node/.style={font=\fontsize{8.5}{8.5}\selectfont}]
+\pgfmathsetmacro{\bx}{99/24*3}
+\pgfmathsetmacro{\by}{sqrt(36-(99/24)^2)*3}
+\pgfmathsetmacro{\angA}{acos(99/144)}
+\pgfmathsetmacro{\angC}{acos(189/216)}
+\foreach \o/\s/\la/\lb/\lc/\sa/\sb/\sc in {0mm/1/A/B/C/6/9/12, 56mm/1.3333333/D/E/F/8/12/16}{
+\begin{scope}[shift={(\o,0mm)},scale=\s]
+\coordinate (P1) at (0mm,0mm);
+\coordinate (P3) at (36mm,0mm);
+\coordinate (P2) at (\bx mm,\by mm);
+\draw[accent,line width=1.1pt] (P1) -- (P2) -- (P3) -- cycle;
+\draw[accent,line width=0.6pt] ($(P1)+(0:6mm)$) arc[start angle=0,end angle=\angA,radius=6mm];
+\draw[accent,line width=0.6pt] ($(P3)+({180-\angC}:5mm)$) arc[start angle={180-\angC},end angle=180,radius=5mm];
+\draw[accent,line width=0.6pt] ($(P3)+({180-\angC}:6.5mm)$) arc[start angle={180-\angC},end angle=180,radius=6.5mm];
+\path (P1) -- (P2) node[midway,above left,text=accent] {\sa};
+\path (P2) -- (P3) node[midway,above right,text=accent] {\sb};
+\path (P1) -- (P3) node[midway,below,text=accent] {\sc};
+\node[text=ink,anchor=north east] at (P1) {\la};
+\node[text=ink,anchor=south] at (P2) {\lb};
+\node[text=ink,anchor=north west] at (P3) {\lc};
+\end{scope}
+}
+\end{tikzpicture}
+\end{textblock*}
+
+
+% ---- Proving similarity (y=185 h=50, end 235) ----
+\cardbg{16}{185}{178}{50}
+\pill{26}{188}{Proving similarity}
+
+\begin{textblock*}{158mm}(26mm,198.0mm)
 {\fontsize{11}{14}\selectfont
-$AB=6,BC=9,AC=12,DE=8\ \Longrightarrow\ \text{scale}=\dfrac{8}{6}=\dfrac43\ \Longrightarrow\ EF=12,\ DF=16$}
-\end{textblock*}
-
-% ---- CARD 4: Proving similarity ----
-\cardbg{16}{122}{178}{110}
-\pill{26}{125}{Proving similarity}
-
-\begin{textblock*}{158mm}(26mm,138mm)
-{\fontsize{11}{14}\selectfont
-\begin{tabular}{|>{\centering\arraybackslash}p{20mm}|p{125mm}|}
+\begin{tabular}{|>{\centering\arraybackslash}p{18mm}|p{102mm}|}
 \hline
-\rowcolor{accent}
-{\color{white}\textbf{Test}} & {\color{white}\textbf{Checks}} \\ \hline
+\cellcolor{accent}\textcolor{white}{\textbf{Test}} & \cellcolor{accent}\textcolor{white}{\textbf{Checks}} \\ \hline
 AA & two pairs of angles equal \\ \hline
 SAS & two side pairs proportional, included angle equal \\ \hline
 SSS & all three side pairs proportional \\ \hline
 \end{tabular}}
-\end{textblock*}
-
-\begin{textblock*}{158mm}(26mm,180mm)
-\begin{tikzpicture}[every node/.style={font=\fontsize{9}{9}\selectfont}]
-\coordinate (A) at (0mm,0mm); \coordinate (B) at (20mm,0mm); \coordinate (C) at (6mm,16mm);
-\coordinate (D) at (42mm,0mm); \coordinate (E) at (72mm,0mm); \coordinate (F) at (51mm,24mm);
-\draw[accent,line width=1.1pt] (A) -- (B) -- (C) -- cycle;
-\draw[accent!55,line width=1.1pt] (D) -- (E) -- (F) -- cycle;
-\node[anchor=north east] at (A) {$A$};
-\node[anchor=north west] at (B) {$B$};
-\node[anchor=south] at (C) {$C$};
-\node[anchor=north east] at (D) {$D$};
-\node[anchor=north west] at (E) {$E$};
-\node[anchor=south] at (F) {$F$};
-\end{tikzpicture}
-\end{textblock*}
-
-\begin{textblock*}{158mm}(26mm,218mm)
-{\fontsize{10}{13}\selectfont\color{black!55}\itshape
-Same shape, different size -- angles match exactly, sides scale by one constant factor.}
 \end{textblock*}
 
 \end{document}
