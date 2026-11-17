@@ -102,55 +102,78 @@
 \pagefooter{12}
 \mbox{}%
 
-% ---- CARD 1: Solution of a system ----
-\cardbg{16}{40}{178}{68}
-\pill{26}{43}{Solution of a system}
+% ---- CARD 1: Solution = intersection ----
+\cardbg{16}{40}{178}{56}
+\pill{26}{43}{Solution of a system (yechim)}
 
 \begin{textblock*}{100mm}(26mm,56mm)
 {\fontsize{11}{14}\selectfont\color{ink}
-Solution = the point where both lines cross.}
+Solution = the point where the two lines cross.}
 \end{textblock*}
 
 \begin{textblock*}{100mm}(26mm,66mm)
-{\fontsize{11}{14}\selectfont
-$(2,3)$: $2+3=5$ and $2(2)-3=1$ -- both true.}
+{\fontsize{13}{16}\selectfont
+$x+y=5,\ 2x-y=1\ \Rightarrow\ (2,3)$}
 \end{textblock*}
 
-\begin{textblock*}{55mm}(135mm,52mm)
-\begin{tikzpicture}[scale=1]
-\draw[ink!40,->] (0,0) -- (40mm,0) node[right,font=\tiny] {$x$};
-\draw[ink!40,->] (0,-20mm) -- (0,20mm) node[above,font=\tiny] {$y$};
-\draw[accent,line width=1pt] (3mm,-15mm) -- (37mm,18mm);
-\draw[accent!60,line width=1pt] (3mm,18mm) -- (37mm,-12mm);
-\filldraw[ink] (20mm,2mm) circle (0.9mm);
-\node[font=\sffamily\bfseries\tiny,text=ink,anchor=west] at (21mm,2mm) {$(2,3)$};
+\begin{textblock*}{50mm}(141mm,50mm)
+\begin{tikzpicture}[every node/.style={font=\fontsize{8}{8}\selectfont}]
+% 1 unit = 6 mm on both axes
+\draw[ink!50,->] (0mm,0mm) -- (34mm,0mm) node[right] {$x$};
+\draw[ink!50,->] (0mm,0mm) -- (0mm,34mm) node[above] {$y$};
+\draw[accent,line width=1.1pt] (0mm,30mm) -- (30mm,0mm);
+\draw[accent!60,line width=1.1pt] (3mm,0mm) -- (18mm,30mm);
+\draw[ink!50,dashed] (12mm,0mm) -- (12mm,18mm) -- (0mm,18mm);
+\node[below,text=ink] at (12mm,0mm) {$2$};
+\node[left,text=ink] at (0mm,18mm) {$3$};
+\filldraw[ink] (12mm,18mm) circle (0.9mm);
+\node[anchor=west,text=ink] at (13.2mm,18mm) {$(2,3)$};
+\node[anchor=south west,text=accent] at (19mm,19mm) {$2x-y=1$};
+\node[anchor=west,text=accent] at (23mm,9mm) {$x+y=5$};
 \end{tikzpicture}
 \end{textblock*}
 
 % ---- CARD 2: Substitution ----
-\cardbg{16}{114}{178}{40}
-\pill{26}{117}{Substitution method}
+\cardbg{16}{102}{178}{36}
+\pill{26}{105}{Substitution}
 
-\begin{textblock*}{158mm}(26mm,130mm)
+\begin{textblock*}{158mm}(26mm,118mm)
 {\fontsize{11}{14}\selectfont\color{ink}
-Isolate one variable, substitute into the other equation.}
+Isolate one variable, plug it into the other equation.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,141mm)
-{\fontsize{13}{16}\selectfont $y=2x-1,\ 3x+y=9\ \Longrightarrow\ (x,y)=(2,3)$}
+\begin{textblock*}{158mm}(26mm,127mm)
+{\fontsize{13}{16}\selectfont $y=2x-1,\ 3x+y=9\ \Rightarrow\ (x,y)=(2,3)$}
 \end{textblock*}
 
 % ---- CARD 3: Elimination ----
-\cardbg{16}{160}{178}{40}
-\pill{26}{163}{Elimination method}
+\cardbg{16}{144}{178}{36}
+\pill{26}{147}{Elimination}
 
-\begin{textblock*}{158mm}(26mm,176mm)
+\begin{textblock*}{158mm}(26mm,160mm)
 {\fontsize{11}{14}\selectfont\color{ink}
-Multiply so coefficients match, then add or subtract.}
+Multiply so one coefficient matches, then add or subtract the equations.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,187mm)
-{\fontsize{13}{16}\selectfont $x+2y=11,\ 3x+y=18\ \Longrightarrow\ (x,y)=(5,3)$}
+\begin{textblock*}{158mm}(26mm,169mm)
+{\fontsize{13}{16}\selectfont $x+2y=11,\ 3x+y=18\ \Rightarrow\ (x,y)=(5,3)$}
+\end{textblock*}
+
+% ---- CARD 4: What is asked ----
+\cardbg{16}{186}{178}{46}
+\pill{26}{189}{Asked for $x+y$ or $x-y$?}
+
+\begin{textblock*}{158mm}(26mm,202mm)
+{\fontsize{11}{14}\selectfont\color{ink}
+Add or subtract the two equations -- do not solve for $x$ and $y$.}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,211mm)
+{\fontsize{13}{16}\selectfont $3x+2y=16,\ 2x+3y=14$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,219mm)
+{\fontsize{13}{16}\selectfont add: $x+y=6$ \qquad subtract: $x-y=2$}
 \end{textblock*}
 
 \clearpage
@@ -163,47 +186,68 @@ Multiply so coefficients match, then add or subtract.}
 \pagefooter{13}
 \mbox{}%
 
-% ---- CARD 4: Special cases ----
-\cardbg{16}{33}{178}{130}
-\pill{26}{36}{Special cases}
+% ---- CARD 5: Number of solutions ----
+\cardbg{16}{33}{178}{77}
+\pill{26}{36}{Number of solutions}
 
 \begin{textblock*}{158mm}(26mm,49mm)
+{\fontsize{13}{16}\selectfont $a_1x+b_1y=c_1,\quad a_2x+b_2y=c_2$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,58mm)
 {\fontsize{11}{14}\selectfont
-\begin{tabular}{|p{54mm}|>{\centering\arraybackslash}p{91mm}|}
+\begin{tabular}{|p{32mm}|p{54mm}|p{40mm}|}
 \hline
 \rowcolor{accent}
-{\color{white}\textbf{Coefficient ratios}} & {\color{white}\textbf{Result}} \\ \hline
-Unequal & One solution \\ \hline
-Equal, constants differ & No solution \\ \hline
-Equal, constants equal & Infinitely many \\ \hline
+{\color{white}\textbf{Solutions}} & {\color{white}\textbf{Ratios}} & {\color{white}\textbf{Slope form}} \\ \hline
+\textbf{One} & $a_1/a_2\ne b_1/b_2$ & $m_1\ne m_2$ \\ \hline
+\textbf{None} & $a_1/a_2=b_1/b_2\ne c_1/c_2$ & $m_1=m_2,\ b_1\ne b_2$ \\ \hline
+\textbf{Infinite} & $a_1/a_2=b_1/b_2=c_1/c_2$ & same line \\ \hline
 \end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{50mm}(26mm,95mm)
-{\centering\fontsize{10}{10}\selectfont\textbf{One solution}\par}
-\begin{tikzpicture}
-\draw[ink!40,->] (0,0) -- (36mm,0); \draw[ink!40,->] (0,-14mm) -- (0,14mm);
-\draw[accent,line width=1.2pt] (3mm,-10mm) -- (33mm,10mm);
-\draw[accent!55,line width=1.2pt] (3mm,10mm) -- (33mm,-10mm);
-\filldraw[ink] (18mm,0) circle (1mm);
-\end{tikzpicture}
+\begin{textblock*}{158mm}(26mm,98mm)
+{\fontsize{13}{16}\selectfont
+$2x+3y=6,\ 4x+6y=18\ \Rightarrow\ \tfrac{2}{4}=\tfrac{3}{6}\ne\tfrac{6}{18}$: none}
 \end{textblock*}
 
-\begin{textblock*}{50mm}(82mm,95mm)
-{\centering\fontsize{10}{10}\selectfont\textbf{No solution}\par}
-\begin{tikzpicture}
-\draw[ink!40,->] (0,0) -- (36mm,0); \draw[ink!40,->] (0,-14mm) -- (0,14mm);
-\draw[accent,line width=1.2pt] (3mm,-8mm) -- (33mm,8mm);
-\draw[accent!55,line width=1.2pt] (3mm,-2mm) -- (33mm,13mm);
-\end{tikzpicture}
+% ---- CARD 6: Find k ----
+\cardbg{16}{118}{178}{53}
+\pill{26}{121}{Find $k$ for none / infinitely many}
+
+\begin{textblock*}{158mm}(26mm,134mm)
+{\fontsize{11}{14}\selectfont\color{ink}
+Set the $x$- and $y$-coefficient ratios equal and solve for $k$.\\
+Then constants in the same ratio $\Rightarrow$ infinite; otherwise none.}
 \end{textblock*}
 
-\begin{textblock*}{50mm}(138mm,95mm)
-{\centering\fontsize{10}{10}\selectfont\textbf{Infinitely many}\par}
-\begin{tikzpicture}
-\draw[ink!40,->] (0,0) -- (36mm,0); \draw[ink!40,->] (0,-14mm) -- (0,14mm);
-\draw[accent,line width=2pt] (3mm,-10mm) -- (33mm,10mm);
-\end{tikzpicture}
+\begin{textblock*}{158mm}(26mm,148mm)
+{\fontsize{13}{16}\selectfont
+$2x+ky=6,\ 4x+6y=c$:\quad $\tfrac{2}{4}=\tfrac{k}{6}\Rightarrow k=3$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,157mm)
+{\fontsize{13}{16}\selectfont
+$c=12$: infinitely many\qquad $c\ne12$: none}
+\end{textblock*}
+
+% ---- CARD 7: Word problems ----
+\cardbg{16}{179}{178}{48}
+\pill{26}{182}{Word-problem set-up}
+
+\begin{textblock*}{158mm}(26mm,195mm)
+{\fontsize{11}{14}\selectfont\color{ink}
+Count equation and value equation ($p,\,q$ = value per item).}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,204mm)
+{\fontsize{13}{16}\selectfont
+$x+y=\text{total},\qquad px+qy=\text{total value}$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,214mm)
+{\fontsize{13}{16}\selectfont
+$x+y=20,\ 3x+5y=84\ \Rightarrow\ (x,y)=(8,12)$}
 \end{textblock*}
 
 \end{document}
