@@ -201,16 +201,16 @@ question text, numbers, or wording is reproduced here. 15 Easy / 15 Medium
 
 ### Medium
 
-1. The table below shows the relationship between $t$, the time in years, and $n$, the total amount in an account, where the relationship is exponential.
+1. A lab counts the cells in a culture every hour. The table gives the count $n$ after $t$ hours, and the culture grows exponentially.
 
-   | Time (years) | Total amount (dollars) |
+   | Time (hours) | Cell count |
    |---|---|
-   | $0$ | $250.00$ |
-   | $1$ | $260.00$ |
-   | $2$ | $270.40$ |
+   | $0$ | $400$ |
+   | $1$ | $420$ |
+   | $2$ | $441$ |
 
-   If no deposits or withdrawals were made, which equation best represents the relationship between $t$ and $n$?
-   A) $n=(1+250)^t$  B) $n=(1+0.04)^t$  C) $n=250(1+0.04)^t$  D) $n=0.04(1+250)^t$
+   Which equation best represents the relationship between $t$ and $n$?
+   A) $n=(1+400)^t$  B) $n=(1+0.05)^t$  C) $n=400(1+0.05)^t$  D) $n=0.05(1+400)^t$
 
 2. The function $f(t)=20{,}000(2)^{t/650}$ gives the number of bacteria in a population $t$ minutes after an initial observation. How much time, in minutes, does it take for the population to double?
    A) $2$  B) $325$  C) $650$  D) $20{,}000$
