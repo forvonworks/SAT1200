@@ -6,7 +6,7 @@ Solutions are for the author only; they are not printed in the book.
 Domains: ALG = Algebra, ADV = Advanced Math, PSDA = Problem-Solving and Data Analysis, GT = Geometry and Trigonometry.
 Difficulty: E / M / H. Type: MC or GRID.
 
-# MODULE 1 (22 questions; Easy Q1–7, Medium Q8–17, Hard Q18–22)
+# MODULE 1 (22 questions; Easy Q1–8, Medium Q9–19, Hard Q20–22)
 
 ## M1-Q1
 - Domain: ALG
@@ -89,6 +89,26 @@ Difficulty: E / M / H. Type: MC or GRID.
 - Solution: $(x-7)(x+4)=0$, positive root $7$.
 
 ## M1-Q8
+- Domain: ADV
+- Difficulty: E
+- Type: MC
+- Stem: For positive $x$ and $y$, which expression is equivalent to $\dfrac{(4x^3y)^2}{2xy^2}$?
+- A: $2x^5$
+- B: $8x^7$
+- C: $4x^5$
+- D: $8x^5$
+- Answer: D
+- Solution: $16x^6y^2/(2xy^2)=8x^5$.
+
+## M1-Q9
+- Domain: ADV
+- Difficulty: M
+- Type: GRID
+- Stem: A juice stand's daily profit, in dollars, from selling $x$ cups of juice is modeled by $P(x)=-0.05x^2+6x-40$. According to the model, what is the maximum possible daily profit, in dollars?
+- Answer: 140
+- Solution: Vertex at $x=-6/(2(-0.05))=60$; $P(60)=-180+360-40=140$.
+
+## M1-Q10
 - Domain: ALG
 - Difficulty: M
 - Type: MC
@@ -100,27 +120,19 @@ Difficulty: E / M / H. Type: MC or GRID.
 - Answer: A
 - Solution: $a+s=240$, $9a+5s=1720$; $2160-4s=1720 \Rightarrow s=110$ (130 are adult tickets).
 
-## M1-Q9
+## M1-Q11
 - Domain: ADV
 - Difficulty: M
-- Type: GRID
-- Stem: A juice stand's daily profit, in dollars, from selling $x$ cups of juice is modeled by $P(x)=-0.05x^2+6x-40$. According to the model, what is the maximum possible daily profit, in dollars?
-- Answer: 140
-- Solution: Vertex at $x=-6/(2(-0.05))=60$; $P(60)=-180+360-40=140$.
-
-## M1-Q10
-- Domain: PSDA
-- Difficulty: M
 - Type: MC
-- Stem: The price of a jacket was increased by 20\%. A week later, the new price was reduced by 15\%, and the final price was \$76.50. What was the price of the jacket before the increase?
-- A: \$72.86
-- B: \$75.00
-- C: \$78.03
-- D: \$90.00
+- Stem: Which expression is equivalent to $\dfrac{x^2-9}{x^2-x-12}$, where $x\ne4$ and $x\ne-3$?
+- A: $\frac{9}{x+12}$
+- B: $\frac{x-3}{x-4}$
+- C: $\frac{x+3}{x-4}$
+- D: $\frac{x-3}{x+4}$
 - Answer: B
-- Solution: Net factor $1.2\cdot0.85=1.02$; $76.50/1.02=75$.
+- Solution: Factor: $\frac{(x-3)(x+3)}{(x-4)(x+3)}=\frac{x-3}{x-4}$ (cancelling $x^2$ terms, choice A, is invalid).
 
-## M1-Q11
+## M1-Q12
 - Domain: ALG
 - Difficulty: M
 - Type: MC
@@ -131,18 +143,6 @@ Difficulty: E / M / H. Type: MC or GRID.
 - D: $3$
 - Answer: C
 - Solution: Slope $-2$, $y=-2x+3$; $y=0 \Rightarrow x=3/2$ (3 is the $y$-intercept).
-
-## M1-Q12
-- Domain: ADV
-- Difficulty: M
-- Type: MC
-- Stem: For positive $x$ and $y$, which expression is equivalent to $\dfrac{(4x^3y)^2}{2xy^2}$?
-- A: $2x^5$
-- B: $8x^7$
-- C: $4x^5$
-- D: $8x^5$
-- Answer: D
-- Solution: $16x^6y^2/(2xy^2)=8x^5$.
 
 ## M1-Q13
 - Domain: GT
@@ -207,7 +207,7 @@ Seniors & 24 & 31 & 40\\\hline
 
 ## M1-Q18
 - Domain: ADV
-- Difficulty: H
+- Difficulty: M
 - Type: MC
 - Stem: The graph of the quadratic function $f$ crosses the $x$-axis at $x=2$ and $x=-6$ and crosses the $y$-axis at $(0,-24)$. What is the minimum value of $f$?
 - A: $-48$
@@ -219,7 +219,7 @@ Seniors & 24 & 31 & 40\\\hline
 
 ## M1-Q19
 - Domain: ALG
-- Difficulty: H
+- Difficulty: M
 - Type: MC
 - Stem: How many liters of a 10\% salt solution must be added to 20 liters of a 50\% salt solution to make a 20\% salt solution?
 - A: $20$
@@ -261,7 +261,7 @@ Seniors & 24 & 31 & 40\\\hline
 - Answer: A
 - Solution: Hourly factor $1.5^{1/4}\approx1.1067$, i.e. about $10.7\%$ (12.5\% is $50\%/4$).
 
-# MODULE 2 — harder route (22 questions; Easy Q1–3, Medium Q4–9, Hard Q10–22)
+# MODULE 2 — harder route (22 questions; Easy Q1–2, Medium Q3–12, Hard Q13–22)
 
 ## M2-Q1
 - Domain: ALG
@@ -280,90 +280,122 @@ Seniors & 24 & 31 & 40\\\hline
 - Difficulty: E
 - Type: MC
 - Stem: Which of the following expressions is equivalent to $(x-5)^2-9$?
-- A: $x^2-34$
-- B: $x^2-10x-9$
-- C: $x^2-10x+34$
-- D: $x^2-10x+16$
-- Answer: D
+- A: $x^2-10x+16$
+- B: $x^2-34$
+- C: $x^2-10x-9$
+- D: $x^2-10x+34$
+- Answer: A
 - Solution: $x^2-10x+25-9=x^2-10x+16$.
 
 ## M2-Q3
-- Domain: GT
-- Difficulty: E
+- Domain: ALG
+- Difficulty: M
 - Type: GRID
-- Stem: The measures of the three angles of a triangle are in the ratio $2:3:4$. What is the measure, in degrees, of the smallest angle?
-- Answer: 40
-- Solution: $2k+3k+4k=180$, $k=20$, smallest $=40$.
+- Stem: What is the sum of all integer solutions of the inequality $|3x-4|\le11$?
+- Answer: 12
+- Solution: $-11\le3x-4\le11 \Rightarrow -\frac73\le x\le5$; integers $-2,\dots,5$ sum to $12$.
 
 ## M2-Q4
+- Domain: ALG
+- Difficulty: M
+- Type: MC
+- Stem: Ana bought 5 pens and 3 notebooks for \$19.50. Ben bought 3 pens and 5 notebooks, at the same prices, for \$24.50. What is the total cost of 1 pen and 1 notebook?
+- A: \$5.50
+- B: \$11.00
+- C: \$22.00
+- D: \$44.00
+- Answer: A
+- Solution: Add: $8p+8n=44$, so $p+n=5.50$ (44 is the two bills added; 11 and 22 are partial divisions).
+
+## M2-Q5
 - Domain: PSDA
 - Difficulty: M
 - Type: MC
 - Stem: The ratio of cats to dogs at an animal shelter is 5 to 3. After 14 more dogs arrive at the shelter, the number of dogs equals the number of cats. How many animals were at the shelter before the 14 dogs arrived?
-- A: $21$
-- B: $35$
-- C: $56$
-- D: $70$
-- Answer: C
+- A: $14$
+- B: $21$
+- C: $35$
+- D: $56$
+- Answer: D
 - Solution: Cats $5k$, dogs $3k$; $3k+14=5k$, $k=7$; total before $=8k=56$ (35 = cats, 21 = dogs).
-
-## M2-Q5
-- Domain: ALG
-- Difficulty: M
-- Type: MC
-- Stem: In the $xy$-plane, line $\ell$ passes through the point $(3,-1)$ and is parallel to the line $4x-3y=9$. What is the $y$-coordinate of the point where $\ell$ crosses the $y$-axis?
-- A: $-5$
-- B: $-3$
-- C: $-1$
-- D: $5$
-- Answer: A
-- Solution: Slope $4/3$; $y=\frac43x+b$, $-1=4+b$, $b=-5$.
 
 ## M2-Q6
 - Domain: ADV
 - Difficulty: M
 - Type: MC
-- Stem: What is the product of the solutions to the equation $3x^2-8x-35=0$?
-- A: $-\frac{35}{3}$
-- B: $-\frac{8}{3}$
-- C: $\frac{8}{3}$
-- D: $\frac{35}{3}$
-- Answer: A
-- Solution: Vieta: product $=c/a=-35/3$ (roots $5$ and $-7/3$).
+- Stem: If $r$ and $s$ are the solutions of $2x^2-9x+4=0$, what is the value of $r^2+s^2$?
+- A: $\frac{9}{2}$
+- B: $\frac{65}{4}$
+- C: $\frac{73}{4}$
+- D: $\frac{81}{4}$
+- Answer: B
+- Solution: $r+s=\frac92$, $rs=2$; $r^2+s^2=\frac{81}{4}-4=\frac{65}{4}$ ($\frac{81}{4}$ is $(r+s)^2$; $\frac{73}{4}$ subtracts $rs$ once).
 
 ## M2-Q7
 - Domain: GT
 - Difficulty: M
 - Type: MC
-- Stem: A right triangle has acute angles that measure $30^\circ$ and $60^\circ$, and its hypotenuse is 12 units long. What is the area of the triangle, in square units?
-- A: $18$
-- B: $18\sqrt{3}$
-- C: $36$
-- D: $36\sqrt{3}$
-- Answer: B
-- Solution: Legs $6$ and $6\sqrt3$; area $\frac12(6)(6\sqrt3)=18\sqrt3$.
+- Stem: In rectangle $ABCD$, diagonal $AC$ has length 20 and $\angle CAB=30^\circ$. What is the area of the rectangle?
+- A: $50\sqrt{3}$
+- B: $100$
+- C: $100\sqrt{3}$
+- D: $200\sqrt{3}$
+- Answer: C
+- Solution: $AB=20\cos30^\circ=10\sqrt3$, $BC=20\sin30^\circ=10$; area $=100\sqrt3$ ($200\sqrt3$ uses $AC\cdot AB$).
 
 ## M2-Q8
 - Domain: ADV
 - Difficulty: M
 - Type: GRID
-- Stem: The function $f$ is defined by $f(x)=3\cdot2^{x}+5$. For some constant $a$, $f(a)=101$. What is the value of $a$?
-- Answer: 5
-- Solution: $3\cdot2^a=96$, $2^a=32$, $a=5$.
+- Stem: The mass, in grams, of a radioactive sample $t$ days after it was first measured is modeled by $M(t)=80\left(\tfrac12\right)^{t/6}$. After how many days will the mass of the sample be 10 grams?
+- Answer: 18
+- Solution: $(1/2)^{t/6}=1/8 \Rightarrow t/6=3$, $t=18$.
 
 ## M2-Q9
 - Domain: ALG
 - Difficulty: M
 - Type: MC
-- Stem: If $3a-2b=10$ and $5a+2b=22$, what is the value of $a+b$?
-- A: $4$
-- B: $5$
-- C: $8$
-- D: $12$
-- Answer: B
-- Solution: Add: $8a=32$, $a=4$; $12-2b=10$, $b=1$; $a+b=5$.
+- Stem: In the $xy$-plane, line $\ell$ passes through the point $(-2,5)$ and is perpendicular to the line $3x-4y=12$. What is the $x$-coordinate of the point where $\ell$ crosses the $x$-axis?
+- A: $-\frac{26}{3}$
+- B: $-\frac{23}{4}$
+- C: $\frac{7}{4}$
+- D: $\frac{14}{3}$
+- Answer: C
+- Solution: Slope of $\ell$ is $-\frac43$: $y-5=-\frac43(x+2)$; $y=0$ gives $x+2=\frac{15}{4}$, $x=\frac74$ (parallel slope gives $-\frac{26}{3}$; slope $-\frac34$ gives $\frac{14}{3}$).
 
 ## M2-Q10
+- Domain: PSDA
+- Difficulty: M
+- Type: MC
+- Stem: A store's sales in the second quarter were 20\% greater than its sales in the first quarter. Third-quarter sales were 25\% less than second-quarter sales, and fourth-quarter sales were 40\% greater than third-quarter sales. If fourth-quarter sales were \$75,600, what were the store's total sales for all four quarters?
+- A: \$186,000
+- B: \$253,350
+- C: \$259,200
+- D: \$261,600
+- Answer: D
+- Solution: Q3 $=75600/1.4=54000$; Q2 $=54000/0.75=72000$; Q1 $=72000/1.2=60000$; total $=261600$.
+
+## M2-Q11
+- Domain: ADV
+- Difficulty: M
+- Type: MC
+- Stem: A farmer has 240 meters of fencing to enclose a rectangular field along a straight river. No fence is needed along the river. The field will be divided into 3 equal plots by two additional fences, each perpendicular to the river, so the fencing consists of 4 pieces perpendicular to the river and 1 piece parallel to it. What is the maximum possible total area, in square meters, of the field?
+- A: $2880$
+- B: $3600$
+- C: $4800$
+- D: $7200$
+- Answer: B
+- Solution: Width $w$, length $240-4w$; $A=w(240-4w)$ peaks at $w=30$: $30\cdot120=3600$ (4800 forgets one divider).
+
+## M2-Q12
+- Domain: ALG
+- Difficulty: M
+- Type: GRID
+- Stem: A water tank can be filled by Pump A alone in 6 hours or by Pump B alone in 9 hours. A drain, when open, empties a full tank in 18 hours. Starting with an empty tank, both pumps are turned on and the drain is open the whole time. How many hours will it take to fill the tank? (Assume each device works at a constant rate.)
+- Answer: 4.5
+- Solution: Rate $=\frac16+\frac19-\frac1{18}=\frac29$ tank/hour, so $4.5$ hours.
+
+## M2-Q13
 - Domain: ADV
 - Difficulty: H
 - Type: MC
@@ -375,91 +407,7 @@ Seniors & 24 & 31 & 40\\\hline
 - Answer: C
 - Solution: $f(x)=a(x-3)^2+25$, $f(0)=9a+25=16$, $a=-1$. $g(x)=2(x-2)^2-50+k$ has minimum $k-50$, one $x$-intercept needs $k=50$; $g(0)=-2f(1)+50=-42+50=8$ ($-17$: $k=25$; $0$: the minimum value; $32$: shifted the wrong way).
 
-## M2-Q11
-- Domain: ALG
-- Difficulty: H
-- Type: MC
-- Stem: In the system of equations below, $k$ is a constant. For which value of $k$ does the system have no solution?\dsp{$kx+2y=10$}\dsp{$24x+(k+2)y=40$}
-- A: $-8$
-- B: $-6$
-- C: $6$
-- D: $8$
-- Answer: A
-- Solution: Parallel needs $k(k+2)=48 \Rightarrow k=6$ or $-8$; $k=6$ makes the equations identical (infinitely many), $k=-8$ gives $24x-6y=-30\ne40$, so $-8$.
-
-## M2-Q12
-- Domain: ADV
-- Difficulty: H
-- Type: GRID
-- Stem: For how many integer values of $k$ does the equation $2x^2+kx+8=0$ have no real solutions?
-- Answer: 15
-- Solution: $k^2-64<0 \Rightarrow -8<k<8$, integers $-7,\dots,7$: 15 values.
-
-## M2-Q13
-- Domain: PSDA
-- Difficulty: H
-- Type: MC
-- Stem: Of the 800 residents surveyed about a proposed park, 55\% live in the north district and the rest live in the south district. In the north district, 40\% of the surveyed residents favor the proposal; in the south district, 65\% favor it. If one resident who favors the proposal is selected at random, which of the following is closest to the probability that the resident lives in the north district?
-- A: $0.22$
-- B: $0.40$
-- C: $0.43$
-- D: $0.55$
-- Answer: C
-- Solution: North favor $=440(0.4)=176$; south favor $=360(0.65)=234$; $176/410\approx0.43$.
-
 ## M2-Q14
-- Domain: GT
-- Difficulty: H
-- Type: MC
-- Stem: In the $xy$-plane, the graph of $x^2+y^2-10x+4y=20$ is a circle. The line $y=-8$ intersects the circle at two points. What is the distance, in units, between these two points?
-- A: $\sqrt{13}$
-- B: $2\sqrt{13}$
-- C: $14$
-- D: $2\sqrt{85}$
-- Answer: B
-- Solution: $(x-5)^2+(y+2)^2=49$, center $(5,-2)$, $r=7$; distance to line $=6$; chord $=2\sqrt{49-36}=2\sqrt{13}$.
-
-## M2-Q15
-- Domain: ALG
-- Difficulty: H
-- Type: GRID
-- Stem: A water tank can be filled by Pump A alone in 6 hours or by Pump B alone in 9 hours. A drain, when open, empties a full tank in 18 hours. Starting with an empty tank, both pumps are turned on and the drain is open the whole time. How many hours will it take to fill the tank? (Assume each device works at a constant rate.)
-- Answer: 4.5
-- Solution: Rate $=\frac16+\frac19-\frac1{18}=\frac29$ tank/hour, so $4.5$ hours.
-
-## M2-Q16
-- Domain: ADV
-- Difficulty: H
-- Type: MC
-- Stem: A farmer has 240 meters of fencing to enclose a rectangular field along a straight river. No fence is needed along the river. The field will be divided into 3 equal plots by two additional fences, each perpendicular to the river, so the fencing consists of 4 pieces perpendicular to the river and 1 piece parallel to it. What is the maximum possible total area, in square meters, of the field?
-- A: $2400$
-- B: $2880$
-- C: $3600$
-- D: $4800$
-- Answer: C
-- Solution: Width $w$, length $240-4w$; $A=w(240-4w)$ peaks at $w=30$: $30\cdot120=3600$ (4800 forgets one divider).
-
-## M2-Q17
-- Domain: ALG
-- Difficulty: H
-- Type: MC
-- Stem: In the $xy$-plane, a line has a positive $x$-intercept and a positive $y$-intercept and passes through the point $(4,3)$. The triangle formed by the line and the two axes has an area of 24 square units. What is the slope of the line?
-- A: $-\frac{4}{3}$
-- B: $-\frac{3}{4}$
-- C: $\frac{3}{4}$
-- D: $\frac{4}{3}$
-- Answer: B
-- Solution: Intercepts $p,q$ with $pq=48$ and $\frac4p+\frac3q=1$; so $3p^2-48p+192=0$, $(p-8)^2=0$, $p=8$, $q=6$; slope $-q/p=-3/4$ ($-4/3$ swaps the intercepts).
-
-## M2-Q18
-- Domain: ADV
-- Difficulty: H
-- Type: GRID
-- Stem: The graph of $y=-x^2+8x-3$ and the line $y=2x+k$, where $k$ is a constant, intersect at two points in the $xy$-plane. The $x$-coordinates of the two points differ by 4. What is the $y$-coordinate of the intersection point that has the larger $x$-coordinate?
-- Answer: 12
-- Solution: $x^2-6x+(3+k)=0$; roots differ by $\sqrt{36-4(3+k)}=4$, so $k=2$, roots $1$ and $5$; $y=2(5)+2=12$.
-
-## M2-Q19
 - Domain: ALG
 - Difficulty: H
 - Type: MC
@@ -471,17 +419,69 @@ Seniors & 24 & 31 & 40\\\hline
 - Answer: A
 - Solution: $f(x)=ax+b$: $a^2=4$, $b(a+1)=9$. $a=-2$ gives $b=-9$ and $f(2)=-13<0$ (rejected, gives $11$); $a=2$, $b=3$, $f(-10)=-17$ ($-11$: $b=9$; $-15.5$: $b=9/2$).
 
-## M2-Q20
+## M2-Q15
 - Domain: PSDA
 - Difficulty: H
 - Type: MC
-- Stem: A store's sales in the second quarter were 20\% greater than its sales in the first quarter. Third-quarter sales were 25\% less than second-quarter sales, and fourth-quarter sales were 40\% greater than third-quarter sales. If fourth-quarter sales were \$75,600, what were the store's total sales for all four quarters?
-- A: \$186,000
-- B: \$253,350
-- C: \$259,200
-- D: \$261,600
-- Answer: D
-- Solution: Q3 $=75600/1.4=54000$; Q2 $=54000/0.75=72000$; Q1 $=72000/1.2=60000$; total $=261600$.
+- Stem: Of the 800 residents surveyed about a proposed park, 55\% live in the north district and the rest live in the south district. In the north district, 40\% of the surveyed residents favor the proposal; in the south district, 65\% favor it. If one resident who favors the proposal is selected at random, which of the following is closest to the probability that the resident lives in the north district?
+- A: $0.22$
+- B: $0.40$
+- C: $0.43$
+- D: $0.55$
+- Answer: C
+- Solution: North favor $=440(0.4)=176$; south favor $=360(0.65)=234$; $176/410\approx0.43$.
+
+## M2-Q16
+- Domain: ADV
+- Difficulty: H
+- Type: GRID
+- Stem: For how many integer values of $k$ does the equation $2x^2+kx+8=0$ have no real solutions?
+- Answer: 15
+- Solution: $k^2-64<0 \Rightarrow -8<k<8$, integers $-7,\dots,7$: 15 values.
+
+## M2-Q17
+- Domain: ALG
+- Difficulty: H
+- Type: MC
+- Stem: In the system of equations below, $k$ is a constant. For which value of $k$ does the system have no solution?\dsp{$kx+2y=10$}\dsp{$24x+(k+2)y=40$}
+- A: $-8$
+- B: $-6$
+- C: $6$
+- D: $8$
+- Answer: A
+- Solution: Parallel needs $k(k+2)=48 \Rightarrow k=6$ or $-8$; $k=6$ makes the equations identical (infinitely many), $k=-8$ gives $24x-6y=-30\ne40$, so $-8$.
+
+## M2-Q18
+- Domain: GT
+- Difficulty: H
+- Type: MC
+- Stem: In the $xy$-plane, the graph of $x^2+y^2-10x+4y=20$ is a circle. The line $y=-8$ intersects the circle at two points. What is the distance, in units, between these two points?
+- A: $\sqrt{13}$
+- B: $2\sqrt{13}$
+- C: $14$
+- D: $2\sqrt{85}$
+- Answer: B
+- Solution: $(x-5)^2+(y+2)^2=49$, center $(5,-2)$, $r=7$; distance to line $=6$; chord $=2\sqrt{49-36}=2\sqrt{13}$.
+
+## M2-Q19
+- Domain: ADV
+- Difficulty: H
+- Type: GRID
+- Stem: The graph of $y=-x^2+8x-3$ and the line $y=2x+k$, where $k$ is a constant, intersect at two points in the $xy$-plane. The $x$-coordinates of the two points differ by 4. What is the $y$-coordinate of the intersection point that has the larger $x$-coordinate?
+- Answer: 12
+- Solution: $x^2-6x+(3+k)=0$; roots differ by $\sqrt{36-4(3+k)}=4$, so $k=2$, roots $1$ and $5$; $y=2(5)+2=12$.
+
+## M2-Q20
+- Domain: ALG
+- Difficulty: H
+- Type: MC
+- Stem: In the $xy$-plane, a line has a positive $x$-intercept and a positive $y$-intercept and passes through the point $(4,3)$. The triangle formed by the line and the two axes has an area of 24 square units. What is the slope of the line?
+- A: $-\frac{4}{3}$
+- B: $-\frac{3}{4}$
+- C: $\frac{3}{4}$
+- D: $\frac{4}{3}$
+- Answer: B
+- Solution: Intercepts $p,q$ with $pq=48$ and $\frac4p+\frac3q=1$; so $3p^2-48p+192=0$, $(p-8)^2=0$, $p=8$, $q=6$; slope $-q/p=-3/4$ ($-4/3$ swaps the intercepts).
 
 ## M2-Q21
 - Domain: GT
