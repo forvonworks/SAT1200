@@ -12,7 +12,6 @@
 \setmainfont{Libertinus Serif}
 \setsansfont{Libertinus Sans}
 \setmathfont{Libertinus Math}
-\newfontfamily\trackedsans{Libertinus Sans}[LetterSpace=8.0]
 
 \definecolor{accent}{HTML}{602785}
 \definecolor{badge}{HTML}{B8A0C8}
@@ -23,10 +22,12 @@
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
 
+% Safe print margins: 16mm outer on both sides. Columns are 83mm wide.
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
 \newcommand{\COLW}{83mm}
 
+% ---- Plain topic header: number chip + title, thin rule underneath. No band, no watermark. ----
 \newcommand{\topicheader}[2]{%
 \begin{textblock*}{194mm}(16mm,10mm)
 \begin{tikzpicture}
@@ -56,6 +57,7 @@
 \end{textblock*}
 }
 
+% ---- Fixed-length vertical column rule: #1 = top y (mm), #2 = length (mm) ----
 \newcommand{\colrule}[2]{%
 \begin{textblock*}{1mm}(105mm,#1mm)
 \begin{tikzpicture}
@@ -68,18 +70,40 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
+% ---- Small boxed problem number, reference-style. Plain \fbox -- stays flush with
+% the text baseline instead of centering on it. ----
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
+% ---- QR placeholder square + caption below ----
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
+}
+
+% ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
@@ -87,186 +111,408 @@
 
 \begin{document}
 
-% ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{14}{Foizlar va kontekstli masalalar}
+% ================= PAGE 74 =================
+\topicheader{14}{Percentages in Context}
 \pagefooter{74}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{1-to'plam}{Foiz o'zgarishini toping. O'sish yoki kamayish ekanini ayting.}
+\setkicker{Set 1}{Basic percent change. Find the percent increase or decrease described.}
 
-\noindent\pnum{1} Narx \$40 dan \$52 ga ko'tarildi.\\[14mm]
-\noindent\pnum{2} Aholi soni $2{,}500$ dan $2{,}125$ ga kamaydi.\\[14mm]
-\noindent\pnum{3} Test bahosi $60$ dan $75$ ga ko'tarildi.\\[14mm]
-\noindent\pnum{4} Oylik ijara \$800 dan \$880 ga ko'tarildi.\\[14mm]
-\noindent\pnum{5} Aksiya narxi \$120 dan \$90 ga tushdi.\\[14mm]
-\noindent\pnum{6} Son $45$ dan $54$ ga ko'tarildi.
+\noindent\pnum{1} A shirt's price increases from \$40 to \$52. By what percent does the price increase?\\[14mm]
+\noindent\pnum{2} A town's population decreases from $2{,}500$ to $2{,}125$. By what percent does the population decrease?\\[14mm]
+\noindent\pnum{3} A student's test score increases from $60$ to $75$. By what percent does the score increase?\\[14mm]
+\noindent\pnum{4} Monthly rent increases from \$800 to \$880. By what percent does the rent increase?\\[14mm]
+\noindent\pnum{5} A stock's price decreases from \$120 to \$90. By what percent does the price decrease?\\[14mm]
+\noindent\pnum{6} A number increases from $45$ to $54$. By what percent does the number increase?
+
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{2-to'plam}{Yangi qiymatni toping. Ko'paytuvchi usulidan ($\times(1{+}r)$ yoki $\times(1{-}r)$) foydalaning, ayirib-qo'shish usulidan emas.}
+\setkicker{Set 2}{The multiplier method. Find the new value with $\times(1{+}r)$ or $\times(1{-}r)$, not difference-then-add.}
 
-\noindent\pnum{1} \$250 ni $12\%$ ga oshiring.\\[14mm]
-\noindent\pnum{2} \$360 ni $25\%$ ga kamaytiring.\\[14mm]
-\noindent\pnum{3} $80$ ni $35\%$ ga oshiring.\\[14mm]
-\noindent\pnum{4} $500$ ni $8\%$ ga kamaytiring.\\[14mm]
-\noindent\pnum{5} $150$ ni $60\%$ ga oshiring.\\[14mm]
-\noindent\pnum{6} $720$ ni $45\%$ ga kamaytiring.
+\noindent\pnum{1} If \$250 is increased by $12\%$, what is the new value, in dollars?\\[14mm]
+\noindent\pnum{2} If \$360 is decreased by $25\%$, what is the new value, in dollars?\\[14mm]
+\noindent\pnum{3} If $80$ is increased by $35\%$, what is the new value?\\[14mm]
+\noindent\pnum{4} If $500$ is decreased by $8\%$, what is the new value?\\[14mm]
+\noindent\pnum{5} If $150$ is increased by $60\%$, what is the new value?\\[14mm]
+\noindent\pnum{6} If $720$ is decreased by $45\%$, what is the new value?
+
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{14}{Foizlar va kontekstli masalalar}
+% ================= PAGE 75 =================
+\topicheader{14}{Percentages in Context}
 \pagefooter{75}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10.5}{13.5}\selectfont
-\setkicker{3-to'plam}{Yakuniy qiymatni va boshlang'ichdan sof foiz o'zgarishini toping.}
+\sloppy\setkicker{Set 3}{Successive changes, same percent. Find the final value and the net percent change from the original value.}
 
-\noindent\pnum{1} \$200 $10\%$ ga oshdi, so'ng $10\%$ ga kamaydi.\\[13mm]
-\noindent\pnum{2} \$400 $25\%$ ga oshdi, so'ng $25\%$ ga kamaydi.\\[13mm]
-\noindent\pnum{3} $150$ $20\%$ ga kamaydi, so'ng $20\%$ ga oshdi.\\[13mm]
-\noindent\pnum{4} \$600 $50\%$ ga oshdi, so'ng $50\%$ ga kamaydi.\\[13mm]
-\noindent\pnum{5} $1{,}000$ $10\%$ ga kamaydi, so'ng $10\%$ ga oshdi.\\[13mm]
-\noindent\pnum{6} $240$ $30\%$ ga oshdi, so'ng $30\%$ ga kamaydi.
+\noindent\pnum{1} If \$200 increases by $10\%$ and then decreases by $10\%$, what is the final value, and what is the net percent change from the original value?\\[10mm]
+\noindent\pnum{2} If \$400 increases by $25\%$ and then decreases by $25\%$, what is the final value, and what is the net percent change from the original value?\\[10mm]
+\noindent\pnum{3} If $150$ decreases by $20\%$ and then increases by $20\%$, what is the final value, and what is the net percent change from the original value?\\[10mm]
+\noindent\pnum{4} If \$600 increases by $50\%$ and then decreases by $50\%$, what is the final value, and what is the net percent change from the original value?\\[10mm]
+\noindent\pnum{5} If $1{,}000$ decreases by $10\%$ and then increases by $10\%$, what is the final value, and what is the net percent change from the original value?\\[10mm]
+\noindent\pnum{6} If $240$ increases by $30\%$ and then decreases by $30\%$, what is the final value, and what is the net percent change from the original value?
+
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10.5}{13.5}\selectfont
-\setkicker{4-to'plam}{Yakuniy qiymat va sof foiz o'zgarishini toping.}
+\sloppy\setkicker{Set 4}{Successive changes, different percents. Find the final value and the net percent change.}
 
-\noindent\pnum{1} \$300 $20\%$ oshdi, so'ng $10\%$ oshdi.\\[13mm]
-\noindent\pnum{2} \$500 $20\%$ oshdi, so'ng $10\%$ kamaydi.\\[13mm]
-\noindent\pnum{3} \$800 $25\%$ kamaydi, so'ng $20\%$ oshdi.\\[13mm]
-\noindent\pnum{4} \$150 $40\%$ oshdi, so'ng $30\%$ kamaydi.\\[13mm]
-\noindent\pnum{5} \$400 $15\%$ kamaydi, so'ng $25\%$ oshdi.\\[13mm]
-\noindent\pnum{6} \$600 ketma-ket ikki marta $15\%$ ga oshdi (bitta $30\%$ bilan adashtirmang).
+\noindent\pnum{1} If \$300 increases by $20\%$ and then increases by $10\%$, what is the final value, and what is the net percent change?\\[10mm]
+\noindent\pnum{2} If \$500 increases by $20\%$ and then decreases by $10\%$, what is the final value, and what is the net percent change?\\[10mm]
+\noindent\pnum{3} If \$800 decreases by $25\%$ and then increases by $20\%$, what is the final value, and what is the net percent change?\\[10mm]
+\noindent\pnum{4} If \$150 increases by $40\%$ and then decreases by $30\%$, what is the final value, and what is the net percent change?\\[10mm]
+\noindent\pnum{5} If \$400 decreases by $15\%$ and then increases by $25\%$, what is the final value, and what is the net percent change?\\[10mm]
+\noindent\pnum{6} If \$600 increases by $15\%$ and then increases by another $15\%$, what is the final value, and what is the net percent change? Show why it is not $30\%$.
+
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 3: Set 5 (word problems) | Set 6 (spot the error) =================
-\topicheader{14}{Foizlar va kontekstli masalalar}
+% ================= PAGE 76 =================
+\topicheader{14}{Percentages in Context}
 \pagefooter{76}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10}{13}\selectfont
-\setkicker{5-to'plam}{Aralash matnli masalalar.}
+\setkicker{Set 5}{Mixed word problems.}
 
-\noindent\pnum{1} \$120 lik kurtka $25\%$ chegirma bilan sotiladi, so'ng chegirmali narxga $8\%$ soliq qo'shiladi. Yakuniy narxni toping.\\[9mm]
-\noindent\pnum{2} $10{,}000$ kishilik shahar aholisi 1-yilda $8\%$ o'sadi, 2-yilda $5\%$ kamayadi. 2 yildan keyingi sonni toping.\\[9mm]
-\noindent\pnum{3} \$2{,}000 oylik maosh bir yilda $10\%$ oshadi, keyingi yili $10\%$ kamayadi. Yangi maosh va sof foiz o'zgarishini toping.\\[9mm]
-\noindent\pnum{4} \$50 lik tovar chakanada $40\%$ ga qimmatlashadi, keyin chegirmada $30\%$ ga arzonlashadi. Sotuv narxini toping.\\[9mm]
-\noindent\pnum{5} \$5{,}000 omonat har yili $4\%$ foiz oladi (ikkinchi yil foizi birinchi yildagi yangi balansga hisoblanadi). 2 yildan keyingi balansni toping.\\[9mm]
-\noindent\pnum{6} Kompaniya daromadi inqirozda $30\%$ kamayadi, keyingi yili $30\%$ o'sadi. Boshlang'ichdan sof foiz o'zgarishini toping va nega $0\%$ emasligini bir gapda tushuntiring.
+\noindent\pnum{1} A \$120 jacket is discounted $25\%$, and then an $8\%$ sales tax is added to the \emph{discounted} price. What is the final price of the jacket, in dollars, rounded to the nearest cent if necessary?\\[6mm]
+\noindent\pnum{2} A town's population of $10{,}000$ grows $8\%$ in year one, then shrinks $5\%$ in year two. What is the population after two years?\\[6mm]
+\noindent\pnum{3} A \$2{,}000 monthly salary is raised $10\%$ one year, then cut $10\%$ the next year due to budget cuts. What is the new monthly salary, and what is the net percent change from the original salary?\\[6mm]
+\noindent\pnum{4} A \$50 item is marked up $40\%$ for retail, then marked down $30\%$ during a clearance sale. What is the sale price of the item, in dollars?\\[6mm]
+\noindent\pnum{5} \$5{,}000 in a savings account earns $4\%$ interest in year one and $4\%$ interest in year two, compounded annually (each year's interest is calculated on the \emph{previous year's} balance, not the original deposit). What is the balance after two years, in dollars?\\[6mm]
+\noindent\pnum{6} A company's revenue drops $30\%$ during a recession, then rises $30\%$ the following year. What is the net percent change from the original revenue, and why is it not $0\%$?
+
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10.5}{13.5}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- qo'shish/ayirish usulidan foydalanilgan, ko'paytuvchi usulidan emas.}
+\setkicker{Set 6}{Spot the error. Name the mistake and give the correct net percent change.}
 
-\noindent\pnum{1} \textit{``Narx $30\%$ oshadi, so'ng $20\%$ tushadi. Sof o'zgarish $30\%-20\%=10\%$ o'sish.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[48mm]{\dotfill}\\[8mm]
+\noindent\pnum{1} \textit{``A price rises $30\%$, then falls $20\%$. Net change is $30\%-20\%=10\%$ increase.''}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[7mm]
+\noindent\pnum{2} \textit{``A \$200 item is marked up $50\%$, then marked down $50\%$, so it's back to \$200 ($50\%-50\%=0\%$ net change).''}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[7mm]
+\noindent\pnum{3} \textit{``Enrollment grows $10\%$, then grows another $15\%$ the next year, so total growth is $10\%+15\%=25\%$.''}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[7mm]
+\noindent\pnum{4} \textit{``A stock falls $40\%$, then rises $40\%$, so it's back to its original value.''}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[7mm]
+\noindent\pnum{5} \textit{``To find $20\%$ of a number, multiply the number by $20$.''}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[7mm]
 
-\noindent\pnum{2} \textit{``\$200 lik tovar $50\%$ qimmatlashadi, so'ng $50\%$ arzonlashadi, demak \$200 ga qaytadi.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[48mm]{\dotfill}\\[8mm]
-
-\noindent\pnum{3} \textit{``Talabalar soni $10\%$, keyin yana $15\%$ o'sadi, jami o'sish $10\%+15\%=25\%$.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[48mm]{\dotfill}\\[8mm]
-
-\noindent\pnum{4} \textit{``Aksiya $40\%$ tushadi, so'ng $40\%$ ko'tariladi, demak boshlang'ich qiymatga qaytadi.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[48mm]{\dotfill}\\[8mm]
-
-\noindent\pnum{5} \textit{``Sonning $20\%$ ni topish uchun uni $20$ ga ko'paytirish kerak.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[48mm]{\dotfill}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) -- own page =================
-\topicheader{14}{Foizlar va kontekstli masalalar}
+% ================= PAGE 77 =================
+\topicheader{14}{Percentages in Context}
 \pagefooter{77}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin.}
+\setkicker{Set 7}{Bonus / challenge.}
 
-\noindent\pnum{1} Narx $10\%$ oshadi, yana $10\%$ oshadi, so'ng $20\%$ tushadi. Sof foiz o'zgarishini toping.\\[20mm]
-\noindent\pnum{2} $20\%$ chegirmadan keyin ko'ylak \$64 turadi. Dastlabki narxni toping.\\[20mm]
-\noindent\pnum{3} Ikki yillik $10\%$ o'sishdan keyin shahar aholisi $12{,}100$ kishi. Boshlang'ich sonni toping.\\[20mm]
-\noindent\pnum{4} Narx $r\%$ ga oshadi, so'ng xuddi shu $r\%$ ga kamayadi va boshlang'ichdan $4\%$ pastroq bo'ladi. $r$ ni toping.\\[20mm]
-\noindent\pnum{5} Ketma-ket uchta $10\%$lik o'sishdan keyin qiymat $1{,}331$ ga teng. Boshlang'ich qiymatni toping.
+\noindent\pnum{1} A price rises $10\%$, then rises another $10\%$, then falls $20\%$. What is the net percent change?\\[20mm]
+\noindent\pnum{2} After a $20\%$ discount, a shirt costs \$64. What was the original price of the shirt, in dollars? (Work backward from the final value.)\\[20mm]
+\noindent\pnum{3} After two years of $10\%$ annual population growth, a town has $12{,}100$ people. What was the original population?\\[20mm]
+\noindent\pnum{4} A price increases by $r\%$, then decreases by that same $r\%$, and ends up $4\%$ below the original price. What is the value of $r$? (Hint: $(1+r)(1-r)=0.96$, with $r$ as a decimal.)\\[20mm]
+\noindent\pnum{5} After three successive $10\%$ increases, a value is $1{,}331$. What was the original value?
+
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Easy}\\[2mm]
+\satqw{1}{A laptop's price increases from \$480 to \$540. By what percent does the price increase?}{$11\tfrac{1}{9}\%$}{$12.5\%$}{$60\%$}{$112.5\%$}
+\satq{2}{A city bus fare of \$2.00 is increased by $15\%$. What is the new fare, in dollars?}{\$2.15}{\$0.30}{\$1.70}{\$2.30}
+\satq{3}{A jacket costs \$80. During a sale, it is discounted by $25\%$. What is the sale price, in dollars?}{\$60}{\$20}{\$55}{\$105}
+\satqw{4}{A school's enrollment falls from $420$ students to $357$ students. By what percent does enrollment decrease?}{$15\%$}{$\dfrac{300}{17}\%$}{$85\%$}{$63\%$}
+\satq{5}{A club has $240$ members. Its membership increases by $5\%$. How many members does the club have now?}{$228$}{$245$}{$252$}{$12$}
+\satq{6}{A bicycle's price drops from \$300 to \$240. By what percent does the price decrease?}{$25\%$}{$20\%$}{$80\%$}{$125\%$}
+
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar =================
-\topicheader{14}{Foizlar va kontekstli masalalar}
+% ================= PAGE 78 =================
+\topicheader{14}{Percentages in Context}
 \pagefooter{78}
+\colrule{32}{238}
 \mbox{}%
 
-\begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
-\end{textblock*}
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
 
-\begin{textblock*}{194mm}(16mm,42mm)
-{\fontsize{9}{11.3}\selectfont
-\centering
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{30mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{30mm}|}
-\hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
-\hline
-\multirow{3}{24mm}{\centering 1-to'plam} & 1 & $+30\%$ & 2 & $-15\%$\\\cline{2-5}
- & 3 & $+25\%$ & 4 & $+10\%$\\\cline{2-5}
- & 5 & $-25\%$ & 6 & $+20\%$\\\hline
-\multirow{3}{24mm}{\centering 2-to'plam} & 1 & 280 & 2 & 270\\\cline{2-5}
- & 3 & 108 & 4 & 460\\\cline{2-5}
- & 5 & 240 & 6 & 396\\\hline
-\multirow{3}{24mm}{\centering 3-to'plam} & 1 & 198, $-1\%$ & 2 & 375, $-6.25\%$\\\cline{2-5}
- & 3 & 144, $-4\%$ & 4 & 450, $-25\%$\\\cline{2-5}
- & 5 & 990, $-1\%$ & 6 & 218.4, $-9\%$\\\hline
-\multirow{3}{24mm}{\centering 4-to'plam} & 1 & 396, $+32\%$ & 2 & 540, $+8\%$\\\cline{2-5}
- & 3 & 720, $-10\%$ & 4 & 147, $-2\%$\\\cline{2-5}
- & 5 & 425, $+6.25\%$ & 6 & 793.5, $+32.25\%$\\\hline
-\multirow{3}{24mm}{\centering 7-to'plam} & 1 & $-3.2\%$ & 2 & \$80\\\cline{2-5}
- & 3 & 10{,}000 & 4 & $r=20\%$\\\cline{2-5}
- & 5 & 1{,}000 & -- & --\\\hline
-\multirow{6}{24mm}{\centering 5-to'plam} & \multicolumn{4}{p{78mm}|}{1.\ \$97.20}\\\cline{2-5}
- & \multicolumn{4}{p{78mm}|}{2.\ 10{,}260}\\\cline{2-5}
- & \multicolumn{4}{p{78mm}|}{3.\ \$1{,}980, sof $-1\%$}\\\cline{2-5}
- & \multicolumn{4}{p{78mm}|}{4.\ \$49}\\\cline{2-5}
- & \multicolumn{4}{p{78mm}|}{5.\ \$5{,}408}\\\cline{2-5}
- & \multicolumn{4}{p{78mm}|}{6.\ Sof $-9\%$. Nolga teng emas, chunki $30\%$lik o'sish allaqachon kichraygan daromadga hisoblanadi.}\\\hline
-\multirow{5}{24mm}{\centering 6-to'plam} & \multicolumn{4}{p{78mm}|}{1.\ Xato -- foizlarni to'g'ridan-to'g'ri ayirgan. To'g'ri: $(1.30)(0.80)=1.04$, sof $+4\%$.}\\\cline{2-5}
- & \multicolumn{4}{p{78mm}|}{2.\ Xato -- xuddi shunday qo'shish xatosi. To'g'ri: $(1.50)(0.50)=0.75$, sof $-25\%$.}\\\cline{2-5}
- & \multicolumn{4}{p{78mm}|}{3.\ Xato -- foizlarni qo'shgan, ko'paytirish kerak edi. To'g'ri: $(1.10)(1.15)=1.265$, sof $+26.5\%$.}\\\cline{2-5}
- & \multicolumn{4}{p{78mm}|}{4.\ Xato -- teng foiz o'sish/kamayish bir-birini yo'qotadi deb o'ylagan. To'g'ri: $(0.60)(1.40)=0.84$, sof $-16\%$.}\\\cline{2-5}
- & \multicolumn{4}{p{78mm}|}{5.\ Xato -- foizni o'nlik kasrga aylantirmagan. To'g'ri: $20$ ga emas, $0.20$ ga ko'paytirish kerak.}\\\hline
-\end{tabular}
+\satq{7}{An hourly wage of \$18 increases by $10\%$. What is the new hourly wage, in dollars?}{\$1.80}{\$18.10}{\$28.00}{\$19.80}
+\satqw{8}{A plant grows from $40$ centimeters to $52$ centimeters in one month. By what percent did its height increase?}{$30\%$}{$\dfrac{300}{13}\%$}{$130\%$}{$12\%$}
+\satq{9}{A dinner bill of \$64 is increased by a $15\%$ tip. What is the total amount paid, in dollars?}{\$9.60}{\$64.15}{\$73.60}{\$79.00}
+\satqw{10}{A phone that cost \$600 is reduced to \$465. By what percent did its price decrease?}{$\dfrac{900}{31}\%$}{$22.5\%$}{$77.5\%$}{$135\%$}
+\satq{11}{A recipe calls for $500$ grams of flour. The amount is reduced by $30\%$. How many grams of flour are now needed?}{$150$}{$470$}{$530$}{$350$}
+\satq{12}{A savings account holds \$1{,}000 and earns $3\%$ interest over one year, with no withdrawals. What is the balance at the end of the year, in dollars?}{\$30}{\$1{,}030}{\$1{,}003}{\$1{,}300}
+
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,252mm)
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{13}{What is $125\%$ of $80$?}{$80$}{$105$}{$100$}{$205$}
+\satq{14}{Which expression represents $40$ increased by $25\%$?}{$40(1.25)$}{$40(0.25)$}{$40(0.75)$}{$40+25$}
+\satq{15}{A company's revenue was \$2.4 million last year. This year, revenue increased by $5\%$. What is this year's revenue, in millions of dollars?}{\$0.12 million}{\$2.28 million}{\$2.45 million}{\$2.52 million}
+
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Medium}\\[2mm]
+\satq{1}{After a $35\%$ reduction, a quantity equals $p$ times its original value. What is the value of $p$?}{$0.35$}{$1.35$}{$0.65$}{$6.5$}
+\satq{2}{A printer's price is increased by $15\%$, and then the new price is decreased by $15\%$. The original price is \$1{,}200. What is the final price, in dollars?}{\$1{,}200}{\$1{,}173}{\$1{,}020}{\$1{,}380}
+\satq{3}{After a $20\%$ increase, a value is $186$. What was the original value?}{$148.80$}{$37.20$}{$223.20$}{$155$}
+
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 79 =================
+\topicheader{14}{Percentages in Context}
+\pagefooter{79}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{4}{A DVD's price is reduced by $25\%$, and then the new price is increased by $40\%$. If the original price is \$80, what is the final price, in dollars?}{\$60}{\$84}{\$80}{\$92}
+\satq{5}{A savings account has a balance of \$2{,}000 and earns $6\%$ interest compounded annually. What is the balance after 2 years, in dollars?}{\$2{,}247.20}{\$2{,}120}{\$2{,}240}{\$2{,}360}
+\satq{6}{A tablet's price was reduced by $15\%$. The sale price is \$680. What was the price before the reduction, in dollars?}{\$578}{\$782}{\$800}{\$102}
+\satq{7}{A shop buys a bag for \$60, marks it up by $40\%$, and then discounts the marked-up price by $25\%$. What is the final price, in dollars?}{\$60}{\$63}{\$69}{\$84}
+\satq{8}{The number of visitors to a museum fell from $1{,}800$ to $1{,}350$ in one year. The next year, visitors rose by $20\%$. What is the net percent change from the original $1{,}800$ to the final year?}{$-10\%$}{$-5\%$}{$-25\%$}{$+20\%$}
+\satq{9}{A bakery's number of customers increased by $25\%$ in June and decreased by $20\%$ in July, each compared with the previous month. What is the net percent change in customers from May to July?}{$+5\%$}{$-5\%$}{$+25\%$}{$0\%$}
+
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{10}{A monthly phone plan costs \$40. The price rises by $15\%$, and then the new price rises by another $10\%$. What is the final monthly price, in dollars?}{\$50.00}{\$46.00}{\$50.60}{\$54.00}
+\satq{11}{The population of a village decreases by $5\%$ each year. If the population is $40{,}000$ at the start, what is the population after 2 years?}{$36{,}000$}{$36{,}100$}{$38{,}000$}{$34{,}200$}
+\satq{12}{The amount of sugar in a recipe is reduced by $40\%$, and then the new amount is increased by $25\%$. What is the net percent change in sugar from the original amount?}{$-40\%$}{$-15\%$}{$-25\%$}{$+25\%$}
+\satq{13}{A tablet costs \$250 before a $12\%$ discount. After the discount, an $8\%$ sales tax is added to the discounted price. What is the final amount paid, in dollars?}{\$220.00}{\$240.00}{\$270.00}{\$237.60}
+\satqw{14}{The price of a service rises by $20\%$. By what percent must the new price decrease to return to the original price?}{$16\tfrac{2}{3}\%$}{$20\%$}{$18\%$}{$25\%$}
+\satq{15}{A rectangle's length increases by $20\%$ and its width decreases by $20\%$. By what percent does the rectangle's area change?}{$0\%$}{$+4\%$}{$-4\%$}{$-20\%$}
+
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 80 =================
+\topicheader{14}{Percentages in Context}
+\pagefooter{80}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Hard}\\[2mm]
+\satq{1}{After a $15\%$ decrease followed by a $25\%$ increase, a price is \$1{,}020. What was the original price, in dollars?}{\$816}{\$960}{\$1{,}083.75}{\$1{,}200}
+\satq{2}{After two successive $20\%$ increases, a value is \$1{,}728. What was the original value, in dollars?}{\$1{,}200}{\$864}{\$1{,}382.40}{\$1{,}440}
+\satqw{3}{A bond's value rises by $10\%$ in year one. In year two, its value falls by $x\%$ and returns to its original value. What is $x$?}{$11\%$}{$12\%$}{$9\tfrac{1}{11}\%$}{$10\%$}
+\satq{4}{A cafe's revenue is $60\%$ from drinks and $40\%$ from food. In the next period, drink revenue rises by $10\%$ and food revenue rises by $30\%$. By what percent does the cafe's total revenue increase?}{$10\%$}{$20\%$}{$22\%$}{$18\%$}
+\satq{5}{A retailer buys a lamp for \$30 and sets its list price at $180\%$ of the purchase price. The list price is then reduced by $40\%$ for a sale. What is the sale price, in dollars?}{\$54.00}{\$21.60}{\$32.40}{\$75.60}
+\satq{6}{A stock's price rises by $50\%$, then falls by $20\%$, and then rises by $20\%$. What is the net percent change from the original price?}{$+50\%$}{$+44\%$}{$-44\%$}{$+20\%$}
+
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satq{7}{A store offers a $30\%$ discount on an item. At the register, an additional $20\%$ discount is applied to the already discounted price. What total percent of the original price is discounted?}{$50\%$}{$56\%$}{$44\%$}{$70\%$}
+\satq{8}{A total bill of \$486 includes an $8\%$ sales tax on the price before tax. What was the price before tax, in dollars?}{\$437.40}{\$450}{\$447.12}{\$524.88}
+\satq{9}{Chen's monthly rent rose by $12\%$ in the first year and by a further $5\%$ in the second year. The rent is now \$1{,}411.20. What was the rent before the increases, in dollars?}{\$1{,}200}{\$1{,}260}{\$1{,}130.40}{\$1{,}411.20}
+\satq{10}{A shop buys a lamp for \$50 and sets the list price at $120\%$ of the cost. The shop then offers a $15\%$ discount on the list price. What is the profit on one lamp, in dollars?}{\$-5}{\$4}{\$10}{\$1}
+\satq{11}{After a $30\%$ decrease and then a $50\%$ increase, the sales figure is \$37{,}800. What were the sales before the decrease, in dollars?}{\$26{,}460}{\$56{,}700}{\$36{,}000}{\$25{,}200}
+\satq{12}{The population of a city increased by $30\%$ from 2010 to 2015 and decreased by $10\%$ from 2015 to 2020. The population in 2020 was $140{,}400$. What was the population in 2010?}{$120{,}000$}{$108{,}000$}{$164{,}268$}{$154{,}440$}
+
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 81 =================
+\topicheader{14}{Percentages in Context}
+\pagefooter{81}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+
+\satqw{13}{Item A's price is increased by $10\%$, and item B's price is decreased by $10\%$. Both items had the same original price. By what percent is the final price of item A greater than the final price of item B?}{$20\%$}{$18\tfrac{2}{11}\%$}{$22\tfrac{2}{9}\%$}{$10\%$}
+\satq{14}{A price rises by $r\%$ and then falls by $r\%$. The net change is $-1\%$. What is $r$?}{$5\%$}{$10\%$}{$1\%$}{$20\%$}
+\satq{15}{A price rises by $25\%$ and then is reduced by $y\%$. The final price is $90\%$ of the original price. What is $y$?}{$25\%$}{$10\%$}{$35\%$}{$28\%$}
+
+}
+\end{textblock*}
+\begin{textblock*}{178mm}(16mm,268mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original. Each was checked against the method, trap structure and distractor style of the official SAT Suite Question Bank items in this lesson's skill category (Percentages), then written with new numbers, names and contexts that need the same solving steps. No real College Board question text is reproduced anywhere in this book.\par}
+\end{textblock*}
+\clearpage
+
+% ================= PAGE 82: Answers Sets 1-7 =================
+\topicheader{14}{Percentages in Context}
+\pagefooter{82}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,44mm)
+\begin{center}
+{\fontsize{9.5}{12}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|>{\centering\arraybackslash}p{26mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{32mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{32mm}|}
+\hline
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
+\hline
+\multirow{3}{26mm}{\centering Set 1} & 1 & $+30\%$ & 2 & $-15\%$\\\cline{2-5}
+ & 3 & $+25\%$ & 4 & $+10\%$\\\cline{2-5}
+ & 5 & $-25\%$ & 6 & $+20\%$\\\hline
+\multirow{3}{26mm}{\centering Set 2} & 1 & $280$ & 2 & $270$\\\cline{2-5}
+ & 3 & $108$ & 4 & $460$\\\cline{2-5}
+ & 5 & $240$ & 6 & $396$\\\hline
+\multirow{3}{26mm}{\centering Set 3} & 1 & $198$, $-1\%$ & 2 & $375$, $-6.25\%$\\\cline{2-5}
+ & 3 & $144$, $-4\%$ & 4 & $450$, $-25\%$\\\cline{2-5}
+ & 5 & $990$, $-1\%$ & 6 & $218.4$, $-9\%$\\\hline
+\multirow{3}{26mm}{\centering Set 4} & 1 & $396$, $+32\%$ & 2 & $540$, $+8\%$\\\cline{2-5}
+ & 3 & $720$, $-10\%$ & 4 & $147$, $-2\%$\\\cline{2-5}
+ & 5 & $425$, $+6.25\%$ & 6 & $793.5$, $+32.25\%$\\\hline
+\multirow{6}{26mm}{\centering Set 5} & \multicolumn{4}{p{84mm}|}{1.\ \$97.20}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ $10{,}260$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ \$1{,}980, net $-1\%$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ \$49}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ \$5{,}408}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{6.\ Net $-9\%$. Not $0\%$: the $30\%$ rise applies to the smaller, already reduced revenue.}\\\hline
+\multirow{5}{26mm}{\centering Set 6} & \multicolumn{4}{p{84mm}|}{1.\ Error: percents subtracted directly. Correct: $(1.30)(0.80)=1.04$, net $+4\%$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ Error: same additive mistake. Correct: $(1.50)(0.50)=0.75$, net $-25\%$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ Error: percents added, not multiplied. Correct: $(1.10)(1.15)=1.265$, net $+26.5\%$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ Error: equal up and down assumed to cancel. Correct: $(0.60)(1.40)=0.84$, net $-16\%$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ Error: percent not converted to a decimal. Correct: multiply by $0.20$, not $20$.}\\\hline
+\multirow{5}{26mm}{\centering Set 7} & \multicolumn{4}{p{84mm}|}{1.\ $-3.2\%$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ \$80}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ $10{,}000$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ $r=20\%$}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ $1{,}000$}\\\hline
+\end{tabular}
+}
+\end{center}
+\end{textblock*}
+\clearpage
+
+% ================= PAGE 83: Answer Key -- Set 8 =================
+\topicheader{14}{Percentages in Context}
+\pagefooter{83}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,46mm)
+\begin{center}
+{\fontsize{10}{13}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&D&A&A&C&B&D&A&C&B\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+D&B&C&A&D\\\hline
+\end{tabular}
+}
+\end{center}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,100mm)
+\begin{center}
+{\fontsize{10}{13}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&B&D&B&A&C&B&A&D&C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&C&D&A&C\\\hline
+\end{tabular}
+}
+\end{center}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,154mm)
+\begin{center}
+{\fontsize{10}{13}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&A&C&D&C&B&C&B&A&D\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+C&A&C&B&D\\\hline
+\end{tabular}
+}
+\end{center}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}

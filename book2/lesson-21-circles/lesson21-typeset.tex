@@ -23,10 +23,14 @@
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
 
+% ---- Safe print margins: 16mm outer on both sides so bound/trimmed copies never
+% clip problem text. Columns are 83mm wide with a 6mm gap on each side of the
+% center rule (at x=105mm). ----
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
 \newcommand{\COLW}{83mm}
 
+% ---- Plain topic header: number chip + title, thin rule underneath. No band, no watermark. ----
 \newcommand{\topicheader}[2]{%
 \begin{textblock*}{194mm}(16mm,10mm)
 \begin{tikzpicture}
@@ -56,6 +60,7 @@
 \end{textblock*}
 }
 
+% ---- Fixed-length vertical column rule: #1 = top y (mm), #2 = length (mm) ----
 \newcommand{\colrule}[2]{%
 \begin{textblock*}{1mm}(105mm,#1mm)
 \begin{tikzpicture}
@@ -68,18 +73,40 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
+% ---- Small boxed problem number, reference-style. Plain \fbox -- stays flush with
+% the text baseline instead of centering on it. ----
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
+% ---- QR placeholder square + caption below ----
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
+}
+
+% ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
@@ -87,190 +114,366 @@
 
 \begin{document}
 
-% ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{21}{Aylana}
+\newcommand{\levelhead}[1]{{\sffamily\bfseries\color{accent}\fontsize{10}{12}\selectfont #1}\\[1.5mm]}
+
+% ================= PAGE 1 =================
+\topicheader{21}{Circles}
 \pagefooter{113}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10.5}{13.5}\selectfont
-\setkicker{1-to'plam}{Yoy uzunligi -- radius va markaziy burchak berilgan yoki izlanadi.}
-
-\noindent\pnum{1} Radiusi $9$ sm, markaziy burchak $40°$. Yoy uzunligini toping.\\[14mm]
-\noindent\pnum{2} Radiusi $15$ sm, markaziy burchak $72°$. Yoy uzunligini toping.\\[14mm]
-\noindent\pnum{3} Radiusi $8$ sm, markaziy burchak $270°$. Yoy uzunligini toping.\\[14mm]
-\noindent\pnum{4} Radiusi $6$ sm, yoy uzunligi $4\pi$ sm. Markaziy burchakni (daraja) toping.\\[14mm]
-\noindent\pnum{5} Radiusi $10$ sm, yoy uzunligi $5\pi$ sm. Markaziy burchakni toping.\\[14mm]
-\noindent\pnum{6} Yoyning markaziy burchagi $50°$. Yoy o'lchovi nechaga teng? Uzunlikni topish uchun yana qanday ma'lumot kerak?
+\setkicker{Set 1}{Arc length and arc measure.}
+\noindent\pnum{1} A circle has a radius of $9$ cm and a central angle of $40^{\circ}$. What is the length of the arc intercepted by the central angle?\\[12mm]
+\noindent\pnum{2} A circle has a radius of $15$ cm and a central angle of $72^{\circ}$. What is the length of the intercepted arc?\\[12mm]
+\noindent\pnum{3} A circle has a radius of $8$ cm and a central angle of $270^{\circ}$. What is the length of the intercepted arc?\\[12mm]
+\noindent\pnum{4} A circle has a radius of $6$ cm. An arc of the circle has a length of $4\pi$ cm. What is the measure, in degrees, of the central angle that intercepts this arc?\\[12mm]
+\noindent\pnum{5} A circle has a radius of $10$ cm. An arc of the circle has a length of $5\pi$ cm. What is the measure of the central angle?\\[12mm]
+\noindent\pnum{6} An arc of a circle has a central angle of $50^{\circ}$. What is the degree measure of this arc? What additional information would be needed to find the length of the arc?\\[12mm]
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10.5}{13.5}\selectfont
-\setkicker{2-to'plam}{Sektor yuzi -- radius va markaziy burchak berilgan yoki izlanadi.}
-
-\noindent\pnum{1} Radiusi $6$ sm, markaziy burchak $60°$. Sektor yuzini toping.\\[14mm]
-\noindent\pnum{2} Radiusi $12$ sm, markaziy burchak $150°$. Sektor yuzini toping.\\[14mm]
-\noindent\pnum{3} Radiusi $9$ sm, markaziy burchak $40°$. Sektor yuzini toping.\\[14mm]
-\noindent\pnum{4} Radiusi $20$ sm, markaziy burchak $18°$. Sektor yuzini toping.\\[14mm]
-\noindent\pnum{5} Radiusi $10$ sm, sektor yuzi $15\pi$ sm². Markaziy burchakni toping.\\[14mm]
-\noindent\pnum{6} Radiusi $18$ sm, sektor yuzi $27\pi$ sm². Markaziy burchakni toping.
+\setkicker{Set 2}{Sector area.}
+\noindent\pnum{1} A circle has a radius of $6$ cm and a central angle of $60^{\circ}$. What is the area of the sector?\\[12mm]
+\noindent\pnum{2} A circle has a radius of $12$ cm and a central angle of $150^{\circ}$. What is the area of the sector?\\[12mm]
+\noindent\pnum{3} A circle has a radius of $9$ cm and a central angle of $40^{\circ}$. What is the area of the sector?\\[12mm]
+\noindent\pnum{4} A circle has a radius of $20$ cm and a central angle of $18^{\circ}$. What is the area of the sector?\\[12mm]
+\noindent\pnum{5} A circle has a radius of $10$ cm. A sector of the circle has an area of $15\pi$ cm$^2$. What is the measure of the central angle of this sector?\\[12mm]
+\noindent\pnum{6} A circle has a radius of $18$ cm. A sector of the circle has an area of $27\pi$ cm$^2$. What is the measure of the central angle?\\[12mm]
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{21}{Aylana}
+% ================= PAGE 2 =================
+\topicheader{21}{Circles}
 \pagefooter{114}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10.5}{13.5}\selectfont
-\setkicker{3-to'plam}{Aralash: yoy uzunligi va sektor yuzi -- bitta doira, bitta burchak. Ikkalasini aralashtirmang.}
-
-\noindent\pnum{1} Radiusi $6$ sm, markaziy burchak $90°$. Yoy \textbf{uzunligini} toping.\\[12mm]
-\noindent\pnum{2} (Yuqoridagi doira, xuddi shu burchak.) Sektor \textbf{yuzini} toping.\\[12mm]
-\noindent\pnum{3} Radiusi $9$ sm, markaziy burchak $200°$. Yoy \textbf{uzunligini} toping.\\[12mm]
-\noindent\pnum{4} (Yuqoridagi doira, xuddi shu burchak.) Sektor \textbf{yuzini} toping.\\[12mm]
-\noindent\pnum{5} Purkagich radiusi $18$ fut bo'lgan maydonni $50°$ markaziy burchak bo'yicha sug'oradi. Purkagich uchi chizadigan yoyning uzunligini toping.\\[14mm]
-\noindent\pnum{6} Xuddi shu purkagich sug'oradigan maydonning (sektor) yuzini toping.
+\setkicker{Set 3}{Mixed: arc length and sector area for the same circle. Don't mix up the two.}
+\noindent\pnum{1} A circle has a radius of $6$ cm and a central angle of $90^{\circ}$. What is the length of the intercepted arc?\\[12mm]
+\noindent\pnum{2} Using the same circle and the same central angle, what is the area of the sector?\\[12mm]
+\noindent\pnum{3} A circle has a radius of $9$ cm and a central angle of $200^{\circ}$. What is the length of the intercepted arc?\\[12mm]
+\noindent\pnum{4} Using the same circle and the same central angle, what is the area of the sector?\\[12mm]
+\noindent\pnum{5} A sprinkler with a radius of $18$ feet waters a section of a field that forms a central angle of $50^{\circ}$. What is the length of the arc traced by the tip of the sprinkler?\\[12mm]
+\noindent\pnum{6} What is the area of the sector of the field watered by the same sprinkler?\\[12mm]
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{11}{14}\selectfont
-\setkicker{4-to'plam}{Markaz $(h,k)$ va radius $r$ ni toping.}
-
-\noindent\pnum{1} $(x-2)^2+(y-5)^2=49$\\[20mm]
-\noindent\pnum{2} $(x+3)^2+(y-1)^2=16$\\[20mm]
-\noindent\pnum{3} $(x-7)^2+(y+6)^2=81$\\[20mm]
-\noindent\pnum{4} $x^2+(y-4)^2=25$\\[20mm]
-\noindent\pnum{5} $(x+1)^2+(y+1)^2=2$\\[20mm]
-\noindent\pnum{6} $(x-5)^2+y^2=25$
+{\fontsize{10.5}{13.5}\selectfont
+\setkicker{Set 4}{Reading the center and radius from standard form.}
+\noindent\pnum{1} A circle is represented by the equation $(x-2)^2+(y-5)^2=49$. What are the coordinates of the center and the radius of the circle?\\[14mm]
+\noindent\pnum{2} A circle is represented by the equation $(x+3)^2+(y-1)^2=16$. What are the coordinates of the center and the radius of the circle?\\[14mm]
+\noindent\pnum{3} A circle is represented by the equation $(x-7)^2+(y+6)^2=81$. What are the coordinates of the center and the radius of the circle?\\[14mm]
+\noindent\pnum{4} A circle is represented by the equation $x^2+(y-4)^2=25$. What are the coordinates of the center and the radius of the circle?\\[14mm]
+\noindent\pnum{5} A circle is represented by the equation $(x+1)^2+(y+1)^2=2$. What are the coordinates of the center and the radius of the circle?\\[14mm]
+\noindent\pnum{6} A circle is represented by the equation $(x-5)^2+y^2=25$. What are the coordinates of the center and the radius of the circle?\\[14mm]
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 3: Set 5 | Set 6 (spot the error) =================
-\topicheader{21}{Aylana}
+% ================= PAGE 3 =================
+\topicheader{21}{Circles}
 \pagefooter{115}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{11}{14}\selectfont
-\setkicker{5-to'plam}{To'liq kvadratga keltiring: $(x-h)^2+(y-k)^2=r^2$. Markaz va radiusni toping.}
-
-\noindent\pnum{1} $x^2+y^2-4x-6y-12=0$\\[18mm]
-\noindent\pnum{2} $x^2+y^2+10x-4y+13=0$\\[18mm]
-\noindent\pnum{3} $x^2+y^2-2x+8y+1=0$\\[18mm]
-\noindent\pnum{4} $x^2+y^2+6x+6y+9=0$\\[18mm]
-\noindent\pnum{5} $x^2+y^2-8x+2y-8=0$\\[18mm]
-\noindent\pnum{6} $x^2+y^2+2x-12y+12=0$
+{\fontsize{10.5}{13.5}\selectfont
+\setkicker{Set 5}{Circle equation via completing the square.}
+\noindent\pnum{1} The equation $x^2+y^2-4x-6y-12=0$ represents a circle in the $xy$-plane. Written in the form $(x-h)^2+(y-k)^2=r^2$, what are the center and radius of the circle?\\[14mm]
+\noindent\pnum{2} The equation $x^2+y^2+10x-4y+13=0$ represents a circle in the $xy$-plane. Written in the form $(x-h)^2+(y-k)^2=r^2$, what are the center and radius of the circle?\\[14mm]
+\noindent\pnum{3} The equation $x^2+y^2-2x+8y+1=0$ represents a circle in the $xy$-plane. Written in the form $(x-h)^2+(y-k)^2=r^2$, what are the center and radius of the circle?\\[14mm]
+\noindent\pnum{4} The equation $x^2+y^2+6x+6y+9=0$ represents a circle in the $xy$-plane. Written in the form $(x-h)^2+(y-k)^2=r^2$, what are the center and radius of the circle?\\[14mm]
+\noindent\pnum{5} The equation $x^2+y^2-8x+2y-8=0$ represents a circle in the $xy$-plane. Written in the form $(x-h)^2+(y-k)^2=r^2$, what are the center and radius of the circle?\\[14mm]
+\noindent\pnum{6} The equation $x^2+y^2+2x-12y+12=0$ represents a circle in the $xy$-plane. Written in the form $(x-h)^2+(y-k)^2=r^2$, what are the center and radius of the circle?\\[14mm]
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{10}{13}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'g'ri javobni bering.}
-
-\noindent\pnum{1} Radiusi $9$ sm, markaziy burchak $40°$ bo'lgan yoyning uzunligini toping.\\[1mm]
-\hspace*{7mm}\textit{``Yoy uzunligi $=40$ sm.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{2} Radiusi $10$ sm, markaziy burchak $90°$ bo'lgan sektorning yuzini toping.\\[1mm]
-\hspace*{7mm}\textit{``Sektor yuzi $=\frac{90}{360}\times2\pi\times10=5\pi$ sm².''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{3} $x^2+y^2-10x+4y-7=0$ markazi va radiusini toping.\\[1mm]
-\hspace*{7mm}\textit{``$(x^2-10x)+(y^2+4y)=-7$, $(x-5)^2+(y+2)^2=-7+25+4=22$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{4} $(x+6)^2+(y-3)^2=49$ markazini toping.\\[1mm]
-\hspace*{7mm}\textit{``Markaz $(6,3)$.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{5} Radiusi $16$ sm, yoy uzunligi $8\pi$ sm. Markaziy burchakni toping.\\[1mm]
-\hspace*{7mm}\textit{``$8\pi=\frac{\theta}{360}\times\pi\times16^2$, bundan $\theta$ ni topamiz.''}\\[2mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}
+{\fontsize{10.5}{13.5}\selectfont
+\setkicker{Set 6}{Spot the error: name the broken step and rule, then give the correct answer.}
+\noindent\pnum{1} Radius $9$ cm and central angle $40^{\circ}$: what is the length of the intercepted arc?\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution: ``The arc length is $40$ cm.''}\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[25mm]{\dotfill}\\[6mm]
+\noindent\pnum{2} Radius $10$ cm and central angle $90^{\circ}$: what is the area of the sector?\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution: ``The sector area is $\frac{90}{360}\times2\pi\times10=5\pi$ cm$^2$.''}\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[25mm]{\dotfill}\\[6mm]
+\noindent\pnum{3} What are the center and radius of the circle $x^2+y^2-10x+4y-7=0$?\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution: ``$(x^2-10x)+(y^2+4y)=-7$, so $(x-5)^2+(y+2)^2=-7+25+4=22$.''}\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[25mm]{\dotfill}\\[6mm]
+\noindent\pnum{4} What is the center of the circle $(x+6)^2+(y-3)^2=49$?\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution: ``The center is $(6,3)$.''}\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[25mm]{\dotfill}\\[6mm]
+\noindent\pnum{5} Radius $16$ cm, arc length $8\pi$ cm: what is the measure of the central angle?\\[1mm]
+\hspace*{7mm}\textit{Incorrect solution: ``$8\pi=\frac{\theta}{360}\times\pi\times16^2$, which gives $\theta$.''}\\[2mm]
+\hspace*{7mm}Error and correct answer: \makebox[25mm]{\dotfill}\\[6mm]
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) -- own page =================
-\topicheader{21}{Aylana}
+% ================= PAGE 4 =================
+\topicheader{21}{Circles}
 \pagefooter{116}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10.5}{13.5}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin.}
+\setkicker{Set 7}{Bonus / challenge.}
+\noindent\pnum{1} A sector of a circle has an area of $24\pi$ cm$^2$ and a central angle of $60^{\circ}$. What is the radius of the circle?\\[22mm]
+\noindent\pnum{2} An arc of a circle has a length of $10\pi$ cm and a central angle of $100^{\circ}$. What is the radius of the circle? Then, what is the area of the sector for the same central angle?\\[22mm]
+\noindent\pnum{3} A circle is represented by the equation $x^2+y^2-14x-8y+40=0$. What are the center and radius of the circle? Then determine whether the point $(7,4)$ lies inside the circle, outside the circle, or on the circle.\\[22mm]
+\noindent\pnum{4} The area of a sector is exactly $\dfrac{1}{8}$ of the area of the full circle. What is the measure of the central angle? If the radius of the circle is $16$ cm, what is the length of the arc of this sector?\\[22mm]
+\noindent\pnum{5} A circle is represented by the equation $x^2+y^2+4x-10y-20=0$. What are the center and radius of the circle? Then, for a central angle of $72^{\circ}$, what are the arc length and the sector area?\\[22mm]
+}
+\end{textblock*}
 
-\noindent\pnum{1} Sektorning yuzi $24\pi$ sm², markaziy burchagi $60°$. Doiraning radiusini toping.\\[20mm]
-\noindent\pnum{2} Yoyning uzunligi $10\pi$ sm, markaziy burchagi $100°$. Avval radiusni, so'ngra xuddi shu burchak uchun sektor yuzini toping.\\[22mm]
-\noindent\pnum{3} $x^2+y^2-14x-8y+40=0$. Markaz va radiusni toping, so'ngra $(7,4)$ nuqtasi doira ichida, tashqarisida, yoki aylananing ustida ekanligini aniqlang.\\[26mm]
-\noindent\pnum{4} Sektorning yuzi to'liq doira yuzining $\dfrac{1}{8}$ qismi. Markaziy burchakni toping. Agar radius $16$ sm bo'lsa, yoy uzunligini toping.\\[22mm]
-\noindent\pnum{5} $x^2+y^2+4x-10y-20=0$. Markaz va radiusni toping. So'ngra markaziy burchagi $72°$ bo'lgan sektorning yoy uzunligi va yuzini toping.
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+\levelhead{Easy}
+\satq{1}{A circle has a radius of $10$ cm. A central angle of $36^{\circ}$ intercepts an arc of the circle. What is the length of this arc, in centimeters?}{$\pi$}{$36\pi$}{$2\pi$}{$20\pi$}
+\satq{2}{A circle has a radius of $12$ cm. What is the length of the arc intercepted by a central angle of $150^{\circ}$?}{$10\pi$}{$24\pi$}{$5\pi$}{$60\pi$}
+\satqw{3}{A circle has a radius of $7$ cm. What is the area of the sector formed by a central angle of $90^{\circ}$?}{$\dfrac{7\pi}{2}$}{$\dfrac{49\pi}{2}$}{$49\pi$}{$\dfrac{49\pi}{4}$}
+\satqw{4}{A circle has a radius of $4$ cm. What is the length of the arc intercepted by a central angle of $210^{\circ}$?}{$\dfrac{7\pi}{3}$}{$\dfrac{14\pi}{3}$}{$8\pi$}{$\dfrac{28\pi}{3}$}
+\satqw{5}{Which equation represents a circle in the $xy$-plane with center $(3,-4)$ and radius $6$?}{$(x+3)^2+(y-4)^2=36$}{$(x-3)^2+(y+4)^2=6$}{$(x-3)^2+(y+4)^2=36$}{$(x-3)^2+(y-4)^2=36$}
+\satq{6}{The equation of a circle in the $xy$-plane is $(x-4)^2+(y+1)^2=25$. What is the radius of the circle?}{$5$}{$4$}{$10$}{$25$}
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar =================
-\topicheader{21}{Aylana}
+% ================= PAGE 5 =================
+\topicheader{21}{Circles}
 \pagefooter{117}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{7}{A circle has a circumference of $48$ cm. What is the length of the arc intercepted by a central angle of $45^{\circ}$?}{$45$ cm}{$8$ cm}{$12$ cm}{$6$ cm}
+\satq{8}{A circle has a radius of $9$ cm. What is the area of the sector formed by a central angle of $120^{\circ}$?}{$9\pi$}{$27\pi$}{$54\pi$}{$81\pi$}
+\satq{9}{A circle has a radius of $3$ cm. What is the length of the arc intercepted by a central angle of $300^{\circ}$?}{$2.5\pi$}{$10\pi$}{$5\pi$}{$6\pi$}
+\satq{10}{An arc of a circle with radius $15$ cm has a length of $5\pi$ cm. What is the measure, in degrees, of the central angle that intercepts this arc?}{$60^{\circ}$}{$30^{\circ}$}{$6^{\circ}$}{$120^{\circ}$}
+\satqw{11}{Which of the following points lies on the circle $(x-2)^2+(y-3)^2=16$ in the $xy$-plane?}{$(2,3)$}{$(3,7)$}{$(5,6)$}{$(2,7)$}
+\satq{12}{A circle has a diameter of $16$ cm. What is the area of the sector formed by a central angle of $45^{\circ}$?}{$32\pi$}{$8\pi$}{$2\pi$}{$64\pi$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satqw{13}{What are the coordinates of the center of the circle $(x+5)^2+(y-2)^2=36$ in the $xy$-plane?}{$(5,-2)$}{$(-5,-2)$}{$(-5,2)$}{$(5,2)$}
+\satq{14}{A circle has a radius of $4$ cm. What is the length of the arc intercepted by a central angle of $180^{\circ}$?}{$4\pi$}{$2\pi$}{$8\pi$}{$16\pi$}
+\satq{15}{A sector of a circle has a central angle of $60^{\circ}$ and an area of $6\pi$ cm$^2$. What is the radius of the circle, in centimeters?}{$3$}{$12$}{$36$}{$6$}
+\levelhead{Medium}
+\satq{1}{A circle has a radius of $16$ cm. An arc of the circle has a length of $8\pi$ cm. What is the measure, in degrees, of the central angle that intercepts this arc?}{$45^{\circ}$}{$90^{\circ}$}{$60^{\circ}$}{$180^{\circ}$}
+\satq{2}{A sector of a circle has a central angle of $72^{\circ}$ and an area of $10\pi$ square units. What is the radius of the circle, in units?}{$5$}{$10$}{$50$}{$5\sqrt{2}$}
+\satq{3}{A sector of a circle has a radius of $5$ meters and a central angle of $216^{\circ}$. What is the length of the arc of the sector, in meters?}{$216$}{$3\pi$}{$6\pi$}{$10\pi$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6 =================
+\topicheader{21}{Circles}
+\pagefooter{118}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satqw{4}{Which of the following correctly gives the center and radius of the circle $(x+7)^2+(y-2)^2=18$?}{center $(-7,2)$, radius $3\sqrt{2}$}{center $(7,-2)$, radius $3\sqrt{2}$}{center $(-7,2)$, radius $18$}{center $(7,-2)$, radius $18$}
+\satqw{5}{The equation $x^2+y^2-6x+10y+18=0$ represents a circle in the $xy$-plane. Which of the following gives the center and radius of the circle?}{center $(-3,5)$, radius $4$}{center $(3,-5)$, radius $4$}{center $(3,-5)$, radius $16$}{center $(3,-5)$, radius $2\sqrt{13}$}
+\satq{6}{The equation $x^2+y^2+4x-8y-5=0$ represents a circle in the $xy$-plane. What is the radius of the circle?}{$5$}{$\sqrt{5}$}{$10$}{$25$}
+\satq{7}{A circular running track has a radius of $40$ meters. A runner covers the part of the track that corresponds to a central angle of $81^{\circ}$. What is the length of this part of the track, in meters?}{$18\pi$}{$9\pi$}{$36\pi$}{$81\pi$}
+\satqw{8}{In the $xy$-plane, a circle has equation $(x-5)^2+(y+2)^2=25$. The point $(8,2)$ is which of the following?}{inside the circle}{outside the circle}{the center of the circle}{on the circle}
+\satq{9}{An arc of a circle has a central angle of $40^{\circ}$ and a length of $4\pi$ cm. What is the circumference of the circle, in centimeters?}{$9\pi$}{$36\pi$}{$40\pi$}{$72\pi$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{10}{The equation $(x+4)^2+(y-1)^2=k$ represents a circle with radius $7$. What is the value of $k$?}{$7$}{$14$}{$49$}{$28$}
+\satq{11}{A sector of a circle has a central angle of $60^{\circ}$ and an area of $24\pi$ cm$^2$. What is the length of the arc of this sector, in centimeters?}{$4\pi$}{$2\pi$}{$8\pi$}{$12\pi$}
+\satq{12}{A sector of a circle has a radius of $9$ cm and a central angle of $80^{\circ}$. What is the perimeter of the sector, consisting of the two radii and the arc? Give an exact answer.}{$8\pi+18$}{$4\pi$}{$4\pi+18$}{$4\pi+36$}
+\satq{13}{The area of a sector is $\dfrac{1}{10}$ of the area of its circle. What is the measure, in degrees, of the central angle of the sector?}{$10^{\circ}$}{$18^{\circ}$}{$100^{\circ}$}{$36^{\circ}$}
+\satq{14}{The equation $x^2+y^2-2x+4y=4$ represents a circle in the $xy$-plane. What is the radius of the circle?}{$9$}{$\sqrt{13}$}{$2$}{$3$}
+\satqw{15}{A circle in the $xy$-plane has center $(2,-3)$ and passes through the point $(5,1)$. Which equation represents this circle?}{$(x+2)^2+(y-3)^2=25$}{$(x-2)^2+(y+3)^2=7$}{$(x-2)^2+(y+3)^2=25$}{$(x-2)^2+(y+3)^2=5$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 7 =================
+\topicheader{21}{Circles}
+\pagefooter{119}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\levelhead{Hard}
+\satq{1}{A sector of a circle has an arc length of $12\pi$ cm and a central angle of $120^{\circ}$. What is the area of the sector, in square centimeters?}{$36\pi$}{$54\pi$}{$108\pi$}{$216\pi$}
+\satq{2}{Circle A has a radius of $5$ cm, and circle B has a radius of $15$ cm. A central angle of $72^{\circ}$ forms a sector in circle A and a sector in circle B. What is the ratio of the area of the sector in circle B to the area of the sector in circle A?}{$3$}{$6$}{$9$}{$27$}
+\satq{3}{The equation $x^2+y^2-8x+6y+c=0$ represents a circle with radius $4$. What is the value of $c$?}{$16$}{$25$}{$-9$}{$9$}
+\satq{4}{How many points with integer coordinates lie inside the circle or on the circle $(x-1)^2+(y+2)^2=4$ in the $xy$-plane?}{$9$}{$13$}{$12$}{$16$}
+\satqw{5}{In the $xy$-plane, a circle has center $(-1,2)$ and radius $5$. Which of the following points lies outside the circle?}{$(-4,6)$}{$(1,-1)$}{$(4,-2)$}{$(2,5)$}
+\satq{6}{In the $xy$-plane, a circle has center $(3,-2)$ and passes through the point $(6,2)$. The point $(a,-2)$ lies on the circle, and $a>0$. What is the value of $a$?}{$-2$}{$4$}{$16$}{$8$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satqw{7}{A circle has a radius of $15$ cm. A sector of this circle has an arc length of $6\pi$ cm. A second sector of the same circle has a central angle that is $60^{\circ}$ greater than the central angle of the first sector. What is the area of the second sector, in square centimeters?}{$\dfrac{75\pi}{2}$}{$\dfrac{165\pi}{2}$}{$132\pi$}{$\dfrac{225\pi}{2}$}
+\satq{8}{A sector of a circle has an area of $36\pi$ cm$^2$ and an arc length of $12\pi$ cm. What is the radius of the circle, in centimeters?}{$6$}{$3$}{$12$}{$18$}
+\satq{9}{A circle in the $xy$-plane has its center on the line $y=2x$. The circle passes through the origin and the point $(6,0)$. What is the radius of the circle?}{$6$}{$45$}{$3\sqrt{5}$}{$9$}
+\satq{10}{The equation $x^2+y^2-4x+6y+c=0$ represents a circle with radius $6$. What is the value of $c$?}{$-23$}{$23$}{$-13$}{$49$}
+\satqw{11}{Circle A has a radius of $15$ cm. A central angle of $40^{\circ}$ intercepts an arc of circle A. A central angle of $100^{\circ}$ in circle B intercepts an arc of the same length. What is the radius of circle B, in centimeters?}{$6$}{$9$}{$24$}{$\dfrac{75}{2}$}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 8 =================
+\topicheader{21}{Circles}
+\pagefooter{120}
+\colrule{32}{224}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{12}{The area of a sector of a circle is $A$. If the radius of the circle is doubled and the central angle of the sector is halved, what is the area of the new sector in terms of $A$?}{$\dfrac{A}{2}$}{$4A$}{$2A$}{$8A$}
+\satq{13}{For how many integer values of $k$ with $1 \le k \le 20$ does the equation $x^2+y^2-6x+4y+k=0$ represent a circle with a positive radius?}{$11$}{$13$}{$20$}{$12$}
+\satq{14}{Two sectors of the same circle have central angles of $60^{\circ}$ and $100^{\circ}$. The sector with the $60^{\circ}$ angle has an arc length of $4\pi$ cm. What is the positive difference between the areas of the two sectors, in square centimeters?}{$16\pi$}{$8\pi$}{$24\pi$}{$64\pi$}
+\satq{15}{The point $(5,k)$ lies on the circle $(x-1)^2+(y-2)^2=20$ in the $xy$-plane, and $k>2$. What is the value of $k$?}{$0$}{$4$}{$6$}{$8$}
+}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,262mm)
+{\itshape\fontsize{8}{10}\selectfont\color{black!75} Sourcing note: real College Board SAT questions are copyrighted and are not licensed for reproduction in commercial test-prep materials. No verbatim official question appears in this book. Each Set 8 item was written from the method, trap structure and difficulty tier of official SAT Suite Question Bank items in the Circles category, with new numbers and contexts; every answer was checked by computation.}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 9 =================
+\topicheader{21}{Circles}
+\pagefooter{121}
+
 \mbox{}%
 
 \begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,44mm)
-{\fontsize{9}{11.5}\selectfont
-\centering
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{9.5}{12}\selectfont
 \renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{40mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{40mm}|}
+\begin{tabular}{|p{22mm}|p{150mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
-\hline
-\multirow{3}{24mm}{\centering 1-to'plam} & 1 & $2\pi$ sm & 2 & $6\pi$ sm\\\cline{2-5}
- & 3 & $12\pi$ sm & 4 & $120°$\\\cline{2-5}
- & 5 & $90°$ & 6 & o'lchov $50°$; uzunlik uchun radius kerak\\\hline
-\multirow{3}{24mm}{\centering 2-to'plam} & 1 & $6\pi$ sm² & 2 & $60\pi$ sm²\\\cline{2-5}
- & 3 & $9\pi$ sm² & 4 & $20\pi$ sm²\\\cline{2-5}
- & 5 & $54°$ & 6 & $30°$\\\hline
-\multirow{3}{24mm}{\centering 3-to'plam} & 1 & $3\pi$ ft & 2 & $9\pi$ sm²\\\cline{2-5}
- & 3 & $10\pi$ sm & 4 & $45\pi$ sm²\\\cline{2-5}
- & 5 & $5\pi$ fut & 6 & $45\pi$ fut²\\\hline
-\multirow{3}{24mm}{\centering 4-to'plam} & 1 & $(2,5)$, $r{=}7$ & 2 & $(-3,1)$, $r{=}4$\\\cline{2-5}
- & 3 & $(7,-6)$, $r{=}9$ & 4 & $(0,4)$, $r{=}5$\\\cline{2-5}
- & 5 & $(-1,-1)$, $r{=}\sqrt2$ & 6 & $(5,0)$, $r{=}5$\\\hline
-\multirow{3}{24mm}{\centering 5-to'plam} & 1 & $(2,3)$, $r{=}5$ & 2 & $(-5,2)$, $r{=}4$\\\cline{2-5}
- & 3 & $(1,-4)$, $r{=}4$ & 4 & $(-3,-3)$, $r{=}3$\\\cline{2-5}
- & 5 & $(4,-1)$, $r{=}5$ & 6 & $(-1,6)$, $r{=}5$\\\hline
-\multirow{5}{24mm}{\centering 6-to'plam} & \multicolumn{4}{p{92mm}|}{1.\ Yoy o'lchovini uzunlik deb yozgan. To'g'ri: $\frac{40}{360}\times2\pi\times9=2\pi$ sm.}\\\cline{2-5}
- & \multicolumn{4}{p{92mm}|}{2.\ Yuza o'rniga uzunlik formulasi qo'llangan. To'g'ri: $\frac{90}{360}\times\pi\times10^2=25\pi$ sm².}\\\cline{2-5}
- & \multicolumn{4}{p{92mm}|}{3.\ Erkin hadning ishorasi o'zgartirilmagan. To'g'ri: $(x-5)^2+(y+2)^2=36$; markaz $(5,-2)$, $r=6$.}\\\cline{2-5}
- & \multicolumn{4}{p{92mm}|}{4.\ $(x+6)^2$ ishorasi teskari o'qilgan. To'g'ri: markaz $(-6,3)$.}\\\cline{2-5}
- & \multicolumn{4}{p{92mm}|}{5.\ Uzunlik o'rniga yuza formulasi qo'llangan. To'g'ri: $8\pi=\frac{\theta}{360}\times2\pi\times16$, $\theta=90°$.}\\\hline
-\multirow{5}{24mm}{\centering 7-to'plam} & \multicolumn{4}{p{92mm}|}{1.\ $r=12$ sm}\\\cline{2-5}
- & \multicolumn{4}{p{92mm}|}{2.\ $r=18$ sm; sektor yuzi $=90\pi$ sm²}\\\cline{2-5}
- & \multicolumn{4}{p{92mm}|}{3.\ Markaz $(7,4)$, $r=5$; nuqta aynan markaz -- doira ichida.}\\\cline{2-5}
- & \multicolumn{4}{p{92mm}|}{4.\ $\theta=45°$; yoy uzunligi $=4\pi$ sm}\\\cline{2-5}
- & \multicolumn{4}{p{92mm}|}{5.\ Markaz $(-2,5)$, $r=7$; yoy uzunligi $=\frac{14\pi}{5}$ sm, sektor yuzi $=\frac{49\pi}{5}$ sm²}\\\hline
+\rowcolor{badge!55}\textbf{Set} & \textbf{Answers}\\\hline
+\multicolumn{1}{|c|}{\textbf{Set 1}} & \begin{tabular}[t]{@{}p{146mm}@{}}1) $2\pi$ cm\\2) $6\pi$ cm\\3) $12\pi$ cm\\4) $120^{\circ}$\\5) $90^{\circ}$\\6) The arc measure is $50^{\circ}$; the radius is needed for the arc length.\end{tabular}\\\hline
+\multicolumn{1}{|c|}{\textbf{Set 2}} & \begin{tabular}[t]{@{}p{146mm}@{}}1) $6\pi$ cm$^2$\\2) $60\pi$ cm$^2$\\3) $9\pi$ cm$^2$\\4) $20\pi$ cm$^2$\\5) $54^{\circ}$\\6) $30^{\circ}$\end{tabular}\\\hline
+\multicolumn{1}{|c|}{\textbf{Set 3}} & \begin{tabular}[t]{@{}p{146mm}@{}}1) $3\pi$ cm\\2) $9\pi$ cm$^2$\\3) $10\pi$ cm\\4) $45\pi$ cm$^2$\\5) $5\pi$ ft\\6) $45\pi$ ft$^2$\end{tabular}\\\hline
+\multicolumn{1}{|c|}{\textbf{Set 4}} & \begin{tabular}[t]{@{}p{146mm}@{}}1) center $(2,5)$, $r=7$\\2) center $(-3,1)$, $r=4$\\3) center $(7,-6)$, $r=9$\\4) center $(0,4)$, $r=5$\\5) center $(-1,-1)$, $r=\sqrt{2}$\\6) center $(5,0)$, $r=5$\end{tabular}\\\hline
+\multicolumn{1}{|c|}{\textbf{Set 5}} & \begin{tabular}[t]{@{}p{146mm}@{}}1) center $(2,3)$, $r=5$\\2) center $(-5,2)$, $r=4$\\3) center $(1,-4)$, $r=4$\\4) center $(-3,-3)$, $r=3$\\5) center $(4,-1)$, $r=5$\\6) center $(-1,6)$, $r=5$\end{tabular}\\\hline
+\multicolumn{1}{|c|}{\textbf{Set 6}} & \begin{tabular}[t]{@{}p{146mm}@{}}1) Arc measure written as arc length; correct $2\pi$ cm.\\2) Arc-length formula used for area; correct $25\pi$ cm$^2$.\\3) Constant sign not flipped; correct center $(5,-2)$, $r=6$.\\4) $(x+6)^2$ read with the wrong sign; correct center $(-6,3)$.\\5) Area formula used for arc length; correct $\theta=90^{\circ}$.\end{tabular}\\\hline
+\multicolumn{1}{|c|}{\textbf{Set 7}} & \begin{tabular}[t]{@{}p{146mm}@{}}1) $r=12$ cm\\2) $r=18$ cm; sector area $90\pi$ cm$^2$\\3) Center $(7,4)$, $r=5$; the point is the center, so it lies inside.\\4) $\theta=45^{\circ}$; arc length $4\pi$ cm\\5) Center $(-2,5)$, $r=7$; arc $\frac{14\pi}{5}$ cm, sector $\frac{49\pi}{5}$ cm$^2$\end{tabular}\\\hline
 \end{tabular}
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,220mm)
+\clearpage
+
+% ================= PAGE 10 =================
+\topicheader{21}{Circles}
+\pagefooter{122}
+
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\\hline
+C & A & D & B & C & A & D & B & C & A\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11 & 12 & 13 & 14 & 15\\\hline
+D & B & C & A & D\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\\hline
+B & D & C & A & B & A & A & D & B & C\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11 & 12 & 13 & 14 & 15\\\hline
+A & C & D & D & C\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\\hline
+C & C & D & B & C & D & B & A & C & A\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11 & 12 & 13 & 14 & 15\\\hline
+A & C & D & A & B\\\hline
+\end{tabular}
+}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}

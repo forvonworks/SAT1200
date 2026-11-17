@@ -23,10 +23,14 @@
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
 
+% ---- Safe print margins: 16mm outer on both sides so bound/trimmed copies never
+% clip problem text. Columns are 83mm wide with a 6mm gap on each side of the
+% center rule (at x=105mm). ----
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
 \newcommand{\COLW}{83mm}
 
+% ---- Plain topic header: number chip + title, thin rule underneath. No band, no watermark. ----
 \newcommand{\topicheader}[2]{%
 \begin{textblock*}{194mm}(16mm,10mm)
 \begin{tikzpicture}
@@ -56,6 +60,7 @@
 \end{textblock*}
 }
 
+% ---- Fixed-length vertical column rule: #1 = top y (mm), #2 = length (mm) ----
 \newcommand{\colrule}[2]{%
 \begin{textblock*}{1mm}(105mm,#1mm)
 \begin{tikzpicture}
@@ -68,18 +73,40 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
+% ---- Small boxed problem number, reference-style. Plain \fbox -- stays flush with
+% the text baseline instead of centering on it. ----
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
+% ---- QR placeholder square + caption below ----
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
+}
+
+% ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
@@ -88,187 +115,423 @@
 \begin{document}
 
 % ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{23}{Pifagor Teoremasi va Koordinatalar}
+\topicheader{23}{The Pythagorean Theorem \& Coordinates}
 \pagefooter{123}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{12}{15}\selectfont
-\setkicker{1-to'plam}{Har doim to'g'ri burchak berilgan -- yetishmayotgan tomonni toping.}
+{\fontsize{11}{14}\selectfont
+\sloppy\setkicker{Set 1}{Basic Pythagorean theorem -- right angle always given.}
 
-\noindent\pnum{1} Katetlar $3$ va $4$. Gipotenuza?\\[26mm]
-\noindent\pnum{2} Katetlar $6$ va $8$. Gipotenuza?\\[26mm]
-\noindent\pnum{3} Katetlar $5$ va $12$. Gipotenuza?\\[26mm]
-\noindent\pnum{4} Gipotenuza $10$, bir katet $6$. Ikkinchi katet?\\[26mm]
-\noindent\pnum{5} Gipotenuza $13$, bir katet $5$. Ikkinchi katet?\\[26mm]
-\noindent\pnum{6} Gipotenuza $17$, bir katet $8$. Ikkinchi katet?
+\noindent\pnum{1} A right triangle has legs of length $3$ and $4$. What is the length of the hypotenuse?\\[20mm]
+\noindent\pnum{2} A right triangle has legs of length $6$ and $8$. What is the length of the hypotenuse?\\[20mm]
+\noindent\pnum{3} A right triangle has legs of length $5$ and $12$. What is the length of the hypotenuse?\\[20mm]
+\noindent\pnum{4} A right triangle has a hypotenuse of length $10$ and one leg of length $6$. What is the length of the other leg?\\[20mm]
+\noindent\pnum{5} A right triangle has a hypotenuse of length $13$ and one leg of length $5$. What is the length of the other leg?\\[20mm]
+\noindent\pnum{6} A right triangle has a hypotenuse of length $17$ and one leg of length $8$. What is the length of the other leg?\\[20mm]
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{11}{14}\selectfont
-\setkicker{2-to'plam}{Qo'llash mumkinmi? Avval hal qiling, keyin hisoblang.}
+{\fontsize{10}{12.5}\selectfont
+\sloppy\setkicker{Set 2}{Apply or don't apply? -- decide first, then compute only if it applies.}
 
-\noindent\pnum{1} To'g'ri burchak $9$ va $12$ katetlar orasida. Gipotenuza?\\[14mm]
-\noindent\pnum{2} Tomonlari $7$, $8$, $10$. Burchak berilmagan. Pifagor teoremasi shu yerda ishlatilishi mumkinmi?\\[11mm]
-\noindent\pnum{3} Tomonlari $8$, $15$, $17$. Teskari tekshiruv: bu to'g'ri burchakli uchburchakmi?\\[11mm]
-\noindent\pnum{4} Tomonlari $6$, $8$, $11$. Teskari tekshiruv: bu to'g'ri burchakli uchburchakmi?\\[11mm]
-\noindent\pnum{5} To'g'ri burchak $7$ va $24$ katetlar orasida. Gipotenuza?\\[14mm]
-\noindent\pnum{6} Teng yonli uchburchak: tomonlari $10$, $10$, asos $12$. Bu to'g'ri burchaklimi?
+\noindent\pnum{1} In a right triangle, a right angle is marked between two legs measuring $9$ and $12$. What is the length of the hypotenuse?\\[15mm]
+\noindent\pnum{2} A triangle has sides of length $7$, $8$, and $10$, with no right angle marked or stated anywhere. Can the Pythagorean theorem be used to find or confirm a side of this triangle? Explain why or why not.\\[15mm]
+\noindent\pnum{3} A triangle has sides of length $8$, $15$, and $17$, with no right angle marked. Using the converse of the Pythagorean theorem, is this a right triangle? If so, which side is the hypotenuse?\\[15mm]
+\noindent\pnum{4} A triangle has sides of length $6$, $8$, and $11$, with no right angle marked. Using the converse of the Pythagorean theorem, is this a right triangle?\\[15mm]
+\noindent\pnum{5} In a right triangle, a right angle is marked between two legs measuring $7$ and $24$. What is the length of the hypotenuse?\\[15mm]
+\noindent\pnum{6} An isosceles triangle has two sides of length $10$ and a base of length $12$, with no right angle marked anywhere. Is this a right triangle?\\[15mm]
 }
 \end{textblock*}
 
 \clearpage
 
 % ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{23}{Pifagor Teoremasi va Koordinatalar}
+\topicheader{23}{The Pythagorean Theorem \& Coordinates}
 \pagefooter{124}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{12}{15}\selectfont
-\setkicker{3-to'plam}{Masofa formulasi -- mashq.}
+{\fontsize{11}{14}\selectfont
+\sloppy\setkicker{Set 3}{Distance formula drill.}
 
-\noindent\pnum{1} $(0,0)$ va $(3,4)$\\[26mm]
-\noindent\pnum{2} $(2,3)$ va $(7,15)$\\[26mm]
-\noindent\pnum{3} $(-4,1)$ va $(4,7)$\\[26mm]
-\noindent\pnum{4} $(1,1)$ va $(1,9)$\\[26mm]
-\noindent\pnum{5} $(-2,-3)$ va $(3,-3)$\\[26mm]
-\noindent\pnum{6} $(0,0)$ va $(1,1)$
+\noindent\pnum{1} What is the distance between the points $(0,0)$ and $(3,4)$ in the xy-plane?\\[22mm]
+\noindent\pnum{2} What is the distance between the points $(2,3)$ and $(7,15)$ in the xy-plane?\\[22mm]
+\noindent\pnum{3} What is the distance between the points $(-4,1)$ and $(4,7)$ in the xy-plane?\\[22mm]
+\noindent\pnum{4} What is the distance between the points $(1,1)$ and $(1,9)$ in the xy-plane?\\[22mm]
+\noindent\pnum{5} What is the distance between the points $(-2,-3)$ and $(3,-3)$ in the xy-plane?\\[22mm]
+\noindent\pnum{6} What is the distance between the points $(0,0)$ and $(1,1)$ in the xy-plane?\\[22mm]
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{12}{15}\selectfont
-\setkicker{4-to'plam}{Pifagor uchliklari -- tezlik mashqi (tanish, hisoblamang).}
+{\fontsize{11}{14}\selectfont
+\sloppy\setkicker{Set 4}{Pythagorean triples -- recognize, don't compute.}
 
-\noindent\pnum{1} Katetlar $9$ va $12$. Gipotenuza?\\[26mm]
-\noindent\pnum{2} Katetlar $8$ va $15$. Gipotenuza?\\[26mm]
-\noindent\pnum{3} Katetlar $20$ va $21$. Gipotenuza?\\[26mm]
-\noindent\pnum{4} Gipotenuza $25$, bir katet $7$. Ikkinchisi?\\[26mm]
-\noindent\pnum{5} Katetlar $9$ va $40$. Gipotenuza?\\[26mm]
-\noindent\pnum{6} Katetlar $10$ va $24$. Gipotenuza?
+\noindent\pnum{1} A right triangle has legs of length $9$ and $12$. What is the length of the hypotenuse?\\[22mm]
+\noindent\pnum{2} A right triangle has legs of length $8$ and $15$. What is the length of the hypotenuse?\\[22mm]
+\noindent\pnum{3} A right triangle has legs of length $20$ and $21$. What is the length of the hypotenuse?\\[22mm]
+\noindent\pnum{4} A right triangle has a hypotenuse of length $25$ and one leg of length $7$. What is the length of the other leg?\\[22mm]
+\noindent\pnum{5} A right triangle has legs of length $9$ and $40$. What is the length of the hypotenuse?\\[22mm]
+\noindent\pnum{6} A right triangle has legs of length $10$ and $24$. What is the length of the hypotenuse?\\[22mm]
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 3: Set 5 | Set 6 (spot the error) =================
-\topicheader{23}{Pifagor Teoremasi va Koordinatalar}
+% ================= PAGE 3: Set 5 | Set 6 =================
+\topicheader{23}{The Pythagorean Theorem \& Coordinates}
 \pagefooter{125}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{11}{14}\selectfont
-\setkicker{5-to'plam}{Aralash -- hayotiy masalalar.}
+{\fontsize{10.5}{13}\selectfont
+\sloppy\setkicker{Set 5}{Mixed real-world word problems.}
 
-\noindent\pnum{1} Narvon devordan $5$ m masofada, devor bo'ylab $12$ m balandlikka chiqadi. Narvon uzunligi?\\[13mm]
-\noindent\pnum{2} TV ekrani $24$ dyuym x $10$ dyuym. Diagonalini toping.\\[13mm]
-\noindent\pnum{3} Kema $9$ km sharqqa, so'ng $12$ km shimolga suzadi. Boshlang'ich nuqtadan masofasi?\\[13mm]
-\noindent\pnum{4} Ikki shahar $(0,0)$ va $(8,15)$ (km) koordinatalarida. Ular orasidagi masofa?\\[13mm]
-\noindent\pnum{5} To'g'ri burchakli bog' $16$ m x $30$ m. Diagonal yo'lning uzunligi?\\[13mm]
-\noindent\pnum{6} Beysbol maydoni -- tomoni $90$ fut bo'lgan kvadrat. Birinchi bazadan uchinchi bazagacha (diagonal) masofa?
+\noindent\pnum{1} A ladder is positioned so that its base is $5$ meters from a wall and the ladder reaches $12$ meters up the wall. What is the length of the ladder, in meters?\\[12mm]
+\noindent\pnum{2} A television screen measures $24$ inches wide and $10$ inches tall. What is the length of the screen's diagonal, in inches?\\[12mm]
+\noindent\pnum{3} A ship sails $9$ kilometers east and then $12$ kilometers north. What is the straight-line distance from the ship's final position to its starting point, in kilometers?\\[12mm]
+\noindent\pnum{4} In a coordinate system where distances are measured in kilometers, two cities are located at the points $(0,0)$ and $(8,15)$. What is the straight-line distance between the two cities, in kilometers?\\[12mm]
+\noindent\pnum{5} A rectangular park measures $16$ meters by $30$ meters. What is the length of a diagonal path that cuts across the park, in meters?\\[12mm]
+\noindent\pnum{6} A baseball diamond is a square with each side measuring $90$ feet. What is the exact distance from home plate to second base, which lies along the diagonal of the square, in feet?\\[12mm]
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{11}{14}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- buzilgan qadamni ayting, to'g'ri javobni bering.}
+{\fontsize{10.5}{13}\selectfont
+\setkicker{Set 6}{Spot the error -- name the error and give the correct answer.}
 
-\noindent\pnum{1} Tomonlar $6,10,11$, burchak berilmagan. \textit{``Yechim: $6^2+10^2=136$, va $11^2=121$ -- bular juda yaqin, demak to'g'ri burchakli.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{2} Gipotenuza $25$, bir katet $7$. \textit{``Yechim: $x=\sqrt{7^2+25^2}=\sqrt{674}$.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{3} $(1,5)$ va $(4,1)$ orasidagi masofa. \textit{``Yechim: $\sqrt{3^2+(-4)}=\sqrt{9-4}=\sqrt5$.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{4} Tomonlar $5,6,10$, burchak berilmagan. \textit{``Yechim: eng uzun tomon $10$, demak gipotenuza, va $5^2+6^2=10^2$ deb hisoblaymiz.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[6mm]
-
-\noindent\pnum{5} Katetlar $9$ va $12$. \textit{``Yechim: $9^2+12^2=81+144=225$. Javob: $225$.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}
+\noindent\pnum{1} Sides $6$, $10$, $11$ are given, with no right angle marked. \textit{``Solution: $6^2+10^2=136$, and $11^2=121$ — these are close enough, so this is effectively a right triangle; we can ignore the small discrepancy.''}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{2} The hypotenuse is $25$ and one leg is $7$; find the other leg. \textit{``Solution: $x=\sqrt{7^2+25^2}=\sqrt{674}\approx25.96$.''}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{3} What is the distance between $(1,5)$ and $(4,1)$? \textit{``Solution: $\sqrt{3^2+(-4)}=\sqrt{9-4}=\sqrt5$.''}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{4} Sides $5$, $6$, $10$ are given, with no right angle marked. \textit{``Solution: the longest side is $10$, so it must be the hypotenuse, and since $5^2+6^2=10^2$, this must be a right triangle.''}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
+\noindent\pnum{5} A right triangle has legs $9$ and $12$. \textit{``Solution: $9^2+12^2=81+144=225$. The hypotenuse is $225$.''}\\[1mm]
+\hspace*{7mm}Error + fix: \makebox[52mm]{\dotfill}\\[8mm]
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus/capstone) =================
-\topicheader{23}{Pifagor Teoremasi va Koordinatalar}
+% ================= PAGE 4: Set 7 | Set 8 begins =================
+\topicheader{23}{The Pythagorean Theorem \& Coordinates}
 \pagefooter{126}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{11}{14}\selectfont
-\setkicker{7-to'plam}{Bonus / yakuniy -- 1- va 3-darslar bilan birlashadi, Kitob 2'ni yakunlaydi.}
+{\fontsize{10.5}{13}\selectfont
+\sloppy\setkicker{Set 7}{Bonus / capstone -- combines with Lessons 1 and 3; closes Book 2.}
 
-\noindent\pnum{1} $A(1,2)$ va $B(7,10)$ nuqtalari. $AB$ masofasini va $AB$ kesmaning burchak koeffitsiyentini toping.\\[12mm]
-\noindent\pnum{2} $y=3x$ to'g'ri chizig'ida $P=(x,9)$ nuqta yotadi, $x>0$. $x$ ni, so'ngra $OP$ masofasini toping.\\[12mm]
-\noindent\pnum{3} Uchburchak uchlari $(0,0)$, $(4,0)$, $(4,3)$. Perimetrini toping.\\[12mm]
-\noindent\pnum{4} Ikki nuqta orasidagi masofa $13$ birlik, gorizontal masofa $5$ birlik. Vertikal masofani toping.\\[12mm]
-\noindent\pnum{5} Uchburchak uchlari $(1,1)$, $(9,7)$, $(9,1)$. Bu to'g'ri burchakli ekanini tasdiqlang, so'ng yuzini toping.
+\noindent\pnum{1} In the xy-plane, points $A(1,2)$ and $B(7,10)$ are given. What is the distance $AB$, and what is the slope of segment $AB$?\\[20mm]
+\noindent\pnum{2} In the xy-plane, the line $y=3x$ passes through the origin. A point $P=(x,9)$ lies on this line, where $x>0$. What is the value of $x$, and what is the distance $OP$ from the origin to point $P$?\\[20mm]
+\noindent\pnum{3} In the xy-plane, a triangle has vertices at $(0,0)$, $(4,0)$, and $(4,3)$. What is the perimeter of the triangle? (Two sides can be found directly; find the third using the distance formula.)\\[20mm]
+\noindent\pnum{4} Two points in the xy-plane are $13$ units apart, and the horizontal distance between them is $5$ units. What is the vertical distance between the two points?\\[20mm]
+\noindent\pnum{5} In the xy-plane, a triangle has vertices at $(1,1)$, $(9,7)$, and $(9,1)$. Confirm that this is a right triangle (two of its sides are horizontal and vertical), and then find its area.\\[20mm]
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\sloppy
+\setkicker{Set 8}{Real SAT-style problems.}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Easy}\\[1.5mm]
+
+\satq{1}{A right triangle has legs of length $7$ and $24$. What is the length of the hypotenuse?}{$17$}{$25$}{$31$}{$625$}
+
+\satq{2}{A right triangle has a hypotenuse of length $26$ and one leg of length $10$. What is the length of the other leg?}{$16$}{$28$}{$24$}{$36$}
+
+\satq{3}{A right triangle has legs of length $15$ and $20$. What is the length of the hypotenuse?}{$35$}{$5$}{$625$}{$25$}
+
+\satq{4}{A right triangle has a hypotenuse of length $37$ and one leg of length $35$. What is the length of the other leg?}{$12$}{$2$}{$24$}{$72$}
+
+\satq{5}{A right triangle has a hypotenuse of length $10$ and one leg of length $8$. What is the area of the triangle?}{$6$}{$24$}{$40$}{$48$}
+
+\satq{6}{In the $xy$-plane, what is the distance between the points $(0,0)$ and $(6,8)$?}{$2$}{$14$}{$10$}{$100$}
+
 }
 \end{textblock*}
 
 \clearpage
 
-% ================= PAGE 5: Javoblar =================
-\topicheader{23}{Pifagor Teoremasi va Koordinatalar}
+% ================= PAGE 5: Set 8 =================
+\topicheader{23}{The Pythagorean Theorem \& Coordinates}
 \pagefooter{127}
+\colrule{32}{238}
 \mbox{}%
 
-\begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
-\end{textblock*}
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\sloppy
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Easy}\\[1.5mm]
 
-\begin{textblock*}{194mm}(16mm,44mm)
-{\fontsize{9.3}{11.5}\selectfont
-\centering
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{26mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{26mm}|}
-\hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
-\hline
-\multirow{3}{24mm}{\centering 1-to'plam} & 1 & 5 & 2 & 10\\\cline{2-5}
- & 3 & 13 & 4 & 8\\\cline{2-5}
- & 5 & 12 & 6 & 15\\\hline
-\multirow{6}{24mm}{\centering 2-to'plam} & \multicolumn{4}{p{70mm}|}{1.\ Qo'llanadi -- burchak berilgan. $9^2+12^2=225$, gipotenuza $=15$.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{2.\ Qo'llanmaydi -- burchak berilmagan.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{3.\ Ha, to'g'ri burchakli; $8^2+15^2=17^2$, $17$ -- gipotenuza.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{4.\ Yo'q; $6^2+8^2=100\ne121$.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{5.\ Qo'llanadi -- burchak berilgan. $7^2+24^2=625$, gipotenuza $=25$.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{6.\ Yo'q -- hech bir juftlik ishlamaydi.}\\\hline
-\multirow{3}{24mm}{\centering 3-to'plam} & 1 & 5 & 2 & 13\\\cline{2-5}
- & 3 & 10 & 4 & 8\\\cline{2-5}
- & 5 & 5 & 6 & $\sqrt2$\\\hline
-\multirow{3}{24mm}{\centering 4-to'plam} & 1 & 15 & 2 & 17\\\cline{2-5}
- & 3 & 29 & 4 & 24\\\cline{2-5}
- & 5 & 41 & 6 & 26\\\hline
-\multirow{3}{24mm}{\centering 5-to'plam} & 1 & 13 m & 2 & 26 in\\\cline{2-5}
- & 3 & 15 km & 4 & 17 km\\\cline{2-5}
- & 5 & 34 m & 6 & $90\sqrt2$ ft\\\hline
-\multirow{5}{24mm}{\centering 6-to'plam} & \multicolumn{4}{p{70mm}|}{1.\ Taqribiylik yetarli emas -- $136\ne121$, bu umuman to'g'ri burchakli emas.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{2.\ Gipotenuzani katet deb qo'shgan. To'g'ri: $x^2=625-49=576$, $x=24$.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{3.\ $(-4)$ kvadratga olinmagan. To'g'ri: $\sqrt{9+16}=5$.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{4.\ Tekshirmasdan gipotenuza deb olingan; $25+36\ne100$, to'g'ri burchakli emas.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{5.\ Ildiz olinmagan. To'g'ri: $c=\sqrt{225}=15$.}\\\hline
-\multirow{5}{24mm}{\centering 7-to'plam} & \multicolumn{4}{p{70mm}|}{1.\ $AB=10$; burchak koeffitsiyenti $=\frac{4}{3}$.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{2.\ $x=3$, $P=(3,9)$, $OP=3\sqrt{10}$.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{3.\ Perimetr $=4+3+5=12$.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{4.\ $b=12$.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{5.\ To'g'ri burchakli (tomonlar gorizontal/vertikal); yuza $=24$.}\\\hline
-\end{tabular}
+\satq{7}{In the $xy$-plane, what is the distance between the points $(-3,2)$ and $(1,5)$?}{$1$}{$7$}{$25$}{$5$}
+
+\satq{8}{In the $xy$-plane, what is the distance between the points $(2,-1)$ and $(2,7)$?}{$8$}{$6$}{$9$}{$64$}
+
+\satq{9}{A ladder 13 feet long leans against a vertical wall, with its base 5 feet from the wall. How many feet up the wall does the top of the ladder reach?}{$8$}{$12$}{$18$}{$144$}
+
+\satq{10}{A right triangle has two legs, each of length $6$. What is the length of the hypotenuse?}{$6$}{$12$}{$6\sqrt{2}$}{$72$}
+
+\satq{11}{Which of the following sets of three lengths can be the side lengths of a right triangle?}{$4,\ 5,\ 6$}{$6,\ 8,\ 12$}{$7,\ 8,\ 10$}{$5,\ 12,\ 13$}
+
+\satq{12}{In the $xy$-plane, what is the distance between the points $(3,-2)$ and $(3,-9)$?}{$7$}{$5$}{$11$}{$49$}
+
 }
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,246mm)
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\sloppy
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Easy}\\[1.5mm]
+
+\satq{13}{In the $xy$-plane, what is the distance between the points $(2,1)$ and $(8,9)$?}{$14$}{$10$}{$2$}{$100$}
+
+\satq{14}{A rectangle measures $12$ centimeters by $16$ centimeters. What is the length of its diagonal, in centimeters?}{$28$}{$192$}{$20$}{$400$}
+
+\satq{15}{A right triangle has a hypotenuse of length $17$ and one leg of length $15$. What is the length of the other leg?}{$2$}{$22$}{$32$}{$8$}
+
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Medium}\\[1.5mm]
+
+\satq{1}{A right triangle has legs of length $4$ and $6$. What is the length of the hypotenuse?}{$10$}{$52$}{$2\sqrt{13}$}{$\sqrt{20}$}
+
+\satq{2}{A right triangle has a hypotenuse of length $14$ and one leg of length $8$. What is the length of the other leg?}{$\sqrt{33}$}{$6$}{$132$}{$2\sqrt{33}$}
+
+\satq{3}{A right triangle has a hypotenuse of length $12$ and one leg of length $7$. What is the length of the other leg?}{$\sqrt{95}$}{$\sqrt{193}$}{$5$}{$19$}
+
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 6: Set 8 =================
+\topicheader{23}{The Pythagorean Theorem \& Coordinates}
+\pagefooter{128}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\sloppy
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Medium}\\[1.5mm]
+
+\satq{4}{In the $xy$-plane, what is the distance between the points $(-4,-1)$ and $(3,-7)$?}{$\sqrt{13}$}{$\sqrt{85}$}{$1$}{$13$}
+
+\satq{5}{In the $xy$-plane, the point $P=(x,12)$ is 13 units from the origin, and $x<0$. What is the value of $x$?}{$5$}{$-13$}{$-5$}{$-1$}
+
+\satq{6}{In the $xy$-plane, points $A(1,3)$ and $B(4,y)$ are 5 units apart, and $y>3$. What is the value of $y$?}{$-1$}{$6$}{$8$}{$7$}
+
+\satq{7}{In the $xy$-plane, the line $y=2x+3$ crosses the $x$-axis at point $A$ and the $y$-axis at point $B$. What is the distance $AB$?}{$\dfrac{3\sqrt{5}}{2}$}{$\dfrac{9}{2}$}{$3\sqrt{5}$}{$3\sqrt{2}$}
+
+\satq{8}{A drone flies $20$ meters north and then $21$ meters east. What is the straight-line distance, in meters, from its starting point to its final position?}{$41$}{$29$}{$420$}{$1$}
+
+\satq{9}{A right triangle has legs of lengths $a$ and $b$, where $a=2b$, and its hypotenuse has length $10\sqrt{5}$. What is the length of the shorter leg?}{$5$}{$20$}{$10$}{$50$}
+
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\sloppy
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Medium}\\[1.5mm]
+
+\satq{10}{Three consecutive positive integers $t$, $t+1$, and $t+2$ are the side lengths of a right triangle, with $t+2$ the longest side. What is the value of $t$?}{$2$}{$4$}{$5$}{$3$}
+
+\satq{11}{A rectangle has a diagonal of length $17$ and one side of length $8$. What is the perimeter of the rectangle?}{$46$}{$23$}{$30$}{$120$}
+
+\satq{12}{A square has sides of length $7$. What is the length of its diagonal?}{$14$}{$7\sqrt{2}$}{$7$}{$49\sqrt{2}$}
+
+\satq{13}{In the $xy$-plane, the point $(a,5)$ is 13 units from the point $(2,-7)$, and $a>2$. What is the value of $a$?}{$-3$}{$3$}{$7$}{$9$}
+
+\satq{14}{A triangle has vertices $(0,0)$, $(5,0)$, and $(0,12)$. What is the perimeter of the triangle?}{$17$}{$34$}{$60$}{$30$}
+
+\satq{15}{In the $xy$-plane, the point $P=(0,k)$ is 5 units from the point $A(-3,-1)$, and $k>0$. What is the value of $k$?}{$3$}{$-5$}{$1$}{$4$}
+
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 7: Set 8 =================
+\topicheader{23}{The Pythagorean Theorem \& Coordinates}
+\pagefooter{129}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\sloppy
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Hard}\\[1.5mm]
+
+\satq{1}{In a right triangle, one leg is $4$ units longer than the other leg, and the hypotenuse is $20$ units long. What is the length of the shorter leg?}{$8$}{$16$}{$20$}{$12$}
+
+\satq{2}{In a right triangle, one leg has length $9$, and the hypotenuse is $3$ units longer than the other leg. What is the length of the hypotenuse?}{$15$}{$12$}{$18$}{$21$}
+
+\satq{3}{In the $xy$-plane, the distance between the points $A(2,-1)$ and $B(k,7)$ is $10$, and $k>2$. What is the value of $k$?}{$-4$}{$8$}{$4$}{$12$}
+
+\satq{4}{In the $xy$-plane, points $P(1,2)$ and $Q(4,k)$ lie on a line with slope $2$. What is the distance $PQ$?}{$9$}{$15$}{$3\sqrt{5}$}{$6\sqrt{5}$}
+
+\satq{5}{A right triangle has a hypotenuse of length $26$ and an area of $120$. What is the perimeter of the triangle?}{$34$}{$52$}{$86$}{$60$}
+
+\satq{6}{In the $xy$-plane, the segment from $A(2,-3)$ to $B(x,y)$ has length $10$ and slope $\dfrac{4}{3}$, with $x>2$. What is the value of $x$?}{$8$}{$-4$}{$2$}{$14$}
+
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\sloppy
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Hard}\\[1.5mm]
+
+\satq{7}{A right triangle has vertices $(0,0)$, $(x,0)$, and $(x,12)$, where $x>0$. The perimeter of the triangle is $30$. What is the value of $x$?}{$3$}{$5$}{$9$}{$13$}
+
+\satq{8}{A triangle has side lengths $6$, $8$, and $k$, where $k$ is a positive integer. The triangle is a right triangle for some values of $k$. What is the sum of all such values of $k$?}{$14$}{$2\sqrt{7}$}{$10$}{$28$}
+
+\satq{9}{In the $xy$-plane, the distance between the points $A(-3,2)$ and $B(5,y)$ is $10$, and $y<2$. What is the value of $y$?}{$-8$}{$4$}{$8$}{$-4$}
+
+\satq{10}{A drone starts at $(0,0)$, flies in a straight segment to $(9,-2)$, then flies in a straight segment to $(9,10)$. What is the straight-line distance from the starting point to the final position?}{$\sqrt{181}$}{$19$}{$\sqrt{85}$}{$181$}
+
+\satq{11}{In the $xy$-plane, the points $(0,-4)$ and $(a,6)$ are 26 units apart, and $a>0$. What is the value of $a$?}{$10$}{$24$}{$16$}{$26$}
+
+\satq{12}{In the $xy$-plane, $A=(0,0)$ and $B=(x,2x)$, where $x>0$. If $AB=5\sqrt{5}$, what is the value of $x$?}{$\sqrt{5}$}{$25$}{$5$}{$10$}
+
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 8: Set 8 =================
+\topicheader{23}{The Pythagorean Theorem \& Coordinates}
+\pagefooter{130}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont\sloppy
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Hard}\\[1.5mm]
+
+\satq{13}{In a right triangle, the legs have lengths $x$ and $x+7$, and the hypotenuse has length $13$. Given that $x>0$, what is the value of $x$?}{$-12$}{$6$}{$12$}{$5$}
+
+\satq{14}{In the $xy$-plane, a point $P=(x,0)$ on the $x$-axis is equally far from $A(1,4)$ and $B(5,2)$. What is the value of $x$?}{$\dfrac{3}{2}$}{$1$}{$3$}{$\dfrac{9}{2}$}
+
+\satq{15}{In the $xy$-plane, $A(-2,1)$, $B(4,1)$, and $C(4,y)$ are vertices of a triangle with a right angle at $B$. The area of the triangle is $24$, and $y<1$. What is the value of $y$?}{$-9$}{$-7$}{$7$}{$9$}
+
+}
+\end{textblock*}
+
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original -- written by studying the method
+and structure of real, officially released SAT Suite Question Bank items in this
+lesson's skill categories (Right triangles; Linear equations in two variables),
+then building a new problem with new numbers, names and context that needs the
+same solving steps. No real College Board question text, numbers or context is
+reproduced anywhere in this book. Each answer was checked by script.\par}
+\end{textblock*}
+\clearpage
+
+% ================= PAGE 9: Answers -- Sets 1-7 =================
+\topicheader{23}{The Pythagorean Theorem \& Coordinates}
+\pagefooter{131}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,44mm)
+{\fontsize{9.5}{12}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\begin{center}\begin{tabular}{|>{\centering\arraybackslash}p{26mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{32mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{32mm}|}
+\hline
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
+\hline
+\multirow{3}{26mm}{\centering Set 1} & 1 & 5 & 2 & 10\\\cline{2-5}
+ & 3 & 13 & 4 & 8\\\cline{2-5}
+ & 5 & 12 & 6 & 15\\\hline
+
+\multirow{6}{26mm}{\centering Set 2} & \multicolumn{4}{p{84mm}|}{1.\ Applies -- right angle given. $9^2+12^2=225$, hypotenuse $=15$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ Cannot apply -- no right angle is given or marked, so the theorem has nothing to attach to.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ Yes, right triangle: $8^2+15^2=17^2$; $17$ is the hypotenuse.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ No: $6^2+8^2=100\ne121=11^2$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ Applies -- right angle given. $7^2+24^2=625$, hypotenuse $=25$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{6.\ No: no pairing of sides satisfies $a^2+b^2=c^2$.}\\\hline
+\multirow{3}{26mm}{\centering Set 3} & 1 & 5 & 2 & 13\\\cline{2-5}
+ & 3 & 10 & 4 & 8\\\cline{2-5}
+ & 5 & 5 & 6 & $\sqrt2$\\\hline
+\multirow{3}{26mm}{\centering Set 4} & 1 & 15 & 2 & 17\\\cline{2-5}
+ & 3 & 29 & 4 & 24\\\cline{2-5}
+ & 5 & 41 & 6 & 26\\\hline
+\multirow{3}{26mm}{\centering Set 5} & 1 & 13 m & 2 & 26 in\\\cline{2-5}
+ & 3 & 15 km & 4 & 17 km\\\cline{2-5}
+ & 5 & 34 m & 6 & $90\sqrt2$ ft\\\hline
+\multirow{5}{26mm}{\centering Set 6} & \multicolumn{4}{p{84mm}|}{1.\ Error -- ``close enough'' is not a test. $136\ne121$, so it is not a right triangle.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ Error -- hypotenuse treated as a leg. Correct: $7^2+x^2=25^2$, $x=24$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ Error -- $-4$ not squared. Correct: $\sqrt{9+16}=5$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ Error -- longest side assumed to be the hypotenuse; $25+36\ne100$, not right.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ Error -- final square root omitted. Correct: $c=\sqrt{225}=15$.}\\\hline
+\multirow{5}{26mm}{\centering Set 7} & \multicolumn{4}{p{84mm}|}{1.\ $AB=10$; slope $=\tfrac43$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{2.\ $x=3$, $P=(3,9)$, $OP=3\sqrt{10}$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{3.\ Legs $4$ and $3$, hypotenuse $5$; perimeter $=12$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{4.\ $b=12$.}\\\cline{2-5}
+ & \multicolumn{4}{p{84mm}|}{5.\ Right angle at $(9,1)$; legs $8$ and $6$; area $=24$.}\\\hline
+\end{tabular}\end{center}
+}
+\end{textblock*}
+
+\clearpage
+
+% ================= PAGE 10: Answers -- Set 8 =================
+\topicheader{23}{The Pythagorean Theorem \& Coordinates}
+\pagefooter{132}
+\mbox{}%
+
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont\centering\renewcommand{\arraystretch}{1.3}\anstitle{Easy}
+\begin{center}\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}\hline\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&C&D&A&B&C&D&A&B&C\\\hline
+\end{tabular}\end{center}\vspace{1mm}
+\begin{center}\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}\hline\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+D&A&B&C&D\\\hline
+\end{tabular}\end{center}}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont\centering\renewcommand{\arraystretch}{1.3}\anstitle{Medium}
+\begin{center}\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}\hline\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&D&A&B&C&D&A&B&C&D\\\hline
+\end{tabular}\end{center}\vspace{1mm}
+\begin{center}\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}\hline\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+A&B&C&D&A\\\hline
+\end{tabular}\end{center}}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont\centering\renewcommand{\arraystretch}{1.3}\anstitle{Hard}
+\begin{center}\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}\hline\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+D&A&B&C&D&A&B&C&D&A\\\hline
+\end{tabular}\end{center}\vspace{1mm}
+\begin{center}\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}\hline\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&C&D&A&B\\\hline
+\end{tabular}\end{center}}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,232mm)
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}

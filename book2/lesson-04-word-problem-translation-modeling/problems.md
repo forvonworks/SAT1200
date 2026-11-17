@@ -157,7 +157,7 @@ Easy / 15 Medium / 15 Hard. No real College Board question is reproduced
 13. Three times a number $w$ is $51$. What is $w$?
     A) 17  B) 48  C) 54  D) 153
 
-14. A gym membership costs \$25 to join plus \$15 per month. Which expression gives the total cost after $t$ months?
+14. A gym membership costs \$25 to join and \$15 per month. Which expression gives the total cost after $t$ months?
     A) $25+15t$  B) $15+25t$  C) $40t$  D) $25t+15$
 
 15. Twelve less than a number $x$ is $5$. What is $x$?
@@ -174,8 +174,8 @@ Easy / 15 Medium / 15 Hard. No real College Board question is reproduced
 3. A model estimates that a tortoise travels between 48 and 55 meters per hour. Which inequality represents the estimated total number of meters, $x$, the tortoise could travel in 6 hours?
    A) $48(6)\leq x\leq55(6)$  B) $48+6\leq x\leq55+6$  C) $48\leq6+x\leq55$  D) $48\leq6x\leq55$
 
-4. A number $x$ is at most $12$ more than $3$ times the value of $y$. If $y=5$, what is the greatest possible value of $x$?
-   A) 15  B) 17  C) 27  D) 51
+4. A triangle has three sides. The second side is $3$ cm longer than the first side, and the third side is twice the length of the first side. The perimeter is $35$ cm. What is the length, in cm, of the **longest** side?
+   A) 8  B) 11  C) 16  D) 19
 
 5. A parking garage charges \$6 for the first hour and \$3 for each additional hour. Which equation gives the total charge $c$ for $h$ additional hours after the first?
    A) $c=6+3h$  B) $c=3+6h$  C) $c=9h$  D) $c=6h+3$
@@ -201,8 +201,8 @@ Easy / 15 Medium / 15 Hard. No real College Board question is reproduced
 12. A rectangle's length is $3$ less than twice its width. The perimeter is $54$. What is the length of the rectangle?
     A) 10  B) 13  C) 17  D) 20
 
-13. A number $x$ is at least $7$ less than twice a number $y$. If $y=12$, what is the smallest possible value of $x$?
-    A) 5  B) 12  C) 17  D) 31
+13. A club needs to raise at least \$540 for a trip. It already has \$120 and plans to sell raffle tickets for \$15 each. What is the least number of raffle tickets the club must sell?
+   A) 24  B) 28  C) 36  D) 420
 
 14. A bakery packs cookies and brownies into boxes, with no more than $10$ items per box. If $c$ is the number of cookies and $b$ is the number of brownies in a box, which inequality represents this situation?
     A) $c+b\leq10$  B) $c+b\geq10$  C) $c-b\leq10$  D) $c-b\geq10$
@@ -212,8 +212,8 @@ Easy / 15 Medium / 15 Hard. No real College Board question is reproduced
 
 ### Hard
 
-1. A farm stand sells apples, pears, and plums. The number of pears sold is $4$ times the number $n$ of plums sold, and the number of apples sold is $25$. That day, the stand sold $130$ pieces of fruit total. Which equation represents this situation?
-   A) $25(4n)+n+25=130$  B) $4n+4(25)=130$  C) $n+4n+25n=130$  D) $5n+25=130$
+1. Print shop A charges a \$30 setup fee plus \$18 per poster. Print shop B charges \$24 per poster, but takes \$12 off the total order. For how many posters $p$ do the two shops charge the same total? Which equation can be used to find $p$?
+   A) $30+18p=24p-12$  B) $30+18p=24p+12$  C) $30+24p=18p-12$  D) $30p+18=24p-12$
 
 2. In the equation $x(r-7)+5=15x+32$, $r$ is a positive integer. If the equation has exactly one solution, what CANNOT be the value of $r$?
    A) 15  B) 20  C) 22  D) 30
@@ -221,14 +221,14 @@ Easy / 15 Medium / 15 Hard. No real College Board question is reproduced
 3. If $\dfrac{x-5}{9}=\dfrac{x-5}{14}$, the value of $x-5$ is between which of the following pairs of values?
    A) $-10$ and $-6$  B) $-4$ and $4$  C) $6$ and $10$  D) $12$ and $15$
 
-4. What value of $x$ satisfies $4(x+6)-9(x+6)=50$?
-   A) $-16$  B) $-10$  C) $-6$  D) $4$
+4. If $\dfrac{x+2}{3}-\dfrac{x+2}{5}=4$, what is the value of $x+2$?
+   A) 12  B) 28  C) 30  D) 60
 
-5. A model estimates that a cyclist travels between 14 and 17 miles per hour. Which inequality represents the estimated total number of miles, $x$, the cyclist could travel in $h$ hours, where $h>0$?
-   A) $14h\leq x\leq17h$  B) $14+h\leq x\leq17+h$  C) $14\leq h+x\leq17$  D) $14\leq hx\leq17$
+5. A book club has \$80 to spend on books. Shipping costs \$7.50 per order plus \$4.25 for each book. What is the greatest number of books the club can order without exceeding its \$80 budget?
+   A) 16  B) 17  C) 18  D) 19
 
-6. A number $x$ is at most $23$ less than $6$ times the value of $y$. If $y=9$, what is the greatest possible value of $x$?
-   A) 13  B) 21  C) 31  D) 54
+6. A museum keeps its number of weekly visitors $v$ within two limits. Four times $v$, decreased by $150$, is at most $1000$. Also, $v$ decreased by $40$ is at least $2v$ decreased by $330$. What is the greatest whole number of visitors that satisfies both conditions?
+   A) 240  B) 287  C) 288  D) 290
 
 7. Laylo is $7$ years older than three times her nephew's age. In $4$ years, the sum of their ages will be $59$. How old is Laylo right now?
    A) 11  B) 33  C) 40  D) 44
@@ -311,6 +311,6 @@ original.
 
 **Set 8 — Easy:** 1) A  2) B  3) A  4) C  5) B  6) A  7) C  8) A  9) A  10) B  11) C  12) A  13) A  14) A  15) C
 
-**Set 8 — Medium:** 1) B  2) B  3) A  4) C  5) A  6) B  7) A  8) A  9) C  10) C  11) B  12) C  13) C  14) A  15) C
+**Set 8 — Medium:** 1) B  2) B  3) A  4) C  5) A  6) B  7) A  8) A  9) C  10) C  11) B  12) C  13) B  14) A  15) C
 
-**Set 8 — Hard:** 1) D  2) C  3) B  4) A  5) A  6) C  7) C  8) D  9) C  10) D  11) C  12) A  13) D  14) C  15) D
+**Set 8 — Hard:** 1) A  2) C  3) B  4) C  5) B  6) B  7) C  8) D  9) C  10) D  11) C  12) A  13) D  14) C  15) D

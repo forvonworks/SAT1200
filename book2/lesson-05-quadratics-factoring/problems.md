@@ -140,8 +140,8 @@ distribution for this skill.
 14. Two consecutive positive integers have a product of 72. What is the larger of the two integers?
     A) 12  B) 9  C) 10  D) 8
 
-15. How many real solutions does the equation $x^2+6x+9=0$ have?
-    A) Infinitely many  B) Exactly two  C) None  D) Exactly one
+15. What are the solutions to the equation $x^2-4x-21=0$?
+    A) $-7,\ 3$  B) $7,\ 3$  C) $-7,\ -3$  D) $7,\ -3$
 
 ### Medium
 
@@ -195,8 +195,8 @@ distribution for this skill.
 1. What is the positive solution to the equation $12x^2-7x-10=0$?
    A) $\dfrac{4}{5}$  B) $-\dfrac{2}{3}$  C) $\dfrac{5}{4}$  D) $\dfrac{2}{3}$
 
-2. What is the positive solution to the equation $(x-45)(x+45)-20=-20$?
-   A) 65  B) 45  C) 20  D) 25
+2. What is the greatest solution to the equation $x^4-13x^2+36=0$?
+   A) $-3$  B) 2  C) 9  D) 3
 
 3. An object's height, in feet, $t$ seconds after launch is modeled by $h=-16t^2+64t+80$. Other than at launch ($t=0$), at what time, in seconds, does the object return to a height of 80 feet?
    A) 16  B) 2  C) 4  D) 5
@@ -210,8 +210,8 @@ distribution for this skill.
 6. What is the greatest solution to the equation $\dfrac{1}{2}x^2-\dfrac{1}{2}x-3=0$?
    A) 3  B) 2  C) 6  D) $-2$
 
-7. What is the positive solution to the equation $16x^2-81=0$?
-   A) 9  B) $\dfrac{9}{16}$  C) $\dfrac{9}{4}$  D) $\dfrac{81}{16}$
+7. What is the greatest solution to the equation $-6x^2+x+12=0$?
+   A) $-\dfrac{4}{3}$  B) $\dfrac{3}{2}$  C) $-\dfrac{3}{2}$  D) $\dfrac{4}{3}$
 
 8. The product of two consecutive positive even integers is 168. What is the larger of the two integers?
    A) 12  B) 14  C) 16  D) 13
@@ -276,4 +276,4 @@ lesson's skill category — the numbers, names, and contexts are all original.
 
 **Set 8 — Medium:** 1) C  2) C  3) C  4) B  5) D  6) A  7) B  8) B  9) C  10) B  11) D  12) A  13) D  14) A  15) A
 
-**Set 8 — Hard:** 1) C  2) B  3) C  4) A  5) A  6) A  7) C  8) B  9) C  10) D  11) A  12) D  13) D  14) B  15) B
+**Set 8 — Hard:** 1) C  2) D  3) C  4) A  5) A  6) A  7) B  8) B  9) C  10) D  11) A  12) D  13) D  14) B  15) B

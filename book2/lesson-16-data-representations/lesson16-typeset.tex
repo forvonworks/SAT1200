@@ -23,11 +23,14 @@
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
 
+% ---- Safe print margins: 16mm outer on both sides so bound/trimmed copies never
+% clip problem text. Columns are 83mm wide with a 6mm gap on each side of the
+% center rule (at x=105mm). ----
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
 \newcommand{\COLW}{83mm}
-\newcommand{\FULLW}{178mm}
 
+% ---- Plain topic header: number chip + title, thin rule underneath. No band, no watermark. ----
 \newcommand{\topicheader}[2]{%
 \begin{textblock*}{194mm}(16mm,10mm)
 \begin{tikzpicture}
@@ -57,6 +60,7 @@
 \end{textblock*}
 }
 
+% ---- Fixed-length vertical column rule: #1 = top y (mm), #2 = length (mm) ----
 \newcommand{\colrule}[2]{%
 \begin{textblock*}{1mm}(105mm,#1mm)
 \begin{tikzpicture}
@@ -69,308 +73,552 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
+% ---- Small boxed problem number, reference-style. Plain \fbox -- stays flush with
+% the text baseline instead of centering on it. ----
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
+% ---- QR placeholder square + caption below ----
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[1mm]
+\hspace*{7mm}{\renewcommand{\arraystretch}{1.05}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[1mm]
+(C) #5 & (D) #6 \\
+\end{tabular}}\\[2mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[1mm]
+\hspace*{7mm}\begin{minipage}[t]{76mm}\hangindent=6mm \hangafter=1 (A) #3\end{minipage}\\[0.6mm]
+\hspace*{7mm}\begin{minipage}[t]{76mm}\hangindent=6mm \hangafter=1 (B) #4\end{minipage}\\[0.6mm]
+\hspace*{7mm}\begin{minipage}[t]{76mm}\hangindent=6mm \hangafter=1 (C) #5\end{minipage}\\[0.6mm]
+\hspace*{7mm}\begin{minipage}[t]{76mm}\hangindent=6mm \hangafter=1 (D) #6\end{minipage}\\[2mm]%
+}
+
+% ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.35}
 \newcommand{\anstitle}[1]{{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont #1}\\[1.3mm]}
 
-% ---- Answer-line for a reasoning/explanation item ----
-\newcommand{\ans}[1]{{\small\color{black!75} Javob: \makebox[#1]{\dotfill}}}
+\newcommand{\FULLW}{178mm}
+\newcommand{\ans}[1]{{\small\color{black!75} Answer: \makebox[#1]{\dotfill}}}
 
 \begin{document}
 
-% ================= PAGE 1: Set 1 — Basic Frequency Table (full width) =================
-\topicheader{16}{Ma'lumotlarni Taqdim Etish}
+\topicheader{16}{Data Representations}
 \pagefooter{84}
 \mbox{}%
-
 \begin{textblock*}{\FULLW}(16mm,30mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{1-to'plam}{Chastota jadvalini o'qish.}
-
-\noindent 50 nafar o'quvchidan ``Eng sevimli fan qaysi?'' deb so'ralgan:
-
+\setkicker{Set 1}{Reading a frequency table.}
+A survey of $50$ students asked each student, ``What is your favorite subject?'' The results are shown in the table.
 \vspace{2mm}
 \begin{center}
 \begin{tabular}{|l|c|}
 \hline
-\rowcolor{badge!45}\textbf{Fan} & \textbf{O'quvchilar soni}\\\hline
-Matematika & 18\\\hline
-Fizika & 9\\\hline
-Biologiya & 13\\\hline
-Tarix & 10\\\hline
-\rowcolor{badge!30}\textbf{Jami} & \textbf{50}\\\hline
+\rowcolor{badge!45}\textbf{Subject} & \textbf{Number of students}\\\hline
+Math & 18\\\hline
+Physics & 9\\\hline
+Biology & 13\\\hline
+History & 10\\\hline
+\rowcolor{badge!30}\textbf{Total} & \textbf{50}\\\hline
 \end{tabular}
 \end{center}
 \vspace{3mm}
-
-\noindent\pnum{1} Nechta o'quvchi fizikani tanladi? \ans{35mm}\\[10mm]
-\noindent\pnum{2} Matematikani tanlagan o'quvchilar jamining necha foizini tashkil qiladi? \ans{35mm}\\[10mm]
-\noindent\pnum{3} Tarixni tanlagan o'quvchilar soni biologiyani tanlaganlardan nechtaga kam? \ans{35mm}\\[10mm]
-\noindent\pnum{4} Fizika va tarixni tanlagan o'quvchilar birgalikda nechta? \ans{35mm}\\[10mm]
-\noindent\pnum{5} Agar so'rovga yana 10 nafar o'quvchi qo'shilsa va ularning barchasi fizikani tanlasa, yangi jami nechta bo'ladi va fizikaning yangi foizi nechaga teng bo'ladi?\\
+\noindent\pnum{1} According to the table, how many students selected physics as their favorite subject?\\
+\hspace*{7mm}\ans{35mm}\\[10mm]
+\noindent\pnum{2} What percentage of the students surveyed selected math as their favorite subject? \ans{35mm}\\[10mm]
+\noindent\pnum{3} How many fewer students selected history than selected biology? \ans{35mm}\\[10mm]
+\noindent\pnum{4} What is the total number of students who selected either physics or history? \ans{35mm}\\[10mm]
+\noindent\pnum{5} If $10$ more students join the survey and all of them select physics, what is the new total number of students surveyed, and what percentage of that new total selected physics?\\
 \hspace*{7mm}\ans{70mm}
 }
 \end{textblock*}
-
 \clearpage
-
-% ================= PAGE 2: Set 2 — Two-way table, row share =================
-\topicheader{16}{Ma'lumotlarni Taqdim Etish}
+\topicheader{16}{Data Representations}
 \pagefooter{85}
 \mbox{}%
-
 \begin{textblock*}{\FULLW}(16mm,30mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{2-to'plam}{Ikki tomonlama jadval: qator bo'yicha ulush.}
-
-\noindent 90 nafar o'quvchidan jinsi va yoqtirgan sport turi so'ralgan:
-
+\setkicker{Set 2}{Two-way table: row-based percentages.}
+$90$ students were surveyed about their gender and preferred sport. The results are shown in the table.
 \vspace{2mm}
 \begin{center}
 \begin{tabular}{|l|c|c|c|}
 \hline
-\rowcolor{badge!45} & \textbf{Basketbol} & \textbf{Voleybol} & \textbf{Qator jami}\\\hline
-\textbf{Qizlar} & 14 & 26 & \textbf{40}\\\hline
-\textbf{Yigitlar} & 33 & 17 & \textbf{50}\\\hline
-\rowcolor{badge!30}\textbf{Ustun jami} & \textbf{47} & \textbf{43} & \textbf{90}\\\hline
+\rowcolor{badge!45} & \textbf{Basketball} & \textbf{Volleyball} & \textbf{Row total}\\\hline
+\textbf{Girls} & 14 & 26 & \textbf{40}\\\hline
+\textbf{Boys} & 33 & 17 & \textbf{50}\\\hline
+\rowcolor{badge!30}\textbf{Column total} & \textbf{47} & \textbf{43} & \textbf{90}\\\hline
 \end{tabular}
 \end{center}
 \vspace{3mm}
-
-\noindent\pnum{1} Qizlarning necha foizi voleybolni tanladi? \ans{35mm}\\[10mm]
-\noindent\pnum{2} Yigitlarning necha foizi basketbolni tanladi? \ans{35mm}\\[10mm]
-\noindent\pnum{3} Qizlar qator jamisining voleybolni tanlagan yigitlar soniga nisbatini eng sodda ko'rinishda yozing. \ans{35mm}\\[10mm]
-\noindent\pnum{4} Yigitlarning necha foizi voleybolni tanladi? \ans{35mm}\\[10mm]
-\noindent\pnum{5} Qizlar qatorida basketbol ulushi ($35\%$) bilan voleybol ulushi ($65\%$) yig'indisi nechaga teng bo'lishi SHART va nega?\\
+\noindent\pnum{1} What percentage of the girls surveyed selected volleyball? \ans{35mm}\\[10mm]
+\noindent\pnum{2} What percentage of the boys surveyed selected basketball? \ans{35mm}\\[10mm]
+\noindent\pnum{3} What is the ratio of the row total for girls to the number of boys who selected volleyball, written in simplest form? \ans{35mm}\\[10mm]
+\noindent\pnum{4} What percentage of the boys surveyed selected volleyball? \ans{35mm}\\[10mm]
+\noindent\pnum{5} Within the girls' row, the percentage who selected basketball is $35\%$ and the percentage who selected volleyball is $65\%$. What must these two percentages add up to, and why?\\
 \hspace*{7mm}\ans{70mm}
 }
 \end{textblock*}
-
 \clearpage
-
-% ================= PAGE 3: Set 3 — Same table, column share =================
-\topicheader{16}{Ma'lumotlarni Taqdim Etish}
+\topicheader{16}{Data Representations}
 \pagefooter{86}
 \mbox{}%
-
 \begin{textblock*}{\FULLW}(16mm,30mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{3-to'plam}{Ikki tomonlama jadval: ustun bo'yicha ulush (xuddi 2-to'plamdagi jadval).}
-
+\setkicker{Set 3}{Two-way table: column-based percentages (same table as Set 2).}
 \vspace{2mm}
 \begin{center}
 \begin{tabular}{|l|c|c|c|}
 \hline
-\rowcolor{badge!45} & \textbf{Basketbol} & \textbf{Voleybol} & \textbf{Qator jami}\\\hline
-\textbf{Qizlar} & 14 & 26 & \textbf{40}\\\hline
-\textbf{Yigitlar} & 33 & 17 & \textbf{50}\\\hline
-\rowcolor{badge!30}\textbf{Ustun jami} & \textbf{47} & \textbf{43} & \textbf{90}\\\hline
+\rowcolor{badge!45} & \textbf{Basketball} & \textbf{Volleyball} & \textbf{Row total}\\\hline
+\textbf{Girls} & 14 & 26 & \textbf{40}\\\hline
+\textbf{Boys} & 33 & 17 & \textbf{50}\\\hline
+\rowcolor{badge!30}\textbf{Column total} & \textbf{47} & \textbf{43} & \textbf{90}\\\hline
 \end{tabular}
 \end{center}
 \vspace{3mm}
-
-\noindent\pnum{1} Basketbolni tanlagan o'quvchilar ichida necha foizi qiz? \ans{35mm}\\[10mm]
-\noindent\pnum{2} Voleybolni tanlagan o'quvchilar ichida necha foizi yigit? \ans{35mm}\\[10mm]
-\noindent\pnum{3} 2-to'plam 1-savolning javobi ($65\%$) bilan shu yerdagi 2-savolning javobi nega bir xil emas -- ikkisi aslida bitta son emas, deb tushuntiring.\\
+\noindent\pnum{1} Of the students who selected basketball, what percentage were girls? \ans{35mm}\\[10mm]
+\noindent\pnum{2} Of the students who selected volleyball, what percentage were boys? \ans{35mm}\\[10mm]
+\noindent\pnum{3} The answer to Set 2, Question 1 ($65\%$, the percentage of girls who selected volleyball) is not the same number as the answer to Question 2 above. Explain why these two percentages do not need to match.\\
 \hspace*{7mm}\ans{70mm}\\[4mm]
-\noindent\pnum{4} Yigitlar soni jamining ($90$ dan) necha foizini tashkil qiladi? \ans{35mm}\\[10mm]
-\noindent\pnum{5} ``Basketbolni tanlagan yigitlarning ulushi'' so'ralganda, qaysi sonni maxraj qilib olish kerak -- $33$, $47$, $50$ yoki $90$? Tanlovingizni asoslang va hisoblang.\\
+\noindent\pnum{4} What percentage of the total number of students surveyed were boys? \ans{35mm}\\[10mm]
+\noindent\pnum{5} When a question asks for ``the percentage of boys who selected basketball,'' which value should be used as the denominator: $33$, $47$, $50$, or $90$? Justify your choice and compute the percentage.\\
 \hspace*{7mm}\ans{70mm}
 }
 \end{textblock*}
-
 \clearpage
-
-% ================= PAGE 4: Set 4 — mixed two-way + percent context =================
-\topicheader{16}{Ma'lumotlarni Taqdim Etish}
+\topicheader{16}{Data Representations}
 \pagefooter{87}
 \mbox{}%
-
 \begin{textblock*}{\FULLW}(16mm,30mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{4-to'plam}{Aralash: ikki tomonlama jadval + foiz konteksti.}
-
-\noindent 140 nafar mijozdan yosh guruhi va onlayn xariddan qoniqish darajasi so'ralgan:
-
+\setkicker{Set 4}{Mixed: two-way table + percentage context.}
+$140$ customers were surveyed about their age group and whether they were satisfied with an online purchase.
 \vspace{2mm}
 \begin{center}
 \begin{tabular}{|l|c|c|c|}
 \hline
-\rowcolor{badge!45} & \textbf{Qoniqdi} & \textbf{Qoniqmadi} & \textbf{Qator jami}\\\hline
-\textbf{13--17 yosh} & 45 & 15 & \textbf{60}\\\hline
-\textbf{18--25 yosh} & 52 & 28 & \textbf{80}\\\hline
-\rowcolor{badge!30}\textbf{Ustun jami} & \textbf{97} & \textbf{43} & \textbf{140}\\\hline
+\rowcolor{badge!45} & \textbf{Satisfied} & \textbf{Not satisfied} & \textbf{Row total}\\\hline
+\textbf{Ages 13--17} & 45 & 15 & \textbf{60}\\\hline
+\textbf{Ages 18--25} & 52 & 28 & \textbf{80}\\\hline
+\rowcolor{badge!30}\textbf{Column total} & \textbf{97} & \textbf{43} & \textbf{140}\\\hline
 \end{tabular}
 \end{center}
 \vspace{3mm}
-
-\noindent\pnum{1} 18--25 yosh guruhidagilarning necha foizi qoniqmadi? \ans{35mm}\\[10mm]
-\noindent\pnum{2} Qoniqmaganlar ichida necha foizi 13--17 yoshda? \ans{35mm}\\[10mm]
-\noindent\pnum{3} Agar 13--17 yosh guruhi keyingi yili $20\%$ ga o'ssa, bu guruhning yangi jami nechta bo'ladi? \ans{35mm}\\[10mm]
-\noindent\pnum{4} Ikki yosh guruhi orasida qoniqqanlar sonining farqi nechta -- va qaysi guruhdan qaysi guruhni ayirish kerak, musbat javob chiqishi uchun?\\
+\noindent\pnum{1} What percentage of the customers in the 18--25 age group were not satisfied? \ans{35mm}\\[10mm]
+\noindent\pnum{2} Of the customers who were not satisfied, what percentage were in the 13--17 age group?\\
+\hspace*{7mm}\ans{35mm}\\[8mm]
+\noindent\pnum{3} If the number of customers in the 13--17 age group grows by $20\%$ next year, what will the new total for that group be? \ans{35mm}\\[10mm]
+\noindent\pnum{4} What is the difference between the number of satisfied customers in the two age groups, and which group's count should be subtracted from which to get a positive result?\\
 \hspace*{7mm}\ans{70mm}\\[4mm]
-\noindent\pnum{5} Jadvaldagi barcha mijozlarning necha foizi umuman qoniqdi? \ans{35mm}
+\noindent\pnum{5} What percentage of all the customers surveyed were satisfied? \ans{35mm}
 }
 \end{textblock*}
-
 \clearpage
-
-% ================= PAGE 5: Set 5 — Scatterplot data =================
-\topicheader{16}{Ma'lumotlarni Taqdim Etish}
+\topicheader{16}{Data Representations}
 \pagefooter{88}
 \mbox{}%
-
 \begin{textblock*}{\FULLW}(16mm,30mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{5-to'plam}{Sochilish diagrammasi.}
-
-\noindent 7 nafar talabaning haftalik mashq soati ($x$) va yugurgan masofasi, km ($y$):
+\setkicker{Set 5}{Scatterplot.}
+The weekly exercise time, in hours ($x$), and the distance run, in kilometers ($y$), for $7$ students are given as the ordered pairs
 $(2,4),\ (3,5),\ (4,7),\ (5,8),\ (5,10),\ (7,12),\ (8,13)$.
-
-\vspace{3mm}
-\noindent\pnum{1} $x$ oshgani sari $y$ qanday o'zgaradi -- bu qanday bog'lanish turi? \ans{50mm}\\[8mm]
-\noindent\pnum{2} Ma'lumotlarda ikkita nuqta bir xil $x=5$ qiymatida, lekin turli $y$ ($8$ va $10$) ga ega. Bu real ma'lumotlar haqida nimani ko'rsatadi?\\
+\par\vspace{3mm}
+\noindent\pnum{1} As $x$ increases, how does $y$ change? What type of association does this describe?\\
+\hspace*{7mm}\ans{50mm}\\[8mm]
+\noindent\pnum{2} Two of the data points share the same $x$-value of $5$ but have different $y$-values, $8$ and $10$. What does this indicate about real-world data?\\
 \hspace*{7mm}\ans{70mm}\\[6mm]
-\noindent\pnum{3} Tendensiyaga asoslanib, haftasiga $6$ soat mashq qilgan talaba uchun taxminan necha km yugurish kutilishi mumkin? (Aniq son emas, oqilona oraliq bering.) \ans{40mm}\\[8mm]
-\noindent\pnum{4} ``Ko'proq mashq qilish ko'proq yugurishga SABAB BO'LADI'' degan xulosa shu ma'lumotlardan to'g'ridan-to'g'ri kelib chiqadimi? Nega?\\
+\noindent\pnum{3} Based on the trend in the data, approximately how far, in kilometers, would a student who exercises $6$ hours per week be expected to run? (Give a reasonable interval, not a single exact value.) \ans{40mm}\\[8mm]
+\noindent\pnum{4} Does the data directly support the conclusion that exercising more causes a person to run farther? Why or why not?\\
 \hspace*{7mm}\ans{70mm}\\[6mm]
-\noindent\pnum{5} Shu ma'lumotlarga asoslanib, haftasiga $25$ soat mashq qilgan talaba uchun bashorat qilish nega xavfli (qaysi tushuncha bilan bog'liq)?\\
+\noindent\pnum{5} Based on this data, why would it be risky to predict the distance run by a student who exercises $25$ hours per week? (Name the concept this illustrates.)\\
 \hspace*{7mm}\ans{70mm}
 }
 \end{textblock*}
-
 \clearpage
-
-% ================= PAGE 6: Set 6 — Spot the error (two columns, no table needed) =================
-\topicheader{16}{Ma'lumotlarni Taqdim Etish}
+\topicheader{16}{Data Representations}
 \pagefooter{89}
-\colrule{32}{238}
 \mbox{}%
-
+\colrule{32}{238}
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10.5}{13.5}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- qaysi tushunchaga aloqador ekanini ayting, to'g'ri javobni bering.}
-
-\noindent\pnum{1} 2--3-to'plam jadvalidan foydalaning. Savol: ``Voleybolni tanlagan o'quvchilar ichida necha foizi qiz?'' \textit{Noto'g'ri yechim:} ``$\frac{26}{40}=65\%$, demak javob $65\%$.''\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[40mm]{\dotfill}\\[12mm]
-
-\noindent\pnum{2} Xuddi shu jadval. Savol: ``Qizlarning necha foizi basketbolni tanladi?'' \textit{Noto'g'ri yechim:} ``$\frac{14}{90}\approx15.6\%$.''\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[40mm]{\dotfill}
+\setkicker{Set 6}{Spot the error -- name the concept, then give the correct answer.}
+\noindent\pnum{1} Using the table from Sets 2--3: ``Of the students who selected volleyball, what percentage were girls?'' \textit{Incorrect solution:} ``$\frac{26}{40}=65\%$, so the answer is $65\%$.''\\[1mm]
+\hspace*{7mm}Error and fix: \makebox[34mm]{\dotfill}\\[12mm]
+\noindent\pnum{2} Same table: ``What percentage of the girls selected basketball?'' \textit{Incorrect solution:} ``$\frac{14}{90}\approx15.6\%$.''\\[1mm]
+\hspace*{7mm}Error and fix: \makebox[34mm]{\dotfill}
 }
 \end{textblock*}
-
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10.5}{13.5}\selectfont
 \vspace*{11.2mm}
-
-\noindent\pnum{3} 5-to'plam ma'lumotlariga asoslanib: ``Mashq soati bilan yugurish masofasi orasida musbat bog'lanish bor, demak mashq qilish YUGURISH QOBILIYATINI OSHIRISHGA SABAB BO'LADI.''\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[40mm]{\dotfill}\\[12mm]
-
-\noindent\pnum{4} 4-to'plam jadvalidan foydalaning. Savol: ``Qoniqmaganlar ichida necha foizi $18$--$25$ yoshda?'' \textit{Noto'g'ri yechim:} ``$\frac{28}{80}=35\%$.''\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[40mm]{\dotfill}
+\noindent\pnum{3} Based on the data in Set 5: ``There is a positive association between exercise hours and distance run, so exercising causes an increase in running ability.''\\[1mm]
+\hspace*{7mm}Error and fix: \makebox[34mm]{\dotfill}\\[12mm]
+\noindent\pnum{4} Using the table from Set 4: ``Of the customers who were not satisfied, what percentage were in the 18--25 age group?'' \textit{Incorrect solution:} ``$\frac{28}{80}=35\%$.''\\[1mm]
+\hspace*{7mm}Error and fix: \makebox[34mm]{\dotfill}
 }
 \end{textblock*}
-
 \clearpage
-
-% ================= PAGE 7: Set 7 — Bonus 3x3 table =================
-\topicheader{16}{Ma'lumotlarni Taqdim Etish}
+\topicheader{16}{Data Representations}
 \pagefooter{90}
 \mbox{}%
-
 \begin{textblock*}{\FULLW}(16mm,30mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin -- $3\times3$ jadval.}
-
-\noindent 120 nafar o'quvchidan til o'rganish usuli va erishgan natija darajasi so'ralgan:
-
-\vspace{2mm}
+\setkicker{Set 7}{Bonus / challenge -- a $3\times3$ table.}
+$120$ students were surveyed about their language-learning method and the level of result they achieved.
+\vspace{1.5mm}
 \begin{center}
 \begin{tabular}{|l|c|c|c|c|}
 \hline
-\rowcolor{badge!45} & \textbf{Past} & \textbf{O'rta} & \textbf{Yuqori} & \textbf{Qator jami}\\\hline
-\textbf{Kurs usuli} & 8 & 22 & 10 & \textbf{40}\\\hline
-\textbf{Ilova usuli} & 12 & 18 & 10 & \textbf{40}\\\hline
-\textbf{Mustaqil usul} & 15 & 15 & 10 & \textbf{40}\\\hline
-\rowcolor{badge!30}\textbf{Ustun jami} & \textbf{35} & \textbf{55} & \textbf{30} & \textbf{120}\\\hline
+\rowcolor{badge!45} & \textbf{Low} & \textbf{Medium} & \textbf{High} & \textbf{Row total}\\\hline
+\textbf{Course method} & 8 & 22 & 10 & \textbf{40}\\\hline
+\textbf{App method} & 12 & 18 & 10 & \textbf{40}\\\hline
+\textbf{Self-study method} & 15 & 15 & 10 & \textbf{40}\\\hline
+\rowcolor{badge!30}\textbf{Column total} & \textbf{35} & \textbf{55} & \textbf{30} & \textbf{120}\\\hline
 \end{tabular}
 \end{center}
-\vspace{3mm}
-
-\noindent\pnum{1} ``Yuqori'' natijaga erishganlar ichida necha foizi ``Mustaqil usul''dan foydalangan? \ans{35mm}\\[8mm]
-\noindent\pnum{2} ``Kurs usuli''dan foydalanganlarning necha foizi ``Past'' natija ko'rsatdi? \ans{35mm}\\[8mm]
-\noindent\pnum{3} Har bir usul uchun alohida hisoblang: shu usuldan foydalanganlar ICHIDA ``Yuqori'' natija ko'rsatganlar ulushi (foizda) nechaga teng? Uchta javobni taqqoslang -- natija sizni ajablantiradimi?\\
-\hspace*{7mm}\ans{70mm}\\[6mm]
-\noindent\pnum{4} Umumiy $120$ o'quvchidan necha foizi ``O'rta'' natija ko'rsatdi? \ans{35mm}\\[8mm]
-\noindent\pnum{5} ``Ilova usuli'' guruhiga yana $20$ nafar o'quvchi qo'shilsa va ularning barchasi ``Yuqori'' natija ko'rsatsa, Ilova usulining yangi jami nechta bo'ladi, va ``Yuqori'' ustunining yangi jamisi nechta bo'ladi?\\
+\vspace{1mm}
+\noindent\pnum{1} Of the students who achieved a ``High'' result, what percentage used the ``Self-study'' method?\\
+\hspace*{7mm}\ans{35mm}\\[5mm]
+\noindent\pnum{2} What percentage of the students who used the ``Course'' method achieved a ``Low'' result?\\
+\hspace*{7mm}\ans{35mm}\\[5mm]
+\noindent\pnum{3} For each method separately, calculate the percentage of students using that method who achieved a ``High'' result. Compare the three percentages: is the result surprising?\\
+\hspace*{7mm}\ans{70mm}\\[3mm]
+\noindent\pnum{4} What percentage of all $120$ students surveyed achieved a ``Medium'' result? \ans{35mm}\\[5mm]
+\noindent\pnum{5} If $20$ more students join the ``App method'' group and all of them achieve a ``High'' result, what is the new total for the App method group, and what is the new total for the ``High'' column?\\
 \hspace*{7mm}\ans{70mm}
 }
 \end{textblock*}
-
+\colrule{153}{117}
+\begin{textblock*}{\COLW}(\LCOL,153.0mm)
+{\fontsize{9.5}{11}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Easy}\\[1.3mm]
+\satq{1}{A teacher recorded how many books each of $40$ students read last month.\\[1mm]
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|c|}
+\hline
+\rowcolor{badge!45}\textbf{Books read} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} \\ \hline
+Students & 4 & 11 & 15 & 10 \\ \hline
+\end{tabular}}\\[1mm]
+How many students read at least $2$ books?}{$25$}{$15$}{$21$}{$36$}
+\vspace{0mm}
+\satq{2}{A class of $40$ students was asked which instrument they play. Each student plays at most one instrument: $16$ play piano, $10$ play guitar, and the rest play no instrument. What percent of the students play no instrument?}{$14\%$}{$35\%$}{$40\%$}{$65\%$}
+\vspace{0mm}
+\satq{3}{The table shows the number of students who earned each score on a quiz. There are $25$ students in total.\\[1mm]
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\rowcolor{badge!45}\textbf{Score} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} \\ \hline
+Students & 2 & 5 & 3 & 6 & 9 \\ \hline
+\end{tabular}}\\[1mm]
+How many students scored $9$ or higher?}{$6$}{$9$}{$15$}{$20$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,153.0mm)
+{\fontsize{9.5}{11}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{4}{A coffee shop counted its customers each day from Monday to Thursday: $14$, $19$, $22$, and $10$. The total for Monday through Friday was $80$. How many customers came in on Friday?}{$10$}{$17$}{$25$}{$15$}
+\vspace{0mm}
+\satqw{5}{The scatterplot shows the weekly hours $x$ that $9$ students spend on their phones and each student's average nightly sleep $y$, in hours. The points fall from the upper left to the lower right. Which description best fits the association between $x$ and $y$?}{Negative association}{Positive association}{No association}{Cannot be determined from a scatterplot}
+\vspace{0mm}
+\satq{6}{The points $(2,5),\ (4,9),\ (6,13),\ (8,17)$ lie approximately on a straight line. Based on this line, what is the approximate value of $y$ when $x=5$?}{$9$}{$11$}{$10$}{$13$}
+}
+\end{textblock*}
 \clearpage
-
-% ================= PAGE 8: Javoblar -- unified answer table + QR =================
-\topicheader{16}{Ma'lumotlarni Taqdim Etish}
+\topicheader{16}{Data Representations}
 \pagefooter{91}
 \mbox{}%
-
-\begin{textblock*}{194mm}(16mm,22mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+\colrule{32}{238}
+\begin{textblock*}{\COLW}(\LCOL,32.0mm)
+{\fontsize{9.5}{11}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{7}{The table shows the members of a gym by age group and gender.\\[1mm]
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|}
+\hline
+\rowcolor{badge!45} & \textbf{Male} & \textbf{Female} & \textbf{Total} \\ \hline
+Adults & 35 & 25 & 60 \\ \hline
+Teens & 18 & 22 & 40 \\ \hline
+\end{tabular}}\\[1mm]
+How many of the members are female?}{$25$}{$40$}{$47$}{$53$}
+\vspace{0mm}
+\satq{8}{In a survey, $30$ students read a book and $20$ students watched the movie; each student did exactly one of these. $24$ of the book readers liked the book, and $10$ of the movie watchers liked the movie. What percent of the students who read the book liked it?}{$24\%$}{$48\%$}{$90\%$}{$80\%$}
+\vspace{0mm}
+\satq{9}{A two-way table has two rows and two columns. The two row totals are $90$ and $60$, and one column total is $80$. What is the other column total?}{$70$}{$60$}{$90$}{$150$}
+\vspace{0mm}
+\satq{10}{A frequency table lists four values: $3$ appears $4$ times, $5$ appears $2$ times, $7$ appears $6$ times, and $9$ appears $3$ times. How many data values are greater than $4$?}{$2$}{$11$}{$9$}{$15$}
+\vspace{0mm}
+\satq{11}{A bag holds $30$ marbles: $12$ red, $8$ blue, $6$ green, and $4$ yellow. What percent of the marbles are not red?}{$12\%$}{$40\%$}{$60\%$}{$70\%$}
+\vspace{0mm}
+\satqw{12}{A scatterplot shows the heights and shoe sizes of $15$ students. The points are scattered with no clear upward or downward pattern. Which conclusion is best supported by the scatterplot?}{Taller students always have larger shoe sizes.}{Shoe size causes students to be taller.}{All students in the group have the same shoe size.}{There is no clear association between height and shoe size in this group.}
+\vspace{0mm}
+\satq{13}{The table shows the number of students who chose each season as their favorite. There are $52$ students in total.\\[1mm]
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|c|}
+\hline
+\rowcolor{badge!45}\textbf{Season} & \textbf{Summer} & \textbf{Spring} & \textbf{Autumn} & \textbf{Winter} \\ \hline
+Students & 18 & 14 & 11 & 9 \\ \hline
+\end{tabular}}\\[1mm]
+How many more students chose summer than winter?}{$9$}{$4$}{$18$}{$27$}
+}
 \end{textblock*}
-
-\begin{textblock*}{194mm}(16mm,34mm)
+\begin{textblock*}{\COLW}(\RCOL,32.0mm)
+{\fontsize{9.5}{11}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{14}{Each of the $80$ people surveyed chose either tea or coffee. Among the $35$ men, $20$ chose tea. Among the $45$ women, $25$ chose tea. How many people chose coffee?}{$20$}{$35$}{$45$}{$55$}
+\vspace{0mm}
+\satqw{15}{A school found that students who attend more tutoring sessions tend to have higher test scores; this is a positive association. Which conclusion is the most accurate?}{Tutoring causes every student's score to rise.}{Students with higher scores attend fewer tutoring sessions.}{The data show a positive association, but they do not prove that tutoring caused the higher scores.}{Higher test scores cause students to attend more tutoring sessions.}
+\vspace{0mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Medium}\\[1.3mm]
+\satq{1}{The table shows the club each of $100$ students chose.\\[1mm]
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|c|}
+\hline
+\rowcolor{badge!45} & \textbf{Art} & \textbf{Music} & \textbf{Sport} & \textbf{Total} \\ \hline
+Juniors & 18 & 12 & 20 & 50 \\ \hline
+Seniors & 22 & 8 & 20 & 50 \\ \hline
+\textbf{Total} & 40 & 20 & 40 & 100 \\ \hline
+\end{tabular}}\\[1mm]
+Of the students who chose music, what percent are seniors?}{$8\%$}{$40\%$}{$20\%$}{$60\%$}
+\vspace{0mm}
+\satq{2}{Refer to the table in the previous question. What percent of all $100$ students are seniors who chose art?}{$40\%$}{$44\%$}{$22\%$}{$50\%$}
+\vspace{0mm}
+\satq{3}{Refer to the table in the first question of this set. Next year the number of students who choose music increases by $25\%$. How many students will choose music next year?}{$5$}{$23$}{$45$}{$25$}
+\vspace{0mm}
+\satq{4}{The points $(1,3),\ (2,5),\ (3,7),\ (4,9),\ (5,11)$ lie on a straight line. Based on this trend, what is the most reasonable value of $y$ when $x=7$?}{$15$}{$13$}{$17$}{$21$}
+}
+\end{textblock*}
+\clearpage
+\topicheader{16}{Data Representations}
+\pagefooter{92}
+\mbox{}%
+\colrule{32}{238}
+\begin{textblock*}{\COLW}(\LCOL,32.0mm)
+{\fontsize{9.5}{11}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satqw{5}{A health article reports that people who drink more water have fewer headaches, and concludes that drinking water prevents headaches. Which statement is the best evaluation of this conclusion?}{The conclusion is valid because the association is strong.}{The data show an association, but other factors could explain it, so the data do not prove that water prevents headaches.}{The conclusion is wrong because headaches cause people to drink less water, so there is no association.}{The conclusion is valid because fewer headaches always follow more water.}
+\vspace{0mm}
+\satq{6}{In a survey of $300$ people, $60\%$ said they use a library. Of the people who use a library, $40\%$ are students. How many library users are students?}{$108$}{$120$}{$72$}{$180$}
+\vspace{0mm}
+\satq{7}{The table shows the pets owned by $200$ people, classified by housing type.\\[1mm]
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|c|}
+\hline
+\rowcolor{badge!45} & \textbf{Dog} & \textbf{Cat} & \textbf{Other} & \textbf{Total} \\ \hline
+Renters & 25 & 30 & 25 & 80 \\ \hline
+Homeowners & 35 & 45 & 40 & 120 \\ \hline
+\textbf{Total} & 60 & 75 & 65 & 200 \\ \hline
+\end{tabular}}\\[1mm]
+Of the people who have a cat, what percent are homeowners?}{$37.5\%$}{$56.25\%$}{$75\%$}{$60\%$}
+\vspace{0mm}
+\satq{8}{The points in a scatterplot lie approximately along a straight line through $(20,40)$ and $(30,70)$, where $x$ is the average July temperature in degrees Celsius and $y$ is the number of ice cream shops in the city. Using this line, approximately how many shops would a city with an average July temperature of $25^\circ$C have?}{$55$}{$40$}{$50$}{$70$}
+\vspace{0mm}
+\satq{9}{A survey of $120$ students asked how they get to school: $40\%$ walk, $25\%$ take the bus, and $35\%$ ride a bike. How many more students ride a bike than take the bus?}{$18$}{$12$}{$30$}{$42$}
+\vspace{0mm}
+\satq{10}{A company has $60$ employees: $15$ managers and $45$ staff members. Of the managers, $9$ commute by train. Of the staff members, $21$ commute by train. Of all the employees who commute by train, what percent are managers?}{$15\%$}{$60\%$}{$30\%$}{$70\%$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32.0mm)
+{\fontsize{9.5}{11}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satqw{11}{Group 1 has $48$ people, of whom $36$ are satisfied. Group 2 has $60$ people, of whom $45$ are satisfied. Which statement is true?}{Group 1 has a higher percent satisfied.}{Group 2 has a higher percent satisfied.}{Group 2 has a higher percent satisfied, because it has more satisfied people.}{Both groups have the same percent satisfied, $75\%$.}
+\vspace{0mm}
+\satqw{12}{Plot 1 shows points spread in a loose band that rises from left to right. Plot 2 shows points lying close to a line that falls from left to right. Which statement is correct?}{Plot 2 shows a stronger association, and the association is negative.}{Plot 1 shows a stronger association, and the association is negative.}{Plot 1 shows a stronger association, and the association is positive.}{Plot 2 shows a stronger association, and the association is positive.}
+\vspace{0mm}
+\satq{13}{A store recorded whether each of its $100$ customers made a purchase.\\[1mm]
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|}
+\hline
+\rowcolor{badge!45} & \textbf{Purchased} & \textbf{Did not purchase} & \textbf{Total} \\ \hline
+New customers & 36 & 24 & 60 \\ \hline
+Returning customers & 24 & 16 & 40 \\ \hline
+\textbf{Total} & 60 & 40 & 100 \\ \hline
+\end{tabular}}\\[1mm]
+What percent of the customers who made a purchase were returning customers?}{$16\%$}{$40\%$}{$24\%$}{$60\%$}
+\vspace{0mm}
+\satq{14}{In a survey of $45$ girls and $50$ boys, $18$ girls and $30$ boys said they like soccer. What is the difference, in percentage points, between the percent of boys who like soccer and the percent of girls who like soccer?}{$12$}{$40$}{$20$}{$60$}
+\vspace{0mm}
+\satq{15}{A club has $50$ members. There are $14$ members under $18$ years old, $21$ members aged $18$ to $29$, and $15$ members aged $30$ or older. What percent of the members are at least $18$ years old?}{$14\%$}{$28\%$}{$42\%$}{$72\%$}
+\vspace{0mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Hard}\\[1.3mm]
+\satq{1}{In a survey, $45\%$ of the respondents were men. Of the men, $60\%$ prefer tea. If $54$ men prefer tea, how many people were surveyed?}{$90$}{$120$}{$200$}{$270$}
+}
+\end{textblock*}
+\clearpage
+\topicheader{16}{Data Representations}
+\pagefooter{93}
+\mbox{}%
+\colrule{32}{238}
+\begin{textblock*}{\COLW}(\LCOL,32.0mm)
+{\fontsize{9.5}{11}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{2}{Group X has $80$ students, and $40\%$ of them chose option P. Group Y has $120$ students. Of all $200$ students in the two groups, $55\%$ chose option P. What percent of Group Y chose option P?}{$55\%$}{$60\%$}{$78\%$}{$65\%$}
+\vspace{0mm}
+\satq{3}{In a survey of $150$ people, $100$ answered yes to a question. There were $90$ men and $60$ women. The number of men who answered yes is $3$ times the number of women who answered yes. How many men answered no?}{$15$}{$25$}{$35$}{$75$}
+\vspace{0mm}
+\satq{4}{The table shows how each of $110$ students in a school travels to school, by attendance level.\\[1mm]
+\centerline{\fontsize{9}{11}\selectfont\renewcommand{\arraystretch}{1.15}\setlength{\tabcolsep}{3.5pt}\begin{tabular}{|l|c|c|c|c|}
+\hline
+\rowcolor{badge!45} & \textbf{Bus} & \textbf{Car} & \textbf{Bike} & \textbf{Total} \\ \hline
+Low attendance & 12 & 8 & 5 & 25 \\ \hline
+Medium attendance & 18 & 12 & 10 & 40 \\ \hline
+High attendance & 15 & 20 & 10 & 45 \\ \hline
+\textbf{Total} & 45 & 40 & 25 & 110 \\ \hline
+\end{tabular}}\\[1mm]
+Of the students who ride a bike, what percent have high attendance?}{$\approx 9.1\%$}{$40\%$}{$\approx 22.7\%$}{$\approx 44.4\%$}
+\vspace{0mm}
+\satq{5}{Refer to the table in the previous question. Of the students who ride in a car, what percent have low attendance?}{$\approx 7.3\%$}{$\approx 17.8\%$}{$20\%$}{$32\%$}
+\vspace{0mm}
+\satqw{6}{Refer to the table in the previous two questions. Within which attendance level is the percent of students who ride the bus highest?}{Medium attendance}{High attendance}{All three levels are equal}{Low attendance}
+\vspace{0mm}
+\satqw{7}{A research team wants to know whether extra computer time causes higher exam scores at schools. Which study design best tests whether the extra computer time causes the score increase?}{Randomly assign students to an extra-computer-time group or a control group, then compare their scores.}{Survey more schools and check whether the positive association continues.}{Draw a line of best fit through the points and examine its slope.}{Compare the same schools' scores across two different years.}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32.0mm)
+{\fontsize{9.5}{11}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\satq{8}{Last year a club had $100$ members: $40$ girls and $60$ boys. This year the number of girls increased by $50\%$, and the number of boys stayed the same. What percent of this year's members are girls?}{$40\%$}{$50\%$}{$60\%$}{$75\%$}
+\vspace{0mm}
+\satq{9}{A town has $200$ households. $60$ households own a bike, and $25\%$ of the bike owners own a helmet. Of the households that do not own a bike, $40\%$ own a helmet. What percent of all $200$ households own a helmet?}{$15\%$}{$25\%$}{$35.5\%$}{$40\%$}
+\vspace{0mm}
+\satq{10}{A school has $500$ students. $35\%$ of the students are in grade $9$, and $40\%$ of the grade-$9$ students are boys. Of the students who are not in grade $9$, $52\%$ are girls. How many girls are in the school?}{$105$}{$169$}{$380$}{$274$}
+\vspace{0mm}
+\satq{11}{A group of $200$ voters is made up of men and women in the ratio $3:2$. Of the men, $60\%$ voted yes. Of the women, $45\%$ voted yes. How many voters voted yes in total?}{$108$}{$72$}{$96$}{$120$}
+\vspace{0mm}
+\satq{12}{Class A has $40$ students, and $12$ of them chose online homework. Class B has $60$ students, and $45$ of them chose online homework. What percent of the combined $100$ students chose online homework?}{$45\%$}{$57\%$}{$52.5\%$}{$60\%$}
+\vspace{0mm}
+\satq{13}{A study of $400$ participants found that $25\%$ are under $30$ years old. Half of the participants under $30$ said yes to a question, and $30\%$ of the participants aged $30$ or older said yes. How many participants said yes in total?}{$50$}{$90$}{$140$}{$120$}
+\vspace{0mm}
+\satq{14}{In a school, $200$ students were split into three groups. Group A has $40$ students, of whom $30$ passed. Group B has $60$ students, of whom $33$ passed. Group C has $100$ students. Overall, $60\%$ of all $200$ students passed. What percent of Group C passed?}{$55\%$}{$60\%$}{$75\%$}{$57\%$}
+\vspace{0mm}
+\satq{15}{In a survey of $160$ students, $40\%$ prefer online classes. Of the students who prefer online classes, $48$ are in grade $11$. What percent of all $160$ students prefer online classes but are not in grade $11$?}{$10\%$}{$16\%$}{$30\%$}{$40\%$}
+}
+\end{textblock*}
+\begin{textblock*}{178mm}(16mm,272mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+Sourcing note: every item in Set 8 is original -- written by studying the method
+and structure of real, officially-released SAT Suite Question Bank items in this
+lesson's skill categories, then building a new problem (new numbers, names, and
+context) requiring the same solving method. No real College Board question text
+is reproduced anywhere in this book.\par}
+\end{textblock*}
+\clearpage
+\topicheader{16}{Data Representations}
+\pagefooter{94}
+\mbox{}%
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,44mm)
 {\fontsize{8.7}{10.8}\selectfont
 \centering
 \begin{tabular}{|>{\centering\arraybackslash}p{20mm}|p{154mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{Javoblar}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{Answers}\\
 \hline
-\multirow{2}{20mm}{\centering 1-to'plam} & 1)\ $9$ \quad 2)\ $36\%$ \quad 3)\ $3$ taga kam \quad 4)\ $19$\\\cline{2-2}
- & 5)\ yangi jami $=60$, fizika $=19/60\approx31.7\%$\\\hline
-\multirow{2}{20mm}{\centering 2-to'plam} & 1)\ $65\%$ \quad 2)\ $66\%$ \quad 3)\ $40:17$ \quad 4)\ $34\%$\\\cline{2-2}
- & 5)\ $100\%$ -- bitta qatorning barcha ulushlari jamisi har doim butun qatorni, ya'ni $100\%$ ni beradi.\\\hline
-\multirow{4}{20mm}{\centering 3-to'plam} & 1)\ $\approx29.8\%$ ($14/47$) \quad 2)\ $\approx39.5\%$ ($17/43$)\\\cline{2-2}
- & 3)\ Maxrajlar har xil -- 2-to'plam 1-savolda maxraj qizlar qator jami ($40$), bu yerda maxraj voleybol ustun jami ($43$); ikkisi boshqa-boshqa savolga javob beradi.\\\cline{2-2}
+\multirow{2}{20mm}{\centering Set 1} & 1)\ $9$ \quad 2)\ $36\%$ \quad 3)\ $3$ fewer \quad 4)\ $19$\\\cline{2-2}
+ & 5)\ new total $=60$; physics $=19/60\approx31.7\%$\\\hline
+\multirow{2}{20mm}{\centering Set 2} & 1)\ $65\%$ \quad 2)\ $66\%$ \quad 3)\ $40:17$ \quad 4)\ $34\%$\\\cline{2-2}
+ & 5)\ $100\%$ -- the percentages within one row always add to the whole row, $100\%$.\\\hline
+\multirow{4}{20mm}{\centering Set 3} & 1)\ $\approx29.8\%$ ($14/47$) \quad 2)\ $\approx39.5\%$ ($17/43$)\\\cline{2-2}
+ & 3)\ The denominators differ: Set 2 Q1 uses the girls' row total ($40$), while here the denominator is the volleyball column total ($43$); the questions are about different groups.\\\cline{2-2}
  & 4)\ $\approx55.6\%$ ($50/90$)\\\cline{2-2}
- & 5)\ Maxraj $=50$ (yigitlar qator jami) -- yigitlar guruhi ICHIDAGI ulush so'ralgan. $33/50=66\%$.\\\hline
-\multirow{3}{20mm}{\centering 4-to'plam} & 1)\ $35\%$ \quad 2)\ $\approx34.9\%$ ($15/43$) \quad 3)\ $72$ ($60\times1.2$)\\\cline{2-2}
- & 4)\ $7$ -- $52-45$, katta guruhdan (18--25 yosh) kichik guruhni (13--17 yosh) ayirish kerak, aks holda manfiy javob chiqadi.\\\cline{2-2}
+ & 5)\ Denominator $=50$ (the boys' row total), because the percentage is taken within the boys' group: $33/50=66\%$.\\\hline
+\multirow{3}{20mm}{\centering Set 4} & 1)\ $35\%$ \quad 2)\ $\approx34.9\%$ ($15/43$) \quad 3)\ $72$ ($60\times1.2$)\\\cline{2-2}
+ & 4)\ $7$ -- $52-45$; subtract the smaller group (13--17, $45$) from the larger (18--25, $52$).\\\cline{2-2}
  & 5)\ $\approx69.3\%$ ($97/140$)\\\hline
-\multirow{5}{20mm}{\centering 5-to'plam} & 1)\ Musbat bog'lanish\\\cline{2-2}
- & 2)\ Real ma'lumotlar mukammal chiziqda yotmaydi -- bir xil $x$ qiymatida turli natija bo'lishi normal\\\cline{2-2}
- & 3)\ Taxminan $10$--$12$ km oralig'ida\\\cline{2-2}
- & 4)\ Yo'q -- bog'lanish (correlation) sabab-oqibatni (causation) isbotlamaydi\\\cline{2-2}
- & 5)\ Xavfli -- bu ekstrapolyatsiya, ma'lumotlar faqat $2$--$8$ soat oralig'ini qamrab oladi.\\\hline
-\multirow{4}{20mm}{\centering 6-to'plam} & 1)\ Maxraj voleybol ustun jami ($43$) bo'lishi kerak edi. To'g'ri: $26/43\approx60.5\%$.\\\cline{2-2}
- & 2)\ Maxraj qizlar qator jami ($40$) bo'lishi kerak edi. To'g'ri: $14/40=35\%$.\\\cline{2-2}
- & 3)\ Bog'lanish sabab-oqibat sifatida talqin qilingan; boshqa omillar rad etilmagan.\\\cline{2-2}
- & 4)\ Maxraj qoniqmadi ustun jami ($43$) bo'lishi kerak edi. To'g'ri: $28/43\approx65.1\%$.\\\hline
-\multirow{3}{20mm}{\centering 7-to'plam} & 1)\ $\approx33.3\%$ ($10/30$) \quad 2)\ $20\%$ ($8/40$)\\\cline{2-2}
- & 3)\ Kurs: $25\%$, Ilova: $25\%$, Mustaqil: $25\%$ -- uchtasi teng (qator jamilari teng bo'lgani uchun); boshqa jadvalda bu tasodifiy bo'lmasligi mumkin.\\\cline{2-2}
- & 4)\ $\approx45.8\%$ ($55/120$) \quad 5)\ Ilova yangi jami $=60$; ``Yuqori'' ustuni yangi jamisi $=50$.\\\hline
+\multirow{5}{20mm}{\centering Set 5} & 1)\ Positive association\\\cline{2-2}
+ & 2)\ Real data do not fall on a perfect line; different outcomes at the same $x$ are normal.\\\cline{2-2}
+ & 3)\ About $10$--$12$ km, based on the trend.\\\cline{2-2}
+ & 4)\ No -- correlation does not prove causation; other factors may be involved.\\\cline{2-2}
+ & 5)\ Risky -- this is extrapolation; the data cover only $2$--$8$ hours.\\\hline
+\multirow{4}{20mm}{\centering Set 6} & 1)\ Wrong denominator: volleyball column total ($43$) was needed. Correct: $26/43\approx60.5\%$.\\\cline{2-2}
+ & 2)\ Wrong denominator: girls' row total ($40$) was needed. Correct: $14/40=35\%$.\\\cline{2-2}
+ & 3)\ Correlation was treated as causation. Correct: state only the positive association.\\\cline{2-2}
+ & 4)\ Wrong denominator: the ``not satisfied'' column total ($43$) was needed. Correct: $28/43\approx65.1\%$.\\\hline
+\multirow{3}{20mm}{\centering Set 7} & 1)\ $\approx33.3\%$ ($10/30$) \quad 2)\ $20\%$ ($8/40$)\\\cline{2-2}
+ & 3)\ Course, App and Self-study are all $25\%$ ($10/40$ each); equal here only because the row totals are equal.\\\cline{2-2}
+ & 4)\ $\approx45.8\%$ ($55/120$) \quad 5)\ App total $=60$; ``High'' column total $=50$.\\\hline
 \end{tabular}
 }
 \end{textblock*}
-
-\begin{textblock*}{194mm}(16mm,246mm)
+\clearpage
+\topicheader{16}{Data Representations}
+\pagefooter{95}
+\mbox{}%
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+A&B&C&D&A&B&C&D&A&B\\\hline
+\end{tabular}\\[1mm]
+\makebox[194mm][c]{\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+C&D&A&B&C\\\hline
+\end{tabular}}
+}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&C&D&A&B&C&D&A&B&C\\\hline
+\end{tabular}\\[1mm]
+\makebox[194mm][c]{\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+D&A&B&C&D\\\hline
+\end{tabular}}
+}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+C&D&A&B&C&D&A&B&C&D\\\hline
+\end{tabular}\\[1mm]
+\makebox[194mm][c]{\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+A&B&C&D&A\\\hline
+\end{tabular}}
+}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}
 \end{textblock*}
-
 \end{document}

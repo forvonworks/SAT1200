@@ -2,13 +2,13 @@
 \usepackage[a4paper,margin=0mm]{geometry}
 \usepackage{fontspec}
 \usepackage{unicode-math}
-\usepackage{amsmath}
 \usepackage{tikz}
 \usepackage[table]{xcolor}
 \usepackage[absolute]{textpos}
 \usepackage{enumitem}
 \usepackage{array}
 \usepackage{multirow}
+\usepackage{amsmath}
 
 \setmainfont{Libertinus Serif}
 \setsansfont{Libertinus Sans}
@@ -24,10 +24,14 @@
 \setlength{\parindent}{0pt}
 \pagestyle{empty}
 
+% ---- Safe print margins: 16mm outer on both sides so bound/trimmed copies never
+% clip problem text. Columns are 83mm wide with a 6mm gap on each side of the
+% center rule (at x=105mm). ----
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
 \newcommand{\COLW}{83mm}
 
+% ---- Plain topic header: number chip + title, thin rule underneath. No band, no watermark. ----
 \newcommand{\topicheader}[2]{%
 \begin{textblock*}{194mm}(16mm,10mm)
 \begin{tikzpicture}
@@ -57,6 +61,7 @@
 \end{textblock*}
 }
 
+% ---- Fixed-length vertical column rule: #1 = top y (mm), #2 = length (mm) ----
 \newcommand{\colrule}[2]{%
 \begin{textblock*}{1mm}(105mm,#1mm)
 \begin{tikzpicture}
@@ -69,237 +74,554 @@
 {\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
 }
 
+% ---- Small boxed problem number, reference-style. Plain \fbox -- stays flush with
+% the text baseline instead of centering on it. ----
 \setlength{\fboxsep}{1.4pt}
 \setlength{\fboxrule}{0.5pt}
 \newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
 
+% ---- QR placeholder square + caption below ----
 \newcommand{\qrbox}[1]{%
 \begin{tikzpicture}
 \draw[black!55,line width=0.6pt] (0,0) rectangle (30mm,30mm);
-\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\kod};
+\node[black!40,font=\sffamily\fontsize{8}{9}\selectfont,align=center] at (15mm,15mm) {QR\\code};
 \end{tikzpicture}\\[1.5mm]
 {\sffamily\fontsize{9}{11}\selectfont\color{black!70} #1}%
 }
 
+% ---- SAT-style multiple-choice question block: #1=number #2=stem #3-6=choices A-D ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\\[7mm]%
+}
+
+% ---- SAT-style MC block with stacked (full-width) choices, for long/table choices ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}(A) #3\\[1.6mm]
+\hspace*{7mm}(B) #4\\[1.6mm]
+\hspace*{7mm}(C) #5\\[1.6mm]
+\hspace*{7mm}(D) #6\\[7mm]%
+}
+
+% ---- Answer-table styling: accent-colored grid, like the reference "Number | Answer" table ----
 \arrayrulecolor{accent}
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.35}
 \newcommand{\anstitle}[1]{{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont #1}\\[1.3mm]}
 
+
+\newcommand{\difflabel}[1]{{\sffamily\bfseries\color{accent}\fontsize{10}{12}\selectfont #1}\par\vspace{1.5mm}}
+\newcommand{\satqt}[7]{%
+\noindent\pnum{#1} #2\\[1.5mm]
+{\centering #3\par}\vspace{1.5mm}
+\hspace*{7mm}\begin{tabular}{@{}p{32mm}p{32mm}@{}}
+(A) #4 & (B) #5 \\[2.5mm]
+(C) #6 & (D) #7 \\
+\end{tabular}\\[7mm]%
+}
+
+\renewcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\\[2mm]
+\hspace*{7mm}\parbox[t]{74mm}{\hangindent=6mm (A) #3}\\[1.6mm]
+\hspace*{7mm}\parbox[t]{74mm}{\hangindent=6mm (B) #4}\\[1.6mm]
+\hspace*{7mm}\parbox[t]{74mm}{\hangindent=6mm (C) #5}\\[1.6mm]
+\hspace*{7mm}\parbox[t]{74mm}{\hangindent=6mm (D) #6}\\[7mm]%
+}
 \begin{document}
 
-% ================= PAGE 1: Set 1 | Set 2 =================
-\topicheader{17}{Ehtimollar nazariyasi asoslari}
+\topicheader{17}{Probability Fundamentals}
 \pagefooter{92}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{1-to'plam}{Qulay holatlar / Barcha holatlar.}
+\setkicker{Set 1}{Basic probability (favorable / total).}
 
-\noindent\pnum{1} Xaltada 7 ta qizil, 3 ta ko'k shar bor. $P(\text{qizil})=$\\[16mm]
-\noindent\pnum{2} Bankada 5 yashil, 4 sariq, 3 binafsha shar. $P(\text{sariq})=$\\[16mm]
-\noindent\pnum{3} 25 nafar o'quvchidan 15 tasi shaxmat o'ynaydi. $P(\text{shaxmat})=$\\[16mm]
-\noindent\pnum{4} Aylanada 8 ta teng bo'lak, 1--8 raqamlangan. $P(5\text{ dan katta})=$\\[16mm]
-\noindent\pnum{5} Kartalar 1 dan 20 gacha raqamlangan. $P(4\text{ ga karrali})=$\\[16mm]
-\noindent\pnum{6} Qutida 6 ta qizil, 9 ta ko'k ruchka. $P(\text{ko'k})=$
+\noindent\pnum{1} A bag contains $7$ red marbles and $3$ blue marbles. If one marble is selected at random from the bag, what is the probability that the marble selected is red?\\[18mm]
+\noindent\pnum{2} A jar contains $5$ green marbles, $4$ yellow marbles, and $3$ purple marbles. If one marble is selected at random from the jar, what is the probability that the marble selected is yellow?\\[18mm]
+\noindent\pnum{3} A class consists of $25$ students, of whom $15$ play chess. If one student is selected at random from the class, what is the probability that the student selected plays chess?\\[18mm]
+\noindent\pnum{4} A spinner is divided into $8$ equal sections numbered $1$ through $8$. If the spinner is spun once, what is the probability that it lands on a number greater than $5$?\\[18mm]
+\noindent\pnum{5} A set of cards is numbered $1$ through $20$. If one card is selected at random, what is the probability that the number on the card selected is a multiple of $4$?\\[18mm]
+\noindent\pnum{6} A box contains $6$ red pens and $9$ blue pens. If one pen is selected at random from the box, what is the probability that the pen selected is blue?\\[18mm]
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{10.3}{13}\selectfont
-\setkicker{2-to'plam}{Jadvaldan ehtimollik -- avval mos qator/ustunga cheklang.}
+{\fontsize{10.5}{13}\selectfont
+\setkicker{Set 2}{Probability from a table.}
 
 \begin{center}
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular}{|p{14mm}|p{11mm}|p{14mm}|p{9mm}|}
+{\fontsize{8.5}{10.5}\selectfont\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|}
 \hline
-\rowcolor{badge!45} & \scriptsize Matematikani yoqtiradi & \scriptsize Yoqtirmaydi & \scriptsize Jami\\
-\hline
-O'g'il & 18 & 12 & 30\\\hline
-Qiz & 22 & 8 & 30\\\hline
-Jami & 40 & 20 & 60\\\hline
-\end{tabular}
+\rowcolor{badge!45}  & Likes Math & Doesn't Like Math & Total \\ \hline
+Boys & 18 & 12 & 30 \\ \hline
+Girls & 22 & 8 & 30 \\ \hline
+\textbf{Total} & \textbf{40} & \textbf{20} & \textbf{60} \\ \hline
+\end{tabular}}
 \end{center}
 \vspace{2mm}
-
-\noindent\pnum{1} $P(\text{matematikani yoqtiradi})=$\\[11mm]
-\noindent\pnum{2} $P(\text{qiz})=$\\[11mm]
-\noindent\pnum{3} $P(\text{o'g'il VA yoqtiradi})=$\\[11mm]
-\noindent\pnum{4} $P(\text{qiz VA yoqtirmaydi})=$\\[11mm]
-\noindent\pnum{5} $P(\text{yoqtiradi}\mid\text{o'g'il})=$\\[11mm]
-\noindent\pnum{6} $P(\text{qiz}\mid\text{yoqtiradi})=$
+\noindent\pnum{1} Based on the table, if one student from the survey is selected at random, what is the probability that the student selected likes math?\\[10mm]
+\noindent\pnum{2} Based on the table, if one student from the survey is selected at random, what is the probability that the student selected is a girl?\\[10mm]
+\noindent\pnum{3} Based on the table, if one student from the survey is selected at random, what is the probability that the student selected is a boy who likes math?\\[10mm]
+\noindent\pnum{4} Based on the table, if one student from the survey is selected at random, what is the probability that the student selected is a girl who does not like math?\\[10mm]
+\noindent\pnum{5} Based on the table, if one boy from the survey is selected at random, what is the probability that the boy selected likes math? (Restrict the total to the boys' row.)\\[10mm]
+\noindent\pnum{6} Based on the table, if one student who likes math is selected at random, what is the probability that the student selected is a girl? (Restrict the total to the ``Likes Math'' column.)\\[10mm]
 }
 \end{textblock*}
 
+
 \clearpage
 
-% ================= PAGE 2: Set 3 | Set 4 =================
-\topicheader{17}{Ehtimollar nazariyasi asoslari}
+\topicheader{17}{Probability Fundamentals}
 \pagefooter{93}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{3-to'plam}{Birgalikda bo'lmagan hodisalar -- qo'shish qoidasi. Kesishishni tekshiring.}
+\setkicker{Set 3}{Mutually exclusive events -- check for overlap before you add.}
 
-\noindent\pnum{1} Zar tashlanadi. $P(2\text{ yoki }5)=$\\[16mm]
-\noindent\pnum{2} 52 ta kartadan biri tortiladi. $P(\text{Qirol yoki Bibi})=$\\[16mm]
-\noindent\pnum{3} Zar tashlanadi. $P(\text{juft yoki }4\text{dan katta})=$\\[16mm]
-\noindent\pnum{4} Aylanada 10 ta bo'lak. $P(3\text{ yoki }5\text{ ga karrali})=$\\[16mm]
-\noindent\pnum{5} Xaltada 4 qizil, 5 ko'k, 3 yashil. $P(\text{qizil yoki yashil})=$\\[16mm]
-\noindent\pnum{6} Zar tashlanadi. $P(3\text{dan kichik yoki toq})=$
+\noindent\pnum{1} A fair six-sided die is rolled once. What is the probability that the die shows a $2$ or a $5$?\\[16mm]
+\noindent\pnum{2} A card is selected at random from a standard deck of $52$ playing cards. What is the probability that the card selected is a king or a queen?\\[16mm]
+\noindent\pnum{3} A fair six-sided die is rolled once. What is the probability that the die shows an even number or a number greater than $4$?\\[16mm]
+\noindent\pnum{4} A spinner is divided into $10$ equal sections numbered $1$ through $10$. What is the probability that it lands on a multiple of $3$ or a multiple of $5$?\\[16mm]
+\noindent\pnum{5} A bag contains $4$ red marbles, $5$ blue marbles, and $3$ green marbles. What is the probability that the marble selected is red or green?\\[16mm]
+\noindent\pnum{6} A fair six-sided die is rolled once. What is the probability that the die shows a number less than $3$ or an odd number?\\[16mm]
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{11}{14}\selectfont
-\setkicker{4-to'plam}{Mustaqil hodisalar -- ko'paytirish qoidasi.}
+\setkicker{Set 4}{Independent events -- the multiplication rule.}
 
-\noindent\pnum{1} Tanga ikki marta tashlanadi. $P(\text{gerb, gerb})=$\\[16mm]
-\noindent\pnum{2} Zar ikki marta tashlanadi. $P(1\text{-si }6\text{ VA }2\text{-si juft})=$\\[16mm]
-\noindent\pnum{3} Ikki alohida kolodadan birtadan karta. $P(\text{ikkalasi ham tuz})=$\\[16mm]
-\noindent\pnum{4} Aylana 1--4, ikki marta aylantiriladi. $P(1\text{-si toq VA }2\text{-si }4)=$\\[16mm]
-\noindent\pnum{5} A xaltada 3 qizil 2 ko'k; B xaltada 4 qizil 6 ko'k. $P(\text{ikkalasi qizil})=$\\[16mm]
-\noindent\pnum{6} Og'ir tanga $P(\text{gerb})=0.6$. $P(\text{ikkala tashlashda ham gerb})=$
+\noindent\pnum{1} A fair coin is flipped twice. What is the probability that the coin shows heads on both flips?\\[16mm]
+\noindent\pnum{2} A fair six-sided die is rolled twice. What is the probability that the first roll is a $6$ and the second roll is an even number?\\[16mm]
+\noindent\pnum{3} One card is selected at random from each of two separate, standard $52$-card decks. What is the probability that both cards selected are aces?\\[16mm]
+\noindent\pnum{4} A spinner divided into $4$ equal sections numbered $1$ through $4$ is spun twice. What is the probability that the first spin results in an odd number and the second spin results in a $4$?\\[16mm]
+\noindent\pnum{5} Bag A contains $3$ red marbles and $2$ blue marbles. Bag B contains $4$ red marbles and $6$ blue marbles. If one marble is selected at random from each bag, what is the probability that both marbles selected are red?\\[16mm]
+\noindent\pnum{6} A weighted coin lands on heads with probability $0.6$ on each flip, and the outcomes of different flips are independent. What is the probability that the coin lands on heads on both of two flips?\\[16mm]
 }
 \end{textblock*}
 
+
 \clearpage
 
-% ================= PAGE 3: Set 5 (classify) | Set 6 (spot the error) =================
-\topicheader{17}{Ehtimollar nazariyasi asoslari}
+\topicheader{17}{Probability Fundamentals}
 \pagefooter{94}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10.3}{13}\selectfont
-\setkicker{5-to'plam}{Munosabatni aniqlang: faqat birgalikda bo'lmagan / faqat mustaqil / ikkalasi ham / hech biri emas.}
+\setkicker{Set 5}{Classify the relationship: mutually exclusive only, independent only, neither, or both. Use the probabilities.}
 
-\noindent\pnum{1} Zar tashlanadi. $A$=juft, $B$=toq.\\[9mm]
-\noindent\pnum{2} Ikkita tanga tashlanadi. $A$=1-tangada gerb, $B$=2-tangada raqam.\\[9mm]
-\noindent\pnum{3} Kartadan biri tortiladi. $A$=qiyg'ich (heart), $B$=qizil.\\[9mm]
-\noindent\pnum{4} Qizil va ko'k zar birga tashlanadi. $A$=qizilda 1, $B$=ko'kda 6.\\[9mm]
-\noindent\pnum{5} Kartadan biri tortiladi. $A$=qarg'a (spade), $B$=qiyg'ich (heart).\\[9mm]
-\noindent\pnum{6} Zar tashlanadi. $A$=7 tushishi (mumkin emas), $B$=juft son.
+\noindent\pnum{1} A fair six-sided die is rolled once. Let $A$ be the event that the die shows an even number, and let $B$ be the event that the die shows an odd number.\\[9mm]
+\noindent\pnum{2} Two separate coins are flipped. Let $A$ be the event that the first coin shows heads, and let $B$ be the event that the second coin shows tails.\\[9mm]
+\noindent\pnum{3} One card is selected at random from a standard deck of $52$ playing cards. Let $A$ be the event that the card is a heart, and let $B$ be the event that the card is red.\\[9mm]
+\noindent\pnum{4} A red die and a blue die are rolled together. Let $A$ be the event that the red die shows a $1$, and let $B$ be the event that the blue die shows a $6$.\\[9mm]
+\noindent\pnum{5} One card is selected at random from a standard deck of $52$ playing cards. Let $A$ be the event that the card is a spade, and let $B$ be the event that the card is a heart.\\[9mm]
+\noindent\pnum{6} A fair six-sided die is rolled once. Let $A$ be the event that the die shows a $7$, and let $B$ be the event that the die shows an even number.\\[9mm]
 }
 \end{textblock*}
 
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{10.3}{13}\selectfont
-\setkicker{6-to'plam}{Xatoni toping -- mustaqillik va birgalikda bo'lmaslik aralashtirilgan.}
+\setkicker{Set 6}{Spot the error -- name the mistake and give the correct answer.}
 
-\noindent\pnum{1} $A$=juft, $B$=$4$dan katta. \textit{``Bog'liq emas, shuning uchun $P(A\text{ yoki }B)=\frac36+\frac26=\frac56$.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[4mm]
-
-\noindent\pnum{2} Tanga 2 marta. \textit{``Ikkalasi ham gerb g'alati, demak birgalikda bo'lmaydi: $P=0$.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[4mm]
-
-\noindent\pnum{3} $A$=2, $B$=5. \textit{``Birgalikda bo'lmaydi, demak mustaqil ham: $P=\frac16\times\frac16$.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[4mm]
-
-\noindent\pnum{4} $A$=qizil, $B$=qiyg'ich. \textit{``Ikki xil xossa, demak mustaqil: $P=\frac12\times\frac14$.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}\\[4mm]
-
-\noindent\pnum{5} Ikki xaltadan tortish. \textit{``Bog'liq emas, demak birgalikda bo'lmaydi.''}\\[1mm]
-\hspace*{7mm}Xato va to'g'ri javob: \makebox[50mm]{\dotfill}
+\noindent\pnum{1} A fair six-sided die is rolled once. Let $A$ be the event that the die shows an even number, and $B$ the event that it shows a number greater than $4$. A student reasons: \textit{``These events don't affect each other, so $P(A \text{ or } B)=\frac36+\frac26=\frac56$.''} Name the error and give the correct answer.\\[1mm]\hspace*{7mm}Error and correct answer: \makebox[28mm]{\dotfill}\\[10mm]
+\noindent\pnum{2} A fair coin is flipped twice. Let $A$ be the event that the first flip shows heads, and $B$ the event that the second flip shows heads. A student reasons: \textit{``Both heads seems unlikely, so these events can't happen together: $P(A \text{ and } B)=0$.''} Name the error and give the correct answer.\\[1mm]\hspace*{7mm}Error and correct answer: \makebox[28mm]{\dotfill}\\[10mm]
+\noindent\pnum{3} A fair six-sided die is rolled once. Let $A$ be the event that the die shows a $2$, and $B$ the event that it shows a $5$. A student reasons: \textit{``These can't happen together, so they must be independent: $P(A \text{ and } B)=\frac16\times\frac16=\frac{1}{36}$.''} Name the error and give the correct answer.\\[1mm]\hspace*{7mm}Error and correct answer: \makebox[28mm]{\dotfill}\\[10mm]
+\noindent\pnum{4} One card is selected at random from a standard deck. Let $A$ be the event that the card is red, and $B$ the event that it is a heart. A student reasons: \textit{``These are two different properties, so they are independent: $P(A \text{ and } B)=\frac12\times\frac14=\frac18$.''} Name the error and give the correct answer.\\[1mm]\hspace*{7mm}Error and correct answer: \makebox[28mm]{\dotfill}\\[10mm]
+\noindent\pnum{5} One marble is selected at random from each of two separate bags, Bag A and Bag B. A student reasons: \textit{``The two draws are independent, since they come from different bags, so the two events can't happen at the same time, meaning they are mutually exclusive.''} Name the error and explain.\\[1mm]\hspace*{7mm}Error and correct answer: \makebox[28mm]{\dotfill}\\[10mm]
 }
 \end{textblock*}
 
+
 \clearpage
 
-% ================= PAGE 4: Set 7 (bonus) =================
-\topicheader{17}{Ehtimollar nazariyasi asoslari}
+\topicheader{17}{Probability Fundamentals}
 \pagefooter{95}
 \colrule{32}{238}
 \mbox{}%
 
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{10.5}{13}\selectfont
-\setkicker{7-to'plam}{Bonus / qiyin.}
+\setkicker{Set 7}{Bonus / challenge.}
 
-\noindent\pnum{1} 100 kishidan 55 kofe, 40 choy, 20 ikkalasini ham yoqtiradi. $P(\text{kofe yoki choy})=$\\[18mm]
-\noindent\pnum{2} $A,B$ mustaqil, $P(A)=0.3$, $P(B)=0.5$. $P(A\text{ yoki }B)=$\\[18mm]
-\noindent\pnum{3} Qutida 3 qizil, 7 ko'k. Qaytarmasdan 2 ta tortiladi. $P(\text{ikkalasi qizil})=$\\[18mm]
-\noindent\pnum{4} Zar tashlanadi. $A$=$\le3$, $B$=$\ge4$. Birgalikda bo'lmaganmi? Mustaqilmi? $P(A\text{ yoki }B)=$\\[18mm]
-\noindent\pnum{5} Ikkita aylana (1--5), mustaqil aylantiriladi. Yig'indi $8$ bo'lish ehtimoli$=$
+\noindent\pnum{1} A survey of $100$ people finds that $55$ like coffee, $40$ like tea, and $20$ like both coffee and tea. If one person from the survey is selected at random, what is the probability that the person likes coffee or tea?\\[18mm]
+\noindent\pnum{2} Events $A$ and $B$ are independent, with $P(A)=0.3$ and $P(B)=0.5$. What is $P(A \text{ or } B)$?\\[18mm]
+\noindent\pnum{3} A box contains $3$ red balls and $7$ blue balls. Two balls are selected at random, without replacement. What is the probability that both balls selected are red?\\[18mm]
+\noindent\pnum{4} A fair six-sided die is rolled once. Let $A$ be the event that the die shows a number less than or equal to $3$, and $B$ the event that it shows a number greater than or equal to $4$. Are $A$ and $B$ mutually exclusive? Are they independent? What is $P(A \text{ or } B)$?\\[18mm]
+\noindent\pnum{5} Two spinners, each divided into $5$ equal sections numbered $1$ through $5$, are spun independently. What is the probability that the sum of the two spins is $8$?\\[18mm]
 }
 \end{textblock*}
 
-\clearpage
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8}{Real SAT-style problems.}
+\difflabel{Easy}
+\satq{1}{A bag contains $4$ white tiles and $9$ black tiles. If one tile is selected at random from the bag, what is the probability that the tile selected is white?}{$\frac{4}{13}$}{$\frac{4}{9}$}{$\frac{9}{13}$}{$\frac{5}{13}$}
 
-% ================= PAGE 5: Javoblar =================
-\topicheader{17}{Ehtimollar nazariyasi asoslari}
-\pagefooter{96}
-\mbox{}%
+\satq{2}{A spinner is divided into $12$ equal sections numbered $1$ through $12$. If the spinner is spun once, what is the probability that it lands on a prime number?}{$\frac{1}{2}$}{$\frac{7}{12}$}{$\frac{5}{12}$}{$\frac{1}{12}$}
 
-\begin{textblock*}{194mm}(16mm,30mm)
-{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Javoblar\par}
+\satqt{3}{The table shows how $80$ commuters travel to work. If one commuter from the table is selected at random, what is the probability that the commuter travels by car?}{{\fontsize{8.5}{10.5}\selectfont\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor{badge!45}  & Men & Women & Total \\ \hline
+Bus & 18 & 12 & 30 \\ \hline
+Car & 20 & 15 & 35 \\ \hline
+Bike & 7 & 8 & 15 \\ \hline
+\textbf{Total} & \textbf{45} & \textbf{35} & \textbf{80} \\ \hline
+\end{tabular}}}{$\frac{7}{9}$}{$\frac{7}{16}$}{$\frac{3}{7}$}{$\frac{1}{4}$}
+
+\satqt{4}{The table shows how $80$ commuters travel to work. If one commuter from the table is selected at random, what is the probability that the commuter is a woman who travels by bike?}{{\fontsize{8.5}{10.5}\selectfont\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor{badge!45}  & Men & Women & Total \\ \hline
+Bus & 18 & 12 & 30 \\ \hline
+Car & 20 & 15 & 35 \\ \hline
+Bike & 7 & 8 & 15 \\ \hline
+\textbf{Total} & \textbf{45} & \textbf{35} & \textbf{80} \\ \hline
+\end{tabular}}}{$\frac{8}{35}$}{$\frac{8}{15}$}{$\frac{3}{16}$}{$\frac{1}{10}$}
+
+\satq{5}{A fair six-sided die is rolled once. What is the probability that the die shows a number greater than $4$?}{$\frac{1}{3}$}{$\frac{1}{6}$}{$\frac{1}{2}$}{$\frac{2}{3}$}
+}
 \end{textblock*}
 
-\begin{textblock*}{194mm}(16mm,42mm)
-{\fontsize{9.3}{11.5}\selectfont
+
+\clearpage
+
+\topicheader{17}{Probability Fundamentals}
+\pagefooter{96}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Easy (cont.)}
+\satq{6}{A fair six-sided die is rolled once. What is the probability that the die shows a $1$ or a $6$?}{$\frac{1}{36}$}{$\frac{1}{3}$}{$\frac{1}{6}$}{$\frac{2}{3}$}
+
+\satq{7}{A box contains $5$ red marbles, $8$ green marbles, and $7$ yellow marbles. If one marble is selected at random from the box, what is the probability that the marble selected is red or yellow?}{$\frac{13}{20}$}{$\frac{1}{4}$}{$\frac{3}{5}$}{$\frac{7}{20}$}
+
+\satq{8}{A fair six-sided die is rolled twice. What is the probability that the first roll shows a $2$ and the second roll shows a $5$?}{$\frac{1}{12}$}{$\frac{1}{6}$}{$\frac{1}{3}$}{$\frac{1}{36}$}
+
+\satq{9}{A spinner is divided into $4$ equal sections colored red, blue, green, and yellow. The spinner is spun twice. What is the probability that the spinner lands on red both times?}{$\frac{1}{8}$}{$\frac{1}{16}$}{$\frac{1}{4}$}{$\frac{1}{2}$}
+
+\satqw{10}{A fair six-sided die is rolled once. Let $A$ be the event that the die shows an even number, and let $B$ be the event that the die shows a $5$. Which statement is true?}{$A$ and $B$ are mutually exclusive, but not independent.}{$A$ and $B$ are mutually exclusive and independent.}{$A$ and $B$ are independent, but not mutually exclusive.}{$A$ and $B$ are neither mutually exclusive nor independent.}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Easy (cont.)}
+\satq{11}{Events $A$ and $B$ are mutually exclusive, with $P(A)=0.4$ and $P(B)=0.35$. What is $P(A \text{ or } B)$?}{$0.14$}{$0.60$}{$0.25$}{$0.75$}
+
+\satq{12}{A card is selected at random from a standard deck of $52$ playing cards. What is the probability that the card selected is a face card (a jack, queen, or king)?}{$\frac{1}{4}$}{$\frac{4}{13}$}{$\frac{3}{13}$}{$\frac{9}{52}$}
+
+\satq{13}{A bag contains $3$ blue marbles and $9$ green marbles. How many blue marbles must be added to the bag so that the probability of selecting a blue marble at random becomes $\frac{1}{2}$?}{$6$}{$3$}{$9$}{$12$}
+
+\satq{14}{A bus is late with probability $0.18$. What is the probability that the bus is on time?}{$0.18$}{$0.82$}{$0.72$}{$0.28$}
+
+\satq{15}{A fair coin is flipped twice. What is the probability that the coin shows heads on at least one of the two flips?}{$\frac{1}{4}$}{$\frac{1}{2}$}{$\frac{3}{4}$}{$1$}
+}
+\end{textblock*}
+
+
+\clearpage
+
+\topicheader{17}{Probability Fundamentals}
+\pagefooter{97}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Medium}
+\satqt{1}{The table shows the membership status of $120$ students at a school. If one junior from the table is selected at random, what is the probability that the junior is a member?}{{\fontsize{8.5}{10.5}\selectfont\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor{badge!45}  & Member & Non-member & Total \\ \hline
+Juniors & 24 & 36 & 60 \\ \hline
+Seniors & 18 & 42 & 60 \\ \hline
+\textbf{Total} & \textbf{42} & \textbf{78} & \textbf{120} \\ \hline
+\end{tabular}}}{$\frac{1}{5}$}{$\frac{2}{5}$}{$\frac{4}{7}$}{$\frac{7}{20}$}
+
+\satqt{2}{The table shows the membership status of $120$ students at a school. If one student from the table is selected at random, what is the probability that the student is a senior or a member?}{{\fontsize{8.5}{10.5}\selectfont\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor{badge!45}  & Member & Non-member & Total \\ \hline
+Juniors & 24 & 36 & 60 \\ \hline
+Seniors & 18 & 42 & 60 \\ \hline
+\textbf{Total} & \textbf{42} & \textbf{78} & \textbf{120} \\ \hline
+\end{tabular}}}{$\frac{17}{20}$}{$\frac{3}{20}$}{$\frac{1}{2}$}{$\frac{7}{10}$}
+
+\satq{3}{A fair six-sided die is rolled once. What is the probability that the die shows a factor of $6$ or a prime number?}{$\frac{7}{6}$}{$\frac{1}{3}$}{$\frac{5}{6}$}{$\frac{2}{3}$}
+
+\satq{4}{A fair coin is flipped three times. What is the probability that the coin shows exactly two heads?}{$\frac{3}{8}$}{$\frac{1}{8}$}{$\frac{1}{4}$}{$\frac{1}{2}$}
+
+\satq{5}{Events $A$ and $B$ are independent, with $P(A)=0.3$ and $P(B)=0.6$. What is $P(A \text{ or } B)$?}{$0.18$}{$0.72$}{$0.90$}{$0.42$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Medium (cont.)}
+\satq{6}{Events $A$ and $B$ are independent. The probability that a student passes test 1 is $0.7$, and the probability that the same student passes test 2 is $0.8$. Assume the two results are independent. What is the probability that the student passes both tests?}{$0.10$}{$0.94$}{$0.56$}{$1.50$}
+
+\satqw{7}{Events $A$ and $B$ satisfy $P(A)=0.4$, $P(B)=0.25$, and $P(A \text{ and } B)=0.1$. Which statement is true?}{$A$ and $B$ are independent, but not mutually exclusive.}{$A$ and $B$ are mutually exclusive and independent.}{$A$ and $B$ are mutually exclusive, but not independent.}{$A$ and $B$ are neither mutually exclusive nor independent.}
+
+\satqw{8}{Events $A$ and $B$ satisfy $P(A)=0.2$, $P(B)=0.5$, and $P(A \text{ or } B)=0.7$. Which statement is true?}{$A$ and $B$ are independent, but not mutually exclusive.}{$A$ and $B$ are mutually exclusive and independent.}{$A$ and $B$ are neither mutually exclusive nor independent.}{$A$ and $B$ are mutually exclusive, but not independent.}
+
+\satq{9}{A bag contains $4$ red marbles and $6$ blue marbles. Two marbles are selected at random from the bag, one after the other, without replacement. What is the probability that both marbles selected are red?}{$\frac{4}{25}$}{$\frac{1}{5}$}{$\frac{2}{15}$}{$\frac{1}{3}$}
+
+\satq{10}{An integer is selected at random from the integers $1$ through $60$, inclusive. What is the probability that the integer is divisible by $4$ or by $6$?}{$\frac{1}{4}$}{$\frac{1}{3}$}{$\frac{5}{12}$}{$\frac{1}{2}$}
+}
+\end{textblock*}
+
+
+\clearpage
+
+\topicheader{17}{Probability Fundamentals}
+\pagefooter{98}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Medium (cont.)}
+\satq{11}{Two fair six-sided dice are rolled. What is the probability that the sum of the two numbers showing is $7$?}{$\frac{1}{6}$}{$\frac{1}{12}$}{$\frac{7}{36}$}{$\frac{1}{36}$}
+
+\satqt{12}{The table shows the opinions of $120$ people about a new sports drink. If one person from the table who dislikes the drink is selected at random, what is the probability that the person is a teen?}{{\fontsize{8.5}{10.5}\selectfont\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor{badge!45}  & Likes & Dislikes & Total \\ \hline
+Teens & 46 & 14 & 60 \\ \hline
+Adults & 30 & 30 & 60 \\ \hline
+\textbf{Total} & \textbf{76} & \textbf{44} & \textbf{120} \\ \hline
+\end{tabular}}}{$\frac{7}{60}$}{$\frac{7}{30}$}{$\frac{11}{30}$}{$\frac{7}{22}$}
+
+\satq{13}{A fair six-sided die is rolled twice. What is the probability that the die shows a $6$ on at least one of the two rolls?}{$\frac{1}{36}$}{$\frac{11}{36}$}{$\frac{1}{3}$}{$\frac{1}{6}$}
+
+\satq{14}{A fair coin is flipped and a fair six-sided die is rolled. What is the probability that the coin shows tails and the die shows a number greater than $4$?}{$\frac{1}{12}$}{$\frac{1}{3}$}{$\frac{1}{6}$}{$\frac{1}{2}$}
+
+\satq{15}{A student computes $P(A \text{ or } B)$ for independent events with $P(A)=0.5$ and $P(B)=0.4$ as $0.5+0.4=0.9$. What is the correct value of $P(A \text{ or } B)$?}{$0.9$}{$0.2$}{$0.45$}{$0.7$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Hard}
+\satqt{1}{The table shows how $150$ employees of a company work. If one employee who works remotely is selected at random, what is the probability that the employee is a designer?}{{\fontsize{8.5}{10.5}\selectfont\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor{badge!45}  & Remote & On-site & Total \\ \hline
+Engineers & 45 & 30 & 75 \\ \hline
+Designers & 25 & 20 & 45 \\ \hline
+Managers & 15 & 15 & 30 \\ \hline
+\textbf{Total} & \textbf{85} & \textbf{65} & \textbf{150} \\ \hline
+\end{tabular}}}{$\frac{5}{17}$}{$\frac{1}{6}$}{$\frac{5}{9}$}{$\frac{9}{17}$}
+
+\satqt{2}{The table shows how $150$ employees of a company work. If one employee is selected at random, what is the probability that the employee is an engineer or works on-site?}{{\fontsize{8.5}{10.5}\selectfont\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor{badge!45}  & Remote & On-site & Total \\ \hline
+Engineers & 45 & 30 & 75 \\ \hline
+Designers & 25 & 20 & 45 \\ \hline
+Managers & 15 & 15 & 30 \\ \hline
+\textbf{Total} & \textbf{85} & \textbf{65} & \textbf{150} \\ \hline
+\end{tabular}}}{$\frac{14}{15}$}{$\frac{1}{5}$}{$\frac{1}{2}$}{$\frac{11}{15}$}
+
+\satqw{3}{Events $A$ and $B$ satisfy $P(A)=\frac{3}{8}$, $P(B)=\frac{1}{4}$, and\\ $P(A \text{ or } B)=\frac{1}{2}$. Which statement is true?}{$A$ and $B$ are mutually exclusive and independent.}{$A$ and $B$ are neither mutually exclusive nor independent.}{$A$ and $B$ are mutually exclusive, but not independent.}{$A$ and $B$ are independent, but not mutually exclusive.}
+
+\satq{4}{A bag contains $4$ red marbles and $8$ blue marbles. Two marbles are selected at random, one after the other, without replacement. What is the probability that at least one of the two marbles selected is red?}{$\frac{5}{9}$}{$\frac{14}{33}$}{$\frac{19}{33}$}{$\frac{1}{3}$}
+}
+\end{textblock*}
+
+
+\clearpage
+
+\topicheader{17}{Probability Fundamentals}
+\pagefooter{99}
+\colrule{32}{238}
+\mbox{}%
+
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Hard (cont.)}
+\satq{5}{A fair coin is flipped four times. What is the probability that the coin shows exactly three heads, or the first flip shows tails?}{$\frac{11}{16}$}{$\frac{3}{4}$}{$\frac{1}{4}$}{$\frac{1}{2}$}
+
+\satq{6}{Two fair six-sided dice are rolled. What is the probability that the product of the two numbers showing is even?}{$\frac{1}{4}$}{$\frac{1}{2}$}{$\frac{3}{4}$}{$\frac{2}{3}$}
+
+\satq{7}{Events $A$ and $B$ are independent. $P(A)=0.4$ and\\ $P(A \text{ or } B)=0.76$. What is $P(B)$?}{$0.36$}{$0.9$}{$0.4$}{$0.6$}
+
+\satq{8}{Events $A$ and $B$ are mutually exclusive, with $P(A)=\frac{x}{12}$, $P(B)=\frac{x}{8}$, and $P(A \text{ or } B)=\frac{5}{12}$. What is the value of $x$?}{$1$}{$2$}{$3$}{$4$}
+
+\satqw{9}{Events $A$ and $B$ satisfy $P(A)=0.5$, $P(B)=0.3$, and $P(A \text{ and } B)=0.15$. Which statement is true?}{$A$ and $B$ are not independent, because the two events overlap.}{$A$ and $B$ are mutually exclusive, because the two events are unrelated.}{$A$ and $B$ are independent, because $P(A \text{ and } B)=P(A)\times P(B)$.}{$A$ and $B$ are neither mutually exclusive nor independent.}
+
+\satq{10}{Two cards are selected at random from a standard deck of $52$ playing cards, one after the other, without replacement. What is the probability that both cards selected are hearts?}{$\frac{1}{17}$}{$\frac{1}{16}$}{$\frac{1}{13}$}{$\frac{4}{17}$}
+}
+\end{textblock*}
+
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 8 (cont.)}{Choose the correct answer.}
+\difflabel{Hard (cont.)}
+\satq{11}{An integer is selected at random from the integers $1$ through $200$, inclusive. What is the probability that the integer is a multiple of $6$ but not a multiple of $4$?}{$\frac{33}{200}$}{$\frac{17}{200}$}{$\frac{2}{25}$}{$\frac{49}{200}$}
+
+\satqt{12}{The table shows whether $200$ people own a smartphone and whether they are under $30$ years old. If one person who does not own a smartphone is selected at random, what is the probability that the person is $30$ or older?}{{\fontsize{8.5}{10.5}\selectfont\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor{badge!45}  & Owns a smartphone & No smartphone & Total \\ \hline
+Under 30 & 70 & 30 & 100 \\ \hline
+30 or older & 60 & 40 & 100 \\ \hline
+\textbf{Total} & \textbf{130} & \textbf{70} & \textbf{200} \\ \hline
+\end{tabular}}}{$\frac{1}{5}$}{$\frac{2}{5}$}{$\frac{6}{13}$}{$\frac{4}{7}$}
+
+\satq{13}{A bag contains $5$ red marbles and $7$ green marbles. Two marbles are selected at random, one after the other, without replacement. Given that the first marble selected is red, what is the probability that the second marble selected is green?}{$\frac{7}{11}$}{$\frac{7}{12}$}{$\frac{4}{11}$}{$\frac{5}{11}$}
+
+\satq{14}{A fair six-sided die is rolled twice. What is the probability that the number shown on the second roll is greater than the number shown on the first roll?}{$\frac{1}{6}$}{$\frac{5}{12}$}{$\frac{7}{12}$}{$\frac{5}{6}$}
+
+\satq{15}{Events $A$ and $B$ are independent, with $P(A)=0.2$ and $P(B)=0.5$. What is the probability that exactly one of the two events occurs?}{$0.1$}{$0.4$}{$0.5$}{$0.6$}
+}
+\end{textblock*}
+
+
+\begin{textblock*}{178mm}(16mm,274mm)
+{\fontsize{8}{10}\selectfont\color{black!60}\itshape
+A note on sourcing: every item in Set 8 is original. It was written by studying the method,
+trap and distractor style of official SAT Suite Question Bank items in the \textit{Probability and
+conditional probability} skill, then building new problems with new numbers, names and contexts that
+need the same solving method. No College Board question text, numbers or context is reproduced.
+Each answer was verified with a script.\par}
+\end{textblock*}
+
+\clearpage
+% ================= ANSWER KEY: Sets 1-7 =================
+\topicheader{17}{Probability Fundamentals}
+\pagefooter{100}
+\mbox{}%
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Sets 1--7\par}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,44mm)
+{\fontsize{9}{11}\selectfont
 \centering
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{26mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{26mm}|}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{34mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{34mm}|}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}\textbf{Set} & \textbf{\#} & \textbf{Answer} & \textbf{\#} & \textbf{Answer}\\
 \hline
-\multirow{3}{24mm}{\centering 1-to'plam} & 1 & $\tfrac{7}{10}$ & 2 & $\tfrac13$\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 1} & 1 & $\tfrac{7}{10}$ & 2 & $\tfrac13$\\\cline{2-5}
  & 3 & $\tfrac35$ & 4 & $\tfrac38$\\\cline{2-5}
  & 5 & $\tfrac14$ & 6 & $\tfrac35$\\\hline
-\multirow{3}{24mm}{\centering 2-to'plam} & 1 & $\tfrac23$ & 2 & $\tfrac12$\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 2} & 1 & $\tfrac23$ & 2 & $\tfrac12$\\\cline{2-5}
  & 3 & $\tfrac{3}{10}$ & 4 & $\tfrac{2}{15}$\\\cline{2-5}
  & 5 & $\tfrac35$ & 6 & $\tfrac{11}{20}$\\\hline
-\multirow{3}{24mm}{\centering 3-to'plam} & 1 & $\tfrac13$ & 2 & $\tfrac{2}{13}$\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 3} & 1 & $\tfrac13$ & 2 & $\tfrac{2}{13}$\\\cline{2-5}
  & 3 & $\tfrac23$ & 4 & $\tfrac12$\\\cline{2-5}
  & 5 & $\tfrac{7}{12}$ & 6 & $\tfrac23$\\\hline
-\multirow{3}{24mm}{\centering 4-to'plam} & 1 & $\tfrac14$ & 2 & $\tfrac{1}{12}$\\\cline{2-5}
+\multirow{3}{24mm}{\centering Set 4} & 1 & $\tfrac14$ & 2 & $\tfrac{1}{12}$\\\cline{2-5}
  & 3 & $\tfrac{1}{169}$ & 4 & $\tfrac18$\\\cline{2-5}
  & 5 & $\tfrac{6}{25}$ & 6 & $\tfrac{9}{25}$\\\hline
-\multirow{6}{24mm}{\centering 5-to'plam} & \multicolumn{4}{p{70mm}|}{1.\ Faqat birgalikda bo'lmagan ($P(A\cap B)=0\ne P(A)P(B)$).}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{2.\ Faqat mustaqil ($P(A\cap B)=\tfrac14=P(A)P(B)$; HT mumkin).}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{3.\ Hech biri emas (kesishish $\tfrac{13}{52}\ne0$ va $\ne P(A)P(B)$).}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{4.\ Faqat mustaqil (har xil zarlar; $P(A\cap B)=P(A)P(B)$).}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{5.\ Faqat birgalikda bo'lmagan (bir vaqtda ikki xil tur bo'lolmaydi).}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{6.\ Ikkalasi ham ($P(A)=0$ -- chegaraviy holat).}\\\hline
+\multirow{6}{24mm}{\centering Set 5} & \multicolumn{4}{p{74mm}|}{1.\ Mutually exclusive only ($P(A\text{ and }B)=0$, $P(A)P(B)\ne0$).}\\\cline{2-5}
+ & \multicolumn{4}{p{74mm}|}{2.\ Independent only (HT is possible; $P=\tfrac14=P(A)P(B)$).}\\\cline{2-5}
+ & \multicolumn{4}{p{74mm}|}{3.\ Neither (overlap $\tfrac{13}{52}\ne0$, and $\ne P(A)P(B)$).}\\\cline{2-5}
+ & \multicolumn{4}{p{74mm}|}{4.\ Independent only (two different dice; $P=\tfrac16\times\tfrac16$).}\\\cline{2-5}
+ & \multicolumn{4}{p{74mm}|}{5.\ Mutually exclusive only (no card is both a spade and a heart).}\\\cline{2-5}
+ & \multicolumn{4}{p{74mm}|}{6.\ Both ($P(A)=0$, so $P(A\text{ and }B)=0=P(A)P(B)$).}\\\hline
+\multirow{5}{24mm}{\centering Set 6} & \multicolumn{4}{p{74mm}|}{1.\ Overlap ignored (6 is both even and $>4$). Correct: $\tfrac23$.}\\\cline{2-5}
+ & \multicolumn{4}{p{74mm}|}{2.\ Intuition used instead of checking; HH is possible, so not exclusive. Correct: $\tfrac14$.}\\\cline{2-5}
+ & \multicolumn{4}{p{74mm}|}{3.\ Reversed rule: exclusive events are never independent. Correct: $P=0$.}\\\cline{2-5}
+ & \multicolumn{4}{p{74mm}|}{4.\ Overlap ignored (every heart is red). Correct: $P=\tfrac14$.}\\\cline{2-5}
+ & \multicolumn{4}{p{74mm}|}{5.\ Separate bags make the draws independent, and independent events can happen together. Exclusive does not follow.}\\\hline
+\multirow{5}{24mm}{\centering Set 7} & \multicolumn{4}{p{74mm}|}{1.\ $\tfrac34$ \quad 2.\ $0.65$ (or $\tfrac{13}{20}$) \quad 3.\ $\tfrac{1}{15}$}\\\cline{2-5}
+ & \multicolumn{4}{p{74mm}|}{4.\ Mutually exclusive; not independent; $P(A\text{ or }B)=1$.}\\\cline{2-5}
+ & \multicolumn{4}{p{74mm}|}{5.\ $\tfrac{3}{25}$}\\\hline
 \end{tabular}
 }
 \end{textblock*}
-
 \clearpage
 
-% ================= PAGE 6: Javoblar (davomi) + QR -- table1 above was already tall =================
-\topicheader{17}{Ehtimollar nazariyasi asoslari}
-\pagefooter{97}
+% ================= ANSWER KEY: Set 8 =================
+\topicheader{17}{Probability Fundamentals}
+\pagefooter{101}
 \mbox{}%
-
-\begin{textblock*}{194mm}(16mm,32mm)
-{\fontsize{9.3}{11.5}\selectfont
+\begin{textblock*}{194mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key -- Set 8\par}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,46mm)
+{\fontsize{10}{13}\selectfont
 \centering
 \renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|>{\centering\arraybackslash}p{24mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{26mm}|>{\centering\arraybackslash}p{9mm}|>{\centering\arraybackslash}p{26mm}|}
+\anstitle{Easy}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
 \hline
-\rowcolor{badge!55}\textbf{To'plam} & \textbf{\#} & \textbf{Javob} & \textbf{\#} & \textbf{Javob}\\
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+A&C&B&D&A&B&C&D&B&A\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
 \hline
-\multirow{5}{24mm}{\centering 6-to'plam} & \multicolumn{4}{p{70mm}|}{1.\ Kesishish e'tiborga olinmagan (6 soni ham juft, ham $>4$). To'g'ri: $\tfrac36+\tfrac26-\tfrac16=\tfrac23$.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{2.\ Intuitsiya bilan xato taxmin; HH mustaqil, birgalikda bo'lmagan emas. To'g'ri: $\tfrac12\times\tfrac12=\tfrac14$.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{3.\ Teskari qoida -- birgalikda bo'lmagan hodisalar mustaqil bo'lolmaydi. To'g'ri: $P=0$, $\tfrac{1}{36}$ emas.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{4.\ Haqiqiy kesishish e'tiborga olinmagan (har bir qiyg'ich -- qizil). To'g'ri: $P=\tfrac14$, $\tfrac18$ emas.}\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{5.\ Mustaqillik ``birga bo'lolmaydi'' degani emas -- alohida xaltalar mustaqillikni bildiradi, birgalikda bo'lmaslikni emas.}\\\hline
-\multirow{3}{24mm}{\centering 7-to'plam} & 1 & $\tfrac34$ & 2 & $0.65$\\\cline{2-5}
- & 3 & $\tfrac{1}{15}$ & 5 & $\tfrac{3}{25}$\\\cline{2-5}
- & \multicolumn{4}{p{70mm}|}{4.\ Birgalikda bo'lmagan ($\le3$ va $\ge4$ bir vaqtda bo'lmaydi); mustaqil emas; $P(A\text{ yoki }B)=1$ (butun fazoni qamraydi).}\\\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+D&C&A&B&C\\\hline
 \end{tabular}
 }
 \end{textblock*}
-
-\begin{textblock*}{194mm}(16mm,220mm)
+\begin{textblock*}{194mm}(16mm,100mm)
+{\fontsize{10}{13}\selectfont
 \centering
-{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Video yechimlar va qo'shimcha testlar uchun quyidagi QR kodlarni skanerlang:}\\[4mm]
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Medium}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+B&D&C&A&B&C&A&D&C&B\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+A&D&B&C&D\\\hline
+\end{tabular}
+}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,154mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\renewcommand{\arraystretch}{1.3}
+\anstitle{Hard}
+\begin{tabular}{|*{10}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+1&2&3&4&5&6&7&8&9&10\\\hline
+A&D&B&C&A&C&D&B&C&A\\\hline
+\end{tabular}\\[1mm]
+\begin{tabular}{|*{5}{>{\centering\arraybackslash}p{8mm}|}}
+\hline
+\rowcolor{badge!55}
+11&12&13&14&15\\\hline
+B&D&A&B&C\\\hline
+\end{tabular}
+}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,232mm)
+\centering
+{\sffamily\fontsize{9.5}{11.5}\selectfont\color{black!70} Scan the QR codes below for video solutions and extra practice:}\\[4mm]
 \begin{minipage}[t]{32mm}\centering\qrbox{YouTube}\end{minipage}%
 \hspace{16mm}%
 \begin{minipage}[t]{32mm}\centering\qrbox{Telegram}\end{minipage}

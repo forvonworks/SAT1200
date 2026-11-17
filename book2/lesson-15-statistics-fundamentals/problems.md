@@ -141,6 +141,155 @@ say which rule it breaks, and give the correct final answer.
    a mean score of $70$. The combined mean score of all $10+n+6$ students
    is $78$. What is the value of $n$?
 
+## Set 8 — Official SAT-Style Application
+
+Multiple-choice (A–D), English, matching the real Digital SAT's format, pacing, and item design for this lesson's official skill category (*One-variable data: distributions and measures of center and spread*). Every item below is **original** — written by studying the method, traps, and distractor style of real, officially released SAT Suite Question Bank items in this skill category, then building a new problem (new numbers, new context) that needs the same solving steps. No real College Board question text, numbers, or wording is reproduced here or anywhere in this book — see the note at the end of this set.
+
+15 Easy / 15 Medium / 15 Hard, matching real-test density and difficulty distribution for this skill.
+
+### Easy
+
+1. What is the median of the data set $3, 7, 7, 10, 12, 15$?
+   A) 7  B) 8.5  C) 9  D) 10
+
+2. What is the mode of the data set $14, 9, 22, 9, 17$?
+   A) 14  B) $14.2$  C) 22  D) 9
+
+3. What is the median of the data set $5, 8, 2, 11, 4$?
+   A) 5  B) 6  C) 4  D) 8
+
+4. A frequency table shows that the value $1$ occurs $2$ times, the value $2$ occurs $5$ times, and the value $3$ occurs $3$ times. What is the mean of this data set?
+   A) 2  B) $\frac{7}{3}$  C) $2.1$  D) 3
+
+5. What is the range of the data set $12, 18, 15, 9, 21, 15$?
+   A) 30  B) 12  C) 6  D) 9
+
+6. The mean of six numbers is $14$. Five of the numbers are $10, 12, 15, 18,$ and $20$. What is the sixth number?
+   A) 9  B) 19  C) 14  D) 11
+
+7. Six students scored $80$ on a quiz, and four students scored $90$. What is the mean score of all ten students?
+   A) 85  B) 83  C) 87  D) 84
+
+8. What is the mode of the data set $2, 6, 6, 6, 11, 14, 14$?
+   A) 14  B) 11  C) 6  D) 2
+
+9. What is the median of the data set $8, 3, 10, 6$?
+   A) 7  B) $6.75$  C) 8  D) 6
+
+10. The mean of five numbers is $12$. What is the sum of the five numbers?
+   A) $2.4$  B) 17  C) 72  D) 60
+
+11. The data set $6, 7, 8, 9, 10$ has a median of $8$. What is the median of the data set after the value $40$ is added?
+   A) 8  B) 9  C) $8.5$  D) $\frac{40}{3}$
+
+12. The data set $2, 4, 6, 8$ has a mean of $5$. If the value $100$ is added to the data set, what is the new mean?
+   A) 6  B) 24  C) 20  D) 120
+
+13. What is the range of the data set $37, 12, 50, 29, 8$?
+   A) 42  B) 38  C) 58  D) 62
+
+14. A data set of $8$ numbers has a mean of $5.5$. What is the sum of the $8$ numbers?
+   A) 13.5  B) 44  C) $2.75$  D) $\frac{11}{16}$
+
+15. Team A has $3$ members whose mean score is $40$ points. Team B has $2$ members whose mean score is $60$ points. What is the total number of points scored by all $5$ members?
+   A) 240  B) 250  C) 200  D) 100
+
+### Medium
+
+1. The data set consists of the value $2$ three times, the value $5$ four times, the value $7$ twice, and the value $10$ once. What is the median of the data set?
+   A) 6  B) 7  C) 5  D) 4.5
+
+2. The data set consists of the value $4$ twice, the value $6$ exactly $x$ times, and the value $9$ three times. The mean of the data set is $6.5$. What is the value of $x$?
+   A) 5  B) 2  C) 3  D) 6
+
+3. Group A has $12$ students with a mean score of $80$. Group B has $n$ students with a mean score of $65$. The mean score of all the students combined is $70$. What is the value of $n$?
+   A) 12  B) 18  C) 36  D) 24
+
+4. Class X has $25$ students with a mean score of $84$, and Class Y has $15$ students with a mean score of $92$. What is the mean score of all $40$ students combined?
+   A) 88  B) 87  C) 86  D) 90
+
+5. The scores of $11$ students are: $60$ two times, $70$ three times, $80$ four times, and $90$ two times. What is the median score?
+   A) 80  B) 70  C) 75  D) 90
+
+6. The data set $4, 10, x, 18, 22, 30$ has a median of $16$, where $x$ is between $10$ and $18$. What is the value of $x$?
+   A) 12  B) 16  C) 14  D) 22
+
+7. The mean of five numbers is $9$. When a sixth number is added, the mean of the six numbers becomes $10$. What is the sixth number?
+   A) 10  B) 15  C) 13  D) 19
+
+8. Group 1 has $16$ people with a total score of $1240$. Group 2 has $9$ people with a mean score of $75$. What is the mean score of all $25$ people combined?
+   A) $76.25$  B) $77.5$  C) 78  D) $76.6$
+
+9. The data set $10, 12, 14, 16, 18$ has a mean of $14$. A sixth value $x$ is added, and the mean of the six values becomes $15$. What is $x$?
+   A) 20  B) 15  C) 22  D) 30
+
+10. A data set has a range of $25$, and its smallest value is $14$. What is its largest value?
+   A) 11  B) 25  C) 39  D) 53
+
+11. The data set $2, 5, 5, 8, 8, 11$ has two modes. What is the sum of the two modes?
+   A) 10  B) 13  C) $6.5$  D) 16
+
+12. The mean of $7$ consecutive integers is $31$. What is the largest of the $7$ integers?
+   A) 31  B) 37  C) 38  D) 34
+
+13. A student's average on $4$ tests is $78$. After a fifth test, the average of all $5$ tests is $80$. What is the score on the fifth test?
+   A) 88  B) 84  C) 86  D) 92
+
+14. The median of the nine values $4, 4, 6, 7, x, 9, 9, 12, 15$ is $8$. What is the value of $x$?
+   A) 7  B) 8  C) 9  D) 10
+
+15. The data set $3, 5, 6, 7, 9$ has a mean of $6$. What fraction of the values in the data set are greater than the mean?
+   A) $\frac{2}{5}$  B) $\frac{1}{5}$  C) $\frac{3}{5}$  D) $\frac{1}{2}$
+
+### Hard
+
+1. A table summarizes the number of books on each of $15$ shelves. Books per shelf: $1$--$4$ books on $3$ shelves; $5$--$8$ books on $5$ shelves; $9$--$12$ books on $4$ shelves; $13$--$16$ books on $3$ shelves. Which of the following could be the median number of books on the $15$ shelves?
+   A) 3  B) 10  C) 14  D) 6
+
+2. Data set $A$ consists of $10$ integers, each between $20$ and $30$, inclusive. Data set $B$ consists of $10$ integers, each between $40$ and $50$, inclusive. What is the greatest possible difference between the mean of data set $B$ and the mean of data set $A$?
+   A) 10  B) 30  C) 20  D) 50
+
+3. Group A has $4$ people with a mean of $60$, Group B has $6$ people with a mean of $75$, and Group C has $n$ people with a mean of $90$. The mean of all the people combined is $80$. What is $n$?
+   A) 9  B) 10  C) 11  D) 12
+
+4. A data set consists of the values $6, 9, 11, 14, 18, 21,$ and $x$. The median of the data set is $14$. Which of the following describes all possible values of $x$?
+   A) $x \ge 14$  B) $x = 14$ only  C) $x \le 14$  D) $x > 9$
+
+5. A data set of $8$ numbers has a mean of $20$. The value $44$ is removed and replaced by $12$. What is the mean of the new data set?
+   A) 14  B) 18  C) 20  D) 16
+
+6. Five positive integers have a sum of $50$, a median of $10$, and exactly one mode, which is $10$. What is the greatest possible value among the five integers?
+   A) 25  B) 27  C) 28  D) 30
+
+7. The mean of $12$ test scores is $78$. Three more scores, $90$, $96$, and $x$, are added, and the mean of all $15$ scores is $81$. What is $x$?
+   A) 93  B) 84  C) 96  D) 102
+
+8. Adding one value to a data set of $9$ values changes the mean from $30$ to $32$. What is the added value?
+   A) 38  B) 62  C) 50  D) 32
+
+9. Group X has three times as many members as Group Y. The mean of Group X is $40$, and the mean of Group Y is $70$. What is the mean of the combined group?
+   A) 47.5  B) 55  C) 50  D) 45
+
+10. A data set of $12$ values has a mean of $35$. Four of the values are each increased by $6$, and no other values change. What is the new mean?
+   A) 41  B) 37  C) 39  D) 35
+
+11. A set of $6$ positive integers has a mean of $10$ and a median of $8$. What is the greatest possible value in the set?
+   A) 26  B) 30  C) 36  D) 34
+
+12. The data set $3, 3, 5, x, 9, 11$ has a mean equal to its median, and $5 < x < 10$. What is $x$?
+   A) 6  B) 10  C) 8  D) 12
+
+13. Group A has $n$ people with a mean of $50$. Group B has $n+6$ people with a mean of $62$. The mean of all the people combined is $58$. What is $n$?
+   A) 4  B) 6  C) 8  D) 12
+
+14. A data set consists of the value $1$ some number of times, the value $2$ exactly $3$ times, and the value $6$ exactly once. Its mean is $2$ and its median is $1.5$. How many values are in the data set?
+   A) 4  B) 6  C) 10  D) 8
+
+15. The data set $6, 9, 14, x$ has a range of $13$, and $x > 14$. What is the value of $x$?
+   A) 1  B) 7  C) 19  D) 21
+
+**A note on sourcing:** real, official College Board SAT questions are copyrighted and are **not** licensed for reproduction in commercial test-prep materials, under any circumstances, with or without attribution. No verbatim College Board question appears in this book. Every item above was independently written to match the *method*, *structure*, and *officially documented difficulty tier* of real SAT Suite Question Bank items in this lesson's skill category — the numbers, names, and contexts are all original. The items were checked against the bank's method (reading frequency tables, finding median positions, weighted means, and grouped-data reasoning), and every answer was verified by script (`fractions` and `sympy`).
+
 ---
 
 ## Answer Key
@@ -217,3 +366,10 @@ say which rule it breaks, and give the correct final answer.
    invalid — the answer would need to be re-derived under a different
    ordering.
 5. $n=19$
+
+
+**Set 8 — Easy:** 1) B  2) D  3) A  4) C  5) B  6) A  7) D  8) C  9) A  10) D  11) C  12) B  13) A  14) B  15) A
+
+**Set 8 — Medium:** 1) C  2) A  3) D  4) B  5) A  6) C  7) B  8) D  9) A  10) C  11) B  12) D  13) A  14) B  15) A
+
+**Set 8 — Hard:** 1) D  2) B  3) C  4) A  5) D  6) B  7) A  8) C  9) A  10) B  11) D  12) C  13) B  14) D  15) C
