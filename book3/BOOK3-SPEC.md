@@ -52,12 +52,17 @@ Domain split: Algebra ~35%, Advanced Math ~35%, Problem-Solving & Data Analysis 
 Geometry & Trigonometry ~15%.
 
 Book 3 is for students chasing ≈800, so every mock gives the **Module 1 (standard mix)** and the
-**Module 2 (harder route)**. Blueprint per mock:
+**Module 2 (harder route)**. FINAL blueprint per mock (owner-approved, supersedes earlier numbers):
 
 | | Easy | Medium | Hard | Grid-ins | Algebra | Adv. Math | PSDA | G&T |
 |---|---|---|---|---|---|---|---|---|
-| Module 1 (22) | 7 (Q1–7) | 10 (Q8–17) | 5 (Q18–22) | 5–6 | 8 | 7 | 4 | 3 |
-| Module 2 hard (22) | 3 (Q1–3) | 6 (Q4–9) | 13 (Q10–22) | 5–6 | 7 | 8 | 3 | 4 |
+| Module 1 (22) | 8 (Q1–8) | 11 (Q9–19) | 3 (Q20–22) | 5–6 | 8 | 8 | 3 | 3 |
+| Module 2 hard (22) | 2 (Q1–2) | 10 (Q3–12) | 10 (Q13–22) | 5–6 | 8 | 8 | 3 | 3 |
+
+Both modules: ~75/25 MC/grid-in. Only the difficulty mix shifts between modules, as in the real
+adaptive routing. Mock 1 was built with an earlier blueprint and is being re-balanced to this one.
+Pacing advice for the mock intro: Q1–15 about 18 min, Q16–22 about 17 min, last 2–3 minutes for flagged
+items and every blank grid-in (blank = guaranteed zero).
 
 Module 2 must *feel* clearly harder than Module 1: multi-step, disguised, two skills chained, traps in
 the distractors, setup errors that cost the point. Q1–3 of Module 2 are still medium-ish, Q10–22 are
@@ -83,3 +88,11 @@ Answers are NOT printed after the module. They go to the end-of-book "Answer she
   present). `python3 tools/qbank_find.py "<skill>" <Easy|Medium|Hard> --limit 4`, then render with
   `pdftoppm -png -r 150 -f N -l N "Materials/SAT MATH.pdf" /tmp/q` and read the image (numbers are in an
   embedded font; text extraction misses them).
+
+## Repo layout (Book 3)
+
+- `book3/lesson-NN-<slug>/` — new lessons (problems.md, verify.py, rules-sheet.*, lessonNN-typeset.*, notes-page.*)
+- `book3/mocks/mock-NN/` — mocks (mockNN-problems.md, verify.py, mockNN-typeset.*, mockNN-answer-sheet.*)
+- `book3/old-drafts/` — old Uzbek/English-mix drafts, INPUT ONLY (ideas), never copy real College Board text
+- Reference implementations: `book3/lesson-05-speed-tricks/` (lesson), `book3/mocks/mock-01/` (mock)
+- Mocks must not repeat contexts, numbers or problem ideas of other mocks (read the other mocks' problems.md first).

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.10.25)  17 NOV 2026 18:07
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.10.25)  17 NOV 2026 18:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -846,8 +846,7 @@ LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/LibertinusMath(3)/b/n on input line
  14.
-
-No file notes-page.aux.
+ (./notes-page.aux)
 \openout1 = `notes-page.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
@@ -866,6 +865,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
 LaTeX Font Info:    ... okay on input line 104.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
 LaTeX Font Info:    ... okay on input line 104.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -918,10 +918,10 @@ L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 19867 strings out of 476477
- 425999 string characters out of 5795103
+ 19870 strings out of 476477
+ 426056 string characters out of 5795103
  1921627 words of memory out of 5000000
- 41497 multiletter control sequences out of 15000+600000
+ 41498 multiletter control sequences out of 15000+600000
  558666 words of font info for 75 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
  102i,10n,114p,449b,721s stack positions out of 10000i,1000n,20000p,200000b,200000s
