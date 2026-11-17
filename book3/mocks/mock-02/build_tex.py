@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Generate mock01-typeset.tex and mock01-answer-sheet.tex from mock01-problems.md.
+"""Generate mock02-typeset.tex and mock02-answer-sheet.tex from mock02-problems.md.
 (Layout source; the .tex files are the typeset deliverables.)  Run: python3 build_tex.py"""
 import os
 import re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-MD = os.path.join(HERE, "mock01-problems.md")
+MD = os.path.join(HERE, "mock02-problems.md")
 
 
 def parse(path):
@@ -140,8 +140,8 @@ PREAMBLE = r"""\documentclass[a4paper]{article}
 
 # ---------------------------------------------------------------- title page + reference sheet
 TITLE_PAGE = r"""
-% ================= PAGE 1: Mock Test 1 -- instructions + geometry reference sheet =================
-\topicheader{1}{Mock Test 1}
+% ================= PAGE 1: Mock Test 2 -- instructions + geometry reference sheet =================
+\topicheader{2}{Mock Test 2}
 \pagefooter{1}
 \mbox{}%
 
@@ -150,7 +150,7 @@ TITLE_PAGE = r"""
 \newcommand{\bul}{\item[\textcolor{accent}{\rule[0.2mm]{1.5mm}{1.5mm}}]}
 
 \begin{textblock*}{194mm}(16mm,28mm)
-{\sffamily\bfseries\color{accent}\fontsize{26}{28}\selectfont Mock Test 1\par}
+{\sffamily\bfseries\color{accent}\fontsize{26}{28}\selectfont Mock Test 2\par}
 \vspace{1mm}
 {\sffamily\color{ink}\fontsize{11}{14}\selectfont Full-length digital SAT Math practice \;\textperiodcentered\; 2 modules $\times$ 22 questions $\times$ 35 minutes\par}
 \end{textblock*}
@@ -191,7 +191,7 @@ Some questions have no answer choices. Work out the answer and write it in the a
 \vspace{1.2mm}
 \noindent\fcolorbox{accent}{badge!25}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\centering\sffamily\fontsize{8.5}{11}\selectfont
 \textbf{Example.} Answer $4\tfrac12$ \;$\rightarrow$\; enter \textbf{9/2} or \textbf{4.5}\par}}
-\vspace{3.4mm}
+\par\vspace{3mm}
 \noindent{\sffamily\bfseries\color{accent}Pacing.}\ Q1--15: about 18 min. Q16--22: about 17 min. Keep the last 2--3 min for flagged questions and every blank grid-in (a blank is a guaranteed zero).
 }
 \end{textblock*}
@@ -307,14 +307,14 @@ def qtex(q):
 
 def module_pages(qs, mod, cols, page0):
     out = []
-    title = "Mock 1 \\textperiodcentered{} Module %d \\textperiodcentered{} 22 questions \\textperiodcentered{} 35 minutes" % mod
+    title = "Mock 2 \\textperiodcentered{} Module %d \\textperiodcentered{} 22 questions \\textperiodcentered{} 35 minutes" % mod
     page = page0
     for pi in range(0, len(cols), 2):
         pair = cols[pi:pi + 2]
         allq = [n for c in pair for n in c]
         rng = "Questions %d--%d" % (min(allq), max(allq))
         out.append("\n%% ===== Module %d, page %d =====\n" % (mod, pi // 2 + 1))
-        out.append("\\topicheader{1}{Mock Test 1}\n\\pagefooter{%d}\n\\colrule{34}{236}\n\\mbox{}%%\n" % page)
+        out.append("\\topicheader{2}{Mock Test 2}\n\\pagefooter{%d}\n\\colrule{34}{236}\n\\mbox{}%%\n" % page)
         out.append("\\pagekicker{%s}{%s}\n" % (title, rng))
         for ci, col in enumerate(pair):
             x = "\\LCOL" if ci == 0 else "\\RCOL"
@@ -334,7 +334,7 @@ def build_typeset(qs):
     body, p = module_pages(qs, 1, M1_COLS, 2)
     body2, p = module_pages(qs, 2, M2_COLS, p)
     tex = PREAMBLE + TITLE_PAGE + body + body2 + "\n\\end{document}\n"
-    open(os.path.join(HERE, "mock01-typeset.tex"), "w", encoding="utf-8").write(tex)
+    open(os.path.join(HERE, "mock02-typeset.tex"), "w", encoding="utf-8").write(tex)
 
 
 def anscell(q):
@@ -363,7 +363,7 @@ def build_answers(qs):
 \renewcommand{\arraystretch}{1.5}
 \begin{document}
 
-\topicheader{1}{Mock Test 1}
+\topicheader{2}{Mock Test 2}
 \pagefooter{1}
 \mbox{}%
 
@@ -398,7 +398,7 @@ def build_answers(qs):
 
 \end{document}
 """.replace("@@T1@@", ans_table(qs, 1)).replace("@@T2@@", ans_table(qs, 2))
-    open(os.path.join(HERE, "mock01-answer-sheet.tex"), "w", encoding="utf-8").write(t)
+    open(os.path.join(HERE, "mock02-answer-sheet.tex"), "w", encoding="utf-8").write(t)
 
 
 if __name__ == "__main__":
