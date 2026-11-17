@@ -92,6 +92,25 @@
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.5}
 
+% Bar graph (histogram of counts). #1 counts, #2 slot width mm, #3 mm per count,
+% #4 number of bars, #5 total picture height mm, #6 mean (x position), #7 top of mean line (count units)
+% Box is fixed: top-left at the textblock anchor, hangs down #5 mm.
+\newcommand{\bargraph}[7]{%
+\pgfmathsetmacro{\bgW}{#4*#2}%
+\pgfmathsetmacro{\bgS}{#5-5}%
+\begin{tikzpicture}[x=#2mm,y=#3mm]
+\useasboundingbox (0mm,-#5mm) rectangle (\bgW mm,0mm);
+\begin{scope}[shift={(0mm,-\bgS mm)}]
+\draw[ink!55,line width=0.5pt] (0.3,0) -- ({#4+0.7},0);
+\foreach \c [count=\i] in {#1} {%
+  \ifnum\c>0 \fill[accent] ({\i-0.42},0) rectangle ({\i+0.42},\c);\fi
+  \node[below,font=\sffamily\fontsize{6}{6}\selectfont,text=ink!80,inner sep=1pt] at (\i,0) {\i};
+}
+\draw[dashed,ink!70,line width=0.45pt] (#6,-0.2) -- (#6,#7);
+\node[above,font=\sffamily\fontsize{5.5}{6}\selectfont,text=ink!80,inner sep=1pt] at (#6,#7) {mean};
+\end{scope}
+\end{tikzpicture}}
+
 \begin{document}
 
 % ======================================================================
@@ -158,6 +177,145 @@ only on sorted position, not size.}
 {\fontsize{11}{14}\selectfont
 $\{4,5,6,7,8\}$, mean $=6$, median $=6$. Add $50$: mean
 $\approx13.33$, median $=6.5$.}
+\end{textblock*}
+
+\clearpage
+
+% ======================================================================
+% PAGE 2
+% ======================================================================
+\topicheader{15}{Statistics Fundamentals}
+\pagekicker{Rules sheet -- 2/3}
+\pagefooter{80}
+\mbox{}%
+
+% ---- CARD 4: Standard deviation from the graph ----
+\cardbg{16}{33}{178}{91}
+\pill{26}{36}{Standard deviation (SD) -- read it from the graph}
+
+\begin{textblock*}{158mm}(26mm,49mm)
+{\fontsize{12}{15}\selectfont
+SD $=$ how spread out the data is around the mean.\\
+\textbf{More spread $\Rightarrow$ bigger SD.} No formula needed.}
+\end{textblock*}
+
+\begin{textblock*}{50mm}(26mm,65mm)
+{\sffamily\bfseries\fontsize{9}{10}\selectfont Skyrocket: \textcolor{accent}{small SD}}
+\end{textblock*}
+\begin{textblock*}{50mm}(78mm,65mm)
+{\sffamily\bfseries\fontsize{9}{10}\selectfont Double top: \textcolor{accent}{medium SD}}
+\end{textblock*}
+\begin{textblock*}{50mm}(130mm,65mm)
+{\sffamily\bfseries\fontsize{9}{10}\selectfont Spread out: \textcolor{accent}{large SD}}
+\end{textblock*}
+
+\begin{textblock*}{48mm}(26mm,71mm)
+\bargraph{0,0,0,3,14,3,0,0,0}{4.4}{1.7}{9}{34}{5}{15.5}
+\end{textblock*}
+\begin{textblock*}{48mm}(78mm,71mm)
+\bargraph{0,0,8,0,4,0,8,0,0}{4.4}{1.7}{9}{34}{5}{15.5}
+\end{textblock*}
+\begin{textblock*}{48mm}(130mm,71mm)
+\bargraph{2,2,2,2,4,2,2,2,2}{4.4}{1.7}{9}{34}{5}{15.5}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,108mm)
+{\fontsize{10.5}{13}\selectfont\color{ink}
+Same 20 values and same mean $(5)$ in all three -- only the spread differs.\\
+Move the two peaks to the far ends ($1$ and $9$) $\Rightarrow$ even bigger SD.}
+\end{textblock*}
+
+% ---- CARD 5: Table -> bar graph ----
+\cardbg{16}{132}{178}{100}
+\pill{26}{135}{Table $\to$ bar graph $\to$ spread}
+
+\begin{textblock*}{158mm}(26mm,148mm)
+{\fontsize{11}{14}\selectfont
+Score on the $x$-axis, count $=$ bar height. Then look at where the tall
+bars sit relative to the mean.}
+\end{textblock*}
+
+\begin{textblock*}{74mm}(26mm,164mm)
+{\fontsize{10}{12}\selectfont\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|p{12mm}|*{5}{>{\centering\arraybackslash}p{7mm}|}}
+\hline
+\cellcolor{accent}\textcolor{white}{\textbf{Score}} & \cellcolor{accent}\textcolor{white}{1} & \cellcolor{accent}\textcolor{white}{2} & \cellcolor{accent}\textcolor{white}{3} & \cellcolor{accent}\textcolor{white}{4} & \cellcolor{accent}\textcolor{white}{5}\\ \hline
+Count & 1 & 3 & 12 & 3 & 1\\ \hline
+\end{tabular}}
+\end{textblock*}
+\begin{textblock*}{74mm}(106mm,164mm)
+{\fontsize{10}{12}\selectfont\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|p{12mm}|*{5}{>{\centering\arraybackslash}p{7mm}|}}
+\hline
+\cellcolor{accent}\textcolor{white}{\textbf{Score}} & \cellcolor{accent}\textcolor{white}{1} & \cellcolor{accent}\textcolor{white}{2} & \cellcolor{accent}\textcolor{white}{3} & \cellcolor{accent}\textcolor{white}{4} & \cellcolor{accent}\textcolor{white}{5}\\ \hline
+Count & 7 & 2 & 2 & 2 & 7\\ \hline
+\end{tabular}}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(26mm,181mm)
+\bargraph{1,3,12,3,1}{7}{1.7}{5}{30}{3}{13.5}
+\end{textblock*}
+\begin{textblock*}{40mm}(106mm,181mm)
+\bargraph{7,2,2,2,7}{7}{1.7}{5}{30}{3}{13.5}
+\end{textblock*}
+
+\begin{textblock*}{74mm}(26mm,213mm)
+{\fontsize{10.5}{13}\selectfont\color{ink}
+Tall bar in the middle $\Rightarrow$ \textbf{small SD}.}
+\end{textblock*}
+\begin{textblock*}{74mm}(106mm,213mm)
+{\fontsize{10.5}{13}\selectfont\color{ink}
+Tall bars at the ends $\Rightarrow$ \textbf{large SD}.}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,221mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape
+Both tables have range $4$ and mean $3$ -- the SD still differs, so don't judge spread by the range alone.}
+\end{textblock*}
+
+\clearpage
+
+% ======================================================================
+% PAGE 3
+% ======================================================================
+\topicheader{15}{Statistics Fundamentals}
+\pagekicker{Rules sheet -- 3/3}
+\pagefooter{81}
+\mbox{}%
+
+% ---- CARD 6: Spread <-> SD ----
+\cardbg{16}{33}{178}{70}
+\pill{26}{36}{Spread and SD move together}
+
+\begin{textblock*}{158mm}(26mm,49mm)
+{\fontsize{10.5}{13}\selectfont
+\begin{tabular}{|p{82mm}|p{60mm}|}
+\hline
+\cellcolor{accent}\textcolor{white}{\textbf{What happens to the data}} & \cellcolor{accent}\textcolor{white}{\textbf{SD}} \\ \hline
+Values closer together & gets smaller \\ \hline
+Values farther apart & gets bigger \\ \hline
+All values equal & $=0$ (never negative) \\ \hline
+Add or subtract the same number to every value & stays the same \\ \hline
+Multiply every value by $k$ & multiplied by $|k|$ \\ \hline
+Add one far-away outlier & jumps up \\ \hline
+\end{tabular}}
+\end{textblock*}
+
+% ---- CARD 7: Which set has the larger SD? ----
+\cardbg{16}{111}{178}{52}
+\pill{26}{114}{Which set has the larger SD?}
+
+\begin{textblock*}{158mm}(26mm,127mm)
+{\fontsize{12}{15}\selectfont
+Compare how far values sit from \emph{their own} mean --\\
+not how large the values are.}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,144mm)
+{\fontsize{11}{14}\selectfont
+$\{48,49,50,51,52\}$ vs $\{10,30,50,70,90\}$: same mean $50$, second is far
+more spread $\Rightarrow$ larger SD.\\[1mm]
+$\{101,102,103\}$ and $\{1,2,3\}$: same spread $\Rightarrow$ same SD.}
 \end{textblock*}
 
 \end{document}

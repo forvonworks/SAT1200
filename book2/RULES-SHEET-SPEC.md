@@ -99,3 +99,17 @@ form. No discriminant-sign classification (Lesson 7).
 ## Report back (concise)
 Per lesson: page count, cards kept / added / removed, any example you verified by script, and
 anything you were unsure about. Do not claim visual verification you did not do.
+
+## Owner direction: statistics lessons (15–18)
+- **Standard deviation: never teach the Σ formula.** Teach it visually: more spread ⇒ bigger SD.
+  A single tall "skyrocket" bar ⇒ small SD; "double top" (two peaks) ⇒ medium; flat / spread out
+  ⇒ large; peaks pushed to the far ends ⇒ larger still. Draw real bar graphs from real counts
+  (verify the SD ordering by script before labelling) and use the *same* mean and n in a comparison
+  so only spread differs.
+- Show how a **frequency table becomes a bar graph** (value on x-axis, count = bar height) and how to
+  read the spread from it. Note that equal range does not mean equal SD.
+- State the spread ↔ SD relationship as a short table: closer ⇒ smaller; farther ⇒ bigger; all equal
+  ⇒ 0; add/subtract a constant ⇒ unchanged; multiply by k ⇒ ×|k|; far outlier ⇒ jumps up.
+- Lesson 15's `rules-sheet.tex` is the reference implementation (macro `\bargraph`).
+- Table header rows: use `\cellcolor{accent}\textcolor{white}{...}` per cell, not `\rowcolor` with a
+  `{\color{white}...}` group (that renders the header ~5 mm too tall).
