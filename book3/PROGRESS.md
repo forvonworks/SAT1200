@@ -14,7 +14,7 @@ Decisions + blueprint: see BOOK3-SPEC.md.
 | Item | Status |
 |---|---|
 | Spec, cover | done |
-| Lesson 5 Speed tricks (sample) | in progress (agent a75868241acb51c74) |
+| Lesson 5 Speed tricks (reference lesson) | DONE, verified (74 problems, 3-page rules sheet, 8-page typeset) |
 | Mock 1 | built; re-balancing to final blueprint (agent a807c5d3768a92fd5) |
 | Mock 2, Mock 3 | in progress (agents a4defefb7c2e523d1, a15d6a190efc5aaf0) |
 | Mocks 4-10 | not started |
