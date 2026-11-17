@@ -2,8 +2,8 @@ This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloade
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**mock05-answer-sheet.tex
-(./mock05-answer-sheet.tex
+**notes-page.tex
+(./notes-page.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -488,17 +488,32 @@ zlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
+code.tex
+File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowinset=\dimen269
+\pgfarrowlength=\dimen270
+\pgfarrowwidth=\dimen271
+\pgfarrowlinewidth=\dimen272
+) (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen269
+\col@sep=\dimen273
 \ar@mcellbox=\box65
-\extrarowheight=\dimen270
+\extrarowheight=\dimen274
 \NC@list=\toks36
 \extratabsurround=\skip53
 \backup@length=\skip54
@@ -513,32 +528,17 @@ Package: textpos 2022/07/23 v1.10.1
 Package textpos Info: choosing support for LaTeX3 on input line 60.
 \TP@textbox=\box67
 \TP@holdbox=\box68
-\TPHorizModule=\dimen271
-\TPVertModule=\dimen272
-\TP@margin=\dimen273
-\TP@absmargin=\dimen274
+\TPHorizModule=\dimen275
+\TPVertModule=\dimen276
+\TP@margin=\dimen277
+\TP@absmargin=\dimen278
 
 Grid set 16 x 16 = 37.34424pt x 52.81541pt
-\TPboxrulesize=\dimen275
-\TP@ox=\dimen276
-\TP@oy=\dimen277
+\TPboxrulesize=\dimen279
+\TP@ox=\dimen280
+\TP@oy=\dimen281
 \TP@tbargs=\toks38
 TextBlockOrigin set to 0pt x 0pt
-) (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
-Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip56
-\enit@outerparindent=\dimen278
-\enit@toks=\toks39
-\enit@inbox=\box69
-\enit@count@id=\count313
-\enitdp@description=\count314
-)
-(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip57
-\multirow@cntb=\count315
-\multirow@dima=\skip58
-\bigstrutjot=\dimen279
 )
 
 Package fontspec Info: Font family 'LibertinusSerif(0)' created for font
@@ -601,13 +601,13 @@ Package fontspec Info: Font family 'LibertinusSerif(1)' created for font
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/LibertinusSerif(1)/m/n on input line
- 14.
+ 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/LibertinusSerif(1)/m/it on input li
-ne 14.
+ne 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> TU/LibertinusSerif(1)/b/n on input lin
-e 14.
+e 12.
 
 Package fontspec Info: Font family 'LibertinusSans(0)' created for font
 (fontspec)             'Libertinus Sans' with options [Ligatures=TeX].
@@ -668,10 +668,10 @@ Package fontspec Info: Font family 'LibertinusSans(1)' created for font
 
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/cmss/m/n --> TU/LibertinusSans(1)/m/n on input line
- 15.
+ 13.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/LibertinusSans(1)/b/n on input lin
-e 15.
+e 13.
 
 Package fontspec Info: Could not resolve font "Libertinus Math/B" (it probably
 (fontspec)             doesn't exist).
@@ -712,15 +712,15 @@ us
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 16.
+(Font)              `operators' in the math version `normal' on input line 14.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/LibertinusMath(1)/m/n on input line 
-16.
+14.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 16.
+(Font)              `operators' in the math version `bold' on input line 14.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/LibertinusMath(1)/b/n on input line
- 16.
+ 14.
 
 Package fontspec Info: Libertinus Math scale = 1.0001.
 
@@ -779,15 +779,15 @@ tinus
 (fontspec)             =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 16.
+(Font)              `symbols' in the math version `normal' on input line 14.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> TU/LibertinusMath(2)/m/n on input line
- 16.
+ 14.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 16.
+(Font)              `symbols' in the math version `bold' on input line 14.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> TU/LibertinusMath(2)/b/n on input line
- 16.
+ 14.
 
 Package fontspec Info: Libertinus Math scale = 0.9999.
 
@@ -836,36 +836,35 @@ tinus
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 1
-6.
+4.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> TU/LibertinusMath(3)/m/n on input line
- 16.
+ 14.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 16.
+(Font)              `largesymbols' in the math version `bold' on input line 14.
 
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/LibertinusMath(3)/b/n on input line
- 16.
+ 14.
+ (./notes-page.aux)
+\openout1 = `notes-page.aux'.
 
-(./mock05-answer-sheet.aux)
-\openout1 = `mock05-answer-sheet.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -902,55 +901,29 @@ LaTeX Font Info:    ... okay on input line 100.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 100.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 104.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 100.
-LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 114.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(2)/m/n' will be
-(Font)              scaled to size 10.50111pt on input line 114.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(2)/m/n' will be
-(Font)              scaled to size 7.35074pt on input line 114.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(2)/m/n' will be
-(Font)              scaled to size 5.25055pt on input line 114.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(3)/m/n' will be
-(Font)              scaled to size 10.49887pt on input line 114.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(3)/m/n' will be
-(Font)              scaled to size 7.34917pt on input line 114.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(3)/m/n' will be
-(Font)              scaled to size 5.24944pt on input line 114.
-LaTeX Font Info:    Calculating math sizes for size <8.3> on input line 183.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(2)/m/n' will be
-(Font)              scaled to size 8.30089pt on input line 183.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(2)/m/n' will be
-(Font)              scaled to size 5.81058pt on input line 183.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(2)/m/n' will be
-(Font)              scaled to size 4.15044pt on input line 183.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(3)/m/n' will be
-(Font)              scaled to size 8.2991pt on input line 183.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(3)/m/n' will be
-(Font)              scaled to size 5.80934pt on input line 183.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(3)/m/n' will be
-(Font)              scaled to size 4.14954pt on input line 183.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 104.
 
-Overfull \hbox (0.79999pt too wide) in paragraph at lines 184--185
+Overfull \hbox (0.5pt too wide) in paragraph at lines 119--120
 [][] 
  []
 
 [1
 
-] (./mock05-answer-sheet.aux)
+] (./notes-page.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 19954 strings out of 476477
- 424731 string characters out of 5795103
- 1962627 words of memory out of 5000000
- 41564 multiletter control sequences out of 15000+600000
- 561965 words of font info for 98 fonts, out of 8000000 for 9000
+ 19870 strings out of 476477
+ 426056 string characters out of 5795103
+ 1921627 words of memory out of 5000000
+ 41498 multiletter control sequences out of 15000+600000
+ 558666 words of font info for 75 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 102i,12n,114p,430b,706s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,10n,114p,449b,721s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on mock05-answer-sheet.pdf (1 page).
+Output written on notes-page.pdf (1 page).
