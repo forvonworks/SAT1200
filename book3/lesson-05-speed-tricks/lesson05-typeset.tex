@@ -1,0 +1,496 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+\usepackage{multirow}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{0F6A52}
+\definecolor{badge}{HTML}{A9CFC2}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\emergencystretch=3em
+\abovedisplayskip=4pt plus 2pt minus 2pt \belowdisplayskip=4pt plus 2pt minus 2pt \abovedisplayshortskip=2pt \belowdisplayshortskip=2pt
+\pagestyle{empty}
+
+\newcommand{\LCOL}{16mm}
+\newcommand{\RCOL}{111mm}
+\newcommand{\COLW}{83mm}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\newcommand{\colrule}[2]{%
+\begin{textblock*}{1mm}(105mm,#1mm)
+\begin{tikzpicture}
+\draw[black!65,line width=0.5pt] (0,0) -- (0,#2mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\setkicker}[2]{%
+{\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
+}
+
+\setlength{\fboxsep}{1.4pt}
+\setlength{\fboxrule}{0.5pt}
+\newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
+
+% ---- SAT-style multiple-choice block (2x2 grid of short choices) ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\par\nobreak\vspace{2mm}%
+\noindent\hspace*{7mm}\begin{tabular}[t]{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2.5mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\par\vspace{7mm}%
+}
+
+% ---- stacked choices for long ones ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\par\nobreak\vspace{2mm}%
+\noindent\hspace*{7mm}(A) #3\par\vspace{1.6mm}%
+\noindent\hspace*{7mm}(B) #4\par\vspace{1.6mm}%
+\noindent\hspace*{7mm}(C) #5\par\vspace{1.6mm}%
+\noindent\hspace*{7mm}(D) #6\par\vspace{7mm}%
+}
+
+% ---- student-produced response (grid-in) ----
+\newcommand{\satg}[2]{%
+\noindent\pnum{#1} {\sffamily\bfseries\fontsize{7}{8}\selectfont\color{accent}GRID-IN}\ #2\par\nobreak\vspace{3mm}%
+\noindent\hspace*{7mm}{\sffamily\fontsize{8.5}{10}\selectfont Answer:}\ \rule[-1.2mm]{28mm}{0.4pt}\par\vspace{7mm}%
+}
+
+% ---- worked-solution entry ----
+\newcommand{\solitem}[4]{%
+\noindent\pnum{#1} {\bfseries #2}\ —\ #3\ {\itshape\color{accent}[#4]}\par\vspace{2.6mm}%
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+\renewcommand{\arraystretch}{1.3}
+
+\begin{document}
+
+\topicheader{5}{Speed Tricks}
+\pagefooter{1}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 1}{Bridge: ask what is really being asked, then take the shortcut.}
+\satq{1}{If $5x-3=22$, what is the value of $15x-9$?}{$5$}{$22$}{$57$}{$66$}
+\satq{2}{$3x+2y=19$ and $2x+3y=11$. What is the value of $x+y$?}{$6$}{$7$}{$8$}{$30$}
+\satg{3}{What is the sum of the solutions of $3x^2-21x+10=0$?}
+\satq{4}{If $2^{x+1}+2^{x}=48$, what is the value of $x$?}{$3$}{$4$}{$5$}{$16$}
+\satq{5}{A price is increased by $30\%$, and then the new price is decreased by $10\%$. The final price is what percent of the original price?}{$130\%$}{$120\%$}{$117\%$}{$103\%$}
+\satg{6}{The polynomial $p(x)=2x^3-5x^2+kx+12$ is divisible by $x-2$, where $k$ is a constant. What is the value of $k$?}
+\satq{7}{The function $h$ is defined by $h(x)=-3(x-2)(x+8)$. At what value of $x$ does $h$ reach its maximum?}{$-8$}{$-3$}{$2$}{$48$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 1 (cont.)}{Bridge}
+\satq{8}{What is the sum of all solutions of $(x-7)(x+3)=5(x-7)$?}{$2$}{$7$}{$9$}{$14$}
+\satg{9}{If $x+y=9$ and $xy=14$, what is the value of $x^2+y^2$?}
+\satq{10}{How many solutions does the equation $2^x=x^2$ have?}{No solutions}{Exactly one}{Exactly two}{Exactly three}
+\satg{11}{The sum of two positive numbers is 18 and their difference is 4. What is their product?}
+\satqw{12}{Which expression is equivalent to $x^2-y^2-6y-9$?}{$(x-y+3)(x+y-3)$}{$(x-y-3)(x+y+3)$}{$(x-y-3)^2$}{$(x+y+3)^2$}
+\vspace{3mm}
+\setkicker{Set 2}{Vieta: sums and products without solving.}
+\satq{1}{The solutions of $2x^2-10x+3=0$ are $r$ and $s$. What is the value of $r^2+s^2$?}{$19$}{$22$}{$25$}{$28$}
+\satg{2}{In the equation $x^2-12x+k=0$, $k$ is a constant and one solution is 5 times the other solution. What is the value of $k$?}
+}
+\end{textblock*}
+\clearpage
+\topicheader{5}{Speed Tricks}
+\pagefooter{2}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 2 (cont.)}{Vieta}
+\satq{3}{The equation $3x^2-8x+2=0$ has solutions $p$ and $q$. What is the value of $\dfrac1p+\dfrac1q$?}{$\dfrac14$}{$\dfrac23$}{$\dfrac83$}{$4$}
+\satq{4}{The system $y=x^2-5x+9$ and $y=2x+4$ has two solutions, $(x_1,y_1)$ and $(x_2,y_2)$. What is the value of $y_1+y_2$?}{$7$}{$14$}{$18$}{$22$}
+\satg{5}{In the $xy$-plane, the line $y=-4x+5$ and the parabola $y=x^2+bx+9$ intersect at exactly one point, and $b<0$. What is the $x$-coordinate of that point?}
+\satq{6}{The solutions of $x^2-5x+3=0$ are $r$ and $s$. The equation $x^2+bx+c=0$ has solutions $r+2$ and $s+2$. What is the value of $c$?}{$5$}{$9$}{$13$}{$17$}
+\satg{7}{The equation $2x^2-9x+4=0$ has solutions $r$ and $s$. What is the value of $(r-2)(s-2)$?}
+\satq{8}{What is the positive difference between the solutions of $2x^2-12x+5=0$?}{$2\sqrt{26}$}{$6$}{$\sqrt{26}$}{$\dfrac{\sqrt{26}}2$}
+\satg{9}{The equation $x^2-kx+12=0$, where $k>0$, has solutions $r$ and $s$ with $r^2+s^2=40$. What is the value of $k$?}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 2 (cont.)}{Vieta}
+\satq{10}{A rectangle has a perimeter of 26 centimeters and an area of 36 square centimeters. What is the length, in centimeters, of its diagonal?}{$\sqrt{97}$}{$\sqrt{133}$}{$13$}{$\sqrt{241}$}
+\satq{11}{The solutions of $x^2-10x+c=0$ are $r$ and $s$, where $r>s$ and $r-s=4$. What is the value of $c$?}{$16$}{$21$}{$24$}{$25$}
+\satg{12}{The equation $x^2+3x-5=0$ has solutions $r$ and $s$. What is the value of $r^3+s^3$?}
+\satq{13}{The parabola $y=2x^2-bx+c$ has $x$-intercepts whose sum is 5 and whose product is 3. What is the value of $b+c$?}{$16$}{$13$}{$11$}{$8$}
+\satq{14}{Which equation has, as its solutions, the reciprocals of the solutions of $3x^2-7x+2=0$?}{$3x^2-7x+2=0$}{$2x^2+7x+3=0$}{$2x^2-7x+3=0$}{$3x^2-2x+7=0$}
+\vspace{3mm}
+\setkicker{Set 3}{Vertex, axis, symmetry and graph-it (Desmos).}
+\satq{1}{The function $g(x)=-x^2+bx+c$ satisfies $g(2)=g(9)$, where $b$ and $c$ are constants. What is the value of $b$?}{$\dfrac{11}2$}{$7$}{$11$}{$22$}
+\satg{2}{A quadratic model gives the height $h(t)$, in meters, of a ball $t$ seconds after it is thrown. The ball is thrown from a height of 1.2 meters. The model estimates that the ball is at a height of 21 meters both 1 second and 5 seconds after it is thrown. How many seconds after it is thrown does the model estimate that the ball returns to a height of 1.2 meters?}
+}
+\end{textblock*}
+\clearpage
+\topicheader{5}{Speed Tricks}
+\pagefooter{3}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 3 (cont.)}{Vertex and graph-it}
+\satq{3}{The function $f$ is defined by $f(x)=(x-6)(x+2)+20$. What is the minimum value of $f$?}{$-16$}{$-12$}{$2$}{$4$}
+\satg{4}{The vertex of the parabola $y=x^2-8x+k$ lies on the line $y=3x+2$. What is the value of $k$?}
+\satg{5}{Use a graphing calculator. What is the larger solution of $2^x=2x+7$, rounded to the nearest tenth?}
+\satq{6}{How many solutions does the equation $2^x=x^2+1$ have?}{$3$}{$2$}{$1$}{$0$}
+\satg{7}{The line $y=2x+k$ intersects the parabola $y=x^2-4x+5$ at exactly two points, where $k$ is an integer. What is the least possible value of $k$?}
+\satq{8}{What is the sum of the $x$- and $y$-coordinates of the vertex of $y=3x^2-18x+4$?}{$-26$}{$-23$}{$-20$}{$3$}
+\satq{9}{The parabola $y=a(x-1)(x-7)$ has a maximum value of 18. What is the value of $a$?}{$-6$}{$-2$}{$2$}{$6$}
+\satq{10}{A parabola has its vertex at $(3,-4)$ and passes through $(5,4)$. What is the $y$-coordinate of its $y$-intercept?}{$-4$}{$2$}{$14$}{$22$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 3 (cont.)}{Vertex and graph-it}
+\satg{11}{A shop sells $120-4p$ scarves per day when the price is $p$ dollars, and each scarf costs the shop \$5. The shop's daily profit, in dollars, is $(p-5)(120-4p)$. What is the greatest possible daily profit, in dollars?}
+\satq{12}{The function $f(x)=x^2+bx+c$ satisfies $f(1)=f(9)$ and has a minimum value of $-7$. What is the value of $c$?}{$-10$}{$-7$}{$7$}{$18$}
+\satq{13}{The graphs of $f(x)=x^2-6x+11$ and $g(x)=-x^2+2x+3$ in the $xy$-plane intersect. What is the $y$-coordinate of the point where they intersect?}{$11$}{$6$}{$3$}{$2$}
+\satq{14}{For $k>0$, the line $y=x+k$ is tangent to the circle $x^2+y^2=25$. What is the value of $k$?}{$5$}{$5\sqrt2$}{$25$}{$50$}
+\vspace{3mm}
+\setkicker{Set 4}{Do not solve: systems, factors and structure.}
+\satq{1}{$5x+3y=29$ and $3x+5y=19$. What is the value of $x^2-y^2$?}{$30$}{$11$}{$6$}{$5$}
+\satg{2}{$a+b=12$, $b+c=15$ and $a+c=17$. What is the value of $a+b+c$?}
+\satq{3}{If $2x+5y=18$ and $6x-y=10$, what is the value of $8x+4y$?}{$7$}{$14$}{$18$}{$28$}
+}
+\end{textblock*}
+\clearpage
+\topicheader{5}{Speed Tricks}
+\pagefooter{4}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 4 (cont.)}{Do not solve}
+\satg{4}{If $x+\dfrac1x=5$, what is the value of $x^2+\dfrac1{x^2}$?}
+\satq{5}{What is the remainder when $p(x)=x^4-3x^2+5x+1$ is divided by $x+2$?}{$-5$}{$1$}{$5$}{$15$}
+\satqw{6}{Which of the following expressions has $x+5$ as a factor?}{$x^3+2x^2-13x-10$}{$x^3-2x^2-13x+10$}{$x^3+2x^2+13x+10$}{$x^3+2x^2-13x+10$}
+\satg{7}{If $(3x+2y)^2-(3x-2y)^2=96$, what is the value of $xy$?}
+\satq{8}{Which expression is equivalent to $a(x+3)^2-a(x-3)^2$?}{$6ax$}{$18a$}{$12ax$}{$2a(x^2+9)$}
+\satq{9}{The value of an investment increased by $20\%$ in the first year and then decreased by $25\%$ in the second year. After the two years, the value was \$5,400. What was the value of the investment at the start of the first year?}{$\$6{,}000$}{$\$5{,}670$}{$\$5{,}400$}{$\$4{,}860$}
+\satq{10}{A price is reduced by $20\%$. By what percent must the reduced price be increased to return to the original price?}{$20\%$}{$25\%$}{$30\%$}{$80\%$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 4 (cont.)}{Do not solve}
+\satq{11}{Four sandwiches and three juices cost \$29. Three sandwiches and four juices cost \$27. What is the cost, in dollars, of five sandwiches and five juices?}{$8$}{$25$}{$29$}{$40$}
+\satg{12}{If $a+b=10$ and $ab=17$, what is the value of $(a-b)^2$?}
+\satq{13}{If $3^{x+2}-3^{x}=216$, what is the value of $3^{x}$?}{$3$}{$9$}{$24$}{$27$}
+\satq{14}{What is the product of all solutions of $(x-8)(x+2)=(x-8)(3x-4)$?}{$24$}{$11$}{$8$}{$3$}
+\vspace{3mm}
+\setkicker{Set 5}{Summit: the hardest mixed problems.}
+\satg{1}{The graphs of $y=x^2-9x+4$ and $y=-2x+k$ intersect at two points whose $x$-coordinates are $x_1$ and $x_2$. If $x_1^2+x_2^2=59$, what is the value of $k$?}
+\satq{2}{The graphs of $x^2+y^2=20$ and $y=mx+\dfrac b3$ intersect at the point $(4,y)$ where $y<0$; $m$ and $b$ are constants. Which expression gives the value of $b$?}{$-12m-6$}{$12m-6$}{$6-12m$}{$12m+6$}
+\satq{3}{What is the sum of all solutions of $\sqrt{x+30}=x$?}{$-5$}{$1$}{$6$}{$30$}
+}
+\end{textblock*}
+\clearpage
+\topicheader{5}{Speed Tricks}
+\pagefooter{5}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 5 (cont.)}{Summit}
+\satq{4}{The solutions of $2x^2-12x+5=0$ are $r$ and $s$, with $r>s$. What is the value of $r^2-s^2$?}{$\sqrt{26}$}{$6$}{$3\sqrt{26}$}{$6\sqrt{26}$}
+\satg{5}{The polynomial $p(x)=x^3+ax^2+bx-12$ is divisible by $x-1$, and the remainder when $p(x)$ is divided by $x+1$ is 6. What is the value of $a$?}
+\satq{6}{A stock rose $40\%$ on Monday and then fell by $p\%$ on Tuesday, ending $12\%$ above its price before Monday. What is the value of $p$?}{$12$}{$20$}{$28$}{$40$}
+\satq{7}{How many solutions does the system $y=x^2-6x+8$ and $y=|x-3|$ have?}{$0$}{$1$}{$2$}{$3$}
+\satg{8}{If $x+y=6$ and $x^2+y^2=20$, what is the value of $x^3+y^3$?}
+\satq{9}{The parabola $y=x^2+bx+c$ has two $x$-intercepts that are 8 units apart. What is the minimum value of $y$?}{$-16$}{$-8$}{$-4$}{$16$}
+\satq{10}{If $x+y+3\ne0$, which expression is equivalent to $$\dfrac{x^2+6x+9-y^2}{x+y+3}$$ ?}{$x+y+3$}{$x-y+3$}{$x-y-3$}{$x+3$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 5 (cont.)}{Summit}
+\satg{11}{A number is increased by $20\%$, and the result is then decreased by $20\%$. The final value is 144. What was the original number?}
+\satq{12}{If $a+b=7$ and $a^2-b^2=21$, what is the value of $ab$?}{$3$}{$5$}{$7$}{$10$}
+\satg{13}{The function $f(x)=ax^2+bx+c$ has a minimum value of $-3$, $f(1)=f(7)$ and $f(0)=5$. What is the value of $a$?}
+\satq{14}{How many real solutions does the equation $x^3-3x=1$ have?}{$3$}{$2$}{$1$}{$0$}
+\satq{15}{For which value of $k$ does $|x^2-6x+5|=k$ have exactly three solutions?}{$9$}{$5$}{$4$}{$-4$}
+\satq{16}{How many solutions does the equation $$\dfrac{x}{x-2}=\dfrac{2}{x-2}+3$$ have?}{No solution}{Exactly one}{Exactly two}{Infinitely many}
+\satg{17}{The equation $x^2-6x+q=0$ has solutions $r$ and $s$, and $\dfrac1r+\dfrac1s=\dfrac32$. What is the value of $r^2+s^2$?}
+\satg{18}{A line with slope $-3$ is tangent to the parabola $y=2x^2+7x+5$. What is the $y$-intercept of the line?}
+}
+\end{textblock*}
+\clearpage
+\topicheader{5}{Speed Tricks}
+\pagefooter{6}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 5 (cont.)}{Summit}
+\satq{19}{The side lengths, in inches, of a rectangle are the two solutions of $x^2-17x+k=0$, and its diagonal is 13 inches. What is the value of $k$?}{$30$}{$60$}{$120$}{$144$}
+\satq{20}{The graphs of $y=x^2+bx+8$ and $y=3x+k$ intersect at two points. The midpoint of these two points has $x$-coordinate 5. What is the value of $b$?}{$-10$}{$-7$}{$7$}{$13$}
+}
+\end{textblock*}
+\clearpage
+\topicheader{5}{Speed Tricks}
+\pagefooter{7}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key\par}
+\end{textblock*}
+\begin{textblock*}{178mm}(16mm,41mm)
+{\fontsize{9.5}{12}\selectfont\color{black!70}\centering Multiple choice: the letter. Grid-in: the number to enter. Worked solutions follow on the next pages.\par}
+\end{textblock*}
+\begin{textblock*}{178mm}(16mm,52mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\setlength{\tabcolsep}{2pt}\renewcommand{\arraystretch}{1.3}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 1 \ \textmd{\itshape\small Bridge: ask first, then shortcut}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+\textbf{D} & \textbf{A} & 7 & \textbf{B} & \textbf{C} & −4 & \textbf{B} & \textbf{C} & 53 & \textbf{D}\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12}\\
+\hline
+77 & \textbf{B}\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 2 \ \textmd{\itshape\small Vieta: sums and products without solving}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+\textbf{B} & 20 & \textbf{D} & \textbf{D} & 2 & \textbf{D} & −3 & \textbf{C} & 8 & \textbf{A}\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12} & \cellcolor{badge!55}\textbf{13} & \cellcolor{badge!55}\textbf{14}\\
+\hline
+\textbf{B} & −72 & \textbf{A} & \textbf{C}\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 3 \ \textmd{\itshape\small Vertex, axis, symmetry and graph-it}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+\textbf{C} & 6 & \textbf{D} & 30 & 3.9 & \textbf{A} & −3 & \textbf{C} & \textbf{B} & \textbf{C}\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12} & \cellcolor{badge!55}\textbf{13} & \cellcolor{badge!55}\textbf{14}\\
+\hline
+625 & \textbf{D} & \textbf{C} & \textbf{B}\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 4 \ \textmd{\itshape\small Do not solve: systems, factors and structure}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+\textbf{A} & 22 & \textbf{D} & 23 & \textbf{A} & \textbf{D} & 4 & \textbf{C} & \textbf{A} & \textbf{B}\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12} & \cellcolor{badge!55}\textbf{13} & \cellcolor{badge!55}\textbf{14}\\
+\hline
+\textbf{D} & 32 & \textbf{D} & \textbf{A}\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 5 \ \textmd{\itshape\small Summit: the hardest mixed problems}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+9 & \textbf{A} & \textbf{C} & \textbf{D} & 15 & \textbf{B} & \textbf{C} & 72 & \textbf{A} & \textbf{B}\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12} & \cellcolor{badge!55}\textbf{13} & \cellcolor{badge!55}\textbf{14} & \cellcolor{badge!55}\textbf{15} & \cellcolor{badge!55}\textbf{16} & \cellcolor{badge!55}\textbf{17} & \cellcolor{badge!55}\textbf{18} & \cellcolor{badge!55}\textbf{19} & \cellcolor{badge!55}\textbf{20}\\
+\hline
+150 & \textbf{D} & 1/2 & \textbf{A} & \textbf{C} & \textbf{A} & 28 & −7.5 & \textbf{B} & \textbf{B}\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+}
+\end{textblock*}
+\clearpage
+\topicheader{5}{Speed Tricks}
+\pagefooter{8}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{8.8}{10.9}\selectfont
+\setkicker{Set 1}{Worked solutions}
+\solitem{1}{D ($66$)}{$15x-9=3(5x-3)=3\cdot22=66$. There is no need to find $x$ (it is 5).}{What is asked?}
+\solitem{2}{A ($6$)}{Add the equations: $5x+5y=30$, so $x+y=6$. (Subtracting would give $x-y=8$, the other trap.)}{Add the equations}
+\solitem{3}{Ans. 7}{Sum of roots $=-\dfrac ba=\dfrac{21}{3}=7$. (The discriminant is positive, so both roots are real.)}{Vieta}
+\solitem{4}{B ($4$)}{Try the middle choices: $x=4$ gives $2^5+2^4=32+16=48$. (Or: $3\cdot2^x=48$, $2^x=16$. Choice 16 is $2^x$, not $x$.)}{Backsolve}
+\solitem{5}{C ($117\%$)}{Multipliers multiply: $1.30\times0.90=1.17$, so $117\%$. (Adding $+30\%-10\%$ gives the trap $120\%$.)}{Percent multiplier}
+\solitem{6}{Ans. −4}{Divisible by $x-2$ means $p(2)=0$: $16-20+2k+12=0$, so $2k=-8$ and $k=-4$.}{Factor / remainder theorem}
+\solitem{7}{B ($-3$)}{The zeros are $2$ and $-8$; the vertex is halfway between them: $\dfrac{2+(-8)}2=-3$. (48 is $h(0)$.)}{Axis = midpoint of the roots}
+\solitem{8}{C ($9$)}{Move everything left and factor: $(x-7)(x+3-5)=(x-7)(x-2)=0$, so $x=7$ or $2$ and the sum is $9$. Dividing by $x-7$ would lose the root $7$.}{Do not divide: factor}
+\solitem{9}{Ans. 53}{$x^2+y^2=(x+y)^2-2xy=81-28=53$.}{Structure (identities)}
+\solitem{10}{D (Exactly three)}{Graph $y=2^x$ and $y=x^2$: they cross at $x=2$, $x=4$ and once more near $x\approx-0.77$. That is 3 points.}{Graph it (Desmos)}
+\solitem{11}{Ans. 77}{$(a+b)^2-(a-b)^2=4ab$, so $4ab=324-16=308$ and $ab=77$. (The numbers are 11 and 7.)}{Structure (identities)}
+\solitem{12}{B ($(x-y-3)(x+y+3)$)}{$x^2-(y^2+6y+9)=x^2-(y+3)^2=(x-y-3)(x+y+3)$: a perfect square first, then a difference of squares.}{Structure (identities)}
+\vspace{3mm}
+\setkicker{Set 2}{Worked solutions}
+\solitem{1}{B ($22$)}{$r+s=5$ and $rs=\frac32$, so $r^2+s^2=(r+s)^2-2rs=25-3=22$. (Forgetting to divide by $a$ gives 19.)}{Vieta (sum of squares)}
+\solitem{2}{Ans. 20}{Let the roots be $t$ and $5t$. The sum is $6t=12$, so $t=2$. The product is $k=t\cdot5t=5(4)=20$.}{Vieta}
+\solitem{3}{D ($4$)}{$\dfrac1p+\dfrac1q=\dfrac{p+q}{pq}=\dfrac{8/3}{2/3}=4$.}{Vieta (reciprocals)}
+\solitem{4}{D ($22$)}{$x^2-7x+5=0$, so $x_1+x_2=7$. Then $y_1+y_2=2(x_1+x_2)+2(4)=22$. (Forgetting the second 4 gives 18.)}{Vieta (system)}
+\solitem{5}{Ans. 2}{$x^2+(b+4)x+4=0$ has one solution when $(b+4)^2-16=0$, so $b=0$ or $b=-8$; $b<0$ gives $b=-8$. Then $x=-\frac{b+4}2=2$.}{Tangent: D = 0}
+\solitem{6}{D ($17$)}{$c=(r+2)(s+2)=rs+2(r+s)+4=3+10+4=17$. (Leaving out the final $+4$ gives 13.)}{Vieta}
+\solitem{7}{Ans. −3}{$(r-2)(s-2)=rs-2(r+s)+4=2-2\left(\frac92\right)+4=-3$.}{Vieta}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{8.8}{10.9}\selectfont
+\setkicker{Set 2 (cont.)}{Worked solutions}
+\solitem{8}{C ($\sqrt{26}$)}{$D=144-40=104$, and the roots differ by $\dfrac{\sqrt D}{|a|}=\dfrac{\sqrt{104}}2=\sqrt{26}$. (Forgetting to divide by $a$ gives $2\sqrt{26}$.)}{Vieta (difference of roots)}
+\solitem{9}{Ans. 8}{$r+s=k$ and $rs=12$, so $r^2+s^2=k^2-24=40$. Then $k^2=64$ and $k=8$ (positive). The roots are 2 and 6.}{Vieta (sum of squares)}
+\solitem{10}{A ($\sqrt{97}$)}{$l+w=13$ and $lw=36$, so $l^2+w^2=169-72=97$. The diagonal is $\sqrt{97}$. (13 is the half-perimeter.)}{Vieta (sum of squares)}
+\solitem{11}{B ($21$)}{$r+s=10$ and $r-s=4$, so $r=7$, $s=3$ and $c=rs=21$. (25 would mean equal roots.)}{Vieta}
+\solitem{12}{Ans. −72}{$r^3+s^3=(r+s)^3-3rs(r+s)=(-3)^3-3(-5)(-3)=-27-45=-72$.}{Vieta (sum of cubes)}
+\solitem{13}{A ($16$)}{The roots of $2x^2-bx+c=0$ have sum $\frac b2=5$ and product $\frac c2=3$, so $b=10$, $c=6$ and $b+c=16$.}{Vieta}
+\solitem{14}{C ($2x^2-7x+3=0$)}{New sum $=\frac{S}{P}=\frac{7/3}{2/3}=\frac72$, new product $=\frac1P=\frac32$. So $x^2-\frac72x+\frac32=0$, i.e. $2x^2-7x+3=0$ (the $a$ and $c$ swap).}{Vieta (reciprocals)}
+\vspace{3mm}
+\setkicker{Set 3}{Worked solutions}
+\solitem{1}{C ($11$)}{Equal outputs mean the axis is halfway: $x=\frac{2+9}2=\frac{11}2$. For $-x^2+bx+c$ the axis is $\frac b2$, so $b=11$.}{Symmetry (axis)}
+\solitem{2}{Ans. 6}{The axis is halfway between $t=1$ and $t=5$, so it is $t=3$. Launch ($t=0$) is 3 units left of the axis, so the ball is back at 1.2 m at $t=3+3=6$.}{Symmetry (axis)}
+\solitem{3}{D ($4$)}{$(x-6)(x+2)$ is lowest halfway between $-2$ and $6$, at $x=2$, where it equals $-16$. So the minimum of $f$ is $-16+20=4$. (2 is where it happens.)}{Axis = midpoint of the roots}
+\solitem{4}{Ans. 30}{Axis: $x=-\frac{-8}{2}=4$. On the line, $y=3(4)+2=14$. So $16-32+k=14$ and $k=30$.}{Axis = $-b/2a$}
+\solitem{5}{Ans. 3.9}{Graph $y=2^x$ and $y=2x+7$ and tap the right-hand intersection: $x\approx3.885$, which rounds to $3.9$. (The other crossing is near $-3.45$.)}{Graph it (Desmos)}
+\solitem{6}{A ($3$)}{Graphs of $y=2^x$ and $y=x^2+1$ meet at $x=0$, $x=1$ and a third time near $x\approx4.26$. Testing whole numbers alone finds only 2.}{Graph it (Desmos)}
+\solitem{7}{Ans. −3}{$x^2-6x+(5-k)=0$ needs $D=36-4(5-k)=16+4k>0$, so $k>-4$. The least integer is $-3$. (On Desmos: add a slider for $k$ and watch the crossings.)}{Graph it (slider) / D > 0}
+\solitem{8}{C ($-20$)}{$h=-\frac{-18}{6}=3$ and $k=3(9)-54+4=-23$, so $h+k=-20$. (A negative $h$ would give the trap $-26$.)}{Axis = $-b/2a$}
+\solitem{9}{B ($-2$)}{The vertex is at $x=\frac{1+7}2=4$, where $y=a(3)(-3)=-9a$. Then $-9a=18$ and $a=-2$.}{Axis = midpoint of the roots}
+\solitem{10}{C ($14$)}{$y=a(x-3)^2-4$ and $y(5)=4$ give $4a-4=4$, so $a=2$. Then $y(0)=2(9)-4=14$. (2 is $a$, not the intercept.)}{Vertex form}
+}
+\end{textblock*}
+\clearpage
+\topicheader{5}{Speed Tricks}
+\pagefooter{9}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{8.8}{10.9}\selectfont
+\setkicker{Set 3 (cont.)}{Worked solutions}
+\solitem{11}{Ans. 625}{The zeros are $p=5$ and $p=30$, so the maximum is at $p=17.5$: profit $=(12.5)(120-70)=(12.5)(50)=625$.}{Axis = midpoint of the roots}
+\solitem{12}{D ($18$)}{Axis: $x=\frac{1+9}2=5$, so $-\frac b2=5$ and $b=-10$. Minimum: $f(5)=25-50+c=-7$, so $c=18$.}{Symmetry (axis)}
+\solitem{13}{C ($3$)}{$f=g$ gives $2x^2-8x+8=2(x-2)^2=0$, so they touch only at $x=2$, where $f(2)=4-12+11=3$. (2 is the $x$-coordinate.)}{Graph it (Desmos)}
+\solitem{14}{B ($5\sqrt2$)}{Substitute: $2x^2+2kx+k^2-25=0$. One solution means $D=4k^2-8(k^2-25)=200-4k^2=0$, so $k^2=50$ and $k=5\sqrt2$.}{Tangent: D = 0}
+\vspace{3mm}
+\setkicker{Set 4}{Worked solutions}
+\solitem{1}{A ($30$)}{Add: $8(x+y)=48$, so $x+y=6$. Subtract: $2(x-y)=10$, so $x-y=5$. Then $x^2-y^2=(x+y)(x-y)=30$.}{Add / subtract the equations}
+\solitem{2}{Ans. 22}{Adding all three: $2(a+b+c)=44$, so $a+b+c=22$.}{Add the equations}
+\solitem{3}{D ($28$)}{The expression $8x+4y$ is the sum of the two left sides: $18+10=28$.}{Add the equations}
+\solitem{4}{Ans. 23}{Square both sides: $x^2+2+\dfrac1{x^2}=25$, so $x^2+\dfrac1{x^2}=23$.}{Structure (identities)}
+\solitem{5}{A ($-5$)}{The remainder is $p(-2)=16-12-10+1=-5$. (Using $p(2)=15$ is the classic sign trap.)}{Factor / remainder theorem}
+\solitem{6}{D ($x^3+2x^2-13x+10$)}{$x+5$ is a factor exactly when the value at $x=-5$ is 0. Only the first choice works: $-125+50+65+10=0$ (the others give $-20$, $-100$, $-130$).}{Factor / remainder theorem}
+\solitem{7}{Ans. 4}{$(A+B)^2-(A-B)^2=4AB$ with $A=3x$, $B=2y$ gives $4(3x)(2y)=24xy=96$, so $xy=4$.}{Structure (identities)}
+\solitem{8}{C ($12ax$)}{Factor out $a$: $(x+3)^2-(x-3)^2=\big[(x+3)-(x-3)\big]\big[(x+3)+(x-3)\big]=6\cdot2x=12x$. So the result is $12ax$.}{Structure (identities)}
+\solitem{9}{A ($\$6{,}000$)}{Net multiplier $=1.20\times0.75=0.90$. Start $=\dfrac{5400}{0.90}=6000$. (Multiplying by 0.9 instead of dividing gives 4,860.)}{Percent multiplier}
+\solitem{10}{B ($25\%$)}{Original $=1$, reduced $=0.8$. Need $0.8(1+r)=1$, so $1+r=1.25$ and $r=25\%$. (Going up by the same 20\% only gets back to 96\%.)}{Percent multiplier}
+\solitem{11}{D ($40$)}{Add: $7(s+j)=56$, so $s+j=8$. Then $5(s+j)=40$. (No need for the individual prices, \$5 and \$3.)}{Add the equations}
+\solitem{12}{Ans. 32}{$(a-b)^2=(a+b)^2-4ab=100-68=32$.}{Structure (identities)}
+\solitem{13}{D ($27$)}{$3^{x+2}=9\cdot3^x$, so $9\cdot3^x-3^x=8\cdot3^x=216$ and $3^x=27$. (Here $x=3$; the question asks for $3^x$, not $x$.)}{Structure (factor the common power)}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{8.8}{10.9}\selectfont
+\setkicker{Set 4 (cont.)}{Worked solutions}
+\solitem{14}{A ($24$)}{$(x-8)\big[(x+2)-(3x-4)\big]=(x-8)(6-2x)=0$, so $x=8$ or $x=3$. The product is 24. (Dividing by $x-8$ loses a root.)}{Do not divide: factor}
+\vspace{3mm}
+\setkicker{Set 5}{Worked solutions}
+\solitem{1}{Ans. 9}{$x^2-7x+(4-k)=0$, so $x_1+x_2=7$ and $x_1x_2=4-k$. Then $49-2(4-k)=59$, so $4-k=-5$ and $k=9$.}{Vieta (sum of squares)}
+\solitem{2}{A ($-12m-6$)}{$16+y^2=20$ and $y<0$ give $y=-2$. Then $-2=4m+\frac b3$, so $b=-6-12m$. (Taking $y=+2$ gives the trap $6-12m$.)}{Substitute the point}
+\solitem{3}{C ($6$)}{Squaring gives $x^2-x-30=0$, so $x=6$ or $x=-5$. Check: $\sqrt{25}=5\neq-5$, so $-5$ is extraneous. Only $x=6$ works. (Vieta's sum, 1, is the trap.)}{Extraneous solutions (backsolve)}
+\solitem{4}{D ($6\sqrt{26}$)}{$r^2-s^2=(r+s)(r-s)$. Here $r+s=6$ and $r-s=\dfrac{\sqrt{104}}2=\sqrt{26}$, so the value is $6\sqrt{26}$.}{Vieta + structure}
+\solitem{5}{Ans. 15}{$p(1)=0$: $a+b=11$. $p(-1)=6$: $-1+a-b-12=6$, so $a-b=19$. Adding: $2a=30$, so $a=15$.}{Factor / remainder theorem}
+\solitem{6}{B ($20$)}{$1.40\,(1-\frac p{100})=1.12$, so $1-\frac p{100}=0.80$ and $p=20$. (Subtracting $40-12$ gives the trap 28.)}{Percent multiplier}
+\solitem{7}{C ($2$)}{Graph both: the V-shape touches the parabola at $x=\frac{5-\sqrt5}2\approx1.38$ and $x=\frac{7+\sqrt5}2\approx4.62$. Two points.}{Graph it (Desmos)}
+\solitem{8}{Ans. 72}{$xy=\dfrac{36-20}{2}=8$. Then $x^3+y^3=(x+y)^3-3xy(x+y)=216-3(8)(6)=72$.}{Structure (identities)}
+\solitem{9}{A ($-16$)}{The vertex lies halfway between the intercepts, 4 units from each. With $a=1$: $y=(4)(-4)=-16$ (the product of the distances, signed).}{Axis = midpoint of the roots}
+\solitem{10}{B ($x-y+3$)}{Numerator $=(x+3)^2-y^2=(x+3-y)(x+3+y)$. Cancel $x+y+3$ to get $x-y+3$.}{Structure (identities)}
+\solitem{11}{Ans. 150}{Net multiplier $=1.2\times0.8=0.96$. Original $=\dfrac{144}{0.96}=150$.}{Percent multiplier}
+\solitem{12}{D ($10$)}{$a^2-b^2=(a+b)(a-b)$, so $a-b=3$. With $a+b=7$: $a=5$, $b=2$ and $ab=10$.}{What is asked? / structure}
+\solitem{13}{Ans. 1/2}{The axis is $x=\frac{1+7}2=4$, so $f(x)=a(x-4)^2-3$. Then $f(0)=16a-3=5$ and $a=\frac12$. (Enter 1/2 or 0.5.)}{Symmetry (axis)}
+\solitem{14}{A ($3$)}{Graph $y=x^3-3x$ and the line $y=1$. The curve rises to a local maximum of 2 at $x=-1$, falls to $-2$ at $x=1$, then rises: 3 crossings.}{Graph it (Desmos)}
+\solitem{15}{C ($4$)}{The graph of $|x^2-6x+5|$ flips the dip (vertex $(3,-4)$) up to a peak at $(3,4)$. The line $y=k$ crosses it three times only at the peak: $k=4$.}{Graph it (slider)}
+\solitem{16}{A (No solution)}{For $x\ne2$ the left side minus $\frac{2}{x-2}$ is $\frac{x-2}{x-2}=1$, and $1=3$ is false. Clearing denominators gives $x=2$, which is excluded.}{Extraneous solutions}
+}
+\end{textblock*}
+\clearpage
+\topicheader{5}{Speed Tricks}
+\pagefooter{10}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{8.8}{10.9}\selectfont
+\setkicker{Set 5 (cont.)}{Worked solutions}
+\solitem{17}{Ans. 28}{$\frac1r+\frac1s=\frac{r+s}{rs}=\frac6q=\frac32$, so $q=4$. Then $r^2+s^2=36-2(4)=28$.}{Vieta (sum of squares)}
+\solitem{18}{Ans. −7.5}{$2x^2+10x+(5-c)=0$ has one solution when $D=100-8(5-c)=60+8c=0$, so $c=-7.5$.}{Tangent: D = 0}
+\solitem{19}{B ($60$)}{$r+s=17$ and $r^2+s^2=169$, so $rs=\dfrac{17^2-169}{2}=60$. (The sides are 5 and 12.)}{Vieta (sum of squares)}
+\solitem{20}{B ($-7$)}{$x^2+(b-3)x+(8-k)=0$, so $x_1+x_2=3-b$. The midpoint is $\frac{3-b}2=5$, so $b=-7$. (Using the vertex, $-\frac b2=5$, ignores the line.)}{Vieta (system)}
+}
+\end{textblock*}
+\clearpage
+\end{document}
