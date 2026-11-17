@@ -140,8 +140,8 @@ is reproduced here or anywhere in this book.
 3. For a proportional relationship between $x$ and $k$, the pairs $(5,22.5)$ and $(9,40.5)$, written as $(x,k)$, are both solutions. Which equation best represents the relationship between $x$ and $k$?
    A) $k=4.5x$  B) $x=4.5k$  C) $k=0.22x$  D) $xk=4.5$
 
-4. A hiker's distance from the trailhead, in miles, is modeled by $d(t)=2.5t+1$, where $t$ is the number of hours after starting. What is the best interpretation of the number 2.5 in this context?
-   A) the hiker's starting distance from the trailhead  B) the hiker's average speed, in miles per hour  C) the total distance the hiker will travel  D) the time elapsed since the hiker started
+4. Line $\ell$ in the $xy$-plane is perpendicular to the line $y=-\frac34x+7$ and passes through the point $(6,-2)$. Which equation defines $\ell$?
+   A) $y=-\frac34x+\frac52$  B) $y=\frac34x-\frac{13}{2}$  C) $y=-\frac43x+6$  D) $y=\frac43x-10$
 
 5. For a linear relationship between $x$ and $y$, the pairs $(12,54)$ and $(20,86)$ are both solutions. Which equation represents this relationship?
    A) $y=4x+54$  B) $y=3x+18$  C) $y=4x+6$  D) $y=4x-6$
@@ -187,11 +187,11 @@ is reproduced here or anywhere in this book.
 3. For a linear relationship between $x$ and $y$, the pairs $(-40,t)$, $(-25,t+45)$, and $(-10,t+90)$ are solutions, where $t$ is a constant. Which equation represents this relationship?
    A) $y=-3x+t+120$  B) $y=3x+t+120$  C) $y=3x+t-120$  D) $y=3x+t+45$
 
-4. A landscaping company charges a \$95 base fee plus an hourly rate for labor. For a 7-hour job, the total charge is \$305. At this rate, what is the total charge, in dollars, for a 12-hour job?
-   A) \$405  B) \$425  C) \$455  D) \$480
+4. A function $f$ is linear, with $f(2)=5$ and $f(x+3)-f(x)=-6$ for every real number $x$. What is the value of $f(10)$?
+   A) $-11$  B) $-43$  C) $21$  D) $29$
 
-5. A tank holds between 20 and 80 gallons of water, inclusive. The function $W(t)=20+4t$, where $0\le t\le15$, models the number of gallons in the tank $t$ minutes after a valve opens. What is the best interpretation of the number 4 in this context?
-   A) the tank's initial volume  B) the number of gallons added per minute  C) the maximum volume of the tank  D) the time it takes to fill the tank
+5. In the $xy$-plane, line $p$ has the equation $y=ax+6$, where $a$ is a constant. Line $p$ is perpendicular to the line that passes through the points $(1,4)$ and $(5,-2)$. What is the value of $a$?
+   A) $-\frac32$  B) $\frac32$  C) $\frac23$  D) $-\frac23$
 
 6. For linear function $p$, $p(x)=ax+b$, where $a$ and $b$ are constants. If $p(2)=11$ and $p(5)=26$, what is the value of $p(10)$?
    A) 41  B) 46  C) 51  D) 56
@@ -202,14 +202,14 @@ is reproduced here or anywhere in this book.
 8. The temperature of a cooling liquid, in degrees Celsius, is a linear function of time in minutes. After 4 minutes the temperature is 68°C, and after 10 minutes it is 50°C. What is the temperature after 15 minutes?
    A) $30°$C  B) $32°$C  C) $35°$C  D) $38°$C
 
-9. For linear function $f$, $f(x)=kx+9$. If $f(6)=f(2)+20$, what is the value of $k$?
-   A) 3  B) 5  C) 7  D) 9
+9. In the $xy$-plane, line $m$ passes through the point $(-3,2)$ and is parallel to the line that passes through $(1,-4)$ and $(5,8)$. What is the $y$-intercept of line $m$?
+   A) $11$  B) $-7$  C) $2$  D) $3$
 
 10. For linear function $r$, $r(3)=7$ and $r(11)=19$. What is the value of $r(0)$?
     A) 2  B) $\frac52$  C) 3  D) $\frac72$
 
-11. The number of visitors to a museum each day can be modeled by the function $V(d)=0.8d+12$, where $10\le d\le200$ and $d$ is the number of days since a new exhibit opened. If the exhibit has been open for 85 days, what is the predicted number of visitors?
-    A) 68  B) 72  C) 76  D) 80
+11. A phone's battery level decreases at a constant rate. At 9:00 A.M. the battery level is $92\%$, and at 11:30 A.M. it is $62\%$. At what time does the battery level reach $20\%$?
+   A) 3:00 P.M.  B) 11:24 A.M.  C) 12:00 P.M.  D) 3:30 P.M.
 
 12. The cost, in dollars, of shipping a package is a linear function of its weight, in kilograms. The pairs $(2,14)$ and $(6,26)$, in the form (weight, cost), are both solutions. If $w$ kilograms is associated with a shipping cost of $c$ dollars, which equation best represents the relationship between $w$ and $c$?
     A) $c=3w+14$  B) $w=3c+8$  C) $c=8w+3$  D) $c=3w+8$
@@ -220,8 +220,8 @@ is reproduced here or anywhere in this book.
 14. Company A's shipping cost, in dollars, is modeled by $A(x)=5x+40$, and Company B's shipping cost is modeled by $B(x)=9x$, where $x$ is the number of items shipped. For what value of $x$ are the two companies' costs equal?
     A) 4  B) 8  C) 10  D) 13
 
-15. For a linear relationship between $x$ and $y$, the pairs $(10,t)$, $(30,t-60)$, and $(50,t-120)$ are solutions, where $t$ is a constant. Which equation represents this relationship?
-    A) $y=3x+t+30$  B) $y=-3x+t+30$  C) $y=-3x+t-30$  D) $y=-3x+t+60$
+15. Machine $A$ produces 12 parts per hour, and machine $B$ produces 8 parts per hour. Machine $B$ runs for 2 more hours than machine $A$. Together, the two machines produce 480 parts. Which equation can be used to find $h$, the number of hours machine $A$ runs?
+   A) $20h=480$  B) $20h+2=480$  C) $20h-16=480$  D) $20h+16=480$
 
 **A note on sourcing:** every item in Set 8 is original -- written by studying
 the method and structure of real, officially-released SAT Suite Question
@@ -259,6 +259,6 @@ book.
 
 **Set 8 — Easy:** 1) A  2) C  3) C  4) B  5) A  6) B  7) B  8) C  9) D  10) C  11) A  12) C  13) A  14) B  15) B
 
-**Set 8 — Medium:** 1) C  2) A  3) A  4) B  5) C  6) D  7) A  8) B  9) C  10) C  11) A  12) D  13) C  14) B  15) B
+**Set 8 — Medium:** 1) C  2) A  3) A  4) D  5) C  6) D  7) A  8) B  9) C  10) C  11) A  12) D  13) C  14) B  15) B
 
-**Set 8 — Hard:** 1) B  2) D  3) B  4) C  5) B  6) C  7) C  8) C  9) B  10) B  11) D  12) D  13) A  14) C  15) B
+**Set 8 — Hard:** 1) B  2) D  3) B  4) A  5) C  6) C  7) C  8) C  9) A  10) B  11) A  12) D  13) A  14) C  15) D
