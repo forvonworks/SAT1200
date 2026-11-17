@@ -113,3 +113,93 @@ anything you were unsure about. Do not claim visual verification you did not do.
 - Lesson 15's `rules-sheet.tex` is the reference implementation (macro `\bargraph`).
 - Table header rows: use `\cellcolor{accent}\textcolor{white}{...}` per cell, not `\rowcolor` with a
   `{\color{white}...}` group (that renders the header ~5 mm too tall).
+
+## Per-lesson content (batches 2–4: lessons 7–14 and 16–23)
+
+Same rules as above. Read the lesson's `concepts.md` first: include every item below that the
+lesson actually covers, drop anything it does not teach, and add any essential formula the lesson
+teaches that is missing here. Keep within the lesson's scope (a topic that belongs to another
+lesson is not repeated).
+
+**L7 Quadratic graphs & the discriminant** — parabola `y=ax²+bx+c`: opens up if `a>0`, down if
+`a<0`; larger `|a|` ⇒ narrower; y-intercept `c`; x-intercepts = roots/zeros; vertex `x=−b/(2a)`,
+axis of symmetry; discriminant `D=b²−4ac`: `D>0` two real solutions (2 x-intercepts), `D=0` one
+(touches the axis), `D<0` none; vertex form `a(x−h)²+k`; intercept form `a(x−r)(x−s)` with vertex
+x at `(r+s)/2`; min/max value; solutions of `f(x)=k` are where the line `y=k` meets the graph.
+
+**L8 Exponential functions** — `y=a·bˣ` (a = initial value, b = growth factor); growth `b>1`, decay
+`0<b<1`; `y=a(1±r)ᵗ` (percent rate → factor); doubling `a·2^(t/d)`, half-life `a·(½)^(t/h)`; compound
+interest `A=P(1+r/n)^(nt)`; exponent `t/k` when the change happens every `k` units; linear vs
+exponential (constant difference vs constant ratio); graph passes through `(0,a)`.
+
+**L9 Polynomial operations** — add/subtract (combine like terms; distribute a minus sign); multiply
+(distribute / FOIL); special products `(a+b)²=a²+2ab+b²`, `(a−b)²=a²−2ab+b²`, `(a+b)(a−b)=a²−b²`;
+exponent rules `xᵐ·xⁿ=xᵐ⁺ⁿ`, `(xᵐ)ⁿ=xᵐⁿ`, `xᵐ/xⁿ=xᵐ⁻ⁿ`; degree and leading coefficient; polynomial
+division / remainder theorem only if the lesson teaches it. No factoring (Lesson 5).
+
+**L10 Rational expressions & equations** — domain: denominator ≠ 0; simplify by cancelling common
+*factors* (never terms); multiply (top×top, bottom×bottom); divide (multiply by the reciprocal);
+add/subtract over a common denominator; solving a rational equation: multiply by the LCD, then
+**check for extraneous solutions**; cross-multiplication `a/b=c/d ⇒ ad=bc`.
+
+**L11 Function notation, composition & transformations** — `f(a)` = plug in `a`; `f(g(x))` = plug `g(x)`
+into `f` (inside out); transformations of `f(x)`: `f(x)+k` up, `f(x)−k` down, `f(x−h)` right `h`,
+`f(x+h)` left `h`, `−f(x)` reflects over the x-axis, `f(−x)` over the y-axis, `a·f(x)` vertical
+stretch; `(a,b)` on the graph ⇔ `f(a)=b`; solving `f(x)=k`.
+
+**L12 Nonlinear systems** — line + parabola: substitute the linear equation into the quadratic and
+solve; solutions are intersection points `(x,y)` (find `x`, then `y` from the linear equation);
+number of intersections from the discriminant of the combined quadratic (2 / 1 / 0); set the two
+expressions equal when both are solved for `y`. Include a circle/other nonlinear form only if the
+lesson covers it.
+
+**L13 Ratios, rates & proportions** — ratio `a:b = a/b`; proportion `a/b=c/d ⇒ ad=bc`; unit rate; rate
+`=quantity÷time`; `distance=rate×time`; unit conversion by multiplying conversion fractions so units
+cancel; part:part vs part:whole; scale factor; areas convert with the square of the length factor and
+volumes with the cube.
+
+**L14 Percentages in context** — `part = percent × whole`; `percent = part ÷ whole × 100`; percent change
+`=(new−old)/old×100`; `new = old×(1±r)`; successive changes multiply (not add); original from final
+`old = new ÷ (1±r)`; percent vs percentage points; markup / discount / tax / tip.
+
+**L16 Data representations** — read a histogram / bar graph / dot plot; frequency table ⇒ bar graph
+(see the statistics direction above); scatterplot trend: positive / negative / none; line of best
+fit `y=mx+b`: slope = change in y per unit x, intercept = predicted y at x=0; predict by
+substituting; interpolation vs extrapolation; residual `= actual − predicted`; two-way table: joint,
+row/column totals, and "of those who…" restricts to one row/column.
+
+**L17 Probability** — `P = favorable ÷ total`, `0 ≤ P ≤ 1`; complement `1−P`; `P(A or B)=P(A)+P(B)−P(A and B)`;
+independent events `P(A and B)=P(A)·P(B)`; conditional `P(A|B)=P(A and B)/P(B)` (in a two-way table
+restrict to the given row/column); expected count `= P × total`.
+
+**L18 Study design & statistical claims** — random *sampling* ⇒ results generalize to the population;
+random *assignment* ⇒ cause-and-effect can be concluded; observational study ⇒ association only;
+both random sample and random assignment ⇒ generalize and causal; margin of error: estimate ± margin
+= interval; larger sample ⇒ smaller margin of error; sample statistic vs population parameter; common
+bias sources (convenience sample, voluntary response). Short table form works well here.
+
+**L19 Lines, angles & triangles** — angles on a line sum to 180°, around a point 360°; vertical angles
+equal; parallel lines cut by a transversal: corresponding and alternate interior equal, same-side
+interior sum to 180°; triangle angle sum 180°; exterior angle = sum of the two remote interior angles;
+isosceles base angles equal; equilateral 60° each; similar triangles (AA): sides proportional, area
+ratio `k²`; triangle inequality; polygon interior angle sum `(n−2)·180°`. Any diagram must be exact.
+
+**L20 Area & volume** — rectangle `lw`, triangle `½bh`, parallelogram `bh`, trapezoid `½(b₁+b₂)h`, circle
+`πr²`; volumes: rectangular prism `lwh`, cylinder `πr²h`, cone `⅓πr²h`, sphere `4/3·πr³`, pyramid `⅓Bh`;
+surface area basics only if taught; scaling: lengths ×k ⇒ area ×k², volume ×k³. Stay inside the four
+solids the lesson covers (no hemisphere unless concepts.md has it).
+
+**L21 Circles** — circumference `2πr`, area `πr²`; arc length `=(θ/360)·2πr`; sector area `=(θ/360)·πr²`;
+inscribed angle = ½ the arc / central angle; tangent ⟂ radius; equation `(x−h)²+(y−k)²=r²` (center
+`(h,k)`, radius `r`); complete the square to get center and radius from `x²+y²+bx+cy=d`; radians
+`π rad = 180°` only if the lesson teaches it.
+
+**L22 Right-triangle trigonometry** — SOH-CAH-TOA: `sin=opp/hyp`, `cos=adj/hyp`, `tan=opp/adj`;
+`tan=sin/cos`; complementary angles `sin θ = cos(90°−θ)`; special triangles 30-60-90 (sides 1 : √3 : 2)
+and 45-45-90 (1 : 1 : √2); angle of elevation / depression; inverse trig to find an angle; calculator in
+degree mode. Do not include the Pythagorean theorem (Lesson 23).
+
+**L23 Pythagorean theorem & coordinate applications** — `a²+b²=c²`; common triples 3-4-5, 5-12-13, 8-15-17,
+7-24-25 (and multiples); distance `√((x₂−x₁)²+(y₂−y₁)²)`; midpoint `((x₁+x₂)/2, (y₁+y₂)/2)`; diagonal of a
+rectangle `√(l²+w²)` and of a box `√(l²+w²+h²)`; converse: if `a²+b²=c²` the triangle is right;
+height of an equilateral / isosceles triangle via the theorem.
