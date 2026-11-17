@@ -163,7 +163,7 @@ PREAMBLE = r"""\documentclass[a4paper]{article}
 \emergencystretch=3em
 \abovedisplayskip=4pt plus 2pt minus 2pt \belowdisplayskip=4pt plus 2pt minus 2pt \abovedisplayshortskip=2pt \belowdisplayshortskip=2pt
 \pagestyle{empty}
-\binoppenalty=10000 \relpenalty=10000
+\binoppenalty=10000
 
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
@@ -220,7 +220,7 @@ PREAMBLE = r"""\documentclass[a4paper]{article}
 \noindent\hspace*{7mm}\begin{tabular}[t]{@{}p{32mm}p{32mm}@{}}
 (A) #3 & (B) #4 \\[2mm]
 (C) #5 & (D) #6 \\
-\end{tabular}\par\vspace{4.5mm}%
+\end{tabular}\par\vspace{4.2mm}%
 }
 
 % ---- stacked choices for long ones ----
@@ -229,7 +229,7 @@ PREAMBLE = r"""\documentclass[a4paper]{article}
 \noindent\hspace*{7mm}(A) #3\par\vspace{1.6mm}%
 \noindent\hspace*{7mm}(B) #4\par\vspace{1.6mm}%
 \noindent\hspace*{7mm}(C) #5\par\vspace{1.6mm}%
-\noindent\hspace*{7mm}(D) #6\par\vspace{4.5mm}%
+\noindent\hspace*{7mm}(D) #6\par\vspace{4.2mm}%
 }
 
 % ---- automatic choice: 2x2 grid when every choice is short, stacked otherwise ----
@@ -245,7 +245,7 @@ PREAMBLE = r"""\documentclass[a4paper]{article}
 % ---- student-produced response (grid-in) ----
 \newcommand{\satg}[2]{%
 \noindent\pnum{#1} {\sffamily\bfseries\fontsize{7}{8}\selectfont\color{accent}GRID-IN}\ #2\par\nobreak\vspace{2.5mm}%
-\noindent\hspace*{7mm}{\sffamily\fontsize{8.5}{10}\selectfont Answer:}\ \rule[-1.2mm]{28mm}{0.4pt}\par\vspace{4.5mm}%
+\noindent\hspace*{7mm}{\sffamily\fontsize{8.5}{10}\selectfont Answer:}\ \rule[-1.2mm]{28mm}{0.4pt}\par\vspace{4.2mm}%
 }
 
 % ---- worked-solution entry ----
@@ -446,7 +446,7 @@ def key_page(num):
     return "\n".join(s)
 
 def write_tex():
-    fs_prob = r"\fontsize{10}{12.1}\selectfont"
+    fs_prob = r"\fontsize{10}{12.0}\selectfont"
     fs_sol = r"\fontsize{8.6}{10.5}\selectfont"
     # --- measure problems
     ptex = [tex_problem(p) for p in P]

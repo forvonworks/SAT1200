@@ -433,7 +433,7 @@ gi(4, 'H',
    r"$f(x-5)$ moves the maximum point to $(8,7)$. Multiplying by $-3$ turns it into a minimum at $y=-21$, and adding $2$ gives $y=-19$. So $(h,k)=(8,-19)$ and $h+k=-11$.")
 
 mc(4, 'H',
-   r"The function $p$ is defined by $p(x)=-2(x-3)^2(x+1)(x+4)$. Which statement about the graph of $y=p(x)$ is true?",
+   r"The function $p$ is defined by [[D:p(x)=-2(x-3)^2(x+1)(x+4):D]] Which statement about the graph of $y=p(x)$ is true?",
    T(r"It touches the $x$-axis at $x=3$, and $p(x)\to-\infty$ as $x\to\infty$ and as $x\to-\infty$.", "touch,-,-"),
    [T(r"It crosses the $x$-axis at $x=3$, and $p(x)\to-\infty$ as $x\to\infty$ and as $x\to-\infty$.", "cross,-,-"),
     T(r"It touches the $x$-axis at $x=3$, and $p(x)\to+\infty$ as $x\to\infty$ and as $x\to-\infty$.", "touch,+,+"),

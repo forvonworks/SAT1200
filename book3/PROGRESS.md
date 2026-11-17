@@ -23,8 +23,9 @@ Decisions + blueprint: see BOOK3-SPEC.md.
 | Mock 6 | in progress (agent a7f7dde38263f68a2) |
 | Mock 7 | in progress |
 | Lesson 2 | DONE, verified (74 problems) |
-| Lesson 3 | in progress (agent a90ad4afe84780550) |
-| Lesson 4 | in progress (agent started after lesson 2) |
+| Lesson 3 | DONE, verified (74 problems, solutions respaced) |
+| Lesson 4 | in progress (agent ab027ad77f427df4c) |
+| Lesson 6 | in progress |
 | Mocks 4-10 | not started |
 | Lessons 1,2,3,4,6,7,8,9 | not started (use lesson-05-speed-tricks as the reference once verified) |
 | Front matter, TOC, notes pages, answer-sheets section, back cover, assembly + paging check | not started |

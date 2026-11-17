@@ -289,7 +289,11 @@ All problems are original. Every answer below is recomputed independently by `ve
 
 5. *(Hard)* **Grid-in.** The function $f$ has a maximum value of $7$ at $x=3$. The function $g$ is defined by $g(x)=2-3f(x-5)$ and has an absolute minimum at the point $(h,k)$. What is the value of $h+k$?
 
-6. *(Hard)* The function $p$ is defined by $p(x)=-2(x-3)^2(x+1)(x+4)$. Which statement about the graph of $y=p(x)$ is true?
+6. *(Hard)* The function $p$ is defined by   
+     
+      $$p(x)=-2(x-3)^2(x+1)(x+4)$$  
+     
+       Which statement about the graph of $y=p(x)$ is true?
 
    - (A) It touches the $x$-axis at $x=3$, and $p(x)\to-\infty$ as $x\to\infty$ and as $x\to-\infty$.
    - (B) It crosses the $x$-axis at $x=3$, and $p(x)\to-\infty$ as $x\to\infty$ and as $x\to-\infty$.
