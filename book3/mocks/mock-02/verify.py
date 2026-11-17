@@ -58,7 +58,7 @@ def parse_md(path):
 
 def tex_to_expr(s):
     s = s.replace("\\$", "").replace("$", "").replace("\\%", "").replace("\\,", "").replace("\\dfrac", "\\frac")
-    s = s.replace("\\pi", "pi")
+    s = s.replace("{,}", "").replace("\\pi", "pi")
     s = re.sub(r"(?<=\d),(?=\d{3})", "", s)
     for _ in range(3):
         s = re.sub(r"\\frac\{([^{}]*)\}\{([^{}]*)\}", r"((\1)/(\2))", s)

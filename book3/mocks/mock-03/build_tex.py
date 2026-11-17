@@ -169,7 +169,6 @@ Module 2 & 22 & 35 min & allowed\\\hline
 \bul Time each module separately: 35 minutes, not a minute more. Rest for 5--10 minutes between the two modules.
 \bul Use a calculator (the built-in Desmos graphing calculator or any approved calculator) on both modules.
 \bul Module 1 is a standard mix of easy, medium and hard questions. Module 2 is the \emph{harder route} you reach by doing well on Module 1.
-\bul \textbf{Pacing, per module:} Questions 1--15 in about 18 minutes, questions 16--22 in about 17 minutes. Keep the last 2--3 minutes for flagged questions and for every blank student-produced response (a blank is a guaranteed zero).
 \bul Answer every question. There is no penalty for a wrong answer.
 \bul Unless a problem says otherwise, all numbers are real, a function's domain is every real number for which it is defined, and figures are not necessarily drawn to scale.
 \bul Do not look at any answers while you work. When you finish both modules, score yourself with the \textbf{Answer Sheets} section at the end of this book.
@@ -192,9 +191,8 @@ Some questions have no answer choices. Work out the answer and write it in the a
 \vspace{1.2mm}
 \noindent\fcolorbox{accent}{badge!25}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\centering\sffamily\fontsize{8.5}{11}\selectfont
 \textbf{Example.} Answer $4\tfrac12$ \;$\rightarrow$\; enter \textbf{9/2} or \textbf{4.5}\par}}
-\vspace{4mm}
-\cardhead{Pacing (each module)}
-About \textbf{18 minutes} for Q1--15 and about \textbf{17 minutes} for Q16--22. Keep the \textbf{last 2--3 minutes} for flagged questions and for every grid-in you left blank (a blank is a guaranteed zero).
+\par\vspace{3mm}
+\noindent{\sffamily\bfseries\color{accent}Pacing.}\ Q1--15: about 18 min. Q16--22: about 17 min. Keep the last 2--3 min for flagged questions and every blank grid-in (a blank is a guaranteed zero).
 }
 \end{textblock*}
 

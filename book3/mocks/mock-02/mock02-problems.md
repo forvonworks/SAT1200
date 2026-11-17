@@ -103,8 +103,8 @@ Difficulty: E / M / H. Type: MC or GRID.
 - Stem: At a regional swim meet, a random sample of 150 of the 2,500 swimmers was selected, and 36 of the swimmers in the sample had qualified for the final round. Based on the sample, which of the following is the best estimate of the number of swimmers at the meet who qualified for the final round?
 - A: $60$
 - B: $600$
-- C: $2464$
-- D: $10417$
+- C: $2{,}464$
+- D: $10{,}417$
 - Answer: B
 - Solution: $\frac{36}{150}\cdot2500=600$ (10417 inverts the ratio; 2464 subtracts 36 from 2500).
 
@@ -427,7 +427,7 @@ Trip & Miles & Minutes & Fare\\\hline
 - Domain: ADV
 - Difficulty: H
 - Type: MC
-- Stem: An investment account pays 9\% annual interest, compounded quarterly: at the end of each 3-month period, the balance is multiplied by $1+\frac{0.09}{4}$. Nothing is added or withdrawn after the initial deposit. What is the least whole number of years after which the balance will be more than twice the initial deposit?
+- Stem: An investment account pays 9\% annual interest, compounded quarterly: at the end of each 3-month period, the balance is multiplied by $1.0225$. Nothing is added or withdrawn after the initial deposit. What is the least whole number of years after which the balance will be more than twice the initial deposit?
 - A: $8$
 - B: $9$
 - C: $32$
