@@ -173,12 +173,12 @@ Multiple-choice (A–D), English. Every item below is **original**: it was writt
    C) A survey of a convenience sample, because students answered questions
    D) An observational study, because the teacher did not assign the groups
 
-8. A gym has 3,000 members. A random sample of 200 members is surveyed about the new class schedule. The results can be generalized to which group?
+8. A gym has 3,000 members. A random sample of 200 members is surveyed about the new class schedule. The results can be generalized to which largest group?
    A) All people who exercise at gyms in the country  B) All people who live near the gym  C) All 3,000 members of the gym  D) Only the 200 members who answered
 
 9. A study finds that children with more toys tend to have higher reading scores. The researchers did not assign toys to any children. Which factor is the most likely lurking variable that could explain both?
    A) The color of the toys
-   B) The height of the children
+   B) The brand of the children's backpacks
    C) The family's income, which may affect both toy ownership and access to reading materials
    D) The day of the week the survey was given
 
