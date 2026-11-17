@@ -267,8 +267,8 @@ identity.
 10. On level ground, two vertical poles stand at the same time of day, when the angle of elevation of the sun is $32°$. Pole A is 8 feet tall, and pole B is 14 feet tall. To the nearest tenth of a foot, how much longer is the shadow of pole B than the shadow of pole A?
     A) 6.0  B) 12.8  C) 22.4  D) 9.6
 
-11. In right triangle $ABC$, the right angle is at $C$. $\sin A=0.6$ and $BC=18$. What is $\tan B$?
-    A) $\frac{3}{4}$  B) $\frac{5}{3}$  C) $\frac{4}{3}$  D) $\frac{3}{5}$
+11. In right triangle $ABC$, the right angle is at $C$. $\sin A=\frac{3}{5}$ and $\sin B=\frac{4}{5}$. What is $\tan B$?
+    A) $\frac{3}{4}$  B) $\frac{3}{5}$  C) $\frac{4}{3}$  D) $\frac{5}{4}$
 
 12. In right triangle $ABC$, the right angle is at $C$. $\sin A=\cos(3A-10)°$. What is the measure of angle $B$, in degrees?
     A) 25  B) 115  C) 55  D) 65
