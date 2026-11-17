@@ -163,6 +163,7 @@ PREAMBLE = r"""\documentclass[a4paper]{article}
 \emergencystretch=3em
 \abovedisplayskip=4pt plus 2pt minus 2pt \belowdisplayskip=4pt plus 2pt minus 2pt \abovedisplayshortskip=2pt \belowdisplayshortskip=2pt
 \pagestyle{empty}
+\binoppenalty=10000 \relpenalty=10000
 
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
