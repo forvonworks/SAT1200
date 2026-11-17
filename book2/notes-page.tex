@@ -1,0 +1,45 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage[absolute]{textpos}
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\definecolor{accent}{HTML}{602785}
+\definecolor{badge}{HTML}{B8A0C8}
+\definecolor{ink}{HTML}{2A2E30}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}\fill[accent] (0,0) rectangle (194mm,0.6mm);\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}}
+\newcommand{\frontheader}[1]{%
+\begin{textblock*}{194mm}(16mm,16mm)
+\begin{tikzpicture}
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (0,0) {#1};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}\fill[accent] (0,0) rectangle (194mm,0.5mm);\end{tikzpicture}
+\end{textblock*}}
+\newcommand{\noteslines}{%
+\begin{textblock*}{178mm}(16mm,36mm)
+\begin{tikzpicture}
+\foreach \i in {0,...,26} {\draw[badge,line width=0.5pt] (0mm,-\i*9mm) -- (178mm,-\i*9mm);}
+\end{tikzpicture}
+\end{textblock*}}
+\begin{document}
+\frontheader{Qaydlar uchun}\pagefooter{312}\noteslines\mbox{}\newpage
+\frontheader{Qaydlar uchun}\pagefooter{313}\noteslines\mbox{}\newpage
+\frontheader{Qaydlar uchun}\pagefooter{314}\noteslines\mbox{}
+\end{document}
