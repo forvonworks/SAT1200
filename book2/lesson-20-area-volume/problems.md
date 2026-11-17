@@ -85,7 +85,7 @@ error, state which rule was broken, and give the correct answer.
 1. A rectangular prism measures $10 \times 10 \times 20$ cm. A cylindrical hole with a radius of $2$ cm has been drilled all the way through it along its height. What is the volume of the remaining solid, in cubic centimeters?
 2. A full circle with a radius of $7$ cm has been cut out of a square with a side length of $14$ cm. What is the area of the remaining figure, in square centimeters?
 3. A cylinder with a radius of $3$ cm and a height of $12$ cm stands centered on top of a rectangular prism measuring $8$ cm by $8$ cm by $5$ cm. What is the total volume of the combined solid, in cubic centimeters? Give the answer in terms of $\pi$.
-4. A prism has a trapezoidal cross section with bases of $6$ cm and $10$ cm and a height of $4$ cm; the prism's depth (length) is $15$ cm. What is the volume of the prism, in cubic centimeters?
+4. A rectangular prism has a square base with a side length of $s$ cm and a height of $(s+3)$ cm. Its volume is $490$ cubic centimeters. What is the value of $s$, in centimeters?
 5. A cone-shaped cavity with the same radius and height has been removed from a cylinder with a radius of $6$ cm and a height of $15$ cm. What is the volume of the remaining solid, in cubic centimeters?
 
 ---
@@ -268,7 +268,7 @@ Multiple-choice (A–D), English, matching the real Digital SAT's format, pacing
    it to $r=3$ (radius/diameter confusion, volume version). Correct:
    $\pi(3)^2(10)=90\pi$.
 
-**Set 7:** 1) $2000-80\pi$ cm³  2) $196-49\pi$ cm²  3) $320+108\pi$ cm³  4) $480$ cm³  5) $360\pi$ cm³
+**Set 7:** 1) $2000-80\pi$ cm³  2) $196-49\pi$ cm²  3) $320+108\pi$ cm³  4) $s=7$ cm  5) $360\pi$ cm³
 
 **Set 8 — Easy:** 1) C  2) B  3) D  4) A  5) B  6) C  7) A  8) D  9) B  10) A  11) C  12) A  13) C  14) B  15) D
 
