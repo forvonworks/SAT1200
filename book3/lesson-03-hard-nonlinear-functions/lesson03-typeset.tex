@@ -23,6 +23,7 @@
 \emergencystretch=3em
 \abovedisplayskip=4pt plus 2pt minus 2pt \belowdisplayskip=4pt plus 2pt minus 2pt \abovedisplayshortskip=2pt \belowdisplayshortskip=2pt
 \pagestyle{empty}
+\binoppenalty=10000 \relpenalty=10000
 
 \newcommand{\LCOL}{16mm}
 \newcommand{\RCOL}{111mm}
@@ -438,12 +439,12 @@
 \solitem{1}{A}{The axis is $t=-\frac{24}{2(-4)}=3$ and $h(3)=-36+72+10=46$, so $(3,46)$ is the vertex: the maximum height is $46$ ft at $t=3$. (The other choices swap the coordinates, call the vertex the landing point, or call $46$ the starting height; the starting height is $h(0)=10$.)}{Interpret the model}
 \solitem{2}{Ans. 1875}{$R(p)=p(300-12p)$ has zeros $p=0$ and $p=25$, so its maximum is halfway at $p=12.5$: $R=12.5(300-150)=12.5\cdot150=1875$.}{Optimize: vertex of the product}
 \solitem{3}{C ($800$)}{The side along the wall is $80-2w$, so $A=w(80-2w)$ with zeros $0$ and $40$. The maximum is at $w=20$: $A=20\cdot40=800$. (Traps: $20$ is $w$; $400$ treats the pen as a square with 4 fenced sides; $1600$ is $40^2$.)}{Optimize: vertex of the product}
-\solitem{4}{D ($3(x+3)^2-7$)}{$3(x^2+6x)+20=3\big[(x+3)^2-9\big]+20=3(x+3)^2-27+20=3(x+3)^2-7$. (Forgetting to multiply the $9$ by $3$ gives $+11$; skipping the correction gives $+20$.)}{Complete the square}
 }
 \end{textblock*}
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{8.6}{10.5}\selectfont
 \setkicker{Set 2 (cont.)}{Worked solutions}
+\solitem{4}{D ($3(x+3)^2-7$)}{$3(x^2+6x)+20=3\big[(x+3)^2-9\big]+20=3(x+3)^2-27+20=3(x+3)^2-7$. (Forgetting to multiply the $9$ by $3$ gives $+11$; skipping the correction gives $+20$.)}{Complete the square}
 \solitem{5}{Ans. 32}{$g(1)=g(7)$ puts the axis at $x=4$, so $g(x)=a(x-4)^2-18$. Then $g(0)=16a-18=14$ gives $a=2$, and $g(-1)=2(25)-18=32$.}{Symmetry about the axis}
 \solitem{6}{A (I only)}{$f(-2)=f(6)$ puts the axis at $x=2$, so $-\frac b{2a}=2$ and $b=-4a$. With $a<0$ that gives $b>0$: I is true. Only $c=f(0)>0$ is known, so $c>b$ can fail (take $a=-3$, $b=12$, $c=1$): II is not forced.}{Symmetry about the axis}
 \solitem{7}{D ($-3$)}{$f(1)=f(3)$, so the axis is $x=2$. With $f(x)=a(x-2)^2+k$: $f(1)=a+k=-1$ and $f(0)=4a+k=5$, so $a=2$, $k=-3$. The minimum is $-3$. (The table's $-1$ is not the lowest point; $2$ is where the minimum happens.)}{Symmetry about the axis}
@@ -459,7 +460,6 @@
 \solitem{2}{B ($5.3$)}{In $12$ hours there are $\frac{12}5=2.4$ doubling periods, so the factor is $2^{2.4}\approx5.3$. (Traps: $2.4$ is the number of periods; $4.0$ rounds the periods down to $2$; $24$ is $12\cdot2$.)}{Per-period exponent}
 \solitem{3}{Ans. 1500}{From $t=2$ to $t=6$ the population is multiplied by $4$ in $4$ hours, so $b^4=4$ and $b^2=2$. Going back from $t=2$ to $t=0$ divides by $b^2=2$: $3000\div2=1500$.}{Two points: divide to get b}
 \solitem{4}{C ($f(x)=2(3)^x$)}{Divide: $\frac{ab^5}{ab^2}=b^3=\frac{486}{18}=27$, so $b=3$. Then $a\cdot3^2=18$ gives $a=2$. (Choice 27 is $b^3$, not $b$; $18$ is $f(2)$, not $f(0)$; $6$ divides by $b$ only once.)}{Two points: divide to get b}
-\solitem{5}{A}{The exponent $\frac t3$ counts blocks of $3$ years; each block multiplies by $1.5$, i.e. a $50\%$ increase. (The yearly factor is $1.5^{1/3}\approx1.145$, not $1+\frac{0.5}3$.)}{Per-period exponent}
 }
 \end{textblock*}
 \clearpage
@@ -470,6 +470,7 @@
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{8.6}{10.5}\selectfont
 \setkicker{Set 3 (cont.)}{Worked solutions}
+\solitem{5}{A}{The exponent $\frac t3$ counts blocks of $3$ years; each block multiplies by $1.5$, i.e. a $50\%$ increase. (The yearly factor is $1.5^{1/3}\approx1.145$, not $1+\frac{0.5}3$.)}{Per-period exponent}
 \solitem{6}{B ($3$)}{$f(x)>0$ means $2^x<\frac{50}6\approx8.33$, so $x\le3$ (since $2^3=8$). The positive integers $1,2,3$ give $3$. (Counting $x=0$ gives $4$; using $2^x<8$ strictly gives $2$; $8$ is a value of $2^x$.)}{Graph it (Desmos)}
 \solitem{7}{Ans. 15}{Solve $1.05^t>2$: graph $y=1.05^t$ and $y=2$; they cross near $t\approx14.2$. Since $1.05^{14}\approx1.98<2$ and $1.05^{15}\approx2.08$, the answer is $15$.}{Graph it (Desmos)}
 \solitem{8}{D ($320(0.5)^x$)}{$g(x)=40(0.5)^{x-3}=40(0.5)^{-3}(0.5)^x=40\cdot8\,(0.5)^x=320(0.5)^x$. (Using $0.5^{+3}$ gives $5$; $-3$ outside is a vertical shift; $0.125$ is $0.5^3$, a changed base.)}{Shift rules (x → x − h)}
@@ -484,12 +485,12 @@
 \solitem{2}{B ($1$)}{Compute both orders. $x=1$: $f(g(1))=f(2)=1$, $g(f(1))=g(3)=3$. $x=2$: $f(g(2))=f(4)=2$, $g(f(2))=g(1)=2$ (equal). $x=3$: $f(3)=4$ but $g(4)=1$. $x=4$: $f(1)=3$ but $g(2)=4$. Only $x=2$ works. (Choice 4 assumes the order does not matter.)}{Compose inside-out}
 \solitem{3}{D $(1,11)$}{$f$ has vertex $(2,-3)$. $f(x+1)$ moves it left $1$: $(1,-3)$. Multiplying by $-2$ gives $y=6$, and adding $5$ gives $11$: vertex $(1,11)$. (Traps: $(3,11)$ shifts right; $(1,2)$ forgets the $-2$; $(1,1)$ subtracts the $5$.)}{Shift rules (x → x − h)}
 \solitem{4}{C ($5.5$)}{$g(x)=0$ when $2x-4=-2$ or $2x-4=5$, so $x=1$ or $x=4.5$ and the sum is $5.5$. (Plugging the zeros forward, $2(-2)-4$ and $2(5)-4$, gives the trap $-2$; ignoring the factor $2$ gives $11$; $3$ is the sum of the zeros of $f$.)}{Shift rules (x → x − h)}
-\solitem{5}{Ans. −11}{$f(x-5)$ moves the maximum point to $(8,7)$. Multiplying by $-3$ turns it into a minimum at $y=-21$, and adding $2$ gives $y=-19$. So $(h,k)=(8,-19)$ and $h+k=-11$.}{Shift rules (x → x − h)}
 }
 \end{textblock*}
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{8.6}{10.5}\selectfont
 \setkicker{Set 4 (cont.)}{Worked solutions}
+\solitem{5}{Ans. −11}{$f(x-5)$ moves the maximum point to $(8,7)$. Multiplying by $-3$ turns it into a minimum at $y=-21$, and adding $2$ gives $y=-19$. So $(h,k)=(8,-19)$ and $h+k=-11$.}{Shift rules (x → x − h)}
 \solitem{6}{A}{The factor $(x-3)^2$ has an even exponent, so the graph touches the axis at $3$ without crossing. The degree is $4$ (even) and the leading coefficient $-2$ is negative, so both ends point down.}{Leading coefficient and ends}
 \solitem{7}{B ($p(x)=-\dfrac14(x+3)(x-1)^2$)}{A crossing at $-3$ is a single factor and a touch at $1$ is a squared factor: $p(x)=a(x+3)(x-1)^2$. Using $p(-1)=a(2)(4)=-2$ gives $a=-\frac14$. (The other choices have the signs or the double root in the wrong place, or give $p(-1)=+2$.)}{Zeros and multiplicity}
 \solitem{8}{C ($3$)}{Branch 1 ($a<3$): $-2a+9=5$ gives $a=2$, valid. Branch 2 ($a\ge3$): $(a-5)^2=4$ gives $a=3$ or $a=7$, both valid ($a=3$ belongs to this branch). Three values: $2,3,7$.}{Pick the branch}
@@ -503,7 +504,6 @@
 \solitem{1}{B (I and III only)}{$f(-5)=f(1)$ puts the axis at $x=-2$, so $-\frac b{2a}=-2$ and $b=4a>0$ (I is true). The vertex is below the axis and the parabola opens up, so it crosses the axis twice (III is true). But $c=f(0)=4a+k$ can be positive (try $a=5$, $k=-1$), so II is not forced.}{Symmetry about the axis}
 \solitem{2}{Ans. 11250}{$R(p)=p(1200-30p)$ has zeros $0$ and $40$, so its vertex is $p=20$, which is below the allowed minimum $25$. For $p\ge25$ the revenue only falls, so the best price is $25$: $R=25(450)=11{,}250$. (The vertex value $12{,}000$ is not allowed.)}{Domain limit: check the vertex}
 \solitem{3}{C ($8$)}{Graph both curves: they cross where $\left(\frac{1.10}{1.04}\right)^t=1.5$, near $t\approx7.2$. At $t=7$, $A\approx23{,}385<B\approx23{,}687$; at $t=8$, $A\approx25{,}723>B\approx24{,}634$. So $t=8$. (Traps: $6$ is the gap $10-4$; $7$ rounds $7.2$ down; $13$ is $\frac{50}{4}$.)}{Graph it (Desmos)}
-\solitem{4}{D ($V(w)=500\cdot2^{7w/3}$)}{$w$ weeks is $d=7w$ days. Substitute: $500\cdot2^{7w/3}$. (Traps: leaving $d=w$; inverting $7$ and $3$; multiplying $3\cdot7$.)}{Unit change: t = m/12}
 }
 \end{textblock*}
 \clearpage
@@ -514,6 +514,7 @@
 \begin{textblock*}{\COLW}(\LCOL,32mm)
 {\fontsize{8.6}{10.5}\selectfont
 \setkicker{Set 5 (cont.)}{Worked solutions}
+\solitem{4}{D ($V(w)=500\cdot2^{7w/3}$)}{$w$ weeks is $d=7w$ days. Substitute: $500\cdot2^{7w/3}$. (Traps: leaving $d=w$; inverting $7$ and $3$; multiplying $3\cdot7$.)}{Unit change: t = m/12}
 \solitem{5}{Ans. −9}{$f(0)=f(6)$ puts the axis at $x=3$. Write $f(x)=a(x-3)^2+k$: $9a+k=7$ and $4a+k=-3$, so $a=2$, $k=-11$. Then $f(4)=2(1)-11=-9$.}{Symmetry about the axis}
 \solitem{6}{B ($4$)}{The transformations give $g(x)=-2\cdot3^{x-1}+5$. Then $-2\cdot3^{x-1}=-54$, so $3^{x-1}=27=3^3$ and $x-1=3$, $x=4$. (Traps: $3$ forgets the right shift; $5$ shifts the wrong way; $28$ treats $3^{x-1}$ as $x-1$ added to $27$.)}{Shift rules (x → x − h)}
 \solitem{7}{Ans. 5}{$f(f(x))=3(3x+k)+k=9x+4k$. Then $4k=20$ and $k=5$. (Squaring $f$ or adding $k$ only once are the usual slips.)}{Compose inside-out}
@@ -528,12 +529,12 @@
 \solitem{16}{D $(-5,3)$}{Vertex $(1,3)$; right $4$: $(5,3)$; reflect across the $y$-axis: $(-5,3)$. (Reflecting first and then shifting right gives $(-1+4,3)=(3,3)$, the order trap.)}{Shift rules (x → x − h)}
 \solitem{17}{A ($20\%$)}{$1.44^{t/2}=\left(\sqrt{1.44}\right)^t=1.2^t$, so the yearly factor is $1.2$: a $20\%$ increase. (Traps: $44\%$ is the growth per $2$ years; $22\%$ halves it; $120\%$ is the factor, not the increase.)}{Per-period exponent}
 \solitem{18}{B ($f(x)=3x^2-3$)}{Test each equation at all four points. $3x^2-3$ gives $0,9,45,72$ at $x=1,2,4,5$. (The linear choice fits only $x=1,2$; $3x^2-3x$ fails at $x=2$; the exponential fails at $x=2$.)}{Test the points}
-\solitem{19}{C ($\dfrac74$)}{$f$ has axis $x=\frac34$. $f(x-2)=f(x)$ means $x-2$ and $x$ are symmetric about it: $(x-2)+x=\frac32$, so $x=\frac74$. (Or expand: $-8x+14=0$.) (Traps: $\frac72$ forgets to halve; $7$ drops the denominator.)}{Symmetry about the axis}
 }
 \end{textblock*}
 \begin{textblock*}{\COLW}(\RCOL,32mm)
 {\fontsize{8.6}{10.5}\selectfont
 \setkicker{Set 5 (cont.)}{Worked solutions}
+\solitem{19}{C ($\dfrac74$)}{$f$ has axis $x=\frac34$. $f(x-2)=f(x)$ means $x-2$ and $x$ are symmetric about it: $(x-2)+x=\frac32$, so $x=\frac74$. (Or expand: $-8x+14=0$.) (Traps: $\frac72$ forgets to halve; $7$ drops the denominator.)}{Symmetry about the axis}
 \solitem{20}{B ($3$)}{$f(g(x))=-(2x-6)^2+9$ is maximal when $2x-6=0$, i.e. $g(x)=2$ (the input where $f$ peaks), so $x=3$. (Traps: $2$ is where $f$ peaks; $9$ is the maximum value; $-1$ solves $2x+4=2$.)}{Compose inside-out}
 }
 \end{textblock*}
