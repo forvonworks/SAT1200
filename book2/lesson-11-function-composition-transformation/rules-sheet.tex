@@ -92,102 +92,129 @@
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.5}
 
-\begin{document}
 
-% ======================================================================
-% PAGE 1
-% ======================================================================
+\begin{document}
 \topicheader{11}{Function Composition \& Transformation}
 \videobanner{Lesson 11}
 \pagefooter{59}
 \mbox{}%
 
-% ---- CARD 1: Composition ----
-\cardbg{16}{40}{178}{62}
-\pill{26}{43}{Composition (kompozitsiya): $f(g(x))$}
+% ---- Function notation (y=40 h=34, end 74) ----
+\cardbg{16}{40}{178}{34}
+\pill{26}{43}{Function notation}
 
-\begin{textblock*}{158mm}(26mm,56mm)
-{\fontsize{11}{14}\selectfont\color{ink}
-Evaluate inside-out: compute $g$ first, then plug the result into $f$.}
+\begin{textblock*}{158mm}(26mm,53.0mm)
+{\fontsize{15}{18}\selectfont $f(a)=b\ \Longleftrightarrow\ $ the point $(a,b)$ is on the graph}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,68mm)
-{\fontsize{13}{16}\selectfont
-$f(x)=3x-2,\ g(x)=x^2+1$: \quad $f(g(2))=f(5)=13$}
+\begin{textblock*}{158mm}(26mm,61.5mm)
+{\fontsize{13}{16}\selectfont $f(x)=3x-2$: \ $f(4)=10$, so $(4,10)$ is on the graph}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,85mm)
-{\fontsize{10}{13}\selectfont\color{black!55}\itshape
-$f(g(x))\neq g(f(x))$ in general -- order matters.}
+% ---- Solving f(x)=k (y=81 h=40, end 121) ----
+\cardbg{16}{81}{178}{40}
+\pill{26}{84}{Solving $f(x)=k$}
+
+\begin{textblock*}{158mm}(26mm,94.0mm)
+{\fontsize{15}{18}\selectfont set the expression $=k$, then solve for $x$}
 \end{textblock*}
 
-% ---- CARD 2: Vertical transformations ----
-\cardbg{16}{110}{178}{75}
-\pill{26}{113}{Vertical transformations}
+\begin{textblock*}{158mm}(26mm,102.5mm)
+{\fontsize{13}{16}\selectfont $f(x)=3x-2=13\ \Rightarrow\ x=5$}
+\end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,126mm)
+\begin{textblock*}{158mm}(26mm,110.5mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape On the graph: the $x$-values where the line $y=k$ meets $f$.}
+\end{textblock*}
+
+% ---- Composition (y=128 h=52, end 180) ----
+\cardbg{16}{128}{178}{52}
+\pill{26}{131}{Composition (kompozitsiya)}
+
+\begin{textblock*}{158mm}(26mm,141.0mm)
+{\fontsize{15}{18}\selectfont $f(g(x))$: \ put $g(x)$ into $f$ \ (inside out)}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,149.5mm)
+{\fontsize{13}{16}\selectfont $f(x)=3x-2,\ g(x)=x^2+1$: \quad $f(g(2))=f(5)=13$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,157.5mm)
+{\fontsize{13}{16}\selectfont $f(g(x))=3(x^2+1)-2=3x^2+1$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,166.5mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape Order matters: $g(f(2))=17\neq f(g(2))$.}
+\end{textblock*}
+
+% ---- Vertical transformations (y=187 h=52, end 239) ----
+\cardbg{16}{187}{178}{52}
+\pill{26}{190}{Vertical transformations (outside $f$)}
+
+\begin{textblock*}{158mm}(26mm,200.0mm)
 {\fontsize{11}{14}\selectfont
-\begin{tabular}{|>{\centering\arraybackslash}p{40mm}|p{106mm}|}
+\begin{tabular}{|>{\centering\arraybackslash}p{30mm}|p{66mm}|>{\centering\arraybackslash}p{38mm}|}
 \hline
-\rowcolor{accent}
-{\color{white}\textbf{Form}} & {\color{white}\textbf{Effect}} \\ \hline
-$f(x)+k$ & Shifts graph up $k$ (down if $k<0$) -- output changes, not input \\ \hline
-$-f(x)$ & Reflects graph over the $x$-axis \\ \hline
+\cellcolor{accent}\textcolor{white}{\textbf{Form}} & \cellcolor{accent}\textcolor{white}{\textbf{Graph}} & \cellcolor{accent}\textcolor{white}{\textbf{$(a,b)$ becomes}} \\ \hline
+$f(x)+k$ & up $k$ (down if $k<0$) & $(a,\ b+k)$ \\ \hline
+$-f(x)$ & reflect over the $x$-axis & $(a,\ -b)$ \\ \hline
 \end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,167mm)
-{\fontsize{12}{15}\selectfont
-$f(x)=x^2-4$: \quad $f(3)+5=5+5=10$, \quad $-f(3)=-5$}
+\begin{textblock*}{158mm}(26mm,227.0mm)
+{\fontsize{13}{16}\selectfont $f(x)=x^2-4$: \quad $f(3)+5=10$, \quad $-f(3)=-5$}
 \end{textblock*}
 
 \clearpage
 
-% ======================================================================
-% PAGE 2
-% ======================================================================
 \topicheader{11}{Function Composition \& Transformation}
 \pagekicker{Rules sheet -- 2/2}
 \pagefooter{60}
 \mbox{}%
 
-% ---- CARD 3: Horizontal transformations ----
-\cardbg{16}{33}{178}{150}
-\pill{26}{36}{Horizontal transformations}
+% ---- Horizontal transformations (y=33 h=110) ----
+\cardbg{16}{33}{178}{114}
+\pill{26}{36}{Horizontal transformations (inside $f$)}
 
-\begin{textblock*}{158mm}(26mm,49mm)
+\begin{textblock*}{158mm}(26mm,46.0mm)
 {\fontsize{11}{14}\selectfont
-\begin{tabular}{|>{\centering\arraybackslash}p{40mm}|p{106mm}|}
+\begin{tabular}{|>{\centering\arraybackslash}p{30mm}|p{66mm}|>{\centering\arraybackslash}p{38mm}|}
 \hline
-\rowcolor{accent}
-{\color{white}\textbf{Form}} & {\color{white}\textbf{Effect}} \\ \hline
-$f(x+h)$ & Shifts graph LEFT $h$ \\ \hline
-$f(x-h)$ & Shifts graph RIGHT $h$ -- opposite of the sign \\ \hline
-$f(-x)$ & Reflects graph over the $y$-axis \\ \hline
+\cellcolor{accent}\textcolor{white}{\textbf{Form}} & \cellcolor{accent}\textcolor{white}{\textbf{Graph}} & \cellcolor{accent}\textcolor{white}{\textbf{$(a,b)$ becomes}} \\ \hline
+$f(x+h)$ & LEFT $h$ & $(a-h,\ b)$ \\ \hline
+$f(x-h)$ & RIGHT $h$ \ (opposite of the sign) & $(a+h,\ b)$ \\ \hline
+$f(-x)$ & reflect over the $y$-axis & $(-a,\ b)$ \\ \hline
 \end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,98mm)
-{\fontsize{12}{15}\selectfont
-$f(x)=x^2+2x$: \quad $f(x-2)$ at $x=5$ is $f(3)=15$; \quad $f(-x)$ at $x=3$ is $f(-3)=3$}
+\begin{textblock*}{158mm}(26mm,80.0mm)
+{\fontsize{13}{16}\selectfont $f(x)=x^2+2x$: \quad $f(x-2)$ at $x=5$ is $f(3)=15$; \quad $f(-x)$ at $x=3$ is $f(-3)=3$}
 \end{textblock*}
 
-\begin{textblock*}{100mm}(26mm,115mm)
-\begin{tikzpicture}[x=8mm,y=5mm]
-\draw[ink!40,->] (-1.3,0) -- (5.3,0) node[right,font=\tiny]{$x$};
-\draw[ink!40,->] (0,-0.5) -- (0,9.5) node[above,font=\tiny]{$y$};
-\draw[accent!45,domain=-1:3,smooth,variable=\x,line width=1pt] plot ({\x},{\x*\x});
-\draw[accent,domain=1:5,smooth,variable=\x,line width=1.4pt] plot ({\x},{(\x-2)*(\x-2)});
-\node[font=\sffamily\tiny,text=accent!60,anchor=east] at (-1.1,2.2) {$f(x)=x^2$};
-\node[font=\sffamily\bfseries\tiny,text=accent,anchor=west] at (4.2,7.5) {$f(x-2)$};
-\draw[ink!55,dashed,line width=0.5pt] (0,4) -- (2,4);
-\node[font=\sffamily\tiny,text=ink!70] at (1,4.7) {shift right $2$};
+\begin{textblock*}{70mm}(30mm,92mm)
+\begin{tikzpicture}[x=6mm,y=6mm]
+\draw[ink!40,->] (-2.8,0) -- (5.0,0) node[right,font=\tiny]{$x$};
+\draw[ink!40,->] (0,-0.9) -- (0,7.0) node[above,font=\tiny]{$y$};
+\draw[accent!45,domain=-2.5:2.5,smooth,variable=\t,line width=1pt] plot ({\t},{\t*\t});
+\draw[accent,domain=-0.5:4.5,smooth,variable=\t,line width=1.4pt] plot ({\t},{(\t-2)*(\t-2)});
+\draw[ink!60,dashed,-{Stealth[length=1.6mm]},line width=0.5pt] (1.1,1) -- (2.88,1);
+\filldraw[ink] (1,1) circle (0.5mm);
+\filldraw[ink] (3,1) circle (0.5mm);
+\filldraw[ink] (0,0) circle (0.5mm);
+\filldraw[ink] (2,0) circle (0.5mm);
+\node[font=\sffamily\scriptsize,text=ink,anchor=west,inner sep=1.5pt] at (3.1,1.1) {$(3,1)$};
+\node[font=\sffamily\scriptsize,text=ink,anchor=east,inner sep=1pt,fill=badge!22] at (0.85,1.2) {$(1,1)$};
+\node[font=\sffamily\scriptsize,text=ink,anchor=north,inner sep=1.5pt] at (2,-0.1) {$(2,0)$};
+\node[font=\sffamily\scriptsize,text=ink,anchor=north east,inner sep=1pt] at (-0.1,-0.1) {$(0,0)$};
 \end{tikzpicture}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,170mm)
-{\fontsize{10}{13}\selectfont\color{black!55}\itshape
-Direction inside the parentheses is always reversed from what it looks like.}
+\begin{textblock*}{80mm}(108mm,100mm)
+{\fontsize{10}{13}\selectfont\color{ink}
+{\color{black!55}$f(x)=x^2$} \ (light)\\
+{\color{accent}\bfseries $f(x-2)=(x-2)^2$} \ (dark)\\[1mm]
+$(1,1)$ on $f$ \ $\to$ \ $(3,1)$ on $f(x-2)$\\
+every point moves RIGHT $2$}
 \end{textblock*}
 
 \end{document}

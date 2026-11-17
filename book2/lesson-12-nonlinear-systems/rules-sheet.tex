@@ -92,87 +92,104 @@
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.5}
 
-\begin{document}
 
-% ======================================================================
-% PAGE 1
-% ======================================================================
+\newcommand{\sysgraph}[5]{%
+% #1 caption top, #2 line expression in x, #3 caption bottom, #4 dot list (tikz), #5 extra
+\begin{tikzpicture}[x=4.5mm,y=4.5mm]
+\node[font=\sffamily\bfseries\fontsize{9}{9}\selectfont,anchor=south west] at (-2.8,6.9) {#1};
+\begin{scope}
+\clip (-2.8,-1.9) rectangle (3.3,6.7);
+\draw[ink!35,->] (-2.8,0) -- (3.3,0);
+\draw[ink!35,->] (0,-1.9) -- (0,6.7);
+\draw[accent!70,domain=-2.6:2.6,smooth,variable=\t,line width=1.1pt] plot ({\t},{\t*\t});
+\draw[accent,domain=-3:3.4,variable=\t,line width=1.1pt] plot ({\t},{#2});
+\end{scope}
+#4
+\node[font=\sffamily\fontsize{9}{9}\selectfont,anchor=north west] at (-2.8,-2.1) {#3};
+\end{tikzpicture}}
+
+\begin{document}
 \topicheader{12}{Nonlinear Systems}
 \videobanner{Lesson 12}
 \pagefooter{64}
 \mbox{}%
 
-% ---- CARD 1: Linear-quadratic system ----
-\cardbg{16}{40}{178}{55}
-\pill{26}{43}{Linear-quadratic system (chiziqli-kvadrat)}
+% ---- Line meets parabola (y=40 h=45, end 85) ----
+\cardbg{16}{40}{178}{45}
+\pill{26}{43}{Line + parabola (chiziqli-kvadrat)}
 
-\begin{textblock*}{158mm}(26mm,56mm)
-{\fontsize{11}{14}\selectfont\color{ink}
-Substitute the linear expression for $y$ into the quadratic. Find the
-matching $y$ for EACH $x$.}
+\begin{textblock*}{158mm}(26mm,53.0mm)
+{\fontsize{15}{18}\selectfont $mx+n=ax^2+bx+c\ \Rightarrow$ solve for $x$, then $y=mx+n$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,70mm)
-{\fontsize{12}{15}\selectfont
-$y=x+1,\ y=x^2-1\ \Longrightarrow\ x^2-x-2=0\ \Longrightarrow\ x=2,-1$
-$\Longrightarrow\ (2,3)$ and $(-1,0)$}
+\begin{textblock*}{158mm}(26mm,61.5mm)
+{\fontsize{13}{16}\selectfont $y=x+1,\ y=x^2-1\ \Rightarrow\ x^2-x-2=0\ \Rightarrow\ x=2$ or $-1$}
 \end{textblock*}
 
-% ---- CARD 2: Number of solutions / discriminant ----
-\cardbg{16}{103}{178}{100}
-\pill{26}{106}{Number of solutions}
-
-\begin{textblock*}{158mm}(26mm,119mm)
-{\fontsize{11}{14}\selectfont
-$D=b^2-4ac$ of the resulting quadratic: $D>0$ two points, $D=0$ one point
-(tangent), $D<0$ none.}
+\begin{textblock*}{158mm}(26mm,69.5mm)
+{\fontsize{13}{16}\selectfont\color{accent} $(2,3)$ and $(-1,0)$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,133mm)
-{\fontsize{11}{14}\selectfont
-$y=4x-4,\ y=x^2\ \Longrightarrow\ x^2-4x+4=0,\ D=0\ \Longrightarrow$ tangent at $(2,4)$}
+\begin{textblock*}{158mm}(26mm,76.0mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape Every $x$ needs its own $y$ -- answer in pairs $(x,y)$.}
 \end{textblock*}
 
-\begin{textblock*}{50mm}(26mm,150mm)
-{\centering\fontsize{9.5}{9.5}\selectfont\textbf{Two points ($D>0$)}\par}
-\begin{tikzpicture}
-\draw[accent!70,line width=1.1pt] plot [smooth] coordinates {(-15mm,20mm) (-10mm,9mm) (-5mm,2mm) (0,0) (5mm,2mm) (10mm,9mm) (15mm,20mm)};
-\draw[accent,line width=1.1pt] (-15mm,8mm) -- (15mm,8mm);
-\filldraw[ink] (-9.5mm,8mm) circle (0.8mm);
-\filldraw[ink] (9.5mm,8mm) circle (0.8mm);
-\end{tikzpicture}
+% ---- Number of intersections (y=91 h=96, end 187) ----
+\cardbg{16}{91}{178}{96}
+\pill{26}{94}{Number of solutions (diskriminant)}
+
+\begin{textblock*}{158mm}(26mm,104.0mm)
+{\fontsize{15}{18}\selectfont $D=b^2-4ac$ of the combined quadratic}
 \end{textblock*}
 
-\begin{textblock*}{50mm}(82mm,150mm)
-{\centering\fontsize{9.5}{9.5}\selectfont\textbf{Tangent ($D=0$)}\par}
-\begin{tikzpicture}
-\draw[accent!70,line width=1.1pt] plot [smooth] coordinates {(-15mm,20mm) (-10mm,9mm) (-5mm,2mm) (0,0) (5mm,2mm) (10mm,9mm) (15mm,20mm)};
-\draw[accent,line width=1.1pt] (-15mm,0mm) -- (15mm,0mm);
-\filldraw[ink] (0,0) circle (0.8mm);
-\end{tikzpicture}
+\begin{textblock*}{158mm}(26mm,112.0mm)
+{\fontsize{13}{16}\selectfont $D>0$: two points \quad $D=0$: one point (tangent) \quad $D<0$: none}
 \end{textblock*}
 
-\begin{textblock*}{50mm}(138mm,150mm)
-{\centering\fontsize{9.5}{9.5}\selectfont\textbf{None ($D<0$)}\par}
-\begin{tikzpicture}
-\draw[accent!70,line width=1.1pt] plot [smooth] coordinates {(-15mm,20mm) (-10mm,9mm) (-5mm,2mm) (0,0) (5mm,2mm) (10mm,9mm) (15mm,20mm)};
-\draw[accent,line width=1.1pt] (-15mm,-5mm) -- (15mm,-5mm);
-\end{tikzpicture}
+\begin{textblock*}{158mm}(26mm,120.5mm)
+{\fontsize{13}{16}\selectfont $y=4x-4,\ y=x^2\ \Rightarrow\ x^2-4x+4=0,\ D=0\ \Rightarrow$ tangent at $(2,4)$}
 \end{textblock*}
 
-% ---- CARD 3: Quadratic-quadratic system ----
-\cardbg{16}{211}{178}{55}
-\pill{26}{214}{Quadratic-quadratic system (kvadrat-kvadrat)}
-
-\begin{textblock*}{158mm}(26mm,227mm)
-{\fontsize{11}{14}\selectfont\color{ink}
-Same leading coefficient $\to$ subtract the equations to cancel $x^2$,
-leaving a linear equation.}
+\begin{textblock*}{50mm}(26mm,131mm)
+\sysgraph{$y=x+2$}{\t+2}{$D=9>0$}{%
+\filldraw[ink] (-1,1) circle (0.5mm);
+\filldraw[ink] (2,4) circle (0.5mm);
+\node[font=\sffamily\scriptsize,anchor=east,inner sep=1.5pt] at (-1.1,1) {$(-1,1)$};
+\node[font=\sffamily\scriptsize,anchor=west,inner sep=1.5pt] at (2.1,4.0) {$(2,4)$};}{}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,241mm)
-{\fontsize{12}{15}\selectfont
-$y=x^2+3x+2,\ y=x^2-x+10\ \Longrightarrow\ 4x=8\ \Longrightarrow\ x=2\ \Longrightarrow\ (2,12)$}
+\begin{textblock*}{50mm}(82mm,131mm)
+\sysgraph{$y=4x-4$}{4*\t-4}{$D=0$ (tangent)}{%
+\filldraw[ink] (2,4) circle (0.5mm);
+\node[font=\sffamily\scriptsize,anchor=west,inner sep=1.5pt] at (2.1,3.4) {$(2,4)$};}{}
+\end{textblock*}
+
+\begin{textblock*}{50mm}(138mm,131mm)
+\sysgraph{$y=x-1$}{\t-1}{$D=-3<0$}{}{}
+\end{textblock*}
+
+% ---- Two parabolas (y=193 h=40, end 233) ----
+\cardbg{16}{193}{178}{40}
+\pill{26}{196}{Two parabolas (kvadrat-kvadrat)}
+
+\begin{textblock*}{158mm}(26mm,206.0mm)
+{\fontsize{15}{18}\selectfont same $x^2$ coefficient $\Rightarrow$ subtract: $x^2$ cancels}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,214.5mm)
+{\fontsize{13}{16}\selectfont $y=x^2+3x+2,\ y=x^2-x+10\ \Rightarrow\ 4x=8\ \Rightarrow\ (2,12)$}
+\end{textblock*}
+
+% ---- Sum/product (y=239 h=40, end 279) ----
+\cardbg{16}{239}{178}{40}
+\pill{26}{242}{Sum / product of the $x$-values}
+
+\begin{textblock*}{158mm}(26mm,252.0mm)
+{\fontsize{15}{18}\selectfont $x_1+x_2=-\dfrac{b}{a}$\qquad $x_1x_2=\dfrac{c}{a}$\quad (combined quadratic)}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,265.5mm)
+{\fontsize{13}{16}\selectfont $x^2-x-2=0$: \ $x_1+x_2=1$, \ $x_1x_2=-2$}
 \end{textblock*}
 
 \end{document}
