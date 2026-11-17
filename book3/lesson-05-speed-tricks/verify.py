@@ -536,7 +536,7 @@ mc(5, 'H',
    r"The vertex lies halfway between the intercepts, 4 units from each. With $a=1$: $y=(4)(-4)=-16$ (the product of the distances, signed).", order='a')
 
 mc(5, 'H',
-   r"If $x+y+3\ne0$, which expression is equivalent to $$\dfrac{x^2+6x+9-y^2}{x+y+3}$$ ?",
+   r"If $x+y+3\ne0$, which of the following expressions is equivalent to the expression below? $$\dfrac{x^2+6x+9-y^2}{x+y+3}$$",
    ("$x-y+3$", x - y + 3),
    [("$x+y+3$", x + y + 3), ("$x-y-3$", x - y - 3), ("$x+3$", x + 3)],
    lambda: simplify((x**2 + 6*x + 9 - y**2) / (x + y + 3)),
@@ -580,7 +580,7 @@ mc(5, 'H',
    r"The graph of $|x^2-6x+5|$ flips the dip (vertex $(3,-4)$) up to a peak at $(3,4)$. The line $y=k$ crosses it three times only at the peak: $k=4$.", order='a')
 
 mc(5, 'H',
-   r"How many solutions does the equation $$\dfrac{x}{x-2}=\dfrac{2}{x-2}+3$$ have?",
+   r"How many solutions does the following equation have? $$\dfrac{x}{x-2}=\dfrac{2}{x-2}+3$$",
    T("No solution"), [T("Exactly one"), T("Exactly two"), T("Infinitely many")],
    lambda: ("No solution" if not [v for v in solve(x - (2 + 3*(x - 2)), x) if v != 2] else "other"),
    "Extraneous solutions",

@@ -1,0 +1,319 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usetikzlibrary{fit,calc,positioning,arrows.meta}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{0F6A52}
+\definecolor{badge}{HTML}{A9CFC2}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{100mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\videobanner}[1]{%
+\begin{textblock*}{178mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (178mm,-10mm);
+\draw[white,line width=0.6pt] (3mm,-1.7mm) rectangle (11.5mm,-8.3mm);
+\node[white,font=\sffamily\fontsize{4}{4.4}\selectfont,align=center] at (7.25mm,-5mm) {QR\\CODE};
+\node[white,font=\sffamily\bfseries\fontsize{9.5}{11}\selectfont,anchor=west] at (16mm,-5.6mm) {WATCH THE VIDEO BEFORE YOU SOLVE};
+\node[white,font=\sffamily\fontsize{7.5}{8}\selectfont,anchor=east] at (174mm,-5.6mm) {YouTube ~\textbullet~ #1};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\newcommand{\cardbg}[4]{%
+\begin{textblock*}{#3mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\fill[badge!22,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pill}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {RULE ~\textperiodcentered~ #3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pillw}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {#3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+\topicheader{5}{Speed Tricks}
+\videobanner{Lesson 5}
+\pagefooter{1}
+\mbox{}%
+
+% ---- What is actually asked? (y=40.0 h=39.5 end 79.5) ----
+\cardbg{16}{40.0}{178}{39.5}
+\pill{26}{43.0}{What is actually asked?}
+\begin{textblock*}{158mm}(26mm,50.5mm)
+{\fontsize{15}{18}\selectfont Combination asked $\Rightarrow$ find the combination, not the pieces}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,59.5mm)
+{\fontsize{13}{16}\selectfont $3x+5=20\ \Rightarrow\ 6x+10=2\cdot20=40$ \quad (no need for $x$)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,67.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Read the last sentence first: sum, product, $x+y$, $r^2+s^2$, or a multiple?}
+\end{textblock*}
+
+% ---- Vieta's formulas (Viet teoremasi) (y=85.5 h=48.5 end 134.0) ----
+\cardbg{16}{85.5}{178}{48.5}
+\pill{26}{88.5}{Vieta's formulas (Viet teoremasi)}
+\begin{textblock*}{158mm}(26mm,96.0mm)
+{\fontsize{15}{18}\selectfont $ax^2+bx+c=0$: \quad $r+s=-\dfrac ba$ \qquad $rs=\dfrac ca$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,108.5mm)
+{\fontsize{13}{16}\selectfont $r^2+s^2=(r+s)^2-2rs$ \quad $\dfrac1r+\dfrac1s=\dfrac{r+s}{rs}$ \quad $|r-s|=\dfrac{\sqrt{D}}{|a|}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,120.5mm)
+{\fontsize{13}{16}\selectfont $2x^2-7x+3=0$: \ $r+s=\tfrac72$, \ $rs=\tfrac32$, \ $r^2+s^2=\tfrac{49}4-3=\tfrac{37}4$}
+\end{textblock*}
+
+% ---- Line meets parabola (y=140.0 h=44.0 end 184.0) ----
+\cardbg{16}{140.0}{178}{44.0}
+\pill{26}{143.0}{Line meets parabola}
+\begin{textblock*}{158mm}(26mm,150.5mm)
+{\fontsize{15}{18}\selectfont set equal $\Rightarrow$ one quadratic; \ $x_1+x_2=-\dfrac ba$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,163.0mm)
+{\fontsize{13}{16}\selectfont get each $y$ from the LINE: \ $y=mx+c\ \Rightarrow\ y_1+y_2=m(x_1+x_2)+2c$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,171.0mm)
+{\fontsize{13}{16}\selectfont $y=x^2-5x+9$ and $y=2x+4$: \ $x^2-7x+5=0$, $x_1+x_2=7$, $y_1+y_2=2(7)+8=22$}
+\end{textblock*}
+
+% ---- Tangent: exactly one solution (y=190.0 h=36.0 end 226.0) ----
+\cardbg{16}{190.0}{178}{36.0}
+\pill{26}{193.0}{Tangent: exactly one solution}
+\begin{textblock*}{158mm}(26mm,200.5mm)
+{\fontsize{15}{18}\selectfont $D=b^2-4ac=0$ \qquad the solution is $x=-\dfrac{b}{2a}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,213.0mm)
+{\fontsize{13}{16}\selectfont $x^2-8x+k=0$ has one solution $\Rightarrow\ x=4$ \quad (no need for $k$)}
+\end{textblock*}
+
+% ---- Axis and vertex shortcuts (y=232.0 h=48.0 end 280.0) ----
+\cardbg{16}{232.0}{178}{48.0}
+\pill{26}{235.0}{Axis and vertex shortcuts}
+\begin{textblock*}{158mm}(26mm,242.5mm)
+{\fontsize{15}{18}\selectfont axis $x=-\dfrac b{2a}$ \qquad $y=a(x-r)(x-s)$: axis $x=\dfrac{r+s}2$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,255.0mm)
+{\fontsize{13}{16}\selectfont $f(p)=f(q)\ \Rightarrow\ $ axis $x=\dfrac{p+q}2$ \qquad then plug the axis $x$ in for the $y$-value}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,267.0mm)
+{\fontsize{13}{16}\selectfont $f(x)=(x-6)(x+2)$: axis $x=2$, minimum $f(2)=-16$}
+\end{textblock*}
+
+\clearpage
+
+\topicheader{5}{Speed Tricks}
+\pagekicker{Rules sheet -- 2/3}
+\pagefooter{2}
+\mbox{}%
+
+% ---- Add or subtract the equations (y=33.0 h=39.5 end 72.5) ----
+\cardbg{16}{33.0}{178}{39.5}
+\pill{26}{36.0}{Add or subtract the equations}
+\begin{textblock*}{158mm}(26mm,43.5mm)
+{\fontsize{15}{18}\selectfont add $\Rightarrow$ $x+y$-type sums; \ subtract $\Rightarrow$ $x-y$-type differences}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,52.5mm)
+{\fontsize{13}{16}\selectfont $3x+y=11$, $x+3y=9$: \ add: $4(x+y)=20$, $x+y=5$; \ subtract: $2(x-y)=2$, $x-y=1$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,60.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Three variables? Add all three equations: $a+b+c$ is half the total.}
+\end{textblock*}
+
+% ---- Factor and remainder theorem (y=78.5 h=39.5 end 118.0) ----
+\cardbg{16}{78.5}{178}{39.5}
+\pill{26}{81.5}{Factor and remainder theorem}
+\begin{textblock*}{158mm}(26mm,89.0mm)
+{\fontsize{15}{18}\selectfont remainder of $p(x)\div(x-a)$ is $p(a)$ \qquad $x-a$ is a factor $\Longleftrightarrow\ p(a)=0$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,98.0mm)
+{\fontsize{13}{16}\selectfont $x^3+kx^2-5x+6$ has factor $x-2$: \ $8+4k-10+6=0\ \Rightarrow\ k=-1$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,106.0mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Divide by $x+3$? Use $p(-3)$ \,--\, the sign flips.}
+\end{textblock*}
+
+% ---- Structure: identities (y=124.0 h=51.5 end 175.5) ----
+\cardbg{16}{124.0}{178}{51.5}
+\pill{26}{127.0}{Structure: identities}
+\begin{textblock*}{158mm}(26mm,134.5mm)
+{\fontsize{15}{18}\selectfont $a^2-b^2=(a-b)(a+b)$ \qquad $(a\pm b)^2=a^2\pm2ab+b^2$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,143.5mm)
+{\fontsize{13}{16}\selectfont $a^2+b^2=(a+b)^2-2ab$ \quad $(a-b)^2=(a+b)^2-4ab$ \quad $x+\dfrac1x=k\Rightarrow x^2+\dfrac1{x^2}=k^2-2$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,155.5mm)
+{\fontsize{13}{16}\selectfont $x+y=9$, $xy=14$: \ $x^2+y^2=81-28=53$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,163.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Spot a perfect square inside: $x^2-y^2-6y-9=x^2-(y+3)^2$.}
+\end{textblock*}
+
+% ---- Factor, never divide by an unknown (y=181.5 h=39.5 end 221.0) ----
+\cardbg{16}{181.5}{178}{39.5}
+\pill{26}{184.5}{Factor, never divide by an unknown}
+\begin{textblock*}{158mm}(26mm,192.0mm)
+{\fontsize{15}{18}\selectfont move everything to one side $\Rightarrow$ factor $\Rightarrow$ zero-product rule}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,201.0mm)
+{\fontsize{13}{16}\selectfont $(x-7)(x+3)=5(x-7)\ \Rightarrow\ (x-7)(x-2)=0\ \Rightarrow\ x=7$ or $x=2$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,209.0mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Dividing by $x-7$ would lose the root $x=7$.}
+\end{textblock*}
+
+% ---- Percent multipliers (y=227.0 h=48.0 end 275.0) ----
+\cardbg{16}{227.0}{178}{48.0}
+\pill{26}{230.0}{Percent multipliers}
+\begin{textblock*}{158mm}(26mm,237.5mm)
+{\fontsize{15}{18}\selectfont $+r\%\Rightarrow\times\left(1+\dfrac r{100}\right)$ \qquad $-r\%\Rightarrow\times\left(1-\dfrac r{100}\right)$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,250.0mm)
+{\fontsize{13}{16}\selectfont successive changes multiply; \ undo a change by dividing: \ old $=\dfrac{\text{new}}{\text{multiplier}}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,262.0mm)
+{\fontsize{13}{16}\selectfont $+20\%$ then $-20\%$: \ $1.2\times0.8=0.96$, a $4\%$ drop (not $0\%$)}
+\end{textblock*}
+
+\clearpage
+
+\topicheader{5}{Speed Tricks}
+\pagekicker{Rules sheet -- 3/3}
+\pagefooter{3}
+\mbox{}%
+
+% ---- Backsolve (javoblarni qo'yib tekshirish) (y=33.0 h=47.5 end 80.5) ----
+\cardbg{16}{33.0}{178}{47.5}
+\pill{26}{36.0}{Backsolve (javoblarni qo'yib tekshirish)}
+\begin{textblock*}{158mm}(26mm,43.5mm)
+{\fontsize{15}{18}\selectfont plug the answer choices into the original problem}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,52.5mm)
+{\fontsize{13}{16}\selectfont start with B or C; too big or too small tells you which way to go}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,60.5mm)
+{\fontsize{13}{16}\selectfont $2^{x+1}+2^x=48$: \ try $x=4$: \ $32+16=48$ \ (correct)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,68.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Squaring or clearing denominators can create fake roots: check in the original.}
+\end{textblock*}
+
+% ---- Graph it (Desmos) (y=86.5 h=55.5 end 142.0) ----
+\cardbg{16}{86.5}{178}{55.5}
+\pill{26}{89.5}{Graph it (Desmos)}
+\begin{textblock*}{158mm}(26mm,97.0mm)
+{\fontsize{15}{18}\selectfont type each side as its own graph; tap the crossing dots}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,106.0mm)
+{\fontsize{13}{16}\selectfont $x$-coordinates of the crossings = the solutions; \ no crossing = no solution}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,114.0mm)
+{\fontsize{13}{16}\selectfont constant $k$ in the problem? type it and add a slider, then drag}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,122.0mm)
+{\fontsize{13}{16}\selectfont $2^x=2x+7$: \ graph $y=2^x$ and $y=2x+7$, tap the right dot: $x\approx3.885$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,130.0mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Round only at the end. Zoom out if you cannot see all crossings.}
+\end{textblock*}
+
+% ---- New words (y=148.0 h=68.7) ----
+\cardbg{16}{148.0}{178}{68.7}
+\pillw{26}{151.0}{NEW WORDS ~\textperiodcentered~ YANGI SO'ZLAR}
+\begin{textblock*}{80mm}(26mm,160.5mm)
+{\fontsize{10.5}{12}\selectfont
+\begin{tabular}{@{}>{\bfseries}p{37mm}p{36mm}@{}}
+\cellcolor{accent}\textcolor{white}{\sffamily English} & \cellcolor{accent}\textcolor{white}{\sffamily O'zbekcha}\\
+\rowcolor{badge!45} roots / solutions & {\itshape ildizlar / yechimlar}\\
+\rowcolor{white} Vieta's formulas & {\itshape Viet formulalari}\\
+\rowcolor{badge!45} sum of roots & {\itshape ildizlar yig'indisi}\\
+\rowcolor{white} product of roots & {\itshape ildizlar ko'paytmasi}\\
+\rowcolor{badge!45} reciprocal & {\itshape teskari son}\\
+\rowcolor{white} axis of symmetry & {\itshape simmetriya o'qi}\\
+\rowcolor{badge!45} vertex & {\itshape cho'qqi}\\
+\end{tabular}}
+\end{textblock*}
+\begin{textblock*}{80mm}(108mm,160.5mm)
+{\fontsize{10.5}{12}\selectfont
+\begin{tabular}{@{}>{\bfseries}p{37mm}p{36mm}@{}}
+\cellcolor{accent}\textcolor{white}{\sffamily English} & \cellcolor{accent}\textcolor{white}{\sffamily O'zbekcha}\\
+\rowcolor{badge!45} tangent & {\itshape urinma}\\
+\rowcolor{white} intersection point & {\itshape kesishish nuqtasi}\\
+\rowcolor{badge!45} remainder & {\itshape qoldiq}\\
+\rowcolor{white} factor & {\itshape ko'paytuvchi}\\
+\rowcolor{badge!45} backsolve & {\itshape javobni qo'yib tekshirish}\\
+\rowcolor{white} extraneous solution & {\itshape chet ildiz}\\
+\rowcolor{badge!45} multiplier & {\itshape ko'paytiruvchi}\\
+\end{tabular}}
+\end{textblock*}
+
+\end{document}
