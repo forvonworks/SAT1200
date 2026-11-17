@@ -96,7 +96,7 @@ def solve_all():
     expr2 = sp.expand((5 * x ** 2 - 3 * x + 2) - (2 * x ** 2 - 7 * x - 1)); A[(1, 2)] = expr2
     A[(1, 3)] = R(15, 100) * 240
     A[(1, 4)] = sp.pi * 3 ** 2 * 10
-    b5 = sp.symbols("b5"); A[(1, 5)] = sp.solve(sp.Eq(3 * 0 + 4 * b5, 24), b5)[0]
+    a5 = sp.symbols("a5"); A[(1, 5)] = sp.solve(sp.Eq(3, -2 * a5 + 11), a5)[0]
     A[(1, 6)] = sp.simplify((x ** 5) ** 2 / x ** 3)
     A[(1, 7)] = sp.solve(sp.Eq(5 * (t + 2), 3 * t + 20), t)[0]
     f8 = (t + 4) * (t - 6)                                # zeros -4, 6
@@ -109,11 +109,11 @@ def solve_all():
     A[(1, 10)] = 480 * R(1, 2) ** (15 // 5)
     A[(1, 11)] = min(n for n in range(0, 2000) if 38 * n > 4800 + 14 * n)
     A[(1, 12)] = 62 - (78 - R(4, 100) * 300)
-    k13 = sp.symbols("k13"); p13 = 2 * t ** 3 - 5 * t ** 2 + k13 * t + 6
-    k13v = sp.solve(p13.subs(t, -2), k13)[0]
-    assert sp.rem(sp.Poly(p13.subs(k13, k13v), t), sp.Poly(t + 2, t)).is_zero
-    A[(1, 13)] = k13v
-    A[(1, 14)] = sp.sqrt((20 * sp.pi) / (R(72, 360) * sp.pi))
+    k13 = sp.symbols("k13")
+    cands13 = [kk for kk in range(-100, 101) if kk < 0 and sp.Poly(4 * t ** 2 + kk * t + 25, t).discriminant() == 0]
+    assert cands13 == [-20]
+    A[(1, 13)] = cands13[0]
+    bc = sp.sqrt(26 ** 2 - 10 ** 2); A[(1, 14)] = R(1, 2) * 10 * bc     # angle C = 90 (Thales)
     pts = [(2, 1350), (5, 1830)]
     sl = R(pts[1][1] - pts[0][1], pts[1][0] - pts[0][0]); A[(1, 15)] = pts[1][1] + sl * (9 - 5)
     sol16 = [v for v in range(-30, 31) if sp.Integer(4) ** v == sp.Integer(8) ** (v - 2)]
@@ -132,9 +132,10 @@ def solve_all():
     A[(1, 19)] = R(tab[("V", "flu")], tab[("V", "flu")] + tab[("N", "flu")])
     x20 = sp.symbols("x20"); A[(1, 20)] = sp.solve(sp.Eq(R(25, 100) * (40 - x20) + x20, R(40, 100) * 40), x20)[0]
     A[(1, 21)] = sp.sqrt(10 ** 2 - (10 - 4) ** 2)
-    roots22 = [r for r in sp.solve(2 * t ** 4 - 17 * t ** 2 + 8, t) if r.is_real]
-    assert len(roots22) == 4
-    A[(1, 22)] = sp.simplify(sum(r ** 2 for r in roots22))
+    ff = lambda u: 3 * u - 4; gg = lambda u: u ** 2 + 1
+    r22 = sp.solve(sp.expand(gg(ff(t)) - ff(gg(t))), t)
+    assert sorted(r22) == [1, 3]
+    A[(1, 22)] = sum(r22)
 
     # ================= MODULE 2 =================
     A[(2, 1)] = sp.solve(sp.Eq((t + 8) / 3, 2 * t - 4), t)[0]
@@ -146,7 +147,7 @@ def solve_all():
     assert R(7 * k5v - 12, 2 * k5v + 6) == R(5, 3)
     A[(2, 5)] = (7 * k5v - 12) + (2 * k5v + 6)
     s = R(13 + 13 + 10, 2); A[(2, 6)] = sp.sqrt(s * (s - 13) * (s - 13) * (s - 10))
-    t7 = sp.solve(sp.Eq(12 * (t + R(1, 2)), 20 * t), t)[0]; A[(2, 7)] = t7 * 60
+    A[(2, 7)] = sp.solve(sp.Eq(480 - 10 * t, 60 + 25 * t), t)[0]
     k8 = sp.symbols("k8"); v8 = sp.solve(sp.diff(t ** 2 - 8 * t + k8, t), t)[0]
     A[(2, 8)] = sp.solve(sp.Eq((t ** 2 - 8 * t + k8).subs(t, v8), -3), k8)[0]
     t9 = 4 * sp.log(R(6750, 250), 3); t9 = sp.simplify(t9); assert 250 * 3 ** (t9 / 4) == 6750
@@ -193,12 +194,12 @@ def solve_all():
     assert all(sp.simplify(gx(z)) == 0 for z in zg)
     A[(2, 19)] = sp.simplify(abs(zg[0] - zg[1]))
     cnt = 0
-    for k in range(-300, 301):
+    for k in range(-400, 401):
         if k + 6 == 0:
             continue                                                    # parallel lines
         xv = Fraction(27, k + 6); yv = 2 * xv - 5
         assert k * xv + 3 * yv == 12
-        if xv > 0 and yv > 0:
+        if xv.denominator == 1 and yv.denominator == 1:
             cnt += 1
     A[(2, 20)] = cnt
     a21, b21 = sp.symbols("a21 b21", positive=True)

@@ -298,8 +298,8 @@ def qtex(q):
         s += "\\figwrap{%s}" % q["figure"]
     if q["type"] == "MC":
         s += "\\par\\vspace{2.2mm}\n"
-        lines = ["\\hspace*{7mm}(%s)\\ %s" % (L, tex_choice(q["choices"][L])) for L in "ABCD"]
-        s += "\\\\[1.8mm]\n".join(lines)
+        lines = ["\\noindent\\hangindent=13mm\\hangafter=1\\hspace*{7mm}(%s)\\ %s\\par" % (L, tex_choice(q["choices"][L])) for L in "ABCD"]
+        s += "\n\\vspace{1.8mm}".join(lines)
     else:
         s += "\\gridbox"
     return s
@@ -327,7 +327,7 @@ def module_pages(qs, mod, cols, page0):
 
 
 M1_COLS = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16], [17, 18, 19], [20, 21, 22]]
-M2_COLS = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16], [17, 18, 19], [20, 21, 22]]
+M2_COLS = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15], [16, 17, 18], [19, 20, 21, 22]]
 
 
 def build_typeset(qs):

@@ -24,7 +24,7 @@ Difficulty: E / M / H. Type: MC or GRID.
 - Domain: ADV
 - Difficulty: E
 - Type: MC
-- Stem: Which expression is equivalent to $(5x^2-3x+2)-(2x^2-7x-1)$?
+- Stem: Which expression is equivalent to the expression below?\dsp{$(5x^2-3x+2)-(2x^2-7x-1)$}
 - A: $3x^2-10x+1$
 - B: $7x^2+4x+3$
 - C: $3x^2+4x+1$
@@ -56,13 +56,13 @@ Difficulty: E / M / H. Type: MC or GRID.
 - Domain: ALG
 - Difficulty: E
 - Type: MC
-- Stem: In the $xy$-plane, the graph of $3x+4y=24$ crosses the $y$-axis at the point $(0,b)$. What is the value of $b$?
-- A: $6$
-- B: $8$
-- C: $12$
-- D: $24$
+- Stem: The graph of $y=-2x+11$ in the $xy$-plane passes through the point $(a,3)$. What is the value of $a$?
+- A: $4$
+- B: $\frac{11}{2}$
+- C: $7$
+- D: $8$
 - Answer: A
-- Solution: Set $x=0$: $4b=24$, $b=6$ (8 is the $x$-intercept).
+- Solution: $3=-2a+11 \Rightarrow a=4$ ($11/2$: used $y=0$; 7: $(11+3)/2$; 8: forgot to divide by 2).
 
 ## M1-Q6
 - Domain: ADV
@@ -144,21 +144,21 @@ Difficulty: E / M / H. Type: MC or GRID.
 - Domain: ADV
 - Difficulty: M
 - Type: MC
-- Stem: The polynomial $p(x)=2x^3-5x^2+kx+6$ has $x+2$ as a factor, where $k$ is a constant. What is the value of $k$?
-- A: $-15$
-- B: $-1$
-- C: $2$
-- D: $15$
+- Stem: The expression $4x^2+kx+25$, where $k$ is a negative constant, is the square of a binomial. What is the value of $k$?
+- A: $-20$
+- B: $-10$
+- C: $10$
+- D: $20$
 - Answer: A
-- Solution: $p(-2)=-16-20-2k+6=0 \Rightarrow k=-15$ ($-1$ comes from $p(2)=0$; 15 is a sign slip).
+- Solution: $(2x-5)^2=4x^2-20x+25$, so $k=-20$ ($-10$ forgets the factor 2 in the middle term; positive values ignore $k<0$).
 
 ## M1-Q14
 - Domain: GT
 - Difficulty: M
 - Type: GRID
-- Stem: A sector of a circle has a central angle of $72^\circ$ and an area of $20\pi$ square units. What is the radius of the circle, in units?
-- Answer: 10
-- Solution: $72/360=1/5$, so the circle's area is $100\pi$ and $r=10$.
+- Stem: Points $A$, $B$, and $C$ lie on a circle, and $\overline{AB}$ is a diameter of the circle with length 26. If $AC=10$, what is the area of triangle $ABC$?
+- Answer: 120
+- Solution: Angle $C$ is inscribed in a semicircle, so it is a right angle; $BC=\sqrt{26^2-10^2}=24$; area $=\frac12(10)(24)=120$.
 
 ## M1-Q15
 - Domain: ALG
@@ -249,13 +249,13 @@ Not vaccinated & 36 & 84\\\hline
 - Domain: ADV
 - Difficulty: H
 - Type: MC
-- Stem: What is the sum of the squares of all real solutions of the equation $2x^4-17x^2+8=0$?
-- A: $0$
-- B: $\frac{17}{2}$
-- C: $17$
-- D: $34$
+- Stem: The functions $f$ and $g$ are defined by $f(x)=3x-4$ and $g(x)=x^2+1$. What is the sum of all values of $x$ for which $g(f(x))=f(g(x))$?
+- A: $1$
+- B: $3$
+- C: $4$
+- D: $6$
 - Answer: C
-- Solution: With $u=x^2$: $(2u-1)(u-8)=0$, $u=\frac12$ or $8$; each gives two real $x$ with square $u$, so the sum is $2(\frac12)+2(8)=17$ (17/2 counts each $u$ once; 0 is the sum of the solutions).
+- Solution: $g(f(x))=(3x-4)^2+1=9x^2-24x+17$; $f(g(x))=3(x^2+1)-4=3x^2-1$. Equal: $6x^2-24x+18=0$, $x^2-4x+3=0$, $x=1,3$; sum $=4$ (3 is the product; 1 is one root; 6 is the leading coefficient).
 
 # MODULE 2 — harder route (22 questions; Easy Q1–2, Medium Q3–12, Hard Q13–22)
 
@@ -331,13 +331,13 @@ Not vaccinated & 36 & 84\\\hline
 - Domain: ALG
 - Difficulty: M
 - Type: MC
-- Stem: Ana cycles along a straight path at a constant 12 kilometers per hour. Thirty minutes after Ana leaves, Ben leaves the same starting point and rides along the same path at a constant 20 kilometers per hour. How many minutes after Ben leaves does he catch up to Ana?
-- A: $11.25$
-- B: $18$
-- C: $30$
-- D: $45$
-- Answer: D
-- Solution: Head start $=6$ km; closing speed $=8$ km/h; $6/8$ h $=45$ min (11.25: added the speeds; 18: $6/20$ h; 30: the head start in minutes).
+- Stem: A water tank holds 480 liters and is being drained at a constant rate of 10 liters per minute. At the same time, a second tank holds 60 liters and is being filled at a constant rate of 25 liters per minute. In how many minutes will the two tanks hold the same amount of water?
+- A: $12$
+- B: $16.8$
+- C: $28$
+- D: $35$
+- Answer: A
+- Solution: $480-10t=60+25t \Rightarrow t=12$ (16.8: ignored the draining; 28: subtracted the rates; 35: added the rates).
 
 ## M2-Q8
 - Domain: ADV
@@ -479,9 +479,9 @@ Not vaccinated & 36 & 84\\\hline
 - Domain: ALG
 - Difficulty: H
 - Type: GRID
-- Stem: For each integer value of $k$, the lines $kx+3y=12$ and $2x-y=5$ are graphed in the $xy$-plane. For how many integer values of $k$ do the two lines intersect at a point in the first quadrant (where both coordinates are positive)?
-- Answer: 10
-- Solution: $y=2x-5$, so $(k+6)x=27$: $x=\frac{27}{k+6}$, $y=\frac{24-5k}{k+6}$. $x>0 \Rightarrow k>-6$; then $y>0 \Rightarrow k<4.8$. Integers $-5,\dots,4$: 10 values ($k=-6$ gives parallel lines).
+- Stem: For each integer value of $k$ other than $-6$, the lines $kx+3y=12$ and $2x-y=5$ intersect at exactly one point in the $xy$-plane. For how many integer values of $k$ are both coordinates of that point integers?
+- Answer: 8
+- Solution: $y=2x-5$, so $(k+6)x=27$ and $x=\frac{27}{k+6}$; then $y=2x-5$ is an integer exactly when $x$ is. So $k+6$ must be a divisor of 27 (positive or negative): $\pm1,\pm3,\pm9,\pm27$, giving 8 values of $k$.
 
 ## M2-Q21
 - Domain: GT
