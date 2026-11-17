@@ -347,7 +347,7 @@ Seniors & 24 & 31 & 40\\\hline
 - Domain: ADV
 - Difficulty: M
 - Type: GRID
-- Stem: The mass, in grams, of a radioactive sample $t$ days after it was first measured is modeled by $M(t)=80\left(\tfrac12\right)^{t/6}$. After how many days will the mass of the sample be 10 grams?
+- Stem: The mass, in grams, of a radioactive sample $t$ days after it was first measured is modeled by the function below.\dsp{$M(t)=80\left(\dfrac12\right)^{t/6}$}After how many days will the mass of the sample be 10 grams?
 - Answer: 18
 - Solution: $(1/2)^{t/6}=1/8 \Rightarrow t/6=3$, $t=18$.
 

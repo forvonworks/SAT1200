@@ -15,8 +15,9 @@ Decisions + blueprint: see BOOK3-SPEC.md.
 |---|---|
 | Spec, cover | done |
 | Lesson 5 Speed tricks (reference lesson) | DONE, verified (74 problems, 3-page rules sheet, 8-page typeset) |
-| Mock 1 | built; re-balancing to final blueprint (agent a807c5d3768a92fd5) |
+| Mock 1 | DONE, verified, final blueprint (44 q) |
 | Mock 2, Mock 3 | in progress (agents a4defefb7c2e523d1, a15d6a190efc5aaf0) |
+| Lesson 2 | in progress (agent a5b86968e07e2c4ca) |
 | Mocks 4-10 | not started |
 | Lessons 1,2,3,4,6,7,8,9 | not started (use lesson-05-speed-tricks as the reference once verified) |
 | Front matter, TOC, notes pages, answer-sheets section, back cover, assembly + paging check | not started |

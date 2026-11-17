@@ -84,6 +84,7 @@ def solve_all():
     A = {}   # (mod, n) -> computed correct value
     R = sp.Rational
     t = sp.symbols("t")
+    xx, yy = sp.symbols("xx yy")
 
     # ================= MODULE 1 =================
     A[(1, 1)] = sp.solve(sp.Eq(3 * (t - 4), 15), t)[0] + 4
@@ -92,16 +93,15 @@ def solve_all():
     A[(1, 3)] = 5 * 88 - (90 + 85 + 92 + 95)
     A[(1, 4)] = sp.solve(sp.Eq(24 + 18 * t, 168), t)[0]
     L = sp.sqrt(25 ** 2 - 7 ** 2); A[(1, 5)] = 2 * (7 + L)
-    xx, yy = sp.symbols("xx yy")
     s6 = sp.solve([xx + yy - 14, xx - yy - 4], [xx, yy]); A[(1, 6)] = s6[xx] * s6[yy]
     A[(1, 7)] = [r for r in sp.solve(t ** 2 - 3 * t - 28, t) if r > 0][0]
-    a_, s_ = sp.symbols("a_ s_")
-    sol = sp.solve([a_ + s_ - 240, 9 * a_ + 5 * s_ - 1720], [a_, s_]); A[(1, 8)] = sol[s_]
+    A[(1, 8)] = sp.simplify((4 * x ** 3 * y) ** 2 / (2 * x * y ** 2))
     P = lambda c: -R(5, 100) * c ** 2 + 6 * c - 40
     A[(1, 9)] = max(P(c) for c in range(0, 241))
-    A[(1, 10)] = R("76.5") / (R(12, 10) * R(85, 100))
-    m = R(-5 - 7, 4 + 2); b = 7 - m * (-2); A[(1, 11)] = -b / m
-    A[(1, 12)] = sp.simplify((4 * x ** 3 * y) ** 2 / (2 * x * y ** 2))
+    a_, s_ = sp.symbols("a_ s_")
+    sol = sp.solve([a_ + s_ - 240, 9 * a_ + 5 * s_ - 1720], [a_, s_]); A[(1, 10)] = sol[s_]
+    A[(1, 11)] = sp.cancel((x ** 2 - 9) / (x ** 2 - x - 12))
+    m = R(-5 - 7, 4 + 2); b = 7 - m * (-2); A[(1, 12)] = -b / m
     k13 = sp.symbols("k13", positive=True)
     k = sp.solve(sp.Eq(sp.sqrt((12 * k13) ** 2 + (5 * k13) ** 2), 39), k13)[0]
     A[(1, 13)] = 12 * k + 5 * k + 39
@@ -131,16 +131,33 @@ def solve_all():
     # ================= MODULE 2 =================
     A[(2, 1)] = sp.solve(sp.Eq(2 * (3 * t - 4), 5 * (t + 1)), t)[0]
     A[(2, 2)] = sp.expand((x - 5) ** 2 - 9)
-    A[(2, 3)] = 2 * 180 / (2 + 3 + 4)
-    k4 = sp.solve(sp.Eq(3 * t + 14, 5 * t), t)[0]; A[(2, 4)] = 8 * k4
-    b5 = sp.symbols("b5")
-    A[(2, 5)] = sp.solve(sp.Eq(-1, R(4, 3) * 3 + b5), b5)[0]
-    r6 = sp.solve(3 * t ** 2 - 8 * t - 35, t); A[(2, 6)] = r6[0] * r6[1]
-    A[(2, 7)] = R(1, 2) * 6 * 6 * sp.sqrt(3)
-    A[(2, 8)] = [a for a in range(0, 30) if 3 * 2 ** a + 5 == 101][0]
-    sol9 = sp.solve([3 * xx - 2 * yy - 10, 5 * xx + 2 * yy - 22], [xx, yy]); A[(2, 9)] = sol9[xx] + sol9[yy]
+    # Q3: sum of integer solutions of |3x-4| <= 11 (brute force)
+    A[(2, 3)] = sum(n for n in range(-200, 201) if abs(3 * n - 4) <= 11)
+    # Q4: 5p+3n=19.50, 3p+5n=24.50 -> p+n
+    pp, nn = sp.symbols("pp nn")
+    s4 = sp.solve([5 * pp + 3 * nn - R("19.5"), 3 * pp + 5 * nn - R("24.5")], [pp, nn]); A[(2, 4)] = s4[pp] + s4[nn]
+    # Q5: cats:dogs=5:3 ; +14 dogs -> equal ; total before
+    k5 = sp.solve(sp.Eq(3 * t + 14, 5 * t), t)[0]; A[(2, 5)] = 8 * k5
+    # Q6: r^2+s^2 for 2x^2-9x+4=0
+    r6 = sp.solve(2 * t ** 2 - 9 * t + 4, t); A[(2, 6)] = r6[0] ** 2 + r6[1] ** 2
+    # Q7: rectangle, diagonal 20, angle CAB=30deg -> area
+    A[(2, 7)] = sp.simplify(20 * sp.cos(sp.pi / 6) * 20 * sp.sin(sp.pi / 6))
+    # Q8: M(t)=80(1/2)^(t/6)=10 (brute force over integer days, then exact)
+    A[(2, 8)] = [d for d in range(0, 200) if 80 * R(1, 2) ** R(d, 6) == 10][0]
+    # Q9: line through (-2,5) perpendicular to 3x-4y=12 ; x-intercept
+    slope9 = -1 / R(3, 4)
+    A[(2, 9)] = -5 / slope9 - 2                       # y=0: 0-5 = slope*(x+2)
+    # Q10: percent chain, total of four quarters
+    q4 = 75600; q3 = R(q4) / R("1.4"); q2 = q3 / R("0.75"); q1 = q2 / R("1.2")
+    A[(2, 10)] = q1 + q2 + q3 + q4
+    # Q11: maximize w(240-4w): brute force over half-meters, compare with the vertex
+    wv = sp.symbols("wv")
+    A[(2, 11)] = max(sp.Rational(i, 2) * (240 - 4 * sp.Rational(i, 2)) for i in range(0, 121))
+    assert A[(2, 11)] == (wv * (240 - 4 * wv)).subs(wv, 30)
+    # Q12: three devices
+    A[(2, 12)] = 1 / (R(1, 6) + R(1, 9) - R(1, 18))
 
-    # Q10: f quadratic, max 25 at x=3, f(0)=16 ; g(x)=-2 f(x+1)+k has exactly one x-intercept ; g(0)
+    # Q13: f quadratic, max 25 at x=3, f(0)=16 ; g(x)=-2 f(x+1)+k has exactly one x-intercept ; g(0)
     qa = sp.symbols("qa")
     a10 = sp.solve(sp.Eq(qa * (0 - 3) ** 2 + 25, 16), qa)[0]
     assert a10 < 0                                   # it is a maximum
@@ -149,9 +166,21 @@ def solve_all():
     g10 = sp.expand(-2 * f10(X10 + 1) + k10)
     k10v = sp.solve(sp.discriminant(g10, X10), k10)  # one x-intercept <=> discriminant 0
     assert len(k10v) == 1
-    A[(2, 10)] = g10.subs({k10: k10v[0], X10: 0})
-
-    # Q11: kx+2y=10 ; 24x+(k+2)y=40 -> no solution
+    A[(2, 13)] = g10.subs({k10: k10v[0], X10: 0})
+    # Q14: linear f, f(f(x)) = 4x+9, f(2)>0 -> f(-10)
+    a19, b19 = sp.symbols("a19 b19")
+    sols19 = sp.solve([sp.Eq(a19 ** 2, 4), sp.Eq(a19 * b19 + b19, 9)], [a19, b19], dict=True)
+    assert len(sols19) == 2
+    sols19 = [d for d in sols19 if d[a19] * 2 + d[b19] > 0]
+    assert len(sols19) == 1
+    A[(2, 14)] = sols19[0][a19] * (-10) + sols19[0][b19]
+    # Q15: conditional probability
+    north = R(55, 100) * 800; south = 800 - north
+    fn = north * R(40, 100); fs = south * R(65, 100)
+    A[(2, 15)] = float(fn / (fn + fs))               # 0.4293 -> 0.43
+    # Q16: integer k with 2x^2+kx+8=0 having no real roots
+    A[(2, 16)] = sum(1 for kv in range(-200, 201) if kv * kv - 4 * 2 * 8 < 0)
+    # Q17: kx+2y=10 ; 24x+(k+2)y=40 -> no solution
     nosol = []
     for kv in range(-60, 61):
         coef = sp.Matrix([[kv, 2], [24, kv + 2]])
@@ -159,56 +188,29 @@ def solve_all():
         if coef.rank() == 1 and aug.rank() == 2:
             nosol.append(kv)
     assert len(nosol) == 1, nosol
-    A[(2, 11)] = nosol[0]
-    # Q12: integer k with 2x^2+kx+8=0 having no real roots
-    A[(2, 12)] = sum(1 for kv in range(-200, 201) if kv * kv - 4 * 2 * 8 < 0)
-    # Q13: conditional probability
-    north = R(55, 100) * 800; south = 800 - north
-    fn = north * R(40, 100); fs = south * R(65, 100)
-    A[(2, 13)] = float(fn / (fn + fs))               # 0.4293 -> 0.43
-    # Q14: circle x^2+y^2-10x+4y=20 cut by y=-8
+    A[(2, 17)] = nosol[0]
+    # Q18: circle x^2+y^2-10x+4y=20 cut by y=-8
     xx2 = sp.symbols("xx2")
     pts = sp.solve(xx2 ** 2 + (-8) ** 2 - 10 * xx2 + 4 * (-8) - 20, xx2)
-    A[(2, 14)] = sp.simplify(abs(pts[0] - pts[1]))
-    # Q15: rates
-    A[(2, 15)] = 1 / (R(1, 6) + R(1, 9) - R(1, 18))
-    # Q16: maximize w(240-4w): brute force over half-meters, compare with the vertex
-    wv = sp.symbols("wv")
-    A[(2, 16)] = max(sp.Rational(i, 2) * (240 - 4 * sp.Rational(i, 2)) for i in range(0, 121))
-    assert A[(2, 16)] == (wv * (240 - 4 * wv)).subs(wv, 30)
-
-    # Q17: line through (4,3), positive intercepts p,q, area 24 -> slope
-    p17 = sp.symbols("p17", positive=True)
-    q17 = 48 / p17                                    # (1/2) p q = 24
-    sols17 = sp.solve(sp.Eq(4 / p17 + 3 / q17, 1), p17)   # (4,3) lies on x/p + y/q = 1
-    assert len(sols17) == 1, sols17                   # exactly one such line
-    A[(2, 17)] = -(q17 / p17).subs(p17, sols17[0])
-
-    # Q18: y=-x^2+8x-3 and y=2x+k meet where x-coordinates differ by 4 -> y at larger x
+    A[(2, 18)] = sp.simplify(abs(pts[0] - pts[1]))
+    # Q19: y=-x^2+8x-3 and y=2x+k meet where x-coordinates differ by 4 -> y at larger x
     k18, X18 = sp.symbols("k18 X18")
     roots18 = sp.solve(sp.Eq(-X18 ** 2 + 8 * X18 - 3, 2 * X18 + k18), X18)
     kv18 = sp.solve(sp.Eq((roots18[1] - roots18[0]) ** 2, 16), k18)
     assert len(kv18) == 1
     r18 = [r.subs(k18, kv18[0]) for r in roots18]
     assert abs(r18[0] - r18[1]) == 4
-    A[(2, 18)] = 2 * max(r18) + kv18[0]
-
-    # Q19: linear f, f(f(x)) = 4x+9, f(2)>0 -> f(-10)
-    a19, b19 = sp.symbols("a19 b19")
-    sols19 = sp.solve([sp.Eq(a19 ** 2, 4), sp.Eq(a19 * b19 + b19, 9)], [a19, b19], dict=True)
-    assert len(sols19) == 2
-    sols19 = [d for d in sols19 if d[a19] * 2 + d[b19] > 0]
-    assert len(sols19) == 1
-    A[(2, 19)] = sols19[0][a19] * (-10) + sols19[0][b19]
-
-    # Q20: percent chain
-    q4 = 75600; q3 = R(q4) / R("1.4"); q2 = q3 / R("0.75"); q1 = q2 / R("1.2")
-    A[(2, 20)] = q1 + q2 + q3 + q4
+    A[(2, 19)] = 2 * max(r18) + kv18[0]
+    # Q20: line through (4,3), positive intercepts p,q, area 24 -> slope
+    p17 = sp.symbols("p17", positive=True)
+    q17 = 48 / p17                                    # (1/2) p q = 24
+    sols17 = sp.solve(sp.Eq(4 / p17 + 3 / q17, 1), p17)   # (4,3) lies on x/p + y/q = 1
+    assert len(sols17) == 1, sols17                   # exactly one such line
+    A[(2, 20)] = -(q17 / p17).subs(p17, sols17[0])
     # Q21: similar triangles
     ratio = R(6, 15) ** 2
     abc = sp.symbols("abc")
     A[(2, 21)] = sp.solve(sp.Eq(abc - ratio * abc, 84), abc)[0] * ratio
-
     # Q22: (x-1)/(x-k) = (x+3)/(x-2): sum of all k with no solution
     def nosol22(kv):
         kv = sp.nsimplify(kv)
@@ -243,7 +245,7 @@ def main():
                     c = tex_to_expr(q["choices"][Lt], SYMS)
                     if key == (1, 22):               # nearest printed choice (percent, 1 decimal)
                         match = abs(float(c) - float(val)) < 0.05
-                    elif key == (2, 13):             # nearest hundredth
+                    elif key == (2, 15):             # nearest hundredth
                         match = abs(float(c) - float(val)) < 0.005
                     elif isinstance(val, float):
                         match = abs(float(c) - val) < 1e-9
@@ -277,10 +279,10 @@ def main():
         fails += (not cond)
 
     chk("44 questions present", len(qs) == 44)
-    for mod, spec in ((1, dict(E=range(1, 8), M=range(8, 18), H=range(18, 23),
-                              dom=dict(ALG=8, ADV=7, PSDA=4, GT=3), grid=(5, 6))),
-                      (2, dict(E=range(1, 4), M=range(4, 10), H=range(10, 23),
-                              dom=dict(ALG=7, ADV=8, PSDA=3, GT=4), grid=(5, 6)))):
+    for mod, spec in ((1, dict(E=range(1, 9), M=range(9, 20), H=range(20, 23),
+                              dom=dict(ALG=8, ADV=8, PSDA=3, GT=3), grid=(5, 6))),
+                      (2, dict(E=range(1, 3), M=range(3, 13), H=range(13, 23),
+                              dom=dict(ALG=8, ADV=8, PSDA=3, GT=3), grid=(5, 6)))):
         qq = [qs[(mod, n)] for n in range(1, 23)]
         chk(f"M{mod}: 22 questions", len(qq) == 22)
         for d in "EMH":
