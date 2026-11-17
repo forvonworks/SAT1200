@@ -221,8 +221,8 @@ question text, numbers, or wording is reproduced here. 15 Easy / 15 Medium
 4. The value of a car is currently $\$18{,}000$ and is estimated to decrease each year by $6\%$ from the previous year's value. Which equation can be used to estimate the number of years $t$ it will take for the car's value to reach $\$12{,}000$?
    A) $18000=12000(0.94)^t$  B) $12000=18000(0.06)^t$  C) $12000=18000(0.94)^t$  D) $18000=12000(1.06)^t$
 
-5. A population modeled by $P=P_0(1+r)^t$ more than doubles every year, where $r$ is a constant. Which of the following must be true?
-   A) $0<r<1$  B) $r>1$  C) $-1<r<0$  D) $r<-1$
+5. The number of followers of an online channel is $800$ at the start of a campaign. Each week, the number of followers increases by $125\%$ of the previous week's number. Which equation gives the number of followers $F$ after $w$ weeks?
+   A) $F=800(1.25)^w$  B) $F=800(2.25)^w$  C) $F=800(3.25)^w$  D) $F=800(1.125)^w$
 
 6. A function is defined by the table of values below, for $x=0,1,2,3$:
    $$y = 12,\ 18,\ 27,\ 40.5$$
@@ -258,14 +258,14 @@ question text, numbers, or wording is reproduced here. 15 Easy / 15 Medium
 
 ### Hard
 
-1. $P(t)=840(1.06)^{(4/3)t}$ models the population, in thousands, of a city $t$ years after 2015, where the population is predicted to increase by $6\%$ every $n$ months. What is the value of $n$?
-   A) $4$  B) $8$  C) $9$  D) $16$
+1. The function $f(x)=a\cdot b^x$, where $a$ and $b$ are positive constants, satisfies $f(2)=108$ and $f(4)=192$. What is the value of $f(6)$?
+   A) $256$  B) $276$  C) $\dfrac{1024}{3}$  D) $384$
 
-2. A quantity modeled by $Q=Q_0(1+r)^t$ decreases to less than half its value every year, where $r$ is a constant. Which of the following must be true?
-   A) $r<-1$  B) $-1<r<-0.5$  C) $-0.5<r<0$  D) $r>-0.5$
+2. Savings Account A pays $12\%$ interest per year, compounded once a year. Savings Account B pays $6\%$ interest every six months, compounded every six months. Each account starts with $\$2{,}000$. To the nearest dollar, how much more money is in Account B than in Account A after $3$ years?
+   A) $\$0$  B) $\$27$  C) $\$428$  D) $\$1{,}138$
 
-3. The number of subscribers to a streaming service is currently $85{,}000$ and is projected to increase each month by $2.5\%$ from the previous month. Which equation can be used to estimate the number of months $t$ it will take for the number of subscribers to reach $120{,}000$?
-   A) $85000=120000(0.025)^t$  B) $120000=85000(0.025)^t$  C) $120000=85000(1.025)^t$  D) $85000=120000(1.025)^t$
+3. The function $f$ is defined by $f(x)=4(2.5)^x$. For every real number $x$, what is the value of $\dfrac{f(x+2)-f(x)}{f(x)}$?
+   A) $1.5$  B) $5.25$  C) $6.25$  D) $21$
 
 4. The function $f(t)=18{,}000(3)^{t/504}$ models the number of users of an app $t$ days after launch. How much time, in **weeks**, does it take for the number of users to triple?
    A) $72$  B) $504$  C) $84$  D) $3$
@@ -364,4 +364,4 @@ are all original.
 
 **Set 8 — Medium:** 1) C  2) C  3) B  4) C  5) B  6) B  7) D  8) C  9) C  10) C  11) B  12) C  13) B  14) C  15) C
 
-**Set 8 — Hard:** 1) C  2) B  3) C  4) A  5) C  6) C  7) A  8) B  9) B  10) B  11) A  12) B  13) B  14) B  15) B
+**Set 8 — Hard:** 1) C  2) B  3) B  4) A  5) C  6) C  7) A  8) B  9) B  10) B  11) A  12) B  13) B  14) B  15) B
