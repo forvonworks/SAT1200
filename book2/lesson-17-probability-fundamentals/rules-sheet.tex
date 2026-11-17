@@ -103,41 +103,53 @@
 \mbox{}%
 
 % ---- CARD 1: Basic probability ----
-\cardbg{16}{40}{178}{68}
+\cardbg{16}{40}{178}{58}
 \pill{26}{43}{Basic probability (ehtimollik)}
 
 \begin{textblock*}{158mm}(26mm,56mm)
-{\fontsize{15}{18}\selectfont $P(\text{event})=\dfrac{\text{favorable outcomes}}{\text{total outcomes}}$}
+{\fontsize{15}{18}\selectfont $P(\text{event})=\dfrac{\text{favorable outcomes}}{\text{total outcomes}}$\qquad $0\le P\le1$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,78mm)
+\begin{textblock*}{158mm}(26mm,77mm)
 {\fontsize{11}{14}\selectfont
-200 students, 80 prefer basketball: $P=\dfrac{80}{200}=\dfrac25=40\%$}
+$200$ students, $80$ prefer basketball: $P=\dfrac{80}{200}=\dfrac25=0.4=40\%$}
 \end{textblock*}
 
 \begin{textblock*}{158mm}(26mm,90mm)
 {\fontsize{10}{13}\selectfont\color{black!55}\itshape
-From a table: total outcomes is the relevant row/column total -- read the
-condition carefully before dividing.}
+From a table: total outcomes = the relevant row, column or grand total.}
 \end{textblock*}
 
-% ---- CARD 2: Addition rule ----
-\cardbg{16}{116}{178}{78}
-\pill{26}{119}{Addition rule: $P(A$ or $B)$}
+% ---- CARD 2: Complement ----
+\cardbg{16}{106}{178}{46}
+\pill{26}{109}{Complement}
 
-\begin{textblock*}{158mm}(26mm,132mm)
-{\fontsize{13}{16}\selectfont $P(A\text{ or }B)=P(A)+P(B)-P(A\text{ and }B)$}
+\begin{textblock*}{158mm}(26mm,122mm)
+{\fontsize{14}{17}\selectfont $P(\text{not }A)=1-P(A)$\qquad
+$P(\text{at least one})=1-P(\text{none})$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,147mm)
-{\fontsize{11}{14}\selectfont\color{ink}
-One die, even OR $>3$: $\dfrac36+\dfrac36-\dfrac26=\dfrac23$}
+\begin{textblock*}{158mm}(26mm,137mm)
+{\fontsize{11}{14}\selectfont
+Two coin flips, at least one head: $1-\dfrac12\cdot\dfrac12=\dfrac34$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,162mm)
+% ---- CARD 3: Addition rule ----
+\cardbg{16}{160}{178}{62}
+\pill{26}{163}{Addition rule: $P(A$ or $B)$}
+
+\begin{textblock*}{158mm}(26mm,176mm)
+{\fontsize{14}{17}\selectfont $P(A\text{ or }B)=P(A)+P(B)-P(A\text{ and }B)$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,191mm)
+{\fontsize{11}{14}\selectfont
+One die, even or $>3$: $\dfrac36+\dfrac36-\dfrac26=\dfrac23$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,208mm)
 {\fontsize{10}{13}\selectfont\color{black!55}\itshape
-If $A$ and $B$ can't happen together, $P(A\text{ and }B)=0$ and the rule
-reduces to $P(A)+P(B)$ -- but always check for overlap first.}
+Can't happen together $\Rightarrow$ $P(A\text{ and }B)=0$, just add. Always check for overlap first.}
 \end{textblock*}
 
 \clearpage
@@ -150,50 +162,69 @@ reduces to $P(A)+P(B)$ -- but always check for overlap first.}
 \pagefooter{93}
 \mbox{}%
 
-% ---- CARD 3: Multiplication rule ----
-\cardbg{16}{33}{178}{58}
-\pill{26}{36}{Multiplication rule: independent events}
+% ---- CARD 4: Multiplication rule ----
+\cardbg{16}{33}{178}{62}
+\pill{26}{36}{Multiplication rule: $P(A$ and $B)$}
 
 \begin{textblock*}{158mm}(26mm,49mm)
-{\fontsize{13}{16}\selectfont $P(A\text{ and }B)=P(A)\times P(B)$}
+{\fontsize{14}{17}\selectfont Independent: $P(A\text{ and }B)=P(A)\cdot P(B)$}\\[1.5mm]
+{\fontsize{14}{17}\selectfont Without replacement: $P(A\text{ and }B)=P(A)\cdot P(B\mid A)$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,64mm)
-{\fontsize{11}{14}\selectfont\color{ink}
-Two coin flips, heads then tails: $\dfrac12\times\dfrac12=\dfrac14$}
+\begin{textblock*}{158mm}(26mm,72mm)
+{\fontsize{11}{14}\selectfont
+Two coin flips, heads then tails: $\dfrac12\cdot\dfrac12=\dfrac14$\\[1.5mm]
+$4$ red, $6$ blue, draw two, both red: $\dfrac{4}{10}\cdot\dfrac{3}{9}=\dfrac{2}{15}$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,78mm)
-{\fontsize{10}{13}\selectfont\color{black!55}\itshape
-Only valid when one event's outcome doesn't change the other's probability.}
+% ---- CARD 5: Conditional probability ----
+\cardbg{16}{103}{178}{70}
+\pill{26}{106}{Conditional probability: $P(A\mid B)$}
+
+\begin{textblock*}{158mm}(26mm,119mm)
+{\fontsize{14}{17}\selectfont $P(A\mid B)=\dfrac{P(A\text{ and }B)}{P(B)}$}
 \end{textblock*}
 
-% ---- CARD 4: Mutually exclusive vs independent ----
-\cardbg{16}{101}{178}{115}
-\pill{26}{104}{Mutually exclusive vs.\ independent}
-
-\begin{textblock*}{158mm}(26mm,117mm)
-{\fontsize{10.5}{14}\selectfont
-\begin{tabular}{|p{32mm}|p{52mm}|p{52mm}|}
+\begin{textblock*}{70mm}(26mm,141mm)
+{\fontsize{10}{12}\selectfont\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|p{14mm}|>{\centering\arraybackslash}p{13mm}|>{\centering\arraybackslash}p{13mm}|>{\centering\arraybackslash}p{13mm}|}
 \hline
-\rowcolor{accent}
-{\color{white}\textbf{}} & {\color{white}\textbf{Mutually exclusive}} & {\color{white}\textbf{Independent}} \\ \hline
-Question & Can they happen together at all? & Does one change the other's probability? \\ \hline
-Condition & $P(A\text{ and }B)=0$ & $P(A\text{ and }B)=P(A)P(B)$ \\ \hline
-Rule used & Addition rule & Multiplication rule \\ \hline
+\cellcolor{accent} & \cellcolor{accent}\textcolor{white}{Bball} & \cellcolor{accent}\textcolor{white}{Vball} & \cellcolor{accent}\textcolor{white}{Total}\\ \hline
+Girls & 14 & 26 & \textbf{40}\\ \hline
+Boys & 33 & 17 & \textbf{50}\\ \hline
+\textbf{Total} & \textbf{47} & \textbf{43} & \textbf{90}\\ \hline
 \end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,172mm)
-{\fontsize{11}{14}\selectfont\color{accent}
-If two events are mutually exclusive AND both have nonzero probability,
-they are automatically NOT independent.}
+\begin{textblock*}{85mm}(104mm,141mm)
+{\fontsize{10.5}{13}\selectfont
+``Given'' girl $\Rightarrow$ use only the girls row:\\[1mm]
+$P(\text{volleyball}\mid\text{girl})=\dfrac{26}{40}=\dfrac{13}{20}$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,192mm)
+% ---- CARD 6: Mutually exclusive vs independent ----
+\cardbg{16}{181}{178}{74}
+\pill{26}{184}{Mutually exclusive vs.\ independent}
+
+\begin{textblock*}{158mm}(26mm,197mm)
+{\fontsize{10}{13}\selectfont\hyphenpenalty=10000\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|p{22mm}|p{46mm}|p{62mm}|}
+\hline
+\cellcolor{accent} & \cellcolor{accent}\textcolor{white}{\textbf{Mutually exclusive}} & \cellcolor{accent}\textcolor{white}{\textbf{Independent}}\\ \hline
+Question & Can they happen together? & Does one change the other's probability?\\ \hline
+Condition & $P(A\text{ and }B)=0$ & $P(A\text{ and }B)=P(A)P(B)$\\ \hline
+Rule used & Addition rule & Multiplication rule\\ \hline
+\end{tabular}}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,233mm)
+{\fontsize{10.5}{13}\selectfont\color{accent}
+Mutually exclusive with both probabilities $>0$ $\Rightarrow$ \textbf{never independent}.}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,244mm)
 {\fontsize{10}{13}\selectfont\color{black!55}\itshape
-One die: "rolling 3" and "rolling 4" are mutually exclusive but not
-independent -- rolling a 3 makes $P(4)$ drop from $\frac16$ to $0$.}
+One die, ``3'' and ``4'': exclusive, and $P(4\mid3)=0\ne\frac16=P(4)$.}
 \end{textblock*}
 
 \end{document}

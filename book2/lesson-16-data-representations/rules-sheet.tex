@@ -92,6 +92,25 @@
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.5}
 
+% Bar graph (histogram of counts). #1 counts, #2 slot width mm, #3 mm per count,
+% #4 number of bars, #5 total picture height mm, #6 mean (x position), #7 top of mean line (count units)
+% Box is fixed: top-left at the textblock anchor, hangs down #5 mm.
+\newcommand{\bargraph}[7]{%
+\pgfmathsetmacro{\bgW}{#4*#2}%
+\pgfmathsetmacro{\bgS}{#5-5}%
+\begin{tikzpicture}[x=#2mm,y=#3mm]
+\useasboundingbox (0mm,-#5mm) rectangle (\bgW mm,0mm);
+\begin{scope}[shift={(0mm,-\bgS mm)}]
+\draw[ink!55,line width=0.5pt] (0.3,0) -- ({#4+0.7},0);
+\foreach \c [count=\i] in {#1} {%
+  \ifnum\c>0 \fill[accent] ({\i-0.42},0) rectangle ({\i+0.42},\c);\fi
+  \node[below,font=\sffamily\fontsize{6}{6}\selectfont,text=ink!80,inner sep=1pt] at (\i,0) {\i};
+}
+\draw[dashed,ink!70,line width=0.45pt] (#6,-0.2) -- (#6,#7);
+\node[above,font=\sffamily\fontsize{5.5}{6}\selectfont,text=ink!80,inner sep=1pt] at (#6,#7) {mean};
+\end{scope}
+\end{tikzpicture}}
+
 \begin{document}
 
 % ======================================================================
@@ -103,55 +122,100 @@
 \mbox{}%
 
 % ---- CARD 1: Frequency table ----
-\cardbg{16}{40}{178}{45}
+\cardbg{16}{40}{178}{56}
 \pill{26}{43}{Frequency table (chastota jadvali)}
 
-\begin{textblock*}{158mm}(26mm,56mm)
-{\fontsize{11}{14}\selectfont\color{ink}
-Total = sum of all frequencies. Percent of a category $=\dfrac{\text{count}}{\text{total}}\times100\%$.}
+\begin{textblock*}{158mm}(26mm,55mm)
+{\fontsize{13}{16}\selectfont
+total $=$ sum of frequencies\qquad
+$\text{percent}=\dfrac{\text{count}}{\text{total}}\times100\%$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,72mm)
-{\fontsize{12}{15}\selectfont
-$18$ of $50$ students: $\dfrac{18}{50}\times100\%=36\%$}
-\end{textblock*}
-
-% ---- CARD 2: Two-way table ----
-\cardbg{16}{93}{178}{115}
-\pill{26}{96}{Two-way table -- pick the right denominator}
-
-\begin{textblock*}{110mm}(26mm,109mm)
-{\fontsize{10}{13}\selectfont
-\begin{tabular}{|p{24mm}|>{\centering\arraybackslash}p{20mm}|>{\centering\arraybackslash}p{20mm}|>{\centering\arraybackslash}p{24mm}|}
+\begin{textblock*}{158mm}(26mm,68mm)
+{\fontsize{10}{12}\selectfont\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|p{14mm}|*{4}{>{\centering\arraybackslash}p{17mm}|}>{\centering\arraybackslash}p{13mm}|}
 \hline
-\rowcolor{accent}
-{\color{white}} & {\color{white}Basketball} & {\color{white}Volleyball} & {\color{white}Row total} \\ \hline
-Girls & 14 & 26 & \textbf{40} \\ \hline
-Boys & 33 & 17 & \textbf{50} \\ \hline
-\textbf{Col. total} & \textbf{47} & \textbf{43} & \textbf{90} \\ \hline
+\cellcolor{accent}\textcolor{white}{\textbf{Subject}} & \cellcolor{accent}\textcolor{white}{Math} & \cellcolor{accent}\textcolor{white}{Physics} & \cellcolor{accent}\textcolor{white}{Biology} & \cellcolor{accent}\textcolor{white}{History} & \cellcolor{accent}\textcolor{white}{Total}\\ \hline
+Count & 18 & 9 & 13 & 10 & \textbf{50}\\ \hline
 \end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,146mm)
+\begin{textblock*}{158mm}(26mm,83mm)
+{\fontsize{11}{14}\selectfont
+Math: $\dfrac{18}{50}\times100\%=36\%$}
+\end{textblock*}
+
+% ---- CARD 2: Table -> bar graph ----
+\cardbg{16}{102}{178}{100}
+\pill{26}{105}{Table $\to$ bar graph $\to$ spread}
+
+\begin{textblock*}{158mm}(26mm,118mm)
+{\fontsize{11}{14}\selectfont
+Value on the $x$-axis, count $=$ bar height. Tallest bar $=$ mode. Then see
+where the tall bars sit relative to the mean.}
+\end{textblock*}
+
+\begin{textblock*}{74mm}(26mm,133mm)
+{\fontsize{10}{12}\selectfont\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|p{12mm}|*{5}{>{\centering\arraybackslash}p{7mm}|}}
+\hline
+\cellcolor{accent}\textcolor{white}{\textbf{Value}} & \cellcolor{accent}\textcolor{white}{1} & \cellcolor{accent}\textcolor{white}{2} & \cellcolor{accent}\textcolor{white}{3} & \cellcolor{accent}\textcolor{white}{4} & \cellcolor{accent}\textcolor{white}{5}\\ \hline
+Count & 2 & 4 & 8 & 4 & 2\\ \hline
+\end{tabular}}
+\end{textblock*}
+\begin{textblock*}{74mm}(106mm,133mm)
+{\fontsize{10}{12}\selectfont\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|p{12mm}|*{5}{>{\centering\arraybackslash}p{7mm}|}}
+\hline
+\cellcolor{accent}\textcolor{white}{\textbf{Value}} & \cellcolor{accent}\textcolor{white}{1} & \cellcolor{accent}\textcolor{white}{2} & \cellcolor{accent}\textcolor{white}{3} & \cellcolor{accent}\textcolor{white}{4} & \cellcolor{accent}\textcolor{white}{5}\\ \hline
+Count & 6 & 2 & 4 & 2 & 6\\ \hline
+\end{tabular}}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(26mm,150mm)
+\bargraph{2,4,8,4,2}{7}{1.7}{5}{30}{3}{13.5}
+\end{textblock*}
+\begin{textblock*}{40mm}(106mm,150mm)
+\bargraph{6,2,4,2,6}{7}{1.7}{5}{30}{3}{13.5}
+\end{textblock*}
+
+\begin{textblock*}{74mm}(26mm,183mm)
 {\fontsize{10.5}{13}\selectfont\color{ink}
-``\% of girls'' $\to$ denominator = girls' row total. ``\% of volleyball
-choosers'' $\to$ denominator = volleyball's column total.}
+Bars bunched at the middle $\Rightarrow$ \textbf{small SD}.}
+\end{textblock*}
+\begin{textblock*}{74mm}(106mm,183mm)
+{\fontsize{10.5}{13}\selectfont\color{ink}
+Tall bars toward the ends $\Rightarrow$ \textbf{larger SD}.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,162mm)
-{\fontsize{11}{14}\selectfont
-\% of girls who chose volleyball: $\dfrac{26}{40}\times100\%=65\%$}
-\end{textblock*}
-
-\begin{textblock*}{158mm}(26mm,176mm)
-{\fontsize{11}{14}\selectfont
-\% of volleyball choosers who are girls: $\dfrac{26}{43}\times100\%\approx60.5\%$}
-\end{textblock*}
-
-\begin{textblock*}{158mm}(26mm,192mm)
+\begin{textblock*}{158mm}(26mm,193mm)
 {\fontsize{10}{13}\selectfont\color{black!55}\itshape
-Same number ($26$), different denominator, different answer -- read the
-question's word order carefully.}
+Both: $n=20$, mean $3$, range $4$ -- same range, different SD.}
+\end{textblock*}
+
+% ---- CARD 3: Mean/median/mode from a frequency table ----
+\cardbg{16}{208}{178}{66}
+\pill{26}{211}{Mean, median, mode from a table}
+
+\begin{textblock*}{158mm}(26mm,224mm)
+{\fontsize{13}{16}\selectfont
+$\text{mean}=\dfrac{\sum(\text{value}\times\text{count})}{\text{total count}}$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,242mm)
+{\fontsize{10}{12}\selectfont\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|p{14mm}|*{4}{>{\centering\arraybackslash}p{9mm}|}}
+\hline
+\cellcolor{accent}\textcolor{white}{\textbf{Value}} & \cellcolor{accent}\textcolor{white}{0} & \cellcolor{accent}\textcolor{white}{1} & \cellcolor{accent}\textcolor{white}{2} & \cellcolor{accent}\textcolor{white}{3}\\ \hline
+Count & 4 & 6 & 7 & 3\\ \hline
+\end{tabular}}
+\end{textblock*}
+
+\begin{textblock*}{90mm}(96mm,242mm)
+{\fontsize{10.5}{13}\selectfont
+mean $=\dfrac{0(4)+1(6)+2(7)+3(3)}{20}=\dfrac{29}{20}=1.45$\\[1mm]
+median $=$ avg.\ of 10th and 11th values $=\dfrac{1+2}{2}=1.5$\\[1mm]
+mode $=2$ (highest count)}
 \end{textblock*}
 
 \clearpage
@@ -164,52 +228,92 @@ question's word order carefully.}
 \pagefooter{85}
 \mbox{}%
 
-% ---- CARD 3: Scatterplot ----
-\cardbg{16}{33}{178}{145}
-\pill{26}{36}{Scatterplot -- correlation}
+% ---- CARD 4: Two-way table ----
+\cardbg{16}{33}{178}{108}
+\pill{26}{36}{Two-way table -- pick the right denominator}
 
 \begin{textblock*}{158mm}(26mm,49mm)
-{\fontsize{11}{14}\selectfont
-\begin{tabular}{|p{80mm}|>{\centering\arraybackslash}p{70mm}|}
+{\fontsize{10}{12}\selectfont\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|p{24mm}|>{\centering\arraybackslash}p{22mm}|>{\centering\arraybackslash}p{22mm}|>{\centering\arraybackslash}p{22mm}|}
 \hline
-\rowcolor{accent}
-{\color{white}\textbf{Pattern}} & {\color{white}\textbf{Correlation}} \\ \hline
-Points trend up, left to right & Positive \\ \hline
-Points trend down, left to right & Negative \\ \hline
-No clear up/down trend & None \\ \hline
+\cellcolor{accent} & \cellcolor{accent}\textcolor{white}{Basketball} & \cellcolor{accent}\textcolor{white}{Volleyball} & \cellcolor{accent}\textcolor{white}{Row total}\\ \hline
+Girls & 14 & 26 & \textbf{40}\\ \hline
+Boys & 33 & 17 & \textbf{50}\\ \hline
+\textbf{Col. total} & \textbf{47} & \textbf{43} & \textbf{90}\\ \hline
 \end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{100mm}(26mm,97mm)
-\begin{tikzpicture}
-\draw[ink!40,->] (0,0) -- (30mm,0) node[right,font=\tiny]{$x$};
-\draw[ink!40,->] (0,0) -- (0,38mm) node[above,font=\tiny]{$y$};
-\draw[accent!50,line width=0.8pt] (0,5mm) -- (27mm,37mm);
-\filldraw[accent] (6mm,10mm) circle (0.7mm);
-\filldraw[accent] (9mm,12.5mm) circle (0.7mm);
-\filldraw[accent] (12mm,17.5mm) circle (0.7mm);
-\filldraw[accent] (15mm,20mm) circle (0.7mm);
-\filldraw[accent] (15mm,25mm) circle (0.7mm);
-\filldraw[accent] (21mm,30mm) circle (0.7mm);
-\filldraw[accent] (24mm,32.5mm) circle (0.7mm);
+\begin{textblock*}{158mm}(26mm,80mm)
+{\fontsize{10.5}{13}\selectfont\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|p{66mm}|p{70mm}|}
+\hline
+\cellcolor{accent}\textcolor{white}{\textbf{Question asks for\ldots}} & \cellcolor{accent}\textcolor{white}{\textbf{Divide the cell by\ldots}}\\ \hline
+Both at once (girls \emph{and} volleyball) & grand total $(90)$\\ \hline
+``Of / among the \emph{girls}\ldots'' & that row's total $(40)$\\ \hline
+``Of / among the \emph{volleyball} choosers\ldots'' & that column's total $(43)$\\ \hline
+\end{tabular}}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,111mm)
+{\fontsize{11}{14}\selectfont
+Girls who chose volleyball: $\dfrac{26}{40}\times100\%=65\%$\\[1.5mm]
+Volleyball choosers who are girls: $\dfrac{26}{43}\times100\%\approx60.5\%$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,131mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape
+Check: row totals and column totals both add to the grand total.}
+\end{textblock*}
+
+% ---- CARD 5: Scatterplot, correlation, line of best fit ----
+\cardbg{16}{149}{178}{110}
+\pill{26}{152}{Scatterplot \& line of best fit}
+
+% diagram: equal 4 mm per unit on both axes; axes origin at (8mm,-66mm) of the 46 x 72 mm box
+\begin{textblock*}{48mm}(26mm,165mm)
+\begin{tikzpicture}[x=4mm,y=4mm]
+\useasboundingbox (0mm,-72mm) rectangle (46mm,0mm);
+\begin{scope}[shift={(2,-16.5)}]
+\draw[ink!55,line width=0.5pt,->] (0,0) -- (7.6,0) node[right,font=\sffamily\fontsize{6}{6}\selectfont]{$x$};
+\draw[ink!55,line width=0.5pt,->] (0,0) -- (0,16) node[above,font=\sffamily\fontsize{6}{6}\selectfont]{$y$};
+\foreach \t in {1,...,7}{\draw[ink!55,line width=0.4pt] (\t,-0.15) -- (\t,0.15);
+  \node[below,font=\sffamily\fontsize{6}{6}\selectfont,text=ink!80,inner sep=1pt] at (\t,-0.15) {\t};}
+\foreach \t in {5,10,15}{\draw[ink!55,line width=0.4pt] (-0.15,\t) -- (0.15,\t);
+  \node[left,font=\sffamily\fontsize{6}{6}\selectfont,text=ink!80,inner sep=1pt] at (-0.15,\t) {\t};}
+\draw[accent!70,line width=0.8pt] (0,1) -- (7,15);
+\draw[ink!70,dashed,line width=0.5pt] (6,13) -- (6,14);
+\foreach \p in {(1,4),(2,4),(3,7),(4,9),(5,10),(6,14)}{\fill[accent] \p circle (0.7mm);}
+\node[right,font=\sffamily\fontsize{6.5}{7}\selectfont,text=accent,inner sep=1pt] at (6.45,12) {$\hat y=2x+1$};
+\end{scope}
 \end{tikzpicture}
 \end{textblock*}
 
-\begin{textblock*}{70mm}(135mm,110mm)
-{\fontsize{10}{13}\selectfont\color{ink}
-Points rise left to right $\to$ \textbf{positive correlation}.}
+\begin{textblock*}{105mm}(80mm,165mm)
+{\fontsize{10}{12}\selectfont\renewcommand{\arraystretch}{1.35}\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|p{62mm}|>{\centering\arraybackslash}p{24mm}|}
+\hline
+\cellcolor{accent}\textcolor{white}{\textbf{Pattern}} & \cellcolor{accent}\textcolor{white}{\textbf{Correlation}}\\ \hline
+Points trend up, left to right & Positive\\ \hline
+Points trend down, left to right & Negative\\ \hline
+No clear up/down trend & None\\ \hline
+\end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,146mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-SAT asks for the relationship in words (``strong positive,'' ``weak
-negative,'' ``no correlation''), not an $r$-value formula.}
-\end{textblock*}
-
-\begin{textblock*}{158mm}(26mm,162mm)
+\begin{textblock*}{105mm}(80mm,194mm)
 {\fontsize{10}{13}\selectfont\color{black!55}\itshape
-Correlation is not causation -- a trend between two quantities does not
-prove one causes the other.}
+Correlation is not causation.}
+\end{textblock*}
+
+\begin{textblock*}{105mm}(80mm,204mm)
+{\fontsize{13}{16}\selectfont $\hat y=mx+b$}\\[1mm]
+{\fontsize{10.5}{13}\selectfont
+$m=$ change in $y$ per $1$ unit of $x$\\
+$b=$ predicted $y$ when $x=0$\\[1.5mm]
+\textbf{Predict:} substitute $x$ into the line.\\
+$x=4$ (inside the data): $2(4)+1=9$ \;--\; interpolation\\
+$x=10$ (outside the data): $2(10)+1=21$ \;--\; extrapolation, less reliable\\[1.5mm]
+\textbf{Residual} $=$ actual $-$ predicted\\
+At $x=6$: $14-13=+1$ \;(point above the line $\Rightarrow$ positive)}
 \end{textblock*}
 
 \end{document}
