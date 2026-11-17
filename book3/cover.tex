@@ -1,0 +1,37 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage{xcolor}
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+\definecolor{bg}{HTML}{0F6A52}
+\definecolor{soft}{HTML}{A9CFC2}
+\pagestyle{empty}\setlength{\parindent}{0pt}
+\newcommand{\track}[3]{{\addfontfeatures{LetterSpace=#1}\sffamily\bfseries\fontsize{#2}{#2}\selectfont #3}}
+\begin{document}
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.north west)},x=1pt,y=-1pt,color=white]
+\fill[bg] (0,0) rectangle (595.5,842.25);
+% author
+\node[anchor=west] at (62,97) {\track{22}{13}{AVAZBEKOV SALOHIDDIN}};
+% vertical rule
+\fill[soft] (62,112) rectangle (65,455);
+% title
+\node[anchor=west] at (98,175) {\track{20}{104}{SAT}};
+\node[anchor=west] at (98,294) {\track{20}{104}{1200+}};
+\node[anchor=west,align=left] at (100,380) {\track{14}{31}{O’ZBEKISTON DAVLAT}};
+\node[anchor=west] at (100,410) {\track{14}{31}{UNIVERSITETLARI}};
+\node[anchor=west] at (100,440) {\track{14}{31}{UCHUN TAYYORLOV}};
+% SATmath ≈800
+\node[anchor=west] at (60,580) {\sffamily\fontsize{74}{74}\selectfont SAT};
+\node[anchor=west,color=soft] at (181,592) {\itshape\fontsize{80}{80}\selectfont math};
+\node[anchor=west] at (372,581) {\sffamily\fontsize{66}{66}\selectfont ≈800};
+\node[anchor=west] at (64,652) {\track{5}{15}{MASTER SAT TRICKS FOR PERFECT SCORE}};
+% bottom
+\node[anchor=west] at (64,716) {\track{6}{17}{QISQA MUDDAT ICHIDA SAT}};
+\node[anchor=west] at (64,739) {\track{6}{17}{UCHUN KERAKLI MATEMATIKA}};
+\node[anchor=west] at (64,762) {\track{6}{17}{VA INGLIZ TILI BILIMLARI}};
+\end{tikzpicture}
+\end{document}
