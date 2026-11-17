@@ -93,7 +93,6 @@
 \renewcommand{\arraystretch}{1.5}
 
 \begin{document}
-
 % ======================================================================
 % PAGE 1
 % ======================================================================
@@ -102,54 +101,52 @@
 \pagefooter{113}
 \mbox{}%
 
-% ---- CARD 1: Equation of a circle ----
-\cardbg{16}{40}{178}{100}
-\pill{26}{43}{Equation of a circle (aylana tenglamasi)}
+% ---- CARD 1: Circle basics (y=40 h=30, end 70) ----
+\cardbg{16}{40}{178}{30}
+\pill{26}{43}{Circle basics}
 
-\begin{textblock*}{85mm}(26mm,58mm)
-{\fontsize{15}{18}\selectfont $(x-h)^2+(y-k)^2=r^2$}
+\begin{textblock*}{158mm}(26mm,55mm)
+{\fontsize{15}{18}\selectfont $C=2\pi r$\qquad $A=\pi r^2$\qquad $d=2r$}
 \end{textblock*}
 
-\begin{textblock*}{85mm}(26mm,80mm)
-{\fontsize{11}{14}\selectfont\color{ink}
-Center $(h,k)$, radius $r$.}
+% ---- CARD 2: Arc length (y=78 h=52, end 130) ----
+\cardbg{16}{78}{178}{52}
+\pill{26}{81}{Arc length (yoy uzunligi)}
+
+\begin{textblock*}{158mm}(26mm,92mm)
+{\fontsize{15}{18}\selectfont $\text{arc length}=\dfrac{\text{central angle}}{360^\circ}\times2\pi r$}
 \end{textblock*}
 
-\begin{textblock*}{85mm}(26mm,92mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-$(x+6)^2$ means $h=-6$ -- the sign in the equation is opposite the center
-coordinate.}
+\begin{textblock*}{158mm}(26mm,108mm)
+{\fontsize{13}{16}\selectfont $r=9,\ 60^\circ:\ \ \dfrac{60}{360}\times18\pi=3\pi$}
 \end{textblock*}
 
-\begin{textblock*}{60mm}(118mm,58mm)
-\begin{tikzpicture}
-\draw[ink!40,->] (-5mm,0) -- (45mm,0) node[right,font=\tiny]{$x$};
-\draw[ink!40,->] (0,-5mm) -- (0,40mm) node[above,font=\tiny]{$y$};
-\draw[accent,line width=1.2pt] (20mm,18mm) circle (18mm);
-\filldraw[ink] (20mm,18mm) circle (0.9mm);
-\node[font=\sffamily\tiny,anchor=east] at (18.5mm,18mm) {$(h,k)$};
-\draw[accent!70,line width=1pt] (20mm,18mm) -- (32.7mm,30.7mm);
-\node[font=\sffamily\bfseries\tiny,anchor=south west,text=accent] at (26mm,25mm) {$r$};
-\end{tikzpicture}
+\begin{textblock*}{158mm}(26mm,120mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape Arc measure = the central angle (degrees); arc length is a distance and needs $r$.}
 \end{textblock*}
 
-% ---- CARD 2: Arc length ----
-\cardbg{16}{150}{178}{60}
-\pill{26}{153}{Arc length (yoy uzunligi)}
+% ---- CARD 3: Sector area (y=138 h=42, end 180) ----
+\cardbg{16}{138}{178}{42}
+\pill{26}{141}{Sector area (sektor yuzi)}
 
-\begin{textblock*}{158mm}(26mm,166mm)
-{\fontsize{13}{16}\selectfont $\text{arc length}=\dfrac{\text{central angle}}{360^\circ}\times2\pi r$}
+\begin{textblock*}{158mm}(26mm,152mm)
+{\fontsize{15}{18}\selectfont $\text{sector area}=\dfrac{\text{central angle}}{360^\circ}\times\pi r^2$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,188mm)
-{\fontsize{11}{14}\selectfont
-$r=9,\ \text{angle}=60^\circ:\ \ \dfrac{60}{360}\times18\pi=3\pi$}
+\begin{textblock*}{158mm}(26mm,168mm)
+{\fontsize{13}{16}\selectfont $r=6,\ 120^\circ:\ \ \dfrac{120}{360}\times36\pi=12\pi$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,200mm)
-{\fontsize{10}{13}\selectfont\color{black!55}\itshape
-Arc length is a distance -- without the radius, only the angle (arc
-measure) can be given, not a length.}
+% ---- CARD 4: Same fraction (y=188 h=46, end 234) ----
+\cardbg{16}{188}{178}{46}
+\pill{26}{191}{Same fraction of the circle (find the angle)}
+
+\begin{textblock*}{158mm}(26mm,202mm)
+{\fontsize{14}{17}\selectfont $\dfrac{\text{central angle}}{360^\circ}=\dfrac{\text{arc length}}{2\pi r}=\dfrac{\text{sector area}}{\pi r^2}$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,220mm)
+{\fontsize{13}{16}\selectfont $r=10$, sector $25\pi$: \ $\dfrac{25\pi}{100\pi}=\dfrac14\ \Rightarrow\ 90^\circ$}
 \end{textblock*}
 
 \clearpage
@@ -162,53 +159,56 @@ measure) can be given, not a length.}
 \pagefooter{114}
 \mbox{}%
 
-% ---- CARD 3: Sector area ----
-\cardbg{16}{33}{178}{65}
-\pill{26}{36}{Sector area (sektor yuzi)}
+% ---- CARD 5: Equation of a circle (y=33 h=68, end 101) ----
+\cardbg{16}{33}{178}{68}
+\pill{26}{36}{Equation of a circle (aylana tenglamasi)}
 
-\begin{textblock*}{158mm}(26mm,49mm)
-{\fontsize{13}{16}\selectfont $\text{sector area}=\dfrac{\text{central angle}}{360^\circ}\times\pi r^2$}
+\begin{textblock*}{90mm}(26mm,48mm)
+{\fontsize{15}{18}\selectfont $(x-h)^2+(y-k)^2=r^2$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,71mm)
-{\fontsize{11}{14}\selectfont
-$r=6,\ \text{angle}=120^\circ:\ \ \dfrac{120}{360}\times36\pi=12\pi$}
+\begin{textblock*}{90mm}(26mm,60mm)
+{\fontsize{12}{15}\selectfont center $(h,k)$, radius $r$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,83mm)
-{\fontsize{10}{13}\selectfont\color{black!55}\itshape
-Sector area uses $\pi r^2$ (area); arc length uses $2\pi r$ (distance) --
-don't swap them.}
+\begin{textblock*}{90mm}(26mm,74mm)
+{\fontsize{13}{16}\selectfont $(x+6)^2+(y-3)^2=49$}
 \end{textblock*}
 
-% ---- CARD 4: Completing the square for a circle ----
-\cardbg{16}{108}{178}{100}
-\pill{26}{111}{Circle equation by completing the square}
-
-\begin{textblock*}{158mm}(26mm,124mm)
-{\fontsize{11}{14}\selectfont\color{ink}
-General form $x^2+y^2+Dx+Ey+F=0$ -- complete the square on $x$ and $y$
-separately.}
+\begin{textblock*}{90mm}(26mm,83mm)
+{\fontsize{13}{16}\selectfont center $(-6,\,3)$, radius $7$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,138mm)
-{\fontsize{12}{15}\selectfont
-$x^2+y^2-6x+4y-12=0$}
+\begin{textblock*}{60mm}(126mm,52mm)
+\begin{tikzpicture}
+\draw[ink!40,->] (-4mm,0mm) -- (36mm,0mm) node[right,font=\scriptsize]{$x$};
+\draw[ink!40,->] (0mm,-4mm) -- (0mm,34mm) node[above,font=\scriptsize]{$y$};
+\draw[accent,line width=1.2pt] (18mm,17mm) circle (12mm);
+\draw[accent!70,line width=1pt] (18mm,17mm) -- ++(45:12mm);
+\filldraw[ink] (18mm,17mm) circle (0.8mm);
+\node[font=\sffamily\scriptsize,anchor=east] at (16.5mm,17mm) {$(h,k)$};
+\node[font=\sffamily\bfseries\scriptsize,anchor=south east,text=accent] at (23.5mm,23.5mm) {$r$};
+\end{tikzpicture}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,150mm)
-{\fontsize{12}{15}\selectfont
-$(x^2-6x)+(y^2+4y)=12\ \Longrightarrow\ (x-3)^2+(y+2)^2=12+9+4$}
+% ---- CARD 6: Completing the square (y=109 h=68, end 177) ----
+\cardbg{16}{109}{178}{68}
+\pill{26}{112}{Circle equation by completing the square}
+
+\begin{textblock*}{158mm}(26mm,123mm)
+{\fontsize{14}{17}\selectfont $x^2+y^2+Dx+Ey+F=0$ \ $\Rightarrow$ \ add $\left(\tfrac D2\right)^2$ and $\left(\tfrac E2\right)^2$ to both sides}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,165mm)
-{\fontsize{13}{16}\selectfont\color{accent}
-$(x-3)^2+(y+2)^2=25\ \Longrightarrow$ center $(3,-2)$, radius $5$}
+\begin{textblock*}{158mm}(26mm,142mm)
+{\fontsize{13}{16}\selectfont $x^2+y^2-6x+4y-12=0$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,183mm)
-{\fontsize{10}{13}\selectfont\color{black!55}\itshape
-$(y+2)^2=(y-(-2))^2$, so $k=-2$ -- same sign-flip trap as the center form.}
+\begin{textblock*}{158mm}(26mm,152mm)
+{\fontsize{13}{16}\selectfont $(x^2-6x+9)+(y^2+4y+4)=12+9+4$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,163mm)
+{\fontsize{13}{16}\selectfont\color{accent} $(x-3)^2+(y+2)^2=25\ \Rightarrow$ center $(3,-2)$, radius $5$}
 \end{textblock*}
 
 \end{document}

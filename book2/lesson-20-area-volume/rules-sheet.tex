@@ -93,7 +93,6 @@
 \renewcommand{\arraystretch}{1.5}
 
 \begin{document}
-
 % ======================================================================
 % PAGE 1
 % ======================================================================
@@ -102,27 +101,58 @@
 \pagefooter{108}
 \mbox{}%
 
-% ---- CARD 1: Area formulas ----
-\cardbg{16}{40}{178}{95}
+% ---- CARD 1: Area formulas (y=40 h=94, end 134) ----
+\cardbg{16}{40}{178}{96}
 \pill{26}{43}{Area formulas (maydon)}
 
 \begin{textblock*}{158mm}(26mm,56mm)
-{\fontsize{10.5}{14}\selectfont
-\begin{tabular}{|p{48mm}|p{48mm}|p{49mm}|}
+{\fontsize{12}{15}\selectfont\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{|p{50mm}|p{50mm}|p{36mm}|}
 \hline
-\rowcolor{accent}
-{\color{white}\textbf{Shape}} & {\color{white}\textbf{Formula}} & {\color{white}\textbf{Variables}} \\ \hline
-Rectangle & $A=lw$ & $l$=length, $w$=width \\ \hline
-Triangle & $A=\dfrac12bh$ & $b$=base, $h$=height \\ \hline
-Parallelogram & $A=bh$ & $b$=base, $h$=height \\ \hline
-Trapezoid & $A=\dfrac12(a+b)h$ & $a,b$=parallel sides \\ \hline
-Circle & $A=\pi r^2$ & $r$=radius \\ \hline
+\cellcolor{accent}\textcolor{white}{\textbf{Shape}} & \cellcolor{accent}\textcolor{white}{\textbf{Area}} & \cellcolor{accent}\textcolor{white}{\textbf{Key}} \\ \hline
+Rectangle & $A=lw$ & $l$, $w$ \\ \hline
+Triangle & $A=\dfrac12\,bh$ & base, height \\ \hline
+Parallelogram & $A=bh$ & base, height \\ \hline
+Trapezoid & $A=\dfrac12(a+b)h$ & $a,b$ parallel \\ \hline
 \end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,122mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-If given the \textbf{diameter}, halve it first: $r=d/2$. $d=18\ \Rightarrow\ r=9\ \Rightarrow\ A=81\pi$, not $324\pi$.}
+\begin{textblock*}{158mm}(26mm,119mm)
+{\fontsize{13}{16}\selectfont
+bases $6,10$, height $4$: \ $\dfrac12(6+10)(4)=32$}
+\end{textblock*}
+
+% ---- CARD 2: Circle area (y=142 h=40, end 182) ----
+\cardbg{16}{144}{178}{40}
+\pill{26}{147}{Circle area \& diameter}
+
+\begin{textblock*}{158mm}(26mm,159mm)
+{\fontsize{15}{18}\selectfont $A=\pi r^2$\qquad $r=\dfrac d2$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,173mm)
+{\fontsize{13}{16}\selectfont $d=18\ \Rightarrow\ r=9\ \Rightarrow\ A=81\pi$}
+\end{textblock*}
+
+% ---- CARD 3: Volume formulas (y=190 h=92, end 282) ----
+\cardbg{16}{190}{178}{93}
+\pill{26}{193}{Volume formulas (hajm)}
+
+\begin{textblock*}{158mm}(26mm,205mm)
+{\fontsize{12}{15}\selectfont\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{|p{50mm}|p{50mm}|p{36mm}|}
+\hline
+\cellcolor{accent}\textcolor{white}{\textbf{Solid}} & \cellcolor{accent}\textcolor{white}{\textbf{Volume}} & \cellcolor{accent}\textcolor{white}{\textbf{Key}} \\ \hline
+Rectangular prism & $V=lwh$ & $l$, $w$, $h$ \\ \hline
+Cylinder & $V=\pi r^2h$ & $r$, $h$ \\ \hline
+Cone & $V=\dfrac13\pi r^2h$ & $r$, $h$ \\ \hline
+Sphere & $V=\dfrac43\pi r^3$ & $r$ only \\ \hline
+\end{tabular}}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,265mm)
+{\fontsize{13}{16}\selectfont
+sphere $r=6$: \ $\dfrac43\pi(216)=288\pi$}
 \end{textblock*}
 
 \clearpage
@@ -135,58 +165,40 @@ If given the \textbf{diameter}, halve it first: $r=d/2$. $d=18\ \Rightarrow\ r=9
 \pagefooter{109}
 \mbox{}%
 
-% ---- CARD 2: Volume formulas ----
-\cardbg{16}{33}{178}{98}
-\pill{26}{36}{Volume formulas (hajm)}
+% ---- CARD 4: Composite, joined (y=33 h=36, end 69) ----
+\cardbg{16}{33}{178}{36}
+\pill{26}{36}{Composite figure: joined $\to$ add}
 
-\begin{textblock*}{158mm}(26mm,49mm)
-{\fontsize{10.5}{14}\selectfont
-\begin{tabular}{|p{45mm}|p{45mm}|p{55mm}|}
-\hline
-\rowcolor{accent}
-{\color{white}\textbf{Solid}} & {\color{white}\textbf{Formula}} & {\color{white}\textbf{Note}} \\ \hline
-Rectangular prism & $V=lwh$ & product of 3 dimensions \\ \hline
-Cylinder & $V=\pi r^2h$ & base area $\times$ height \\ \hline
-Cone & $V=\dfrac13\pi r^2h$ & one-third of same-$r,h$ cylinder \\ \hline
-Sphere & $V=\dfrac43\pi r^3$ & depends only on $r$ -- no height \\ \hline
-\end{tabular}}
+\begin{textblock*}{158mm}(26mm,47mm)
+{\fontsize{15}{18}\selectfont total $=$ piece$_1$ $+$ piece$_2$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,113mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-Never drop the $\frac13$ (cone) or $\frac43$ (sphere) -- a cone is exactly
-one-third of the matching cylinder's volume.}
+\begin{textblock*}{158mm}(26mm,58mm)
+{\fontsize{13}{16}\selectfont $10\times6$ and $4\times3$ rectangles: \ $60+12=72$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,124mm)
-{\fontsize{12}{15}\selectfont
-$r=6$: $V=\dfrac43\pi(6)^3=\dfrac43\pi(216)=288\pi$}
+% ---- CARD 5: Composite, cut out (y=77 h=36, end 113) ----
+\cardbg{16}{77}{178}{36}
+\pill{26}{80}{Composite figure: cut out $\to$ subtract}
+
+\begin{textblock*}{158mm}(26mm,91mm)
+{\fontsize{15}{18}\selectfont remaining $=$ whole $-$ hole}
 \end{textblock*}
 
-% ---- CARD 3: Composite figures ----
-\cardbg{16}{141}{178}{80}
-\pill{26}{144}{Composite figures: add or subtract}
-
-\begin{textblock*}{158mm}(26mm,157mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-Pieces joined together $\to$ \textbf{add}. A piece cut out/a hole $\to$
-\textbf{subtract}.}
+\begin{textblock*}{158mm}(26mm,102mm)
+{\fontsize{13}{16}\selectfont $10\times10$ square, hole $r=3$: \ $100-9\pi$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,169mm)
-{\fontsize{11}{14}\selectfont
-Joined: $10\times6$ rect. $+\,4\times3$ rect. $=60+12=72$}
+% ---- CARD 6: Units (y=121 h=36, end 157) ----
+\cardbg{16}{121}{178}{36}
+\pill{26}{124}{Units}
+
+\begin{textblock*}{158mm}(26mm,135mm)
+{\fontsize{15}{18}\selectfont area $\to$ units$^2$\qquad volume $\to$ units$^3$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,181mm)
-{\fontsize{11}{14}\selectfont
-Hole: $10\times10$ square, radius-$3$ hole $=100-9\pi$ (not $100+9\pi$)}
-\end{textblock*}
-
-\begin{textblock*}{158mm}(26mm,196mm)
-{\fontsize{10}{13}\selectfont\color{black!55}\itshape
-Sanity check: subtracting a piece must give a result smaller than the
-whole, never larger.}
+\begin{textblock*}{158mm}(26mm,146mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape Convert mixed units before computing.}
 \end{textblock*}
 
 \end{document}
