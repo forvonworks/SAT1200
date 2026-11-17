@@ -1,0 +1,305 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usetikzlibrary{fit,calc,positioning,arrows.meta}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{0F6A52}
+\definecolor{badge}{HTML}{A9CFC2}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{100mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\videobanner}[1]{%
+\begin{textblock*}{178mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (178mm,-10mm);
+\draw[white,line width=0.6pt] (3mm,-1.7mm) rectangle (11.5mm,-8.3mm);
+\node[white,font=\sffamily\fontsize{4}{4.4}\selectfont,align=center] at (7.25mm,-5mm) {QR\\CODE};
+\node[white,font=\sffamily\bfseries\fontsize{9.5}{11}\selectfont,anchor=west] at (16mm,-5.6mm) {WATCH THE VIDEO BEFORE YOU SOLVE};
+\node[white,font=\sffamily\fontsize{7.5}{8}\selectfont,anchor=east] at (174mm,-5.6mm) {YouTube ~\textbullet~ #1};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\newcommand{\cardbg}[4]{%
+\begin{textblock*}{#3mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\fill[badge!22,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pill}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {RULE ~\textperiodcentered~ #3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pillw}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {#3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+\renewcommand{\arraystretch}{1.5}
+
+
+\begin{document}
+\topicheader{2}{Hard Linear Systems}
+\videobanner{Lesson 2}
+\pagefooter{1}
+\mbox{}%
+% ---- Forms of a line (y=40.0 h=49.5 end 89.5)
+\cardbg{16}{40.0}{178}{49.5}
+\pill{26}{43.0}{Forms of a line}
+\begin{textblock*}{158mm}(26mm,52.0mm)
+{\fontsize{15}{18}\selectfont $y=mx+b$ \qquad $Ax+By=C$: \ slope $-\dfrac AB$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,65.5mm)
+{\fontsize{13}{16}\selectfont $y$-intercept $\dfrac CB$ \qquad $x$-intercept $\dfrac CA$ \qquad point-slope: $y-y_1=m(x-x_1)$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,77.5mm)
+{\fontsize{13}{16}\selectfont $3x+4y=12$: \ slope $-\tfrac34$, \ $y$-intercept $3$, \ $x$-intercept $4$}
+\end{textblock*}
+% ---- Slope, parallel, perpendicular (y=95.5 h=44.5 end 140.0)
+\cardbg{16}{95.5}{178}{44.5}
+\pill{26}{98.5}{Slope, parallel, perpendicular}
+\begin{textblock*}{158mm}(26mm,107.5mm)
+{\fontsize{15}{18}\selectfont $m=\dfrac{y_2-y_1}{x_2-x_1}$ \qquad parallel: $m_1=m_2$ \qquad perpendicular: $m_1m_2=-1$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,121.0mm)
+{\fontsize{13}{16}\selectfont slope $-\tfrac23$ $\Rightarrow$ perpendicular slope $\tfrac32$ \ (flip the fraction, change the sign)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,129.0mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Standard form: $Ax+By=C$ and $Ax+By=D$ are parallel; $Bx-Ay=D$ is perpendicular to the first.}
+\end{textblock*}
+% ---- Number of solutions: the $a:b:c$ ratio test (y=146.0 h=60.5 end 206.5)
+\cardbg{16}{146.0}{178}{60.5}
+\pill{26}{149.0}{Number of solutions: the $a:b:c$ ratio test}
+\begin{textblock*}{158mm}(26mm,158.0mm)
+{\fontsize{15}{18}\selectfont $a_1x+b_1y=c_1$ and $a_2x+b_2y=c_2$: \ $\dfrac{a_1}{a_2}\ne\dfrac{b_1}{b_2}\Rightarrow$ exactly one}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,171.5mm)
+{\fontsize{13}{16}\selectfont no solution: $\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}\ne\dfrac{c_1}{c_2}$ \qquad infinitely many: all three ratios equal}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,183.5mm)
+{\fontsize{13}{16}\selectfont $kx+12y=9$ and $5x+4y=7$: \ $\dfrac k5=\dfrac{12}4\Rightarrow k=15$, \ and $9\ne3\cdot7$, so no solution}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,195.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Slope form: same slope and different intercept = no solution; the same line = infinitely many.}
+\end{textblock*}
+% ---- A parameter in a system (y=212.5 h=42.5 end 255.0)
+\cardbg{16}{212.5}{178}{42.5}
+\pill{26}{215.5}{A parameter in a system}
+\begin{textblock*}{158mm}(26mm,223.0mm)
+{\fontsize{15}{18}\selectfont ratios equal $\Rightarrow$ solve for $k$ $\Rightarrow$ \textbf{check the constants} for each $k$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,232.0mm)
+{\fontsize{13}{16}\selectfont $\dfrac k4=\dfrac9k\Rightarrow k=\pm6$: \ one value gives infinitely many solutions, the other none}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,244.0mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont \textit{Which could be the second equation?} Same $x,y$-ratio as the given one, different constant.}
+\end{textblock*}
+\clearpage
+\topicheader{2}{Hard Linear Systems}
+\pagekicker{Rules sheet -- 2/3}
+\pagefooter{2}
+\mbox{}%
+% ---- Solve for the combination, not the unknowns (y=33.0 h=42.5 end 75.5)
+\cardbg{16}{33.0}{178}{42.5}
+\pill{26}{36.0}{Solve for the combination, not the unknowns}
+\begin{textblock*}{158mm}(26mm,43.5mm)
+{\fontsize{15}{18}\selectfont find $\lambda,\mu$ with $\lambda(\text{eq}_1)+\mu(\text{eq}_2)=$ the expression asked}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,52.5mm)
+{\fontsize{13}{16}\selectfont $5a+2b=34$, $3a-4b=10$: \ $a+3b=\tfrac12(34)-\tfrac12(10)=12$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,64.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Add for $x+y$-type sums, subtract for $x-y$-type differences; stop as soon as the asked expression appears.}
+\end{textblock*}
+% ---- One variable: identity or contradiction (y=81.5 h=46.5 end 128.0)
+\cardbg{16}{81.5}{178}{46.5}
+\pill{26}{84.5}{One variable: identity or contradiction}
+\begin{textblock*}{158mm}(26mm,92.0mm)
+{\fontsize{15}{18}\selectfont $ax+b=cx+d$: \ $a\ne c$ \ $\Rightarrow$ \ exactly one solution}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,101.0mm)
+{\fontsize{13}{16}\selectfont $a=c$ and $b=d$: infinitely many \qquad $a=c$ and $b\ne d$: no solution}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,109.0mm)
+{\fontsize{13}{16}\selectfont $3(2x-k)+x=7x+12\Rightarrow 7x-3k=7x+12$, so $k=-4$ gives infinitely many}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,117.0mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Variables cancel and a true statement is left: infinitely many; a false statement: no solution.}
+\end{textblock*}
+% ---- Interpreting a linear model (y=134.0 h=43.5 end 177.5)
+\cardbg{16}{134.0}{178}{43.5}
+\pill{26}{137.0}{Interpreting a linear model}
+\begin{textblock*}{158mm}(26mm,144.5mm)
+{\fontsize{15}{18}\selectfont $y=mx+b$: \ $m$ = change in $y$ per 1 unit of $x$ \quad $b$ = value at $x=0$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,153.5mm)
+{\fontsize{13}{16}\selectfont $Ax+By=C$: \ $x$-intercept $\dfrac CA$ (all of one item), \ each $+1$ in $x$ changes $y$ by $-\dfrac AB$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,165.5mm)
+{\fontsize{13}{16}\selectfont $3x+5y=600$: \ the point $(0,120)$ means 0 of the first item and 120 of the second}
+\end{textblock*}
+% ---- Linear function from two points or a table (y=183.5 h=44.5 end 228.0)
+\cardbg{16}{183.5}{178}{44.5}
+\pill{26}{186.5}{Linear function from two points or a table}
+\begin{textblock*}{158mm}(26mm,195.5mm)
+{\fontsize{15}{18}\selectfont $m=\dfrac{\Delta y}{\Delta x}$ \qquad $f(x)=f(x_1)+m(x-x_1)$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,209.0mm)
+{\fontsize{13}{16}\selectfont equal steps in $x$ give equal changes in $y$: \ $f(a+3)-f(a)=12\Rightarrow f(a+10)-f(a)=40$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,217.0mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Shift right $h$: $f(x-h)$. Shift up $k$: $f(x)+k$. Reading a table: compute $\Delta y\div\Delta x$ first.}
+\end{textblock*}
+% ---- Means and totals (y=234.0 h=44.5 end 278.5)
+\cardbg{16}{234.0}{178}{44.5}
+\pill{26}{237.0}{Means and totals}
+\begin{textblock*}{158mm}(26mm,246.0mm)
+{\fontsize{15}{18}\selectfont mean $=\dfrac{\text{total}}{\text{count}}$ \qquad combined mean $=\dfrac{n_1\bar x_1+n_2\bar x_2}{n_1+n_2}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,259.5mm)
+{\fontsize{13}{16}\selectfont missing group: \ $24(78)+36m=60(84)\Rightarrow m=88$ \quad (work with totals)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,267.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Two means can be averaged directly only when the groups have the same size.}
+\end{textblock*}
+\clearpage
+\topicheader{2}{Hard Linear Systems}
+\pagekicker{Rules sheet -- 3/3}
+\pagefooter{3}
+\mbox{}%
+% ---- Two items, two totals: mixture and rate (y=33.0 h=50.5 end 83.5)
+\cardbg{16}{33.0}{178}{50.5}
+\pill{26}{36.0}{Two items, two totals: mixture and rate}
+\begin{textblock*}{158mm}(26mm,43.5mm)
+{\fontsize{15}{18}\selectfont define two unknowns $\Rightarrow$ one equation for each fact \ (count, cost, amount)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,52.5mm)
+{\fontsize{13}{16}\selectfont mixture: \ $p_1a_1+p_2a_2=p_{\text{final}}(a_1+a_2)$ \qquad distance $=$ rate $\times$ time}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,60.5mm)
+{\fontsize{13}{16}\selectfont boat: $v-c=\dfrac{\text{up}}{\text{time}}$, \ $v+c=\dfrac{\text{down}}{\text{time}}$ \quad 36 km in 3 h up, 2 h down: $c=3$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,72.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont $p$ = concentration as a decimal. Check the units (minutes or hours) and what the last sentence asks for.}
+\end{textblock*}
+% ---- Linear inequalities and systems (y=89.5 h=38.5 end 128.0)
+\cardbg{16}{89.5}{178}{38.5}
+\pill{26}{92.5}{Linear inequalities and systems}
+\begin{textblock*}{158mm}(26mm,100.0mm)
+{\fontsize{15}{18}\selectfont multiply or divide by a negative $\Rightarrow$ \textbf{flip the sign}}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,109.0mm)
+{\fontsize{13}{16}\selectfont $-3x<12\Rightarrow x>-4$ \qquad system: the solution is the overlap of all the inequalities}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,117.0mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Strict $<$ excludes the boundary (greatest integer with $x<12$ is $11$). Test a point in every inequality.}
+\end{textblock*}
+% ---- Absolute value (y=134.0 h=46.5 end 180.5)
+\cardbg{16}{134.0}{178}{46.5}
+\pill{26}{137.0}{Absolute value}
+\begin{textblock*}{158mm}(26mm,144.5mm)
+{\fontsize{15}{18}\selectfont $|u|=k\ (k\ge0)\Rightarrow u=k$ or $u=-k$ \qquad $|u|<k\Rightarrow -k<u<k$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,153.5mm)
+{\fontsize{13}{16}\selectfont $|u|>k\Rightarrow u<-k$ or $u>k$ \qquad $|x-c|\le r$: center $c$, half-width $r$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,161.5mm)
+{\fontsize{13}{16}\selectfont $|4x-6|=14$: \ $x=5$ or $x=-2$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,169.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont If $x$ also appears outside the bars ($|x-4|=2x-5$), check each answer in the original equation.}
+\end{textblock*}
+% ---- New words (y=186.5 h=72.5)
+\cardbg{16}{186.5}{178}{72.5}
+\pillw{26}{189.5}{NEW WORDS ~\textperiodcentered~ YANGI SO'ZLAR}
+\begin{textblock*}{80mm}(26mm,199.0mm)
+{\fontsize{10.5}{12}\selectfont
+\begin{tabular}{@{}>{\bfseries}p{37mm}p{36mm}@{}}
+\cellcolor{accent}\textcolor{white}{\sffamily English} & \cellcolor{accent}\textcolor{white}{\sffamily O'zbekcha}\\
+\rowcolor{badge!45} system of equations & {\itshape tenglamalar sistemasi}\\
+\rowcolor{white} no solution & {\itshape yechimi yo'q}\\
+\rowcolor{badge!45} infinite solutions & {\itshape cheksiz ko'p yechim}\\
+\rowcolor{white} parallel lines & {\itshape parallel chiziqlar}\\
+\rowcolor{badge!45} perpendicular & {\itshape perpendikulyar}\\
+\rowcolor{white} slope & {\itshape qiyalik}\\
+\rowcolor{badge!45} intercept & {\itshape o'qni kesish joyi}\\
+\end{tabular}}
+\end{textblock*}
+\begin{textblock*}{80mm}(108mm,199.0mm)
+{\fontsize{10.5}{12}\selectfont
+\begin{tabular}{@{}>{\bfseries}p{37mm}p{36mm}@{}}
+\cellcolor{accent}\textcolor{white}{\sffamily English} & \cellcolor{accent}\textcolor{white}{\sffamily O'zbekcha}\\
+\rowcolor{badge!45} coefficient & {\itshape koeffitsiyent}\\
+\rowcolor{white} constant term & {\itshape ozod had}\\
+\rowcolor{badge!45} identity & {\itshape ayniyat}\\
+\rowcolor{white} contradiction & {\itshape ziddiyat}\\
+\rowcolor{badge!45} inequality & {\itshape tengsizlik}\\
+\rowcolor{white} absolute value & {\itshape modul}\\
+\rowcolor{badge!45} rate of change & {\itshape o'zgarish tezligi}\\
+\end{tabular}}
+\end{textblock*}
+\end{document}
