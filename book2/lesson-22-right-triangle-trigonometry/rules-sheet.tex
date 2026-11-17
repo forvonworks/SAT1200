@@ -102,54 +102,70 @@
 \pagefooter{118}
 \mbox{}%
 
-% ---- CARD 1: SOH-CAH-TOA ----
-\cardbg{16}{40}{178}{92}
-\pill{26}{43}{Right-triangle ratios (SOH-CAH-TOA)}
+% ---- CARD 1: SOH-CAH-TOA (y=40 h=62, end 102) ----
+\cardbg{16}{40}{178}{62}
+\pill{26}{43}{SOH-CAH-TOA}
 
-\begin{textblock*}{85mm}(26mm,58mm)
-{\fontsize{13}{22}\selectfont
-$\sin\theta=\dfrac{\text{opp}}{\text{hyp}}\quad
-\cos\theta=\dfrac{\text{adj}}{\text{hyp}}\quad
-\tan\theta=\dfrac{\text{opp}}{\text{adj}}$}
+\begin{textblock*}{90mm}(26mm,54mm)
+{\fontsize{15}{18}\selectfont
+$\sin\theta=\dfrac{\text{opp}}{\text{hyp}}$\\[2.5mm]
+$\cos\theta=\dfrac{\text{adj}}{\text{hyp}}$\\[2.5mm]
+$\tan\theta=\dfrac{\text{opp}}{\text{adj}}=\dfrac{\sin\theta}{\cos\theta}$}
 \end{textblock*}
 
-\begin{textblock*}{70mm}(120mm,60mm)
+\begin{textblock*}{60mm}(122mm,54mm)
 \begin{tikzpicture}
-\draw[ink,line width=1.1pt] (0,0) -- (42mm,0) -- (42mm,26mm) -- cycle;
-\draw[ink,line width=0.8pt] (39mm,0) -- (39mm,3mm) -- (42mm,3mm);
-\node[font=\fontsize{10}{10}\selectfont] at (6mm,2.5mm) {$\theta$};
-\node[font=\sffamily\fontsize{8}{8}\selectfont,text=ink!70,below] at (21mm,-1mm) {adjacent};
-\node[font=\sffamily\fontsize{8}{8}\selectfont,text=ink!70,rotate=90,anchor=south] at (43.5mm,13mm) {opposite};
-\node[font=\sffamily\fontsize{8}{8}\selectfont,text=ink!70,rotate=31.7,anchor=south] at (21mm,13.5mm) {hypotenuse};
+\draw[ink,line width=1.1pt] (0mm,0mm) -- (42mm,0mm) -- (42mm,26mm) -- cycle;
+\draw[ink,line width=0.8pt] (39mm,0mm) -- (39mm,3mm) -- (42mm,3mm);
+\node[font=\fontsize{10}{10}\selectfont] at (7mm,2.6mm) {$\theta$};
+\node[font=\sffamily\fontsize{8}{8}\selectfont,text=ink!70,below] at (21mm,-0.5mm) {adjacent};
+\node[font=\sffamily\fontsize{8}{8}\selectfont,text=ink!70,rotate=90,anchor=south] at (43.2mm,13mm) {opposite};
+\node[font=\sffamily\fontsize{8}{8}\selectfont,text=ink!70,rotate=31.77,anchor=south] at (21mm,13.5mm) {hypotenuse};
 \end{tikzpicture}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,102mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-\textbf{SOH-CAH-TOA:} Sin = Opp/Hyp, Cos = Adj/Hyp, Tan = Opp/Adj. Ratios are
-unitless.}
+% ---- CARD 2: opposite/adjacent flip (y=109 h=60, end 169) ----
+\cardbg{16}{109}{178}{64}
+\pill{26}{112}{Opposite \& adjacent swap with the angle}
+
+\begin{textblock*}{158mm}(26mm,123mm)
+{\fontsize{12}{15}\selectfont
+right angle at $C$, \ $BC=3$, \ $AC=4$, \ $AB=5$}
 \end{textblock*}
 
-% ---- CARD 2: opposite/adjacent depend on the angle ----
-\cardbg{16}{138}{178}{90}
-\pill{26}{141}{Opposite \& adjacent flip with the angle}
-
-\begin{textblock*}{158mm}(26mm,154mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-The same leg is opposite for one acute angle and adjacent for the other --
-redefine them each time the angle changes.}
-\end{textblock*}
-
-\begin{textblock*}{158mm}(26mm,167mm)
-{\fontsize{10.5}{13}\selectfont
-3-4-5 triangle, legs $BC=3$, $AC=4$, hyp $AB=5$:\\[2mm]
-\begin{tabular}{|p{40mm}|>{\centering\arraybackslash}p{30mm}|>{\centering\arraybackslash}p{30mm}|}
+\begin{textblock*}{158mm}(26mm,131mm)
+{\fontsize{12}{15}\selectfont
+\begin{tabular}{|p{34mm}|>{\centering\arraybackslash}p{30mm}|>{\centering\arraybackslash}p{30mm}|}
 \hline
-\rowcolor{accent}
-{\color{white}} & {\color{white}\textbf{From $A$}} & {\color{white}\textbf{From $B$}} \\ \hline
+\cellcolor{accent}\textcolor{white}{\textbf{}} & \cellcolor{accent}\textcolor{white}{\textbf{from $A$}} & \cellcolor{accent}\textcolor{white}{\textbf{from $B$}} \\ \hline
 opposite & $3$ & $4$ \\ \hline
 adjacent & $4$ & $3$ \\ \hline
+$\sin$ & $3/5$ & $4/5$ \\ \hline
 \end{tabular}}
+\end{textblock*}
+
+% ---- CARD 3: missing side (y=180 h=76, end 256) ----
+\cardbg{16}{180}{178}{76}
+\pill{26}{183}{Missing side: choose the ratio}
+
+\begin{textblock*}{158mm}(26mm,194mm)
+{\fontsize{12}{15}\selectfont
+\begin{tabular}{|p{58mm}|>{\centering\arraybackslash}p{30mm}|}
+\hline
+\cellcolor{accent}\textcolor{white}{\textbf{known + unknown}} & \cellcolor{accent}\textcolor{white}{\textbf{use}} \\ \hline
+hypotenuse + opposite & $\sin$ \\ \hline
+hypotenuse + adjacent & $\cos$ \\ \hline
+adjacent + opposite & $\tan$ \\ \hline
+\end{tabular}}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,231mm)
+{\fontsize{13}{16}\selectfont
+hyp $=12$, $\theta=25°$:\ \ $\sin25°=\dfrac{\text{opp}}{12}\ \Rightarrow\ \text{opp}=12\sin25°\approx5.07$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,246mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape Calculator in degree mode.}
 \end{textblock*}
 
 \clearpage
@@ -162,57 +178,79 @@ adjacent & $4$ & $3$ \\ \hline
 \pagefooter{119}
 \mbox{}%
 
-% ---- CARD 3: solving for a missing side ----
-\cardbg{16}{33}{178}{85}
-\pill{26}{36}{Solving for a missing side}
+% ---- CARD 4: missing angle (y=33 h=52, end 85) ----
+\cardbg{16}{33}{178}{46}
+\pill{26}{36}{Missing angle (inverse trig)}
 
-\begin{textblock*}{158mm}(26mm,49mm)
-{\fontsize{10.5}{13}\selectfont
-\begin{tabular}{|p{65mm}|>{\centering\arraybackslash}p{80mm}|}
-\hline
-\rowcolor{accent}
-{\color{white}\textbf{Known + unknown}} & {\color{white}\textbf{Use}} \\ \hline
-hypotenuse + opposite & $\sin$ \\ \hline
-hypotenuse + adjacent & $\cos$ \\ \hline
-adjacent + opposite & $\tan$ \\ \hline
-\end{tabular}}
+\begin{textblock*}{158mm}(26mm,47mm)
+{\fontsize{14}{17}\selectfont
+$\theta=\sin^{-1}\!\dfrac{\text{opp}}{\text{hyp}}\quad
+\theta=\cos^{-1}\!\dfrac{\text{adj}}{\text{hyp}}\quad
+\theta=\tan^{-1}\!\dfrac{\text{opp}}{\text{adj}}$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,90mm)
-{\fontsize{11}{14}\selectfont
-Hyp $=12$, angle $=25°$, find opposite: $\sin25°=\dfrac{\text{opp}}{12}
-\Longrightarrow \text{opp}=12\sin25°\approx5.07$}
+\begin{textblock*}{158mm}(26mm,64mm)
+{\fontsize{13}{16}\selectfont
+$\tan\theta=\dfrac{40}{55}\ \Rightarrow\ \theta=\tan^{-1}\!\dfrac{40}{55}\approx36.0°$}
+\end{textblock*}
+
+% ---- CARD 5: complementary angles (y=86 h=33, end 119) ----
+\cardbg{16}{86}{178}{33}
+\pill{26}{89}{Complementary angles}
+
+\begin{textblock*}{158mm}(26mm,99mm)
+{\fontsize{15}{18}\selectfont $\sin\theta=\cos(90°-\theta)$\qquad $\cos\theta=\sin(90°-\theta)$}
 \end{textblock*}
 
 \begin{textblock*}{158mm}(26mm,108mm)
-{\fontsize{10}{13}\selectfont\color{black!55}\itshape
-Keep the calculator in degree mode -- radian mode gives a plausible-looking
-but wrong answer with no warning.}
+{\fontsize{13}{16}\selectfont $\sin23°=\cos67°$}
 \end{textblock*}
 
-% ---- CARD 4: missing angle + complementary identity ----
-\cardbg{16}{125}{178}{90}
-\pill{26}{128}{Missing angle \& complementary identity}
+% ---- CARD 6: elevation / depression (y=126 h=40, end 166) ----
+\cardbg{16}{126}{178}{40}
+\pill{26}{129}{Angle of elevation \& depression}
 
-\begin{textblock*}{158mm}(26mm,141mm)
-{\fontsize{13}{16}\selectfont $\sin\theta=\cos(90°-\theta)$}
+\begin{textblock*}{158mm}(26mm,139mm)
+{\fontsize{13}{16}\selectfont both are measured from the \textbf{horizontal}:\ \ up $=$ elevation, down $=$ depression}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,155mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-To find the angle itself, apply the inverse function to the ratio -- the
-ratio is not the angle.}
+\begin{textblock*}{158mm}(26mm,149mm)
+{\fontsize{13}{16}\selectfont
+$60$ ft from a tree, elevation $35°$:\ \ $\tan35°=\dfrac{h}{60}\ \Rightarrow\ h\approx42.01$ ft}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,168mm)
-{\fontsize{11}{14}\selectfont
-$\sin\theta=\dfrac{7}{25}=0.28\ \Longrightarrow\
-\theta=\arcsin(0.28)\approx16.3°$}
+% ---- CARD 7: special triangles (y=173 h=52, end 225) ----
+\cardbg{16}{173}{178}{52}
+\pill{26}{176}{Special right triangles}
+
+\begin{textblock*}{100mm}(26mm,188mm)
+\begin{tikzpicture}
+% 30-60-90 : 20 mm per unit (1 : sqrt3 : 2)
+\draw[ink,line width=1.1pt] (0mm,0mm) -- (34.641mm,0mm) -- (34.641mm,20mm) -- cycle;
+\draw[ink,line width=0.8pt] (31.641mm,0mm) -- (31.641mm,3mm) -- (34.641mm,3mm);
+\node[font=\fontsize{9}{9}\selectfont,anchor=west] at (5mm,1.9mm) {$30°$};
+\node[font=\fontsize{9}{9}\selectfont,anchor=east] at (33.8mm,13mm) {$60°$};
+\node[font=\fontsize{11}{11}\selectfont,below] at (17.3mm,-0.5mm) {$\sqrt3$};
+\node[font=\fontsize{11}{11}\selectfont,right] at (35.6mm,10mm) {$1$};
+\node[font=\fontsize{11}{11}\selectfont] at (12mm,13.5mm) {$2$};
+% 45-45-90 : 25 mm per unit (1 : 1 : sqrt2)
+\begin{scope}[xshift=58mm]
+\draw[ink,line width=1.1pt] (0mm,0mm) -- (25mm,0mm) -- (25mm,25mm) -- cycle;
+\draw[ink,line width=0.8pt] (22mm,0mm) -- (22mm,3mm) -- (25mm,3mm);
+\node[font=\fontsize{9}{9}\selectfont,anchor=west] at (5mm,1.9mm) {$45°$};
+\node[font=\fontsize{9}{9}\selectfont,anchor=east] at (24.2mm,13.5mm) {$45°$};
+\node[font=\fontsize{11}{11}\selectfont,below] at (12.5mm,-0.5mm) {$1$};
+\node[font=\fontsize{11}{11}\selectfont,right] at (26mm,12.5mm) {$1$};
+\node[font=\fontsize{11}{11}\selectfont] at (7.5mm,16.5mm) {$\sqrt2$};
+\end{scope}
+\end{tikzpicture}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,183mm)
-{\fontsize{10}{13}\selectfont\color{black!55}\itshape
-$\sin\theta=0.6$ means $\theta=\arcsin(0.6)\approx36.9°$ -- not $0.6°$.}
+\begin{textblock*}{62mm}(126mm,186mm)
+{\fontsize{12}{14}\selectfont
+$\sin30°=\cos60°=\dfrac12$\\[2mm]
+$\sin45°=\cos45°=\dfrac{\sqrt2}{2}$\\[2mm]
+$\tan45°=1$}
 \end{textblock*}
 
 \end{document}

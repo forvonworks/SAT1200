@@ -102,49 +102,73 @@
 \pagefooter{123}
 \mbox{}%
 
-% ---- CARD 1: Pythagorean theorem ----
-\cardbg{16}{40}{178}{95}
+% ---- CARD 1: Pythagorean theorem (y=40 h=50, end 90) ----
+\cardbg{16}{40}{178}{50}
 \pill{26}{43}{Pythagorean theorem (Pifagor teoremasi)}
 
-\begin{textblock*}{85mm}(26mm,58mm)
+\begin{textblock*}{90mm}(26mm,54mm)
 {\fontsize{15}{18}\selectfont $a^2+b^2=c^2$}
 \end{textblock*}
 
-\begin{textblock*}{55mm}(140mm,58mm)
+\begin{textblock*}{95mm}(26mm,64mm)
+{\fontsize{10}{13}\selectfont\color{black!55}\itshape Right triangles only; $c$ is opposite the right angle.}
+\end{textblock*}
+
+\begin{textblock*}{95mm}(26mm,76mm)
+{\fontsize{13}{16}\selectfont $a=9,\ b=12\colon\ 81+144=225\ \Rightarrow\ c=15$}
+\end{textblock*}
+
+\begin{textblock*}{60mm}(128mm,52mm)
 \begin{tikzpicture}
-\draw[ink,line width=1.1pt] (0,0) -- (12mm,0) -- (12mm,9mm) -- cycle;
-\draw[ink,line width=0.8pt] (12mm,0) -- (10.5mm,0) -- (10.5mm,1.5mm) -- (12mm,1.5mm);
-\node[font=\fontsize{9}{9}\selectfont] at (6mm,-3mm) {$a$};
-\node[font=\fontsize{9}{9}\selectfont] at (14.5mm,4.5mm) {$b$};
-\node[font=\fontsize{9}{9}\selectfont] at (4mm,6mm) {$c$};
+% scale 3 mm per unit: legs 9 x 12, hypotenuse 15
+\draw[ink,line width=1.1pt] (0mm,0mm) -- (36mm,0mm) -- (36mm,27mm) -- cycle;
+\draw[ink,line width=0.8pt] (33mm,0mm) -- (33mm,3mm) -- (36mm,3mm);
+\node[font=\fontsize{11}{11}\selectfont,below] at (18mm,-0.5mm) {$b$};
+\node[font=\fontsize{11}{11}\selectfont,right] at (36.8mm,13.5mm) {$a$};
+\node[font=\fontsize{11}{11}\selectfont] at (14mm,20mm) {$c$};
 \end{tikzpicture}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,80mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-Legs $a,b$ meet at the right angle; hypotenuse $c$ is opposite it and always
-the longest side. Only applies when that right angle is marked or given --
-SAT figures aren't always drawn to scale.}
-\end{textblock*}
+% ---- CARD 2: missing leg (y=97 h=36, end 133) ----
+\cardbg{16}{97}{178}{36}
+\pill{26}{100}{Missing leg}
 
 \begin{textblock*}{158mm}(26mm,110mm)
-{\fontsize{13}{16}\selectfont
-$a=9,\ b=12\colon\ 9^2+12^2=81+144=225\ \Longrightarrow\ c=\sqrt{225}=15$}
+{\fontsize{15}{18}\selectfont $a^2+x^2=c^2\ \Rightarrow\ x=\sqrt{c^2-a^2}$}
 \end{textblock*}
 
-% ---- CARD 2: Identify the hypotenuse first ----
-\cardbg{16}{143}{178}{45}
-\pill{26}{146}{Identify the hypotenuse first}
-
-\begin{textblock*}{158mm}(26mm,160mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-An unknown side isn't always the hypotenuse -- it may be a leg. Write the
-formula with $c$ in the right place.}
+\begin{textblock*}{158mm}(26mm,121mm)
+{\fontsize{13}{16}\selectfont $c=13,\ a=5\colon\ x=\sqrt{169-25}=\sqrt{144}=12$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,173mm)
-{\fontsize{12}{15}\selectfont
-Hyp.\ $=13$, leg $=5$: $\ 5^2+x^2=13^2\ \Longrightarrow\ x=\sqrt{169-25}=12$}
+% ---- CARD 3: converse (y=140 h=36, end 176) ----
+\cardbg{16}{140}{178}{36}
+\pill{26}{143}{Converse: is it a right triangle?}
+
+\begin{textblock*}{158mm}(26mm,153mm)
+{\fontsize{15}{18}\selectfont $a^2+b^2=c^2$ ($c$ longest) $\ \Rightarrow\ $ right triangle}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,163mm)
+{\fontsize{13}{16}\selectfont $8,15,17\colon\ 64+225=289=17^2\ \Rightarrow\ $ right}
+\end{textblock*}
+
+% ---- CARD 4: triples (y=183 h=73, end 256) ----
+\cardbg{16}{183}{178}{73}
+\pill{26}{186}{Common Pythagorean triples}
+
+\begin{textblock*}{158mm}(26mm,196mm)
+{\renewcommand{\arraystretch}{1.4}\fontsize{12}{15}\selectfont
+\begin{tabular}{|>{\centering\arraybackslash}p{30mm}|p{90mm}|}
+\hline
+\cellcolor{accent}\textcolor{white}{\textbf{triple}} & \cellcolor{accent}\textcolor{white}{\textbf{multiples}} \\ \hline
+$3,4,5$ & $6,8,10$\quad $9,12,15$\quad $12,16,20$ \\ \hline
+$5,12,13$ & $10,24,26$ \\ \hline
+$8,15,17$ & $16,30,34$ \\ \hline
+$7,24,25$ & $14,48,50$ \\ \hline
+$9,40,41$ & $18,80,82$ \\ \hline
+$20,21,29$ & $40,42,58$ \\ \hline
+\end{tabular}}
 \end{textblock*}
 
 \clearpage
@@ -157,66 +181,83 @@ Hyp.\ $=13$, leg $=5$: $\ 5^2+x^2=13^2\ \Longrightarrow\ x=\sqrt{169-25}=12$}
 \pagefooter{124}
 \mbox{}%
 
-% ---- CARD 3: Distance formula ----
-\cardbg{16}{33}{178}{92}
+% ---- CARD 5: distance formula (y=33 h=48, end 81) ----
+\cardbg{16}{33}{178}{48}
 \pill{26}{36}{Distance formula (masofa formulasi)}
 
-\begin{textblock*}{80mm}(26mm,51mm)
-{\fontsize{13}{16}\selectfont $d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$}
+\begin{textblock*}{100mm}(26mm,48mm)
+{\fontsize{14}{17}\selectfont $d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$}
 \end{textblock*}
 
-\begin{textblock*}{60mm}(130mm,49mm)
+\begin{textblock*}{100mm}(26mm,62mm)
+{\fontsize{13}{16}\selectfont $(2,3),(7,15)\colon\ d=\sqrt{5^2+12^2}=13$}
+\end{textblock*}
+
+\begin{textblock*}{70mm}(124mm,45mm)
 \begin{tikzpicture}
-\draw[ink,line width=1.1pt] (0,10mm) -- (16mm,10mm) -- (16mm,-2mm) -- cycle;
-\draw[ink,line width=0.8pt] (16mm,10mm) -- (14.5mm,10mm) -- (14.5mm,8.5mm) -- (16mm,8.5mm);
-\filldraw[accent] (0,10mm) circle (0.7mm);
-\filldraw[accent] (16mm,-2mm) circle (0.7mm);
-\node[font=\tiny,anchor=south east] at (0,10mm) {$(x_1,y_1)$};
-\node[font=\tiny,anchor=north west] at (16mm,-2mm) {$(x_2,y_2)$};
-\node[font=\fontsize{8}{8}\selectfont] at (8mm,12.5mm) {$|x_2-x_1|$};
-\node[font=\fontsize{8}{8}\selectfont,anchor=west] at (17mm,4mm) {$|y_2-y_1|$};
-\node[font=\fontsize{8}{8}\selectfont,text=accent] at (5mm,0mm) {$d$};
+% scale 1.5 mm per unit: legs 16 x 12 (4:3), hypotenuse 20
+\draw[ink,line width=1.1pt] (0mm,0mm) -- (24mm,0mm) -- (24mm,18mm) -- cycle;
+\draw[ink,line width=0.8pt] (21mm,0mm) -- (21mm,3mm) -- (24mm,3mm);
+\fill[accent] (0mm,0mm) circle (0.7mm);
+\fill[accent] (24mm,18mm) circle (0.7mm);
+\node[font=\fontsize{8}{8}\selectfont,anchor=east] at (-1.2mm,0mm) {$(x_1,y_1)$};
+\node[font=\fontsize{8}{8}\selectfont,anchor=south] at (24mm,19.2mm) {$(x_2,y_2)$};
+\node[font=\fontsize{8}{8}\selectfont,below] at (12mm,-0.8mm) {$|x_2-x_1|$};
+\node[font=\fontsize{8}{8}\selectfont,anchor=west] at (25mm,9mm) {$|y_2-y_1|$};
+\node[font=\fontsize{10}{10}\selectfont,text=accent] at (9mm,11.5mm) {$d$};
 \end{tikzpicture}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,80mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-This is just the Pythagorean theorem with the horizontal and vertical
-legs built from the coordinates.}
+% ---- CARD 6: midpoint (y=88 h=38, end 126) ----
+\cardbg{16}{88}{178}{38}
+\pill{26}{91}{Midpoint}
+
+\begin{textblock*}{158mm}(26mm,101mm)
+{\fontsize{15}{18}\selectfont $M=\left(\dfrac{x_1+x_2}{2},\ \dfrac{y_1+y_2}{2}\right)$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,93mm)
-{\fontsize{13}{16}\selectfont
-$(2,3),(7,15)\colon\ d=\sqrt{5^2+12^2}=\sqrt{169}=13$}
+\begin{textblock*}{158mm}(26mm,115mm)
+{\fontsize{13}{16}\selectfont $(2,3),(8,11)\colon\ M=(5,7)$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,108mm)
-{\fontsize{10}{13}\selectfont\color{black!55}\itshape
-Each difference is squared, so a negative difference (e.g.\ $2-7=-5$) still
-gives a positive result: $(-5)^2=25$.}
+% ---- CARD 7: diagonals (y=133 h=46, end 179) ----
+\cardbg{16}{133}{178}{46}
+\pill{26}{136}{Diagonals}
+
+\begin{textblock*}{158mm}(26mm,146mm)
+{\fontsize{15}{18}\selectfont
+rectangle: $d=\sqrt{l^2+w^2}$\qquad square: $d=s\sqrt2$\\[1.5mm]
+box: $d=\sqrt{l^2+w^2+h^2}$}
 \end{textblock*}
 
-% ---- CARD 4: Pythagorean triples ----
-\cardbg{16}{131}{178}{80}
-\pill{26}{134}{Common Pythagorean triples}
-
-\begin{textblock*}{158mm}(26mm,148mm)
-{\fontsize{10.5}{13}\selectfont
-\begin{tabular}{|>{\centering\arraybackslash}p{30mm}|p{118mm}|}
-\hline
-\rowcolor{accent}
-{\color{white}\textbf{Base triple}} & {\color{white}\textbf{Common multiples}} \\ \hline
-$3,4,5$ & $6,8,10$\ \ $9,12,15$\ \ $12,16,20$ \\ \hline
-$5,12,13$ & $10,24,26$ \\ \hline
-$8,15,17$ & -- \\ \hline
-$7,24,25$ & -- \\ \hline
-\end{tabular}}
+\begin{textblock*}{158mm}(26mm,168mm)
+{\fontsize{13}{16}\selectfont $3\times4\times12\colon\ d=\sqrt{9+16+144}=13$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,198mm)
-{\fontsize{10}{13}\selectfont\color{black!55}\itshape
-Not every right triangle's sides form a triple -- irrational results like
-$\sqrt2$ or $\sqrt{10}$ are normal too.}
+% ---- CARD 8: height of isosceles / equilateral (y=186 h=46, end 232) ----
+\cardbg{16}{186}{178}{46}
+\pill{26}{189}{Height of an isosceles / equilateral triangle}
+
+\begin{textblock*}{110mm}(26mm,199mm)
+{\fontsize{14}{17}\selectfont
+$h=\sqrt{s^2-\left(\tfrac{b}{2}\right)^2}$\qquad equilateral: $h=\dfrac{\sqrt3}{2}\,s$}
+\end{textblock*}
+
+\begin{textblock*}{110mm}(26mm,216mm)
+{\fontsize{13}{16}\selectfont $10,10,12\colon\ h=\sqrt{100-36}=8$}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(146mm,198mm)
+\begin{tikzpicture}
+% scale 2 mm per unit: base 12 -> 24 mm, height 8 -> 16 mm, sides 10 -> 20 mm
+\draw[ink,line width=1.1pt] (0mm,0mm) -- (24mm,0mm) -- (12mm,16mm) -- cycle;
+\draw[ink,dashed,line width=0.8pt] (12mm,0mm) -- (12mm,16mm);
+\draw[ink,line width=0.8pt] (12mm,2.5mm) -- (14.5mm,2.5mm) -- (14.5mm,0mm);
+\node[font=\fontsize{10}{10}\selectfont,anchor=east] at (6.2mm,9.5mm) {$s$};
+\node[font=\fontsize{10}{10}\selectfont,anchor=west] at (17.8mm,9.5mm) {$s$};
+\node[font=\fontsize{10}{10}\selectfont,below] at (12mm,-0.5mm) {$b$};
+\node[font=\fontsize{10}{10}\selectfont,anchor=east] at (11.3mm,8mm) {$h$};
+\end{tikzpicture}
 \end{textblock*}
 
 \end{document}
