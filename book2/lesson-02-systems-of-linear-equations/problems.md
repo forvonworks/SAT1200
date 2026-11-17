@@ -113,8 +113,8 @@ see the sourcing note at the end of this set.
    A) 5  B) 10  C) 15  D) 20
 5. $2x+y=20$ and $x+y=13$. What is the value of $y$?
    A) 6  B) 7  C) 13  D) 20
-6. A movie theater sells child tickets for \$8 and adult tickets for \$13. One evening it sold 200 tickets and collected \$2,150. Which system can be used to find the number of child tickets, $c$, and adult tickets, $a$, sold?
-   A) $c+a=200$, $8c+13a=2150$  B) $c+a=200$, $13c+8a=2150$  C) $8c+13a=200$, $c+a=2150$  D) $c+a=2150$, $8c+13a=200$
+6. Let $(x,y)$ satisfy $5x+y=23$ and $2x+y=14$. What is the value of $x+y$?
+   A) 3  B) 5  C) 11  D) 14
 7. $3x+y=22$ and $x-y=2$. What is the value of $x$?
    A) 4  B) 5  C) 6  D) 8
 8. What is the solution $(x,y)$ to the system $y=2x-3$ and $x+y=15$?
@@ -138,8 +138,8 @@ see the sourcing note at the end of this set.
 
 1. $y=-\dfrac{1}{5}x$ and $y=\dfrac{1}{4}x$. The solution to the system is $(x,y)$. What is the value of $x$?
    A) $-5$  B) $-4$  C) 0  D) 4
-2. $3x+4y=26$ and $x+4y=14$. What is the value of $x$?
-   A) 6  B) 2  C) 3  D) 12
+2. Which system below has no pair $(x,y)$ that satisfies both of its equations?
+   A) $y=2x+1$ and $2x-y=-1$  B) $3x-y=7$ and $6x-2y=-4$  C) $3x-y=7$ and $x+y=5$  D) $y=\dfrac{1}{2}x+3$ and $x+2y=9$
 3. A tour guide's rating is found by subtracting the number of negative reviews from 3 times the number of positive reviews. The guide received 50 reviews in total and a rating of 70. How many positive reviews did the guide receive?
    A) 20  B) 30  C) 35  D) 40
 4. $2x+3y=22$ and $x+y=9$. What is the value of $x$?
@@ -150,8 +150,8 @@ see the sourcing note at the end of this set.
    A) 20  B) 24  C) 40  D) 80
 7. A vending machine sells small snack bags for \$2 and large bags for \$3.50. One day it sold 5 more large bags than small bags, for total sales of \$100. Which system can be used to find the number of small bags, $s$, and large bags, $l$, sold?
    A) $l=s+5$, $2s+3.5l=100$  B) $s=l+5$, $2s+3.5l=100$  C) $l=s+5$, $3.5s+2l=100$  D) $s+l=5$, $2s+3.5l=100$
-8. $\dfrac{1}{2}x+y=7$ and $x-y=2$. What is the value of $x$?
-   A) 2  B) 4  C) 6  D) 8
+8. Line $\ell_1$: $x$-intercept $3$, $y$-intercept $6$. Line $\ell_2$: $x$-intercept $2$, $y$-intercept $8$. Where do the lines meet?
+   A) $(2,2)$  B) $(1,4)$  C) $(4,1)$  D) $(3,0)$
 9. $3x+2y=16$ and $5x+3y=26$. What is the value of $x$?
    A) 2  B) 4  C) 5  D) 6
 10. Raffle tickets cost \$4 and gala tickets cost \$15. A total of 80 tickets were sold for \$650. Which system can be used to find the number of raffle tickets, $r$, and gala tickets, $g$, sold?
@@ -179,8 +179,8 @@ see the sourcing note at the end of this set.
    A) $-2$  B) 2  C) 3  D) 6
 5. A company builds standard chairs (3 hours of labor each) and deluxe chairs (5 hours each). Last week it used 190 labor hours, and built 10 fewer deluxe chairs than standard chairs. Which system can be used to find the number of standard chairs, $s$, and deluxe chairs, $d$?
    A) $5s+3d=190$, $d=s-10$  B) $3s+5d=190$, $d=s+10$  C) $3s+5d=190$, $d=s-10$  D) $3s+5d=190$, $s=d-10$
-6. $7x+4y=58$ and $3x+4y=34$. What is the value of $x$?
-   A) 4  B) 6  C) 8  D) 24
+6. Paired with $4x-6y=10$, which equation gives a system with **no solution**?
+   A) $2x-3y=5$  B) $2x-3y=-5$  C) $4x+6y=10$  D) $2x+3y=-5$
 7. Floor tickets to a concert cost \$85 and balcony tickets cost \$45. Three times as many balcony tickets as floor tickets were sold, for a total of \$6,600. How many balcony tickets were sold?
    A) 30  B) 60  C) 90  D) 120
 8. In the system $5x+2y=14$ and $15x+6y=k$, $k$ is a constant. For what value of $k$ does the system have infinitely many solutions?
@@ -191,12 +191,12 @@ see the sourcing note at the end of this set.
     A) $x+y=340$, $0.03x+0.05y=8000$  B) $x+y=8000$, $0.05x+0.03y=340$  C) $x+y=8000$, $3x+5y=340$  D) $x+y=8000$, $0.03x+0.05y=340$
 11. In the system $5x-8y=16y+3$ and $nx=\dfrac{1}{4}-4y$, $n$ is a constant. If the system has no solution, what is the value of $n$?
     A) $-\dfrac{6}{5}$  B) $-\dfrac{5}{6}$  C) $\dfrac{5}{6}$  D) $\dfrac{6}{5}$
-12. $9x-2y=41$ and $3x+2y=19$. What is the value of $x$?
-    A) 2  B) 4  C) 5  D) 12
+12. Let $(x,y)$ satisfy $3(x+2y)-x=26$ and $2(x-y)+5y=17$. What is the value of $x^2+y^2$?
+    A) 7  B) 12  C) 25  D) 49
 13. A chemist mixes a 10% acid solution with a 40% acid solution to make 50 liters of a 22% acid solution. How many liters of the 40% solution are used?
     A) 11  B) 20  C) 25  D) 30
-14. $2x+7y=31$ and $2x-3y=11$. What is the value of $10y$?
-    A) 2  B) 10  C) 20  D) 42
+14. A boat travels 45 km downstream in 3 hours and 21 km upstream in 3 hours. The boat's speed in still water and the speed of the current are both constant. What is the boat's speed in still water, in km/h?
+    A) 4  B) 7  C) 11  D) 15
 15. In the system $4x+9y=15$ and $kx+3y=5$, $k$ is a constant. For what value of $k$ does the system have infinitely many solutions?
     A) $\dfrac{4}{3}$  B) $\dfrac{3}{4}$  C) 4  D) 12
 
@@ -243,8 +243,8 @@ lesson's skill category — the numbers, names, and contexts are all original.
 
 **Set 7:** 1) $(2,1)$  2) The numbers are $16$ and $8$.  3) $k=6$  4) $(4,3)$
 
-**Set 8 — Easy:** 1) B  2) A  3) A  4) B  5) A  6) A  7) C  8) B  9) C  10) B  11) A  12) D  13) C  14) C  15) D
+**Set 8 — Easy:** 1) B  2) A  3) A  4) B  5) A  6) C  7) C  8) B  9) C  10) B  11) A  12) D  13) C  14) C  15) D
 
-**Set 8 — Medium:** 1) C  2) A  3) B  4) B  5) B  6) C  7) A  8) C  9) B  10) C  11) D  12) A  13) A  14) B  15) A
+**Set 8 — Medium:** 1) C  2) B  3) B  4) B  5) B  6) C  7) A  8) B  9) B  10) C  11) D  12) A  13) A  14) B  15) A
 
 **Set 8 — Hard:** 1) D  2) C  3) A  4) B  5) C  6) B  7) C  8) C  9) B  10) D  11) B  12) C  13) B  14) C  15) A
