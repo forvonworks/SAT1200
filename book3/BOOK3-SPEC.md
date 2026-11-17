@@ -96,3 +96,10 @@ Answers are NOT printed after the module. They go to the end-of-book "Answer she
 - `book3/old-drafts/` — old Uzbek/English-mix drafts, INPUT ONLY (ideas), never copy real College Board text
 - Reference implementations: `book3/lesson-05-speed-tricks/` (lesson), `book3/mocks/mock-01/` (mock)
 - Mocks must not repeat contexts, numbers or problem ideas of other mocks (read the other mocks' problems.md first).
+
+## Worked-solutions spacing (owner requirement)
+
+The answer-key worked-solutions pages must be comfortably spaced (10 pt text, ~3.6 mm between items, two
+auto-flowing columns, no item split across columns). After building any lesson typeset, run
+`python3 book3/tools/respace_solutions.py lessonNN-typeset.tex` (idempotent) and recompile; it rewrites those pages
+with multicol + fancyhdr and a `\pgoff` macro for the footer number (footer = page + \pgoff).

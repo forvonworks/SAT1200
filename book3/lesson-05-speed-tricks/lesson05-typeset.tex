@@ -106,6 +106,15 @@
 \setlength{\arrayrulewidth}{0.7pt}
 \renewcommand{\arraystretch}{1.3}
 
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\newcommand{\pgoff}{0}
+\renewcommand{\solitem}[4]{\noindent\parbox[t]{\linewidth}{\raggedright\pnum{#1} {\bfseries #2}\ ---\ #3\ {\itshape\color{accent}[#4]}}\par\vspace{3.6mm}}
+\newcommand{\solkicker}[2]{\Needspace{38mm}\vspace{1.5mm}{\sffamily\bfseries\fontsize{12.5}{15}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{3mm}}
+\fancypagestyle{solstyle}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}%
+ \fancyhead[L]{\topicheader{5}{Speed Tricks}}%
+ \fancyfoot[L]{\pagefooter{\the\numexpr\value{page}+\pgoff\relax}}}
 \begin{document}
 
 \topicheader{5}{Speed Tricks}
@@ -359,13 +368,13 @@
 }
 \end{textblock*}
 \clearpage
-\topicheader{5}{Speed Tricks}
-\pagefooter{7}
-\colrule{32}{238}
-\mbox{}%
-\begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{8.6}{10.5}\selectfont
-\setkicker{Set 1}{Worked solutions}
+%%AUTOFLOW-SOLUTIONS
+\newgeometry{top=34mm,bottom=24mm,left=16mm,right=16mm}
+\pagestyle{solstyle}
+\setlength{\columnsep}{14mm}\setlength{\columnseprule}{0.4pt}
+{\fontsize{10}{13.6}\selectfont
+\begin{multicols}{2}
+\solkicker{Set 1}{Worked solutions}
 \solitem{1}{D ($66$)}{$15x-9=3(5x-3)=3\cdot22=66$. There is no need to find $x$ (it is 5).}{What is asked?}
 \solitem{2}{A ($6$)}{Add the equations: $5x+5y=30$, so $x+y=6$. (Subtracting would give $x-y=8$, the other trap.)}{Add the equations}
 \solitem{3}{Ans. 7}{Sum of roots $=-\dfrac ba=\dfrac{21}{3}=7$. (The discriminant is positive, so both roots are real.)}{Vieta}
@@ -378,8 +387,7 @@
 \solitem{10}{D (Exactly three)}{Graph $y=2^x$ and $y=x^2$: they cross at $x=2$, $x=4$ and once more near $x\approx-0.77$. That is 3 points.}{Graph it (Desmos)}
 \solitem{11}{Ans. 77}{$(a+b)^2-(a-b)^2=4ab$, so $4ab=324-16=308$ and $ab=77$. (The numbers are 11 and 7.)}{Structure (identities)}
 \solitem{12}{B ($(x-y-3)(x+y+3)$)}{$x^2-(y^2+6y+9)=x^2-(y+3)^2=(x-y-3)(x+y+3)$: a perfect square first, then a difference of squares.}{Structure (identities)}
-\vspace{3mm}
-\setkicker{Set 2}{Worked solutions}
+\solkicker{Set 2}{Worked solutions}
 \solitem{1}{B ($22$)}{$r+s=5$ and $rs=\frac32$, so $r^2+s^2=(r+s)^2-2rs=25-3=22$. (Forgetting to divide by $a$ gives 19.)}{Vieta (sum of squares)}
 \solitem{2}{Ans. 20}{Let the roots be $t$ and $5t$. The sum is $6t=12$, so $t=2$. The product is $k=t\cdot5t=5(4)=20$.}{Vieta}
 \solitem{3}{D ($4$)}{$\dfrac1p+\dfrac1q=\dfrac{p+q}{pq}=\dfrac{8/3}{2/3}=4$.}{Vieta (reciprocals)}
@@ -388,19 +396,14 @@
 \solitem{6}{D ($17$)}{$c=(r+2)(s+2)=rs+2(r+s)+4=3+10+4=17$. (Leaving out the final $+4$ gives 13.)}{Vieta}
 \solitem{7}{Ans. −3}{$(r-2)(s-2)=rs-2(r+s)+4=2-2\left(\frac92\right)+4=-3$.}{Vieta}
 \solitem{8}{C ($\sqrt{26}$)}{$D=144-40=104$, and the roots differ by $\dfrac{\sqrt D}{|a|}=\dfrac{\sqrt{104}}2=\sqrt{26}$. (Forgetting to divide by $a$ gives $2\sqrt{26}$.)}{Vieta (difference of roots)}
-}
-\end{textblock*}
-\begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{8.6}{10.5}\selectfont
-\setkicker{Set 2 (cont.)}{Worked solutions}
+\solkicker{Set 2 (cont.)}{Worked solutions}
 \solitem{9}{Ans. 8}{$r+s=k$ and $rs=12$, so $r^2+s^2=k^2-24=40$. Then $k^2=64$ and $k=8$ (positive). The roots are 2 and 6.}{Vieta (sum of squares)}
 \solitem{10}{A ($\sqrt{97}$)}{$l+w=13$ and $lw=36$, so $l^2+w^2=169-72=97$. The diagonal is $\sqrt{97}$. (13 is the half-perimeter.)}{Vieta (sum of squares)}
 \solitem{11}{B ($21$)}{$r+s=10$ and $r-s=4$, so $r=7$, $s=3$ and $c=rs=21$. (25 would mean equal roots.)}{Vieta}
 \solitem{12}{Ans. −72}{$r^3+s^3=(r+s)^3-3rs(r+s)=(-3)^3-3(-5)(-3)=-27-45=-72$.}{Vieta (sum of cubes)}
 \solitem{13}{A ($16$)}{The roots of $2x^2-bx+c=0$ have sum $\frac b2=5$ and product $\frac c2=3$, so $b=10$, $c=6$ and $b+c=16$.}{Vieta}
 \solitem{14}{C ($2x^2-7x+3=0$)}{New sum $=\frac{S}{P}=\frac{7/3}{2/3}=\frac72$, new product $=\frac1P=\frac32$. So $x^2-\frac72x+\frac32=0$, i.e. $2x^2-7x+3=0$ (the $a$ and $c$ swap).}{Vieta (reciprocals)}
-\vspace{3mm}
-\setkicker{Set 3}{Worked solutions}
+\solkicker{Set 3}{Worked solutions}
 \solitem{1}{C ($11$)}{Equal outputs mean the axis is halfway: $x=\frac{2+9}2=\frac{11}2$. For $-x^2+bx+c$ the axis is $\frac b2$, so $b=11$.}{Symmetry (axis)}
 \solitem{2}{Ans. 6}{The axis is halfway between $t=1$ and $t=5$, so it is $t=3$. Launch ($t=0$) is 3 units left of the axis, so the ball is back at 1.2 m at $t=3+3=6$.}{Symmetry (axis)}
 \solitem{3}{D ($4$)}{$(x-6)(x+2)$ is lowest halfway between $-2$ and $6$, at $x=2$, where it equals $-16$. So the minimum of $f$ is $-16+20=4$. (2 is where it happens.)}{Axis = midpoint of the roots}
@@ -414,19 +417,9 @@
 \solitem{11}{Ans. 625}{The zeros are $p=5$ and $p=30$, so the maximum is at $p=17.5$: profit $=(12.5)(120-70)=(12.5)(50)=625$.}{Axis = midpoint of the roots}
 \solitem{12}{D ($18$)}{Axis: $x=\frac{1+9}2=5$, so $-\frac b2=5$ and $b=-10$. Minimum: $f(5)=25-50+c=-7$, so $c=18$.}{Symmetry (axis)}
 \solitem{13}{C ($3$)}{$f=g$ gives $2x^2-8x+8=2(x-2)^2=0$, so they touch only at $x=2$, where $f(2)=4-12+11=3$. (2 is the $x$-coordinate.)}{Graph it (Desmos)}
-}
-\end{textblock*}
-\clearpage
-\topicheader{5}{Speed Tricks}
-\pagefooter{8}
-\colrule{32}{238}
-\mbox{}%
-\begin{textblock*}{\COLW}(\LCOL,32mm)
-{\fontsize{8.6}{10.5}\selectfont
-\setkicker{Set 3 (cont.)}{Worked solutions}
+\solkicker{Set 3 (cont.)}{Worked solutions}
 \solitem{14}{B ($5\sqrt2$)}{Substitute: $2x^2+2kx+k^2-25=0$. One solution means $D=4k^2-8(k^2-25)=200-4k^2=0$, so $k^2=50$ and $k=5\sqrt2$.}{Tangent: D = 0}
-\vspace{3mm}
-\setkicker{Set 4}{Worked solutions}
+\solkicker{Set 4}{Worked solutions}
 \solitem{1}{A ($30$)}{Add: $8(x+y)=48$, so $x+y=6$. Subtract: $2(x-y)=10$, so $x-y=5$. Then $x^2-y^2=(x+y)(x-y)=30$.}{Add / subtract the equations}
 \solitem{2}{Ans. 22}{Adding all three: $2(a+b+c)=44$, so $a+b+c=22$.}{Add the equations}
 \solitem{3}{D ($28$)}{The expression $8x+4y$ is the sum of the two left sides: $18+10=28$.}{Add the equations}
@@ -441,16 +434,11 @@
 \solitem{12}{Ans. 32}{$(a-b)^2=(a+b)^2-4ab=100-68=32$.}{Structure (identities)}
 \solitem{13}{D ($27$)}{$3^{x+2}=9\cdot3^x$, so $9\cdot3^x-3^x=8\cdot3^x=216$ and $3^x=27$. (Here $x=3$; the question asks for $3^x$, not $x$.)}{Structure (factor the common power)}
 \solitem{14}{A ($24$)}{$(x-8)\big[(x+2)-(3x-4)\big]=(x-8)(6-2x)=0$, so $x=8$ or $x=3$. The product is 24. (Dividing by $x-8$ loses a root.)}{Do not divide: factor}
-\vspace{3mm}
-\setkicker{Set 5}{Worked solutions}
+\solkicker{Set 5}{Worked solutions}
 \solitem{1}{Ans. 9}{$x^2-7x+(4-k)=0$, so $x_1+x_2=7$ and $x_1x_2=4-k$. Then $49-2(4-k)=59$, so $4-k=-5$ and $k=9$.}{Vieta (sum of squares)}
 \solitem{2}{A ($-12m-6$)}{$16+y^2=20$ and $y<0$ give $y=-2$. Then $-2=4m+\frac b3$, so $b=-6-12m$. (Taking $y=+2$ gives the trap $6-12m$.)}{Substitute the point}
 \solitem{3}{C ($6$)}{Squaring gives $x^2-x-30=0$, so $x=6$ or $x=-5$. Check: $\sqrt{25}=5\neq-5$, so $-5$ is extraneous. Only $x=6$ works. (Vieta's sum, 1, is the trap.)}{Extraneous solutions (backsolve)}
-}
-\end{textblock*}
-\begin{textblock*}{\COLW}(\RCOL,32mm)
-{\fontsize{8.6}{10.5}\selectfont
-\setkicker{Set 5 (cont.)}{Worked solutions}
+\solkicker{Set 5 (cont.)}{Worked solutions}
 \solitem{4}{D ($6\sqrt{26}$)}{$r^2-s^2=(r+s)(r-s)$. Here $r+s=6$ and $r-s=\dfrac{\sqrt{104}}2=\sqrt{26}$, so the value is $6\sqrt{26}$.}{Vieta + structure}
 \solitem{5}{Ans. 15}{$p(1)=0$: $a+b=11$. $p(-1)=6$: $-1+a-b-12=6$, so $a-b=19$. Adding: $2a=30$, so $a=15$.}{Factor / remainder theorem}
 \solitem{6}{B ($20$)}{$1.40\,(1-\frac p{100})=1.12$, so $1-\frac p{100}=0.80$ and $p=20$. (Subtracting $40-12$ gives the trap 28.)}{Percent multiplier}
@@ -468,7 +456,5 @@
 \solitem{18}{Ans. −7.5}{$2x^2+10x+(5-c)=0$ has one solution when $D=100-8(5-c)=60+8c=0$, so $c=-7.5$.}{Tangent: D = 0}
 \solitem{19}{B ($60$)}{$r+s=17$ and $r^2+s^2=169$, so $rs=\dfrac{17^2-169}{2}=60$. (The sides are 5 and 12.)}{Vieta (sum of squares)}
 \solitem{20}{B ($-7$)}{$x^2+(b-3)x+(8-k)=0$, so $x_1+x_2=3-b$. The midpoint is $\frac{3-b}2=5$, so $b=-7$. (Using the vertex, $-\frac b2=5$, ignores the line.)}{Vieta (system)}
-}
-\end{textblock*}
-\clearpage
+\end{multicols}}
 \end{document}
