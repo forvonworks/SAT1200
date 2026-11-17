@@ -102,83 +102,73 @@
 \pagefooter{7}
 \mbox{}%
 
-% ---- CARD 1: Multi-step equations ----
-\cardbg{16}{40}{178}{42}
-\pill{26}{43}{Multi-step equations (ko'p qadamli tenglama)}
+% ---- CARD 1: Solving order ----
+\cardbg{16}{40}{178}{46}
+\pill{26}{43}{Solving order (ko'p qadamli tenglama)}
 
 \begin{textblock*}{158mm}(26mm,56mm)
 {\fontsize{11}{14}\selectfont\color{ink}
-Order: clear fractions $\to$ expand $\to$ collect the variable $\to$ combine
-like terms.}
+(Clear fractions) $\to$ distribute $\to$ combine like terms $\to$ collect the
+variable $\to$ divide.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,67mm)
+\begin{textblock*}{158mm}(26mm,69mm)
 {\fontsize{13}{16}\selectfont
 $\dfrac{2}{3}(x+3)=x-1\ \Longrightarrow\ x=9$}
 \end{textblock*}
 
-% ---- CARD 2: Sign-flip rule ----
-\cardbg{16}{88}{178}{70}
-\pill{26}{91}{Sign-flip rule (ishora almashish qoidasi)}
+% ---- CARD 2: Number of solutions ----
+\cardbg{16}{94}{178}{71}
+\pill{26}{97}{Number of solutions}
 
-\begin{textblock*}{158mm}(26mm,104mm)
+\begin{textblock*}{158mm}(26mm,110mm)
+{\fontsize{13}{16}\selectfont $ax+b=cx+d$}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,119mm)
 {\fontsize{11}{14}\selectfont
-\begin{tabular}{|p{80mm}|>{\centering\arraybackslash}p{70mm}|}
+\begin{tabular}{|p{50mm}|>{\centering\arraybackslash}p{80mm}|}
 \hline
 \rowcolor{accent}
-{\color{white}\textbf{Operation}} & {\color{white}\textbf{Sign flips?}} \\ \hline
-Add or subtract & No \\ \hline
-Multiply / divide by a positive & No \\ \hline
-\textbf{Multiply / divide by a negative} & \textbf{Yes} \\ \hline
+{\color{white}\textbf{Condition}} & {\color{white}\textbf{Solutions}} \\ \hline
+$a\ne c$ & One solution \\ \hline
+$a=c,\ b\ne d$ & No solution \\ \hline
+$a=c,\ b=d$ & Infinitely many \\ \hline
 \end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,146mm)
+\begin{textblock*}{158mm}(26mm,153mm)
 {\fontsize{13}{16}\selectfont
-$-3x+5\le20\ \Longrightarrow\ x\ge-5$}
+$3x+4=3x+9\ \Longrightarrow\ $ no solution}
 \end{textblock*}
 
-% ---- CARD 3: Graphing the solution ----
-\cardbg{16}{166}{178}{110}
-\pill{26}{169}{Graphing the solution}
+% ---- CARD 3: Parameter version ----
+\cardbg{16}{173}{178}{42}
+\pill{26}{176}{Finding the parameter}
 
-\begin{textblock*}{158mm}(26mm,182mm)
-{\fontsize{11}{14}\selectfont
-\begin{tabular}{|>{\centering\arraybackslash}p{20mm}|p{60mm}|p{58mm}|}
-\hline
-\rowcolor{accent}
-{\color{white}\textbf{Sign}} & {\color{white}\textbf{Circle}} & {\color{white}\textbf{Meaning}} \\ \hline
-$<$ or $>$ & Open circle & Boundary excluded \\ \hline
-$\le$ or $\ge$ & Closed circle & Boundary included \\ \hline
-\end{tabular}}
+\begin{textblock*}{158mm}(26mm,189mm)
+{\fontsize{11}{14}\selectfont\color{ink}
+\textbf{Infinitely many:} match coefficients \textbf{and} constants.\\
+\textbf{No solution:} match coefficients only.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,211mm)
-\begin{tikzpicture}[every node/.style={font=\fontsize{10}{10}\selectfont}]
-\draw[ink,line width=0.9pt] (0,0) -- (70mm,0);
-\foreach \x/\lbl in {0/{-1},11.67/{0},23.3/{1},35/{2},46.7/{3},58.3/{4},70/{5}}{
-  \draw[ink,line width=0.7pt] (\x mm,-1mm) -- (\x mm,1mm);
-  \node at (\x mm,-5mm) {$\lbl$};
-}
-\draw[accent,line width=1.8pt] (46.7mm,0) -- (70mm,0);
-\draw[accent,line width=1.4pt,-{Stealth[length=2.2mm]}] (68mm,0) -- (76mm,0);
-\draw[accent,line width=1.4pt,fill=white] (46.7mm,0) circle (1.3mm);
-\node[font=\sffamily\bfseries\fontsize{10}{10}\selectfont,text=accent] at (46.7mm,7mm) {$x>3$ (open)};
-\end{tikzpicture}
+\begin{textblock*}{158mm}(26mm,201mm)
+{\fontsize{13}{16}\selectfont
+$4x+7=kx+m$: \ $k=4$; \ $m=7$ (infinite), \ $m\ne7$ (none)}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,236mm)
-\begin{tikzpicture}[every node/.style={font=\fontsize{10}{10}\selectfont}]
-\draw[ink,line width=0.9pt] (0,0) -- (70mm,0);
-\foreach \x/\lbl in {0/{0},11.67/{1},23.3/{2},35/{3},46.7/{4},58.3/{5},70/{6}}{
-  \draw[ink,line width=0.7pt] (\x mm,-1mm) -- (\x mm,1mm);
-  \node at (\x mm,-5mm) {$\lbl$};
-}
-\draw[accent,line width=1.8pt] (0,0) -- (46.7mm,0);
-\draw[accent,line width=1.4pt,-{Stealth[length=2.2mm]}] (2mm,0) -- (-6mm,0);
-\draw[accent,line width=1.4pt,fill=accent] (46.7mm,0) circle (1.3mm);
-\node[font=\sffamily\bfseries\fontsize{10}{10}\selectfont,text=accent] at (46.7mm,7mm) {$x\le4$ (closed)};
-\end{tikzpicture}
+% ---- CARD 4: Value of an expression ----
+\cardbg{16}{223}{178}{44}
+\pill{26}{226}{Value of an expression}
+
+\begin{textblock*}{158mm}(26mm,239mm)
+{\fontsize{11}{14}\selectfont\color{ink}
+Scale or shift the given equation to match the target -- do not solve for $x$.}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,252mm)
+{\fontsize{13}{16}\selectfont
+$3x+5=20\ \Longrightarrow\ 6x+10=40$}
 \end{textblock*}
 
 \clearpage
@@ -191,72 +181,76 @@ $\le$ or $\ge$ & Closed circle & Boundary included \\ \hline
 \pagefooter{8}
 \mbox{}%
 
-% ---- CARD 4: Compound inequalities ----
-\cardbg{16}{33}{178}{130}
-\pill{26}{36}{Compound inequalities (qo'shma tengsizlik)}
+% ---- CARD 5: Sign-flip rule ----
+\cardbg{16}{33}{178}{62}
+\pill{26}{36}{Sign-flip rule (ishora almashish qoidasi)}
 
 \begin{textblock*}{158mm}(26mm,49mm)
-{\fontsize{11}{14}\selectfont\textbf{``And''} -- one operation, all three parts.}
+{\fontsize{11}{14}\selectfont
+\begin{tabular}{|p{80mm}|>{\centering\arraybackslash}p{40mm}|}
+\hline
+\rowcolor{accent}
+{\color{white}\textbf{Operation}} & {\color{white}\textbf{Sign flips?}} \\ \hline
+Add or subtract & No \\ \hline
+Multiply / divide by a positive & No \\ \hline
+\textbf{Multiply / divide by a negative} & \textbf{Yes} \\ \hline
+\end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,59mm)
+\begin{textblock*}{158mm}(26mm,83mm)
+{\fontsize{13}{16}\selectfont
+$-3x+5\le20\ \Longrightarrow\ x\ge-5$}
+\end{textblock*}
+
+% ---- CARD 6: Compound inequalities ----
+\cardbg{16}{103}{178}{55}
+\pill{26}{106}{Compound inequalities (qo'shma tengsizlik)}
+
+\begin{textblock*}{158mm}(26mm,119mm)
+{\fontsize{11}{14}\selectfont\color{ink}
+\textbf{``And''} -- same operation on all three parts.}
+\end{textblock*}
+
+\begin{textblock*}{158mm}(26mm,127mm)
 {\fontsize{13}{16}\selectfont $-3<x+1\le5\ \Longrightarrow\ -4<x\le4$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,74mm)
-\begin{tikzpicture}[every node/.style={font=\fontsize{10}{10}\selectfont}]
-\draw[ink,line width=0.9pt] (0,0) -- (105mm,0);
-\foreach \x/\lbl in {0/{-6},17.5/{-4},35/{-2},52.5/{0},70/{2},87.5/{4},105/{6}}{
-  \draw[ink,line width=0.7pt] (\x mm,-1mm) -- (\x mm,1mm);
-  \node at (\x mm,-5mm) {$\lbl$};
-}
-\draw[accent,line width=1.8pt] (17.5mm,0) -- (87.5mm,0);
-\draw[accent,line width=1.4pt,fill=white] (17.5mm,0) circle (1.3mm);
-\draw[accent,line width=1.4pt,fill=accent] (87.5mm,0) circle (1.3mm);
-\end{tikzpicture}
+\begin{textblock*}{158mm}(26mm,138mm)
+{\fontsize{11}{14}\selectfont\color{ink}
+\textbf{``Or''} -- solve each part separately.}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,100mm)
-{\fontsize{11}{14}\selectfont\textbf{``Or''} -- each part solved separately.}
-\end{textblock*}
-
-\begin{textblock*}{158mm}(26mm,110mm)
+\begin{textblock*}{158mm}(26mm,146mm)
 {\fontsize{13}{16}\selectfont $2x+1<-3$ or $2x+1>7\ \Longrightarrow\ x<-2$ or $x>3$}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,125mm)
-\begin{tikzpicture}[every node/.style={font=\fontsize{10}{10}\selectfont}]
-\draw[ink,line width=0.9pt] (0,0) -- (105mm,0);
-\foreach \x/\lbl in {0/{-6},17.5/{-4},35/{-2},52.5/{0},70/{2},87.5/{4},105/{6}}{
-  \draw[ink,line width=0.7pt] (\x mm,-1mm) -- (\x mm,1mm);
-  \node at (\x mm,-5mm) {$\lbl$};
-}
-\draw[accent,line width=1.8pt] (0,0) -- (35mm,0);
-\draw[accent,line width=1.4pt,-{Stealth[length=2.2mm]}] (3mm,0) -- (-5mm,0);
-\draw[accent,line width=1.4pt,fill=white] (35mm,0) circle (1.3mm);
-\draw[accent,line width=1.8pt] (70mm,0) -- (105mm,0);
-\draw[accent,line width=1.4pt,-{Stealth[length=2.2mm]}] (102mm,0) -- (110mm,0);
-\draw[accent,line width=1.4pt,fill=white] (70mm,0) circle (1.3mm);
-\end{tikzpicture}
+% ---- CARD 7: Words to symbols ----
+\cardbg{16}{166}{178}{52}
+\pill{26}{169}{Words to symbols}
+
+\begin{textblock*}{158mm}(26mm,182mm)
+{\fontsize{11}{14}\selectfont
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|p{114mm}|}
+\hline
+$\ge$ & at least, no less than, minimum of, not below \\ \hline
+$\le$ & at most, no more than, maximum of, not exceeding \\ \hline
+$>$ & more than, greater than, exceeds, above \\ \hline
+$<$ & fewer than, less than, below, under \\ \hline
+\end{tabular}}
 \end{textblock*}
 
-\begin{textblock*}{158mm}(26mm,150mm)
-{\fontsize{10}{13}\selectfont\color{black!55}\itshape
-Operation applies to all three parts of an ``and'' inequality -- not just one.}
+% ---- CARD 8: Maximum / minimum whole number ----
+\cardbg{16}{226}{178}{36}
+\pill{26}{229}{Maximum / minimum whole number}
+
+\begin{textblock*}{158mm}(26mm,242mm)
+{\fontsize{11}{14}\selectfont\color{ink}
+Solve first, then round \textbf{down} for a maximum, \textbf{up} for a minimum.}
 \end{textblock*}
 
-% ---- CARD 5: Interval notation ----
-\cardbg{16}{173}{178}{42}
-\pill{26}{176}{Interval notation (oraliq belgilash)}
-
-\begin{textblock*}{158mm}(26mm,189mm)
-{\fontsize{10.5}{13}\selectfont\color{ink}
-Traditional textbooks: semicolon. SAT / English sources: comma.}
-\end{textblock*}
-
-\begin{textblock*}{158mm}(26mm,200mm)
+\begin{textblock*}{158mm}(26mm,250mm)
 {\fontsize{13}{16}\selectfont
-Traditional: $(2;\ 5]$ \hspace{15mm} SAT: $(2,\ 5]$}
+$4x+3\le34\Rightarrow x\le7.75$: max $=7$ \quad ($\ge$: min $=8$)}
 \end{textblock*}
 
 \end{document}
