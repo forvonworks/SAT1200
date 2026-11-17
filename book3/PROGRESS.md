@@ -18,8 +18,9 @@ Decisions + blueprint: see BOOK3-SPEC.md.
 | Mock 1 | DONE, verified, final blueprint (44 q) |
 | Mock 2 | DONE, verified |
 | Mock 3 | DONE, verified |
-| Mock 4 | in progress (agent a41ab664e8ede9661) |
-| Mock 5 | in progress (agent started after mock 3) |
+| Mock 4 | DONE, verified |
+| Mock 5 | in progress (agent aaf643b5c13e50305) |
+| Mock 6 | in progress |
 | Lesson 2 | DONE, verified (74 problems) |
 | Lesson 3 | in progress (agent a90ad4afe84780550) |
 | Lesson 4 | in progress (agent started after lesson 2) |

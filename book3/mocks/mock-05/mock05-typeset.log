@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.10.25)  17 NOV 2026 19:00
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.10.25)  17 NOV 2026 19:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**mock04-typeset.tex
-(./mock04-typeset.tex
+**mock05-typeset.tex
+(./mock05-typeset.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -847,8 +847,8 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/LibertinusMath(3)/b/n on input line
  16.
 
-(./mock04-typeset.aux)
-\openout1 = `mock04-typeset.aux'.
+(./mock05-typeset.aux)
+\openout1 = `mock05-typeset.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
 LaTeX Font Info:    ... okay on input line 97.
@@ -1012,36 +1012,41 @@ LaTeX Font Info:    Font shape `TU/LibertinusMath(3)/m/n' will be
 
 ] [5
 
-] [6
-
 ]
-LaTeX Font Info:    Font shape `TU/LibertinusMath(2)/m/n' will be
-(Font)              scaled to size 9.00096pt on input line 614.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 614.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 614.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(3)/m/n' will be
-(Font)              scaled to size 8.99904pt on input line 614.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 614.
-LaTeX Font Info:    Font shape `TU/LibertinusMath(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 614.
- [7
+Underfull \hbox (badness 4328) in paragraph at lines 514--514
+\TU/LibertinusSerif(0)/m/n/10.4 in the $[][]$-plane. The function $[]$ is defin
+ed by
+ []
 
-] (./mock04-typeset.aux)
+LaTeX Font Info:    Font shape `TU/LibertinusMath(2)/m/n' will be
+(Font)              scaled to size 9.00096pt on input line 543.
+LaTeX Font Info:    Font shape `TU/LibertinusMath(2)/m/n' will be
+(Font)              scaled to size 6.00064pt on input line 543.
+LaTeX Font Info:    Font shape `TU/LibertinusMath(2)/m/n' will be
+(Font)              scaled to size 5.00053pt on input line 543.
+LaTeX Font Info:    Font shape `TU/LibertinusMath(3)/m/n' will be
+(Font)              scaled to size 8.99904pt on input line 543.
+LaTeX Font Info:    Font shape `TU/LibertinusMath(3)/m/n' will be
+(Font)              scaled to size 5.99936pt on input line 543.
+LaTeX Font Info:    Font shape `TU/LibertinusMath(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 543.
+[6
+
+] [7
+
+] (./mock05-typeset.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 20188 strings out of 476477
- 432654 string characters out of 5795103
+ 20183 strings out of 476477
+ 432614 string characters out of 5795103
  1956627 words of memory out of 5000000
- 41726 multiletter control sequences out of 15000+600000
+ 41721 multiletter control sequences out of 15000+600000
  571652 words of font info for 185 fonts, out of 8000000 for 9000
  264 hyphenation exceptions out of 8191
- 102i,13n,114p,512b,712s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,12n,114p,468b,712s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on mock04-typeset.pdf (7 pages).
+Output written on mock05-typeset.pdf (7 pages).

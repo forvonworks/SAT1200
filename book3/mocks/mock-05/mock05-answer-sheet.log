@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.10.25)  17 NOV 2026 19:00
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023/Debian) (preloaded format=xelatex 2026.10.25)  17 NOV 2026 19:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**mock04-answer-sheet.tex
-(./mock04-answer-sheet.tex
+**mock05-answer-sheet.tex
+(./mock05-answer-sheet.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -847,8 +847,8 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/LibertinusMath(3)/b/n on input line
  16.
 
-(./mock04-answer-sheet.aux)
-\openout1 = `mock04-answer-sheet.aux'.
+(./mock05-answer-sheet.aux)
+\openout1 = `mock05-answer-sheet.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
 LaTeX Font Info:    ... okay on input line 100.
@@ -938,7 +938,7 @@ Overfull \hbox (0.79999pt too wide) in paragraph at lines 184--185
 
 [1
 
-] (./mock04-answer-sheet.aux)
+] (./mock05-answer-sheet.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -953,4 +953,4 @@ Here is how much of TeX's memory you used:
  264 hyphenation exceptions out of 8191
  102i,12n,114p,430b,706s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on mock04-answer-sheet.pdf (1 page).
+Output written on mock05-answer-sheet.pdf (1 page).

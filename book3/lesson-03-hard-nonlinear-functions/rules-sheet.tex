@@ -1,0 +1,292 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usetikzlibrary{fit,calc,positioning,arrows.meta}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{0F6A52}
+\definecolor{badge}{HTML}{A9CFC2}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{100mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\videobanner}[1]{%
+\begin{textblock*}{178mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (178mm,-10mm);
+\draw[white,line width=0.6pt] (3mm,-1.7mm) rectangle (11.5mm,-8.3mm);
+\node[white,font=\sffamily\fontsize{4}{4.4}\selectfont,align=center] at (7.25mm,-5mm) {QR\\CODE};
+\node[white,font=\sffamily\bfseries\fontsize{9.5}{11}\selectfont,anchor=west] at (16mm,-5.6mm) {WATCH THE VIDEO BEFORE YOU SOLVE};
+\node[white,font=\sffamily\fontsize{7.5}{8}\selectfont,anchor=east] at (174mm,-5.6mm) {YouTube ~\textbullet~ #1};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\newcommand{\cardbg}[4]{%
+\begin{textblock*}{#3mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\fill[badge!22,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pill}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {RULE ~\textperiodcentered~ #3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pillw}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {#3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+\renewcommand{\arraystretch}{1.5}
+
+
+\begin{document}
+\topicheader{3}{Hard Nonlinear Functions}
+\videobanner{Lesson 3}
+\pagefooter{1}
+\mbox{}%
+
+\cardbg{16}{40.0}{178}{43.0}
+\pill{26}{43.0}{What each form shows (equivalent forms)}
+\begin{textblock*}{158mm}(26mm,50.5mm)
+{\fontsize{15}{18}\selectfont $a(x-h)^2+k$: vertex $(h,k)$ \qquad $a(x-r)(x-s)$: zeros $r,s$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,59.5mm)
+{\fontsize{13}{16}\selectfont $ax^2+bx+c$: $y$-intercept $c$, axis $x=-\dfrac b{2a}$ \qquad $a<0$: maximum $k$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,71.0mm)
+{\fontsize{13}{16}\selectfont $-2(x+1)^2+8$: vertex $(-1,8)$, maximum value $8$}
+\end{textblock*}
+
+\cardbg{16}{89.0}{178}{43.0}
+\pill{26}{92.0}{Quadratic models: the vertex is the best value}
+\begin{textblock*}{158mm}(26mm,99.5mm)
+{\fontsize{15}{18}\selectfont profit, area, height $\Rightarrow$ vertex \ (out of the allowed range? use the endpoint)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,108.5mm)
+{\fontsize{13}{16}\selectfont price $\times$ quantity $p(c-dp)$: zeros $0$ and $\dfrac cd$, best $p=\dfrac c{2d}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,120.0mm)
+{\fontsize{13}{16}\selectfont $p(300-12p)$: best $p=12.5$, revenue $12.5\cdot150=1875$}
+\end{textblock*}
+
+\cardbg{16}{138.0}{178}{44.5}
+\pill{26}{141.0}{Symmetry of a parabola}
+\begin{textblock*}{158mm}(26mm,150.0mm)
+{\fontsize{15}{18}\selectfont $f(p)=f(q)\ \Rightarrow$ axis $x=\dfrac{p+q}2$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,162.5mm)
+{\fontsize{13}{16}\selectfont the other input with the same output as $a$ is $x=2h-a$ \ ($h$ = axis)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,170.5mm)
+{\fontsize{13}{16}\selectfont axis $x=3$ and $f(-1)=f(7)$: the partner of $-1$ is $2(3)-(-1)=7$}
+\end{textblock*}
+
+\cardbg{16}{188.5}{178}{44.5}
+\pill{26}{191.5}{Exponential models $f(x)=a\,b^x$}
+\begin{textblock*}{158mm}(26mm,200.5mm)
+{\fontsize{15}{18}\selectfont $a$ = start value $(x=0)$ \qquad $b$ = growth factor, $b=1\pm\dfrac r{100}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,213.0mm)
+{\fontsize{13}{16}\selectfont $b>1$ grows, \ $0<b<1$ decays \qquad the factor $0.85$ means a $15\%$ drop}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,221.0mm)
+{\fontsize{13}{16}\selectfont $24{,}000(0.85)^t$: loses $15\%$ a year (not $85\%$)}
+\end{textblock*}
+\clearpage
+\topicheader{3}{Hard Nonlinear Functions}
+\pagekicker{Rules sheet -- 2/3}
+\pagefooter{2}
+\mbox{}%
+
+\cardbg{16}{33.0}{178}{43.0}
+\pill{26}{36.0}{Per-period exponent}
+\begin{textblock*}{158mm}(26mm,43.5mm)
+{\fontsize{15}{18}\selectfont $a\,b^{t/n}$: multiply by $b$ every $n$ units of $t$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,52.5mm)
+{\fontsize{13}{16}\selectfont doubling time $d$: $a\cdot2^{t/d}$ \qquad half-life $d$: $a\left(\tfrac12\right)^{t/d}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,64.0mm)
+{\fontsize{13}{16}\selectfont $250(1.5)^{t/3}$: $+50\%$ every $3$ years (not every year)}
+\end{textblock*}
+
+\cardbg{16}{82.0}{178}{36.5}
+\pill{26}{85.0}{Changing units (years to months)}
+\begin{textblock*}{158mm}(26mm,94.0mm)
+{\fontsize{15}{18}\selectfont put $\dfrac m{12}$ in place of $t$: \ $P_0b^t\ \Rightarrow\ P_0\,b^{m/12}$, monthly factor $b^{1/12}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,106.5mm)
+{\fontsize{13}{16}\selectfont $1.2^{1/12}\approx1.0153$: about $1.5\%$ a month (not $20\div12$)}
+\end{textblock*}
+
+\cardbg{16}{124.5}{178}{36.5}
+\pill{26}{127.5}{Rebuild $a\,b^x$ from two points}
+\begin{textblock*}{158mm}(26mm,136.5mm)
+{\fontsize{15}{18}\selectfont $\dfrac{y_2}{y_1}=b^{\,x_2-x_1}$ \qquad then $a=\dfrac{y_1}{b^{x_1}}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,149.0mm)
+{\fontsize{13}{16}\selectfont $f(2)=18$, $f(5)=486$: $b^3=27$, $b=3$, $a=2$}
+\end{textblock*}
+
+\cardbg{16}{167.0}{178}{39.5}
+\pill{26}{170.0}{Composition $f(g(x))$}
+\begin{textblock*}{158mm}(26mm,177.5mm)
+{\fontsize{15}{18}\selectfont inside first: put $g(x)$ where $f$ has $x$ \qquad $f(g(x))\neq g(f(x))$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,186.5mm)
+{\fontsize{13}{16}\selectfont $f(f(x))$: use $f$ twice, starting from the inside}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,194.5mm)
+{\fontsize{13}{16}\selectfont $f=2x+3$, $g=x^2-1$: \ $g(f(x))=(2x+3)^2-1=4x^2+12x+8$}
+\end{textblock*}
+
+\cardbg{16}{212.5}{178}{39.5}
+\pill{26}{215.5}{Transformations $y=a\,f(x-h)+k$}
+\begin{textblock*}{158mm}(26mm,223.0mm)
+{\fontsize{15}{18}\selectfont right $h$, up $k$, stretch by $|a|$, flip if $a<0$ \qquad $f(x+3)$ moves LEFT}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,232.0mm)
+{\fontsize{13}{16}\selectfont a point $(x,y)$ on $f$ goes to $(x+h,\ ay+k)$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,240.0mm)
+{\fontsize{13}{16}\selectfont $f$ has vertex $(2,-3)$: \ $-2f(x+1)+5$ has vertex $(1,11)$}
+\end{textblock*}
+\clearpage
+\topicheader{3}{Hard Nonlinear Functions}
+\pagekicker{Rules sheet -- 3/3}
+\pagefooter{3}
+\mbox{}%
+
+\cardbg{16}{33.0}{178}{47.5}
+\pill{26}{36.0}{Polynomials: zeros, multiplicity, ends}
+\begin{textblock*}{158mm}(26mm,43.5mm)
+{\fontsize{15}{18}\selectfont factor $(x-r)^m$: odd $m$ crosses the axis, even $m$ touches it}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,52.5mm)
+{\fontsize{13}{16}\selectfont even degree: both ends alike \qquad odd degree: ends opposite}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,60.5mm)
+{\fontsize{13}{16}\selectfont leading coefficient $>0$: right end up \qquad $<0$: right end down}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,68.5mm)
+{\fontsize{13}{16}\selectfont $-2(x-3)^2(x+1)(x+4)$: touches at $3$, degree $4$, both ends down}
+\end{textblock*}
+
+\cardbg{16}{86.5}{178}{39.5}
+\pill{26}{89.5}{Piecewise and absolute value}
+\begin{textblock*}{158mm}(26mm,97.0mm)
+{\fontsize{15}{18}\selectfont pick the piece that matches $x$; keep only solutions inside that piece}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,106.0mm)
+{\fontsize{13}{16}\selectfont $|u|=k\ \Rightarrow\ u=k$ or $u=-k$ \qquad $-|x-h|+k$ peaks at $(h,k)$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,114.0mm)
+{\fontsize{13}{16}\selectfont $|x+3|=8$: \ $x=5$ or $x=-11$}
+\end{textblock*}
+
+\cardbg{16}{132.0}{178}{39.5}
+\pill{26}{135.0}{Which equation? Test the points}
+\begin{textblock*}{158mm}(26mm,142.5mm)
+{\fontsize{15}{18}\selectfont test each choice at the given points, zeros and $y$-intercept}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,151.5mm)
+{\fontsize{13}{16}\selectfont count solutions: graph both sides \qquad unknown $k$: add a slider in Desmos}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,159.5mm)
+{\fontsize{13}{16}\selectfont vertex $(-2,5)$ and point $(0,13)$: \ $2(x+2)^2+5$ \ (one point alone is not enough)}
+\end{textblock*}
+
+\cardbg{16}{177.5}{178}{75.0}
+\pillw{26}{180.5}{NEW WORDS ~\textperiodcentered~ YANGI SO'ZLAR}
+\begin{textblock*}{80mm}(26mm,190.0mm)
+{\fontsize{10.5}{12}\selectfont
+\begin{tabular}{@{}>{\bfseries}p{31mm}>{\raggedright\arraybackslash}p{42mm}@{}}
+\cellcolor{accent}\textcolor{white}{\sffamily English} & \cellcolor{accent}\textcolor{white}{\sffamily O'zbekcha}\\
+\rowcolor{badge!45} vertex & {\itshape cho'qqi}\\
+\rowcolor{white} axis of symmetry & {\itshape simmetriya o'qi}\\
+\rowcolor{badge!45} maximum & {\itshape eng katta qiymat}\\
+\rowcolor{white} minimum & {\itshape eng kichik qiymat}\\
+\rowcolor{badge!45} growth factor & {\itshape o'sish ko'paytuvchisi}\\
+\rowcolor{white} decay & {\itshape kamayish (so'nish)}\\
+\rowcolor{badge!45} doubling time & {\itshape ikki baravar ortish vaqti}\\
+\rowcolor{white} half-life & {\itshape yarim yemirilish davri}\\
+\end{tabular}}
+\end{textblock*}
+\begin{textblock*}{80mm}(108mm,190.0mm)
+{\fontsize{10.5}{12}\selectfont
+\begin{tabular}{@{}>{\bfseries}p{31mm}>{\raggedright\arraybackslash}p{42mm}@{}}
+\cellcolor{accent}\textcolor{white}{\sffamily English} & \cellcolor{accent}\textcolor{white}{\sffamily O'zbekcha}\\
+\rowcolor{badge!45} composition & {\itshape funksiyalar kompozitsiyasi}\\
+\rowcolor{white} shift / translation & {\itshape siljitish}\\
+\rowcolor{badge!45} reflection & {\itshape akslantirish}\\
+\rowcolor{white} multiplicity & {\itshape karralilik}\\
+\rowcolor{badge!45} leading coefficient & {\itshape bosh koeffitsient}\\
+\rowcolor{white} end behavior & {\itshape chetlardagi holat}\\
+\rowcolor{badge!45} piecewise function & {\itshape bo'lakli funksiya}\\
+\end{tabular}}
+\end{textblock*}
+
+\end{document}

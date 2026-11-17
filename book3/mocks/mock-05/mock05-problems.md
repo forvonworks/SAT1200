@@ -68,7 +68,7 @@ Difficulty: E / M / H. Type: MC or GRID.
 - Domain: ADV
 - Difficulty: E
 - Type: MC
-- Stem: Which of the following is a zero of $p(x)=(x-3)(x+5)(2x-1)$?
+- Stem: Which of the following is a zero of the polynomial $p(x)=(x-3)(x+5)(2x-1)$?
 - A: $-3$
 - B: $2$
 - C: $5$
