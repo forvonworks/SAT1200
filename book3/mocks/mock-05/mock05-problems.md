@@ -463,9 +463,9 @@ Set $Q$ & 14 & 15 & 16 & 17 & 18\\\hline
 - Domain: ALG
 - Difficulty: H
 - Type: GRID
-- Stem: In the $xy$-plane, a line with a positive $x$-intercept and a positive $y$-intercept passes through the point $(6,4)$. The $x$-intercept is twice the $y$-intercept. What is the $y$-intercept of the line?
-- Answer: 7
-- Solution: With $y$-intercept $b$ the line is $\frac{x}{2b}+\frac{y}{b}=1$. At $(6,4)$: $\frac{3}{b}+\frac4b=1$, so $b=7$ (the $x$-intercept is 14).
+- Stem: In the $xy$-plane, a line with a positive $x$-intercept and a positive $y$-intercept passes through the point $(6,4)$. The $x$-intercept is twice the $y$-intercept. What is the area, in square units, of the triangle formed by this line and the two axes?
+- Answer: 49
+- Solution: With $y$-intercept $b$ the line is $\frac{x}{2b}+\frac{y}{b}=1$. At $(6,4)$: $\frac{3}{b}+\frac4b=1$, so $b=7$ and the $x$-intercept is 14. Area $=\frac12(14)(7)=49$.
 
 ## M2-Q19
 - Domain: ADV

@@ -271,7 +271,8 @@ def solve_all():
     A[(2, 17)] = sp.simplify(2 * (l17[0] + (l17[0] - 6)))
     # Q18: positive intercepts, x-int = 2*(y-int), through (6,4)
     b18 = sp.symbols("b18", positive=True)
-    s18 = sp.solve(sp.Eq(6 / (2 * b18) + 4 / b18, 1), b18); assert len(s18) == 1; A[(2, 18)] = s18[0]
+    s18 = sp.solve(sp.Eq(6 / (2 * b18) + 4 / b18, 1), b18); assert len(s18) == 1
+    A[(2, 18)] = R(1, 2) * (2 * s18[0]) * s18[0]          # triangle with legs x-int = 2b and y-int = b
     # Q19: intersection points of y = x^2 - 3 and x^2 + y^2 = 9 ; sum of y over all points
     pts = sp.solve([Y - (X ** 2 - 3), X ** 2 + Y ** 2 - 9], [X, Y], dict=True)
     pts = {(sp.simplify(p[X]), sp.simplify(p[Y])) for p in pts}
