@@ -79,9 +79,9 @@ Round each answer to the nearest hundredth unless stated otherwise.
    to the top of the tower is $38°$. What is the height of the tower?
 4. A kite string is $65$ m long and makes a $50°$ angle with the ground.
    What is the horizontal distance from the kite to the person holding the string?
-5. A right triangle has legs of length $9$ and $12$. What is the length of
-   the hypotenuse, and what is the measure of the angle opposite the leg
-   of length $9$ (rounded to the nearest hundredth of a degree)?
+5. A right triangle has a hypotenuse of length $15$ and a leg of length $9$
+   opposite angle $\theta$. What is the measure of $\theta$ (rounded to the
+   nearest hundredth of a degree)?
 6. An airplane descends at an angle of depression of $6°$ while covering
    $2000$ m of horizontal distance. By how many meters does its altitude
    decrease?
@@ -105,10 +105,10 @@ error, say which rule it breaks, and give the correct answer.
    $\sin 30 \approx -0.988$, so the answer is $-0.988$."
 4. If $\sin\theta = 0.6$, what is the value of $\theta$?
    *Incorrect solution:* "$\sin\theta=0.6$, so $\theta = 0.6°$."
-5. A right triangle has a hypotenuse of length $10$ and one leg of length
-   $6$. What is the length of the other leg?
-   *Incorrect solution:* "$10^2 + 6^2 = \text{other leg}^2$, so the other
-   leg $= \sqrt{136} \approx 11.66$."
+5. An acute angle $\theta$ of a right triangle has $\sin\theta = 0.6$. What
+   is the value of $\cos(90° - \theta)$?
+   *Incorrect solution:* "$\cos(90° - \theta) = 1 - \sin\theta = 0.4$, because
+   the acute angles of a right triangle add to $90°$."
 
 ## Set 7 — Bonus / Challenge
 
@@ -322,7 +322,7 @@ numbers, names and contexts are all original.
 2. $\approx 40.62$ ft
 3. $\approx 78.13$ m
 4. $\approx 41.78$ m
-5. Hypotenuse $=15$; angle $=\arcsin\left(\frac{9}{15}\right)\approx 36.87°$
+5. $\theta=\arcsin\left(\frac{9}{15}\right)\approx 36.87°$
 6. $\approx 210.21$ m
 
 **Set 6:**
@@ -338,8 +338,8 @@ numbers, names and contexts are all original.
    $\sin 30° = 0.5$.
 4. Error — reported the ratio itself as the angle instead of applying the
    inverse sine function. Correct: $\theta = \arcsin(0.6) \approx 36.9°$.
-5. Error — treated the hypotenuse as if it were a leg, adding squares
-   instead of subtracting. Correct: other leg $=\sqrt{10^2-6^2}=\sqrt{64}=8$.
+5. Error — invented the rule $\cos(90° - \theta) = 1 - \sin\theta$ instead of
+   the complementary-angle relation. Correct: $\cos(90° - \theta) = \sin\theta = 0.6$.
 
 **Set 7:**
 1. $\cos 67° = \sin 23° \approx 0.3907$ (complementary angles, no new computation needed)
