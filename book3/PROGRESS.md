@@ -20,7 +20,7 @@ Decisions + blueprint: see BOOK3-SPEC.md.
 | Mock 3 | DONE, verified |
 | Mock 4 | DONE, verified |
 | Mock 5 | DONE, verified |
-| Mock 6 | in progress (agent a7f7dde38263f68a2) |
+| Mock 6 | DONE, verified |
 | Mock 7 | in progress |
 | Lesson 2 | DONE, verified (74 problems) |
 | Lesson 3 | DONE, verified (74 problems, solutions respaced) |

@@ -399,11 +399,11 @@ Difficulty: E / M / H. Type: MC or GRID.
 - Domain: PSDA
 - Difficulty: H
 - Type: MC
-- Stem: Researchers wanted to know whether a new walking program lowers blood pressure in patients aged 50 to 65 at a large health system. They selected 400 such patients at random from the system's records and invited them to the program; each patient decided whether to join. After six months, the average drop in systolic blood pressure was 9 points for the 210 patients who joined and 3 points for the 190 who did not. Which of the following conclusions is best supported by the study?
-- A: The walking program causes a larger drop in blood pressure for all patients aged 50 to 65 at the health system.
-- B: The walking program causes a larger drop in blood pressure for the 400 patients selected, but the result cannot be generalized to the other patients at the health system.
-- C: Because the patients chose whether to join, nothing can be concluded about any patients other than the 400 selected.
-- D: Among patients aged 50 to 65 at the health system, joining the program is associated with a larger drop in blood pressure, but the study does not show that the program caused the larger drop.
+- Stem: Researchers wanted to know whether a new walking program lowers blood pressure in patients aged 50 to 65 at a health system. They selected 400 such patients at random and invited them to join; each patient decided whether to join. After six months, the average drop in systolic blood pressure was 9 points for the 210 patients who joined and 3 points for the 190 who did not. Which conclusion is best supported by the study?
+- A: The program causes a larger drop in blood pressure for all patients aged 50 to 65 at the health system.
+- B: The program causes a larger drop in blood pressure for the 400 patients selected, but this cannot be generalized to other patients.
+- C: Because patients chose whether to join, nothing can be concluded about patients other than the 400 selected.
+- D: Among patients aged 50 to 65 at the health system, joining is associated with a larger drop in blood pressure, but the study does not show that the program caused the larger drop.
 - Answer: D
 - Solution: Random selection allows generalizing the association to the whole population of patients, but without random assignment (patients chose) a cause-and-effect conclusion is not supported. (A claims both; B claims causation but denies generalization, which reverses the two ideas; C denies that a random sample generalizes.)
 
