@@ -133,7 +133,7 @@ def fig_special(ad=6, u=5.5):
 
 
 # ------------------------------------------------------------------------------ F: altitude to hypotenuse (2.10, 3.3)
-def fig_alt(p=5.0, q=12.0, u=5.0, lab_seg=None, lab_ang=None):
+def fig_alt(p=5.0, q=12.0, u=5.0, lab_seg=None):
     """right angle at B, legs AB=p, BC=q; altitude BD to hypotenuse AC. lab_seg=(AD,DC) prints segment lengths."""
     c = math.hypot(p, q)
     A = (0, 0); C = (c * u, 0)
@@ -144,15 +144,16 @@ def fig_alt(p=5.0, q=12.0, u=5.0, lab_seg=None, lab_ang=None):
     ref = centroid([A, B, C])
     parts = [poly([A, B, C]), seg(B, Dp, ",dashed"), ra(B, A, C, 2.2), ra(Dp, B, C, 1.8),
              vlabel(A, "$A$", ref), vlabel(B, "$B$", ref), vlabel(C, "$C$", ref),
-             r"\node at %s {$D$};" % P((Dp[0], -2.8))]
+             r"\node[above right=-0.5pt] at %s {$D$};" % P(Dp)]
     if lab_seg:
         ad, dc = lab_seg
         assert near(dist(A, Dp) / u, ad, 1e-6) and near(dist(Dp, C) / u, dc, 1e-6)
-        parts.append(r"\node at %s {$%g$};" % (P(mid(A, Dp) if False else (Dp[0] / 2, -2.8)), ad))
-        parts.append(r"\node at %s {$%g$};" % (P(((Dp[0] + C[0]) / 2, -2.8)), dc))
-        parts[-3] = r"\node at %s {$D$};" % P((Dp[0], 2.0 + 0.0 - 0.0)) if False else parts[-3]
+        y = -5.0
+        parts.append(r"\draw[<->,line width=0.4pt] %s -- %s;" % (P((A[0], y)), P((Dp[0], y))))
+        parts.append(r"\draw[<->,line width=0.4pt] %s -- %s;" % (P((Dp[0], y)), P((C[0], y))))
+        parts.append(r"\node[below=0.3pt] at %s {$%g$};" % (P((Dp[0] / 2, y)), ad))
+        parts.append(r"\node[below=0.3pt] at %s {$%g$};" % (P(((Dp[0] + C[0]) / 2, y)), dc))
     return pic(*parts)
-
 
 # ------------------------------------------------------------------------------ F: DE parallel BC (3.1)
 def fig_parseg(ad=9, db=6, de=12, bc=20, ac=17, u=3.6):
@@ -176,11 +177,9 @@ def fig_trans(a1=59, a2=121, t1=r"$(3x+5)^\circ$", t2=r"$(7x-5)^\circ$", gap=26.
     assert a1 + a2 == 180
     th = -a1 * D
     U = (0, 0)
-    Lw = (gap * math.cos(th) / math.sin(th) * -1 * -1, -gap)
-    # transversal direction angle -a1 degrees: point at depth -gap
     s = gap / math.sin(a1 * D)
     Lw = (s * math.cos(a1 * D), -gap)
-    assert near(ang_at(U, (1, 0), Lw), a1) and near(ang_at(Lw, (1, 0), U), a2)
+    assert near(ang_at(U, (1, 0), Lw), a1) and near(ang_at(Lw, add(Lw, (1, 0)), U), a2)
     ext = 9.0
     uu = unit(U, Lw)
     T1 = sub(U, mul(uu, ext)); T2 = add(Lw, mul(uu, ext))
@@ -201,70 +200,55 @@ def fig_isoext(apex=36, b=24.0, t_apex=r"$(3x-6)^\circ$", t_ext=r"$(7x+10)^\circ
     base = (180 - apex) / 2.0
     B = (0, 0); C = (b, 0); A = (b / 2, b / 2 * math.tan(base * D))
     assert near(dist(A, B), dist(A, C)) and near(ang_at(A, B, C), apex) and near(ang_at(B, A, C), base)
-    Dp = (b + 16, 0)
+    Dp = (b + 18, 0)
     ext = 180 - base
     assert near(ang_at(C, A, Dp), ext)
     ref = centroid([A, B, C])
-    parts = [poly([A, B, C]), seg(C, Dp), vlabel(B, "$B$", ref), r"\node at %s {$C$};" % P((C[0] - 1.5, -3.0)),
-             r"\node[below] at %s {$D$};" % P(Dp),
-             r"\node[above] at %s {$A$};" % P((A[0], A[1] + 7.5)),
-             tick(A, B, 1), tick(A, C, 1)]
-    parts.append(angle_mark(A, B, C, 6.5))
-    parts.append(r"\node[above] at %s {$A$};" % P((A[0], A[1] + 0.2)))
-    parts[-1] = ""
-    parts.append(r"\node[above=0.3mm] at %s {$A$};" % P(A))
-    parts[parts.index(r"\node[above] at %s {$A$};" % P((A[0], A[1] + 7.5)))] = ""
-    parts.append(r"\node[right] at %s {%s};" % (P((A[0] + 7.0, A[1] + 2.0)), t_apex))
-    parts.append(r"\draw[line width=0.3pt] %s -- %s;" % (P((A[0] + 7.0, A[1] + 2.0)), P((A[0] + 1.6, A[1] - 5.3))))
-    parts.append(arc(C, 0, ext, 5.5))
-    parts.append(r"\node at %s {%s};" % (P(add(C, (11.5, 11.5))), t_ext))
-    return pic(*parts)
-
+    lab = (A[0] + 8.0, A[1] + 1.0)
+    return pic(poly([A, B, C]), seg(C, Dp), tick(A, B, 1), tick(A, C, 1),
+               vlabel(B, "$B$", ref), r"\node at %s {$C$};" % P((C[0] - 1.5, -3.0)),
+               r"\node[below] at %s {$D$};" % P(Dp), r"\node[above=0.3mm] at %s {$A$};" % P(A),
+               angle_mark(A, B, C, 6.5),
+               r"\draw[line width=0.3pt] %s -- %s;" % (P((lab[0], lab[1] - 1.5)), P((A[0] + 1.5, A[1] - 6.5))),
+               r"\node[right=0pt] at %s {%s};" % (P(lab), t_apex),
+               arc(C, 0, ext, 5.5), r"\node at %s {%s};" % (P(add(C, (11.5, 11.5))), t_ext))
 
 # ------------------------------------------------------------------------------ F: pentagon with AB || ED (3.7)
-def fig_pent(Bd=130, Cd=140, Dd=90, tB=r"$(2x+30)^\circ$", tC=r"$(3x-10)^\circ$", tD=r"$(x+40)^\circ$", u=3.0):
+def fig_pent(Bd=130, Cd=140, Dd=90, tB=r"$(2x+30)^\circ$", tC=r"$(3x-10)^\circ$", tD=r"$(x+40)^\circ$", sc=3.4):
     Ad = 100; Ed = 180 - Ad
-    assert Ad + Ed == 180 and Ad + Bd + Cd + Dd + Ed == 540 and Bd + Cd + Dd == 360
+    assert Ad + Bd + Cd + Dd + Ed == 540 and Bd + Cd + Dd == 360
     dirs = [0.0]
     for ex in (180 - Bd, 180 - Cd, 180 - Dd):
         dirs.append(dirs[-1] + ex)       # AB, BC, CD, DE
     dirs.append(dirs[-1] + (180 - Ed))   # EA
-    b, c, d = 14.0, 11.0, 9.0
-    # closure for e (DE) and l (EA)
+    b, c, d = 12.0, 9.0, 7.0
     v = lambda a, L: (L * math.cos(a * D), L * math.sin(a * D))
     s = add(add(v(dirs[0], b), v(dirs[1], c)), v(dirs[2], d))
-    # solve  s + e*(cos d3, sin d3) + l*(cos d4, sin d4) = 0
     m = [[math.cos(dirs[3] * D), math.cos(dirs[4] * D)], [math.sin(dirs[3] * D), math.sin(dirs[4] * D)]]
     det = m[0][0] * m[1][1] - m[0][1] * m[1][0]
     e = (-s[0] * m[1][1] + s[1] * m[0][1]) / det
     l = (-m[0][0] * s[1] + m[1][0] * s[0]) / det
     assert e > 0 and l > 0
-    A = (0.0, 0.0)
-    pts = [A]
+    pts = [(0.0, 0.0)]
     for ang, L in zip(dirs, (b, c, d, e)):
         pts.append(add(pts[-1], v(ang, L)))
-    assert near(dist(pts[-1], A), l, 1e-6)
-    pts = pts[:5]
-    A, B, C, Dd_, E = [mul(p, u / 3.0 * 1.0) for p in pts]
-    A, B, C, Dp, E = A, B, C, Dd_, E
-    # angles
-    def interior(i):
-        return ang_at(pts[i], pts[(i - 1) % 5], pts[(i + 1) % 5])
+    assert near(dist(pts[-1], pts[0]), l, 1e-6)
+    pts = [mul(p, sc) for p in pts[:5]]
+    A, B, C, Dp, E = pts
+    def interior(i): return ang_at(pts[i], pts[(i - 1) % 5], pts[(i + 1) % 5])
     assert near(interior(1), Bd) and near(interior(2), Cd) and near(interior(3), Dd) and near(interior(0) + interior(4), 180)
-    pts = [A, B, C, Dp, E]
-    # scale 3.0mm/unit of the shape built with 1.0
+    # AB parallel to ED
+    ab = sub(B, A); ed = sub(Dp, E)
+    assert near(ab[0] * ed[1] - ab[1] * ed[0], 0, 1e-6)
     cen = centroid(pts)
-    names = "ABCDE"
     parts = [poly(pts), parmark(A, B, 1), parmark(E, Dp, 1)]
-    for i, nm in enumerate(names):
+    for i, nm in enumerate("ABCDE"):
         parts.append(vlabel(pts[i], "$%s$" % nm, cen, 3.0))
-    for i, tx, rr in ((1, tB, 11.0), (2, tC, 11.5), (3, tD, 11.0)):
-        v0 = pts[i]
-        a1, a2 = ray_deg(v0, pts[i - 1]), ray_deg(v0, pts[(i + 1) % 5])
-        parts.append(angle_mark(v0, pts[i - 1], pts[(i + 1) % 5], 4.5))
-    # right angle at D drawn as square
-    return pic(*parts), pts
-
+    for i, tx in ((1, tB), (2, tC)):
+        parts.append(angle_mark(pts[i], pts[i - 1], pts[(i + 1) % 5], 4.0, tx, 13.0))
+    parts.append(ra(Dp, C, E, 2.4))
+    parts.append(r"\node at %s {%s};" % (P(add(Dp, mul(unit(Dp, cen), 13.0))), tD))
+    return pic(*parts)
 
 # ------------------------------------------------------------------------------ F: bowtie (3.11)
 def fig_bowtie(ae=12, ed=18, be=10, ec=15, ang=64, u=2.4):
