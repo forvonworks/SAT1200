@@ -97,11 +97,11 @@ def dot(p, r=0.55):
 
 
 def poly(pts, extra=""):
-    return r"\draw%s %s -- cycle;" % (extra, " -- ".join(P(p) for p in pts))
+    return r"\draw[%s] %s -- cycle;" % (extra.lstrip(","), " -- ".join(P(p) for p in pts))
 
 
 def seg(p, q, extra=""):
-    return r"\draw%s %s -- %s;" % (extra, P(p), P(q))
+    return r"\draw[%s] %s -- %s;" % (extra.lstrip(","), P(p), P(q))
 
 
 def parmark(p, q, n=1):
@@ -144,11 +144,11 @@ def fig_alt(p=5.0, q=12.0, u=5.0, lab_seg=None):
     ref = centroid([A, B, C])
     parts = [poly([A, B, C]), seg(B, Dp, ",dashed"), ra(B, A, C, 2.2), ra(Dp, B, C, 1.8),
              vlabel(A, "$A$", ref), vlabel(B, "$B$", ref), vlabel(C, "$C$", ref),
-             r"\node[above right=-0.5pt] at %s {$D$};" % P(Dp)]
+             r"\node at %s {$D$};" % P((Dp[0], -3.0))]
     if lab_seg:
         ad, dc = lab_seg
         assert near(dist(A, Dp) / u, ad, 1e-6) and near(dist(Dp, C) / u, dc, 1e-6)
-        y = -5.0
+        y = -8.0
         parts.append(r"\draw[<->,line width=0.4pt] %s -- %s;" % (P((A[0], y)), P((Dp[0], y))))
         parts.append(r"\draw[<->,line width=0.4pt] %s -- %s;" % (P((Dp[0], y)), P((C[0], y))))
         parts.append(r"\node[below=0.3pt] at %s {$%g$};" % (P((Dp[0] / 2, y)), ad))
@@ -214,7 +214,7 @@ def fig_isoext(apex=36, b=24.0, t_apex=r"$(3x-6)^\circ$", t_ext=r"$(7x+10)^\circ
                arc(C, 0, ext, 5.5), r"\node at %s {%s};" % (P(add(C, (11.5, 11.5))), t_ext))
 
 # ------------------------------------------------------------------------------ F: pentagon with AB || ED (3.7)
-def fig_pent(Bd=130, Cd=140, Dd=90, tB=r"$(2x+30)^\circ$", tC=r"$(3x-10)^\circ$", tD=r"$(x+40)^\circ$", sc=3.4):
+def fig_pent(Bd=130, Cd=140, Dd=90, tB=r"$(2x+30)^\circ$", tC=r"$(3x-10)^\circ$", tD=r"$(x+40)^\circ$", sc=2.1):
     Ad = 100; Ed = 180 - Ad
     assert Ad + Bd + Cd + Dd + Ed == 540 and Bd + Cd + Dd == 360
     dirs = [0.0]
