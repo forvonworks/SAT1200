@@ -148,26 +148,22 @@ CARDS = [
   ("Ratios: part-to-part vs part-to-whole",
    [("big", r"$a:b\Rightarrow\dfrac a{a+b}$ of the whole \qquad write $a=ak$, $b=bk$ and solve", True),
     ("mid", r"$3:5$ of $96$: $36$ and $60$ \qquad $3k:7k$, remove $8$ red $\to3:5$: \ $\dfrac{3k}{7k-8}=\dfrac35$", True)]),
-  ("Rates, work and flow",
-   [("big", r"distance $=$ rate $\times$ time \qquad work together: \textbf{add rates} $\dfrac1a+\dfrac1b$", True),
-    ("mid", r"fills in 6 h and 12 h, drains in 9 h: \ $\dfrac16+\dfrac1{12}-\dfrac19=\dfrac5{36}$, so $7.2$ h", True)]),
- ],
- # ------------------------------------------------------------------ page 3
- [("Average speed",
-   [("big", r"average speed $=\dfrac{\text{total distance}}{\text{total time}}$ \qquad (not the mean of the speeds)", True),
-    ("mid", r"equal distances at $a$, $b$: $\dfrac{2ab}{a+b}$ \qquad $12$ and $24$ km/h: $16$ \qquad equal times: plain mean", True)]),
-  ("Unit conversion chains",
-   [("big", r"multiply by fractions equal to $1$ \qquad squared units: \textbf{square} the factor, cubed: \textbf{cube}", False),
-    ("mid", r"$1\text{ m}^2=100^2=10^4\text{ cm}^2$ \qquad $1\text{ m}^3=10^6\text{ cm}^3=1000\text{ L}$", False)]),
-  ("Similar figures: scale factor $k$",
-   [("big", r"length $\times k$ \qquad area $\times k^2$ \qquad volume $\times k^3$ \qquad $k=\sqrt{\dfrac{A_2}{A_1}}$", True),
-    ("mid", r"$k=3$: area $\times9$, volume $\times27$ \qquad areas $20$ and $45$: \ $k=\dfrac32$", True)]),
-  ("Scale drawings and density",
-   [("big", r"map: $1$ cm $=d$ km $\Rightarrow1\text{ cm}^2=d^2\text{ km}^2$ \qquad density $=\dfrac{\text{mass}}{\text{volume}}$", True),
-    ("mid", r"same material: mass $\propto$ volume $\propto k^3$ \qquad $2.7\text{ g/cm}^3=2700\text{ kg/m}^3$", False)]),
   ("Percent error and relative change",
    [("big", r"percent error $=\dfrac{|\text{measured}-\text{true}|}{\text{true}}\times100\%$ \qquad base $=$ true value", True),
     ("mid", r"radius $+5\%\Rightarrow$ area $\times1.05^2=1.1025$, so $+10.25\%$ \qquad measured $4\%$ low: true $=\dfrac m{0.96}$", True)]),
+ ],
+ # ------------------------------------------------------------------ page 3
+ [("Rates, work, flow and average speed",
+   [("big", r"distance $=$ rate $\times$ time \qquad work together: \textbf{add rates} $\dfrac1a+\dfrac1b$", True),
+    ("mid", r"fills in 6 h and 12 h, drains in 9 h: \ $\dfrac16+\dfrac1{12}-\dfrac19=\dfrac5{36}$, so $7.2$ h", True),
+    ("mid", r"average speed $=\dfrac{\text{total distance}}{\text{total time}}$ \qquad equal distances $a$, $b$: $\dfrac{2ab}{a+b}$ ($12,24\to16$)", True)]),
+  ("Unit conversion chains",
+   [("big", r"units$^2$: \textbf{square} the factor \qquad units$^3$: \textbf{cube} the factor", False),
+    ("mid", r"$1\text{ m}^2=10^4\text{ cm}^2$ \quad $1\text{ m}^3=10^6\text{ cm}^3=1000\text{ L}$ \quad $72\text{ km/h}=20\text{ m/s}$", False)]),
+  ("Similar figures, scale drawings, density",
+   [("big", r"length $\times k$ \qquad area $\times k^2$ \qquad volume $\times k^3$ \qquad $k=\sqrt{\dfrac{A_2}{A_1}}$", True),
+    ("mid", r"map $1$ cm $=3.2$ km $\Rightarrow1\text{ cm}^2=10.24\text{ km}^2$ \qquad $k=3$: area $\times9$, volume $\times27$", False),
+    ("mid", r"density $=\dfrac{\text{mass}}{\text{volume}}$ \qquad same material: mass $\propto k^3$ \qquad $2.7\text{ g/cm}^3=2700\text{ kg/m}^3$", True)]),
  ],
 ]
 
@@ -190,23 +186,23 @@ NEWWORDS = [
 ]
 
 def line_adv(kind, frac):
-    return {"big": 13.5 if frac else 9.0, "mid": 12.0 if frac else 8.0, "note": 8.0}[kind]
+    return {"big": 12.5 if frac else 8.5, "mid": 11.0 if frac else 7.5, "note": 8.0}[kind]
 
 def last_h(kind, frac):
-    return {"big": 9.0 if frac else 7.0, "mid": 9.0 if frac else 6.0, "note": 5.0}[kind]
+    return {"big": 8.5 if frac else 7.0, "mid": 8.5 if frac else 6.0, "note": 5.0}[kind]
 
 FONT = {"big": r"\fontsize{15}{18}\selectfont", "mid": r"\fontsize{13}{16}\selectfont",
         "note": r"\itshape\color{black!70}\fontsize{11}{14}\selectfont"}
 
 def card_tex(y, title, lines):
     out = []
-    off = 12.0 if (lines[0][2] and lines[0][0] == "big") else 10.5
+    off = 11.5 if (lines[0][2] and lines[0][0] == "big") else 11.0
     ys = []
     for i, (kind, tex, frac) in enumerate(lines):
         ys.append(off)
         off += line_adv(kind, frac)
     kind, tex, frac = lines[-1]
-    h = ys[-1] + last_h(kind, frac) + 6
+    h = ys[-1] + last_h(kind, frac) + 4.5
     out.append(r"%% ---- %s (y=%.1f h=%.1f end %.1f)" % (title, y, h, y + h))
     out.append(r"\cardbg{16}{%.1f}{178}{%.1f}" % (y, h))
     out.append(r"\pill{26}{%.1f}{%s}" % (y + 3, title))
