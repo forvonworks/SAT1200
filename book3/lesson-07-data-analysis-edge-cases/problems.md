@@ -56,9 +56,9 @@ If a student who takes French is selected at random, what is the probability tha
 7. *(Hard)* In a random sample of 900 adult residents of a city, 62\% said they favor extending the library's opening hours. The margin of error for this estimate is 3 percentage points. Which of the following is the most appropriate conclusion?
 
    - (A) It is plausible that the percent of all adult residents of the city who favor the extension is between $59\%$ and $65\%$.
-   - (B) Exactly $62\%$ of all adult residents of the city favor the extension.
+   - (B) Exactly $62\%$ of all adult residents of the city favor the extension, since that is what the sample showed.
    - (C) Between $59\%$ and $65\%$ of the 900 adults surveyed favor the extension.
-   - (D) There is only a $3\%$ chance that the survey result is wrong.
+   - (D) There is only a $3\%$ chance that the survey result is wrong, since that is the margin of error.
 
 8. *(Medium)* A librarian randomly selects 120 names from the list of all 2,400 registered members of a public library and asks them about the new borrowing hours; 78 of the 120 approve. What is the largest group to which the result can reasonably be generalized?
 
@@ -270,8 +270,8 @@ Which of the following could be the equation of the line of best fit?
 
 8. *(Hard)* A researcher measured the heights of trees between 5 and 20 years old and found the line of best fit $y=0.8x+14$, where $x$ is age in years and $y$ is height in feet. Which statement about using the model to estimate the height of a 50-year-old tree is best?
 
-   - (A) The model predicts $54$ feet, and this is just as reliable as a prediction for a 12-year-old tree.
-   - (B) The model cannot make any prediction because $x=0$ is not in the data.
+   - (A) The model predicts $54$ feet, and this is just as reliable as a prediction for a 12-year-old tree, because the line fits the data.
+   - (B) The model cannot make any prediction, because $x=0$ is not among the ages in the data.
    - (C) The model predicts $14$ feet, because the intercept is the height at any age.
    - (D) The model predicts $54$ feet, but $50$ years is far outside the ages in the data, so this prediction is an extrapolation and may be unreliable.
 
@@ -388,21 +388,21 @@ For these students, being a senior and being in a club are independent. What is 
 9. *(Hard)* Researchers recruited 120 volunteers from a town and randomly assigned 60 of them to follow a new sleep schedule and 60 to keep their usual schedule. After eight weeks the reaction times of the new-schedule group were faster, by an amount too large to be explained by chance. Which conclusion is best supported?
 
    - (A) The new sleep schedule caused faster reaction times for people like these volunteers, but the result cannot be generalized to all residents of the town.
-   - (B) The new sleep schedule caused faster reaction times for all residents of the town.
-   - (C) The new sleep schedule is associated with faster reaction times, but the study cannot show that it caused them.
+   - (B) The new sleep schedule caused faster reaction times for all residents of the town, because the volunteers were randomly assigned to the two groups.
+   - (C) The new sleep schedule is associated with faster reaction times, but because the volunteers were not randomly sampled the study cannot show that it caused them.
    - (D) No conclusion can be drawn, because the volunteers were not a random sample of the town.
 
 10. *(Hard)* A researcher selected a random sample of 500 adults from a city and asked each whether they eat breakfast every day. The researcher also measured each adult's body mass index (BMI) and found that the adults who eat breakfast daily had a lower mean BMI than those who do not. Which conclusion is best supported?
 
-   - (A) Eating breakfast daily causes lower BMI among the city's adults.
+   - (A) Eating breakfast daily causes lower BMI among the city's adults, because the sample was selected at random from the city.
    - (B) There is an association between eating breakfast daily and lower BMI among the city's adults, but the study cannot show that breakfast causes lower BMI.
    - (C) There is an association between eating breakfast and BMI among the 500 adults only, and it cannot be generalized to the city.
    - (D) Eating breakfast daily is associated with lower BMI among all adults in the country.
 
 11. *(Hard)* A poll of a random sample of voters in a city estimated that $48\%$ support Candidate $P$ and $45\%$ support Candidate $Q$. The margin of error for each estimate is $4$ percentage points. Which of the following is best supported by these results?
 
-   - (A) Candidate $P$ has more support than Candidate $Q$ among all voters in the city.
-   - (B) Exactly $45\%$ of all voters in the city support Candidate $Q$.
+   - (A) Candidate $P$ has more support than Candidate $Q$ among all voters in the city, since $48\%$ is greater than $45\%$.
+   - (B) Exactly $45\%$ of all voters in the city support Candidate $Q$, as the poll found.
    - (C) Candidate $P$ leads Candidate $Q$ by exactly $3$ percentage points among all voters in the city.
    - (D) It is plausible that Candidate $Q$ has at least as much support as Candidate $P$ among all voters in the city.
 
@@ -416,9 +416,9 @@ For these students, being a senior and being in a club are independent. What is 
 13. *(Hard)* To estimate the percent of adult residents of a city who exercise regularly, a researcher posted a survey on the website of a large fitness gym in the city. Of the 1,500 visitors who responded, $81\%$ said they exercise regularly. Which is the most serious flaw in using the $81\%$ to estimate the percent for all adult residents?
 
    - (A) The respondents were not a random sample of the city, and visitors to a gym's website are more likely to exercise, so the estimate is probably too high.
-   - (B) A sample of 1,500 is too small to estimate anything about a city.
-   - (C) The result is too high to be believable, so the survey must contain errors.
-   - (D) The researcher did not survey children as well as adults.
+   - (B) A sample of 1,500 is too small to estimate anything about a large city, so the result is meaningless.
+   - (C) The result is too high to be believable, so the survey must contain calculation errors.
+   - (D) The researcher did not survey children as well as adults, so part of the city is missing.
 
 14. *(Hard)* **Grid-in.** A researcher estimated the percent of a town's residents who own a car. To estimate the margin of error, she simulated 1,000 random samples; the middle $95\%$ of the simulated sample percents ranged from $41\%$ to $55\%$. What is the margin of error, in percentage points, for her estimate?
 
@@ -509,9 +509,9 @@ Which of the following probabilities is the greatest?
 12. *(Hard)* Two independent polls used random samples. In City $A$, $58\%$ of the sample favored a proposal, with a margin of error of $4$ percentage points. In City $B$, $49\%$ of the sample favored it, with a margin of error of $3$ percentage points. Which conclusion is best supported?
 
    - (A) The intervals $54\%$ to $62\%$ and $46\%$ to $52\%$ do not overlap, so it is reasonable to conclude that the percent in favor is greater among all residents of City $A$ than among all residents of City $B$.
-   - (B) The percent in favor among all residents of City $A$ is exactly $9$ points greater than among all residents of City $B$.
-   - (C) No comparison is possible, because the two polls have different margins of error.
-   - (D) It is plausible that $54\%$ of all residents of City $B$ are in favor.
+   - (B) The percent in favor among all residents of City $A$ is exactly $9$ points greater than among all residents of City $B$, the difference in the samples.
+   - (C) No comparison is possible, because the two polls have different margins of error and different sample percents.
+   - (D) It is plausible that $54\%$ of all residents of City $B$ are in favor, since the sample percent is $49\%$.
 
 13. *(Hard)* **Grid-in.** A poll of a random sample of residents estimated that $40\%$ of the town's 12,000 residents support a new park. The margin of error is 5 percentage points. Based on the estimate and the margin of error, what is the least number of the town's residents that plausibly support the new park?
 

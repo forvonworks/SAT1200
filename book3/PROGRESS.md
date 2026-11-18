@@ -30,7 +30,7 @@ Decisions + blueprint: see BOOK3-SPEC.md.
 | Lesson 3 | DONE, verified (74 problems, solutions respaced) |
 | Lesson 4 | DONE, verified (74 problems) |
 | Lesson 6 | DONE, verified (74 problems) |
-| Lesson 7 | in progress (agent a4046d9a7b3f517a6) |
+| Lesson 7 | DONE, verified (74 problems) |
 | Lesson 8 | DONE, verified (74 problems, 16 true-scale figures) |
 | Lesson 9 | in progress |
 | Mocks 4-10 | not started |
