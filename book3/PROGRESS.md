@@ -23,14 +23,15 @@ Decisions + blueprint: see BOOK3-SPEC.md.
 | Mock 6 | DONE, verified |
 | Mock 7 | DONE, verified |
 | Mock 8 | DONE, verified |
-| Mock 9 | in progress |
+| Mock 9 | in progress (agent aa2aa22b3236e3c1c) |
+| Mock 10 | in progress |
 | Lesson 1 | DONE, verified (74 problems) |
 | Lesson 2 | DONE, verified (74 problems) |
 | Lesson 3 | DONE, verified (74 problems, solutions respaced) |
 | Lesson 4 | DONE, verified (74 problems) |
 | Lesson 6 | DONE, verified (74 problems) |
 | Lesson 7 | in progress (agent a4046d9a7b3f517a6) |
-| Lesson 8 | in progress (agent a73fdd4c468cbba71) |
+| Lesson 8 | DONE, verified (74 problems, 16 true-scale figures) |
 | Lesson 9 | in progress |
 | Mocks 4-10 | not started |
 | Lessons 1,2,3,4,6,7,8,9 | not started (use lesson-05-speed-tricks as the reference once verified) |

@@ -1,0 +1,303 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usetikzlibrary{fit,calc,positioning,arrows.meta}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{0F6A52}
+\definecolor{badge}{HTML}{A9CFC2}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{100mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\videobanner}[1]{%
+\begin{textblock*}{178mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (178mm,-10mm);
+\draw[white,line width=0.6pt] (3mm,-1.7mm) rectangle (11.5mm,-8.3mm);
+\node[white,font=\sffamily\fontsize{4}{4.4}\selectfont,align=center] at (7.25mm,-5mm) {QR\\CODE};
+\node[white,font=\sffamily\bfseries\fontsize{9.5}{11}\selectfont,anchor=west] at (16mm,-5.6mm) {WATCH THE VIDEO BEFORE YOU SOLVE};
+\node[white,font=\sffamily\fontsize{7.5}{8}\selectfont,anchor=east] at (174mm,-5.6mm) {YouTube ~\textbullet~ #1};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\newcommand{\cardbg}[4]{%
+\begin{textblock*}{#3mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\fill[badge!22,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pill}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {RULE ~\textperiodcentered~ #3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pillw}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {#3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+\renewcommand{\arraystretch}{1.5}
+
+
+\begin{document}
+\topicheader{8}{Hard Circles, Area \& Volume}
+\videobanner{Lesson 8}
+\pagefooter{1}
+\mbox{}%
+% ---- Equation of a circle (y=40.0 h=40.0 end 80.0)
+\cardbg{16}{40.0}{178}{40.0}
+\pill{26}{43.0}{Equation of a circle}
+\begin{textblock*}{158mm}(26mm,51.0mm)
+{\fontsize{15}{18}\selectfont $(x-h)^2+(y-k)^2=r^2$ \qquad center $(h,k)$, radius $r$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,59.5mm)
+{\fontsize{13}{16}\selectfont $x^2+y^2-6x+10y+18=0\ \Rightarrow\ (x-3)^2+(y+5)^2=16$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,67.0mm)
+{\fontsize{13}{16}\selectfont center $(3,-5)$, $r=4$ \qquad $x^2+y^2+Dx+Ey+F=0$: \ $r^2=\dfrac{D^2+E^2}4-F$}
+\end{textblock*}
+% ---- Point inside, on or outside (y=86.0 h=40.0 end 126.0)
+\cardbg{16}{86.0}{178}{40.0}
+\pill{26}{89.0}{Point inside, on or outside}
+\begin{textblock*}{158mm}(26mm,97.0mm)
+{\fontsize{15}{18}\selectfont $d^2=(x-h)^2+(y-k)^2$ \quad $<r^2$ inside \quad $=r^2$ on \quad $>r^2$ outside}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,105.5mm)
+{\fontsize{13}{16}\selectfont center $(1,-2)$, $r=5$: \ $(4,2)\to9+16=25$, so it is \textbf{on} the circle}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,113.0mm)
+{\fontsize{13}{16}\selectfont diameter endpoints: center $=$ midpoint, \ $r=\dfrac12(\text{distance between them})$}
+\end{textblock*}
+% ---- Tangent line and tangent length (y=132.0 h=45.5 end 177.5)
+\cardbg{16}{132.0}{178}{45.5}
+\pill{26}{135.0}{Tangent line and tangent length}
+\begin{textblock*}{158mm}(26mm,143.5mm)
+{\fontsize{15}{18}\selectfont tangent $\perp$ radius \qquad $m_{\text{tan}}=-\dfrac1{m_{\text{radius}}}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,156.0mm)
+{\fontsize{13}{16}\selectfont radius slope $\dfrac43\Rightarrow$ tangent slope $-\dfrac34$ \qquad two tangents from one point are equal}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,167.0mm)
+{\fontsize{13}{16}\selectfont tangent length from an outside point: \ $t=\sqrt{d^2-r^2}$ \quad ($13,5\to12$)}
+\end{textblock*}
+% ---- Distance from the center to a line (y=183.5 h=37.0 end 220.5)
+\cardbg{16}{183.5}{178}{37.0}
+\pill{26}{186.5}{Distance from the center to a line}
+\begin{textblock*}{158mm}(26mm,195.0mm)
+{\fontsize{15}{18}\selectfont $d=\dfrac{|Ax_0+By_0+C|}{\sqrt{A^2+B^2}}$ \qquad tangent $\iff d=r$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,207.5mm)
+{\fontsize{13}{16}\selectfont $x^2+y^2=k$ tangent to $3x-4y=40$: \ $d=\dfrac{40}5=8$, so $k=r^2=64$}
+\end{textblock*}
+% ---- Chords (y=226.5 h=34.5 end 261.0)
+\cardbg{16}{226.5}{178}{34.5}
+\pill{26}{229.5}{Chords}
+\begin{textblock*}{158mm}(26mm,238.0mm)
+{\fontsize{15}{18}\selectfont $r^2=d^2+\left(\dfrac c2\right)^2$ \qquad sagitta $=r-d$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,250.5mm)
+{\fontsize{13}{16}\selectfont the perpendicular from the center bisects the chord \quad $r=17$, $c=30$: $d=8$, sagitta $9$}
+\end{textblock*}
+\clearpage
+\topicheader{8}{Hard Circles, Area \& Volume}
+\pagekicker{Rules sheet -- 2/3}
+\pagefooter{2}
+\mbox{}%
+% ---- Angles in a circle (y=33.0 h=37.5 end 70.5)
+\cardbg{16}{33.0}{178}{37.5}
+\pill{26}{36.0}{Angles in a circle}
+\begin{textblock*}{158mm}(26mm,44.0mm)
+{\fontsize{15}{18}\selectfont inscribed $=\tfrac12$ central \qquad angle in a semicircle $=90^\circ$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,52.5mm)
+{\fontsize{13}{16}\selectfont central $100^\circ\Rightarrow$ inscribed $50^\circ$ (on the major arc), $130^\circ$ (on the minor arc)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,60.0mm)
+{\fontsize{13}{16}\selectfont two chords crossing: angle $=\tfrac12(\text{arc}+\text{opposite arc})$}
+\end{textblock*}
+% ---- Arc length, sector, segment (degrees) (y=76.5 h=48.0 end 124.5)
+\cardbg{16}{76.5}{178}{48.0}
+\pill{26}{79.5}{Arc length, sector, segment (degrees)}
+\begin{textblock*}{158mm}(26mm,88.0mm)
+{\fontsize{15}{18}\selectfont arc $=\dfrac{\theta}{360}\cdot2\pi r$ \qquad sector $=\dfrac{\theta}{360}\cdot\pi r^2$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,100.5mm)
+{\fontsize{13}{16}\selectfont $r=9$, $80^\circ$: \ $\frac29$ of the circle, arc $4\pi$, sector $18\pi$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,111.5mm)
+{\fontsize{13}{16}\selectfont segment $=$ sector $-$ triangle \qquad $60^\circ$, $r=6$: \ $6\pi-9\sqrt3$}
+\end{textblock*}
+% ---- Radians (y=130.5 h=32.5 end 163.0)
+\cardbg{16}{130.5}{178}{32.5}
+\pill{26}{133.5}{Radians}
+\begin{textblock*}{158mm}(26mm,141.5mm)
+{\fontsize{15}{18}\selectfont $\pi\text{ rad}=180^\circ$ \quad $s=r\theta$ \quad $A=\tfrac12r^2\theta=\tfrac12rs$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,150.0mm)
+{\fontsize{13}{16}\selectfont $\dfrac{5\pi}6=150^\circ$ \qquad $r=9$: \ $A=\tfrac12(81)\dfrac{5\pi}6=\dfrac{135\pi}4$}
+\end{textblock*}
+% ---- Inscribed and circumscribed circles (y=169.0 h=45.5 end 214.5)
+\cardbg{16}{169.0}{178}{45.5}
+\pill{26}{172.0}{Inscribed and circumscribed circles}
+\begin{textblock*}{158mm}(26mm,180.5mm)
+{\fontsize{15}{18}\selectfont square, side $s$: \ in-circle $r=\dfrac s2$ \quad circum-circle $r=\dfrac{s\sqrt2}2$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,193.0mm)
+{\fontsize{13}{16}\selectfont right triangle: $r_{\text{in}}=\dfrac{a+b-c}2$, \ $R=\dfrac c2$ \qquad equilateral: $R=\dfrac a{\sqrt3}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,204.0mm)
+{\fontsize{13}{16}\selectfont rectangle or square in a circle: \textbf{diagonal $=$ diameter}}
+\end{textblock*}
+% ---- Rings and composite areas (y=220.5 h=43.5 end 264.0)
+\cardbg{16}{220.5}{178}{43.5}
+\pill{26}{223.5}{Rings and composite areas}
+\begin{textblock*}{158mm}(26mm,231.5mm)
+{\fontsize{15}{18}\selectfont ring $=\pi(R^2-r^2)$ \qquad shaded $=$ whole $-$ parts}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,240.0mm)
+{\fontsize{13}{16}\selectfont chord $c$ of the big circle tangent to the small one: \ ring $=\pi\left(\dfrac c2\right)^2$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,251.0mm)
+{\fontsize{13}{16}\selectfont semicircle $\tfrac12\pi r^2$ \qquad regular hexagon: $R=s$, area $6\cdot\dfrac{\sqrt3}4s^2$}
+\end{textblock*}
+\clearpage
+\topicheader{8}{Hard Circles, Area \& Volume}
+\pagekicker{Rules sheet -- 3/3}
+\pagefooter{3}
+\mbox{}%
+% ---- Volumes and surface areas (y=33.0 h=44.5 end 77.5)
+\cardbg{16}{33.0}{178}{44.5}
+\pill{26}{36.0}{Volumes and surface areas}
+\begin{textblock*}{158mm}(26mm,44.5mm)
+{\fontsize{15}{18}\selectfont cylinder $\pi r^2h$ \quad cone $\tfrac13\pi r^2h$ \quad sphere $\tfrac43\pi r^3$ \quad prism $Bh$ \quad pyramid $\tfrac13Bh$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,57.0mm)
+{\fontsize{13}{16}\selectfont cylinder $2\pi r^2+2\pi rh$ \quad sphere $4\pi r^2$ \quad cone side $\pi r\ell$, \ $\ell=\sqrt{r^2+h^2}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,64.5mm)
+{\fontsize{13}{16}\selectfont square pyramid: base $+\ \tfrac12(\text{perimeter})\ell$, \quad $\ell=\sqrt{h^2+(s/2)^2}$}
+\end{textblock*}
+% ---- Scaling, similar cuts, rolled sectors (y=83.5 h=48.5 end 132.0)
+\cardbg{16}{83.5}{178}{48.5}
+\pill{26}{86.5}{Scaling, similar cuts, rolled sectors}
+\begin{textblock*}{158mm}(26mm,94.5mm)
+{\fontsize{15}{18}\selectfont length $\times k$ \quad area $\times k^2$ \quad volume $\times k^3$ \quad $k=\sqrt{A_2/A_1}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,103.0mm)
+{\fontsize{13}{16}\selectfont edge $+10\%$: area $\times1.21$, volume $\times1.331$ \quad area $\times2.25\Rightarrow k=1.5$, volume $\times3.375$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,110.5mm)
+{\fontsize{13}{16}\selectfont cut parallel to the base: similar solid, \ $h=9$ cut at $3$: $k=\dfrac23$, area $\times\dfrac49$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,121.5mm)
+{\fontsize{13}{16}\selectfont sector rolled into a cone: arc $=2\pi r_{\text{base}}$, \ sector radius $=\ell$ (slant height)}
+\end{textblock*}
+% ---- Filling, recasting, units (y=138.0 h=49.5 end 187.5)
+\cardbg{16}{138.0}{178}{49.5}
+\pill{26}{141.0}{Filling, recasting, units}
+\begin{textblock*}{158mm}(26mm,149.5mm)
+{\fontsize{15}{18}\selectfont rise $=\dfrac{\text{volume added}}{\text{base area}}$ \qquad volume is conserved}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,162.0mm)
+{\fontsize{13}{16}\selectfont melt into $n$ pieces: $n=V_{\text{big}}/V_{\text{piece}}$ \quad an object displaces its own volume once covered}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,169.5mm)
+{\fontsize{13}{16}\selectfont $1\text{ m}^2=10^4\text{ cm}^2$ \quad $1\text{ m}^3=10^6\text{ cm}^3=1000\text{ L}$ \quad $1\text{ L}=1000\text{ cm}^3$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,177.0mm)
+{\fontsize{13}{16}\selectfont convert the \textbf{lengths} first, then square or cube \quad $240$ cm $=2.4$ m}
+\end{textblock*}
+% ---- New words (y=193.5 h=79.5)
+\cardbg{16}{193.5}{178}{79.5}
+\pillw{26}{196.5}{NEW WORDS ~\textperiodcentered~ YANGI SO'ZLAR}
+\begin{textblock*}{80mm}(26mm,206.0mm)
+{\fontsize{10.5}{12}\selectfont
+\begin{tabular}{@{}>{\bfseries}p{37mm}p{36mm}@{}}
+\cellcolor{accent}\textcolor{white}{\sffamily English} & \cellcolor{accent}\textcolor{white}{\sffamily O'zbekcha}\\
+\rowcolor{badge!45} chord & {\itshape vatar}\\
+\rowcolor{white} tangent & {\itshape urinma}\\
+\rowcolor{badge!45} arc & {\itshape yoy}\\
+\rowcolor{white} sector & {\itshape sektor}\\
+\rowcolor{badge!45} central angle & {\itshape markaziy burchak}\\
+\rowcolor{white} inscribed angle & {\itshape ichki chizilgan burchak}\\
+\rowcolor{badge!45} ring (annulus) & {\itshape halqa}\\
+\rowcolor{white} radian & {\itshape radian}\\
+\end{tabular}}
+\end{textblock*}
+\begin{textblock*}{80mm}(108mm,206.0mm)
+{\fontsize{10.5}{12}\selectfont
+\begin{tabular}{@{}>{\bfseries}p{37mm}p{36mm}@{}}
+\cellcolor{accent}\textcolor{white}{\sffamily English} & \cellcolor{accent}\textcolor{white}{\sffamily O'zbekcha}\\
+\rowcolor{badge!45} cylinder & {\itshape silindr}\\
+\rowcolor{white} cone & {\itshape konus}\\
+\rowcolor{badge!45} sphere & {\itshape shar}\\
+\rowcolor{white} pyramid & {\itshape piramida}\\
+\rowcolor{badge!45} volume & {\itshape hajm}\\
+\rowcolor{white} surface area & {\itshape sirt yuzi}\\
+\rowcolor{badge!45} scale factor & {\itshape o'xshashlik koeffitsiyenti}\\
+\end{tabular}}
+\end{textblock*}
+\end{document}
