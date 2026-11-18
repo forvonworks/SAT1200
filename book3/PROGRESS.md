@@ -22,7 +22,8 @@ Decisions + blueprint: see BOOK3-SPEC.md.
 | Mock 5 | DONE, verified |
 | Mock 6 | DONE, verified |
 | Mock 7 | DONE, verified |
-| Mock 8 | in progress |
+| Mock 8 | DONE, verified |
+| Mock 9 | in progress |
 | Lesson 1 | DONE, verified (74 problems) |
 | Lesson 2 | DONE, verified (74 problems) |
 | Lesson 3 | DONE, verified (74 problems, solutions respaced) |
