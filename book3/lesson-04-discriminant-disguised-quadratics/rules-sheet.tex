@@ -1,0 +1,317 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usetikzlibrary{fit,calc,positioning,arrows.meta}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{0F6A52}
+\definecolor{badge}{HTML}{A9CFC2}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{100mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\videobanner}[1]{%
+\begin{textblock*}{178mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (178mm,-10mm);
+\draw[white,line width=0.6pt] (3mm,-1.7mm) rectangle (11.5mm,-8.3mm);
+\node[white,font=\sffamily\fontsize{4}{4.4}\selectfont,align=center] at (7.25mm,-5mm) {QR\\CODE};
+\node[white,font=\sffamily\bfseries\fontsize{9.5}{11}\selectfont,anchor=west] at (16mm,-5.6mm) {WATCH THE VIDEO BEFORE YOU SOLVE};
+\node[white,font=\sffamily\fontsize{7.5}{8}\selectfont,anchor=east] at (174mm,-5.6mm) {YouTube ~\textbullet~ #1};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\newcommand{\cardbg}[4]{%
+\begin{textblock*}{#3mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\fill[badge!22,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pill}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {RULE ~\textperiodcentered~ #3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pillw}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {#3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+\renewcommand{\arraystretch}{1.5}
+
+
+\begin{document}
+\topicheader{4}{Discriminant \& Disguised Quadratics}
+\videobanner{Lesson 4}
+\pagefooter{1}
+\mbox{}%
+% ---- The discriminant (y=40.0 h=38.5 end 78.5)
+\cardbg{16}{40.0}{178}{38.5}
+\pill{26}{43.0}{The discriminant}
+\begin{textblock*}{158mm}(26mm,50.5mm)
+{\fontsize{15}{18}\selectfont $ax^2+bx+c=0$: \ $D=b^2-4ac$ \qquad $D>0$: two \ \ $D=0$: one \ \ $D<0$: none}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,59.5mm)
+{\fontsize{13}{16}\selectfont $x^2+bx+49=0$ has exactly one solution $\Rightarrow b^2-196=0$, so $b=\pm14$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,67.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Move everything to one side first. Only real solutions count: ``no real solutions'' means $D<0$.}
+\end{textblock*}
+% ---- Discriminant backward: a parameter (y=84.5 h=46.5 end 131.0)
+\cardbg{16}{84.5}{178}{46.5}
+\pill{26}{87.5}{Discriminant backward: a parameter}
+\begin{textblock*}{158mm}(26mm,95.0mm)
+{\fontsize{15}{18}\selectfont exactly one: \ $D=0$ \qquad no real solution: \ $D<0$ \qquad two: \ $D>0$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,104.0mm)
+{\fontsize{13}{16}\selectfont $D=0$ is often itself a quadratic in $k$, so it may give \textbf{two} values of $k$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,112.0mm)
+{\fontsize{13}{16}\selectfont $3x^2-6x=k$: \ $D=36+12k<0\Rightarrow k<-3$ \quad ($k=-3$ gives one solution, not none)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,120.0mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Equality is the trap: ``at least one'' is $D\ge0$, ``two'' is $D>0$, ``greatest integer $k$'' needs the boundary check.}
+\end{textblock*}
+% ---- Line meets parabola or circle (y=137.0 h=46.5 end 183.5)
+\cardbg{16}{137.0}{178}{46.5}
+\pill{26}{140.0}{Line meets parabola or circle}
+\begin{textblock*}{158mm}(26mm,147.5mm)
+{\fontsize{15}{18}\selectfont set equal $\Rightarrow$ quadratic: \ $D>0$ two points \ $D=0$ tangent \ $D<0$ none}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,156.5mm)
+{\fontsize{13}{16}\selectfont $y=2x+1$ and $y=x^2-2x+5$: \ $x^2-4x+4=0$, $D=0$, so tangent (one point)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,164.5mm)
+{\fontsize{13}{16}\selectfont horizontal line $y=k$ and a parabola: compare $k$ with the vertex $y$-value}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,172.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Line through a given point: write $y=mx+b$ with that point, then set $D=0$ for the slope $m$.}
+\end{textblock*}
+% ---- When the parameter hides in $a$ (y=189.5 h=38.5 end 228.0)
+\cardbg{16}{189.5}{178}{38.5}
+\pill{26}{192.5}{When the parameter hides in $a$}
+\begin{textblock*}{158mm}(26mm,200.0mm)
+{\fontsize{15}{18}\selectfont $(k-2)x^2+6x+3=0$: \ if $k=2$ it is \textbf{not} a quadratic}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,209.0mm)
+{\fontsize{13}{16}\selectfont $kx^2+4x+k=0$: \ $D=0$ gives $k=\pm2$, and $k=0$ gives $4x=0$ (also one solution)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,217.0mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Check what happens when the leading coefficient is $0$ before you trust $D$.}
+\end{textblock*}
+% ---- Completing the square (y=234.0 h=44.5 end 278.5)
+\cardbg{16}{234.0}{178}{44.5}
+\pill{26}{237.0}{Completing the square}
+\begin{textblock*}{158mm}(26mm,246.0mm)
+{\fontsize{15}{18}\selectfont $x^2+bx\ \to\ \left(x+\dfrac b2\right)^2-\dfrac{b^2}{4}$ \qquad circle: \ $(x-h)^2+(y-k)^2=r^2$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,259.5mm)
+{\fontsize{13}{16}\selectfont $x^2+y^2-6x+10y+18=0\Rightarrow(x-3)^2+(y+5)^2=16$: \ center $(3,-5)$, $r=4$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,267.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont If the right side is $0$ the ``circle'' is a single point; if negative, no points. Divide by $a$ before completing.}
+\end{textblock*}
+\clearpage
+\topicheader{4}{Discriminant \& Disguised Quadratics}
+\pagekicker{Rules sheet -- 2/3}
+\pagefooter{2}
+\mbox{}%
+% ---- Quadratic hidden in a system (y=33.0 h=38.5 end 71.5)
+\cardbg{16}{33.0}{178}{38.5}
+\pill{26}{36.0}{Quadratic hidden in a system}
+\begin{textblock*}{158mm}(26mm,43.5mm)
+{\fontsize{15}{18}\selectfont solve the linear equation for one letter, then substitute}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,52.5mm)
+{\fontsize{13}{16}\selectfont $x-y=2$, $xy=15$: \ $x(x-2)=15\Rightarrow x=5$ or $-3$ \quad (read the condition, e.g. $x>0$)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,60.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Parabola with a circle: replace $x^2$ by $y+4$ and solve for $y$ first, then count the $x$-values for each $y$.}
+\end{textblock*}
+% ---- Radical equations: always check (y=77.5 h=38.5 end 116.0)
+\cardbg{16}{77.5}{178}{38.5}
+\pill{26}{80.5}{Radical equations: always check}
+\begin{textblock*}{158mm}(26mm,88.0mm)
+{\fontsize{15}{18}\selectfont isolate the radical $\Rightarrow$ square both sides $\Rightarrow$ solve $\Rightarrow$ \textbf{test every answer}}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,97.0mm)
+{\fontsize{13}{16}\selectfont $\sqrt{3x+4}=x\Rightarrow x^2-3x-4=0$: \ $x=4$ works, $x=-1$ is extraneous}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,105.0mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont A square root is never negative, so the other side must be $\ge0$. Two radicals: isolate one, square, repeat.}
+\end{textblock*}
+% ---- Rational equations: excluded values (y=122.0 h=42.5 end 164.5)
+\cardbg{16}{122.0}{178}{42.5}
+\pill{26}{125.0}{Rational equations: excluded values}
+\begin{textblock*}{158mm}(26mm,132.5mm)
+{\fontsize{15}{18}\selectfont multiply by the LCD, solve, \textbf{discard} values that make a denominator $0$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,141.5mm)
+{\fontsize{13}{16}\selectfont $\dfrac{3}{x-2}-\dfrac{12}{x^2-4}=1\Rightarrow x^2-3x+2=0$: \ $x=1$ only ($x=2$ excluded)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,153.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont $\dfrac{x^2-x}{x-1}=k$ simplifies to $x=k$ for $x\ne1$, so $k=1$ has no solution.}
+\end{textblock*}
+% ---- Quadratic form: u-substitution (y=170.5 h=50.5 end 221.0)
+\cardbg{16}{170.5}{178}{50.5}
+\pill{26}{173.5}{Quadratic form: u-substitution}
+\begin{textblock*}{158mm}(26mm,181.0mm)
+{\fontsize{15}{18}\selectfont spot a pattern $\Rightarrow$ let $u$ = the repeated piece $\Rightarrow$ solve $\Rightarrow$ go back to $x$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,190.0mm)
+{\fontsize{13}{16}\selectfont $x^4-5x^2-36=0$: \ $u=x^2=9$ or $-4$, and $x^2=-4$ is impossible, so $x=\pm3$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,198.0mm)
+{\fontsize{13}{16}\selectfont $u=x^{1/3},\ \ 3^x,\ \ \sqrt x,\ \ \dfrac1x,\ \ x^2-5x$ \quad ($2^x>0$ and $\sqrt x\ge0$: reject negative $u$)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,210.0mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Check every $u$ for real $x$-values: each positive $u=x^2$ gives two, $u=0$ gives one. $9^x=(3^x)^2$.}
+\end{textblock*}
+% ---- Word problems that become quadratics (y=227.0 h=54.5 end 281.5)
+\cardbg{16}{227.0}{178}{54.5}
+\pill{26}{230.0}{Word problems that become quadratics}
+\begin{textblock*}{158mm}(26mm,237.5mm)
+{\fontsize{15}{18}\selectfont area, border, consecutive, work, shared cost $\Rightarrow$ one equation}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,246.5mm)
+{\fontsize{13}{16}\selectfont border $x$ on all four sides: \ $(20+2x)(30+2x)$ \qquad work: \ $\dfrac1t+\dfrac1{t+3}=\dfrac12$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,258.5mm)
+{\fontsize{13}{16}\selectfont $\dfrac{24}{v}-\dfrac{24}{v+2}=1\Rightarrow v^2+2v-48=0$ \quad reject the negative root}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,270.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont Height $h(t)$ above a level: solve $h=$ level to get two times, then subtract.}
+\end{textblock*}
+\clearpage
+\topicheader{4}{Discriminant \& Disguised Quadratics}
+\pagekicker{Rules sheet -- 3/3}
+\pagefooter{3}
+\mbox{}%
+% ---- Factoring higher degree and hidden structure (y=33.0 h=46.5 end 79.5)
+\cardbg{16}{33.0}{178}{46.5}
+\pill{26}{36.0}{Factoring higher degree and hidden structure}
+\begin{textblock*}{158mm}(26mm,43.5mm)
+{\fontsize{15}{18}\selectfont $a^2-b^2=(a-b)(a+b)$ \qquad $a^3\pm b^3=(a\pm b)(a^2\mp ab+b^2)$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,52.5mm)
+{\fontsize{13}{16}\selectfont $x^4-13x^2+36=(x^2-4)(x^2-9)$ \qquad $x^4+x^2+1=(x^2+1)^2-x^2$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,60.5mm)
+{\fontsize{13}{16}\selectfont grouping: $2x^3-3x^2-8x+12=(2x-3)(x^2-4)$ \qquad $\sqrt{(x-3)^2}=|x-3|$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,68.5mm)
+{\itshape\color{black!70}\fontsize{11}{14}\selectfont A factor must give remainder $0$. $x^2+4$ never factors over the reals.}
+\end{textblock*}
+% ---- Division and rational expressions (y=85.5 h=52.5 end 138.0)
+\cardbg{16}{85.5}{178}{52.5}
+\pill{26}{88.5}{Division and rational expressions}
+\begin{textblock*}{158mm}(26mm,97.5mm)
+{\fontsize{15}{18}\selectfont $\dfrac{P(x)}{ax-b}$: \ quotient $+\dfrac{\text{remainder}}{ax-b}$ \qquad remainder $=P\!\left(\dfrac ba\right)$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,111.0mm)
+{\fontsize{13}{16}\selectfont $\dfrac{6x^2+x-12}{2x-3}=3x+5+\dfrac{3}{2x-3}$ \quad (use $\tfrac32$, not $3$)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,123.0mm)
+{\fontsize{13}{16}\selectfont cancel only \textbf{factors}: \ $\dfrac{x^3-27}{x-3}=x^2+3x+9$ \qquad match numerators for $\dfrac A{x-2}+\dfrac B{x+1}$}
+\end{textblock*}
+% ---- Exponent rules (y=144.0 h=31.5 end 175.5)
+\cardbg{16}{144.0}{178}{31.5}
+\pill{26}{147.0}{Exponent rules}
+\begin{textblock*}{158mm}(26mm,154.5mm)
+{\fontsize{15}{18}\selectfont $x^ax^b=x^{a+b}$ \quad $(x^a)^b=x^{ab}$ \quad $x^{1/n}=\sqrt[n]{x}$ \quad $4^x=2^{2x}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,163.5mm)
+{\fontsize{13}{16}\selectfont $\sqrt[3]{x^2}\cdot\sqrt x=x^{2/3+1/2}=x^{7/6}$ \qquad $4\cdot4^x=4^{x+1}$ \quad (same base first)}
+\end{textblock*}
+% ---- New words (y=181.5 h=72.5)
+\cardbg{16}{181.5}{178}{72.5}
+\pillw{26}{184.5}{NEW WORDS ~\textperiodcentered~ YANGI SO'ZLAR}
+\begin{textblock*}{80mm}(26mm,194.0mm)
+{\fontsize{10.5}{12}\selectfont
+\begin{tabular}{@{}>{\bfseries}p{37mm}p{36mm}@{}}
+\cellcolor{accent}\textcolor{white}{\sffamily English} & \cellcolor{accent}\textcolor{white}{\sffamily O'zbekcha}\\
+\rowcolor{badge!45} discriminant & {\itshape diskriminant}\\
+\rowcolor{white} real solution & {\itshape haqiqiy yechim}\\
+\rowcolor{badge!45} tangent & {\itshape urinma}\\
+\rowcolor{white} intersection point & {\itshape kesishish nuqtasi}\\
+\rowcolor{badge!45} extraneous solution & {\itshape chet yechim}\\
+\rowcolor{white} excluded value & {\itshape taqiqlangan qiymat}\\
+\rowcolor{badge!45} radical equation & {\itshape ildizli tenglama}\\
+\end{tabular}}
+\end{textblock*}
+\begin{textblock*}{80mm}(108mm,194.0mm)
+{\fontsize{10.5}{12}\selectfont
+\begin{tabular}{@{}>{\bfseries}p{37mm}p{36mm}@{}}
+\cellcolor{accent}\textcolor{white}{\sffamily English} & \cellcolor{accent}\textcolor{white}{\sffamily O'zbekcha}\\
+\rowcolor{badge!45} substitution & {\itshape almashtirish}\\
+\rowcolor{white} quadratic form & {\itshape kvadrat ko'rinish}\\
+\rowcolor{badge!45} completing the square & {\itshape to'liq kvadrat ajratish}\\
+\rowcolor{white} vertex & {\itshape parabola uchi}\\
+\rowcolor{badge!45} leading coefficient & {\itshape bosh koeffitsiyent}\\
+\rowcolor{white} remainder & {\itshape qoldiq}\\
+\rowcolor{badge!45} denominator & {\itshape maxraj}\\
+\end{tabular}}
+\end{textblock*}
+\end{document}

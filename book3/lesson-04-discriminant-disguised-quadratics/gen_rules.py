@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generator for Book 3 Lesson 2 rules-sheet.tex (cards laid out automatically from the card list below).
+"""Generator for Book 3 Lesson 4 rules-sheet.tex (cards laid out automatically from the card list below).
 Usage: python3 gen_rules.py ; then xelatex rules-sheet.tex (twice)."""
 import os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -113,80 +113,94 @@ GAP = 6.0
 # line kinds: big (15pt), mid (13pt), note (11pt italic).  frac=True -> taller line
 CARDS = [
  # ------------------------------------------------------------------ page 1
- [("Forms of a line",
-   [("big", r"$y=mx+b$ \qquad $Ax+By=C$: \ slope $-\dfrac AB$", True),
-    ("mid", r"$y$-intercept $\dfrac CB$ \qquad $x$-intercept $\dfrac CA$ \qquad point-slope: $y-y_1=m(x-x_1)$", True),
-    ("mid", r"$3x+4y=12$: \ slope $-\tfrac34$, \ $y$-intercept $3$, \ $x$-intercept $4$", False)]),
-  ("Slope, parallel, perpendicular",
-   [("big", r"$m=\dfrac{y_2-y_1}{x_2-x_1}$ \qquad parallel: $m_1=m_2$ \qquad perpendicular: $m_1m_2=-1$", True),
-    ("mid", r"slope $-\tfrac23$ $\Rightarrow$ perpendicular slope $\tfrac32$ \ (flip the fraction, change the sign)", False),
-    ("note", r"Standard form: $Ax+By=C$ and $Ax+By=D$ are parallel; $Bx-Ay=D$ is perpendicular to the first.", False)]),
-  ("Number of solutions: the $a:b:c$ ratio test",
-   [("big", r"$a_1x+b_1y=c_1$ and $a_2x+b_2y=c_2$: \ $\dfrac{a_1}{a_2}\ne\dfrac{b_1}{b_2}\Rightarrow$ exactly one", True),
-    ("mid", r"no solution: $\dfrac{a_1}{a_2}=\dfrac{b_1}{b_2}\ne\dfrac{c_1}{c_2}$ \qquad infinitely many: all three ratios equal", True),
-    ("mid", r"$kx+12y=9$ and $5x+4y=7$: \ $\dfrac k5=\dfrac{12}4\Rightarrow k=15$, \ and $9\ne3\cdot7$, so no solution", True),
-    ("note", r"Slope form: same slope and different intercept = no solution; the same line = infinitely many.", False)]),
-  ("A parameter in a system",
-   [("big", r"ratios equal $\Rightarrow$ solve for $k$ $\Rightarrow$ \textbf{check the constants} for each $k$", False),
-    ("mid", r"$\dfrac k4=\dfrac9k\Rightarrow k=\pm6$: \ one value gives infinitely many solutions, the other none", True),
-    ("note", r"\textit{Which could be the second equation?} Same $x,y$-ratio as the given one, different constant.", False)]),
+ [("The discriminant",
+   [("big", r"$ax^2+bx+c=0$: \ $D=b^2-4ac$ \qquad $D>0$: two \ \ $D=0$: one \ \ $D<0$: none", False),
+    ("mid", r"$x^2+bx+49=0$ has exactly one solution $\Rightarrow b^2-196=0$, so $b=\pm14$", False),
+    ("note", r"Move everything to one side first. Only real solutions count: ``no real solutions'' means $D<0$.", False)]),
+  ("Discriminant backward: a parameter",
+   [("big", r"exactly one: \ $D=0$ \qquad no real solution: \ $D<0$ \qquad two: \ $D>0$", False),
+    ("mid", r"$D=0$ is often itself a quadratic in $k$, so it may give \textbf{two} values of $k$", False),
+    ("mid", r"$3x^2-6x=k$: \ $D=36+12k<0\Rightarrow k<-3$ \quad ($k=-3$ gives one solution, not none)", False),
+    ("note", r"Equality is the trap: ``at least one'' is $D\ge0$, ``two'' is $D>0$, ``greatest integer $k$'' needs the boundary check.", False)]),
+  ("Line meets parabola or circle",
+   [("big", r"set equal $\Rightarrow$ quadratic: \ $D>0$ two points \ $D=0$ tangent \ $D<0$ none", False),
+    ("mid", r"$y=2x+1$ and $y=x^2-2x+5$: \ $x^2-4x+4=0$, $D=0$, so tangent (one point)", False),
+    ("mid", r"horizontal line $y=k$ and a parabola: compare $k$ with the vertex $y$-value", False),
+    ("note", r"Line through a given point: write $y=mx+b$ with that point, then set $D=0$ for the slope $m$.", False)]),
+  ("When the parameter hides in $a$",
+   [("big", r"$(k-2)x^2+6x+3=0$: \ if $k=2$ it is \textbf{not} a quadratic", False),
+    ("mid", r"$kx^2+4x+k=0$: \ $D=0$ gives $k=\pm2$, and $k=0$ gives $4x=0$ (also one solution)", False),
+    ("note", r"Check what happens when the leading coefficient is $0$ before you trust $D$.", False)]),
  ],
  # ------------------------------------------------------------------ page 2
- [("Solve for the combination, not the unknowns",
-   [("big", r"find $\lambda,\mu$ with $\lambda(\text{eq}_1)+\mu(\text{eq}_2)=$ the expression asked", False),
-    ("mid", r"$5a+2b=34$, $3a-4b=10$: \ $a+3b=\tfrac12(34)-\tfrac12(10)=12$", True),
-    ("note", r"Add for $x+y$-type sums, subtract for $x-y$-type differences; stop as soon as the asked expression appears.", False)]),
-  ("One variable: identity or contradiction",
-   [("big", r"$ax+b=cx+d$: \ $a\ne c$ \ $\Rightarrow$ \ exactly one solution", False),
-    ("mid", r"$a=c$ and $b=d$: infinitely many \qquad $a=c$ and $b\ne d$: no solution", False),
-    ("mid", r"$3(2x-k)+x=7x+12\Rightarrow 7x-3k=7x+12$, so $k=-4$ gives infinitely many", False),
-    ("note", r"Variables cancel and a true statement is left: infinitely many; a false statement: no solution.", False)]),
-  ("Interpreting a linear model",
-   [("big", r"$y=mx+b$: \ $m$ = change in $y$ per 1 unit of $x$ \quad $b$ = value at $x=0$", False),
-    ("mid", r"$Ax+By=C$: \ $x$-intercept $\dfrac CA$ (all of one item), \ each $+1$ in $x$ changes $y$ by $-\dfrac AB$", True),
-    ("mid", r"$3x+5y=600$: \ the point $(0,120)$ means 0 of the first item and 120 of the second", False)]),
-  ("Linear function from two points or a table",
-   [("big", r"$m=\dfrac{\Delta y}{\Delta x}$ \qquad $f(x)=f(x_1)+m(x-x_1)$", True),
-    ("mid", r"equal steps in $x$ give equal changes in $y$: \ $f(a+3)-f(a)=12\Rightarrow f(a+10)-f(a)=40$", False),
-    ("note", r"Shift right $h$: $f(x-h)$. Shift up $k$: $f(x)+k$. Reading a table: compute $\Delta y\div\Delta x$ first.", False)]),
-  ("Means and totals",
-   [("big", r"mean $=\dfrac{\text{total}}{\text{count}}$ \qquad combined mean $=\dfrac{n_1\bar x_1+n_2\bar x_2}{n_1+n_2}$", True),
-    ("mid", r"missing group: \ $24(78)+36m=60(84)\Rightarrow m=88$ \quad (work with totals)", False),
-    ("note", r"Two means can be averaged directly only when the groups have the same size.", False)]),
+ [("Quadratic hidden in a system",
+   [("big", r"solve the linear equation for one letter, then substitute", False),
+    ("mid", r"$x-y=2$, $xy=15$: \ $x(x-2)=15\Rightarrow x=5$ or $-3$ \quad (read the condition, e.g. $x>0$)", False),
+    ("note", r"Parabola with a circle: replace $x^2$ by $y+4$ and solve for $y$ first, then count the $x$-values for each $y$.", False)]),
+  ("Radical equations: always check",
+   [("big", r"isolate the radical $\Rightarrow$ square both sides $\Rightarrow$ solve $\Rightarrow$ \textbf{test every answer}", False),
+    ("mid", r"$\sqrt{3x+4}=x\Rightarrow x^2-3x-4=0$: \ $x=4$ works, $x=-1$ is extraneous", False),
+    ("note", r"A square root is never negative, so the other side must be $\ge0$. Two radicals: isolate one, square, repeat.", False)]),
+  ("Rational equations: excluded values",
+   [("big", r"multiply by the LCD, solve, \textbf{discard} values that make a denominator $0$", False),
+    ("mid", r"$\dfrac{3}{x-2}-\dfrac{12}{x^2-4}=1\Rightarrow x^2-3x+2=0$: \ $x=1$ only ($x=2$ excluded)", True),
+    ("note", r"$\dfrac{x^2-x}{x-1}=k$ simplifies to $x=k$ for $x\ne1$, so $k=1$ has no solution.", True)]),
+  ("Quadratic form: u-substitution",
+   [("big", r"spot a pattern $\Rightarrow$ let $u$ = the repeated piece $\Rightarrow$ solve $\Rightarrow$ go back to $x$", False),
+    ("mid", r"$x^4-5x^2-36=0$: \ $u=x^2=9$ or $-4$, and $x^2=-4$ is impossible, so $x=\pm3$", False),
+    ("mid", r"$u=x^{1/3},\ \ 3^x,\ \ \sqrt x,\ \ \dfrac1x,\ \ x^2-5x$ \quad ($2^x>0$ and $\sqrt x\ge0$: reject negative $u$)", True),
+    ("note", r"Check every $u$ for real $x$-values: each positive $u=x^2$ gives two, $u=0$ gives one. $9^x=(3^x)^2$.", False)]),
  ],
  # ------------------------------------------------------------------ page 3
- [("Two items, two totals: mixture and rate",
-   [("big", r"define two unknowns $\Rightarrow$ one equation for each fact \ (count, cost, amount)", False),
-    ("mid", r"mixture: \ $p_1a_1+p_2a_2=p_{\text{final}}(a_1+a_2)$ \qquad distance $=$ rate $\times$ time", False),
-    ("mid", r"boat: $v-c=\dfrac{\text{up}}{\text{time}}$, \ $v+c=\dfrac{\text{down}}{\text{time}}$ \quad 36 km in 3 h up, 2 h down: $c=3$", True),
-    ("note", r"$p$ = concentration as a decimal. Check the units (minutes or hours) and what the last sentence asks for.", False)]),
-  ("Linear inequalities and systems",
-   [("big", r"multiply or divide by a negative $\Rightarrow$ \textbf{flip the sign}", False),
-    ("mid", r"$-3x<12\Rightarrow x>-4$ \qquad system: the solution is the overlap of all the inequalities", False),
-    ("note", r"Strict $<$ excludes the boundary (greatest integer with $x<12$ is $11$). Test a point in every inequality.", False)]),
-  ("Absolute value",
-   [("big", r"$|u|=k\ (k\ge0)\Rightarrow u=k$ or $u=-k$ \qquad $|u|<k\Rightarrow -k<u<k$", False),
-    ("mid", r"$|u|>k\Rightarrow u<-k$ or $u>k$ \qquad $|x-c|\le r$: center $c$, half-width $r$", False),
-    ("mid", r"$|4x-6|=14$: \ $x=5$ or $x=-2$", False),
-    ("note", r"If $x$ also appears outside the bars ($|x-4|=2x-5$), check each answer in the original equation.", False)]),
+ [("Word problems that become quadratics",
+   [("big", r"area, border, consecutive, work, shared cost $\Rightarrow$ one equation", False),
+    ("mid", r"border $x$ on all four sides: \ $(20+2x)(30+2x)$ \qquad work: \ $\dfrac1t+\dfrac1{t+3}=\dfrac12$", True),
+    ("mid", r"$\dfrac{24}{v}-\dfrac{24}{v+2}=1\Rightarrow v^2+2v-48=0$ \quad reject the negative root", True),
+    ("note", r"Height $h(t)$ above a level: solve $h=$ level to get two times, then subtract.", False)]),
+  ("Completing the square",
+   [("big", r"$x^2+bx\ \to\ \left(x+\dfrac b2\right)^2-\dfrac{b^2}{4}$ \qquad circle: \ $(x-h)^2+(y-k)^2=r^2$", True),
+    ("mid", r"$x^2+y^2-6x+10y+18=0\Rightarrow(x-3)^2+(y+5)^2=16$: \ center $(3,-5)$, $r=4$", False),
+    ("note", r"If the right side is $0$ the ``circle'' is a single point; if negative, no points. Divide by $a$ before completing.", False)]),
+  ("Factoring higher degree and hidden structure",
+   [("big", r"$a^2-b^2=(a-b)(a+b)$ \qquad $a^3\pm b^3=(a\pm b)(a^2\mp ab+b^2)$", False),
+    ("mid", r"$x^4-13x^2+36=(x^2-4)(x^2-9)$ \qquad $x^4+x^2+1=(x^2+1)^2-x^2$", False),
+    ("mid", r"grouping: $2x^3-3x^2-8x+12=(2x-3)(x^2-4)$ \qquad $\sqrt{(x-3)^2}=|x-3|$", False),
+    ("note", r"A factor must give remainder $0$. $x^2+4$ never factors over the reals.", False)]),
+  ("Division and rational expressions",
+   [("big", r"$\dfrac{P(x)}{ax-b}$: \ quotient $+\dfrac{\text{remainder}}{ax-b}$ \qquad remainder $=P\!\left(\dfrac ba\right)$", True),
+    ("mid", r"$\dfrac{6x^2+x-12}{2x-3}=3x+5+\dfrac{3}{2x-3}$ \quad (use $\tfrac32$, not $3$)", True),
+    ("mid", r"cancel only \textbf{factors}: \ $\dfrac{x^3-27}{x-3}=x^2+3x+9$ \qquad match numerators for $\dfrac A{x-2}+\dfrac B{x+1}$", True)]),
+  ("Exponent rules",
+   [("big", r"$x^ax^b=x^{a+b}$ \quad $(x^a)^b=x^{ab}$ \quad $x^{1/n}=\sqrt[n]{x}$ \quad $4^x=2^{2x}$", False),
+    ("mid", r"$\sqrt[3]{x^2}\cdot\sqrt x=x^{2/3+1/2}=x^{7/6}$ \qquad $4\cdot4^x=4^{x+1}$ \quad (same base first)", False)]),
  ],
 ]
 
+
+# page assignment by card title (keeps the card definitions above in reading order)
+_flat = {c[0]: c for page in CARDS for c in page}
+_layout = [
+ ["The discriminant", "Discriminant backward: a parameter", "Line meets parabola or circle", "When the parameter hides in $a$", "Completing the square"],
+ ["Quadratic hidden in a system", "Radical equations: always check", "Rational equations: excluded values", "Quadratic form: u-substitution", "Word problems that become quadratics"],
+ ["Factoring higher degree and hidden structure", "Division and rational expressions", "Exponent rules"],
+]
+CARDS = [[_flat[t] for t in page] for page in _layout]
+
 NEWWORDS = [
- ("system of equations", "tenglamalar sistemasi"),
- ("no solution", "yechimi yo'q"),
- ("infinite solutions", "cheksiz ko'p yechim"),
- ("parallel lines", "parallel chiziqlar"),
- ("perpendicular", "perpendikulyar"),
- ("slope", "qiyalik"),
- ("intercept", "o'qni kesish joyi"),
- ("coefficient", "koeffitsiyent"),
- ("constant term", "ozod had"),
- ("identity", "ayniyat"),
- ("contradiction", "ziddiyat"),
- ("inequality", "tengsizlik"),
- ("absolute value", "modul"),
- ("rate of change", "o'zgarish tezligi"),
+ ("discriminant", "diskriminant"),
+ ("real solution", "haqiqiy yechim"),
+ ("tangent", "urinma"),
+ ("intersection point", "kesishish nuqtasi"),
+ ("extraneous solution", "chet yechim"),
+ ("excluded value", "taqiqlangan qiymat"),
+ ("radical equation", "ildizli tenglama"),
+ ("substitution", "almashtirish"),
+ ("quadratic form", "kvadrat ko'rinish"),
+ ("completing the square", "to'liq kvadrat ajratish"),
+ ("vertex", "parabola uchi"),
+ ("leading coefficient", "bosh koeffitsiyent"),
+ ("remainder", "qoldiq"),
+ ("denominator", "maxraj"),
 ]
 
 def line_adv(kind, frac):
@@ -240,9 +254,9 @@ def main():
     out = [PREAMBLE, r"\begin{document}"]
     npages = len(CARDS)
     for pi, page in enumerate(CARDS):
-        out.append(r"\topicheader{2}{Hard Linear Systems}")
+        out.append(r"\topicheader{4}{Discriminant \& Disguised Quadratics}")
         if pi == 0:
-            out.append(r"\videobanner{Lesson 2}")
+            out.append(r"\videobanner{Lesson 4}")
             y = 40.0
         else:
             out.append(r"\pagekicker{Rules sheet -- %d/%d}" % (pi + 1, npages))

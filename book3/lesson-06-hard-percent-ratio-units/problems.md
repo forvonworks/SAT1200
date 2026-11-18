@@ -521,7 +521,7 @@ Each entry: answer, a short worked solution, and the trick used.
 
 10. **C ($110\%$)** — Multiply: $1.4\times1.5=2.1$, so 2022 revenue is $2.1$ times 2020 revenue, which is $110\%$ \emph{greater}. ($210\%$ is ``$\%$ of'', not ``$\%$ greater''; $90\%$ adds $40+50$; $150\%$ uses only the last step.)  *Trick: ``$n$ times as much'' vs ``$n\%$ greater''*
 
-11. **Ans. 20** — Marked price: $80(1.6)=128$. Sale price: $0.75(128)=96$. Profit $=96-80=16$, and $\frac{16}{80}=20\%$. (Markup $60\%$ minus discount $25\%$ would give $35\%$, which is wrong: the discount is taken from the marked price.)  *Trick: Markup then discount: chain the multipliers*
+11. **Ans. 20** — Marked price: $80(1.6)=128$. Sale price: $0.75(128)=96$. Profit $=96-80=16$, and $\frac{16}{80}=20\%$. (Not $35\%$: the discount is taken from the marked price.)  *Trick: Markup then discount: chain the multipliers*
 
 12. **D ($150$)** — The measured value is $96\%$ of the true value $L$: $0.96L=144$, so $L=150$. (Percent error is measured against the true length. $144\times0.96=138.24$ goes the wrong way; $144\times1.04=149.76$ takes $4\%$ of the measurement; $148$ adds $4$.)  *Trick: Percent error: the base is the true value*
 
@@ -533,7 +533,7 @@ Each entry: answer, a short worked solution, and the trick used.
 
 1. **A ($P(1.01)^{12t}$)** — Each month multiplies the balance by $1+\frac{0.12}{12}=1.01$, and $t$ years contain $12t$ months, so $B=P(1.01)^{12t}$. (The other choices use the yearly rate $1.12$ once a year, the yearly rate every month, or only $t$ monthly periods.)  *Trick: Per-period rate and number of periods*
 
-2. **Ans. 76.25** — A: $10{,}000(1+3\cdot0.05)=11{,}500$. B: $10{,}000(1.05)^3=11{,}576.25$. Difference $=76.25$. (The gap comes entirely from interest earning interest.)  *Trick: Simple = add $rP$; compound = multiply by $1+r$*
+2. **Ans. 76.25** — A: $10{,}000(1+3\cdot0.05)=11{,}500$. B: $10{,}000(1.05)^3=11{,}576.25$. Difference $=76.25$.  *Trick: Simple = add $rP$; compound = multiply by $1+r$*
 
 3. **B ($19.6\%$)** — One year is $12$ months: $(1.015)^{12}\approx1.196$, a growth of $19.6\%$. ($18.0\%$ is simple, $12\times1.5$; $119.6\%$ is the new amount as a percent of the old, not the growth; $180\%$ multiplies $1.5\times12$ and slips a decimal.)  *Trick: Monthly growth compounds: $(1+r)^{12}-1$*
 
@@ -569,13 +569,13 @@ Each entry: answer, a short worked solution, and the trick used.
 
 4. **A ($\$486.00$)** — The floor is $9\ \text{ft}\times12\ \text{ft}=108\ \text{ft}^2$, and $108\times4.50=486$. (\$54 uses $12$ square \emph{yards}; \$162 multiplies the area by $3$ instead of $9$; \$1,458 multiplies by $27$.)  *Trick: Squared units: convert each side first*
 
-5. **Ans. 7.2** — Rates (tank per hour): $\frac16+\frac1{12}-\frac19=\frac{6+3-4}{36}=\frac5{36}$. Time $=\frac{36}{5}=7.2$ hours. (The drain's rate is subtracted; add \emph{rates}, never times.)  *Trick: Rates add: tank per hour*
+5. **Ans. 7.2** — Rates (tank per hour): $\frac16+\frac1{12}-\frac19=\frac{6+3-4}{36}=\frac5{36}$. Time $=\frac{36}{5}=7.2$ hours. (Add \emph{rates}, never times.)  *Trick: Rates add: tank per hour*
 
 6. **D ($13$)** — Distance $=2(10)+3(15)=65$ km in $5$ hours, so the average speed is $13$ km/h. ($12.5$ averages the speeds without weighting; $12$ is $\frac{2\cdot10\cdot15}{10+15}$, the formula for \emph{equal distances}; $65$ is the distance, not the speed.)  *Trick: Equal times: average speed is a weighted average*
 
 7. **C ($307.2$)** — $1$ cm on the map is $\frac{8}{2.5}=3.2$ km, so $1\ \text{cm}^2$ is $3.2^2=10.24\ \text{km}^2$. Then $30\times10.24=307.2$. ($96$ multiplies by $3.2$ only; $240$ treats $1\ \text{cm}^2$ as $8\ \text{km}^2$; $983.04$ uses $3.2^3$.)  *Trick: Scale drawing: area scales by $k^2$*
 
-8. **Ans. 1080** — The area ratio is $\frac{450}{50}=9=k^2$, so the scale factor is $k=3$. Volume scales by $k^3=27$: $40\times27=1080$. (Using $9$ for the volume ratio gives $360$, which is wrong.)  *Trick: Similar solids: area $k^2$, volume $k^3$*
+8. **Ans. 1080** — The area ratio is $\frac{450}{50}=9=k^2$, so the scale factor is $k=3$. Volume scales by $k^3=27$: $40\times27=1080$.  *Trick: Similar solids: area $k^2$, volume $k^3$*
 
 9. **A ($36$)** — $k^2=\frac{45}{20}=\frac94$, so $k=\frac32$. Perimeter scales by $k$: $24\times\frac32=36$. ($54$ multiplies by the area ratio $\frac94$; $49$ adds the area difference; $81$ multiplies by $k^3$.)  *Trick: Perimeter scales by $k$, area by $k^2$*
 
@@ -599,13 +599,13 @@ Each entry: answer, a short worked solution, and the trick used.
 
 4. **Ans. 14** — The mixture has $0.22(30)=6.6$ liters of salt, and you never need P or Q separately. Water adds no salt: $\frac{6.6}{30+w}=0.15$, so $30+w=44$ and $w=14$.  *Trick: Dilution: the salt amount is fixed*
 
-5. **Ans. 9** — Compare the multipliers: A is $1+0.06t$, B is $1.05^t$. At $t=8$: B $\approx1.4775$ and A $=1.48$, so A is still ahead. At $t=9$: B $\approx1.5513$, A $=1.54$. B first leads after $9$ years. (Graph both in Desmos and read the crossing.)  *Trick: Linear vs exponential: compare factors year by year*
+5. **Ans. 9** — Compare the multipliers: A is $1+0.06t$, B is $1.05^t$. At $t=8$: B $\approx1.4775$ and A $=1.48$, so A is still ahead. At $t=9$: B $\approx1.5513$, A $=1.54$. B first leads after $9$ years. (Or graph both in Desmos.)  *Trick: Linear vs exponential: compare factors year by year*
 
 6. **D ($15$)** — Together: $\frac18+\frac1{24}=\frac16$ per hour, so $3$ hours finish $\frac12$ of the job. B does the other half at $\frac1{24}$ per hour: $12$ hours. Total $3+12=15$. ($6$ is the time if both worked the whole job; $12$ is B's time alone after A stops; $27$ adds B's full $24$ hours to the $3$.)  *Trick: Rates: part done, then part left*
 
 7. **C ($32$)** — $100$ km $=\frac{100}{1.6}=62.5$ miles and $7.5$ L $=\frac{7.5}{3.8}\approx1.97$ gallons, so $\frac{62.5}{1.97}\approx32$ mpg. ($81$ multiplies km by $1.6$; $2$ multiplies liters by $3.8$; $13$ is $\frac{100}{7.5}$, km per liter, with no conversion.)  *Trick: Unit chain: miles over gallons*
 
-8. **Ans. 57.6** — Volume $=1.2^3=1.728\ \text{m}^3=1728$ L. Time $=\frac{1728}{0.5}=3456$ s, and $\frac{3456}{60}=57.6$ minutes. (The edge is cubed once; the $1000$ is the liters-per-cubic-meter factor.)  *Trick: Cubed length, then liters, then seconds to minutes*
+8. **Ans. 57.6** — Volume $=1.2^3=1.728\ \text{m}^3=1728$ L. Time $=\frac{1728}{0.5}=3456$ s, and $\frac{3456}{60}=57.6$ minutes.  *Trick: Cubed length, then liters, then seconds to minutes*
 
 9. **D ($72.8\%$)** — $V=\frac13\pi r^2h$ uses two factors of $r$ and one of $h$: $1.2\times1.2\times1.2=1.728$, an increase of $72.8\%$. ($20\%$ ignores the powers; $44\%$ uses $1.2^2$ only; $60\%$ is $3\times20\%$.)  *Trick: Volume scales by $k^3$*
 
@@ -621,11 +621,11 @@ Each entry: answer, a short worked solution, and the trick used.
 
 15. **D ($150\%$)** — $0.30P=0.45Q$ gives $\frac PQ=\frac{0.45}{0.30}=1.5$, so $P$ is $150\%$ of $Q$. ($66\frac23\%$ is $Q$ as a percent of $P$; $15\%$ is $45-30$; $75\%$ is $30+45$.)  *Trick: Set up $0.30P=0.45Q$ and divide*
 
-16. **Ans. 50000** — The factors multiply: $1.20\times0.75\times1.40=1.26$. So Year 1 $=\frac{63{,}000}{1.26}=50{,}000$. (Adding the changes, $+35\%$, would give $46{,}667$.)  *Trick: Reverse a chain: divide by the product of factors*
+16. **Ans. 50000** — The factors multiply: $1.20\times0.75\times1.40=1.26$. So Year 1 $=\frac{63{,}000}{1.26}=50{,}000$. (Adding the changes gives $46{,}667$.)  *Trick: Reverse a chain: divide by the product of factors*
 
-17. **Ans. 25** — Let the girls be a fraction $f$ of the class and the boys' mean be $b$. The class mean is $b+12f$, so $12f=3$ and $f=\frac14=25\%$. (No actual scores are needed: the class mean sits $\frac{3}{12}$ of the way from the boys' mean to the girls' mean.)  *Trick: Weighted average: the gap splits in proportion*
+17. **Ans. 25** — Let the girls be a fraction $f$ of the class and the boys' mean be $b$. The class mean is $b+12f$, so $12f=3$ and $f=\frac14=25\%$. (No actual scores are needed.)  *Trick: Weighted average: the gap splits in proportion*
 
-18. **Ans. 8.1** — Edges scale by $k=0.9$. Area: $0.9^2=0.81$, a decrease of $a=19$. Volume: $0.9^3=0.729$, a decrease of $b=27.1$. So $b-a=27.1-19=8.1$. (A decrease of $10\%$ in each edge does not give $20\%$ or $30\%$.)  *Trick: Area $k^2$, volume $k^3$ with $k=0.9$*
+18. **Ans. 8.1** — Edges scale by $k=0.9$. Area: $0.9^2=0.81$, a decrease of $a=19$. Volume: $0.9^3=0.729$, a decrease of $b=27.1$. So $b-a=27.1-19=8.1$.  *Trick: Area $k^2$, volume $k^3$ with $k=0.9$*
 
 19. **A ($500{,}000$)** — Area $=20{,}000\ \text{m}^2$ and depth $=25\ \text{mm}=0.025$ m, so the volume is $500\ \text{m}^3=500{,}000$ L. ($500$ is in cubic meters; $50{,}000$ uses $0.0025$ m; $5{,}000{,}000$ uses $0.25$ m.)  *Trick: Area $\times$ depth, then liters*
 

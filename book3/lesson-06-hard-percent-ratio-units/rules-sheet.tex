@@ -1,0 +1,303 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usetikzlibrary{fit,calc,positioning,arrows.meta}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{0F6A52}
+\definecolor{badge}{HTML}{A9CFC2}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{100mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\videobanner}[1]{%
+\begin{textblock*}{178mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (178mm,-10mm);
+\draw[white,line width=0.6pt] (3mm,-1.7mm) rectangle (11.5mm,-8.3mm);
+\node[white,font=\sffamily\fontsize{4}{4.4}\selectfont,align=center] at (7.25mm,-5mm) {QR\\CODE};
+\node[white,font=\sffamily\bfseries\fontsize{9.5}{11}\selectfont,anchor=west] at (16mm,-5.6mm) {WATCH THE VIDEO BEFORE YOU SOLVE};
+\node[white,font=\sffamily\fontsize{7.5}{8}\selectfont,anchor=east] at (174mm,-5.6mm) {YouTube ~\textbullet~ #1};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\newcommand{\cardbg}[4]{%
+\begin{textblock*}{#3mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\fill[badge!22,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pill}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {RULE ~\textperiodcentered~ #3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pillw}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {#3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+\renewcommand{\arraystretch}{1.5}
+
+
+\begin{document}
+\topicheader{6}{Hard Percent, Ratio \& Units}
+\videobanner{Lesson 6}
+\pagefooter{1}
+\mbox{}%
+% ---- Percent as a multiplier (y=40.0 h=37.5 end 77.5)
+\cardbg{16}{40.0}{178}{37.5}
+\pill{26}{43.0}{Percent as a multiplier}
+\begin{textblock*}{158mm}(26mm,52.0mm)
+{\fontsize{15}{18}\selectfont $p\%$ of $N=\dfrac p{100}\,N$ \qquad new $=N\left(1\pm\dfrac p{100}\right)$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,65.5mm)
+{\fontsize{13}{16}\selectfont $+15\%\Rightarrow\times1.15$ \qquad $-15\%\Rightarrow\times0.85$ \qquad $+150\%\Rightarrow\times2.5$}
+\end{textblock*}
+% ---- Percent change (y=83.5 h=40.5 end 124.0)
+\cardbg{16}{83.5}{178}{40.5}
+\pill{26}{86.5}{Percent change}
+\begin{textblock*}{158mm}(26mm,95.5mm)
+{\fontsize{15}{18}\selectfont $\%\text{ change}=\dfrac{\text{new}-\text{old}}{\text{old}}\times100\%$ \quad (the base is the \textbf{old} value)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,109.0mm)
+{\fontsize{13}{16}\selectfont $40\to46$: \ $\dfrac{6}{40}=15\%$ \qquad $12\to9$: \ $-\dfrac{3}{12}=-25\%$}
+\end{textblock*}
+% ---- Percent change vs percentage points (y=130.0 h=37.5 end 167.5)
+\cardbg{16}{130.0}{178}{37.5}
+\pill{26}{133.0}{Percent change vs percentage points}
+\begin{textblock*}{158mm}(26mm,142.0mm)
+{\fontsize{15}{18}\selectfont points $=$ rate$_2-$rate$_1$ \qquad percent change $=\dfrac{\text{points}}{\text{rate}_1}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,155.5mm)
+{\fontsize{13}{16}\selectfont $40\%\to46\%$: \ $+6$ percentage points, which is a $+15\%$ change}
+\end{textblock*}
+% ---- Successive changes: multiply, never add (y=173.5 h=37.5 end 211.0)
+\cardbg{16}{173.5}{178}{37.5}
+\pill{26}{176.5}{Successive changes: multiply, never add}
+\begin{textblock*}{158mm}(26mm,185.5mm)
+{\fontsize{15}{18}\selectfont factor $=f_1\cdot f_2\cdots$ \qquad up $x\%$ then down $x\%$: $1-\left(\dfrac{x}{100}\right)^2$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,199.0mm)
+{\fontsize{13}{16}\selectfont $+20\%$ then $-20\%$: \ $1.2\times0.8=0.96$, a net $-4\%$ (not $0$)}
+\end{textblock*}
+% ---- Reverse percent: divide by the factor (y=217.0 h=40.5 end 257.5)
+\cardbg{16}{217.0}{178}{40.5}
+\pill{26}{220.0}{Reverse percent: divide by the factor}
+\begin{textblock*}{158mm}(26mm,229.0mm)
+{\fontsize{15}{18}\selectfont original $=\dfrac{\text{final}}{\text{factor}}$ \qquad to undo $\times f$ multiply by $\dfrac1f$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,242.5mm)
+{\fontsize{13}{16}\selectfont final \$102 after $-15\%$: \ $102\div0.85=120$ \qquad undo $+60\%$: \ $1-\dfrac1{1.6}=37.5\%$ off}
+\end{textblock*}
+% ---- ``$n\%$ more'' vs ``$n$ times as much'' (y=263.5 h=37.5 end 301.0)
+\cardbg{16}{263.5}{178}{37.5}
+\pill{26}{266.5}{``$n\%$ more'' vs ``$n$ times as much''}
+\begin{textblock*}{158mm}(26mm,275.5mm)
+{\fontsize{15}{18}\selectfont $n\%$ more $=\times\left(1+\dfrac n{100}\right)$ \qquad $n$ times as much $=\times n$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,289.0mm)
+{\fontsize{13}{16}\selectfont $150\%$ more $=2.5$ times \qquad $150\%$ of $=1.5$ times \qquad $40\%$ less $=\times0.6$}
+\end{textblock*}
+\clearpage
+\topicheader{6}{Hard Percent, Ratio \& Units}
+\pagekicker{Rules sheet -- 2/3}
+\pagefooter{2}
+\mbox{}%
+% ---- Discount, markup, tax, tip (y=33.0 h=40.5 end 73.5)
+\cardbg{16}{33.0}{178}{40.5}
+\pill{26}{36.0}{Discount, markup, tax, tip}
+\begin{textblock*}{158mm}(26mm,45.0mm)
+{\fontsize{15}{18}\selectfont stacked changes multiply \qquad profit $\%=\dfrac{\text{price}-\text{cost}}{\text{cost}}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,58.5mm)
+{\fontsize{13}{16}\selectfont cost \$80, $+60\%$, then $25\%$ off: \ $80(1.6)(0.75)=96$, profit $\dfrac{16}{80}=20\%$}
+\end{textblock*}
+% ---- Simple vs compound interest (y=79.5 h=37.5 end 117.0)
+\cardbg{16}{79.5}{178}{37.5}
+\pill{26}{82.5}{Simple vs compound interest}
+\begin{textblock*}{158mm}(26mm,91.5mm)
+{\fontsize{15}{18}\selectfont simple: $A=P(1+rt)$ \qquad compound: $A=P(1+r)^t$ \qquad $P\left(1+\dfrac rm\right)^{mt}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,105.0mm)
+{\fontsize{13}{16}\selectfont $12\%$ compounded monthly: \ $P(1.01)^{12t}$ \qquad $1.5\%$ a month $\Rightarrow1.015^{12}-1\approx19.6\%$ a year}
+\end{textblock*}
+% ---- Mixtures and concentration (y=123.0 h=31.5 end 154.5)
+\cardbg{16}{123.0}{178}{31.5}
+\pill{26}{126.0}{Mixtures and concentration}
+\begin{textblock*}{158mm}(26mm,133.5mm)
+{\fontsize{15}{18}\selectfont amount $=$ concentration $\times$ volume \qquad amount in $=$ amount out}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,142.5mm)
+{\fontsize{13}{16}\selectfont $0.40(6)+0.10x=0.30(6+x)\Rightarrow x=3$ \qquad water or evaporation: \textbf{solute stays fixed}}
+\end{textblock*}
+% ---- Weighted average and composition (y=160.5 h=40.5 end 201.0)
+\cardbg{16}{160.5}{178}{40.5}
+\pill{26}{163.5}{Weighted average and composition}
+\begin{textblock*}{158mm}(26mm,172.5mm)
+{\fontsize{15}{18}\selectfont mean $=\dfrac{\sum n_ix_i}{\sum n_i}$ \qquad fraction of group 2: $f=\dfrac{\text{mean}-x_1}{x_2-x_1}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,186.0mm)
+{\fontsize{13}{16}\selectfont $20\%$ and $50\%$ mixed to $38\%$: \ $f=\dfrac{18}{30}=0.6$ \qquad table: pick the \textbf{row or column} as base}
+\end{textblock*}
+% ---- Ratios: part-to-part vs part-to-whole (y=207.0 h=40.5 end 247.5)
+\cardbg{16}{207.0}{178}{40.5}
+\pill{26}{210.0}{Ratios: part-to-part vs part-to-whole}
+\begin{textblock*}{158mm}(26mm,219.0mm)
+{\fontsize{15}{18}\selectfont $a:b\Rightarrow\dfrac a{a+b}$ of the whole \qquad write $a=ak$, $b=bk$ and solve}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,232.5mm)
+{\fontsize{13}{16}\selectfont $3:5$ of $96$: $36$ and $60$ \qquad $3k:7k$, remove $8$ red $\to3:5$: \ $\dfrac{3k}{7k-8}=\dfrac35$}
+\end{textblock*}
+% ---- Rates, work and flow (y=253.5 h=40.5 end 294.0)
+\cardbg{16}{253.5}{178}{40.5}
+\pill{26}{256.5}{Rates, work and flow}
+\begin{textblock*}{158mm}(26mm,265.5mm)
+{\fontsize{15}{18}\selectfont distance $=$ rate $\times$ time \qquad work together: \textbf{add rates} $\dfrac1a+\dfrac1b$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,279.0mm)
+{\fontsize{13}{16}\selectfont fills in 6 h and 12 h, drains in 9 h: \ $\dfrac16+\dfrac1{12}-\dfrac19=\dfrac5{36}$, so $7.2$ h}
+\end{textblock*}
+\clearpage
+\topicheader{6}{Hard Percent, Ratio \& Units}
+\pagekicker{Rules sheet -- 3/3}
+\pagefooter{3}
+\mbox{}%
+% ---- Average speed (y=33.0 h=40.5 end 73.5)
+\cardbg{16}{33.0}{178}{40.5}
+\pill{26}{36.0}{Average speed}
+\begin{textblock*}{158mm}(26mm,45.0mm)
+{\fontsize{15}{18}\selectfont average speed $=\dfrac{\text{total distance}}{\text{total time}}$ \qquad (not the mean of the speeds)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,58.5mm)
+{\fontsize{13}{16}\selectfont equal distances at $a$, $b$: $\dfrac{2ab}{a+b}$ \qquad $12$ and $24$ km/h: $16$ \qquad equal times: plain mean}
+\end{textblock*}
+% ---- Unit conversion chains (y=79.5 h=31.5 end 111.0)
+\cardbg{16}{79.5}{178}{31.5}
+\pill{26}{82.5}{Unit conversion chains}
+\begin{textblock*}{158mm}(26mm,90.0mm)
+{\fontsize{15}{18}\selectfont multiply by fractions equal to $1$ \qquad squared units: \textbf{square} the factor, cubed: \textbf{cube}}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,99.0mm)
+{\fontsize{13}{16}\selectfont $1\text{ m}^2=100^2=10^4\text{ cm}^2$ \qquad $1\text{ m}^3=10^6\text{ cm}^3=1000\text{ L}$}
+\end{textblock*}
+% ---- Similar figures: scale factor $k$ (y=117.0 h=40.5 end 157.5)
+\cardbg{16}{117.0}{178}{40.5}
+\pill{26}{120.0}{Similar figures: scale factor $k$}
+\begin{textblock*}{158mm}(26mm,129.0mm)
+{\fontsize{15}{18}\selectfont length $\times k$ \qquad area $\times k^2$ \qquad volume $\times k^3$ \qquad $k=\sqrt{\dfrac{A_2}{A_1}}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,142.5mm)
+{\fontsize{13}{16}\selectfont $k=3$: area $\times9$, volume $\times27$ \qquad areas $20$ and $45$: \ $k=\dfrac32$}
+\end{textblock*}
+% ---- Scale drawings and density (y=163.5 h=37.5 end 201.0)
+\cardbg{16}{163.5}{178}{37.5}
+\pill{26}{166.5}{Scale drawings and density}
+\begin{textblock*}{158mm}(26mm,175.5mm)
+{\fontsize{15}{18}\selectfont map: $1$ cm $=d$ km $\Rightarrow1\text{ cm}^2=d^2\text{ km}^2$ \qquad density $=\dfrac{\text{mass}}{\text{volume}}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,189.0mm)
+{\fontsize{13}{16}\selectfont same material: mass $\propto$ volume $\propto k^3$ \qquad $2.7\text{ g/cm}^3=2700\text{ kg/m}^3$}
+\end{textblock*}
+% ---- Percent error and relative change (y=207.0 h=40.5 end 247.5)
+\cardbg{16}{207.0}{178}{40.5}
+\pill{26}{210.0}{Percent error and relative change}
+\begin{textblock*}{158mm}(26mm,219.0mm)
+{\fontsize{15}{18}\selectfont percent error $=\dfrac{|\text{measured}-\text{true}|}{\text{true}}\times100\%$ \qquad base $=$ true value}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,232.5mm)
+{\fontsize{13}{16}\selectfont radius $+5\%\Rightarrow$ area $\times1.05^2=1.1025$, so $+10.25\%$ \qquad measured $4\%$ low: true $=\dfrac m{0.96}$}
+\end{textblock*}
+% ---- New words (y=253.5 h=79.5)
+\cardbg{16}{253.5}{178}{79.5}
+\pillw{26}{256.5}{NEW WORDS ~\textperiodcentered~ YANGI SO'ZLAR}
+\begin{textblock*}{80mm}(26mm,266.0mm)
+{\fontsize{10.5}{12}\selectfont
+\begin{tabular}{@{}>{\bfseries}p{37mm}p{36mm}@{}}
+\cellcolor{accent}\textcolor{white}{\sffamily English} & \cellcolor{accent}\textcolor{white}{\sffamily O'zbekcha}\\
+\rowcolor{badge!45} percent change & {\itshape foiz o'zgarishi}\\
+\rowcolor{white} percentage point & {\itshape foiz punkti}\\
+\rowcolor{badge!45} multiplier & {\itshape ko'paytuvchi}\\
+\rowcolor{white} discount & {\itshape chegirma}\\
+\rowcolor{badge!45} markup & {\itshape ustama narx}\\
+\rowcolor{white} simple interest & {\itshape oddiy foiz}\\
+\rowcolor{badge!45} compound interest & {\itshape murakkab foiz}\\
+\rowcolor{white} ratio & {\itshape nisbat}\\
+\end{tabular}}
+\end{textblock*}
+\begin{textblock*}{80mm}(108mm,266.0mm)
+{\fontsize{10.5}{12}\selectfont
+\begin{tabular}{@{}>{\bfseries}p{37mm}p{36mm}@{}}
+\cellcolor{accent}\textcolor{white}{\sffamily English} & \cellcolor{accent}\textcolor{white}{\sffamily O'zbekcha}\\
+\rowcolor{badge!45} rate & {\itshape tezlik, me'yor}\\
+\rowcolor{white} concentration & {\itshape konsentratsiya}\\
+\rowcolor{badge!45} mixture & {\itshape aralashma}\\
+\rowcolor{white} weighted average & {\itshape vaznli o'rtacha}\\
+\rowcolor{badge!45} scale factor & {\itshape o'xshashlik koeffitsiyenti}\\
+\rowcolor{white} density & {\itshape zichlik}\\
+\rowcolor{badge!45} unit conversion & {\itshape birlik almashtirish}\\
+\end{tabular}}
+\end{textblock*}
+\end{document}

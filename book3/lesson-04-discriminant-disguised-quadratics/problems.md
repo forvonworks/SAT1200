@@ -471,7 +471,7 @@ Each entry: answer, a short worked solution, and the trick used.
 
 1. **D ($6$)** — Set equal: $x^2-2x+(7-c)=0$. Tangent means $D=4-4(7-c)=0$, so $7-c=1$ and $c=6$. ($-2$ adds the slopes instead of subtracting; 7 is the parabola's $y$-intercept; 10 is the $y$-coordinate of the tangent point $(1,10)$.)  *Trick: Tangent: D = 0 after setting equal*
 
-2. **Ans. 17** — Substitute $y=x+k$: $2x^2+2kx+k^2-36=0$. $D=4k^2-8(k^2-36)=288-4k^2>0$ gives $k^2<72$, so $|k|<8.49$. The integers $-8,\dots,8$ number $17$. (The endpoints are not even integers here, but $\pm9$ fail and the tangent cases are not integers.)  *Trick: Circle and line: substitute, D > 0*
+2. **Ans. 17** — Substitute $y=x+k$: $2x^2+2kx+k^2-36=0$. $D=4k^2-8(k^2-36)=288-4k^2>0$ gives $k^2<72$, so $|k|<8.49$. The integers $-8,\dots,8$ number $17$. (Edge check: $k=8$ gives $D=288-256=32>0$; $k=9$ gives $D=288-324<0$.)  *Trick: Circle and line: substitute, D > 0*
 
 3. **A ($14$)** — The parabola opens downward with its vertex at $x=3$: $y=-18+36-5=13$. The line misses the parabola only when $k>13$, so $14$ works. ($k=13$ touches the vertex; $12$ and $-5$ cut the parabola twice. $-5$ is the $y$-intercept.)  *Trick: Horizontal line versus the vertex*
 
