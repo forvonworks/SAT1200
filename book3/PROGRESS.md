@@ -21,7 +21,9 @@ Decisions + blueprint: see BOOK3-SPEC.md.
 | Mock 4 | DONE, verified |
 | Mock 5 | DONE, verified |
 | Mock 6 | DONE, verified |
-| Mock 7 | in progress |
+| Mock 7 | DONE, verified |
+| Mock 8 | in progress |
+| Lesson 1 | in progress (agent a3cf13281dd1ea6c0) |
 | Lesson 2 | DONE, verified (74 problems) |
 | Lesson 3 | DONE, verified (74 problems, solutions respaced) |
 | Lesson 4 | in progress (agent ab027ad77f427df4c) |
