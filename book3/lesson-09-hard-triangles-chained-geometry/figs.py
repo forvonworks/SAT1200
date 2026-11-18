@@ -184,7 +184,7 @@ def fig_trans(a1=59, a2=121, t1=r"$(3x+5)^\circ$", t2=r"$(7x-5)^\circ$", gap=26.
     uu = unit(U, Lw)
     T1 = sub(U, mul(uu, ext)); T2 = add(Lw, mul(uu, ext))
     parts = [seg((-L / 2 + 6, 0), (L / 2 + 6, 0)), seg((Lw[0] - L / 2 + 6, -gap), (Lw[0] + L / 2 + 6, -gap)), seg(T1, T2),
-             r"\node[right] at %s {$\ell$};" % P((L / 2 + 6, 0)), r"\node[right] at %s {$m$};" % P((Lw[0] + L / 2 + 6, -gap)),
+             r"\node[right] at %s {$m$};" % P((L / 2 + 6, 0)), r"\node[right] at %s {$n$};" % P((Lw[0] + L / 2 + 6, -gap)),
              r"\node[above left] at %s {$t$};" % P(T1)]
     parts.append(arc(U, -a1, 0, 7))
     parts.append(r"\node at %s {%s};" % (P((17.0, -6.4)), t1))
@@ -214,7 +214,7 @@ def fig_isoext(apex=36, b=24.0, t_apex=r"$(3x-6)^\circ$", t_ext=r"$(7x+10)^\circ
                arc(C, 0, ext, 5.5), r"\node at %s {%s};" % (P(add(C, (11.5, 11.5))), t_ext))
 
 # ------------------------------------------------------------------------------ F: pentagon with AB || ED (3.7)
-def fig_pent(Bd=130, Cd=140, Dd=90, tB=r"$(2x+30)^\circ$", tC=r"$(3x-10)^\circ$", tD=r"$(x+40)^\circ$", sc=2.1):
+def fig_pent(Bd=125, Cd=140, Dd=95, tB=r"$(2x+45)^\circ$", tC=r"$(3x+20)^\circ$", tD=r"$(x+55)^\circ$", sc=2.6):
     Ad = 100; Ed = 180 - Ad
     assert Ad + Bd + Cd + Dd + Ed == 540 and Bd + Cd + Dd == 360
     dirs = [0.0]
@@ -244,10 +244,10 @@ def fig_pent(Bd=130, Cd=140, Dd=90, tB=r"$(2x+30)^\circ$", tC=r"$(3x-10)^\circ$"
     parts = [poly(pts), parmark(A, B, 1), parmark(E, Dp, 1)]
     for i, nm in enumerate("ABCDE"):
         parts.append(vlabel(pts[i], "$%s$" % nm, cen, 3.0))
-    for i, tx in ((1, tB), (2, tC)):
-        parts.append(angle_mark(pts[i], pts[i - 1], pts[(i + 1) % 5], 4.0, tx, 13.0))
-    parts.append(ra(Dp, C, E, 2.4))
-    parts.append(r"\node at %s {%s};" % (P(add(Dp, mul(unit(Dp, cen), 13.0))), tD))
+    for i, tx, rr in ((1, tB, 9.5), (2, tC, 10.5), (3, tD, 9.5)):
+        v0 = pts[i]
+        parts.append(angle_mark(v0, pts[i - 1], pts[(i + 1) % 5], 4.0))
+        parts.append(r"\node at %s {%s};" % (P(add(v0, mul(unit(cen, v0), rr))), tx))
     return pic(*parts)
 
 # ------------------------------------------------------------------------------ F: bowtie (3.11)

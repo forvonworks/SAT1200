@@ -58,7 +58,17 @@ def dist(a, b):
     return sqrt((a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2)
 
 def tri_area(a, b, c):
-    return abs((b[0] - a[0]) * (c[1] - a[1]) - (c[0] - a[0]) * (b[1] - a[1])) / 2
+    return sympify(abs((b[0] - a[0]) * (c[1] - a[1]) - (c[0] - a[0]) * (b[1] - a[1]))) / 2
 
 S3_ = sqrt(3)
 S2_ = sqrt(2)
+
+def golden_gap(a):
+    """isosceles ABC (AB=AC, BC=1, apex a degrees); D on AC with AD=1; returns BD-1 (zero when AD=BD=BC)."""
+    base = (180 - a) / 2.0 * math.pi / 180
+    B = (0.0, 0.0); Cc = (1.0, 0.0); A = (0.5, 0.5 * math.tan(base))
+    ac = math.dist(A, Cc)
+    if ac <= 1 + 1e-9:
+        return 9.0   # D would not lie strictly inside segment AC
+    Dd = (A[0] + (Cc[0] - A[0]) / ac, A[1] + (Cc[1] - A[1]) / ac)
+    return math.dist(B, Dd) - 1.0
