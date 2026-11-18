@@ -571,7 +571,7 @@ mc(5, 'H',
    C(r"72^\circ", 72), [C(r"36^\circ", 36), C(r"108^\circ", 108), C(r"144^\circ", 144)],
    _chord_angle,
    "Exterior angle of $\\triangle PBC$ $=$ two inscribed angles",
-   r"The ratio $1:2:3:4$ splits $360^\circ$ into arcs $36,72,108,144$. $\angle APB=\angle PCB+\angle PBC$ (exterior angle) $=\frac{36}2+\frac{108}2=72^\circ$, which is $\frac12(\text{arc }AB+\text{arc }CD)$. ($36$ is arc $AB$; $144$ is arc $DA$; $108$ is arc $CD$.)",
+   r"The ratio $1:2:3:4$ splits $360^\circ$ into arcs $36,72,108,144$. $\angle APB=\angle PCB+\angle PBC$ (exterior angle) $=\frac{36}2+\frac{108}2=72^\circ$, which is $\frac12(\text{arc }AB+\text{arc }CD)$. ($36$, $108$, $144$ are single arcs.)",
    fig="chords", figdesc="circle with four points A, B, C, D in order and chords AC and BD crossing at P; angle APB marked with a question mark")
 
 mc(5, 'H',
@@ -607,7 +607,7 @@ mc(5, 'H',
    T(r"Decreases by $3.2\%$", R(-32, 10)), [T(r"Does not change", 0), T(r"Decreases by $10\%$", -10), T(r"Decreases by $12\%$", -12)],
    lambda: ((1 + R(1, 10)) ** 2 * (1 - R(2, 10)) - 1) * 100,
    "Multiply factors; the radius is squared",
-   r"Volume factor $=(1.1)^2(0.8)=1.21\times0.8=0.968$, a decrease of $3.2\%$. (``No change'' adds $10+10-20$; $-10\%$ adds $10-20$; $-12\%$ uses $1.1\times0.8$ without squaring the radius.)",
+   r"Volume factor $=(1.1)^2(0.8)=1.21\times0.8=0.968$, a decrease of $3.2\%$. ($-12\%$ forgets to square the radius; $0$ and $-10\%$ add percents.)",
    order='a')
 
 mc(5, 'H',
@@ -629,7 +629,7 @@ mc(5, 'H',
    C(R(416, 3) * pi), [C(224 * pi), C(R(544, 3) * pi), C(R(608, 3) * pi)],
    lambda: pi * 4 ** 2 * (10 - 4) + R(1, 2) * R(4, 3) * pi * 4 ** 3,
    "Total height includes the dome: cylinder height $=10-r$",
-   r"The hemisphere has height $4$, so the cylinder part is $6$ tall: $\pi(16)(6)=96\pi$. Hemisphere $=\frac23\pi(64)=\frac{128\pi}3$. Total $=\frac{416\pi}3$. ($\frac{608\pi}3$ uses cylinder height $10$; $\frac{544\pi}3$ uses a full sphere; $224\pi$ uses $2\pi r^3=128\pi$ for the dome.)",
+   r"The hemisphere has height $4$, so the cylinder part is $6$ tall: $\pi(16)(6)=96\pi$. Hemisphere $=\frac23\pi(64)=\frac{128\pi}3$. Total $=\frac{416\pi}3$. ($\frac{608\pi}3$ uses height $10$; $\frac{544\pi}3$ a full sphere; $224\pi$ the dome as $2\pi r^3$.)",
    fig="silo", figdesc="side view of a silo: cylinder of base radius 4 topped by a hemisphere, total height 10")
 
 mc(5, 'H',
@@ -644,7 +644,7 @@ mc(5, 'H',
    C(9 * sqrt(3)), [C(9), C(9 * sqrt(2)), C(18)],
    lambda: 2 * 9 * sin(pi * R(6, 18)),
    "Arc $\\to$ central angle, then the isosceles triangle",
-   r"The circumference is $18\pi$, so the arc is $\frac13$ of the circle and the central angle is $120^\circ$. The chord is the base of a $30^\circ$-$30^\circ$-$120^\circ$ triangle with legs $9$: $AB=2\cdot9\sin60^\circ=9\sqrt3$. ($9$ assumes $60^\circ$; $9\sqrt2$ assumes $90^\circ$; $18$ is a diameter.)")
+   r"The circumference is $18\pi$, so the arc is $\frac13$ of the circle and the central angle is $120^\circ$. The chord is the base of a $30^\circ$-$30^\circ$-$120^\circ$ triangle with legs $9$: $AB=2\cdot9\sin60^\circ=9\sqrt3$. ($9$ assumes $60^\circ$; $9\sqrt2$, $90^\circ$; $18$ is a diameter.)")
 
 gi(5, 'H',
    r"A regular hexagon with side length $6$ is inscribed in a circle (all six vertices lie on the circle). The area of the region inside the circle but outside the hexagon is $a\pi-b\sqrt3$. What is the value of $a+b$?",
@@ -673,14 +673,14 @@ mc(5, 'H',
    C("1.125", R(9, 8)), [C("4.5", R(9, 2)), C(9), C("13.5", R(27, 2))],
    lambda: (R(1, 3) * pi * (R(6) * R(9, 2) / 9) ** 2 * R(9, 2)) / (12 * pi),
    "Half the depth is only $\\frac18$ of the volume",
-   r"At depth $4.5$ the water cone has radius $3$ (similar cone, $k=\frac12$): $V=\frac13\pi(9)(4.5)=13.5\pi$. Time $=\frac{13.5\pi}{12\pi}=1.125$ min. ($4.5$ treats half the depth as half the volume; $9$ is the time to fill the whole cone; $13.5$ forgets to divide by the rate.)")
+   r"At depth $4.5$ the water cone has radius $3$ (similar cone, $k=\frac12$): $V=\frac13\pi(9)(4.5)=13.5\pi$. Time $=\frac{13.5\pi}{12\pi}=1.125$ min. ($4.5$ treats half the depth as half the volume; $9$ fills the whole cone.)")
 
 mc(5, 'H',
    r"Two circles have the same center and radii $4$ and $10$. Two radii of the larger circle form an angle of $72^\circ$. What is the area of the part of the region between the two circles that lies inside this $72^\circ$ angle?",
    C(R(84, 5) * pi), [C(R(12, 5) * pi), C(R(36, 5) * pi), C(84 * pi)],
    lambda: R(72, 360) * pi * (10 ** 2 - 4 ** 2),
    "Fraction of the ring: $\\frac{\\theta}{360}\\pi(R^2-r^2)$",
-   r"The angle is $\frac{72}{360}=\frac15$ of the ring, whose area is $\pi(100-16)=84\pi$. So the area is $\frac{84\pi}5=16.8\pi$. ($84\pi$ is the whole ring; $\frac{36\pi}5$ uses $(10-4)^2$; $\frac{12\pi}5$ uses $\frac15$ of $2\pi\cdot6$.)")
+   r"The angle is $\frac{72}{360}=\frac15$ of the ring, whose area is $\pi(100-16)=84\pi$. So the area is $\frac{84\pi}5=16.8\pi$. ($84\pi$ is the whole ring; $\frac{36\pi}5$ uses $(10-4)^2$.)")
 
 mc(5, 'H',
    r"A sector of a circle has an area of $36$ and a central angle of $2$ radians. What is the perimeter of the sector (the arc length plus the two straight edges)?",

@@ -565,7 +565,7 @@ Each entry: answer, a short worked solution, and the trick used.
 
 3. **Ans. 1.5** — For a sector, $A=\frac12rs$: $12=\frac12r(6)$ gives $r=4$. Then $\theta=\frac sr=\frac64=1.5$ radians.  *Trick: Sector area $=\frac12\,r\cdot(\text{arc})$*
 
-4. **C ($72^\circ$)** — The ratio $1:2:3:4$ splits $360^\circ$ into arcs $36,72,108,144$. $\angle APB=\angle PCB+\angle PBC$ (exterior angle) $=\frac{36}2+\frac{108}2=72^\circ$, which is $\frac12(\text{arc }AB+\text{arc }CD)$. ($36$ is arc $AB$; $144$ is arc $DA$; $108$ is arc $CD$.)  *Trick: Exterior angle of $\triangle PBC$ $=$ two inscribed angles*
+4. **C ($72^\circ$)** — The ratio $1:2:3:4$ splits $360^\circ$ into arcs $36,72,108,144$. $\angle APB=\angle PCB+\angle PBC$ (exterior angle) $=\frac{36}2+\frac{108}2=72^\circ$, which is $\frac12(\text{arc }AB+\text{arc }CD)$. ($36$, $108$, $144$ are single arcs.)  *Trick: Exterior angle of $\triangle PBC$ $=$ two inscribed angles*
 
 5. **D ($9$)** — Capacity $=\pi(9)(4)=36\pi$ m$^3$; net rate $=6\pi-2\pi=4\pi$ m$^3$/h; time $=\frac{36\pi}{4\pi}=9$ h. ($4.5$ adds the drain rate; $6$ ignores the drain; $18$ uses the drain rate alone.)  *Trick: Net rate $=$ in $-$ out*
 
@@ -575,17 +575,17 @@ Each entry: answer, a short worked solution, and the trick used.
 
 8. **Ans. 250** — $k^2=\frac{50}{18}=\frac{25}{9}$, so $k=\frac53$. Volume scales by $k^3=\frac{125}{27}$: $54\cdot\frac{125}{27}=250$. (Using $\frac{50}{18}$ directly would give $150$.)  *Trick: Area $\propto k^2$, volume $\propto k^3$*
 
-9. **C (Decreases by $3.2\%$)** — Volume factor $=(1.1)^2(0.8)=1.21\times0.8=0.968$, a decrease of $3.2\%$. (``No change'' adds $10+10-20$; $-10\%$ adds $10-20$; $-12\%$ uses $1.1\times0.8$ without squaring the radius.)  *Trick: Multiply factors; the radius is squared*
+9. **C (Decreases by $3.2\%$)** — Volume factor $=(1.1)^2(0.8)=1.21\times0.8=0.968$, a decrease of $3.2\%$. ($-12\%$ forgets to square the radius; $0$ and $-10\%$ add percents.)  *Trick: Multiply factors; the radius is squared*
 
 10. **A ($12$)** — Completing squares: $(x-2)^2+(y-3)^2=25$, center $(2,3)$, $r=5$. $PO=13$. Since $OT\perp PT$, $PT=\sqrt{13^2-5^2}=12$. ($13$ is $PO$; $8=13-5$ is the nearest distance to the circle; $5$ is $r$.)  *Trick: Tangent length: $PT^2=PO^2-r^2$*
 
 11. **Ans. 6.5** — The legs along the axes meet at $(0,0)$ at a right angle, so the segment from $(12,0)$ to $(0,5)$ is a diameter. Its length is $\sqrt{12^2+5^2}=13$, so $r=\frac{13}2=6.5$.  *Trick: Right angle at the origin: the hypotenuse is a diameter*
 
-12. **D ($\frac{416 \pi}{3}$)** — The hemisphere has height $4$, so the cylinder part is $6$ tall: $\pi(16)(6)=96\pi$. Hemisphere $=\frac23\pi(64)=\frac{128\pi}3$. Total $=\frac{416\pi}3$. ($\frac{608\pi}3$ uses cylinder height $10$; $\frac{544\pi}3$ uses a full sphere; $224\pi$ uses $2\pi r^3=128\pi$ for the dome.)  *Trick: Total height includes the dome: cylinder height $=10-r$*
+12. **D ($\frac{416 \pi}{3}$)** — The hemisphere has height $4$, so the cylinder part is $6$ tall: $\pi(16)(6)=96\pi$. Hemisphere $=\frac23\pi(64)=\frac{128\pi}3$. Total $=\frac{416\pi}3$. ($\frac{608\pi}3$ uses height $10$; $\frac{544\pi}3$ a full sphere; $224\pi$ the dome as $2\pi r^3$.)  *Trick: Total height includes the dome: cylinder height $=10-r$*
 
 13. **C ($5 \pi$)** — Water volume $=\pi(100)(9)=900\pi$ cm$^3$. Depth $=\frac{900\pi}{15\cdot12}=\frac{900\pi}{180}=5\pi\approx15.7$ cm. ($5$ drops the $\pi$; $20\pi$ uses the diameter as $r$; $50\pi$ slips a factor of $10$.)  *Trick: Same volume: $\pi r^2h=\ell wd$*
 
-14. **A ($9 \sqrt{3}$)** — The circumference is $18\pi$, so the arc is $\frac13$ of the circle and the central angle is $120^\circ$. The chord is the base of a $30^\circ$-$30^\circ$-$120^\circ$ triangle with legs $9$: $AB=2\cdot9\sin60^\circ=9\sqrt3$. ($9$ assumes $60^\circ$; $9\sqrt2$ assumes $90^\circ$; $18$ is a diameter.)  *Trick: Arc $\to$ central angle, then the isosceles triangle*
+14. **A ($9 \sqrt{3}$)** — The circumference is $18\pi$, so the arc is $\frac13$ of the circle and the central angle is $120^\circ$. The chord is the base of a $30^\circ$-$30^\circ$-$120^\circ$ triangle with legs $9$: $AB=2\cdot9\sin60^\circ=9\sqrt3$. ($9$ assumes $60^\circ$; $9\sqrt2$, $90^\circ$; $18$ is a diameter.)  *Trick: Arc $\to$ central angle, then the isosceles triangle*
 
 15. **Ans. 90** — The circumradius equals the side, $6$, so the circle has area $36\pi$. The hexagon is $6$ equilateral triangles: $6\cdot\frac{\sqrt3}4(36)=54\sqrt3$. The region is $36\pi-54\sqrt3$, so $a+b=36+54=90$.  *Trick: Regular hexagon $=6$ equilateral triangles; $r=$ side*
 
@@ -593,9 +593,9 @@ Each entry: answer, a short worked solution, and the trick used.
 
 17. **Ans. 208** — The whole cone is similar to the small one with scale factor $\frac{12}4=3$, so its volume is $27(8\pi)=216\pi$. Frustum $=216\pi-8\pi=208\pi$, $k=208$. (The frustum is $26$ times the small cone, not $3$ or $9$.)  *Trick: Similar cones: volume $\times k^3$ with $k=\frac{12}4=3$*
 
-18. **D ($1.125$)** — At depth $4.5$ the water cone has radius $3$ (similar cone, $k=\frac12$): $V=\frac13\pi(9)(4.5)=13.5\pi$. Time $=\frac{13.5\pi}{12\pi}=1.125$ min. ($4.5$ treats half the depth as half the volume; $9$ is the time to fill the whole cone; $13.5$ forgets to divide by the rate.)  *Trick: Half the depth is only $\frac18$ of the volume*
+18. **D ($1.125$)** — At depth $4.5$ the water cone has radius $3$ (similar cone, $k=\frac12$): $V=\frac13\pi(9)(4.5)=13.5\pi$. Time $=\frac{13.5\pi}{12\pi}=1.125$ min. ($4.5$ treats half the depth as half the volume; $9$ fills the whole cone.)  *Trick: Half the depth is only $\frac18$ of the volume*
 
-19. **C ($\frac{84 \pi}{5}$)** — The angle is $\frac{72}{360}=\frac15$ of the ring, whose area is $\pi(100-16)=84\pi$. So the area is $\frac{84\pi}5=16.8\pi$. ($84\pi$ is the whole ring; $\frac{36\pi}5$ uses $(10-4)^2$; $\frac{12\pi}5$ uses $\frac15$ of $2\pi\cdot6$.)  *Trick: Fraction of the ring: $\frac{\theta}{360}\pi(R^2-r^2)$*
+19. **C ($\frac{84 \pi}{5}$)** — The angle is $\frac{72}{360}=\frac15$ of the ring, whose area is $\pi(100-16)=84\pi$. So the area is $\frac{84\pi}5=16.8\pi$. ($84\pi$ is the whole ring; $\frac{36\pi}5$ uses $(10-4)^2$.)  *Trick: Fraction of the ring: $\frac{\theta}{360}\pi(R^2-r^2)$*
 
 20. **C ($24$)** — $36=\frac12r^2(2)=r^2$, so $r=6$. Arc $=r\theta=12$. Perimeter $=6+6+12=24$. ($12$ is the arc only; $18$ adds just one radius; $36$ is the area.)  *Trick: Radians: $A=\frac12r^2\theta$, arc $=r\theta$*
 
