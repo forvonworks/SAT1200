@@ -27,7 +27,7 @@ Decisions + blueprint: see BOOK3-SPEC.md.
 | Lesson 2 | DONE, verified (74 problems) |
 | Lesson 3 | DONE, verified (74 problems, solutions respaced) |
 | Lesson 4 | DONE, verified (74 problems) |
-| Lesson 6 | in progress (agent a544a0a4ab47a2cc2) |
+| Lesson 6 | DONE, verified (74 problems) |
 | Lesson 7 | in progress |
 | Mocks 4-10 | not started |
 | Lessons 1,2,3,4,6,7,8,9 | not started (use lesson-05-speed-tricks as the reference once verified) |
