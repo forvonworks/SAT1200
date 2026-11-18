@@ -1,0 +1,65 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{0F6A52}
+\definecolor{badge}{HTML}{A9CFC2}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}\fill[accent] (0,0) rectangle (194mm,0.6mm);\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}}
+\newcommand{\frontheader}[1]{%
+\begin{textblock*}{194mm}(16mm,16mm)
+\begin{tikzpicture}\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (0,0) {#1};\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}\fill[accent] (0,0) rectangle (194mm,0.5mm);\end{tikzpicture}
+\end{textblock*}}
+
+\begin{document}
+\frontheader{Answer Sheets}
+\pagefooter{@@PAGE@@}
+\mbox{}
+\begin{textblock*}{170mm}(20mm,40mm)
+{\fontsize{11}{17}\selectfont\color{ink}
+Bu bo'limda 10 ta mock testning javoblari berilgan --- har bir mock uchun bitta sahifa. Faqat ikkala modulni ham tugatgandan keyin oching.
+
+\vspace{4mm}
+\textbf{Har bir sahifada:} har bir savol uchun javob, soha (\textbf{ALG} --- Algebra, \textbf{ADV} --- Advanced Math, \textbf{PSDA} --- Problem-Solving \& Data Analysis, \textbf{GT} --- Geometry \& Trigonometry) va daraja (\textbf{E} --- oson, \textbf{M} --- o'rta, \textbf{H} --- qiyin). Yulduzcha (*) bilan belgilangan savollar --- javobni o'zingiz yozadigan (grid-in) savollar.
+
+\vspace{4mm}
+\textbf{Xatolar bilan ishlash:}
+
+\vspace{1mm}
+\begin{tabular}{@{}p{5mm}p{150mm}@{}}
+{\color{accent}\Large\textbullet} & Xato qilgan savollaringizning sohasini sanang: bitta sohada ko'p xato bo'lsa, tegishli darsga qayting. \\[2mm]
+{\color{accent}\Large\textbullet} & 1-modulda oson (E) savolda xato qilgan bo'lsangiz --- bu bilim emas, e'tibor muammosi; sekinroq va aniqroq ishlang. \\[2mm]
+{\color{accent}\Large\textbullet} & 2-moduldagi qiyin (H) savollarni yecha olmagan bo'lsangiz --- tegishli darsdagi "Summit" to'plamini qayta ishlang. \\[2mm]
+{\color{accent}\Large\textbullet} & Vaqt yetmagan bo'lsa --- bu tezlik muammosi: 5-dars (Speed Tricks) ni takrorlang. \\
+\end{tabular}
+}
+\end{textblock*}
+\end{document}

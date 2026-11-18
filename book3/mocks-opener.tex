@@ -1,0 +1,73 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{0F6A52}
+\definecolor{badge}{HTML}{A9CFC2}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}\fill[accent] (0,0) rectangle (194mm,0.6mm);\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}}
+\newcommand{\frontheader}[1]{%
+\begin{textblock*}{194mm}(16mm,16mm)
+\begin{tikzpicture}\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (0,0) {#1};\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}\fill[accent] (0,0) rectangle (194mm,0.5mm);\end{tikzpicture}
+\end{textblock*}}
+
+\begin{document}
+\frontheader{Mock Tests}
+\pagefooter{@@PAGE@@}
+\mbox{}
+\begin{textblock*}{170mm}(20mm,40mm)
+{\fontsize{11}{17}\selectfont\color{ink}
+\textbf{10 ta to'liq mock test.} Har bir mock --- haqiqiy Digital SAT Math tuzilishi: ikki modul, har biri 22 savol, 35 daqiqa.
+
+\vspace{4mm}
+\textbf{1-modul} --- hamma uchun bir xil, oson, o'rta va qiyin savollar aralashmasi (taxminan 8 oson, 11 o'rta, 3 qiyin). Haqiqiy testda 1-moduldagi natijangiz 2-modulning qaysi versiyasini olishingizni belgilaydi.
+
+\vspace{2mm}
+\textbf{2-modul} --- bu kitobda doim \emph{qiyinroq yo'nalish} (taxminan 2 oson, 10 o'rta, 10 qiyin). Chunki yuqori ballga faqat shu yo'l olib boradi.
+
+\vspace{4mm}
+\textbf{Vaqt rejasi (har bir modulda):}
+
+\vspace{1mm}
+\begin{tabular}{@{}p{5mm}p{150mm}@{}}
+{\color{accent}\Large\textbullet} & 1--15-savollar: taxminan 18 daqiqa --- tez va aniq, shubhali savolni belgilab keting. \\[2mm]
+{\color{accent}\Large\textbullet} & 16--22-savollar: taxminan 17 daqiqa --- eng qiyin savollar oxirida joylashgan. \\[2mm]
+{\color{accent}\Large\textbullet} & So'nggi 2--3 daqiqa: belgilangan savollarga qaytish va barcha bo'sh javoblarni to'ldirish --- bo'sh javob nol ball, taxmin esa yo'q. \\
+\end{tabular}
+
+\vspace{4mm}
+\textbf{Qanday ishlash kerak:} har bir modulni o'z vaqtida, kalkulyator bilan (Desmos) bajaring. Modullar orasida 5--10 daqiqa dam oling. Javoblarni \textbf{tekshirmang} --- ikkala modulni tugatgach, kitob oxiridagi \textbf{Answer sheets} bo'limida (Mock Test raqami bo'yicha) javoblarni solishtiring. Har bir xato savol uchun uning sohasi (ALG, ADV, PSDA, GT) va darajasini belgilab boring --- shu ro'yxat sizga qaysi darsga qaytish kerakligini aytadi.
+
+\vspace{4mm}
+\textit{Haftasiga 1--2 ta mock yetarli: hammasini bir haftada ishlash shoshqaloqlikka va noto'g'ri xulosalarga olib keladi.}
+}
+\end{textblock*}
+\end{document}
