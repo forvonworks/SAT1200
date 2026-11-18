@@ -1,0 +1,319 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usetikzlibrary{fit,calc,positioning,arrows.meta}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{0F6A52}
+\definecolor{badge}{HTML}{A9CFC2}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagekicker}[1]{%
+\begin{textblock*}{100mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\node[fill=ink,text=white,font=\sffamily\bfseries\fontsize{8}{8}\selectfont,
+      inner sep=2.2pt,rounded corners=1pt] {\MakeUppercase{#1}};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\videobanner}[1]{%
+\begin{textblock*}{178mm}(16mm,25.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (178mm,-10mm);
+\draw[white,line width=0.6pt] (3mm,-1.7mm) rectangle (11.5mm,-8.3mm);
+\node[white,font=\sffamily\fontsize{4}{4.4}\selectfont,align=center] at (7.25mm,-5mm) {QR\\CODE};
+\node[white,font=\sffamily\bfseries\fontsize{9.5}{11}\selectfont,anchor=west] at (16mm,-5.6mm) {WATCH THE VIDEO BEFORE YOU SOLVE};
+\node[white,font=\sffamily\fontsize{7.5}{8}\selectfont,anchor=east] at (174mm,-5.6mm) {YouTube ~\textbullet~ #1};
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\newcommand{\cardbg}[4]{%
+\begin{textblock*}{#3mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\fill[badge!22,rounded corners=3mm] (0,0) rectangle (#3mm,-#4mm);
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pill}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {RULE ~\textperiodcentered~ #3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\newcommand{\pillw}[3]{%
+\begin{textblock*}{160mm}(#1mm,#2mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,anchor=north west,font=\sffamily\bfseries\fontsize{10}{10}\selectfont,
+      rounded corners=8pt,inner xsep=5mm,inner ysep=1.8mm] at (0,0) {#3};
+\end{tikzpicture}
+\end{textblock*}%
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+\renewcommand{\arraystretch}{1.5}
+
+
+\begin{document}
+\topicheader{1}{Disguised Word Problems}
+\videobanner{Lesson 1}
+\pagefooter{1}
+\mbox{}%
+
+\cardbg{16}{40.0}{178}{35.9}
+\pill{26}{43.0}{Read the last sentence first; define variables}
+\begin{textblock*}{158mm}(26mm,50.5mm)
+{\fontsize{15}{18}\selectfont underline what is asked: a total, a difference, a rate, \ ``how many more''}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,59.1mm)
+{\fontsize{13}{16}\selectfont $x$ = number of adult tickets \ (tickets): write a unit beside every symbol}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,66.5mm)
+{\fontsize{13}{16}\selectfont $s=75$ and $a=45$, but the question asks for $s-a=30$}
+\end{textblock*}
+
+\cardbg{16}{81.9}{178}{35.9}
+\pill{26}{84.9}{Words to symbols}
+\begin{textblock*}{158mm}(26mm,92.4mm)
+{\fontsize{15}{18}\selectfont $a$ more than $b\ \to\ b+a$ \qquad $a$ less than $b\ \to\ b-a$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,101.0mm)
+{\fontsize{13}{16}\selectfont $a$ times as many as $b\ \to\ a\cdot b$ \qquad $x$ exceeds $y$ by $k\ \to\ x=y+k$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,108.4mm)
+{\fontsize{13}{16}\selectfont 5 less than twice $n$: \ $2n-5$ \ (not $5-2n$)}
+\end{textblock*}
+
+\cardbg{16}{123.8}{178}{35.9}
+\pill{26}{126.8}{Inequality words}
+\begin{textblock*}{158mm}(26mm,134.3mm)
+{\fontsize{15}{18}\selectfont at least $\ge$ \quad at most, no more than $\le$ \quad more than $>$ \quad fewer than $<$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,142.9mm)
+{\fontsize{13}{16}\selectfont minimum count: round UP \qquad maximum count: round DOWN}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,150.3mm)
+{\fontsize{13}{16}\selectfont $14a\ge890\ \Rightarrow\ a\ge63.6\ \Rightarrow\ 64$ tickets}
+\end{textblock*}
+
+\cardbg{16}{165.7}{178}{35.9}
+\pill{26}{168.7}{Hidden given information}
+\begin{textblock*}{158mm}(26mm,176.2mm)
+{\fontsize{15}{18}\selectfont mean $\times$ count $=$ sum \qquad total $=$ part $+$ part \qquad ratio $3{:}5$: $3k,\ 5k$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,184.8mm)
+{\fontsize{13}{16}\selectfont a total can be hidden in a difference, a mean, or a ratio: rewrite it as an equation}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,192.2mm)
+{\fontsize{13}{16}\selectfont mean 18 of 5 numbers: sum 90; mean 20 of 6 numbers: sum 120; sixth number $30$}
+\end{textblock*}
+
+\cardbg{16}{207.6}{178}{35.9}
+\pill{26}{210.6}{Consecutive integers, ages, coins}
+\begin{textblock*}{158mm}(26mm,218.1mm)
+{\fontsize{15}{18}\selectfont $n,\ n+1,\ n+2$ \qquad even or odd: $n,\ n+2,\ n+4$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,226.7mm)
+{\fontsize{13}{16}\selectfont coins: value $=$ coin value $\times$ count \qquad ages: the age gap never changes}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,234.1mm)
+{\fontsize{13}{16}\selectfont three consecutive odd integers with sum 111: the middle one is $111\div3=37$}
+\end{textblock*}
+\clearpage
+\topicheader{1}{Disguised Word Problems}
+\pagekicker{Rules sheet -- 2/3}
+\pagefooter{2}
+\mbox{}%
+
+\cardbg{16}{33.0}{178}{35.9}
+\pill{26}{36.0}{Chains and extra information}
+\begin{textblock*}{158mm}(26mm,43.5mm)
+{\fontsize{15}{18}\selectfont find the intermediate quantity, then answer the quantity asked}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,52.1mm)
+{\fontsize{13}{16}\selectfont cross out every number that no equation uses (fees, distances, prices not asked about)}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,59.5mm)
+{\fontsize{13}{16}\selectfont 35 scones $\to$ scone sales $35\times4.50$}
+\end{textblock*}
+
+\cardbg{16}{74.9}{178}{47.9}
+\pill{26}{77.9}{Rate, time, distance and work}
+\begin{textblock*}{158mm}(26mm,86.9mm)
+{\fontsize{15}{18}\selectfont $d=rt$ \qquad job rates add: $\dfrac1{t_1}+\dfrac1{t_2}=\dfrac1{t}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,99.0mm)
+{\fontsize{13}{16}\selectfont average speed $=\dfrac{\text{total distance}}{\text{total time}}$, never the mean of the two speeds}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,109.9mm)
+{\fontsize{13}{16}\selectfont 24 km at 12 km/h and back at 8 km/h: $\dfrac{48}{2+3}=9.6$ km/h}
+\end{textblock*}
+
+\cardbg{16}{128.8}{178}{35.9}
+\pill{26}{131.8}{Mixtures}
+\begin{textblock*}{158mm}(26mm,139.3mm)
+{\fontsize{15}{18}\selectfont amount $\times$ concentration adds: \ $c_1v_1+c_2v_2=c_3(v_1+v_2)$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,147.9mm)
+{\fontsize{13}{16}\selectfont draining $x$ of a mixture removes $x\times$ its concentration, not $x$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,155.3mm)
+{\fontsize{13}{16}\selectfont 50 L at $20\%$, drain $x$, add $x$ pure: $10-0.2x+x=18$}
+\end{textblock*}
+
+\cardbg{16}{170.7}{178}{39.4}
+\pill{26}{173.7}{Units hidden in context}
+\begin{textblock*}{158mm}(26mm,181.2mm)
+{\fontsize{15}{18}\selectfont convert first: min $\to$ h $(\div60)$ \quad W $\to$ kW $(\div1000)$ \quad week $\to$ days}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,189.8mm)
+{\fontsize{13}{16}\selectfont per-day rate $\times$ days, per-hour rate $\times$ hours: the units must cancel}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,197.2mm)
+{\fontsize{13}{16}\selectfont 1.5 kW for 40 min a day for 30 days: $1.5\times\tfrac{40}{60}\times30=30$ kWh}
+\end{textblock*}
+
+\cardbg{16}{216.1}{178}{35.9}
+\pill{26}{219.1}{Invented notation}
+\begin{textblock*}{158mm}(26mm,226.6mm)
+{\fontsize{15}{18}\selectfont $a\star b=2a-b^2$: first symbol $\to a$, second symbol $\to b$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,235.2mm)
+{\fontsize{13}{16}\selectfont nested operations: inside first \qquad simplify the definition if you can}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,242.6mm)
+{\fontsize{13}{16}\selectfont $(3\star4)\star2=(-10)\star2=-24$ \qquad $(a+b)^2-(a-b)^2=4ab$}
+\end{textblock*}
+\clearpage
+\topicheader{1}{Disguised Word Problems}
+\pagekicker{Rules sheet -- 3/3}
+\pagefooter{3}
+\mbox{}%
+
+\cardbg{16}{33.0}{178}{35.9}
+\pill{26}{36.0}{Which model?}
+\begin{textblock*}{158mm}(26mm,43.5mm)
+{\fontsize{15}{18}\selectfont constant difference: linear \qquad constant ratio: exponential}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,52.1mm)
+{\fontsize{13}{16}\selectfont two linear parts multiplied: quadratic \qquad doubling differences: exponential}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,59.5mm)
+{\fontsize{13}{16}\selectfont $5,8,14,26$: differences $3,6,12$, so $N=2+3\cdot2^t$}
+\end{textblock*}
+
+\cardbg{16}{74.9}{178}{35.9}
+\pill{26}{77.9}{What does it represent?}
+\begin{textblock*}{158mm}(26mm,85.4mm)
+{\fontsize{15}{18}\selectfont $y=mx+b$: \ $m$ = change in $y$ per 1 unit of $x$ \qquad $b$ = value at $x=0$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,94.0mm)
+{\fontsize{13}{16}\selectfont an intercept is where the other variable is $0$ \qquad $a\,b^{t/n}$: factor $b$ every $n$ units}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,101.4mm)
+{\fontsize{13}{16}\selectfont $L=46-2t$: 2 cm lost per minute; empty at $t=23$}
+\end{textblock*}
+
+\cardbg{16}{116.8}{178}{35.9}
+\pill{26}{119.8}{Plug in the answer choices}
+\begin{textblock*}{158mm}(26mm,127.3mm)
+{\fontsize{15}{18}\selectfont test a middle choice first; a wrong choice must fail one condition}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,135.9mm)
+{\fontsize{13}{16}\selectfont use it when the algebra is long or the asked quantity is hard to isolate}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,143.3mm)
+{\fontsize{13}{16}\selectfont digit sum 11, reversing adds 27: $47\to74$ works}
+\end{textblock*}
+
+\cardbg{16}{158.7}{178}{35.9}
+\pill{26}{161.7}{Patterns and counting}
+\begin{textblock*}{158mm}(26mm,169.2mm)
+{\fontsize{15}{18}\selectfont linear: $a_n=a_1+(n-1)d$ \qquad exponential: $a_n=a_1r^{\,n-1}$}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,177.8mm)
+{\fontsize{13}{16}\selectfont recursive rule: generate terms \qquad counting: multiply choices, subtract forbidden}
+\end{textblock*}
+\begin{textblock*}{158mm}(26mm,185.2mm)
+{\fontsize{13}{16}\selectfont border of an $n\times n$ square: $4n-4$ \qquad $4\cdot5\cdot4-4=76$ meals}
+\end{textblock*}
+
+\cardbg{16}{200.6}{178}{75.0}
+\pillw{26}{203.6}{NEW WORDS ~\textperiodcentered~ YANGI SO'ZLAR}
+\begin{textblock*}{80mm}(26mm,213.1mm)
+{\fontsize{10.5}{12}\selectfont
+\begin{tabular}{@{}>{\bfseries}p{31mm}>{\raggedright\arraybackslash}p{42mm}@{}}
+\cellcolor{accent}\textcolor{white}{\sffamily English} & \cellcolor{accent}\textcolor{white}{\sffamily O'zbekcha}\\
+\rowcolor{badge!45} variable & {\itshape o'zgaruvchi}\\
+\rowcolor{white} unit & {\itshape o'lchov birligi}\\
+\rowcolor{badge!45} rate & {\itshape tezlik, me'yor}\\
+\rowcolor{white} ratio & {\itshape nisbat}\\
+\rowcolor{badge!45} mean (average) & {\itshape o'rtacha qiymat}\\
+\rowcolor{white} consecutive & {\itshape ketma-ket}\\
+\rowcolor{badge!45} at least & {\itshape kamida}\\
+\rowcolor{white} at most & {\itshape ko'pi bilan}\\
+\end{tabular}}
+\end{textblock*}
+\begin{textblock*}{80mm}(108mm,213.1mm)
+{\fontsize{10.5}{12}\selectfont
+\begin{tabular}{@{}>{\bfseries}p{31mm}>{\raggedright\arraybackslash}p{42mm}@{}}
+\cellcolor{accent}\textcolor{white}{\sffamily English} & \cellcolor{accent}\textcolor{white}{\sffamily O'zbekcha}\\
+\rowcolor{badge!45} mixture & {\itshape aralashma}\\
+\rowcolor{white} concentration & {\itshape konsentratsiya}\\
+\rowcolor{badge!45} sequence & {\itshape ketma-ketlik}\\
+\rowcolor{white} model & {\itshape model}\\
+\rowcolor{badge!45} intercept & {\itshape o'q bilan kesishish nuqtasi}\\
+\rowcolor{white} total & {\itshape jami}\\
+\rowcolor{badge!45} difference & {\itshape ayirma, farq}\\
+\end{tabular}}
+\end{textblock*}
+
+\end{document}
