@@ -32,7 +32,7 @@ Decisions + blueprint: see BOOK3-SPEC.md.
 | Lesson 6 | DONE, verified (74 problems) |
 | Lesson 7 | DONE, verified (74 problems) |
 | Lesson 8 | DONE, verified (74 problems, 16 true-scale figures) |
-| Lesson 9 | in progress |
+| Lesson 9 | DONE, verified (74 problems, 19 figures) |
 | Mocks 4-10 | not started |
 | Lessons 1,2,3,4,6,7,8,9 | not started (use lesson-05-speed-tricks as the reference once verified) |
 | Front matter, TOC, notes pages, answer-sheets section, back cover, assembly + paging check | not started |

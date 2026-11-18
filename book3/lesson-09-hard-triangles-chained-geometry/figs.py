@@ -244,7 +244,7 @@ def fig_pent(Bd=125, Cd=140, Dd=95, tB=r"$(2x+45)^\circ$", tC=r"$(3x+20)^\circ$"
     parts = [poly(pts), parmark(A, B, 1), parmark(E, Dp, 1)]
     for i, nm in enumerate("ABCDE"):
         parts.append(vlabel(pts[i], "$%s$" % nm, cen, 3.0))
-    for i, tx, rr in ((1, tB, 9.5), (2, tC, 10.5), (3, tD, 9.5)):
+    for i, tx, rr in ((1, tB, 8.0), (2, tC, 13.5), (3, tD, 8.0)):
         v0 = pts[i]
         parts.append(angle_mark(v0, pts[i - 1], pts[(i + 1) % 5], 4.0))
         parts.append(r"\node at %s {%s};" % (P(add(v0, mul(unit(cen, v0), rr))), tx))
