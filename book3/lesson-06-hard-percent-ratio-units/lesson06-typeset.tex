@@ -1,0 +1,475 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+\usepackage{multirow}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{0F6A52}
+\definecolor{badge}{HTML}{A9CFC2}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\emergencystretch=3em
+\abovedisplayskip=4pt plus 2pt minus 2pt \belowdisplayskip=4pt plus 2pt minus 2pt \abovedisplayshortskip=2pt \belowdisplayshortskip=2pt
+\pagestyle{empty}
+
+\newcommand{\LCOL}{16mm}
+\newcommand{\RCOL}{111mm}
+\newcommand{\COLW}{83mm}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\newcommand{\colrule}[2]{%
+\begin{textblock*}{1mm}(105mm,#1mm)
+\begin{tikzpicture}
+\draw[black!65,line width=0.5pt] (0,0) -- (0,#2mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\setkicker}[2]{%
+{\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
+}
+
+\setlength{\fboxsep}{1.4pt}
+\setlength{\fboxrule}{0.5pt}
+\newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
+
+% ---- SAT-style multiple-choice block (2x2 grid of short choices) ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\par\nobreak\vspace{2mm}%
+\noindent\hspace*{7mm}\begin{tabular}[t]{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\par\vspace{5.5mm}%
+}
+
+% ---- stacked choices for long ones ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\par\nobreak\vspace{2mm}%
+\noindent\hspace*{7mm}(A) #3\par\vspace{1.6mm}%
+\noindent\hspace*{7mm}(B) #4\par\vspace{1.6mm}%
+\noindent\hspace*{7mm}(C) #5\par\vspace{1.6mm}%
+\noindent\hspace*{7mm}(D) #6\par\vspace{5.5mm}%
+}
+
+% ---- student-produced response (grid-in) ----
+\newcommand{\satg}[2]{%
+\noindent\pnum{#1} {\sffamily\bfseries\fontsize{7}{8}\selectfont\color{accent}GRID-IN}\ #2\par\nobreak\vspace{2.5mm}%
+\noindent\hspace*{7mm}{\sffamily\fontsize{8.5}{10}\selectfont Answer:}\ \rule[-1.2mm]{28mm}{0.4pt}\par\vspace{5.5mm}%
+}
+
+% ---- worked-solution entry ----
+\newcommand{\solitem}[4]{%
+\noindent\pnum{#1} {\bfseries #2}\ —\ #3\ {\itshape\color{accent}[#4]}\par\vspace{2.1mm}%
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+\renewcommand{\arraystretch}{1.3}
+
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\newcommand{\pgoff}{0}
+\renewcommand{\solitem}[4]{\noindent\parbox[t]{\linewidth}{\raggedright\pnum{#1} {\bfseries #2}\ ---\ #3\ {\itshape\color{accent}[#4]}}\par\vspace{3.6mm}}
+\newcommand{\solkicker}[2]{\Needspace{38mm}\vspace{1.5mm}{\sffamily\bfseries\fontsize{12.5}{15}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{3mm}}
+\renewcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\par\nobreak\vspace{2mm}%
+\noindent\hangindent=13mm\hangafter=1\hspace*{7mm}(A)~#3\par\vspace{1.6mm}%
+\noindent\hangindent=13mm\hangafter=1\hspace*{7mm}(B)~#4\par\vspace{1.6mm}%
+\noindent\hangindent=13mm\hangafter=1\hspace*{7mm}(C)~#5\par\vspace{1.6mm}%
+\noindent\hangindent=13mm\hangafter=1\hspace*{7mm}(D)~#6\par\vspace{5.5mm}%
+}
+\newcommand{\solkitem}[5]{\noindent\parbox[t]{\linewidth}{\vspace{1.5mm}{\sffamily\bfseries\fontsize{12.5}{15}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} Worked solutions}\par\vspace{3mm}\raggedright\pnum{#2} {\bfseries #3}\ ---\ #4\ {\itshape\color{accent}[#5]}}\par\vspace{3.6mm}}
+\fancypagestyle{solstyle}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}%
+ \fancyhead[L]{\topicheader{6}{Hard Percent, Ratio \& Units}}%
+ \fancyfoot[L]{\pagefooter{\the\numexpr\value{page}+\pgoff\relax}}}
+
+\begin{document}
+\topicheader{6}{Hard Percent, Ratio \& Units}
+\pagefooter{1}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 1}{Bridge: the core moves, one problem each.}
+\satq{1}{A price is increased by $20\%$, and then the new price is decreased by $20\%$. The final price is what percent of the original price?}{$80\%$}{$96\%$}{$100\%$}{$104\%$}
+\satq{2}{After a $15\%$ discount, a jacket sells for \$102. What was the price of the jacket before the discount?}{$\$86.70$}{$\$117.00$}{$\$117.30$}{$\$120.00$}
+\satg{3}{The unemployment rate in a town rose from $4\%$ to $5\%$. By what percent did the unemployment rate increase?}
+\satq{4}{A rug has an area of $3$ square feet. What is its area in square inches? ($1$ foot $=12$ inches)}{$36$}{$144$}{$432$}{$1{,}728$}
+\satq{5}{The ratio of cats to dogs at a shelter is $3:5$. After $6$ more cats arrive, the number of cats equals the number of dogs. How many animals were at the shelter at first?}{$8$}{$15$}{$24$}{$30$}
+\satq{6}{Apples, pears and plums are mixed in the ratio $2:3:6$ by count. There are $36$ more plums than apples. How many pears are there?}{$54$}{$27$}{$18$}{$9$}
+\satq{7}{Of $800$ people surveyed, $60\%$ own a car. Of the car owners, $35\%$ drive an electric car. How many of the $800$ people are car owners who drive an electric car?}{$168$}{$280$}{$480$}{$760$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 1 (cont.)}{Bridge}
+\satq{8}{A deposit of \$2,000 earns $5\%$ interest per year, compounded annually, with nothing else added or withdrawn. To the nearest dollar, what is the balance after $3$ years?}{$\$2{,}100$}{$\$2{,}300$}{$\$2{,}315$}{$\$6{,}300$}
+\satg{9}{A car travels at $72$ kilometers per hour. How many meters does the car travel each second?}
+\satq{10}{A cyclist rides $12$ km uphill at $12$ km/h and then rides back down the same $12$ km at $24$ km/h. What is the cyclist's average speed, in km/h, for the whole trip?}{$8$}{$16$}{$18$}{$24$}
+\satq{11}{Every length of a figure is multiplied by $4$ to make a similar, larger figure. The original figure has an area of $12$ square centimeters. What is the area of the larger figure, in square centimeters?}{$16$}{$48$}{$192$}{$768$}
+\satg{12}{Store A's price for a camera is $150\%$ more than Store B's price. Store A's price is how many times Store B's price?}
+\vspace{3mm}
+\setkicker{Set 2}{Percent change: chains, reversals and wording traps.}
+\satq{1}{A customer buys a tablet after a $20\%$ store discount, and then uses a coupon that takes an additional $15\%$ off the already discounted price. She pays \$204. What was the original price of the tablet?}{$\$313.85$}{$\$300.00$}{$\$275.40$}{$\$240.00$}
+}
+\end{textblock*}
+\clearpage
+\topicheader{6}{Hard Percent, Ratio \& Units}
+\pagefooter{2}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 2 (cont.)}{Percent change}
+\satqw{2}{In a poll, the share of voters who support a measure rose from $40\%$ to $46\%$. Which statement is true?}{The share rose by $6$ percentage points, which is a $15\%$ increase.}{The share rose by $6\%$.}{The share rose by $15$ percentage points.}{The share rose by $6$ percentage points, which is a $13\%$ increase.}
+\satg{3}{A price is increased by $x\%$, and then the new price is decreased by $x\%$. The final price is $91\%$ of the original price. What is the value of $x$?}
+\satq{4}{Machine A produces $75\%$ more widgets per hour than machine B. Machine A produces $210$ widgets per hour. How many widgets per hour does machine B produce?}{$280$}{$157.5$}{$135$}{$120$}
+\satq{5}{In a survey of $500$ customers, $30\%$ are under $25$ years old. Of the customers under $25$, $40\%$ prefer streaming; of the customers who are $25$ or older, $20\%$ prefer streaming. How many of the $500$ customers prefer streaming?}{$200$}{$150$}{$130$}{$60$}
+\satq{6}{A diner's bill before tax is $x$ dollars. A $10\%$ tax is added to the bill, and then the diner leaves a $20\%$ tip on the amount that includes tax. The diner pays \$198 in all. What is $x$?}{$\$150.00$}{$\$152.31$}{$\$165.00$}{$\$180.00$}
+\satq{7}{An investment grew by $25\%$ during its first year. In the second year it fell by $p\%$, and after the two years it was $12.5\%$ above its starting value. What is $p$?}{$25$}{$20$}{$12.5$}{$10$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 2 (cont.)}{Percent change}
+\satg{8}{A price rises by $60\%$. By what percent must the new price fall to return to the original price?}
+\satq{9}{The positive number $x$ is $30\%$ less than $y$, and $y$ is $20\%$ greater than $z$. The number $x$ is what percent of $z$?}{$70\%$}{$84\%$}{$90\%$}{$120\%$}
+\satq{10}{A company's revenue in 2021 was $40\%$ greater than its revenue in 2020. Revenue in 2022 was $1.5$ times the revenue in 2021. Revenue in 2022 was what percent greater than revenue in 2020?}{$210\%$}{$150\%$}{$110\%$}{$90\%$}
+\satg{11}{A store buys a jacket for \$80 and marks the price up by $60\%$. Later the store sells the jacket for $25\%$ off the marked price. The store's profit is what percent of its cost?}
+\satq{12}{A student measures a rod and gets $144$ cm, which is $4\%$ below the rod's true length. What is the true length of the rod, in centimeters?}{$138.24$}{$148$}{$149.76$}{$150$}
+\satqw{13}{A store raises the price of an item by $25\%$. After the increase, the number of units sold falls by $20\%$. By what percent does the store's revenue from this item change?}{It decreases by $5\%$.}{It does not change.}{It increases by $5\%$.}{It increases by $45\%$.}
+\satg{14}{A jar contains only red and blue marbles, and $40\%$ of the marbles are red. After $20$ blue marbles are removed, $50\%$ of the marbles in the jar are red. How many marbles were in the jar originally?}
+}
+\end{textblock*}
+\clearpage
+\topicheader{6}{Hard Percent, Ratio \& Units}
+\pagefooter{3}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 3}{Interest, mixtures, weighted averages and tables.}
+\satq{1}{An account pays interest at an annual rate of $12\%$, compounded monthly (that is, $1\%$ each month). If $P$ is the initial deposit, which function gives the balance after $t$ years?}{$P(1.01)^{12t}$}{$P(1.12)^{t}$}{$P(1.12)^{12t}$}{$P(1.01)^{t}$}
+\satg{2}{Two accounts each start with \$10,000. Account A earns $5\%$ simple interest per year. Account B earns $5\%$ interest per year, compounded annually. After $3$ years, how many more dollars does Account B hold than Account A?}
+\satq{3}{The balance of a loan grows by $1.5\%$ each month with no payments. Which is closest to the percent by which the balance grows in one year?}{$18.0\%$}{$19.6\%$}{$119.6\%$}{$180\%$}
+\satq{4}{How many liters of a $10\%$ acid solution must be added to $6$ liters of a $40\%$ acid solution to make a $30\%$ acid solution?}{$12$}{$9$}{$6$}{$3$}
+\satg{5}{A $12$-liter solution is $35\%$ salt by volume. How many liters of water must evaporate so that the remaining solution is $60\%$ salt by volume?}
+\satq{6}{A teacher records the mean score for three sections of a course. $$\begin{tabular}{|c|c|c|}\hline Section & Students & Mean score\\\hline I & 20 & 80\\ II & 30 & 70\\ III & 50 & 90\\\hline\end{tabular}$$ What is the mean score of all $100$ students?}{$79$}{$80$}{$82$}{$90$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 3 (cont.)}{Interest and mixtures}
+\satg{7}{A class has $30$ students with a mean test score of $72$. The $18$ girls in the class have a mean score of $78$. What is the mean score of the boys?}
+\satq{8}{Employees at a company are classified by shift and by employment status. $$\begin{tabular}{|c|c|c|}\hline & Day shift & Night shift\\\hline Full-time & 180 & 120\\ Part-time & 90 & 110\\\hline\end{tabular}$$ Which is closest to the percent of night-shift employees who are full-time?}{$24\%$}{$40\%$}{$52\%$}{$67\%$}
+\satg{9}{Solution X is $20\%$ alcohol and solution Y is $50\%$ alcohol, both by volume. A mixture of only X and Y is $38\%$ alcohol by volume. What fraction of the mixture's volume is solution Y? (Enter a fraction or a decimal.)}
+\satq{10}{Annual sales of four product lines, in thousands of dollars: $$\begin{tabular}{|c|c|c|}\hline Line & 2020 & 2023\\\hline A & 60 & 75\\ B & 200 & 250\\ C & 150 & 195\\ D & 20 & 27\\\hline\end{tabular}$$ Which line had the greatest percent increase in sales from 2020 to 2023?}{Line D}{Line A}{Line B}{Line C}
+\satq{11}{What initial deposit, to the nearest dollar, grows to exactly \$3,000 in $2$ years at $10\%$ interest per year, compounded annually?}{$\$3{,}630$}{$\$2{,}727$}{$\$2{,}500$}{$\$2{,}479$}
+}
+\end{textblock*}
+\clearpage
+\topicheader{6}{Hard Percent, Ratio \& Units}
+\pagefooter{4}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 3 (cont.)}{Interest and mixtures}
+\satq{12}{A car bought for \$24,000 loses $15\%$ of its value each year. After how many whole years is the car's value first below \$12,000?}{$6$}{$5$}{$4$}{$3$}
+\satq{13}{An account pays $4\%$ simple interest per year on the original deposit. After $5$ years the balance is \$6,300. What was the original deposit?}{$\$5{,}040$}{$\$5{,}178$}{$\$5{,}250$}{$\$6{,}058$}
+\satq{14}{A $20$-liter tank holds a $15\%$ antifreeze solution. A technician drains $x$ liters of the mixture and replaces it with pure antifreeze, making the $20$ liters a $32\%$ antifreeze solution. What is $x$?}{$3.4$}{$4$}{$5$}{$6.4$}
+\vspace{3mm}
+\setkicker{Set 4}{Ratios, rates, units and similar figures.}
+\satq{1}{The ratio of blue marbles to red marbles in a bag is $3:7$. After $8$ red marbles are removed, the ratio of blue to red is $3:5$. How many blue marbles are in the bag?}{$4$}{$12$}{$20$}{$28$}
+\satg{2}{In a club, the ratio of juniors to non-juniors is $3$ to $5$. Among the non-juniors, the ratio of seniors to sophomores is $2$ to $3$. The club has $96$ members. How many sophomores are in the club?}
+\satq{3}{A tank has a volume of $2.5$ cubic meters. How many liters does it hold? ($1$ liter $=1000$ cubic centimeters and $1$ meter $=100$ centimeters)}{$2.5$}{$250$}{$2{,}500$}{$2{,}500{,}000$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 4 (cont.)}{Ratios and units}
+\satq{4}{Floor tile costs \$4.50 per square foot. A rectangular floor measures $3$ yards by $4$ yards. What is the cost of tiling the floor? ($1$ yard $=3$ feet)}{$\$486.00$}{$\$54.00$}{$\$162.00$}{$\$1{,}458.00$}
+\satg{5}{Pump A can fill an empty tank in $6$ hours working alone, and pump B can fill it in $12$ hours working alone. Drain C can empty a full tank in $9$ hours. If both pumps and the drain all run together, how many hours does it take to fill the empty tank?}
+\satq{6}{A runner runs for $2$ hours at $10$ km/h and then for $3$ hours at $15$ km/h. What is the runner's average speed, in km/h, for the whole run?}{$12$}{$12.5$}{$65$}{$13$}
+\satq{7}{On a map, $2.5$ centimeters represent $8$ kilometers. A lake is shown on the map with an area of $30$ square centimeters. What is the actual area of the lake, in square kilometers?}{$96$}{$240$}{$307.2$}{$983.04$}
+\satg{8}{Two similar solids have surface areas of $50$ square centimeters and $450$ square centimeters. The smaller solid has a volume of $40$ cubic centimeters. What is the volume, in cubic centimeters, of the larger solid?}
+\satq{9}{Two triangles are similar. Their areas are $20$ square centimeters and $45$ square centimeters. The perimeter of the smaller triangle is $24$ centimeters. What is the perimeter of the larger triangle, in centimeters?}{$36$}{$49$}{$54$}{$81$}
+\satg{10}{A metal cube with edges of $4$ centimeters has a mass of $512$ grams. A second cube is made of the same metal and has edges of $6$ centimeters. What is the mass of the second cube, in kilograms?}
+}
+\end{textblock*}
+\clearpage
+\topicheader{6}{Hard Percent, Ratio \& Units}
+\pagefooter{5}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 4 (cont.)}{Ratios and units}
+\satq{11}{A rock sample has a density of $2.7$ grams per cubic centimeter. What is the mass, in kilograms, of $2$ cubic meters of this rock?}{$5{,}400{,}000$}{$5{,}400$}{$540$}{$5.4$}
+\satq{12}{A faucet adds water to an empty tank at $12$ liters per minute. A leak removes water at $0.15$ liter per second. How many minutes does it take to fill a $450$-liter tank?}{$21.4$}{$37.5$}{$38.0$}{$150$}
+\satq{13}{A scale model of a ship is built with a length scale of $1:40$ (every length on the model is $\frac1{40}$ of the real length). The real ship's deck has an area of $2{,}560$ square meters. What is the area of the deck on the model, in square meters?}{$1.6$}{$6.4$}{$64$}{$102{,}400$}
+\satq{14}{Four workers paint $3$ identical houses in $9$ days, all working at the same steady pace. At this pace, how many days will $8$ workers take to paint $10$ identical houses?}{$4.5$}{$15$}{$30$}{$60$}
+\vspace{3mm}
+\setkicker{Set 5}{Summit: the hardest mixed problems.}
+\satq{1}{At a school, the ratio of boys to girls is $4:5$. Next year the number of boys will increase by $25\%$ and the number of girls will decrease by $20\%$. What will the ratio of boys to girls be next year?}{$4:5$}{$1:1$}{$5:4$}{$25:16$}
+\satq{2}{Town A has $20\%$ more residents than Town B. Then the population of A falls by $10\%$ while the population of B grows by $5\%$. After these changes, the population of A is closest to what percent of the population of B?}{$103\%$}{$108\%$}{$115\%$}{$126\%$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 5 (cont.)}{Summit}
+\satq{3}{During a sale, a store takes $25\%$ off every marked price. At the sale price the store still earns a $20\%$ profit on its cost. The marked price was what percent above the store's cost?}{$80\%$}{$60\%$}{$50\%$}{$45\%$}
+\satg{4}{A chemist mixes solution P ($10\%$ salt) with solution Q ($40\%$ salt) to make $30$ liters of a $22\%$ salt solution. She then adds $w$ liters of pure water, and the diluted solution is $15\%$ salt. What is $w$?}
+\satg{5}{Account A pays $6\%$ simple interest per year on its initial deposit. Account B pays $5\%$ interest per year, compounded annually. Both start with the same deposit. After how many whole years does Account B first hold more than Account A?}
+\satq{6}{Machine A alone can finish a job in $8$ hours, and machine B alone can finish it in $24$ hours. They work together for $3$ hours; then A stops and B finishes the rest alone. How many hours does the whole job take, counting from the start?}{$6$}{$12$}{$27$}{$15$}
+\satq{7}{A car uses $7.5$ liters of fuel per $100$ kilometers. Which is closest to the car's fuel economy in miles per gallon? ($1$ mile $=1.6$ kilometers and $1$ gallon $=3.8$ liters)}{$2$}{$13$}{$32$}{$81$}
+\satg{8}{A cube-shaped tank has an inside edge length of $1.2$ meters. Water flows into the empty tank at $0.5$ liter per second. How many minutes does it take to fill the tank? ($1$ cubic meter $=1000$ liters)}
+}
+\end{textblock*}
+\clearpage
+\topicheader{6}{Hard Percent, Ratio \& Units}
+\pagefooter{6}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 5 (cont.)}{Summit}
+\satq{9}{The radius and the height of a cone are each increased by $20\%$. By what percent does the volume of the cone increase?}{$20\%$}{$44\%$}{$60\%$}{$72.8\%$}
+\satq{10}{Last year, $80\%$ of a school's seniors graduated. This year the number of seniors increased by $25\%$ and the number of graduates increased by $30\%$. By how many percentage points did the graduation rate change?}{$3.2$}{$4$}{$5$}{$83.2$}
+\satq{11}{A company has $2{,}000$ customers in three age groups. $${\small\setlength{\tabcolsep}{4pt}\begin{tabular}{|c|c|c|}\hline Age group & \% of customers & \% who subscribe\\\hline Under 30 & 45\% & 60\%\\ 30 to 49 & 35\% & 40\%\\ 50 and over & 20\% & 15\%\\\hline\end{tabular}}$$ Of all the customers who subscribe, which is closest to the percent who are under $30$?}{$27\%$}{$45\%$}{$60\%$}{$61\%$}
+\satq{12}{A tub holds $120$ liters. A faucet adds water at $12$ liters per minute. After $5$ minutes of faucet alone, the drain is opened; it removes $8$ liters per minute while the faucet keeps running. How many more minutes pass until the tub is full?}{$5$}{$15$}{$20$}{$30$}
+\satq{13}{A bacteria culture quadruples every $6$ hours. Which is closest to the percent by which the culture grows each hour?}{$26\%$}{$50\%$}{$67\%$}{$300\%$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 5 (cont.)}{Summit}
+\satq{14}{Brand X costs $40\%$ less per ounce than Brand Y. A $12$-ounce package of Brand X costs \$5.40. How much does a $16$-ounce package of Brand Y cost?}{$\$7.20$}{$\$10.08$}{$\$12.00$}{$\$18.00$}
+\satq{15}{If $30\%$ of $P$ equals $45\%$ of $Q$, where $P$ and $Q$ are positive, then $P$ is what percent of $Q$?}{$15\%$}{$66\tfrac23\%$}{$75\%$}{$150\%$}
+\satg{16}{A company's profit rose $20\%$ from Year 1 to Year 2, fell $25\%$ from Year 2 to Year 3, and rose $40\%$ from Year 3 to Year 4. The Year 4 profit was \$63,000. What was the profit, in dollars, in Year 1?}
+\satg{17}{In a class, the mean score of the girls is $12$ points higher than the mean score of the boys. The mean score of the whole class is $3$ points higher than the boys' mean. What percent of the class is girls?}
+\satg{18}{Each edge of a cube is decreased by $10\%$. The surface area of the cube decreases by $a\%$ and the volume decreases by $b\%$. What is the value of $b-a$?}
+\satq{19}{A rectangular field of $2$ hectares receives $25$ millimeters of rain, spread evenly over the field. How many liters of water fall on the field? ($1$ hectare $=10{,}000$ square meters and $1$ cubic meter $=1000$ liters)}{$500{,}000$}{$500$}{$50{,}000$}{$5{,}000{,}000$}
+\satq{20}{The radius of a circle is measured as $5\%$ greater than its true value. The area computed from the measured radius is what percent greater than the true area?}{$10.25\%$}{$5\%$}{$10\%$}{$25\%$}
+}
+\end{textblock*}
+\clearpage
+\topicheader{6}{Hard Percent, Ratio \& Units}
+\pagefooter{7}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key\par}
+\end{textblock*}
+\begin{textblock*}{178mm}(16mm,41mm)
+{\fontsize{9.5}{12}\selectfont\color{black!70}\centering Multiple choice: the letter. Grid-in: the number to enter. Worked solutions follow on the next pages.\par}
+\end{textblock*}
+\begin{textblock*}{178mm}(16mm,52mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\setlength{\tabcolsep}{2pt}\renewcommand{\arraystretch}{1.3}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 1 \ \textmd{\itshape\small Bridge: the core moves}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+\textbf{B} & \textbf{D} & 25 & \textbf{C} & \textbf{C} & \textbf{B} & \textbf{A} & \textbf{C} & 20 & \textbf{B}\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12}\\
+\hline
+\textbf{C} & 2.5\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 2 \ \textmd{\itshape\small Percent change: chains, reversals, traps}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+\textbf{B} & \textbf{A} & 30 & \textbf{D} & \textbf{C} & \textbf{A} & \textbf{D} & 37.5 & \textbf{B} & \textbf{C}\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12} & \cellcolor{badge!55}\textbf{13} & \cellcolor{badge!55}\textbf{14}\\
+\hline
+20 & \textbf{D} & \textbf{B} & 100\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 3 \ \textmd{\itshape\small Interest, mixtures, averages, tables}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+\textbf{A} & 76.25 & \textbf{B} & \textbf{D} & 5 & \textbf{C} & 63 & \textbf{C} & 0.6 & \textbf{A}\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12} & \cellcolor{badge!55}\textbf{13} & \cellcolor{badge!55}\textbf{14}\\
+\hline
+\textbf{D} & \textbf{B} & \textbf{C} & \textbf{B}\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 4 \ \textmd{\itshape\small Ratios, rates, units, similar figures}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+\textbf{B} & 36 & \textbf{C} & \textbf{A} & 7.2 & \textbf{D} & \textbf{C} & 1080 & \textbf{A} & 1.728\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12} & \cellcolor{badge!55}\textbf{13} & \cellcolor{badge!55}\textbf{14}\\
+\hline
+\textbf{B} & \textbf{D} & \textbf{A} & \textbf{B}\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 5 \ \textmd{\itshape\small Summit: the hardest mixed problems}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+\textbf{C} & \textbf{A} & \textbf{B} & 14 & 9 & \textbf{D} & \textbf{C} & 57.6 & \textbf{D} & \textbf{A}\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12} & \cellcolor{badge!55}\textbf{13} & \cellcolor{badge!55}\textbf{14} & \cellcolor{badge!55}\textbf{15} & \cellcolor{badge!55}\textbf{16} & \cellcolor{badge!55}\textbf{17} & \cellcolor{badge!55}\textbf{18} & \cellcolor{badge!55}\textbf{19} & \cellcolor{badge!55}\textbf{20}\\
+\hline
+\textbf{D} & \textbf{B} & \textbf{A} & \textbf{C} & \textbf{D} & 50000 & 25 & 8.1 & \textbf{A} & \textbf{A}\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+}
+\end{textblock*}
+\clearpage
+%%AUTOFLOW-SOLUTIONS
+\newgeometry{top=34mm,bottom=24mm,left=16mm,right=16mm}
+\pagestyle{solstyle}
+\setlength{\columnsep}{14mm}\setlength{\columnseprule}{0.4pt}
+{\fontsize{10}{13.6}\selectfont
+\begin{multicols}{2}
+\solkitem{Set 1}{1}{B ($96\%$)}{Multiply the factors: $1.20\times0.80=0.96$, so the final price is $96\%$ of the original. The $20\%$ drop is taken from the larger new price, so the changes do not cancel. ($100\%$ assumes they cancel; $104\%$ flips the sign of the net change; $80\%$ uses only the decrease.)}{Multipliers, not addition}
+\solitem{2}{D ($\$120.00$)}{The sale price is $85\%$ of the original: $0.85p=102$, so $p=120$. (\$117.30 multiplies by $1.15$; \$117 adds $15$; \$86.70 takes $85\%$ of \$102 instead of dividing.)}{Reverse percent: divide by the multiplier}
+\solitem{3}{Ans. 25}{Percent change $=\dfrac{\text{change}}{\text{original}}=\dfrac{1}{4}=25\%$. The rate rose by $1$ \emph{percentage point}, but the rate itself grew by $25\%$.}{Percent change vs percentage points}
+\solitem{4}{C ($432$)}{$1\ \text{ft}^2=12\times12=144\ \text{in}^2$, so $3\times144=432$. (Choice $36$ multiplies by $12$ only; $144$ forgets the $3$; $1{,}728$ cubes the $12$.)}{Squared units: square the factor}
+\solitem{5}{C ($24$)}{Let the animals be $3k$ cats and $5k$ dogs. $3k+6=5k$ gives $k=3$: $9$ cats, $15$ dogs, $24$ in all. ($8$ is one ``set'' $3+5$; $15$ is the dogs; $30$ counts the new cats too.)}{Ratio changes: use $3k$ and $5k$}
+\solitem{6}{B ($27$)}{Plums minus apples is $6k-2k=4k=36$, so $k=9$ and pears are $3k=27$. ($9$ is one part; $18$ is the apples; $54$ is the plums.)}{Part-to-part ratio: find one part}
+\solitem{7}{A ($168$)}{The $35\%$ applies to car owners, not to everyone: $0.60(800)=480$ owners, then $0.35(480)=168$. ($280$ is $35\%$ of all $800$; $480$ is the number of owners; $760$ adds $60+35=95$ percent.)}{Percent of a percent: multiply the factors}
+\solitem{8}{C ($\$2{,}315$)}{Each year multiplies by $1.05$: $2000(1.05)^3=2315.25\approx2315$. (\$2,300 is simple interest, $3\times\$100$ added; \$6,300 is $2000\times1.05\times3$; \$2,100 is one year only.)}{Compound = multiply by $1+r$ each period}
+\solitem{9}{Ans. 20}{$72\ \dfrac{\text{km}}{\text{h}}\cdot\dfrac{1000\ \text{m}}{1\ \text{km}}\cdot\dfrac{1\ \text{h}}{3600\ \text{s}}=\dfrac{72{,}000}{3600}=20$ meters per second. (Shortcut: divide km/h by $3.6$.)}{Unit conversion chain}
+\solitem{10}{B ($16$)}{Total distance $=24$ km. Total time $=\frac{12}{12}+\frac{12}{24}=1.5$ h. Average speed $=24\div1.5=16$ km/h. ($18$ averages the two speeds, but more time is spent at the slower one; $8$ is product over sum, half the answer; $24$ is the return speed alone.)}{Average speed = total distance $\div$ total time}
+\solitem{11}{C ($192$)}{Lengths scale by $k=4$, so area scales by $k^2=16$: $12\times16=192$. ($48$ scales area by $4$; $768$ uses $k^3$, the rule for volume; $16$ forgets the $12$.)}{Scale factor $k$: area scales by $k^2$}
+\solitem{12}{Ans. 2.5}{$150\%$ \emph{more} means $B+1.5B=2.5B$. So A's price is $2.5$ times B's. (``$150\%$ of'' would be $1.5$ times; ``$150\%$ more than'' is $1+1.5$.)}{``$n\%$ more'' vs ``$n$ times as much''}
+\solkitem{Set 2}{1}{B ($\$300.00$)}{The discounts multiply: $0.80\times0.85=0.68$, so $0.68p=204$ and $p=300$. (Adding the discounts to $35\%$ gives $204\div0.65\approx\$313.85$; \$240 undoes only the coupon; \$275.40 multiplies by $1.35$.)}{Chain of multipliers, then divide}
+\solitem{2}{A}{Percentage points are the difference of the two rates: $46-40=6$. Percent change compares with the starting rate: $\frac{6}{40}=15\%$. ($13\%$ divides by the new rate, $46$; ``$6\%$'' mixes the two ideas; ``$15$ points'' confuses them.)}{Percentage points vs percent change}
+\solitem{3}{Ans. 30}{$\left(1+\frac{x}{100}\right)\left(1-\frac{x}{100}\right)=1-\frac{x^2}{10{,}000}=0.91$, so $\frac{x^2}{10{,}000}=0.09$ and $x=30$. (Check: $1.3\times0.7=0.91$.)}{Up $x\%$ then down $x\%$ loses $x^2/100$ percent}
+\solitem{4}{D ($120$)}{A is $B$ plus $75\%$ of $B$: $1.75B=210$, so $B=120$. ($135$ subtracts $75$; $157.5$ takes $75\%$ of $210$; $280$ divides by $0.75$.)}{``$n\%$ more than $B$'' means $B(1+n\%)$}
+\solitem{5}{C ($130$)}{Under $25$: $0.30(500)=150$ people and $0.40(150)=60$. Age $25$ or older: $350$ people and $0.20(350)=70$. Total $60+70=130$. ($60$ forgets the older group; $150$ averages $40\%$ and $20\%$ to $30\%$ of $500$; $200$ applies $40\%$ to everyone.)}{Percent of a percent for each group, then add}
+\solitem{6}{A ($\$150.00$)}{Tax then tip on the taxed amount: $1.10\times1.20=1.32$, so $1.32x=198$ and $x=150$. (\$152.31 adds the rates, $198\div1.30$; \$165 ignores the tax; \$180 ignores the tip.)}{Stacked percents multiply}
+\solitem{7}{D ($10$)}{$1.25(1-\frac{p}{100})=1.125$, so $1-\frac{p}{100}=0.9$ and $p=10$. ($12.5$ subtracts $25-12.5$; $20$ is the drop that would return it exactly to the start; $25$ assumes the second change mirrors the first.)}{Unknown factor in a chain}
+\solitem{8}{Ans. 37.5}{The new price is $1.6p$. To get back to $p$ the multiplier is $\frac1{1.6}=0.625$, a drop of $1-0.625=0.375=37.5\%$. (Not $60\%$: the drop is taken from the larger new price, so a smaller percent is enough.)}{Undo a percent with the reciprocal factor}
+\solitem{9}{B ($84\%$)}{$x=0.70y$ and $y=1.20z$, so $x=0.70\times1.20z=0.84z$, which is $84\%$ of $z$. ($90\%$ adds $-30+20$; $70\%$ and $120\%$ use only one of the two steps.)}{Percent of a percent}
+\solitem{10}{C ($110\%$)}{Multiply: $1.4\times1.5=2.1$, so 2022 revenue is $2.1$ times 2020 revenue, which is $110\%$ \emph{greater}. ($210\%$ is ``$\%$ of'', not ``$\%$ greater''; $90\%$ adds $40+50$; $150\%$ uses only the last step.)}{``$n$ times as much'' vs ``$n\%$ greater''}
+\solitem{11}{Ans. 20}{Marked price: $80(1.6)=128$. Sale price: $0.75(128)=96$. Profit $=96-80=16$, and $\frac{16}{80}=20\%$. (Markup $60\%$ minus discount $25\%$ would give $35\%$, which is wrong: the discount is taken from the marked price.)}{Markup then discount: chain the multipliers}
+\solitem{12}{D ($150$)}{The measured value is $96\%$ of the true value $L$: $0.96L=144$, so $L=150$. (Percent error is measured against the true length. $144\times0.96=138.24$ goes the wrong way; $144\times1.04=149.76$ takes $4\%$ of the measurement; $148$ adds $4$.)}{Percent error: the base is the true value}
+\solitem{13}{B (It does not change)}{Revenue is price $\times$ units, so the factors multiply: $1.25\times0.80=1.00$. Revenue does not change. (An increase of $5\%$ subtracts $25-20$; a decrease of $5\%$ flips that; an increase of $45\%$ adds $25+20$.)}{Revenue = price $\times$ quantity: multiply the factors}
+\solitem{14}{Ans. 100}{The red count stays the same. Let $N$ be the original total: $0.40N=0.50(N-20)$, so $0.10N=10$ and $N=100$. (Check: $40$ red, $60$ blue; remove $20$ blue and $40$ of $80$ are red.)}{Fixed part: the red count never changes}
+\solkitem{Set 3}{1}{A ($P(1.01)^{12t}$)}{Each month multiplies the balance by $1+\frac{0.12}{12}=1.01$, and $t$ years contain $12t$ months, so $B=P(1.01)^{12t}$. (The other choices use the yearly rate $1.12$ once a year, the yearly rate every month, or only $t$ monthly periods.)}{Per-period rate and number of periods}
+\solitem{2}{Ans. 76.25}{A: $10{,}000(1+3\cdot0.05)=11{,}500$. B: $10{,}000(1.05)^3=11{,}576.25$. Difference $=76.25$. (The gap comes entirely from interest earning interest.)}{Simple = add $rP$; compound = multiply by $1+r$}
+\solitem{3}{B ($19.6\%$)}{One year is $12$ months: $(1.015)^{12}\approx1.196$, a growth of $19.6\%$. ($18.0\%$ is simple, $12\times1.5$; $119.6\%$ is the new amount as a percent of the old, not the growth; $180\%$ multiplies $1.5\times12$ and slips a decimal.)}{Monthly growth compounds: $(1+r)^{12}-1$}
+\solitem{4}{D ($3$)}{Acid: $0.10x+0.40(6)=0.30(x+6)$, so $2.4+0.1x=1.8+0.3x$ and $x=3$. (Check: $0.3+2.4=2.7$ in $9$ liters is $30\%$. $6$ assumes equal amounts; $9$ is the final volume; $12$ flips the ratio.)}{Mixture: acid in = acid out}
+\solitem{5}{Ans. 5}{Salt: $0.35(12)=4.2$ liters never changes. The new volume is $4.2\div0.60=7$ liters, so $12-7=5$ liters evaporate. (Only water leaves; the salt amount is the invariant.)}{Evaporation: the salt amount stays fixed}
+\solitem{6}{C ($82$)}{Total points: $20(80)+30(70)+50(90)=1600+2100+4500=8200$, and $8200\div100=82$. ($80$ is the unweighted mean of the three means; $79$ pairs the means with the sizes in reverse order; $90$ is the largest section's mean.)}{Weighted average: use totals}
+\solitem{7}{Ans. 63}{Total points: $30(72)=2160$. Girls: $18(78)=1404$. Boys: $2160-1404=756$ points among $12$ boys, so the mean is $756\div12=63$.}{Weighted average: subtract the known group's total}
+\solitem{8}{C ($52\%$)}{The group asked about is the night shift: $120+110=230$ employees. Full-time among them: $\frac{120}{230}\approx52\%$. ($24\%$ divides by all $500$; $40\%$ divides by the $300$ full-time employees; $67\%$ is $\frac{120}{180}$, night over day.)}{Percent of a column: pick the right denominator}
+\solitem{9}{Ans. 0.6}{Let $f$ be the fraction that is Y. Then $0.20(1-f)+0.50f=0.38$, so $0.20+0.30f=0.38$ and $f=0.6$. (Shortcut: $38$ sits $18$ of the $30$ points from $20$ to $50$, and $\frac{18}{30}=0.6$.)}{Weighted average gives the fraction directly}
+\solitem{10}{A (Line D)}{Percent increases: A $\frac{15}{60}=25\%$, B $\frac{50}{200}=25\%$, C $\frac{45}{150}=30\%$, D $\frac{7}{20}=35\%$. D is greatest. (B has the greatest \emph{dollar} increase, $50$, but only $25\%$; A ties it at $25\%$; C is the runner-up at $30\%$.)}{Percent change needs the starting value}
+\solitem{11}{D ($\$2{,}479$)}{$P(1.10)^2=3000$, so $P=\frac{3000}{1.21}\approx2479$. (\$2,500 divides by $1.2$, simple interest; \$2,727 divides by $1.1$ once; \$3,630 multiplies instead of dividing.)}{Reverse compound growth: divide by $(1+r)^t$}
+\solitem{12}{B ($5$)}{Value $=24000(0.85)^t<12000$ means $0.85^t<0.5$. $0.85^4\approx0.522$ is not enough and $0.85^5\approx0.444$ is, so $t=5$. ($3$ is the linear guess $50\div15\approx3.3$ rounded down; $4$ rounds $4.27$ down; $6$ overshoots.)}{Exponential decay is not linear}
+\solitem{13}{C ($\$5{,}250$)}{Simple interest adds $4\%$ of $P$ each year, so $A=P(1+0.04\cdot5)=1.2P$ and $P=\frac{6300}{1.2}=5250$. (\$5,040 takes $80\%$ of the balance; \$5,178 divides by $1.04^5$, compound; \$6,058 divides by $1.04$ once.)}{Simple interest: $A=P(1+rt)$}
+\solitem{14}{B ($4$)}{Antifreeze left: $0.15(20-x)$; add $x$ pure: $0.15(20-x)+x=0.32(20)=6.4$, so $3+0.85x=6.4$ and $x=4$. ($3.4$ forgets that the drained liquid carried antifreeze; $5$ adds $x$ liters instead of replacing; $6.4$ is the antifreeze amount, not the volume.)}{Replace-and-refill: remove antifreeze too}
+\solkitem{Set 4}{1}{B ($12$)}{Blue $=3k$, red $=7k$. After the change $\frac{3k}{7k-8}=\frac35$, so $15k=21k-24$ and $k=4$. Blue $=3k=12$. (Check: $12:20=3:5$. $4$ is $k$; $20$ is the red marbles after removal; $28$ is the red marbles before.)}{Ratio after a change: $3k$ and $7k$}
+\solitem{2}{Ans. 36}{Non-juniors are $\frac58$ of the club: $\frac58(96)=60$. Sophomores are $\frac35$ of the non-juniors: $\frac35(60)=36$. (The second ratio, $2:3$, splits the $60$ non-juniors, not the whole club of $96$.)}{Part-to-part ratios: convert to part-to-whole}
+\solitem{3}{C ($2{,}500$)}{$1\ \text{m}^3=100^3=1{,}000{,}000\ \text{cm}^3$, so the tank holds $2.5\times10^6\ \text{cm}^3$, and dividing by $1000$ gives $2{,}500$ liters. ($250$ uses $100$ for the cubic factor; $2{,}500{,}000$ is the volume in $\text{cm}^3$, not liters; $2.5$ does no conversion.)}{Cubed units: cube the factor}
+\solitem{4}{A ($\$486.00$)}{The floor is $9\ \text{ft}\times12\ \text{ft}=108\ \text{ft}^2$, and $108\times4.50=486$. (\$54 uses $12$ square \emph{yards}; \$162 multiplies the area by $3$ instead of $9$; \$1,458 multiplies by $27$.)}{Squared units: convert each side first}
+\solitem{5}{Ans. 7.2}{Rates (tank per hour): $\frac16+\frac1{12}-\frac19=\frac{6+3-4}{36}=\frac5{36}$. Time $=\frac{36}{5}=7.2$ hours. (The drain's rate is subtracted; add \emph{rates}, never times.)}{Rates add: tank per hour}
+\solitem{6}{D ($13$)}{Distance $=2(10)+3(15)=65$ km in $5$ hours, so the average speed is $13$ km/h. ($12.5$ averages the speeds without weighting; $12$ is $\frac{2\cdot10\cdot15}{10+15}$, the formula for \emph{equal distances}; $65$ is the distance, not the speed.)}{Equal times: average speed is a weighted average}
+\solitem{7}{C ($307.2$)}{$1$ cm on the map is $\frac{8}{2.5}=3.2$ km, so $1\ \text{cm}^2$ is $3.2^2=10.24\ \text{km}^2$. Then $30\times10.24=307.2$. ($96$ multiplies by $3.2$ only; $240$ treats $1\ \text{cm}^2$ as $8\ \text{km}^2$; $983.04$ uses $3.2^3$.)}{Scale drawing: area scales by $k^2$}
+\solitem{8}{Ans. 1080}{The area ratio is $\frac{450}{50}=9=k^2$, so the scale factor is $k=3$. Volume scales by $k^3=27$: $40\times27=1080$. (Using $9$ for the volume ratio gives $360$, which is wrong.)}{Similar solids: area $k^2$, volume $k^3$}
+\solitem{9}{A ($36$)}{$k^2=\frac{45}{20}=\frac94$, so $k=\frac32$. Perimeter scales by $k$: $24\times\frac32=36$. ($54$ multiplies by the area ratio $\frac94$; $49$ adds the area difference; $81$ multiplies by $k^3$.)}{Perimeter scales by $k$, area by $k^2$}
+\solitem{10}{Ans. 1.728}{Density $=\frac{512}{64}=8$ g/cm$^3$. The second cube has volume $6^3=216$ cm$^3$, so its mass is $8\times216=1728$ g $=1.728$ kg. (Shortcut: $k=1.5$, $k^3=3.375$, and $512\times3.375=1728$.)}{Density is constant; volume scales by $k^3$}
+\solitem{11}{B ($5{,}400$)}{$2\ \text{m}^3=2\times10^6\ \text{cm}^3$, so the mass is $2.7\times2\times10^6=5.4\times10^6$ g $=5{,}400$ kg. ($5{,}400{,}000$ is the mass in grams; $540$ uses $100^2$-type scaling; $5.4$ multiplies $2\times2.7$ with no conversion.)}{Density with cubed units}
+\solitem{12}{D ($150$)}{The leak is $0.15\times60=9$ liters per minute. Net rate $=12-9=3$ L/min, so $450\div3=150$ minutes. ($38.0$ subtracts $0.15$ from $12$ without converting seconds to minutes; $37.5$ ignores the leak; $21.4$ adds the leak.)}{Rates in the same units, then subtract}
+\solitem{13}{A ($1.6$)}{Lengths shrink by $40$, so areas shrink by $40^2=1600$: $2560\div1600=1.6$. ($64$ divides by $40$ only; $6.4$ divides by $400$; $102{,}400$ multiplies by $1600$ instead of dividing.)}{Scale model: area scales by $k^2$}
+\solitem{14}{B ($15$)}{One house takes $\frac{4\times9}{3}=12$ worker-days. Ten houses take $120$ worker-days, and $8$ workers need $\frac{120}{8}=15$ days. ($4.5$ halves the time for double the workers but ignores the extra houses; $30$ scales for the houses but ignores the workers; $60$ makes more workers take longer.)}{Worker-days per job}
+\solkitem{Set 5}{1}{C ($5:4$)}{Take $4k$ boys and $5k$ girls. Next year: $1.25(4k)=5k$ boys and $0.80(5k)=4k$ girls, so the ratio is $5:4$. ($4:5$ is the old ratio; $1:1$ treats $+25\%$ and $-20\%$ as cancelling; $25:16$ is $1.25:0.80$ alone, forgetting the old ratio.)}{Ratio after percent changes: multiply each part}
+\solitem{2}{A ($103\%$)}{Take $B=100$, so $A=120$. After the changes: $A=0.90(120)=108$ and $B=1.05(100)=105$. Then $\frac{108}{105}\approx1.03$, or $103\%$. ($108\%$ ignores B's growth; $115\%$ adds $20-10+5$; $126\%$ multiplies by $1.05$ instead of dividing.)}{Compare two chains: divide the factors}
+\solitem{3}{B ($60\%$)}{Let the cost be $100$. The sale price is $120$, which is $75\%$ of the marked price $M$: $M=\frac{120}{0.75}=160$. The marked price is $60\%$ above cost. ($45\%$ adds $20+25$; $50\%$ adds $25\%$ to the sale price instead of dividing by $0.75$; $80\%$ divides $20$ by $0.25$.)}{Work backwards through the chain}
+\solitem{4}{Ans. 14}{The mixture has $0.22(30)=6.6$ liters of salt, and you never need P or Q separately. Water adds no salt: $\frac{6.6}{30+w}=0.15$, so $30+w=44$ and $w=14$.}{Dilution: the salt amount is fixed}
+\solitem{5}{Ans. 9}{Compare the multipliers: A is $1+0.06t$, B is $1.05^t$. At $t=8$: B $\approx1.4775$ and A $=1.48$, so A is still ahead. At $t=9$: B $\approx1.5513$, A $=1.54$. B first leads after $9$ years. (Graph both in Desmos and read the crossing.)}{Linear vs exponential: compare factors year by year}
+\solitem{6}{D ($15$)}{Together: $\frac18+\frac1{24}=\frac16$ per hour, so $3$ hours finish $\frac12$ of the job. B does the other half at $\frac1{24}$ per hour: $12$ hours. Total $3+12=15$. ($6$ is the time if both worked the whole job; $12$ is B's time alone after A stops; $27$ adds B's full $24$ hours to the $3$.)}{Rates: part done, then part left}
+\solitem{7}{C ($32$)}{$100$ km $=\frac{100}{1.6}=62.5$ miles and $7.5$ L $=\frac{7.5}{3.8}\approx1.97$ gallons, so $\frac{62.5}{1.97}\approx32$ mpg. ($81$ multiplies km by $1.6$; $2$ multiplies liters by $3.8$; $13$ is $\frac{100}{7.5}$, km per liter, with no conversion.)}{Unit chain: miles over gallons}
+\solitem{8}{Ans. 57.6}{Volume $=1.2^3=1.728\ \text{m}^3=1728$ L. Time $=\frac{1728}{0.5}=3456$ s, and $\frac{3456}{60}=57.6$ minutes. (The edge is cubed once; the $1000$ is the liters-per-cubic-meter factor.)}{Cubed length, then liters, then seconds to minutes}
+\solitem{9}{D ($72.8\%$)}{$V=\frac13\pi r^2h$ uses two factors of $r$ and one of $h$: $1.2\times1.2\times1.2=1.728$, an increase of $72.8\%$. ($20\%$ ignores the powers; $44\%$ uses $1.2^2$ only; $60\%$ is $3\times20\%$.)}{Volume scales by $k^3$}
+\solitem{10}{A ($3.2$)}{New rate $=\frac{0.80\times1.30}{1.25}=0.832=83.2\%$, which is $3.2$ points above $80\%$. ($83.2$ is the new rate, not the change; $5$ is $30-25$; $4$ is the $4\%$ \emph{percent} change, $\frac{1.30}{1.25}-1$, reported as points.)}{Rate = part $\div$ whole; percentage points}
+\solitem{11}{D ($61\%$)}{Subscribers as a share of all customers: $0.45(0.60)=0.27$, $0.35(0.40)=0.14$, $0.20(0.15)=0.03$, total $0.44$. Under $30$: $\frac{0.27}{0.44}\approx61\%$. ($27\%$ divides by all customers; $45\%$ is the group's share of customers; $60\%$ is the group's subscription rate.)}{Conditional share: part of the subscribers, not of the customers}
+\solitem{12}{B ($15$)}{After $5$ minutes the tub holds $60$ liters, so $60$ more are needed at a net rate of $12-8=4$ L/min: $15$ minutes. ($5$ ignores the drain; $20$ is the total time, not the additional time; $30$ is $\frac{120}{4}$, ignoring the first $5$ minutes.)}{Two-phase rate: leftover volume $\div$ net rate}
+\solitem{13}{A ($26\%$)}{Let the hourly factor be $b$: $b^6=4$, so $b=4^{1/6}\approx1.26$, a growth of about $26\%$ per hour. ($300\%$ is the growth per $6$ hours; $50\%$ is $\frac{300}{6}$; $67\%$ is $\frac{400}{6}$.)}{Equal-period growth: $(1+r)^6=4$}
+\solitem{14}{C ($\$12.00$)}{X costs $\frac{5.40}{12}=0.45$ per ounce, and $0.45=0.60\,y$, so Y costs $0.75$ per ounce and $16(0.75)=12.00$. (\$7.20 gives Y the same unit price; \$10.08 uses $y=1.4x$; \$18.00 uses $y=\frac{x}{0.4}$.)}{``$n\%$ less than $Y$'' means $0.6Y$, not $Y=1.4X$}
+\solitem{15}{D ($150\%$)}{$0.30P=0.45Q$ gives $\frac PQ=\frac{0.45}{0.30}=1.5$, so $P$ is $150\%$ of $Q$. ($66\frac23\%$ is $Q$ as a percent of $P$; $15\%$ is $45-30$; $75\%$ is $30+45$.)}{Set up $0.30P=0.45Q$ and divide}
+\solitem{16}{Ans. 50000}{The factors multiply: $1.20\times0.75\times1.40=1.26$. So Year 1 $=\frac{63{,}000}{1.26}=50{,}000$. (Adding the changes, $+35\%$, would give $46{,}667$.)}{Reverse a chain: divide by the product of factors}
+\solitem{17}{Ans. 25}{Let the girls be a fraction $f$ of the class and the boys' mean be $b$. The class mean is $b+12f$, so $12f=3$ and $f=\frac14=25\%$. (No actual scores are needed: the class mean sits $\frac{3}{12}$ of the way from the boys' mean to the girls' mean.)}{Weighted average: the gap splits in proportion}
+\solitem{18}{Ans. 8.1}{Edges scale by $k=0.9$. Area: $0.9^2=0.81$, a decrease of $a=19$. Volume: $0.9^3=0.729$, a decrease of $b=27.1$. So $b-a=27.1-19=8.1$. (A decrease of $10\%$ in each edge does not give $20\%$ or $30\%$.)}{Area $k^2$, volume $k^3$ with $k=0.9$}
+\solitem{19}{A ($500{,}000$)}{Area $=20{,}000\ \text{m}^2$ and depth $=25\ \text{mm}=0.025$ m, so the volume is $500\ \text{m}^3=500{,}000$ L. ($500$ is in cubic meters; $50{,}000$ uses $0.0025$ m; $5{,}000{,}000$ uses $0.25$ m.)}{Area $\times$ depth, then liters}
+\solitem{20}{A ($10.25\%$)}{Area $\propto r^2$, so the factor is $1.05^2=1.1025$, an increase of $10.25\%$. ($5\%$ copies the radius error; $10\%$ doubles it; $25\%$ squares the $5$.)}{Relative error squares: $(1+e)^2-1$}
+\end{multicols}}
+\end{document}

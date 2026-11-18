@@ -1,0 +1,472 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,margin=0mm]{geometry}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{tikz}
+\usepackage[table]{xcolor}
+\usepackage[absolute]{textpos}
+\usepackage{array}
+\usepackage{multirow}
+
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmathfont{Libertinus Math}
+
+\definecolor{accent}{HTML}{0F6A52}
+\definecolor{badge}{HTML}{A9CFC2}
+\definecolor{ink}{HTML}{2A2E30}
+
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\emergencystretch=3em
+\abovedisplayskip=4pt plus 2pt minus 2pt \belowdisplayskip=4pt plus 2pt minus 2pt \abovedisplayshortskip=2pt \belowdisplayshortskip=2pt
+\pagestyle{empty}
+
+\newcommand{\LCOL}{16mm}
+\newcommand{\RCOL}{111mm}
+\newcommand{\COLW}{83mm}
+
+\newcommand{\topicheader}[2]{%
+\begin{textblock*}{194mm}(16mm,10mm)
+\begin{tikzpicture}
+\node[fill=accent,text=white,font=\sffamily\bfseries\fontsize{13}{13}\selectfont,
+      minimum width=9mm,minimum height=9mm,inner sep=0pt] at (4.5mm,-4.5mm) {#1};
+\node[font=\sffamily\bfseries\fontsize{15}{16}\selectfont,text=ink,anchor=west] at (12mm,-4.5mm) {#2};
+\end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{194mm}(16mm,22.5mm)
+\begin{tikzpicture}
+\fill[accent] (0,0) rectangle (194mm,0.5mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\pagefooter}[1]{%
+\begin{textblock*}{194mm}(8mm,286.41mm)
+  \begin{tikzpicture}
+    \fill[accent] (0,0) rectangle (194mm,0.6mm);
+  \end{tikzpicture}
+\end{textblock*}
+\begin{textblock*}{63.59mm}(8mm,288.27mm)
+  {\sffamily\bfseries\color{accent}\fontsize{13}{16}\selectfont SAT 1200+}
+\end{textblock*}
+\begin{textblock*}{10mm}(188mm,288.27mm)
+  \centering{\sffamily\color{accent}\fontsize{14}{16}\selectfont #1}
+\end{textblock*}
+}
+
+\newcommand{\colrule}[2]{%
+\begin{textblock*}{1mm}(105mm,#1mm)
+\begin{tikzpicture}
+\draw[black!65,line width=0.5pt] (0,0) -- (0,#2mm);
+\end{tikzpicture}
+\end{textblock*}
+}
+
+\newcommand{\setkicker}[2]{%
+{\sffamily\bfseries\fontsize{12}{14}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{2mm}%
+}
+
+\setlength{\fboxsep}{1.4pt}
+\setlength{\fboxrule}{0.5pt}
+\newcommand{\pnum}[1]{\fcolorbox{ink}{white}{\sffamily\bfseries\fontsize{8}{8}\selectfont #1}~}
+
+% ---- SAT-style multiple-choice block (2x2 grid of short choices) ----
+\newcommand{\satq}[6]{%
+\noindent\pnum{#1} #2\par\nobreak\vspace{2mm}%
+\noindent\hspace*{7mm}\begin{tabular}[t]{@{}p{32mm}p{32mm}@{}}
+(A) #3 & (B) #4 \\[2mm]
+(C) #5 & (D) #6 \\
+\end{tabular}\par\vspace{5.5mm}%
+}
+
+% ---- stacked choices for long ones ----
+\newcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\par\nobreak\vspace{2mm}%
+\noindent\hspace*{7mm}(A) #3\par\vspace{1.6mm}%
+\noindent\hspace*{7mm}(B) #4\par\vspace{1.6mm}%
+\noindent\hspace*{7mm}(C) #5\par\vspace{1.6mm}%
+\noindent\hspace*{7mm}(D) #6\par\vspace{5.5mm}%
+}
+
+% ---- student-produced response (grid-in) ----
+\newcommand{\satg}[2]{%
+\noindent\pnum{#1} {\sffamily\bfseries\fontsize{7}{8}\selectfont\color{accent}GRID-IN}\ #2\par\nobreak\vspace{2.5mm}%
+\noindent\hspace*{7mm}{\sffamily\fontsize{8.5}{10}\selectfont Answer:}\ \rule[-1.2mm]{28mm}{0.4pt}\par\vspace{5.5mm}%
+}
+
+% ---- worked-solution entry ----
+\newcommand{\solitem}[4]{%
+\noindent\pnum{#1} {\bfseries #2}\ —\ #3\ {\itshape\color{accent}[#4]}\par\vspace{2.1mm}%
+}
+
+\arrayrulecolor{accent}
+\setlength{\arrayrulewidth}{0.7pt}
+\renewcommand{\arraystretch}{1.3}
+
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\newcommand{\pgoff}{0}
+\renewcommand{\solitem}[4]{\noindent\parbox[t]{\linewidth}{\raggedright\pnum{#1} {\bfseries #2}\ ---\ #3\ {\itshape\color{accent}[#4]}}\par\vspace{3.6mm}}
+\newcommand{\solkicker}[2]{\Needspace{38mm}\vspace{1.5mm}{\sffamily\bfseries\fontsize{12.5}{15}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} #2}\par\vspace{3mm}}
+\renewcommand{\satqw}[6]{%
+\noindent\pnum{#1} #2\par\nobreak\vspace{2mm}%
+\noindent\hangindent=13mm\hangafter=1\hspace*{7mm}(A)~#3\par\vspace{1.6mm}%
+\noindent\hangindent=13mm\hangafter=1\hspace*{7mm}(B)~#4\par\vspace{1.6mm}%
+\noindent\hangindent=13mm\hangafter=1\hspace*{7mm}(C)~#5\par\vspace{1.6mm}%
+\noindent\hangindent=13mm\hangafter=1\hspace*{7mm}(D)~#6\par\vspace{5.5mm}%
+}
+\newcommand{\solkitem}[5]{\noindent\parbox[t]{\linewidth}{\vspace{1.5mm}{\sffamily\bfseries\fontsize{12.5}{15}\selectfont #1.}\ {\itshape\fontsize{11}{14}\selectfont\color{black!75} Worked solutions}\par\vspace{3mm}\raggedright\pnum{#2} {\bfseries #3}\ ---\ #4\ {\itshape\color{accent}[#5]}}\par\vspace{3.6mm}}
+\fancypagestyle{solstyle}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0pt}%
+ \fancyhead[L]{\topicheader{4}{Discriminant \& Disguised Quadratics}}%
+ \fancyfoot[L]{\pagefooter{\the\numexpr\value{page}+\pgoff\relax}}}
+
+\begin{document}
+\topicheader{4}{Discriminant \& Disguised Quadratics}
+\pagefooter{1}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 1}{Bridge: the core moves, one problem each.}
+\satqw{1}{How many real solutions does the equation $4x^2+9=12x$ have?}{Exactly one}{Zero}{Exactly two}{Infinitely many}
+\satq{2}{In the equation $x^2+bx+49=0$, $b$ is a positive constant. The equation has exactly one real solution. What is the value of $b$?}{$-14$}{$7$}{$14$}{$196$}
+\satqw{3}{In the $xy$-plane, how many points do the graphs of $y=x^2-2x+5$ and $y=2x+1$ have in common?}{$0$}{$1$}{$2$}{Infinitely many}
+\satg{4}{The numbers $x$ and $y$ satisfy $x-y=2$ and $xy=15$, with $x>0$. What is the value of $x+y$?}
+\satq{5}{What is the sum of all real solutions of $\sqrt{3x+4}=x$?}{$-1$}{$3$}{$4$}{$5$}
+\satq{6}{How many real solutions does the equation $$\dfrac{3}{x-2}-\dfrac{12}{x^2-4}=1$$ have?}{$0$}{$1$}{$2$}{$3$}
+\satq{7}{How many real solutions does the equation $x^4-5x^2-36=0$ have?}{$0$}{$1$}{$2$}{$4$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 1 (cont.)}{Bridge}
+\satq{8}{The circle with equation $x^2+y^2-6x+10y+18=0$ has center $(h,k)$. What is the value of $h+k$?}{$-8$}{$-2$}{$2$}{$8$}
+\satg{9}{When $x^3-4x^2+2x+9$ is divided by $x-3$, the result can be written as $x^2+ax+b+\dfrac{r}{x-3}$, where $a$, $b$ and $r$ are constants. What is the value of $a+b+r$?}
+\satq{10}{For $x>0$, which expression is equivalent to $\sqrt[3]{x^{2}}\cdot\sqrt{x}$?}{$x^{1/3}$}{$x^{3/5}$}{$x^{1/6}$}{$x^{7/6}$}
+\satg{11}{The length of a rectangular garden is 5 meters more than its width. The area is 84 square meters. What is the perimeter of the garden, in meters?}
+\satq{12}{In the equation $3x^2-6x=k$, $k$ is a constant. The equation has no real solutions. Which of the following could be the value of $k$?}{$-5$}{$-3$}{$-1$}{$2$}
+\vspace{3mm}
+\setkicker{Set 2}{The discriminant backward: tangents, intersections and parameters.}
+\satq{1}{In the $xy$-plane, the line $y=4x+c$ is tangent to the parabola $y=x^2+2x+7$. What is the value of $c$?}{$-2$}{$7$}{$10$}{$6$}
+\satg{2}{How many integer values of $k$ make the line $y=x+k$ intersect the circle $x^2+y^2=36$ at exactly two points?}
+}
+\end{textblock*}
+\clearpage
+\topicheader{4}{Discriminant \& Disguised Quadratics}
+\pagefooter{2}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 2 (cont.)}{Discriminant}
+\satq{3}{The graphs of $y=-2x^2+12x-5$ and $y=k$ have no points in common, where $k$ is a constant. Which of the following could be the value of $k$?}{$14$}{$13$}{$12$}{$-5$}
+\satg{4}{The equation $x^2-2kx+3k+4=0$, where $k$ is a constant, has exactly one real solution. What is the sum of all possible values of $k$?}
+\satq{5}{What is the greatest integer $c$ for which the graph of $y=x^2+6x+c$ intersects the line $y=2$ at two points?}{$8$}{$9$}{$10$}{$11$}
+\satq{6}{The equation $(k-2)x^2+6x+3=0$ has two distinct real solutions. Which of the following could be the value of $k$?}{$2$}{$4$}{$5$}{$7$}
+\satq{7}{The graphs of $y=x^2-4x+7$ and $y=-2x+k$ intersect at two points. Which of the following describes all possible values of $k$?}{$k<6$}{$k\ge6$}{$k>7$}{$k>6$}
+\satq{8}{In the equation $x^2+kx+12=0$, $k$ is an integer. The equation has two distinct real solutions and both are negative. What is the least possible value of $k$?}{$7$}{$6$}{$4$}{$-7$}
+\satq{9}{The line $y=-x+k$, where $k>0$, is tangent to the circle $(x-2)^2+(y-1)^2=18$. What is the value of $k$?}{$-3$}{$3$}{$6$}{$9$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 2 (cont.)}{Discriminant}
+\satq{10}{For a constant $k$, the equation $(x+1)(x-5)=k$ has exactly one real solution. What is the value of $k$?}{$-9$}{$-5$}{$2$}{$9$}
+\satqw{11}{For how many values of $k$ does the line $y=k(x-3)+1$ meet the parabola $y=x^2-6x+10$ at exactly one point?}{$0$}{$1$}{$2$}{Infinitely many}
+\satq{12}{What is the greatest integer $k$ for which the graph of $y=x^2-7x+k$ has at least one $x$-intercept?}{$13$}{$12.25$}{$12$}{$7$}
+\satg{13}{The line $y=2x+10$ is tangent to the circle $x^2+y^2=r^2$, where $r>0$. What is the value of $r^2$?}
+\satg{14}{How many integer values of $c$ make $x^2-6x+c=0$ have two distinct real solutions that are both positive?}
+\vspace{3mm}
+\setkicker{Set 3}{Equations that become quadratics: radicals, fractions, quadratic form, word problems.}
+\satq{1}{What is the sum of all real solutions of $\sqrt{x+7}+5=x$?}{$2$}{$11$}{$18$}{$9$}
+\satg{2}{In the equation $\sqrt{2x+k}=x$, $k$ is a negative constant. The equation has exactly one real solution. What is the value of $k$?}
+}
+\end{textblock*}
+\clearpage
+\topicheader{4}{Discriminant \& Disguised Quadratics}
+\pagefooter{3}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 3 (cont.)}{Disguised quadratics}
+\satq{3}{What is the sum of all solutions of $$\dfrac{x}{x-4}+\dfrac{3}{x+1}=\dfrac{20}{x^2-3x-4}\,?$$}{$-8$}{$-4$}{$4$}{$8$}
+\satg{4}{Consider the equation $$\dfrac{1}{x-3}+\dfrac{k}{x^2-9}=\dfrac{2}{x+3},$$ where $k$ is a constant. What is the sum of all values of $k$ for which the equation has no solution?}
+\satq{5}{What is the sum of all real solutions of $x^{2/3}-x^{1/3}-6=0$?}{$1$}{$19$}{$27$}{$35$}
+\satq{6}{What is the sum of all real solutions of $9^x-12\cdot3^x+27=0$?}{$2$}{$9$}{$3$}{$12$}
+\satq{7}{What is the sum of all real solutions of $x^{-2}-5x^{-1}+4=0$?}{$\dfrac14$}{$\dfrac54$}{$4$}{$5$}
+\satq{8}{A ball's height, in meters, $t$ seconds after it is thrown is $h(t)=-5t^2+30t+5$. For how many seconds is the ball more than 45 meters above the ground?}{$6$}{$4$}{$3$}{$2$}
+\satq{9}{The sum of the squares of three consecutive positive integers is 110. What is the sum of the three integers?}{$36$}{$21$}{$18$}{$6$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 3 (cont.)}{Disguised quadratics}
+\satq{10}{Pump A alone fills a tank in 3 hours less than pump B alone. Working together they fill the tank in 2 hours. How many hours would pump B take working alone?}{$6$}{$3$}{$5$}{$9$}
+\satq{11}{A poster is 20 cm wide and 30 cm tall. A border of the same width $x$ is added on all four sides, and the new total area is 1,200 square centimeters. What is the value of $x$, in centimeters?}{$30$}{$25$}{$10$}{$5$}
+\satg{12}{The system $x-2y=4$ and $xy=48$ has two solutions $(x,y)$. What is the sum of the $x$-coordinates of the two solutions?}
+\satq{13}{What is the sum of all real solutions of $9^{x}=3^{x^2-3}$?}{$2$}{$1$}{$3$}{$-3$}
+\satg{14}{A cyclist rides 24 miles to a town at a constant speed. The return trip, at a speed 2 miles per hour faster, takes 1 hour less. What was the cyclist's speed, in miles per hour, on the way to the town?}
+\vspace{3mm}
+\setkicker{Set 4}{Equivalent expressions and completing the square.}
+\satq{1}{Which of the following is NOT a factor of $x^4-13x^2+36$?}{$x+2$}{$x^2+4$}{$x-3$}{$x^2-9$}
+\satq{2}{Which of the following is a factor of $2x^3-3x^2-8x+12$?}{$2x+3$}{$3x-2$}{$2x-3$}{$x+3$}
+}
+\end{textblock*}
+\clearpage
+\topicheader{4}{Discriminant \& Disguised Quadratics}
+\pagefooter{4}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 4 (cont.)}{Expressions}
+\satg{3}{When $6x^2+x-12$ is divided by $2x-3$, the result can be written as $ax+b+\dfrac{r}{2x-3}$, where $a$, $b$ and $r$ are constants. What is the value of $a+b+r$?}
+\satqw{4}{Which expression is equivalent to $\dfrac{2}{x-3}-\dfrac{1}{x+3}+\dfrac{12}{x^2-9}$ for $x\neq\pm3$?}{$\dfrac{x+15}{x^2-9}$}{$\dfrac{x+9}{x^2-9}$}{$\dfrac{x+21}{2x}$}{$\dfrac{x+21}{x^2-9}$}
+\satq{5}{Which of the following is a factor of $x^4+x^2+1$?}{$x^2+x+1$}{$x^2+1$}{$x^2-x-1$}{$x^2-1$}
+\satq{6}{If $(x^2+ax+4)(x^2-ax+4)=x^4-x^2+16$ for all $x$, and $a>0$, what is the value of $a$?}{$1$}{$3$}{$7$}{$9$}
+\satg{7}{For $x>0$, $\sqrt[3]{x^4\sqrt{x}}=x^k$. What is the value of $k$?}
+\satq{8}{If $x<3$, which of the following is equivalent to $\sqrt{x^2-6x+9}$?}{$x-3$}{$|x|-3$}{$3-x$}{$x+3$}
+\satq{9}{The equation $x^2+y^2+8x-2y=k$ represents a circle with radius 5 in the $xy$-plane. What is the value of $k$?}{$5$}{$8$}{$25$}{$42$}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 4 (cont.)}{Expressions}
+\satg{10}{One solution of $2x^2-12x+3=0$ can be written as $3+\dfrac{\sqrt b}{2}$, where $b$ is a positive constant. What is the value of $b$?}
+\satqw{11}{How many points $(x,y)$ in the $xy$-plane satisfy $x^2+y^2+6x-4y+13=0$?}{$0$}{$2$}{Infinitely many}{$1$}
+\satq{12}{Which expression is equivalent to $\dfrac{x^3-27}{x-3}$ for $x\neq3$?}{$x^2+3x+9$}{$x^2-3x+9$}{$x^2+9$}{$x^2-9$}
+\satg{13}{For constants $A$ and $B$, $$\dfrac{5x-1}{x^2-x-2}=\dfrac{A}{x-2}+\dfrac{B}{x+1}$$ for all $x$ except $2$ and $-1$. What is the value of $AB$?}
+\satq{14}{If $4^x+4^x+4^x+4^x=2^{18}$, what is the value of $x$?}{$16$}{$9$}{$8$}{$4.5$}
+\vspace{3mm}
+\setkicker{Set 5}{Summit: the hardest mixed problems.}
+\satg{1}{For how many integer values of $k$ from $-10$ to $10$, inclusive, does the equation $\sqrt{x+k}=x-4$ have exactly one real solution?}
+\satq{2}{The line $y=2x+b$, where $b>0$, is tangent to the circle $x^2+y^2-4x+2y=15$. What is the value of $b$?}{$-15$}{$5$}{$10$}{$15$}
+}
+\end{textblock*}
+\clearpage
+\topicheader{4}{Discriminant \& Disguised Quadratics}
+\pagefooter{5}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 5 (cont.)}{Summit}
+\satq{3}{What is the sum of all real solutions of $2^x+2^{3-x}=9$?}{$9$}{$8$}{$3$}{$0$}
+\satg{4}{The equation $x^4-10x^2+9=k$ has exactly three distinct real solutions. What is the value of $k$?}
+\satq{5}{What is the sum of all real solutions of $(x^2-5x)^2+4(x^2-5x)-21=0$?}{$-4$}{$3$}{$10$}{$5$}
+\satq{6}{For how many integer values of $k$ does the equation $x^2+kx+k+3=0$ have no real solutions?}{$6$}{$7$}{$8$}{$9$}
+\satqw{7}{For which value of $k$ does the equation $\dfrac{x^2-x}{x-1}=k$ have no real solution?}{$k=1$}{$k=0$}{$k=-1$}{There is no such $k$.}
+\satq{8}{The reciprocals of two consecutive positive even integers add up to $\dfrac{7}{24}$. What is the product of the two integers?}{$6$}{$14$}{$24$}{$48$}
+\satq{9}{The circle $x^2+y^2-8x+2y+c=0$ is tangent to the $x$-axis. What is the value of $c$?}{$1$}{$8$}{$16$}{$17$}
+\satg{10}{What is the sum of all real solutions of $x-3\sqrt{x}-10=0$?}
+}
+\end{textblock*}
+\begin{textblock*}{\COLW}(\RCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 5 (cont.)}{Summit}
+\satq{11}{What is the greatest slope $k$ for which the line $y=kx$ and the circle $(x-5)^2+y^2=9$ have at least one point in common?}{$\dfrac35$}{$\dfrac34$}{$\dfrac43$}{$\dfrac53$}
+\satq{12}{For how many values of the constant $k$ does the equation $kx^2+4x+k=0$ have exactly one real solution?}{$3$}{$2$}{$1$}{$0$}
+\satq{13}{In the $xy$-plane, how many points do the graphs of $y=x^2-4$ and $x^2+y^2=16$ have in common?}{$1$}{$2$}{$3$}{$4$}
+\satq{14}{If $8^x\cdot4^{x+1}=16^{x+1}$, what is the value of $x$?}{$-2$}{$3$}{$4$}{$2$}
+\satg{15}{Two lines pass through the point $(0,3)$ and are tangent to the parabola $y=x^2+5x+7$. What is the sum of the slopes of the two lines?}
+\satg{16}{For a nonzero constant $k$, the equations $x^2-6x+k=0$ and $x^2-8x+3k=0$ have exactly one solution in common. What is the value of $k$?}
+\satq{17}{How many real solutions does $$\left(\dfrac{x}{x-1}\right)^2-4\left(\dfrac{x}{x-1}\right)+3=0$$ have?}{$0$}{$1$}{$2$}{$3$}
+}
+\end{textblock*}
+\clearpage
+\topicheader{4}{Discriminant \& Disguised Quadratics}
+\pagefooter{6}
+\colrule{32}{238}
+\mbox{}%
+\begin{textblock*}{\COLW}(\LCOL,32mm)
+{\fontsize{10}{12.5}\selectfont
+\setkicker{Set 5 (cont.)}{Summit}
+\satq{18}{A group of friends splits a \$200 bill equally. If 2 more friends join, each person pays \$5 less. How many friends were in the original group?}{$8$}{$5$}{$10$}{$25$}
+\satq{19}{What is the greatest possible distance from the origin to a point on the circle $x^2+y^2-6x-8y=0$?}{$5$}{$7$}{$25$}{$10$}
+\satg{20}{What is the solution of $\sqrt{x+3}+\sqrt{x-2}=5$?}
+}
+\end{textblock*}
+\clearpage
+\topicheader{4}{Discriminant \& Disguised Quadratics}
+\pagefooter{7}
+\mbox{}%
+\begin{textblock*}{178mm}(16mm,30mm)
+{\bfseries\itshape\color{accent}\fontsize{19}{21}\selectfont\centering Answer Key\par}
+\end{textblock*}
+\begin{textblock*}{178mm}(16mm,41mm)
+{\fontsize{9.5}{12}\selectfont\color{black!70}\centering Multiple choice: the letter. Grid-in: the number to enter. Worked solutions follow on the next pages.\par}
+\end{textblock*}
+\begin{textblock*}{178mm}(16mm,52mm)
+{\fontsize{10}{13}\selectfont
+\centering
+\setlength{\tabcolsep}{2pt}\renewcommand{\arraystretch}{1.3}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 1 \ \textmd{\itshape\small Bridge: the core moves}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+\textbf{A} & \textbf{C} & \textbf{B} & 8 & \textbf{C} & \textbf{B} & \textbf{C} & \textbf{B} & 4 & \textbf{D}\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12}\\
+\hline
+38 & \textbf{A}\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 2 \ \textmd{\itshape\small The discriminant backward}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+\textbf{D} & 17 & \textbf{A} & 3 & \textbf{C} & \textbf{B} & \textbf{D} & \textbf{A} & \textbf{D} & \textbf{A}\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12} & \cellcolor{badge!55}\textbf{13} & \cellcolor{badge!55}\textbf{14}\\
+\hline
+\textbf{B} & \textbf{C} & 20 & 8\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 3 \ \textmd{\itshape\small Equations that become quadratics}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+\textbf{D} & −1 & \textbf{A} & −18 & \textbf{B} & \textbf{C} & \textbf{B} & \textbf{D} & \textbf{C} & \textbf{A}\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12} & \cellcolor{badge!55}\textbf{13} & \cellcolor{badge!55}\textbf{14}\\
+\hline
+\textbf{D} & 4 & \textbf{A} & 6\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 4 \ \textmd{\itshape\small Equivalent expressions and completing the square}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+\textbf{B} & \textbf{C} & 11 & \textbf{D} & \textbf{A} & \textbf{B} & 3/2 & \textbf{C} & \textbf{B} & 30\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12} & \cellcolor{badge!55}\textbf{13} & \cellcolor{badge!55}\textbf{14}\\
+\hline
+\textbf{D} & \textbf{A} & 6 & \textbf{C}\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+{\sffamily\bfseries\color{accent}\fontsize{11}{13}\selectfont Set 5 \ \textmd{\itshape\small Summit: the hardest mixed problems}}\\[1.3mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{1} & \cellcolor{badge!55}\textbf{2} & \cellcolor{badge!55}\textbf{3} & \cellcolor{badge!55}\textbf{4} & \cellcolor{badge!55}\textbf{5} & \cellcolor{badge!55}\textbf{6} & \cellcolor{badge!55}\textbf{7} & \cellcolor{badge!55}\textbf{8} & \cellcolor{badge!55}\textbf{9} & \cellcolor{badge!55}\textbf{10}\\
+\hline
+14 & \textbf{B} & \textbf{C} & 9 & \textbf{D} & \textbf{B} & \textbf{A} & \textbf{D} & \textbf{C} & 25\\
+\hline
+\end{tabular}\\[1.5mm]
+\begin{tabular}{|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|>{\centering\arraybackslash}p{16mm}|}
+\hline
+\cellcolor{badge!55}\textbf{11} & \cellcolor{badge!55}\textbf{12} & \cellcolor{badge!55}\textbf{13} & \cellcolor{badge!55}\textbf{14} & \cellcolor{badge!55}\textbf{15} & \cellcolor{badge!55}\textbf{16} & \cellcolor{badge!55}\textbf{17} & \cellcolor{badge!55}\textbf{18} & \cellcolor{badge!55}\textbf{19} & \cellcolor{badge!55}\textbf{20}\\
+\hline
+\textbf{B} & \textbf{A} & \textbf{C} & \textbf{D} & 10 & 5 & \textbf{B} & \textbf{A} & \textbf{D} & 6\\
+\hline
+\end{tabular}\\[1.5mm]
+\vspace{3.5mm}
+}
+\end{textblock*}
+\clearpage
+%%AUTOFLOW-SOLUTIONS
+\newgeometry{top=34mm,bottom=24mm,left=16mm,right=16mm}
+\pagestyle{solstyle}
+\setlength{\columnsep}{14mm}\setlength{\columnseprule}{0.4pt}
+{\fontsize{10}{13.6}\selectfont
+\begin{multicols}{2}
+\solkitem{Set 1}{1}{A (Exactly one)}{Move everything to one side: $4x^2-12x+9=0$. Then $D=(-12)^2-4(4)(9)=144-144=0$, so there is exactly one real solution ($x=\frac32$). (Zero comes from forgetting to move the $12x$ across; two comes from reading $(2x-3)^2=0$ as two different roots.)}{Discriminant: count the solutions}
+\solitem{2}{C ($14$)}{Exactly one real solution means $D=b^2-4(1)(49)=0$, so $b^2=196$ and $b=14$ (positive). (7 solves $b^2=49$ and forgets the $4$; $-14$ ignores $b>0$; 196 is $b^2$, not $b$.)}{D = 0 means exactly one solution}
+\solitem{3}{B ($1$)}{Set the $y$-values equal: $x^2-4x+4=0$, i.e. $(x-2)^2=0$. The only solution is $x=2$, so the line is tangent to the parabola: exactly one common point. (Two comes from counting the repeated factor twice.)}{Line and parabola: set equal, read the discriminant}
+\solitem{4}{Ans. 8}{Put $y=x-2$ into $xy=15$: $x^2-2x-15=0$, so $x=5$ or $x=-3$. Since $x>0$, $x=5$ and $y=3$, so $x+y=8$. (The pair $x=-3,y=-5$ would give $-8$.)}{Substitute into the product}
+\solitem{5}{C ($4$)}{Squaring: $3x+4=x^2$, so $x^2-3x-4=0$ and $x=4$ or $x=-1$. Check: $\sqrt{16}=4$ works, but $\sqrt1=1\ne-1$, so $-1$ is extraneous. Only $x=4$ is a solution. (3 is the sum of both roots; $-1$ is the extraneous root; 5 is their difference.)}{Radical equation: square, then check}
+\solitem{6}{B ($1$)}{Multiply by $(x-2)(x+2)$: $3(x+2)-12=x^2-4$, so $x^2-3x+2=0$ and $x=1$ or $x=2$. But $x=2$ makes a denominator $0$, so only $x=1$ is a solution. (Two is the trap: it counts the excluded value.)}{Rational equation: reject excluded values}
+\solitem{7}{C ($2$)}{Let $u=x^2$: $u^2-5u-36=0$, so $u=9$ or $u=-4$. Since $x^2$ cannot be negative, only $x^2=9$ works: $x=3$ or $x=-3$, two solutions. (Four counts the impossible $x^2=-4$; one forgets $-3$.)}{Quadratic form: u = x squared}
+\solitem{8}{B ($-2$)}{$(x^2-6x+9)+(y^2+10y+25)=-18+9+25$, so $(x-3)^2+(y+5)^2=16$. The center is $(3,-5)$ and $h+k=-2$. (Reading $(-3,5)$ gives 2; adding absolute values gives 8; $-8$ uses $(-3,-5)$.)}{Completing the square: read the center}
+\solitem{9}{Ans. 4}{Synthetic division by $3$ on the coefficients $1,-4,2,9$ gives $1,-1,-1$ and remainder $6$. So the quotient is $x^2-x-1$ and $r=6$: $a+b+r=-1-1+6=4$.}{Polynomial division (synthetic)}
+\solitem{10}{D ($x^{7/6}$)}{$\sqrt[3]{x^2}=x^{2/3}$ and $\sqrt x=x^{1/2}$. Multiplying the same base adds the exponents: $\frac23+\frac12=\frac76$. ($x^{1/3}$ multiplies the exponents; $x^{3/5}$ adds tops and bottoms; $x^{1/6}$ subtracts.)}{Fractional exponents: add when multiplying}
+\solitem{11}{Ans. 38}{With width $w$: $w(w+5)=84$, so $w^2+5w-84=0$ and $(w+12)(w-7)=0$. The width is $7$ (not $-12$) and the length is $12$, so the perimeter is $2(7+12)=38$.}{Word problem: area gives a quadratic}
+\solitem{12}{A ($-5$)}{Write it as $3x^2-6x-k=0$: $D=36+12k$. No real solutions needs $D<0$, so $k<-3$. Only $-5$ works. ($k=-3$ gives $D=0$, which is exactly one solution, so the boundary is not allowed; $-1$ and $2$ give two.)}{Discriminant: strict inequality}
+\solkitem{Set 2}{1}{D ($6$)}{Set equal: $x^2-2x+(7-c)=0$. Tangent means $D=4-4(7-c)=0$, so $7-c=1$ and $c=6$. ($-2$ adds the slopes instead of subtracting; 7 is the parabola's $y$-intercept; 10 is the $y$-coordinate of the tangent point $(1,10)$.)}{Tangent: D = 0 after setting equal}
+\solitem{2}{Ans. 17}{Substitute $y=x+k$: $2x^2+2kx+k^2-36=0$. $D=4k^2-8(k^2-36)=288-4k^2>0$ gives $k^2<72$, so $|k|<8.49$. The integers $-8,\dots,8$ number $17$. (The endpoints are not even integers here, but $\pm9$ fail and the tangent cases are not integers.)}{Circle and line: substitute, D > 0}
+\solitem{3}{A ($14$)}{The parabola opens downward with its vertex at $x=3$: $y=-18+36-5=13$. The line misses the parabola only when $k>13$, so $14$ works. ($k=13$ touches the vertex; $12$ and $-5$ cut the parabola twice. $-5$ is the $y$-intercept.)}{Horizontal line versus the vertex}
+\solitem{4}{Ans. 3}{$D=4k^2-4(3k+4)=4(k^2-3k-4)=4(k-4)(k+1)$. $D=0$ gives $k=4$ or $k=-1$, and both give exactly one solution. The sum is $3$. (Stopping at the positive value gives 4.)}{D = 0 can give two values of the parameter}
+\solitem{5}{C ($10$)}{Set equal: $x^2+6x+(c-2)=0$ and need $D=36-4(c-2)>0$, so $c<11$. The greatest integer is $10$. ($c=11$ gives $D=0$, a tangent. $9$ and $8$ forget to subtract the $2$ from $c$.)}{Two intersections: D > 0 (strict)}
+\solitem{6}{B ($4$)}{For $k=4$: $2x^2+6x+3=0$ has $D=36-24=12>0$, two solutions. At $k=2$ the $x^2$ term vanishes and $6x+3=0$ has one solution (not a quadratic at all). At $k=5$, $D=36-12(3)=0$; at $k=7$, $D=36-60<0$.}{A parameter in the leading coefficient}
+\solitem{7}{D ($k>6$)}{Set equal: $x^2-2x+(7-k)=0$, $D=4-4(7-k)=4k-24$. Two points need $D>0$, so $k>6$. ($k=6$ is tangent, so $\ge$ is wrong; $k<6$ reverses the sign; $k>7$ uses the parabola's $y$-intercept.)}{Two intersections: D > 0}
+\solitem{8}{A ($7$)}{Product $12>0$ means the roots have the same sign; their sum $-k$ must be negative, so $k>0$. Two distinct roots need $D=k^2-48>0$, so $k\ge7$. The least is $7$. ($k=6$ has $D<0$; $-7$ gives two positive roots; $4$ is $3+4$ from a factor pair.)}{Sign of roots: sum, product and D}
+\solitem{9}{D ($9$)}{Substitute $y=-x+k$: $2x^2-2(k+1)x+(k-1)^2+4-18=0$ has $D=0$ exactly when $(k-3)^2=36$, so $k=9$ or $k=-3$. Since $k>0$, $k=9$. ($-3$ is the other tangent line; 3 is the center's coordinate sum; 6 is $|k-3|$ before finishing.)}{Tangent to a circle: D = 0}
+\solitem{10}{A ($-9$)}{Expand and move $k$: $x^2-4x-5-k=0$. $D=16+4(5+k)=0$ gives $k=-9$. (It is the minimum value of $(x+1)(x-5)$, at the vertex $x=2$. $-5$ is the constant term, 2 is the vertex's $x$-coordinate, 9 is a sign slip.)}{Disguised quadratic: expand first}
+\solitem{11}{B ($1$)}{Set equal: $x^2-(6+k)x+(9+3k)=0$ has $D=(6+k)^2-4(9+3k)=k^2$. $D=0$ only for $k=0$. The point $(3,1)$ is the vertex of the parabola, so the only tangent through it is the horizontal line; every other slope cuts the parabola twice. (Two is the trap, from thinking of a point with two tangents.)}{Line through the vertex}
+\solitem{12}{C ($12$)}{An $x$-intercept needs a real solution of $x^2-7x+k=0$: $D=49-4k\ge0$, so $k\le12.25$. The greatest integer is $12$. (13 rounds up; 12.25 is the bound but is not an integer; 7 is $-b$.)}{At least one: D ≥ 0}
+\solitem{13}{Ans. 20}{Substitute: $5x^2+40x+(100-r^2)=0$. $D=1600-20(100-r^2)=0$ gives $20r^2=400$, so $r^2=20$. (Check by distance: $\frac{10}{\sqrt5}=\sqrt{20}$.)}{Tangent: the discriminant contains the radius}
+\solitem{14}{Ans. 8}{Two distinct real roots need $D=36-4c>0$, so $c<9$. Both roots have the same sign when the product $c>0$, and the sum $6>0$ makes them positive. So $c=1,2,\dots,8$: eight values. ($c=9$ gives one solution; $c=0$ gives the root $0$, which is not positive.)}{Sign of roots: D > 0 and product > 0}
+\solkitem{Set 3}{1}{D ($9$)}{Isolate: $\sqrt{x+7}=x-5$. Squaring: $x+7=x^2-10x+25$, so $x^2-11x+18=0$ and $x=2$ or $x=9$. Check: $x=9$ gives $4+5=9$; $x=2$ gives $3+5=8\ne2$, so it is extraneous. The sum is $9$. (11 adds both roots; 2 is the extraneous root; 18 is the product.)}{Isolate the radical, square, check}
+\solitem{2}{Ans. −1}{Square: $x^2-2x-k=0$, $D=4+4k$. For $-1<k<0$ it has two positive roots, both valid (two solutions); for $k<-1$ none. At $k=-1$: $(x-1)^2=0$, $x=1$, and $\sqrt1=1$ checks. So $k=-1$.}{Radical with a parameter: D = 0 and check}
+\solitem{3}{A ($-8$)}{Since $x^2-3x-4=(x-4)(x+1)$, multiply by it: $x(x+1)+3(x-4)=20$, so $x^2+4x-32=0$ and $x=4$ or $x=-8$. But $x=4$ makes a denominator $0$, so the only solution is $-8$. ($-4$ adds both roots; $4$ is the excluded root.)}{Rational equation: LCD and excluded values}
+\solitem{4}{Ans. −18}{Multiply by $(x-3)(x+3)$: $(x+3)+k=2(x-3)$, so $x=k+9$. This is a solution unless it is excluded: $k+9=3$ gives $k=-6$, and $k+9=-3$ gives $k=-12$. The sum is $-18$.}{Rational with a parameter: the solution lands on an excluded value}
+\solitem{5}{B ($19$)}{Let $u=x^{1/3}$: $u^2-u-6=0$, so $u=3$ or $u=-2$. Cube: $x=27$ or $x=-8$. The sum is $19$. (1 is the sum of the $u$-values; 27 forgets the negative root; 35 adds $27+8$.)}{Quadratic form: u = cube root of x}
+\solitem{6}{C ($3$)}{$9^x=(3^x)^2$. With $u=3^x$: $u^2-12u+27=0$, so $u=3$ or $u=9$, giving $x=1$ or $x=2$. The sum is $3$. (12 is the sum of the $u$-values; 9 is one $u$; 2 is the product of the $x$-values.)}{Quadratic form: u = 3 to the x}
+\solitem{7}{B ($\dfrac54$)}{Let $u=\frac1x$: $u^2-5u+4=0$, so $u=1$ or $u=4$. Then $x=1$ or $x=\frac14$, and the sum is $\frac54$. (5 is the sum of the $u$-values; $\frac14$ is the product of the $x$-values; 4 is one $u$.)}{Quadratic form: u = 1/x}
+\solitem{8}{D ($2$)}{$-5t^2+30t+5=45$ gives $t^2-6t+8=0$, so $t=2$ or $t=4$. Above 45 m between those times: $4-2=2$ seconds. (3 is the time of the peak; 4 is the later crossing alone; 6 is when the ball is back at the launch height.)}{Projectile: two crossing times, subtract}
+\solitem{9}{C ($18$)}{Call them $n-1,n,n+1$: $3n^2+2=110$, so $n^2=36$ and $n=6$ (positive). The integers are $5,6,7$ ($25+36+49=110$) and their sum is $18$. (6 is only the middle integer; 36 is $n^2$.)}{Consecutive integers: middle one as n}
+\solitem{10}{A ($6$)}{If A takes $t$ hours, B takes $t+3$: $\frac1t+\frac1{t+3}=\frac12$, so $2(2t+3)=t(t+3)$, $t^2-t-6=0$ and $t=3$. Then B takes $3+3=6$ hours. (3 is pump A; 5 is $2+3$; 9 adds 3 to the wrong value.)}{Work rates add: a fraction equation becomes a quadratic}
+\solitem{11}{D ($5$)}{$(20+2x)(30+2x)=1200$ gives $4x^2+100x-600=0$, so $x^2+25x-150=0$ and $(x+30)(x-5)=0$. The positive root is $5$. (10 solves $(20+x)(30+x)=1200$, one border only; 25 is the middle coefficient; 30 is the negative root with its sign dropped.)}{Border on all sides: both dimensions grow by 2x}
+\solitem{12}{Ans. 4}{Put $x=2y+4$ into $xy=48$: $2y^2+4y-48=0$, so $y^2+2y-24=0$ and $y=4$ or $y=-6$. Then $x=12$ or $x=-8$. The sum of the $x$-coordinates is $12+(-8)=4$.}{Substitute into the product}
+\solitem{13}{A ($2$)}{$9^x=3^{2x}$, so $2x=x^2-3$, i.e. $x^2-2x-3=0$ and $x=3$ or $x=-1$. The sum is $2$. (Forgetting $9=3^2$ gives $x=x^2-3$, with sum 1; 3 is one solution; $-3$ is their product.)}{Same base first, then a quadratic}
+\solitem{14}{Ans. 6}{If the first speed is $v$, then $\frac{24}{v}-\frac{24}{v+2}=1$. Multiply by $v(v+2)$: $48=v^2+2v$, so $v^2+2v-48=0$ and $(v+8)(v-6)=0$. So $v=6$ (times $4$ h and $3$ h).}{Distance = rate x time: a quadratic in the speed}
+\solkitem{Set 4}{1}{B ($x^2+4$)}{With $u=x^2$: $u^2-13u+36=(u-4)(u-9)$, so $x^4-13x^2+36=(x^2-4)(x^2-9)=(x-2)(x+2)(x-3)(x+3)$. So $x+2$, $x-3$ and $x^2-9$ are factors, but $x^2+4$ is not (it would come from the sign error $(x^2+4)(x^2+9)$).}{Factor in quadratic form, then split fully}
+\solitem{2}{C ($2x-3$)}{Group: $x^2(2x-3)-4(2x-3)=(2x-3)(x^2-4)=(2x-3)(x-2)(x+2)$. So $2x-3$ is a factor. (The roots are $\frac32,\,2,\,-2$, so $2x+3$ is a sign slip, $3x-2$ swaps the numbers, and $x+3$ uses a root that does not exist.)}{Factor by grouping}
+\solitem{3}{Ans. 11}{$6x^2\div2x=3x$: subtract $3x(2x-3)=6x^2-9x$, leaving $10x-12$. $10x\div2x=5$: subtract $5(2x-3)=10x-15$, leaving $3$. So $a=3$, $b=5$, $r=3$ and the sum is $11$. (Using the root $3$ instead of $\frac32$ gives the wrong remainder $33$.)}{Polynomial long division with a non-monic divisor}
+\solitem{4}{D ($\dfrac{x+21}{x^2-9}$)}{Use $x^2-9=(x-3)(x+3)$: numerator $=2(x+3)-(x-3)+12=2x+6-x+3+12=x+21$. (Writing $-(x-3)$ as $-x-3$ gives $x+15$; dropping the $12$ gives $x+9$; adding denominators gives $2x$.)}{Common denominator: distribute the minus sign}
+\solitem{5}{A ($x^2+x+1$)}{$x^4+x^2+1=(x^4+2x^2+1)-x^2=(x^2+1)^2-x^2=(x^2+1-x)(x^2+1+x)$. So $x^2+x+1$ is a factor. (Each other choice leaves a nonzero remainder.)}{Rewrite for a hidden difference of squares}
+\solitem{6}{B ($3$)}{The product is $(x^2+4)^2-a^2x^2=x^4+(8-a^2)x^2+16$. Matching the $x^2$-coefficient: $8-a^2=-1$, so $a^2=9$ and $a=3$. (Dropping the $8$ gives 1; $8-1=7$ and $a^2=9$ are traps.)}{Spot (A + B)(A - B)}
+\solitem{7}{Ans. 3/2}{$x^4\sqrt x=x^{4+1/2}=x^{9/2}$. The cube root is the power $\frac13$: $\left(x^{9/2}\right)^{1/3}=x^{3/2}$. So $k=\frac32=1.5$.}{Fractional exponents: inside first, then the root}
+\solitem{8}{C ($3-x$)}{$x^2-6x+9=(x-3)^2$, and $\sqrt{(x-3)^2}=|x-3|$. For $x<3$, $x-3$ is negative, so $|x-3|=3-x$. (Choice B is the answer only when $x\ge3$; $|x|-3$ and $x+3$ are not even equal to $|x-3|$ in general.)}{Square root of a square is an absolute value}
+\solitem{9}{B ($8$)}{Complete both squares: $(x+4)^2+(y-1)^2=k+16+1=k+17$. The radius is 5, so $k+17=25$ and $k=8$. (5 is the radius; 25 is $r^2$; $42$ comes from $k-17=25$.)}{Completing the square: the right side becomes r squared}
+\solitem{10}{Ans. 30}{Divide by 2: $x^2-6x=-\frac32$. Add $9$: $(x-3)^2=\frac{15}2$. Then $x=3\pm\sqrt{\frac{15}{2}}=3\pm\frac{\sqrt{30}}{2}$, so $b=30$. (Skipping the division by 2 gives the wrong $b$.)}{Completing the square with a leading coefficient}
+\solitem{11}{D ($1$)}{$(x+3)^2+(y-2)^2=-13+9+4=0$. A sum of squares is $0$ only when both are $0$: $x=-3$, $y=2$. Exactly one point. (This is a circle with radius $0$; it is not a full circle with infinitely many points.)}{Completing the square: a circle of radius 0}
+\solitem{12}{A ($x^2+3x+9$)}{$x^3-27=(x-3)(x^2+3x+9)$, so the quotient is $x^2+3x+9$. Check by multiplying: $(x-3)(x^2+3x+9)=x^3+3x^2+9x-3x^2-9x-27$. (Wrong signs or a dropped middle term are the usual traps.)}{Difference of cubes: a³ − b³}
+\solitem{13}{Ans. 6}{Multiply by $(x-2)(x+1)$: $5x-1=A(x+1)+B(x-2)$. At $x=2$: $9=3A$, so $A=3$. At $x=-1$: $-6=-3B$, so $B=2$. Then $AB=6$.}{Equate numerators; plug in the excluded values}
+\solitem{14}{C ($8$)}{Four equal terms: $4\cdot4^x=4^{x+1}$. Write the right side with base 4: $2^{18}=4^9$. So $x+1=9$ and $x=8$. (9 forgets the $+1$; 4.5 divides $18$ by $4$; 16 subtracts $2$ without halving.)}{Same base: combine like terms first}
+\solkitem{Set 5}{1}{Ans. 14}{Squaring: $x^2-9x+(16-k)=0$ with $D=17+4k$. A solution must also satisfy $x\ge4$. For $k\le-5$: no real roots. For $k=-4$: roots $5$ and $4$, both valid (two solutions). For $k\ge-3$: the larger root $\frac{9+\sqrt D}{2}>4$ is valid, but the smaller root $\frac{9-\sqrt D}{2}<4$ is extraneous, so exactly one solution. The integers $-3,\dots,10$ number $14$.}{Radical + discriminant: which roots survive the check?}
+\solitem{2}{B ($5$)}{Substitute $y=2x+b$: $5x^2+4bx+(b^2+2b-15)=0$. $D=16b^2-20(b^2+2b-15)=-4(b^2+10b-75)=-4(b+15)(b-5)=0$, so $b=5$ or $-15$. Since $b>0$, $b=5$. ($-15$ is the other tangent; $15$ is the constant on the right; $10$ is a middle step.)}{Tangent to a circle: substitute, D = 0}
+\solitem{3}{C ($3$)}{$2^{3-x}=\dfrac{8}{2^x}$. With $u=2^x$: $u+\frac8u=9$, so $u^2-9u+8=0$ and $u=1$ or $u=8$. Then $x=0$ or $x=3$, and the sum is $3$. (9 is the sum of the $u$-values; 8 is one $u$; 0 is the product of the solutions.)}{Quadratic form: u and 8/u}
+\solitem{4}{Ans. 9}{With $u=x^2$: $u^2-10u+(9-k)=0$. Each positive $u$ gives two $x$-values, $u=0$ gives one, negative $u$ gives none. Three solutions needs the roots $u=0$ and one positive $u$: $9-k=0$, so $k=9$ (then $u=0$ or $10$, and $x=0,\pm\sqrt{10}$).}{Quadratic form: one u must be zero}
+\solitem{5}{D ($5$)}{Let $u=x^2-5x$: $u^2+4u-21=(u+7)(u-3)=0$. For $u=3$: $x^2-5x-3=0$ has $D=37>0$ and sum $5$. For $u=-7$: $x^2-5x+7=0$ has $D=-3<0$, no real solution. The sum is $5$. (10 counts both $u$-values as if both gave real roots; $-4$ is the sum of the $u$-values; 3 is one $u$.)}{Quadratic form: u = x² − 5x, then check each u}
+\solitem{6}{B ($7$)}{$D=k^2-4(k+3)=k^2-4k-12=(k-6)(k+2)<0$ gives $-2<k<6$. The integers $-1,0,\dots,5$ number $7$. (Including $k=6$ or $k=-2$, where $D=0$ gives one solution, produces 8 or 9.)}{No real solutions: D < 0, a quadratic inequality in k}
+\solitem{7}{A ($k=1$)}{For $x\neq1$, $\dfrac{x(x-1)}{x-1}=x$, so the equation says $x=k$. That works for every $k$ except $k=1$, because $x=1$ is not allowed. So $k=1$ gives no solution. (The wrong idea is to cross-multiply and find $x=k$ always works.)}{Cancel first: the hole in the graph}
+\solitem{8}{D ($48$)}{Let the integers be $n$ and $n+2$: $\frac{2n+2}{n(n+2)}=\frac7{24}$, so $48n+48=7n^2+14n$ and $7n^2-34n-48=0$. This factors as $(7n+8)(n-6)=0$, so $n=6$. The integers are $6$ and $8$, with product $48$. (6 is the smaller integer; 14 is their sum; 24 is the denominator.)}{Reciprocals of consecutive numbers: LCD gives a quadratic}
+\solitem{9}{C ($16$)}{On the $x$-axis $y=0$, so $x^2-8x+c=0$ must have exactly one solution: $64-4c=0$, $c=16$. (Check: $(x-4)^2+(y+1)^2=17-16=1$, radius $1$ equals the distance from the center $(4,-1)$ to the axis. $c=1$ would make the circle tangent to the $y$-axis; 17 is $r^2+c$.)}{Tangent to an axis: set y = 0, D = 0}
+\solitem{10}{Ans. 25}{Let $u=\sqrt x\ge0$: $u^2-3u-10=(u-5)(u+2)=0$. $u=5$ gives $x=25$; $u=-2$ is impossible because a square root is never negative. (Squaring $-2$ would give the false root $x=4$, which fails: $4-6-10\ne0$.) The only solution is $25$.}{Quadratic form: u = √x must be non-negative}
+\solitem{11}{B ($\dfrac34$)}{Substitute: $(1+k^2)x^2-10x+16=0$, $D=100-64(1+k^2)\ge0$, so $k^2\le\frac9{16}$ and $k\le\frac34$. (Geometry check: the radius $3$ and the distance $5$ make a 3-4-5 triangle, so the tangent slope is $\frac34$, not the sine $\frac35$ or the reciprocal $\frac43$.)}{Line through the origin and a circle: D ≥ 0}
+\solitem{12}{A ($3$)}{For $k\neq0$: $D=16-4k^2=0$ gives $k=2$ or $k=-2$ (one repeated solution each). For $k=0$ the equation is $4x=0$, which also has exactly one solution. So there are $3$ values. (Two forgets the linear case.)}{Do not forget the case where the equation is not quadratic}
+\solitem{13}{C ($3$)}{Since $x^2=y+4$, the circle becomes $y+4+y^2=16$, so $y^2+y-12=0$ and $y=3$ or $y=-4$. For $y=3$: $x^2=7$, two points. For $y=-4$: $x^2=0$, one point $(0,-4)$. Total: $3$. (Four assumes each $y$ gives two points.)}{Substitute x² (not y): solve for y first}
+\solitem{14}{D ($2$)}{$2^{3x}\cdot2^{2x+2}=2^{4x+4}$, so $5x+2=4x+4$ and $x=2$. (Forgetting the $2$ in $4^{x+1}=2^{2x+2}$ gives $x=4$; writing $4^{x+1}=2^{2x+1}$ gives $3$; dropping the $+4$ gives $-2$.)}{Rewrite every power with base 2}
+\solitem{15}{Ans. 10}{A line through $(0,3)$ is $y=mx+3$. Set equal: $x^2+(5-m)x+4=0$. $D=(5-m)^2-16=0$ gives $5-m=\pm4$, so $m=1$ or $m=9$. The slopes add to $10$.}{Tangent from an outside point: D = 0 in the slope}
+\solitem{16}{Ans. 5}{A common solution satisfies both, so subtract: $2x-2k=0$, i.e. $x=k$. Put $x=k$ into the first equation: $k^2-6k+k=0$, so $k=0$ or $k=5$. With $k\ne0$, $k=5$: the equations are $(x-1)(x-5)=0$ and $(x-3)(x-5)=0$, sharing $x=5$.}{Common root: subtract the equations}
+\solitem{17}{B ($1$)}{Let $u=\frac{x}{x-1}$: $u^2-4u+3=0$ gives $u=1$ or $u=3$. $\frac x{x-1}=1$ has no solution ($x=x-1$ is false). $\frac{x}{x-1}=3$ gives $x=\frac32$. Exactly one solution. (Two assumes each $u$ gives an $x$.)}{Quadratic form in a fraction: check each u}
+\solitem{18}{A ($8$)}{With $n$ friends: $\frac{200}{n}-\frac{200}{n+2}=5$. Multiply by $n(n+2)$: $400=5n^2+10n$, so $n^2+2n-80=0$ and $(n+10)(n-8)=0$. So $n=8$ (\$25 each, then \$20 each with 10 people). (10 is the new group size; 25 is the first price per person.)}{Cost per person: a fraction equation becomes a quadratic}
+\solitem{19}{D ($10$)}{$(x-3)^2+(y-4)^2=25$: center $(3,4)$, radius $5$. The origin is on the circle (it satisfies the equation), so the farthest point is diametrically opposite: distance $2\cdot5=10$. (5 is the radius; 7 is $3+4$; 25 is $r^2$.)}{Completing the square: where is the origin?}
+\solitem{20}{Ans. 6}{Isolate: $\sqrt{x+3}=5-\sqrt{x-2}$. Square: $x+3=25-10\sqrt{x-2}+x-2$, so $10\sqrt{x-2}=20$ and $\sqrt{x-2}=2$, $x=6$. Check: $\sqrt9+\sqrt4=3+2=5$.}{Two radicals: isolate one, square, repeat}
+\end{multicols}}
+\end{document}
