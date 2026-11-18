@@ -101,9 +101,17 @@ for f in ('toc', 'front-matter', 'back-cover', 'dedication-page', 'cover'): xe(f
 # splice
 parts = [f'{B}/cover.pdf', '/tmp/blank2.pdf', f'{B}/front-matter.pdf', f'{B}/toc.pdf']
 if not os.path.exists('/tmp/blank2.pdf'):
-    subprocess.run(['gs', '-q', '-dNOPAUSE', '-dBATCH', '-sDEVICE=pdfwrite', '-dFirstPage=1', '-dLastPage=1', '-sOutputFile=/tmp/blank2.pdf', f'{B}/../book2/frontmatter.pdf'], capture_output=True)
+    subprocess.run(['pdfseparate', '-f', '1', '-l', '1', f'{B}/../book2/frontmatter.pdf', '/tmp/blank2.pdf'], check=True)
 def gs_range(src, a, b, out):
-    subprocess.run(['gs', '-q', '-dNOPAUSE', '-dBATCH', '-sDEVICE=pdfwrite', f'-dFirstPage={a}', f'-dLastPage={b}', f'-sOutputFile={out}', src], capture_output=True)
+    """Extract pages a..b with poppler (pdfseparate+pdfunite): keeps the original embedded fonts (Ghostscript re-embedding broke glyphs in some phone viewers)."""
+    import tempfile, glob as _g
+    d = tempfile.mkdtemp(dir=TMP)
+    subprocess.run(['pdfseparate', '-f', str(a), '-l', str(b), src, os.path.join(d, 'p%04d.pdf')], check=True)
+    files = sorted(_g.glob(os.path.join(d, 'p*.pdf')))
+    if len(files) == 1:
+        import shutil; shutil.copy(files[0], out)
+    else:
+        subprocess.run(['pdfunite'] + files + [out], check=True)
 for p in plan:
     n, k, pc = p['n'], p['k'], p['pc']
     a_, b_ = f'{TMP}/ts{n}a.pdf', f'{TMP}/ts{n}b.pdf'
@@ -115,7 +123,7 @@ parts.append(f'{TMP}/answers-opener.pdf')
 for i in mocks: parts.append(f'mocks/mock-{i:02d}/mock{i:02d}-answer-sheet.pdf')
 parts += [f'{B}/dedication-page.pdf', f'{B}/back-cover.pdf']
 out = f'{B}/Book3-Complete.pdf'
-subprocess.run(['gs', '-q', '-dNOPAUSE', '-dBATCH', '-sDEVICE=pdfwrite', f'-sOutputFile={out}'] + parts, capture_output=True)
+subprocess.run(['pdfunite'] + parts + [out], check=True)
 tot = pages(out); print('total pages', tot, 'expected', cur + 1)
 bad = []
 for pgn in range(7, cur):
