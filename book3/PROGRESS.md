@@ -35,7 +35,7 @@ Decisions + blueprint: see BOOK3-SPEC.md.
 | Lesson 9 | DONE, verified (74 problems, 19 figures) |
 | Mocks 4-10 | not started |
 | Lessons 1,2,3,4,6,7,8,9 | not started (use lesson-05-speed-tricks as the reference once verified) |
-| Front matter, TOC, notes pages, answer-sheets section, back cover, assembly + paging check | not started |
+| Front matter, TOC, notes pages, mocks opener, answer-sheets section, dedication, back cover, assembly + paging check | DONE: Book3-Complete.pdf (240 pages, footer check 0 mismatches) via book3/tools/assemble_book3.py |
 
 Lesson list: 1 Disguised & multi-step word problems; 2 Hard linear equations, systems & parameters; 3 Hard nonlinear
 functions; 4 Discriminant edge cases & disguised quadratics; 5 Speed tricks; 6 Hard percentages, ratios & units;
