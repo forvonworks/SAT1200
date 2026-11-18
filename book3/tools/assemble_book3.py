@@ -97,7 +97,7 @@ open('toc.tex', 'w').write(t[:a] + rows + t[b:])
 with ThreadPoolExecutor(4) as ex:
     res = list(ex.map(xe, [os.path.join(B, j) for j in jobs]))
 xe(f'{TMP}/mocks-opener.tex'); xe(f'{TMP}/answers-opener.tex')
-for f in ('toc', 'front-matter', 'back-cover', 'dedication-page', 'cover'): xe(f'{B}/{f}.tex')
+for f in ('toc', 'front-matter', 'back-cover', 'dedication-page'): xe(f'{B}/{f}.tex')
 # splice
 parts = [f'{B}/cover.pdf', '/tmp/blank2.pdf', f'{B}/front-matter.pdf', f'{B}/toc.pdf']
 if not os.path.exists('/tmp/blank2.pdf'):
