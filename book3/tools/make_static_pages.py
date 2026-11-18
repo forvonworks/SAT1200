@@ -2,6 +2,19 @@
 """Generate Book 3 front matter, section openers, back cover and green dedication (tex) from Book 2 templates."""
 import re, os
 os.chdir('/home/user/SAT1200/book3')
+
+def bulletize(tex):
+    """Turn the 2-column bullet tabulars into hanging-indent paragraphs (aligned bullets)."""
+    def conv(m):
+        body = m.group(1)
+        rows = [r.strip() for r in re.split(r'\\\\(?:\[[^\]]*\])?', body) if r.strip()]
+        out = []
+        for r in rows:
+            r = re.sub(r'^\{\\color\{accent\}\\Large\\textbullet\}\s*&\s*', '', r)
+            out.append(r'\par\vspace{2.2mm}\noindent\hangindent=7mm\hangafter=1 \hspace{1mm}{\color{accent}\textbullet}\hspace{3.5mm}' + r)
+        return '\n'.join(out) + r'\par'
+    return re.sub(r'\\begin\{tabular\}\{@\{\}p\{5mm\}p\{150mm\}@\{\}\}(.*?)\\end\{tabular\}', conv, tex, flags=re.S)
+
 def recolor(s):
     return (s.replace('602785','0F6A52').replace('B8A0C8','A9CFC2').replace('F5F0F9','EDF5F2'))
 # ---- front matter (title, copyright, about) ----
@@ -42,6 +55,7 @@ b = b[:a] + r"""9 ta dars, har biri \textbf{qoida sahifasi}, \textbf{yangi so'zl
 {\color{accent}\Large\textbullet} & \textbf{10 ta to'liq mock test}: 1-modul va qiyinroq 2-modul, javoblar kitob oxirida \\[3mm]
 {\color{accent}\Large\textbullet} & Original masalalar, tekshirilgan javoblar --- rasmiy savollar bazasining \emph{usullari} asosida""" + b[e:]
 b = b.replace(r"\textbf{2-kitob} (Asosiy mavzular)", r"\textbf{2-kitob} (Asosiy mavzular)")
+b = bulletize(b)
 open('back-cover.tex', 'w').write(b)
 # ---- dedication green ----
 d = open('../dedication/dedication-page.tex').read().replace('602785','0F6A52').replace('B8A0C8','A9CFC2')
@@ -102,7 +116,7 @@ mocks = pre + r'''
 \end{textblock*}
 \end{document}
 '''
-open('mocks-opener.tex', 'w').write(mocks)
+open('mocks-opener.tex', 'w').write(bulletize(mocks))
 answers = pre + r'''
 \begin{document}
 \frontheader{Answer Sheets}
@@ -129,5 +143,5 @@ Bu bo'limda 10 ta mock testning javoblari berilgan --- har bir mock uchun bitta 
 \end{textblock*}
 \end{document}
 '''
-open('answers-opener.tex', 'w').write(answers)
+open('answers-opener.tex', 'w').write(bulletize(answers))
 print('ok')
